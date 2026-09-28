@@ -4,17 +4,17 @@ The original ForeverBiS addon code and project-created artwork are copyright Fra
 
 WoW Forever addon (Interface 16001). Use `/bis` or `/foreverbis` in-game to open the window.
 
-## Instalación
+## Installation
 
-1. Descarga el archivo `.zip` desde la sección [Releases](https://github.com/Fragudev/addon-bis-forever/releases).
-2. Extraé la carpeta `ForeverBiS` dentro de:
+1. Download the `.zip` file from the [Releases](https://github.com/Fragudev/addon-bis-forever/releases) section.
+2. Extract the `ForeverBiS` folder into:
 
 ```
 World of Warcraft\_classic_beta_\Interface\AddOns
 ```
 
-3. Asegurate de que `ForeverBiS` esté habilitado en la lista de AddOns de la pantalla de selección de personaje.
-4. Abrí la ventana con `/bis` o haciendo clic en el botón del minimap.
+3. Make sure `ForeverBiS` is enabled in the AddOns list on the character selection screen.
+4. Open the window with `/bis` or by clicking the minimap button.
 
 Open the window with `/bis` or click the minimap button, then choose a class and build from the dropdowns. Your selection is saved between sessions. Filters start hidden; use `Show Filters` and `Hide Filters` beside the class/build selectors to reveal or collapse item search, faction/source/dungeon filters, and the source legend. `Clear Filters` resets them all. Faction-exclusive items show a faction emblem and a red Horde or blue Alliance label. Use the plus/minus icon beside a slot heading to collapse or expand its list. Each item row shows its rank, icon with a rarity-colored border, item name in its rarity color, and source; boss or source names and their locations use separate colors. Drop rates omit the redundant Classic label. A green check marks items equipped in that slot, and a gold `xN` marks copies in your bags. Hover over an item icon for its tooltip. The help icon on the selector row explains all addon features; hover to read it or click to keep it open. The right-side paper-doll panel has a brown character-panel frame with item icons arranged around a static render of your character; each item icon has a border matching its rarity. `Equipped Only` filters the panel to BiS-ranked items already equipped in their matching slots, including the correct first/second ring and trinket slots. The three weapon slots are grouped together in the center below the character. Click a BiS icon to jump to its slot in the list. The window opens at its minimum size and can be enlarged vertically from its bottom edge; the minimum keeps the BiS panel visible. Drag the minimap button around the minimap to reposition it. The minimap portrait with its blue-and-gold circular frame is `ForeverBiSMinimapIcon.tga`.
 
