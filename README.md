@@ -1,6 +1,6 @@
 # Forever BiS — beta-0.0.33
 
-The original ForeverBiS addon code and project-created artwork are copyright Fragudev (fragudev@gmail.com) and distributed under the proprietary personal-use terms in [LICENSE.md](LICENSE.md). You may install and use it for personal play; redistribution, modification, and reuse require the copyright holder's written permission. Third-party materials, game assets, and external BiS list information are not claimed by this license.
+Copyright (c) 2026 Fragudev. Licensed under the [MIT License](LICENSE.md). Third-party materials, game assets, and external Best in Slot list information are not claimed by this license.
 
 WoW Forever addon (Interface 16001). Use `/bis` or `/foreverbis` in-game to open the window.
 

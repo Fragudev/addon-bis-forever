@@ -1,15 +1,21 @@
-# ForeverBiS Personal Use License
+MIT License
 
-Copyright (c) 2026 Fragudev (fragudev@gmail.com). All rights reserved.
+Copyright (c) 2026 Fragudev
 
-This license applies only to the original ForeverBiS addon source code and project-created artwork. It does not claim ownership of third-party materials, World of Warcraft or WoW Forever assets, or external Best in Slot list information.
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-## Permission
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-You may download, install, and run one copy of the unmodified addon for your personal, non-commercial use in WoW Forever.
-
-## Restrictions
-
-Without prior written permission from Fragudev (fragudev@gmail.com), you may not redistribute or publish copies of the addon, modify or create derivative works from the original addon code or project-created artwork, reuse any part of that code or artwork in another project, or sell or sublicense the addon.
-
-These terms do not remove rights that applicable law does not allow a license to restrict. This license does not transfer ownership of the addon or any of its covered material. For permission requests, contact fragudev@gmail.com.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
