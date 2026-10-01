@@ -1,0 +1,21 @@
+UpdateForeverBiS.py
+  s_bd77f31c62a30a::t_7e093274ae9e7d 143-182,207-212,246,252-256,297
+ForeverBiS/ForeverBiS.lua
+  s_bd77f31c62a30a::t_264e2aa9a697ca 948-987
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "40104e69e4b26c36917747ea7377e5ebd2e76014",
+  "prompts": {},
+  "sessions": {
+    "s_bd77f31c62a30a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a4c512c3-faad-4687-93bf-9b364929c9bb",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Francis Gutiérrez <francisge@ext.inditex.com>"
+    }
+  }
+}
