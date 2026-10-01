@@ -945,6 +945,46 @@ render = function()
                     separator:SetPoint("TOPLEFT", content, "TOPLEFT", 0, y); separator:SetPoint("TOPRIGHT", content, "TOPRIGHT", 0, y); separator:SetHeight(1)
                     y = y - 3
                 end
+
+                local enchants = slot[3]
+                if enchants and #enchants > 0 then
+                    local enchantHeader = content:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+                    enchantHeader:SetPoint("TOPLEFT", content, "TOPLEFT", 32, y - 4)
+                    enchantHeader:SetText("|cff8fb3ffENCHANTS|r")
+                    y = y - 22
+                    for _, enchant in ipairs(enchants) do
+                        local effect, spellName, enchantSource, formulaID = enchant[1], enchant[2], enchant[3], enchant[4]
+                        local rowTop = y
+                        local iconButton = CreateFrame("Button", nil, content)
+                        iconButton:SetSize(28, 28)
+                        iconButton:SetPoint("TOPLEFT", content, "TOPLEFT", 36, rowTop - 2)
+                        local iconTexture = iconButton:CreateTexture(nil, "ARTWORK")
+                        iconTexture:SetAllPoints(iconButton)
+                        iconTexture:SetTexture("Interface\\Icons\\Trade_Engraving")
+                        iconButton:SetScript("OnEnter", function(self)
+                            GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
+                            if formulaID then GameTooltip:SetHyperlink("item:" .. formulaID)
+                            else GameTooltip:SetText(spellName, 1, 1, 1) end
+                            GameTooltip:AddLine("Source: " .. enchantSource, 0.85, 0.85, 0.85, true)
+                            GameTooltip:Show()
+                        end)
+                        iconButton:SetScript("OnLeave", function() GameTooltip:Hide() end)
+
+                        local effectText = content:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+                        effectText:SetPoint("TOPLEFT", content, "TOPLEFT", sourceX, rowTop - 2)
+                        effectText:SetWidth(sourceWidth); effectText:SetJustifyH("LEFT"); effectText:SetWordWrap(true)
+                        effectText:SetText(effect)
+                        effectText:SetTextColor(0.12, 1, 0)
+
+                        local detailText = content:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
+                        detailText:SetPoint("TOPLEFT", content, "TOPLEFT", sourceX, rowTop - effectText:GetStringHeight() - 6)
+                        detailText:SetWidth(sourceWidth); detailText:SetJustifyH("LEFT"); detailText:SetWordWrap(true)
+                        detailText:SetText(spellName .. " - " .. enchantSource)
+
+                        y = rowTop - math.max(36, effectText:GetStringHeight() + detailText:GetStringHeight() + 10)
+                    end
+                    y = y - 3
+                end
             end
         end
     end
