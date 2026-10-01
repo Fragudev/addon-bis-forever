@@ -140,6 +140,46 @@ def slot_rows(section):
     return [node for node in section.walk() if "bis-item" in node.classes() or "item-row" in node.classes()]
 
 
+def raw_text(node):
+    return "".join(child if isinstance(child, str) else raw_text(child) for child in node.children)
+
+
+def enchant_targets(label, headings):
+    """Map an enchant slot label such as "Hands, Legs" onto the list's own slot headings."""
+    targets = []
+    candidates = [label] if label in headings else [part.strip() for part in label.split(",")]
+    for candidate in candidates:
+        for heading in headings:
+            if heading == candidate or heading.startswith(candidate + ":"):
+                targets.append(heading)
+    return targets
+
+
+def parse_enchants(root):
+    """Return [(slot label, effect, spell name, source, formula item id)] from the Enchants section."""
+    found = []
+    for section in root.walk():
+        if "bis-enchants" not in section.classes():
+            continue
+        for row in (node for node in section.walk() if node.tag == "li" and "bis-enchant-row" in node.classes()):
+            find = lambda cls: next((node for node in row.walk() if cls in node.classes()), None)
+            slots_node, effect_node, from_node = find("bis-enchant-slots"), find("bis-enchant-line"), find("bis-from")
+            paragraph = next((node for node in from_node.walk() if node.tag == "p"), None) if from_node else None
+            if not (slots_node and effect_node and paragraph):
+                continue
+            link = next((node for node in paragraph.walk() if node.tag == "a"), None)
+            name_node = link or next((node for node in paragraph.children if isinstance(node, Node) and node.tag == "b"), None)
+            spell = name_node.text().strip() if name_node else ""
+            requirement = re.search(r"\(([^)]*)\)", raw_text(paragraph))
+            detail = next((node for node in paragraph.children if isinstance(node, Node) and node.tag == "span"), None)
+            detail_text = re.sub(r"\s+", " ", raw_text(detail)).strip().replace(" .", ".") if detail else ""
+            source = ": ".join(part for part in (requirement.group(1) if requirement else "", detail_text) if part)
+            effect = re.sub(r"^Enchanted:\s*", "", effect_node.text().strip())
+            formula = item_id(row, link) if link else None
+            found.append((slots_node.text().strip(), effect, spell, source, formula))
+    return found
+
+
 def parse_list(route, html):
     root = parse_page(html)
     headings = [node.text().strip() for node in root.walk() if node.tag == "h1" and node.text().strip()]
@@ -164,6 +204,12 @@ def parse_list(route, html):
             items.append((name, source, item_id(row, item_link)))
         if items:
             sections.append((heading, items))
+    headings = [heading for heading, _ in sections]
+    enchants = {heading: [] for heading in headings}
+    for label, *enchant in parse_enchants(root):
+        for heading in enchant_targets(label, headings):
+            enchants[heading].append(tuple(enchant))
+    sections = [(heading, items, enchants[heading]) for heading, items in sections]
     return title, sections
 
 
@@ -197,12 +243,17 @@ def emit_lua(data, labels):
     for route, (title, slots) in sorted(data.items()):
         key = route.removeprefix("/bis/")
         lines.append(f"  [{lua_quote(key)}] = {{ title = {lua_quote(title)}, slots = {{")
-        for slot_name, items in slots:
+        for slot_name, items, enchants in slots:
             lines.append(f"    {{{lua_quote(slot_name)}, {{")
             for name, source, itemid in items:
                 lines.append(f"      {{{lua_quote(name)}, {lua_quote(source)}}},")
                 if itemid:
                     item_ids[name] = itemid
+            if enchants:
+                lines.append("    }, {")
+                for effect, spell, source, formula in enchants:
+                    formula_part = f", {formula}" if formula else ""
+                    lines.append(f"      {{{lua_quote(effect)}, {lua_quote(spell)}, {lua_quote(source)}{formula_part}}},")
             lines.append("    }},")
         lines.append("  }},")
     lines.append("}")
@@ -243,7 +294,7 @@ def main():
             build_label = re.sub(r"\s+", " ", build_label).strip()
             if build_label:
                 labels[route.removeprefix("/bis/")] = build_label
-            count = sum(len(items) for _, items in slots)
+            count = sum(len(items) for _, items, _ in slots)
             print(f"[{index}/{len(routes)}] {title}: {count} items")
         except Exception as exc:
             failures.append(f"{route}: {exc}")

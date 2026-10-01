@@ -12,6 +12,8 @@ ForeverBiSLists = {
       {"Mark of the Pack Leader", "Humar the Pridelord, the rare black lion of the Barrens Reported, not checked"},
       {"Tarnished Locket", "Quest: Remember That I Love You Ruins of Lordaeron, Alliance, from level 15"},
       {"Ephemeral Choker", "Faldrim Anvilmar, Hall of Thanes"},
+    }, {
+      {"Agility +5", "Enchant Necklace - Agility", "Enchanting 210: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 120 Merchant’s Favor.", 249504},
     }},
     {"Shoulder", {
       {"Serpent's Shoulders", "Lady Anacondra, Wailing Caverns 43.33% in Classic"},
@@ -22,25 +24,33 @@ ForeverBiSLists = {
     {"Back", {
       {"Cape of the Brotherhood", "Edwin VanCleef, The Deadmines 23.08% in Classic"},
       {"Glowing Lizardscale Cloak", "Skum, Wailing Caverns 45.48% in Classic"},
-      {"Grave Shroud", "Quest: Abominable Creatures Ruins of Lordaeron, Alliance, from level 16"},
+      {"Grave Shroud", "Quest: Unending Torment Ruins of Lordaeron, Horde, from level 16 Quest: Abominable Creatures Ruins of Lordaeron, Alliance, from level 16"},
       {"Spritekin Cloak", "Quest: Bloodfury Bloodline ↗ Horde, level 26 in Classic, from level 18"},
+    }, {
+      {"Agility +3", "Enchant Cloak - Minor Agility", "Enchanting 110: Formula sold by Dalria in Ashenvale and Kulwia in Stonetalon Mountains.", 11039},
     }},
     {"Chest", {
       {"Tunic of Westfall", "Quest: The Defias Brotherhood Alliance, level 22 in Classic, from level 14"},
       {"Blackened Defias Armor", "Edwin VanCleef, The Deadmines 14.66% in Classic"},
       {"Panther Armor", "Quest: The Den ↗ Horde, level 29 in Classic, from level 20"},
+    }, {
+      {"All Stats +2", "Enchant Chest - Lesser Stats", "Enchanting 200: Taught by the trainer."},
     }},
     {"Wrist", {
       {"Cultist's Armguards", "Quest: Blackfathom Villainy Alliance, from level 18, reported, not checked Quest: Blackfathom Villainy ↗ Horde, from level 18, reported, not checked"},
       {"Staghide Armguards", "Quest: Researching the Corruption Alliance, from level 18, reported, not checked"},
       {"Spare Part Bindings", "Quest: Light's Justice Ruins of Lordaeron, Horde, from level 15"},
       {"Witherbite Bracers", "Witherfang, Ruins of Lordaeron"},
+    }, {
+      {"Agility +3", "Enchant Bracer - Minor Agility", "Enchanting 80: Taught by the trainer."},
     }},
     {"Hands", {
       {"Gloves of the Fang", "Trash mobs, Wailing Caverns 2.36% in Classic"},
       {"Brawler's Leather Gloves", "Leatherworking (75) Only its maker can wear it"},
       {"Defender's Leather Gloves", "Leatherworking (75) Only its maker can wear it"},
       {"Nimble Leather Gloves", "Leatherworking"},
+    }, {
+      {"Agility +7", "Enchant Gloves - Agility", "Enchanting 210: Taught by the trainer."},
     }},
     {"Waist", {
       {"Blackened Defias Belt", "Captain Greenskin, The Deadmines 26.64% in Classic"},
@@ -51,12 +61,16 @@ ForeverBiSLists = {
     {"Legs", {
       {"Leggings of the Fang", "Lord Cobrahn, Wailing Caverns 17.48% in Classic"},
       {"Duty Bound Leggings", "Quest: Bloodied Insignia Ruins of Lordaeron, Alliance, from level 16"},
+    }, {
+      {"Stamina +3 and Armor +24", "Heavy Armor Kit", "Leatherworking 150: Taught by the trainer."},
     }},
     {"Feet", {
       {"Footpads of the Fang", "Lord Serpentis, Wailing Caverns 21.1% in Classic"},
       {"Brawler's Leather Boots", "Leatherworking (85) Only its maker can wear it"},
       {"Defender's Leather Boots", "Leatherworking (85) Only its maker can wear it"},
       {"Grizzled Boots", "Quest: The Book of Ur Horde, level 26 in Classic, from level 16"},
+    }, {
+      {"Minor Speed Increase", "Enchant Boots - Minor Speed", "Enchanting 225: Taught by the trainer."},
     }},
     {"Finger", {
       {"Malignant Root", "Nightveiled Rotheap, a patrol of the Wetlands Alliance only, and not checked in the beta"},
@@ -75,6 +89,8 @@ ForeverBiSLists = {
       {"Segmented Spider Leg", "Witherfang, Ruins of Lordaeron"},
       {"Bronze Dory", "Blacksmithing (95) Plans: nobody has found it in the beta yet"},
       {"Orc Crusher", "Quest: Tharil'zun ↗ Alliance, level 25 in Classic, from level 18"},
+    }, {
+      {"Weapon Damage +6", "Enchant 2H Weapon - Impact", "Enchanting 200: Taught by the trainer."},
     }},
     {"Main hand", {
       {"Assassin's Blade", "Trash mobs, Shadowfang Keep 0.03% in Classic"},
@@ -104,6 +120,8 @@ ForeverBiSLists = {
       {"Scholarly Pendant", "Quest: Friend of the Library Ten books, any class and no level asked for"},
       {"Tarnished Locket", "Quest: Remember That I Love You Ruins of Lordaeron, Alliance, from level 15"},
       {"Sorcerer Collar", "Rethilgore, Shadowfang Keep"},
+    }, {
+      {"+6 Spell Power", "Enchant Necklace - Spell Power", "Enchanting 210: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 120 Merchant’s Favor.", 249502},
     }},
     {"Shoulder", {
       {"Magician's Mantle", "A world drop, not bound: the auction house is quickest Reported, not checked"},
@@ -117,24 +135,32 @@ ForeverBiSLists = {
       {"Heavy Woolen Cloak", "Tailoring (80)"},
       {"Feyscale Cloak", "Deviate Faerie Dragon, Wailing Caverns 44.63% in Classic"},
       {"Black Whelp Cloak", "Leatherworking (75)"},
+    }, {
+      {"Armor +60", "Enchant Cloak - Greater Defense", "Enchanting 205: Taught by the trainer."},
     }},
     {"Chest", {
       {"Barkshell Tunic", "Quest: Betrayal from Within ↗ Horde, level 25 in Classic, from level 17"},
       {"Filigreed Pearly Gown", "Tailoring (75) Only its maker can wear it Pattern: drops in low-level dungeons, nobody has found which one yet"},
       {"Dro'zem's Tunic", "Dro'zem the Blasphemous, a rare elite of the Redridge Mountains Reported, not checked"},
       {"Leftover Abomination Skin", "The Baron, Ruins of Lordaeron"},
+    }, {
+      {"All Stats +2", "Enchant Chest - Lesser Stats", "Enchanting 200: Taught by the trainer."},
     }},
     {"Wrist", {
       {"Aetherwisp Bracers", "Faldrim Anvilmar, Hall of Thanes"},
       {"Mindthrust Bracers", "Trash mobs, Shadowfang Keep 0.03% in Classic"},
       {"Tabitha's Cuffs", "Quest: A Frightened Request Ruins of Lordaeron, Horde, from level 15"},
       {"Owlbeard Bracers", "Quest: Earthen Arise ↗ Horde, level 20 in Classic, from level 14"},
+    }, {
+      {"Intellect +5", "Enchant Bracer - Lesser Intellect", "Enchanting 150: Taught by the trainer."},
     }},
     {"Hands", {
       {"Stormrider's Leather Gloves", "Leatherworking (75) Only its maker can wear it"},
       {"Jutebraid Gloves", "Quest: Horde Presence ↗ Horde, level 29 in Classic, from level 15"},
       {"Serpent Gloves", "Lord Serpentis, Wailing Caverns 19.38% in Classic"},
       {"Pearly Gloves", "Tailoring (75) Only its maker can wear it"},
+    }, {
+      {"Spell Power +2 and Armor +16", "Mystic Medium Armor Kit", "Leatherworking 80: Pattern sold by leatherworking suppliers in the capitals.", 252783},
     }},
     {"Waist", {
       {"Heartwood Girdle", "Quest: Twilight Falls Alliance, level 25 in Classic, from level 20"},
@@ -146,12 +172,16 @@ ForeverBiSLists = {
     {"Legs", {
       {"Dark Ritual Leggings", "Quest: Blackfathom Villainy Alliance, from level 18, reported, not checked Quest: Blackfathom Villainy ↗ Horde, from level 18, reported, not checked"},
       {"Filigreed Pearly Leggings", "Tailoring (100) Only its maker can wear it Pattern drops from Ghamoo-ra, Blackfathom Deeps"},
+    }, {
+      {"Spell Power +2 and Armor +16", "Mystic Medium Armor Kit", "Leatherworking 80: Pattern sold by leatherworking suppliers in the capitals.", 252783},
     }},
     {"Feet", {
       {"Stormrider's Leather Boots", "Leatherworking (85) Only its maker can wear it"},
       {"Spidersilk Boots", "Tailoring"},
       {"Moonglow Boots", "Leatherworking (35) Only its maker can wear it"},
       {"Pearly Boots", "Tailoring (60) Only its maker can wear it"},
+    }, {
+      {"Minor Speed Increase", "Enchant Boots - Minor Speed", "Enchanting 225: Taught by the trainer."},
     }},
     {"Finger", {
       {"Philanthropist's Ring", "Quest: Greater Friend of the Library Twenty books, the necklace’s ten counted"},
@@ -171,12 +201,16 @@ ForeverBiSLists = {
       {"Coldspire Staff", "Rath'mael, Ruins of Lordaeron"},
       {"Crescent Staff", "Quest: Leaders of the Fang Horde, level 22 in Classic, from level 11"},
       {"Emberstone Staff", "Captain Greenskin, The Deadmines 37.84% in Classic"},
+    }, {
+      {"Intellect +5", "Enchant 2H Weapon - Lesser Intellect", "Enchanting 100: Formula sold by Tilli Thistlefuzz in Dun Morogh, Kithas in Orgrimmar and Leo Sarn in Silverpine Forest.", 6349},
     }},
     {"Main hand", {
       {"Evocator's Blade", "Trash mobs, Blackfathom Deeps 0.05% in Classic"},
       {"Scepter of the Abandoned", "The Abandoned, Ruins of Lordaeron"},
       {"Buzzer Blade", "Sneed's Shredder, The Deadmines 52.23% in Classic"},
       {"Fang of Magmatus", "Magmatus, Hall of Thanes"},
+    }, {
+      {"Revelation", "Enchant Weapon - Revelation", "Enchanting 140: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 45 Merchant’s Favor.How often it triggers is in no game file and nobody has measured it yet: it is here because a one-handed weapon has nothing else at this skill.", 249481},
     }},
     {"Off hand: held item", {
       {"Dwarven Tome", "Quest: Important Heirlooms Hall of Thanes, Alliance, from level 10"},
@@ -201,6 +235,8 @@ ForeverBiSLists = {
       {"Erudite's Amulet", "Quest: Friend of the Library Ten books, any class and no level asked for"},
       {"Tarnished Locket", "Quest: Remember That I Love You Ruins of Lordaeron, Alliance, from level 15"},
       {"Ephemeral Choker", "Faldrim Anvilmar, Hall of Thanes"},
+    }, {
+      {"+6 Spell Power", "Enchant Necklace - Spell Power", "Enchanting 210: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 120 Merchant’s Favor.", 249502},
     }},
     {"Shoulder", {
       {"Chestnut Mantle", "Quest: Allegiance to the Old Gods Horde, level 26 in Classic, from level 17"},
@@ -213,18 +249,24 @@ ForeverBiSLists = {
       {"Watch Master's Cloak", "Quest: Morbent Fel ↗ Alliance, level 32 in Classic, from level 20"},
       {"Sporid Cape", "Verdan the Everliving, Wailing Caverns 19.62% in Classic"},
       {"Engineer's Cloak", "Quest: Gerenzo Wrenchwhistle ↗ level 27 in Classic, from level 16"},
+    }, {
+      {"Armor +60", "Enchant Cloak - Greater Defense", "Enchanting 205: Taught by the trainer."},
     }},
     {"Chest", {
       {"Filigreed Pearly Gown", "Tailoring (75) Only its maker can wear it Pattern: drops in low-level dungeons, nobody has found which one yet"},
       {"Barkshell Tunic", "Quest: Betrayal from Within ↗ Horde, level 25 in Classic, from level 17"},
       {"Dro'zem's Tunic", "Dro'zem the Blasphemous, a rare elite of the Redridge Mountains Reported, not checked"},
       {"Grizzly Tunic", "Quest: Reception from Tyrande ↗ Alliance, level 28 in Classic, from level 17"},
+    }, {
+      {"Stamina +8", "Enchant Chest - Superior Stamina", "Enchanting 220: Taught by the trainer."},
     }},
     {"Wrist", {
       {"Aetherwisp Bracers", "Faldrim Anvilmar, Hall of Thanes"},
       {"Tabitha's Cuffs", "Quest: A Frightened Request Ruins of Lordaeron, Horde, from level 15"},
       {"Spare Part Bindings", "Quest: Light's Justice Ruins of Lordaeron, Horde, from level 15"},
       {"Owlbeard Bracers", "Quest: Earthen Arise ↗ Horde, level 20 in Classic, from level 14"},
+    }, {
+      {"Stamina +5", "Enchant Bracer - Stamina", "Enchanting 170: Taught by the trainer."},
     }},
     {"Hands", {
       {"Pearly Gloves", "Tailoring (75) Only its maker can wear it"},
@@ -232,6 +274,8 @@ ForeverBiSLists = {
       {"Stormrider's Leather Gloves", "Leatherworking (75) Only its maker can wear it"},
       {"Totemic Leather Gloves", "Leatherworking (75) Only its maker can wear it"},
       {"Serpent Gloves", "Lord Serpentis, Wailing Caverns 19.38% in Classic"},
+    }, {
+      {"Stamina +3 and Armor +24", "Heavy Armor Kit", "Leatherworking 150: Taught by the trainer."},
     }},
     {"Waist", {
       {"Heartwood Girdle", "Quest: Twilight Falls Alliance, level 25 in Classic, from level 20"},
@@ -243,12 +287,16 @@ ForeverBiSLists = {
       {"Dark Ritual Leggings", "Quest: Blackfathom Villainy Alliance, from level 18, reported, not checked Quest: Blackfathom Villainy ↗ Horde, from level 18, reported, not checked"},
       {"Filigreed Pearly Leggings", "Tailoring (100) Only its maker can wear it Pattern drops from Ghamoo-ra, Blackfathom Deeps"},
       {"Night Watch Pantaloons", "Quest: Morbent Fel ↗ Alliance, level 32 in Classic, from level 20"},
+    }, {
+      {"Stamina +3 and Armor +24", "Heavy Armor Kit", "Leatherworking 150: Taught by the trainer."},
     }},
     {"Feet", {
       {"Stormrider's Leather Boots", "Leatherworking (85) Only its maker can wear it"},
       {"Spidersilk Boots", "Tailoring"},
       {"Pearly Boots", "Tailoring (60) Only its maker can wear it"},
       {"Grizzled Boots", "Quest: The Book of Ur Horde, level 26 in Classic, from level 16"},
+    }, {
+      {"Minor Speed Increase", "Enchant Boots - Minor Speed", "Enchanting 225: Taught by the trainer."},
     }},
     {"Finger", {
       {"Philanthropist's Ring", "Quest: Greater Friend of the Library Twenty books, the necklace’s ten counted"},
@@ -266,12 +314,16 @@ ForeverBiSLists = {
       {"Crescent Staff", "Quest: Leaders of the Fang Horde, level 22 in Classic, from level 11"},
       {"Gnarled Necromancer's Staff", "Quest: The Wrath of Rath'mael Ruins of Lordaeron, Horde, from level 15"},
       {"Emberstone Staff", "Captain Greenskin, The Deadmines 37.84% in Classic"},
+    }, {
+      {"Intellect +5", "Enchant 2H Weapon - Lesser Intellect", "Enchanting 100: Formula sold by Tilli Thistlefuzz in Dun Morogh, Kithas in Orgrimmar and Leo Sarn in Silverpine Forest.", 6349},
     }},
     {"Main hand", {
       {"Evocator's Blade", "Trash mobs, Blackfathom Deeps 0.05% in Classic"},
       {"Scepter of the Abandoned", "The Abandoned, Ruins of Lordaeron"},
       {"Buzzer Blade", "Sneed's Shredder, The Deadmines 52.23% in Classic"},
       {"Fang of Magmatus", "Magmatus, Hall of Thanes"},
+    }, {
+      {"Revelation", "Enchant Weapon - Revelation", "Enchanting 140: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 45 Merchant’s Favor.How often it triggers is in no game file and nobody has measured it yet: it is here because a one-handed weapon has nothing else at this skill.", 249481},
     }},
     {"Off hand: held item", {
       {"Skum's Bucket", "Skum, Wailing Caverns"},
@@ -296,6 +348,8 @@ ForeverBiSLists = {
       {"Tarnished Locket", "Quest: Remember That I Love You Ruins of Lordaeron, Alliance, from level 15"},
       {"Mark of the Pack Leader", "Humar the Pridelord, the rare black lion of the Barrens Reported, not checked"},
       {"Ephemeral Choker", "Faldrim Anvilmar, Hall of Thanes"},
+    }, {
+      {"Agility +5", "Enchant Necklace - Agility", "Enchanting 210: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 120 Merchant’s Favor.", 249504},
     }},
     {"Shoulder", {
       {"Serpent's Shoulders", "Lady Anacondra, Wailing Caverns 43.33% in Classic"},
@@ -303,27 +357,35 @@ ForeverBiSLists = {
       {"Double-Stitched Woolen Shoulders", "Tailoring"},
     }},
     {"Back", {
-      {"Grave Shroud", "Quest: Abominable Creatures Ruins of Lordaeron, Alliance, from level 16"},
+      {"Grave Shroud", "Quest: Unending Torment Ruins of Lordaeron, Horde, from level 16 Quest: Abominable Creatures Ruins of Lordaeron, Alliance, from level 16"},
       {"Cape of the Brotherhood", "Edwin VanCleef, The Deadmines 23.08% in Classic"},
       {"Watch Master's Cloak", "Quest: Morbent Fel ↗ Alliance, level 32 in Classic, from level 20"},
       {"Spritekin Cloak", "Quest: Bloodfury Bloodline ↗ Horde, level 26 in Classic, from level 18"},
+    }, {
+      {"Agility +3", "Enchant Cloak - Minor Agility", "Enchanting 110: Formula sold by Dalria in Ashenvale and Kulwia in Stonetalon Mountains.", 11039},
     }},
     {"Chest", {
       {"Blackened Defias Armor", "Edwin VanCleef, The Deadmines 14.66% in Classic"},
       {"Tunic of Westfall", "Quest: The Defias Brotherhood Alliance, level 22 in Classic, from level 14"},
       {"Bloodied Chestwraps", "Viktor the Vile, Ruins of Lordaeron"},
       {"Panther Armor", "Quest: The Den ↗ Horde, level 29 in Classic, from level 20"},
+    }, {
+      {"Stamina +8", "Enchant Chest - Superior Stamina", "Enchanting 220: Taught by the trainer."},
     }},
     {"Wrist", {
       {"Cultist's Armguards", "Quest: Blackfathom Villainy Alliance, from level 18, reported, not checked Quest: Blackfathom Villainy ↗ Horde, from level 18, reported, not checked"},
       {"Staghide Armguards", "Quest: Researching the Corruption Alliance, from level 18, reported, not checked"},
       {"Spare Part Bindings", "Quest: Light's Justice Ruins of Lordaeron, Horde, from level 15"},
       {"Savannah Bracers", "Quest: Returning the Lost Satchel Horde, level 16 in Classic, from level 9"},
+    }, {
+      {"Stamina +5", "Enchant Bracer - Stamina", "Enchanting 170: Taught by the trainer."},
     }},
     {"Hands", {
       {"Brawler's Leather Gloves", "Leatherworking (75) Only its maker can wear it"},
       {"Nimble Leather Gloves", "Leatherworking"},
       {"Gloves of the Fang", "Trash mobs, Wailing Caverns 2.36% in Classic"},
+    }, {
+      {"Agility +7", "Enchant Gloves - Agility", "Enchanting 210: Taught by the trainer."},
     }},
     {"Waist", {
       {"Deviate Scale Belt", "Leatherworking (90)"},
@@ -336,12 +398,16 @@ ForeverBiSLists = {
       {"Duty Bound Leggings", "Quest: Bloodied Insignia Ruins of Lordaeron, Alliance, from level 16"},
       {"Slick Deviate Leggings", "Quest: Deviate Hides level 17 in Classic, from level 13"},
       {"Direhammer Leggings", "Durgen Dirgehammer, Hall of Thanes"},
+    }, {
+      {"Stamina +3 and Armor +24", "Heavy Armor Kit", "Leatherworking 150: Taught by the trainer."},
     }},
     {"Feet", {
       {"Grizzled Boots", "Quest: The Book of Ur Horde, level 26 in Classic, from level 16"},
       {"Footpads of the Fang", "Lord Serpentis, Wailing Caverns 21.1% in Classic"},
       {"Brawler's Leather Boots", "Leatherworking (85) Only its maker can wear it"},
       {"Defender's Leather Boots", "Leatherworking (85) Only its maker can wear it"},
+    }, {
+      {"Minor Speed Increase", "Enchant Boots - Minor Speed", "Enchanting 225: Taught by the trainer."},
     }},
     {"Finger", {
       {"Malignant Root", "Nightveiled Rotheap, a patrol of the Wetlands Alliance only, and not checked in the beta"},
@@ -360,6 +426,8 @@ ForeverBiSLists = {
       {"Segmented Spider Leg", "Witherfang, Ruins of Lordaeron"},
       {"Bronze Warhammer", "Blacksmithing"},
       {"Bronze Dory", "Blacksmithing (95) Plans: nobody has found it in the beta yet"},
+    }, {
+      {"Weapon Damage +6", "Enchant 2H Weapon - Impact", "Enchanting 200: Taught by the trainer."},
     }},
     {"Main hand", {
       {"Assassin's Blade", "Trash mobs, Shadowfang Keep 0.03% in Classic"},
@@ -388,6 +456,8 @@ ForeverBiSLists = {
       {"Tarnished Locket", "Quest: Remember That I Love You Ruins of Lordaeron, Alliance, from level 15"},
       {"Sorcerer Collar", "Rethilgore, Shadowfang Keep"},
       {"Ephemeral Choker", "Faldrim Anvilmar, Hall of Thanes"},
+    }, {
+      {"Healing Spells +11, Damage Spells +4", "Enchant Necklace - Healing Power", "Enchanting 210: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 120 Merchant’s Favor.", 249503},
     }},
     {"Shoulder", {
       {"Ghostly Mantle", "Quest: Deathstalkers in Shadowfang Horde, level 25 in Classic, from level 18"},
@@ -401,18 +471,24 @@ ForeverBiSLists = {
       {"Heavy Woolen Cloak", "Tailoring (80)"},
       {"Feyscale Cloak", "Deviate Faerie Dragon, Wailing Caverns 44.63% in Classic"},
       {"Engineer's Cloak", "Quest: Gerenzo Wrenchwhistle ↗ level 27 in Classic, from level 16"},
+    }, {
+      {"Armor +60", "Enchant Cloak - Greater Defense", "Enchanting 205: Taught by the trainer."},
     }},
     {"Chest", {
-      {"Filigreed Pristine Gown", "Tailoring (75) Only its maker can wear it Pattern: drops in low-level dungeons, nobody has found which one yet"},
+      {"Filigreed Pristine Gown", "Tailoring (75) Only its maker can wear it Pattern drops in Wailing Caverns"},
       {"Dro'zem's Tunic", "Dro'zem the Blasphemous, a rare elite of the Redridge Mountains Reported, not checked"},
       {"Corsair's Overshirt", "Edwin VanCleef, The Deadmines 23.19% in Classic"},
       {"Bloody Apron", "Razorclaw the Butcher, Shadowfang Keep 43.55% in Classic"},
+    }, {
+      {"All Stats +2", "Enchant Chest - Lesser Stats", "Enchanting 200: Taught by the trainer."},
     }},
     {"Wrist", {
       {"Aetherwisp Bracers", "Faldrim Anvilmar, Hall of Thanes"},
       {"Mindthrust Bracers", "Trash mobs, Shadowfang Keep 0.03% in Classic"},
       {"Tabitha's Cuffs", "Quest: A Frightened Request Ruins of Lordaeron, Horde, from level 15"},
       {"Owlbeard Bracers", "Quest: Earthen Arise ↗ Horde, level 20 in Classic, from level 14"},
+    }, {
+      {"Intellect +5", "Enchant Bracer - Lesser Intellect", "Enchanting 150: Taught by the trainer."},
     }},
     {"Hands", {
       {"Tattered Mittens", "Horde quest The Book of Ur, from level 16 A choice of reward, from Keeper Bel'dugur in Undercity"},
@@ -420,6 +496,8 @@ ForeverBiSLists = {
       {"Wisdom's Leather Gloves", "Leatherworking (75) Only its maker can wear it"},
       {"Blight Gloves", "Quest: The New Plague Ruins of Lordaeron, Horde, from level 16"},
       {"Serpent Gloves", "Lord Serpentis, Wailing Caverns 19.38% in Classic"},
+    }, {
+      {"Spell Power +2 and Armor +16", "Mystic Medium Armor Kit", "Leatherworking 80: Pattern sold by leatherworking suppliers in the capitals.", 252783},
     }},
     {"Waist", {
       {"Pristine Sash", "Tailoring (85) Only its maker can wear it"},
@@ -432,12 +510,16 @@ ForeverBiSLists = {
       {"Filigreed Pristine Leggings", "Tailoring (100) Only its maker can wear it Pattern drops from Verdan the Everliving, Wailing Caverns"},
       {"Ogre Loincloth", "Rhahk'Zor, The Deadmines"},
       {"Rotmender's Leggings", "The Abandoned, Ruins of Lordaeron"},
+    }, {
+      {"Spell Power +2 and Armor +16", "Mystic Medium Armor Kit", "Leatherworking 80: Pattern sold by leatherworking suppliers in the capitals.", 252783},
     }},
     {"Feet", {
       {"Nimbus Boots", "Quest: Twilight Falls Alliance, level 25 in Classic, from level 20"},
       {"Wisdom's Leather Boots", "Leatherworking (85) Only its maker can wear it"},
       {"Spidersilk Boots", "Tailoring"},
       {"Black Whelp Slippers", "Leatherworking (35) Only its maker can wear it"},
+    }, {
+      {"Minor Speed Increase", "Enchant Boots - Minor Speed", "Enchanting 225: Taught by the trainer."},
     }},
     {"Finger", {
       {"Philanthropist's Ring", "Quest: Greater Friend of the Library Twenty books, the necklace’s ten counted"},
@@ -456,12 +538,16 @@ ForeverBiSLists = {
       {"Living Root", "Verdan the Everliving, Wailing Caverns 37.82% in Classic"},
       {"Gnarled Necromancer's Staff", "Quest: The Wrath of Rath'mael Ruins of Lordaeron, Horde, from level 15"},
       {"Crescent Staff", "Quest: Leaders of the Fang Horde, level 22 in Classic, from level 11"},
+    }, {
+      {"Intellect +5", "Enchant 2H Weapon - Lesser Intellect", "Enchanting 100: Formula sold by Tilli Thistlefuzz in Dun Morogh, Kithas in Orgrimmar and Leo Sarn in Silverpine Forest.", 6349},
     }},
     {"Main hand", {
       {"The Stitcher", "Quest: Light's Justice Ruins of Lordaeron, Horde, from level 15"},
       {"Trogg Scepter", "Oggleflint, Ragefire Chasm"},
       {"Scepter of the Abandoned", "The Abandoned, Ruins of Lordaeron"},
       {"Kris of Orgrimmar", "Quest: Hidden Enemies Horde, level 16 in Classic, from level 9"},
+    }, {
+      {"Revelation", "Enchant Weapon - Revelation", "Enchanting 140: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 45 Merchant’s Favor.How often it triggers is in no game file and nobody has measured it yet: it is here because a one-handed weapon has nothing else at this skill.", 249481},
     }},
     {"Off hand: held item", {
       {"Skum's Bucket", "Skum, Wailing Caverns"},
@@ -486,6 +572,8 @@ ForeverBiSLists = {
       {"Scholarly Pendant", "Quest: Friend of the Library Ten books, any class and no level asked for"},
       {"Tarnished Locket", "Quest: Remember That I Love You Ruins of Lordaeron, Alliance, from level 15"},
       {"Ephemeral Choker", "Faldrim Anvilmar, Hall of Thanes"},
+    }, {
+      {"Defense +5", "Enchant Necklace - Deflection", "Enchanting 210: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 120 Merchant’s Favor.", 249505},
     }},
     {"Shoulder", {
       {"Tanned Shoulderpads", "Quest: Deathstalkers in Shadowfang Horde, from level 18, reported, not checked"},
@@ -493,28 +581,36 @@ ForeverBiSLists = {
       {"Serpent's Shoulders", "Lady Anacondra, Wailing Caverns 43.33% in Classic"},
     }},
     {"Back", {
-      {"Grave Shroud", "Quest: Abominable Creatures Ruins of Lordaeron, Alliance, from level 16"},
+      {"Grave Shroud", "Quest: Unending Torment Ruins of Lordaeron, Horde, from level 16 Quest: Abominable Creatures Ruins of Lordaeron, Alliance, from level 16"},
       {"Watch Master's Cloak", "Quest: Morbent Fel ↗ Alliance, level 32 in Classic, from level 20"},
       {"Sporid Cape", "Verdan the Everliving, Wailing Caverns 19.62% in Classic"},
       {"Cape of the Brotherhood", "Edwin VanCleef, The Deadmines 23.08% in Classic"},
+    }, {
+      {"Armor +60", "Enchant Cloak - Greater Defense", "Enchanting 205: Taught by the trainer."},
     }},
     {"Chest", {
       {"Blackened Defias Armor", "Edwin VanCleef, The Deadmines 14.66% in Classic"},
       {"Tunic of Westfall", "Quest: The Defias Brotherhood Alliance, level 22 in Classic, from level 14"},
       {"Gloomshroud Armor", "Trash mobs, Shadowfang Keep 0.02% in Classic"},
       {"Grizzly Tunic", "Quest: Reception from Tyrande ↗ Alliance, level 28 in Classic, from level 17"},
+    }, {
+      {"Stamina +8", "Enchant Chest - Superior Stamina", "Enchanting 220: Taught by the trainer."},
     }},
     {"Wrist", {
       {"Cultist's Armguards", "Quest: Blackfathom Villainy Alliance, from level 18, reported, not checked Quest: Blackfathom Villainy ↗ Horde, from level 18, reported, not checked"},
       {"Spare Part Bindings", "Quest: Light's Justice Ruins of Lordaeron, Horde, from level 15"},
       {"Staghide Armguards", "Quest: Researching the Corruption Alliance, from level 18, reported, not checked"},
       {"Savannah Bracers", "Quest: Returning the Lost Satchel Horde, level 16 in Classic, from level 9"},
+    }, {
+      {"Stamina +5", "Enchant Bracer - Stamina", "Enchanting 170: Taught by the trainer."},
     }},
     {"Hands", {
       {"Defender's Leather Gloves", "Leatherworking (75) Only its maker can wear it"},
       {"Brawler's Leather Gloves", "Leatherworking (75) Only its maker can wear it"},
       {"Nimble Leather Gloves", "Leatherworking"},
       {"Gloves of the Fang", "Trash mobs, Wailing Caverns 2.36% in Classic"},
+    }, {
+      {"Agility +7", "Enchant Gloves - Agility", "Enchanting 210: Taught by the trainer."},
     }},
     {"Waist", {
       {"Deviate Scale Belt", "Leatherworking (90)"},
@@ -527,18 +623,22 @@ ForeverBiSLists = {
       {"Leggings of the Fang", "Lord Cobrahn, Wailing Caverns 17.48% in Classic"},
       {"Slick Deviate Leggings", "Quest: Deviate Hides level 17 in Classic, from level 13"},
       {"Direhammer Leggings", "Durgen Dirgehammer, Hall of Thanes"},
+    }, {
+      {"Stamina +3 and Armor +24", "Heavy Armor Kit", "Leatherworking 150: Taught by the trainer."},
     }},
     {"Feet", {
       {"Grizzled Boots", "Quest: The Book of Ur Horde, level 26 in Classic, from level 16"},
       {"Defender's Leather Boots", "Leatherworking (85) Only its maker can wear it"},
       {"Footpads of the Fang", "Lord Serpentis, Wailing Caverns 21.1% in Classic"},
       {"Brawler's Leather Boots", "Leatherworking (85) Only its maker can wear it"},
+    }, {
+      {"Stamina +5", "Enchant Boots - Stamina", "Enchanting 215: Taught by the trainer."},
     }},
     {"Finger", {
       {"Seal of Sylvanas", "Quest: Arugal Must Die Horde, level 27 in Classic, from level 18"},
       {"Malignant Root", "Nightveiled Rotheap, a patrol of the Wetlands Alliance only, and not checked in the beta"},
       {"Seal of Wrynn", "Quest: An Audience with the King Alliance, level 31 in Classic, from level 16"},
-      {"Slain Baron's Signet", "Quest: Abominable Creatures Ruins of Lordaeron, Alliance, from level 16"},
+      {"Slain Baron's Signet", "Quest: Unending Torment Ruins of Lordaeron, Horde, from level 16 Quest: Abominable Creatures Ruins of Lordaeron, Alliance, from level 16"},
       {"Sustaining Ring", "Quest: Knowledge in the Deeps Alliance, level 23 in Classic, from level 10"},
       {"Ring of Scorn", "Quest: A Husband's Revenge Horde, level 20 in Classic, from level 10"},
       {"Band of the Fist", "Quest: Allegiance to the Old Gods Horde, level 26 in Classic, from level 17"},
@@ -552,6 +652,8 @@ ForeverBiSLists = {
       {"Ironforge Greathammer", "Quest: Old Ironforge Incursion Hall of Thanes, Alliance, from level 9"},
       {"Segmented Spider Leg", "Witherfang, Ruins of Lordaeron"},
       {"Crescent Staff", "Quest: Leaders of the Fang Horde, level 22 in Classic, from level 11"},
+    }, {
+      {"Weapon Damage +6", "Enchant 2H Weapon - Impact", "Enchanting 200: Taught by the trainer."},
     }},
     {"Main hand", {
       {"Goblin Hammer", "Gilnid, The Deadmines"},
@@ -581,6 +683,8 @@ ForeverBiSLists = {
       {"Snake Eye Kaleidoscope", "Lady Anacondra, Wailing Caverns"},
       {"Tarnished Locket", "Quest: Remember That I Love You Ruins of Lordaeron, Alliance, from level 15"},
       {"Ephemeral Choker", "Faldrim Anvilmar, Hall of Thanes"},
+    }, {
+      {"Agility +5", "Enchant Necklace - Agility", "Enchanting 210: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 120 Merchant’s Favor.", 249504},
     }},
     {"Shoulder", {
       {"Serpent's Shoulders", "Lady Anacondra, Wailing Caverns 43.33% in Classic"},
@@ -593,18 +697,24 @@ ForeverBiSLists = {
       {"Cape of the Brotherhood", "Edwin VanCleef, The Deadmines 23.08% in Classic"},
       {"Spritekin Cloak", "Quest: Bloodfury Bloodline ↗ Horde, level 26 in Classic, from level 18"},
       {"Spiritwraith Drape", "Faldrim Anvilmar, Hall of Thanes"},
+    }, {
+      {"Agility +3", "Enchant Cloak - Minor Agility", "Enchanting 110: Formula sold by Dalria in Ashenvale and Kulwia in Stonetalon Mountains.", 11039},
     }},
     {"Chest", {
       {"Tunic of Westfall", "Quest: The Defias Brotherhood Alliance, level 22 in Classic, from level 14"},
       {"Bloodied Chestwraps", "Viktor the Vile, Ruins of Lordaeron"},
       {"Panther Armor", "Quest: The Den ↗ Horde, level 29 in Classic, from level 20"},
       {"Dark Leather Tunic", "Leatherworking (75)"},
+    }, {
+      {"All Stats +2", "Enchant Chest - Lesser Stats", "Enchanting 200: Taught by the trainer."},
     }},
     {"Wrist", {
       {"Staghide Armguards", "Quest: Researching the Corruption Alliance, from level 18, reported, not checked"},
       {"Witherbite Bracers", "Witherfang, Ruins of Lordaeron"},
       {"Spare Part Bindings", "Quest: Light's Justice Ruins of Lordaeron, Horde, from level 15"},
       {"Wolfmane Wristguards", "Quest: Earthen Arise ↗ Horde, level 20 in Classic, from level 14"},
+    }, {
+      {"Agility +3", "Enchant Bracer - Minor Agility", "Enchanting 80: Taught by the trainer."},
     }},
     {"Hands", {
       {"Gloves of the Fang", "Trash mobs, Wailing Caverns 2.36% in Classic"},
@@ -612,6 +722,8 @@ ForeverBiSLists = {
       {"Trapper's Leather Gloves", "Leatherworking (75) Only its maker can wear it"},
       {"Nimble Leather Gloves", "Leatherworking"},
       {"Flamefist Grips", "Magmatus, Hall of Thanes"},
+    }, {
+      {"Agility +7", "Enchant Gloves - Agility", "Enchanting 210: Taught by the trainer."},
     }},
     {"Waist", {
       {"Blackened Defias Belt", "Captain Greenskin, The Deadmines 26.64% in Classic"},
@@ -624,13 +736,17 @@ ForeverBiSLists = {
       {"Leggings of the Fang", "Lord Cobrahn, Wailing Caverns 17.48% in Classic"},
       {"Dark Leather Pants", "Leatherworking"},
       {"Duty Bound Leggings", "Quest: Bloodied Insignia Ruins of Lordaeron, Alliance, from level 16"},
+    }, {
+      {"Stamina +3 and Armor +24", "Heavy Armor Kit", "Leatherworking 150: Taught by the trainer."},
     }},
     {"Feet", {
-      {"Trailblazer Boots", "Quest: Horde Presence ↗ Horde, level 29 in Classic, from level 15"},
       {"Footpads of the Fang", "Lord Serpentis, Wailing Caverns 21.1% in Classic"},
+      {"Trailblazer Boots", "Quest: Horde Presence ↗ Horde, level 29 in Classic, from level 15"},
       {"Disjointed Shoes", "Quest: WANTED: Incinerator Gar'im ↗ Alliance, from level 16, reported, not checked"},
       {"Blackened Defias Boots", "Trash mobs, The Deadmines 2.7% in Classic"},
       {"Trapper's Leather Boots", "Leatherworking (85) Only its maker can wear it"},
+    }, {
+      {"Agility +4", "Enchant Boots - Lesser Agility", "Enchanting 160: Taught by the trainer."},
     }},
     {"Finger", {
       {"Malignant Root", "Nightveiled Rotheap, a patrol of the Wetlands Alliance only, and not checked in the beta"},
@@ -651,8 +767,10 @@ ForeverBiSLists = {
       {"Segmented Spider Leg", "Witherfang, Ruins of Lordaeron"},
       {"Knight's Lance", "Quest: A Friend of the Family ↗ Alliance, from level 20, reported, not checked"},
       {"Crescent Staff", "Quest: Leaders of the Fang Horde, level 22 in Classic, from level 11"},
-      {"Monstrous Cleaver", "Quest: Abominable Creatures Ruins of Lordaeron, Alliance, from level 16"},
+      {"Monstrous Cleaver", "Quest: Unending Torment Ruins of Lordaeron, Horde, from level 16 Quest: Abominable Creatures Ruins of Lordaeron, Alliance, from level 16"},
       {"Twisted Chanter's Staff", "A random drop in Classic, from creatures of 20 to 25 Not bound: the auction house is quickest"},
+    }, {
+      {"Intellect +5", "Enchant 2H Weapon - Lesser Intellect", "Enchanting 100: Formula sold by Tilli Thistlefuzz in Dun Morogh, Kithas in Orgrimmar and Leo Sarn in Silverpine Forest.", 6349},
     }},
     {"Ranged", {
       {"Venomstrike", "Lord Serpentis, Wailing Caverns 16.77% in Classic"},
@@ -661,6 +779,8 @@ ForeverBiSLists = {
       {"Bow of Plunder", "Quest: Dangerous! ↗ Horde, level 28 in Classic, from level 19"},
       {"Calibrated Blunderbuss", "Quest: Old Ironforge Incursion Hall of Thanes, Alliance, from level 9"},
       {"Deadly Blunderbuss", "Engineering"},
+    }, {
+      {"Scope (+3 Damage)", "Accurate Scope", "Engineering 180: Schematic sold by Mazk Snipeshot in Stranglethorn Vale.", 13310},
     }},
   }},
   ["hunter/pvp"] = { title = "Hunter PvP best in slot at level 20", slots = {
@@ -678,6 +798,8 @@ ForeverBiSLists = {
       {"Tarnished Locket", "Quest: Remember That I Love You Ruins of Lordaeron, Alliance, from level 15"},
       {"Ephemeral Choker", "Faldrim Anvilmar, Hall of Thanes"},
       {"Snake Eye Kaleidoscope", "Lady Anacondra, Wailing Caverns"},
+    }, {
+      {"Agility +5", "Enchant Necklace - Agility", "Enchanting 210: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 120 Merchant’s Favor.", 249504},
     }},
     {"Shoulder", {
       {"Serpent's Shoulders", "Lady Anacondra, Wailing Caverns 43.33% in Classic"},
@@ -688,20 +810,26 @@ ForeverBiSLists = {
       {"Cape of the Brotherhood", "Edwin VanCleef, The Deadmines 23.08% in Classic"},
       {"Glowing Lizardscale Cloak", "Skum, Wailing Caverns 45.48% in Classic"},
       {"Spritekin Cloak", "Quest: Bloodfury Bloodline ↗ Horde, level 26 in Classic, from level 18"},
-      {"Grave Shroud", "Quest: Abominable Creatures Ruins of Lordaeron, Alliance, from level 16"},
+      {"Grave Shroud", "Quest: Unending Torment Ruins of Lordaeron, Horde, from level 16 Quest: Abominable Creatures Ruins of Lordaeron, Alliance, from level 16"},
       {"Spiritwraith Drape", "Faldrim Anvilmar, Hall of Thanes"},
+    }, {
+      {"Agility +3", "Enchant Cloak - Minor Agility", "Enchanting 110: Formula sold by Dalria in Ashenvale and Kulwia in Stonetalon Mountains.", 11039},
     }},
     {"Chest", {
       {"Tunic of Westfall", "Quest: The Defias Brotherhood Alliance, level 22 in Classic, from level 14"},
       {"Blackened Defias Armor", "Edwin VanCleef, The Deadmines 14.66% in Classic"},
       {"Bloodied Chestwraps", "Viktor the Vile, Ruins of Lordaeron"},
       {"Panther Armor", "Quest: The Den ↗ Horde, level 29 in Classic, from level 20"},
+    }, {
+      {"All Stats +2", "Enchant Chest - Lesser Stats", "Enchanting 200: Taught by the trainer."},
     }},
     {"Wrist", {
       {"Staghide Armguards", "Quest: Researching the Corruption Alliance, from level 18, reported, not checked"},
       {"Spare Part Bindings", "Quest: Light's Justice Ruins of Lordaeron, Horde, from level 15"},
       {"Savannah Bracers", "Quest: Returning the Lost Satchel Horde, level 16 in Classic, from level 9"},
       {"Witherbite Bracers", "Witherfang, Ruins of Lordaeron"},
+    }, {
+      {"Agility +3", "Enchant Bracer - Minor Agility", "Enchanting 80: Taught by the trainer."},
     }},
     {"Hands", {
       {"Gloves of the Fang", "Trash mobs, Wailing Caverns 2.36% in Classic"},
@@ -709,6 +837,8 @@ ForeverBiSLists = {
       {"Trapper's Leather Gloves", "Leatherworking (75) Only its maker can wear it"},
       {"Brawler's Leather Gloves", "Leatherworking (75) Only its maker can wear it"},
       {"Flamefist Grips", "Magmatus, Hall of Thanes"},
+    }, {
+      {"Agility +7", "Enchant Gloves - Agility", "Enchanting 210: Taught by the trainer."},
     }},
     {"Waist", {
       {"Deviate Scale Belt", "Leatherworking (90)"},
@@ -722,6 +852,8 @@ ForeverBiSLists = {
       {"Leggings of the Fang", "Lord Cobrahn, Wailing Caverns 17.48% in Classic"},
       {"Slick Deviate Leggings", "Quest: Deviate Hides level 17 in Classic, from level 13"},
       {"Direhammer Leggings", "Durgen Dirgehammer, Hall of Thanes"},
+    }, {
+      {"Stamina +3 and Armor +24", "Heavy Armor Kit", "Leatherworking 150: Taught by the trainer."},
     }},
     {"Feet", {
       {"Footpads of the Fang", "Lord Serpentis, Wailing Caverns 21.1% in Classic"},
@@ -729,13 +861,15 @@ ForeverBiSLists = {
       {"Blackened Defias Boots", "Trash mobs, The Deadmines 2.7% in Classic"},
       {"Trapper's Leather Boots", "Leatherworking (85) Only its maker can wear it"},
       {"Brawler's Leather Boots", "Leatherworking (85) Only its maker can wear it"},
+    }, {
+      {"Minor Speed Increase", "Enchant Boots - Minor Speed", "Enchanting 225: Taught by the trainer."},
     }},
     {"Finger", {
       {"Malignant Root", "Nightveiled Rotheap, a patrol of the Wetlands Alliance only, and not checked in the beta"},
       {"Seal of Sylvanas", "Quest: Arugal Must Die Horde, level 27 in Classic, from level 18"},
       {"Sustaining Ring", "Quest: Knowledge in the Deeps Alliance, level 23 in Classic, from level 10"},
       {"Band of the Fist", "Quest: Allegiance to the Old Gods Horde, level 26 in Classic, from level 17"},
-      {"Slain Baron's Signet", "Quest: Abominable Creatures Ruins of Lordaeron, Alliance, from level 16"},
+      {"Slain Baron's Signet", "Quest: Unending Torment Ruins of Lordaeron, Horde, from level 16 Quest: Abominable Creatures Ruins of Lordaeron, Alliance, from level 16"},
       {"Bounty Hunter's Ring", "Quest: Hezrul Bloodmark ↗ Horde, level 19 in Classic, from level 11"},
     }},
     {"Trinket", {
@@ -746,9 +880,11 @@ ForeverBiSLists = {
       {"Impaling Harpoon", "Captain Greenskin, The Deadmines 27.8% in Classic"},
       {"Segmented Spider Leg", "Witherfang, Ruins of Lordaeron"},
       {"Knight's Lance", "Quest: A Friend of the Family ↗ Alliance, from level 20, reported, not checked"},
-      {"Monstrous Cleaver", "Quest: Abominable Creatures Ruins of Lordaeron, Alliance, from level 16"},
+      {"Monstrous Cleaver", "Quest: Unending Torment Ruins of Lordaeron, Horde, from level 16 Quest: Abominable Creatures Ruins of Lordaeron, Alliance, from level 16"},
       {"Crescent Staff", "Quest: Leaders of the Fang Horde, level 22 in Classic, from level 11"},
       {"Forsaken Greataxe", "Quest: The Wrath of Rath'mael Ruins of Lordaeron, Horde, from level 15"},
+    }, {
+      {"Intellect +5", "Enchant 2H Weapon - Lesser Intellect", "Enchanting 100: Formula sold by Tilli Thistlefuzz in Dun Morogh, Kithas in Orgrimmar and Leo Sarn in Silverpine Forest.", 6349},
     }},
     {"Ranged", {
       {"Venomstrike", "Lord Serpentis, Wailing Caverns 16.77% in Classic"},
@@ -757,6 +893,8 @@ ForeverBiSLists = {
       {"Calibrated Blunderbuss", "Quest: Old Ironforge Incursion Hall of Thanes, Alliance, from level 9"},
       {"Cliffrunner's Aim", "Quest: The Sacred Flame ↗ Horde, level 29 in Classic, from level 20"},
       {"Deadly Blunderbuss", "Engineering"},
+    }, {
+      {"Scope (+3 Damage)", "Accurate Scope", "Engineering 180: Schematic sold by Mazk Snipeshot in Stranglethorn Vale.", 13310},
     }},
   }},
   ["mage"] = { title = "Mage PvE best in slot at level 20", slots = {
@@ -772,6 +910,8 @@ ForeverBiSLists = {
       {"Sorcerer Collar", "Rethilgore, Shadowfang Keep"},
       {"Scholarly Pendant", "Quest: Friend of the Library Ten books, any class and no level asked for"},
       {"Tarnished Locket", "Quest: Remember That I Love You Ruins of Lordaeron, Alliance, from level 15"},
+    }, {
+      {"+6 Spell Power", "Enchant Necklace - Spell Power", "Enchanting 210: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 120 Merchant’s Favor.", 249502},
     }},
     {"Shoulder", {
       {"Magician's Mantle", "A world drop, not bound: the auction house is quickest Reported, not checked"},
@@ -785,25 +925,33 @@ ForeverBiSLists = {
       {"Heavy Woolen Cloak", "Tailoring (80)"},
       {"Feyscale Cloak", "Deviate Faerie Dragon, Wailing Caverns 44.63% in Classic"},
       {"Black Whelp Cloak", "Leatherworking (75)"},
+    }, {
+      {"Armor +60", "Enchant Cloak - Greater Defense", "Enchanting 205: Taught by the trainer."},
     }},
     {"Chest", {
-      {"Filigreed Silky Gown", "Tailoring (75) Only its maker can wear it Pattern: drops in low-level dungeons, nobody has found which one yet"},
+      {"Filigreed Silky Gown", "Tailoring (75) Only its maker can wear it Pattern drops from Lady Anacondra, Wailing Caverns; Rhahk'Zor, The Deadmines"},
       {"Dro'zem's Tunic", "Dro'zem the Blasphemous, a rare elite of the Redridge Mountains Reported, not checked"},
       {"High Robe of the Adjudicator", "Quest: Assault on Fenris Isle ↗ Horde, level 24 in Classic, from level 10"},
       {"Leftover Abomination Skin", "The Baron, Ruins of Lordaeron"},
       {"Gray Woolen Robe", "Tailoring (80)"},
+    }, {
+      {"All Stats +2", "Enchant Chest - Lesser Stats", "Enchanting 200: Taught by the trainer."},
     }},
     {"Wrist", {
       {"Aetherwisp Bracers", "Faldrim Anvilmar, Hall of Thanes"},
       {"Tabitha's Cuffs", "Quest: A Frightened Request Ruins of Lordaeron, Horde, from level 15"},
       {"Mindthrust Bracers", "Trash mobs, Shadowfang Keep 0.03% in Classic"},
       {"Featherbead Bracers", "Quest: Returning the Lost Satchel Horde, level 16 in Classic, from level 9"},
+    }, {
+      {"Intellect +5", "Enchant Bracer - Lesser Intellect", "Enchanting 150: Taught by the trainer."},
     }},
     {"Hands", {
       {"Silky Gloves", "Tailoring (75) Only its maker can wear it"},
       {"Jutebraid Gloves", "Quest: Horde Presence ↗ Horde, level 29 in Classic, from level 15"},
       {"Serpent Gloves", "Lord Serpentis, Wailing Caverns 19.38% in Classic"},
       {"Pristine Gloves", "Tailoring (75) Only its maker can wear it"},
+    }, {
+      {"Spell Power +2 and Armor +16", "Mystic Medium Armor Kit", "Leatherworking 80: Pattern sold by leatherworking suppliers in the capitals.", 252783},
     }},
     {"Waist", {
       {"Silky Sash", "Tailoring (85) Only its maker can wear it"},
@@ -812,17 +960,21 @@ ForeverBiSLists = {
       {"Tuskwrap Belt", "Bjork, Ruins of Lordaeron"},
     }},
     {"Legs", {
-      {"Filigreed Silky Leggings", "Tailoring (100) Only its maker can wear it Pattern drops in Shadowfang Keep"},
+      {"Filigreed Silky Leggings", "Tailoring (100) Only its maker can wear it Pattern drops from Edwin VanCleef, The Deadmines"},
       {"Filigreed Pristine Leggings", "Tailoring (100) Only its maker can wear it Pattern drops from Verdan the Everliving, Wailing Caverns"},
       {"Colorful Kilt", "Tailoring (70)"},
       {"Rotmender's Leggings", "The Abandoned, Ruins of Lordaeron"},
       {"Ogre Loincloth", "Rhahk'Zor, The Deadmines"},
+    }, {
+      {"Spell Power +2 and Armor +16", "Mystic Medium Armor Kit", "Leatherworking 80: Pattern sold by leatherworking suppliers in the capitals.", 252783},
     }},
     {"Feet", {
       {"Spidersilk Boots", "Tailoring"},
       {"Silky Boots", "Tailoring (60) Only its maker can wear it"},
       {"Pristine Boots", "Tailoring (60) Only its maker can wear it"},
       {"Red Woolen Boots", "Tailoring (75)"},
+    }, {
+      {"Stamina +5", "Enchant Boots - Stamina", "Enchanting 215: Taught by the trainer."},
     }},
     {"Finger", {
       {"Philanthropist's Ring", "Quest: Greater Friend of the Library Twenty books, the necklace’s ten counted"},
@@ -842,11 +994,15 @@ ForeverBiSLists = {
       {"Staff of the Blessed Seer", "Trash mobs, Blackfathom Deeps 0.05% in Classic"},
       {"Coldspire Staff", "Rath'mael, Ruins of Lordaeron"},
       {"Crescent Staff", "Quest: Leaders of the Fang Horde, level 22 in Classic, from level 11"},
+    }, {
+      {"Intellect +5", "Enchant 2H Weapon - Lesser Intellect", "Enchanting 100: Formula sold by Tilli Thistlefuzz in Dun Morogh, Kithas in Orgrimmar and Leo Sarn in Silverpine Forest.", 6349},
     }},
     {"Main hand", {
       {"Evocator's Blade", "Trash mobs, Blackfathom Deeps 0.05% in Classic"},
       {"Fang of Magmatus", "Magmatus, Hall of Thanes"},
       {"Searing Dagger", "Bazzalan, Ragefire Chasm"},
+    }, {
+      {"Revelation", "Enchant Weapon - Revelation", "Enchanting 140: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 45 Merchant’s Favor.How often it triggers is in no game file and nobody has measured it yet: it is here because a one-handed weapon has nothing else at this skill.", 249481},
     }},
     {"Off hand: held item", {
       {"Antipodean Rod", "A world drop, not bound: the auction house is quickest Reported, not checked"},
@@ -875,6 +1031,8 @@ ForeverBiSLists = {
       {"Tarnished Locket", "Quest: Remember That I Love You Ruins of Lordaeron, Alliance, from level 15"},
       {"Mark of the Pack Leader", "Humar the Pridelord, the rare black lion of the Barrens Reported, not checked"},
       {"Ephemeral Choker", "Faldrim Anvilmar, Hall of Thanes"},
+    }, {
+      {"+6 Spell Power", "Enchant Necklace - Spell Power", "Enchanting 210: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 120 Merchant’s Favor.", 249502},
     }},
     {"Shoulder", {
       {"Chestnut Mantle", "Quest: Allegiance to the Old Gods Horde, level 26 in Classic, from level 17"},
@@ -888,25 +1046,33 @@ ForeverBiSLists = {
       {"Watch Master's Cloak", "Quest: Morbent Fel ↗ Alliance, level 32 in Classic, from level 20"},
       {"Sporid Cape", "Verdan the Everliving, Wailing Caverns 19.62% in Classic"},
       {"Heavy Woolen Cloak", "Tailoring (80)"},
+    }, {
+      {"Armor +60", "Enchant Cloak - Greater Defense", "Enchanting 205: Taught by the trainer."},
     }},
     {"Chest", {
-      {"Filigreed Silky Gown", "Tailoring (75) Only its maker can wear it Pattern: drops in low-level dungeons, nobody has found which one yet"},
+      {"Filigreed Silky Gown", "Tailoring (75) Only its maker can wear it Pattern drops from Lady Anacondra, Wailing Caverns; Rhahk'Zor, The Deadmines"},
       {"Dro'zem's Tunic", "Dro'zem the Blasphemous, a rare elite of the Redridge Mountains Reported, not checked"},
       {"Bloody Apron", "Razorclaw the Butcher, Shadowfang Keep 43.55% in Classic"},
       {"Efflorescent Robe", "Quest: Reception from Tyrande ↗ Alliance, level 28 in Classic, from level 17"},
       {"Corsair's Overshirt", "Edwin VanCleef, The Deadmines 23.19% in Classic"},
+    }, {
+      {"Stamina +8", "Enchant Chest - Superior Stamina", "Enchanting 220: Taught by the trainer."},
     }},
     {"Wrist", {
       {"Aetherwisp Bracers", "Faldrim Anvilmar, Hall of Thanes"},
       {"Tabitha's Cuffs", "Quest: A Frightened Request Ruins of Lordaeron, Horde, from level 15"},
       {"Mindthrust Bracers", "Trash mobs, Shadowfang Keep 0.03% in Classic"},
       {"Owlbeard Bracers", "Quest: Earthen Arise ↗ Horde, level 20 in Classic, from level 14"},
+    }, {
+      {"Stamina +5", "Enchant Bracer - Stamina", "Enchanting 170: Taught by the trainer."},
     }},
     {"Hands", {
       {"Silky Gloves", "Tailoring (75) Only its maker can wear it"},
       {"Tattered Mittens", "Horde quest The Book of Ur, from level 16 A choice of reward, from Keeper Bel'dugur in Undercity"},
       {"Pristine Gloves", "Tailoring (75) Only its maker can wear it"},
       {"Tomb Robber's Gloves", "Quest: Important Heirlooms Hall of Thanes, Alliance, from level 10"},
+    }, {
+      {"Stamina +3 and Armor +24", "Heavy Armor Kit", "Leatherworking 150: Taught by the trainer."},
     }},
     {"Waist", {
       {"Silky Sash", "Tailoring (85) Only its maker can wear it"},
@@ -915,17 +1081,21 @@ ForeverBiSLists = {
       {"Novice Arcanist's Sash", "Tailoring (50) Only its maker can wear it Pattern: nobody has found it in the beta yet"},
     }},
     {"Legs", {
-      {"Filigreed Silky Leggings", "Tailoring (100) Only its maker can wear it Pattern drops in Shadowfang Keep"},
+      {"Filigreed Silky Leggings", "Tailoring (100) Only its maker can wear it Pattern drops from Edwin VanCleef, The Deadmines"},
       {"Filigreed Pristine Leggings", "Tailoring (100) Only its maker can wear it Pattern drops from Verdan the Everliving, Wailing Caverns"},
       {"Night Watch Pantaloons", "Quest: Morbent Fel ↗ Alliance, level 32 in Classic, from level 20"},
       {"Ogre Loincloth", "Rhahk'Zor, The Deadmines"},
       {"Rotmender's Leggings", "The Abandoned, Ruins of Lordaeron"},
+    }, {
+      {"Stamina +3 and Armor +24", "Heavy Armor Kit", "Leatherworking 150: Taught by the trainer."},
     }},
     {"Feet", {
       {"Spidersilk Boots", "Tailoring"},
       {"Silky Boots", "Tailoring (60) Only its maker can wear it"},
       {"Rotmender's Treads", "Rath'mael, Ruins of Lordaeron"},
       {"Pristine Boots", "Tailoring (60) Only its maker can wear it"},
+    }, {
+      {"Minor Speed Increase", "Enchant Boots - Minor Speed", "Enchanting 225: Taught by the trainer."},
     }},
     {"Finger", {
       {"Philanthropist's Ring", "Quest: Greater Friend of the Library Twenty books, the necklace’s ten counted"},
@@ -933,7 +1103,7 @@ ForeverBiSLists = {
       {"Seal of Sylvanas", "Quest: Arugal Must Die Horde, level 27 in Classic, from level 18"},
       {"Sustaining Ring", "Quest: Knowledge in the Deeps Alliance, level 23 in Classic, from level 10"},
       {"Minor Channeling Ring", "Quest: WANTED: Chok'sul ↗ Alliance, level 22 in Classic, from level 17"},
-      {"Slain Baron's Signet", "Quest: Abominable Creatures Ruins of Lordaeron, Alliance, from level 16"},
+      {"Slain Baron's Signet", "Quest: Unending Torment Ruins of Lordaeron, Horde, from level 16 Quest: Abominable Creatures Ruins of Lordaeron, Alliance, from level 16"},
     }},
     {"Trinket", {
       {"Minor Recombobulator", "Engineering (140)"},
@@ -945,11 +1115,15 @@ ForeverBiSLists = {
       {"Icicle Rod", "Quest: Return the Statuette ↗ Alliance, level 25 in Classic, from level 20"},
       {"Gnarled Necromancer's Staff", "Quest: The Wrath of Rath'mael Ruins of Lordaeron, Horde, from level 15"},
       {"Emberstone Staff", "Captain Greenskin, The Deadmines 37.84% in Classic"},
+    }, {
+      {"Intellect +5", "Enchant 2H Weapon - Lesser Intellect", "Enchanting 100: Formula sold by Tilli Thistlefuzz in Dun Morogh, Kithas in Orgrimmar and Leo Sarn in Silverpine Forest.", 6349},
     }},
     {"Main hand", {
       {"Evocator's Blade", "Trash mobs, Blackfathom Deeps 0.05% in Classic"},
       {"Fang of Magmatus", "Magmatus, Hall of Thanes"},
       {"Searing Dagger", "Bazzalan, Ragefire Chasm"},
+    }, {
+      {"Revelation", "Enchant Weapon - Revelation", "Enchanting 140: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 45 Merchant’s Favor.How often it triggers is in no game file and nobody has measured it yet: it is here because a one-handed weapon has nothing else at this skill.", 249481},
     }},
     {"Off hand: held item", {
       {"Antipodean Rod", "A world drop, not bound: the auction house is quickest Reported, not checked"},
@@ -977,6 +1151,8 @@ ForeverBiSLists = {
       {"Mark of the Pack Leader", "Humar the Pridelord, the rare black lion of the Barrens Reported, not checked"},
       {"Tarnished Locket", "Quest: Remember That I Love You Ruins of Lordaeron, Alliance, from level 15"},
       {"Ephemeral Choker", "Faldrim Anvilmar, Hall of Thanes"},
+    }, {
+      {"Strength +5", "Enchant Necklace - Strength", "Enchanting 210: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 120 Merchant’s Favor.", 249496},
     }},
     {"Shoulder", {
       {"Rough Bronze Shoulders", "Blacksmithing"},
@@ -984,22 +1160,28 @@ ForeverBiSLists = {
       {"Durable Chain Shoulders", "Quest: WANTED: Chok'sul ↗ Alliance, level 22 in Classic, from level 17"},
     }},
     {"Back", {
-      {"Grave Shroud", "Quest: Abominable Creatures Ruins of Lordaeron, Alliance, from level 16"},
+      {"Grave Shroud", "Quest: Unending Torment Ruins of Lordaeron, Horde, from level 16 Quest: Abominable Creatures Ruins of Lordaeron, Alliance, from level 16"},
       {"Miner's Cape", "Miner Johnson, The Deadmines 55.89% in Classic"},
       {"Sporid Cape", "Verdan the Everliving, Wailing Caverns 19.62% in Classic"},
       {"Catacomb Cloak", "Quest: An Ancient Grudge Hall of Thanes, Alliance, from level 10"},
+    }, {
+      {"Agility +3", "Enchant Cloak - Minor Agility", "Enchanting 110: Formula sold by Dalria in Ashenvale and Kulwia in Stonetalon Mountains.", 11039},
     }},
     {"Chest", {
       {"Blackened Defias Armor", "Edwin VanCleef, The Deadmines 14.66% in Classic"},
       {"Mutant Scale Breastplate", "Mutanus the Devourer, Wailing Caverns 22.45% in Classic"},
       {"Remembrance Armor", "Quest: Bloodied Insignia Ruins of Lordaeron, Alliance, from level 16"},
       {"Abomination Bones", "The Baron, Ruins of Lordaeron"},
+    }, {
+      {"All Stats +2", "Enchant Chest - Lesser Stats", "Enchanting 200: Taught by the trainer."},
     }},
     {"Wrist", {
       {"Cultist's Armguards", "Quest: Blackfathom Villainy Alliance, from level 18, reported, not checked Quest: Blackfathom Villainy ↗ Horde, from level 18, reported, not checked"},
       {"Beetle Clasps", "Quest: Researching the Corruption Alliance, level 24 in Classic, from level 18"},
       {"Cryptwalker Bracers", "Quest: The Restless Dead Hall of Thanes, Alliance, from level 10"},
       {"Spare Part Bindings", "Quest: Light's Justice Ruins of Lordaeron, Horde, from level 15"},
+    }, {
+      {"Strength +5", "Enchant Bracer - Strength", "Enchanting 180: Taught by the trainer."},
     }},
     {"Hands", {
       {"Grip of Fear", "The Abandoned, Ruins of Lordaeron"},
@@ -1007,6 +1189,8 @@ ForeverBiSLists = {
       {"Fletcher's Gloves", "Leatherworking"},
       {"Veteran's Gloves", "Blacksmithing (80) Only its maker can wear it"},
       {"Guard's Gloves", "Blacksmithing (80) Only its maker can wear it"},
+    }, {
+      {"Strength +7", "Enchant Gloves - Strength", "Enchanting 225: Taught by the trainer."},
     }},
     {"Waist", {
       {"Blackened Defias Belt", "Captain Greenskin, The Deadmines 26.64% in Classic"},
@@ -1019,12 +1203,16 @@ ForeverBiSLists = {
       {"Chausses of Westfall", "Quest: The Defias Brotherhood Alliance, level 22 in Classic, from level 14"},
       {"Juggernaut Leggings", "Quest: The Den ↗ Horde, level 29 in Classic, from level 20"},
       {"Duty Bound Leggings", "Quest: Bloodied Insignia Ruins of Lordaeron, Alliance, from level 16"},
+    }, {
+      {"Stamina +3 and Armor +24", "Heavy Armor Kit", "Leatherworking 150: Taught by the trainer."},
     }},
     {"Feet", {
       {"Vilewalkers", "Viktor the Vile, Ruins of Lordaeron"},
       {"Alacritous Treads", "Alliance quest WANTED: Incinerator Gar’im, from level 16 Reported, not checked"},
       {"Veteran's Boots", "Blacksmithing (85) Only its maker can wear it"},
       {"Brawler's Leather Boots", "Leatherworking (85) Only its maker can wear it"},
+    }, {
+      {"Minor Speed Increase", "Enchant Boots - Minor Speed", "Enchanting 225: Taught by the trainer."},
     }},
     {"Finger", {
       {"Seal of Sylvanas", "Quest: Arugal Must Die Horde, level 27 in Classic, from level 18"},
@@ -1044,7 +1232,9 @@ ForeverBiSLists = {
       {"Smite's Mighty Hammer", "Mr. Smite, The Deadmines 18.58% in Classic"},
       {"Rockslicer", "Rhahk'Zor, The Deadmines 3.91% in Classic"},
       {"Forsaken Greataxe", "Quest: The Wrath of Rath'mael Ruins of Lordaeron, Horde, from level 15"},
-      {"Monstrous Cleaver", "Quest: Abominable Creatures Ruins of Lordaeron, Alliance, from level 16"},
+      {"Monstrous Cleaver", "Quest: Unending Torment Ruins of Lordaeron, Horde, from level 16 Quest: Abominable Creatures Ruins of Lordaeron, Alliance, from level 16"},
+    }, {
+      {"Weapon Damage +6", "Enchant 2H Weapon - Impact", "Enchanting 200: Taught by the trainer."},
     }},
     {"Relic", {
       {"Tenets of the Silver Hand", "Enchanting (130) Only its maker can wear it"},
@@ -1064,6 +1254,8 @@ ForeverBiSLists = {
       {"Tarnished Locket", "Quest: Remember That I Love You Ruins of Lordaeron, Alliance, from level 15"},
       {"Ephemeral Choker", "Faldrim Anvilmar, Hall of Thanes"},
       {"Sorcerer Collar", "Rethilgore, Shadowfang Keep"},
+    }, {
+      {"Healing Spells +11, Damage Spells +4", "Enchant Necklace - Healing Power", "Enchanting 210: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 120 Merchant’s Favor.", 249503},
     }},
     {"Shoulder", {
       {"Ghostly Mantle", "Quest: Deathstalkers in Shadowfang Horde, level 25 in Classic, from level 18"},
@@ -1077,16 +1269,22 @@ ForeverBiSLists = {
       {"Heavy Woolen Cloak", "Tailoring (80)"},
       {"Feyscale Cloak", "Deviate Faerie Dragon, Wailing Caverns 44.63% in Classic"},
       {"Engineer's Cloak", "Quest: Gerenzo Wrenchwhistle ↗ level 27 in Classic, from level 16"},
+    }, {
+      {"Armor +60", "Enchant Cloak - Greater Defense", "Enchanting 205: Taught by the trainer."},
     }},
     {"Chest", {
-      {"Filigreed Pristine Gown", "Tailoring (75) Only its maker can wear it Pattern: drops in low-level dungeons, nobody has found which one yet"},
+      {"Filigreed Pristine Gown", "Tailoring (75) Only its maker can wear it Pattern drops in Wailing Caverns"},
       {"Bloody Apron", "Razorclaw the Butcher, Shadowfang Keep 43.55% in Classic"},
+    }, {
+      {"All Stats +2", "Enchant Chest - Lesser Stats", "Enchanting 200: Taught by the trainer."},
     }},
     {"Wrist", {
       {"Mindthrust Bracers", "Trash mobs, Shadowfang Keep 0.03% in Classic"},
       {"Steel-clasped Bracers", "Quest: The Book of Ur Horde, level 26 in Classic, from level 16"},
       {"Rift Bracers", "Arugal's Voidwalker, Shadowfang Keep 2.51% in Classic Trash mobs, Shadowfang Keep 2.36% in Classic"},
       {"Tabitha's Cuffs", "Quest: A Frightened Request Ruins of Lordaeron, Horde, from level 15"},
+    }, {
+      {"Intellect +5", "Enchant Bracer - Lesser Intellect", "Enchanting 150: Taught by the trainer."},
     }},
     {"Hands", {
       {"Silvered Gauntlets", "Quest: Twilight Falls Alliance, from level 20, reported, not checked"},
@@ -1094,6 +1292,8 @@ ForeverBiSLists = {
       {"Pristine Gloves", "Tailoring (75) Only its maker can wear it"},
       {"Wisdom's Leather Gloves", "Leatherworking (75) Only its maker can wear it"},
       {"Tattered Mittens", "Horde quest The Book of Ur, from level 16 A choice of reward, from Keeper Bel'dugur in Undercity"},
+    }, {
+      {"Spell Power +2 and Armor +16", "Mystic Medium Armor Kit", "Leatherworking 80: Pattern sold by leatherworking suppliers in the capitals.", 252783},
     }},
     {"Waist", {
       {"Acolyte's Chain Belt", "Blacksmithing (45) Only its maker can wear it"},
@@ -1106,6 +1306,8 @@ ForeverBiSLists = {
     {"Legs", {
       {"Filigreed Pristine Leggings", "Tailoring (100) Only its maker can wear it Pattern drops from Verdan the Everliving, Wailing Caverns"},
       {"Ogre Loincloth", "Rhahk'Zor, The Deadmines"},
+    }, {
+      {"Spell Power +2 and Armor +16", "Mystic Medium Armor Kit", "Leatherworking 80: Pattern sold by leatherworking suppliers in the capitals.", 252783},
     }},
     {"Feet", {
       {"Acolyte's Boots", "Blacksmithing (85) Only its maker can wear it"},
@@ -1113,6 +1315,8 @@ ForeverBiSLists = {
       {"Pristine Boots", "Tailoring (60) Only its maker can wear it"},
       {"Nimbus Boots", "Quest: Twilight Falls Alliance, level 25 in Classic, from level 20"},
       {"Quagmire Galoshes", "Quest: In Nightmares ↗ Alliance, level 25 in Classic, from level 15 Quest: In Nightmares ↗ Horde, level 25 in Classic, from level 15"},
+    }, {
+      {"Minor Speed Increase", "Enchant Boots - Minor Speed", "Enchanting 225: Taught by the trainer."},
     }},
     {"Finger", {
       {"Philanthropist's Ring", "Quest: Greater Friend of the Library Twenty books, the necklace’s ten counted"},
@@ -1129,18 +1333,24 @@ ForeverBiSLists = {
     {"Two-hand weapon", {
       {"Taskmaster Axe", "Sneed, The Deadmines 27.65% in Classic"},
       {"Verigan's Fist", "Quest: The Test of Righteousness ↗ Alliance, level 22 in Classic, from level 20"},
+    }, {
+      {"Intellect +5", "Enchant 2H Weapon - Lesser Intellect", "Enchanting 100: Formula sold by Tilli Thistlefuzz in Dun Morogh, Kithas in Orgrimmar and Leo Sarn in Silverpine Forest.", 6349},
     }},
     {"Main hand", {
       {"The Stitcher", "Quest: Light's Justice Ruins of Lordaeron, Horde, from level 15"},
       {"Trogg Scepter", "Oggleflint, Ragefire Chasm"},
       {"Scepter of the Abandoned", "The Abandoned, Ruins of Lordaeron"},
       {"Goblin Hammer", "Gilnid, The Deadmines"},
+    }, {
+      {"Revelation", "Enchant Weapon - Revelation", "Enchanting 140: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 45 Merchant’s Favor.How often it triggers is in no game file and nobody has measured it yet: it is here because a one-handed weapon has nothing else at this skill.", 249481},
     }},
     {"Off hand: shield", {
       {"Seedcloud Buckler", "Verdan the Everliving, Wailing Caverns 39.22% in Classic"},
       {"Arctic Buckler", "Quest: Blackfathom Villainy Alliance, level 27 in Classic, from level 18 Quest: Blackfathom Villainy Horde, level 27 in Classic, from level 18"},
       {"Mirror of Rath'mael", "Rath'mael, Ruins of Lordaeron"},
       {"Worn Turtle Shell Shield", "Kresh, Wailing Caverns 66.7% in Classic"},
+    }, {
+      {"Stamina +5", "Enchant Shield - Lesser Stamina", "Enchanting 155: Taught by the trainer."},
     }},
     {"Relic", {
       {"Tenets of the Silver Hand", "Enchanting (130) Only its maker can wear it"},
@@ -1158,6 +1368,8 @@ ForeverBiSLists = {
       {"Scholarly Pendant", "Quest: Friend of the Library Ten books, any class and no level asked for"},
       {"Tarnished Locket", "Quest: Remember That I Love You Ruins of Lordaeron, Alliance, from level 15"},
       {"Ephemeral Choker", "Faldrim Anvilmar, Hall of Thanes"},
+    }, {
+      {"Healing Spells +11, Damage Spells +4", "Enchant Necklace - Healing Power", "Enchanting 210: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 120 Merchant’s Favor.", 249503},
     }},
     {"Shoulder", {
       {"Chestnut Mantle", "Quest: Allegiance to the Old Gods Horde, level 26 in Classic, from level 17"},
@@ -1170,23 +1382,31 @@ ForeverBiSLists = {
       {"Feyscale Cloak", "Deviate Faerie Dragon, Wailing Caverns 44.63% in Classic"},
       {"Watch Master's Cloak", "Quest: Morbent Fel ↗ Alliance, level 32 in Classic, from level 20"},
       {"Sporid Cape", "Verdan the Everliving, Wailing Caverns 19.62% in Classic"},
+    }, {
+      {"Armor +60", "Enchant Cloak - Greater Defense", "Enchanting 205: Taught by the trainer."},
     }},
     {"Chest", {
       {"Bloody Apron", "Razorclaw the Butcher, Shadowfang Keep 43.55% in Classic"},
-      {"Filigreed Pristine Gown", "Tailoring (75) Only its maker can wear it Pattern: drops in low-level dungeons, nobody has found which one yet"},
+      {"Filigreed Pristine Gown", "Tailoring (75) Only its maker can wear it Pattern drops in Wailing Caverns"},
       {"Corsair's Overshirt", "Edwin VanCleef, The Deadmines 23.19% in Classic"},
+    }, {
+      {"Stamina +8", "Enchant Chest - Superior Stamina", "Enchanting 220: Taught by the trainer."},
     }},
     {"Wrist", {
       {"Steel-clasped Bracers", "Quest: The Book of Ur Horde, level 26 in Classic, from level 16"},
       {"Rift Bracers", "Arugal's Voidwalker, Shadowfang Keep 2.51% in Classic Trash mobs, Shadowfang Keep 2.36% in Classic"},
       {"Mindthrust Bracers", "Trash mobs, Shadowfang Keep 0.03% in Classic"},
       {"Tabitha's Cuffs", "Quest: A Frightened Request Ruins of Lordaeron, Horde, from level 15"},
+    }, {
+      {"Stamina +5", "Enchant Bracer - Stamina", "Enchanting 170: Taught by the trainer."},
     }},
     {"Hands", {
       {"Silvered Gauntlets", "Quest: Twilight Falls Alliance, from level 20, reported, not checked"},
       {"Acolyte's Gloves", "Blacksmithing (80) Only its maker can wear it"},
       {"Pristine Gloves", "Tailoring (75) Only its maker can wear it"},
       {"Tattered Mittens", "Horde quest The Book of Ur, from level 16 A choice of reward, from Keeper Bel'dugur in Undercity"},
+    }, {
+      {"Stamina +3 and Armor +24", "Heavy Armor Kit", "Leatherworking 150: Taught by the trainer."},
     }},
     {"Waist", {
       {"Acolyte's Chain Belt", "Blacksmithing (45) Only its maker can wear it"},
@@ -1198,6 +1418,8 @@ ForeverBiSLists = {
       {"Filigreed Pristine Leggings", "Tailoring (100) Only its maker can wear it Pattern drops from Verdan the Everliving, Wailing Caverns"},
       {"Ogre Loincloth", "Rhahk'Zor, The Deadmines"},
       {"Night Watch Pantaloons", "Quest: Morbent Fel ↗ Alliance, level 32 in Classic, from level 20"},
+    }, {
+      {"Stamina +3 and Armor +24", "Heavy Armor Kit", "Leatherworking 150: Taught by the trainer."},
     }},
     {"Feet", {
       {"Acolyte's Boots", "Blacksmithing (85) Only its maker can wear it"},
@@ -1205,6 +1427,8 @@ ForeverBiSLists = {
       {"Nimbus Boots", "Quest: Twilight Falls Alliance, level 25 in Classic, from level 20"},
       {"Pristine Boots", "Tailoring (60) Only its maker can wear it"},
       {"Quagmire Galoshes", "Quest: In Nightmares ↗ Alliance, level 25 in Classic, from level 15 Quest: In Nightmares ↗ Horde, level 25 in Classic, from level 15"},
+    }, {
+      {"Minor Speed Increase", "Enchant Boots - Minor Speed", "Enchanting 225: Taught by the trainer."},
     }},
     {"Finger", {
       {"Philanthropist's Ring", "Quest: Greater Friend of the Library Twenty books, the necklace’s ten counted"},
@@ -1220,16 +1444,22 @@ ForeverBiSLists = {
     {"Two-hand weapon", {
       {"Taskmaster Axe", "Sneed, The Deadmines 27.65% in Classic"},
       {"Verigan's Fist", "Quest: The Test of Righteousness ↗ Alliance, level 22 in Classic, from level 20"},
+    }, {
+      {"Intellect +5", "Enchant 2H Weapon - Lesser Intellect", "Enchanting 100: Formula sold by Tilli Thistlefuzz in Dun Morogh, Kithas in Orgrimmar and Leo Sarn in Silverpine Forest.", 6349},
     }},
     {"Main hand", {
       {"The Stitcher", "Quest: Light's Justice Ruins of Lordaeron, Horde, from level 15"},
       {"Trogg Scepter", "Oggleflint, Ragefire Chasm"},
       {"Scepter of the Abandoned", "The Abandoned, Ruins of Lordaeron"},
+    }, {
+      {"Revelation", "Enchant Weapon - Revelation", "Enchanting 140: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 45 Merchant’s Favor.How often it triggers is in no game file and nobody has measured it yet: it is here because a one-handed weapon has nothing else at this skill.", 249481},
     }},
     {"Off hand: shield", {
       {"Arctic Buckler", "Quest: Blackfathom Villainy Alliance, level 27 in Classic, from level 18 Quest: Blackfathom Villainy Horde, level 27 in Classic, from level 18"},
       {"Mirror of Rath'mael", "Rath'mael, Ruins of Lordaeron"},
       {"Seedcloud Buckler", "Verdan the Everliving, Wailing Caverns 39.22% in Classic"},
+    }, {
+      {"Stamina +5", "Enchant Shield - Lesser Stamina", "Enchanting 155: Taught by the trainer."},
     }},
     {"Relic", {
       {"Tenets of the Silver Hand", "Enchanting (130) Only its maker can wear it"},
@@ -1248,6 +1478,8 @@ ForeverBiSLists = {
       {"Tarnished Locket", "Quest: Remember That I Love You Ruins of Lordaeron, Alliance, from level 15"},
       {"Mark of the Pack Leader", "Humar the Pridelord, the rare black lion of the Barrens Reported, not checked"},
       {"Ephemeral Choker", "Faldrim Anvilmar, Hall of Thanes"},
+    }, {
+      {"Strength +5", "Enchant Necklace - Strength", "Enchanting 210: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 120 Merchant’s Favor.", 249496},
     }},
     {"Shoulder", {
       {"Rough Bronze Shoulders", "Blacksmithing"},
@@ -1255,47 +1487,56 @@ ForeverBiSLists = {
       {"Silvered Bronze Shoulders", "Blacksmithing (100)"},
     }},
     {"Back", {
-      {"Grave Shroud", "Quest: Abominable Creatures Ruins of Lordaeron, Alliance, from level 16"},
+      {"Grave Shroud", "Quest: Unending Torment Ruins of Lordaeron, Horde, from level 16 Quest: Abominable Creatures Ruins of Lordaeron, Alliance, from level 16"},
       {"Watch Master's Cloak", "Quest: Morbent Fel ↗ Alliance, level 32 in Classic, from level 20"},
       {"Sporid Cape", "Verdan the Everliving, Wailing Caverns 19.62% in Classic"},
       {"Miner's Cape", "Miner Johnson, The Deadmines 55.89% in Classic"},
+    }, {
+      {"Agility +3", "Enchant Cloak - Minor Agility", "Enchanting 110: Formula sold by Dalria in Ashenvale and Kulwia in Stonetalon Mountains.", 11039},
     }},
     {"Chest", {
-      {"Blackened Defias Armor", "Edwin VanCleef, The Deadmines 14.66% in Classic"},
       {"Remembrance Armor", "Quest: Bloodied Insignia Ruins of Lordaeron, Alliance, from level 16"},
+      {"Blackened Defias Armor", "Edwin VanCleef, The Deadmines 14.66% in Classic"},
       {"Mutant Scale Breastplate", "Mutanus the Devourer, Wailing Caverns 22.45% in Classic"},
       {"Abomination Bones", "The Baron, Ruins of Lordaeron"},
+    }, {
+      {"Stamina +8", "Enchant Chest - Superior Stamina", "Enchanting 220: Taught by the trainer."},
     }},
     {"Wrist", {
       {"Beetle Clasps", "Quest: Researching the Corruption Alliance, level 24 in Classic, from level 18"},
       {"Steel-clasped Bracers", "Quest: The Book of Ur Horde, level 26 in Classic, from level 16"},
       {"Cultist's Armguards", "Quest: Blackfathom Villainy Alliance, from level 18, reported, not checked Quest: Blackfathom Villainy ↗ Horde, from level 18, reported, not checked"},
       {"Spare Part Bindings", "Quest: Light's Justice Ruins of Lordaeron, Horde, from level 15"},
+    }, {
+      {"Stamina +5", "Enchant Bracer - Stamina", "Enchanting 170: Taught by the trainer."},
     }},
     {"Hands", {
-      {"Blackened Defias Gloves", "Trash mobs, The Deadmines 3.13% in Classic"},
       {"Grip of Fear", "The Abandoned, Ruins of Lordaeron"},
       {"Veteran's Gloves", "Blacksmithing (80) Only its maker can wear it"},
       {"Guard's Gloves", "Blacksmithing (80) Only its maker can wear it"},
+    }, {
+      {"Strength +7", "Enchant Gloves - Strength", "Enchanting 225: Taught by the trainer."},
     }},
     {"Waist", {
-      {"Blackened Defias Belt", "Captain Greenskin, The Deadmines 26.64% in Classic"},
       {"Belt of the Stars", "Quest: Look To The Stars ↗ Alliance, level 30 in Classic, from level 20"},
+      {"Blackened Defias Belt", "Captain Greenskin, The Deadmines 26.64% in Classic"},
       {"Atrophic Girdle", "Witherfang, Ruins of Lordaeron"},
       {"Deviate Scale Belt", "Leatherworking (90)"},
     }},
     {"Legs", {
-      {"Blackened Defias Leggings", "Trash mobs, The Deadmines 3.38% in Classic"},
       {"Chausses of Westfall", "Quest: The Defias Brotherhood Alliance, level 22 in Classic, from level 14"},
       {"Juggernaut Leggings", "Quest: The Den ↗ Horde, level 29 in Classic, from level 20"},
-      {"Duty Bound Leggings", "Quest: Bloodied Insignia Ruins of Lordaeron, Alliance, from level 16"},
       {"Bonerust Leggings", "Bjork, Ruins of Lordaeron"},
+      {"Duty Bound Leggings", "Quest: Bloodied Insignia Ruins of Lordaeron, Alliance, from level 16"},
+    }, {
+      {"Stamina +3 and Armor +24", "Heavy Armor Kit", "Leatherworking 150: Taught by the trainer."},
     }},
     {"Feet", {
-      {"Blackened Defias Boots", "Trash mobs, The Deadmines 2.7% in Classic"},
       {"Grizzled Boots", "Quest: The Book of Ur Horde, level 26 in Classic, from level 16"},
       {"Vilewalkers", "Viktor the Vile, Ruins of Lordaeron"},
       {"Alacritous Treads", "Alliance quest WANTED: Incinerator Gar’im, from level 16 Reported, not checked"},
+    }, {
+      {"Minor Speed Increase", "Enchant Boots - Minor Speed", "Enchanting 225: Taught by the trainer."},
     }},
     {"Finger", {
       {"Seal of Sylvanas", "Quest: Arugal Must Die Horde, level 27 in Classic, from level 18"},
@@ -1315,7 +1556,111 @@ ForeverBiSLists = {
       {"Smite's Mighty Hammer", "Mr. Smite, The Deadmines 18.58% in Classic"},
       {"Rockslicer", "Rhahk'Zor, The Deadmines 3.91% in Classic"},
       {"Forsaken Greataxe", "Quest: The Wrath of Rath'mael Ruins of Lordaeron, Horde, from level 15"},
-      {"Monstrous Cleaver", "Quest: Abominable Creatures Ruins of Lordaeron, Alliance, from level 16"},
+      {"Monstrous Cleaver", "Quest: Unending Torment Ruins of Lordaeron, Horde, from level 16 Quest: Abominable Creatures Ruins of Lordaeron, Alliance, from level 16"},
+    }, {
+      {"Weapon Damage +6", "Enchant 2H Weapon - Impact", "Enchanting 200: Taught by the trainer."},
+    }},
+    {"Relic", {
+      {"Tenets of the Silver Hand", "Enchanting (130) Only its maker can wear it"},
+    }},
+  }},
+  ["paladin/shockadin"] = { title = "Shockadin Paladin PvP best in slot at level 20", slots = {
+    {"Head", {
+      {"Crusader's Silvered Chain Helm", "Blacksmithing (95) Only its maker can wear it"},
+      {"Shining Circlet", "Tailoring (100) Only its maker can wear it"},
+      {"Totemic Leather Hood", "Leatherworking (100) Only its maker can wear it"},
+      {"Sparkmetal Coif", "Quest: Morbent Fel ↗ Alliance, level 32 in Classic, from level 20"},
+      {"Taurajo Headband", "Quest: Field to Clear ↗ Horde, from level 18, reported, not checked"},
+    }},
+    {"Neck", {
+      {"Scholarly Pendant", "Quest: Friend of the Library Ten books, any class and no level asked for"},
+      {"Mark of the Pack Leader", "Humar the Pridelord, the rare black lion of the Barrens Reported, not checked"},
+      {"Tarnished Locket", "Quest: Remember That I Love You Ruins of Lordaeron, Alliance, from level 15"},
+      {"Ephemeral Choker", "Faldrim Anvilmar, Hall of Thanes"},
+    }, {
+      {"+6 Spell Power", "Enchant Necklace - Spell Power", "Enchanting 210: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 120 Merchant’s Favor.", 249502},
+    }},
+    {"Shoulder", {
+      {"Tanned Shoulderpads", "Quest: Deathstalkers in Shadowfang Horde, from level 18, reported, not checked"},
+      {"Chestnut Mantle", "Quest: Allegiance to the Old Gods Horde, level 26 in Classic, from level 17"},
+      {"Magician's Mantle", "A world drop, not bound: the auction house is quickest Reported, not checked"},
+      {"Rose Mantle", "Quest: Morganth ↗ Alliance, level 27 in Classic, from level 20"},
+    }},
+    {"Back", {
+      {"Feyscale Cloak", "Deviate Faerie Dragon, Wailing Caverns 44.63% in Classic"},
+      {"Watch Master's Cloak", "Quest: Morbent Fel ↗ Alliance, level 32 in Classic, from level 20"},
+      {"Sporid Cape", "Verdan the Everliving, Wailing Caverns 19.62% in Classic"},
+    }, {
+      {"Armor +60", "Enchant Cloak - Greater Defense", "Enchanting 205: Taught by the trainer."},
+    }},
+    {"Chest", {
+      {"Dro'zem's Tunic", "Dro'zem the Blasphemous, a rare elite of the Redridge Mountains Reported, not checked"},
+      {"Bloody Apron", "Razorclaw the Butcher, Shadowfang Keep 43.55% in Classic"},
+      {"Leftover Abomination Skin", "The Baron, Ruins of Lordaeron"},
+    }, {
+      {"Stamina +8", "Enchant Chest - Superior Stamina", "Enchanting 220: Taught by the trainer."},
+    }},
+    {"Wrist", {
+      {"Beetle Clasps", "Quest: Researching the Corruption Alliance, level 24 in Classic, from level 18"},
+      {"Steel-clasped Bracers", "Quest: The Book of Ur Horde, level 26 in Classic, from level 16"},
+      {"Cultist's Armguards", "Quest: Blackfathom Villainy Alliance, from level 18, reported, not checked Quest: Blackfathom Villainy ↗ Horde, from level 18, reported, not checked"},
+      {"Rift Bracers", "Arugal's Voidwalker, Shadowfang Keep 2.51% in Classic Trash mobs, Shadowfang Keep 2.36% in Classic"},
+    }, {
+      {"Stamina +5", "Enchant Bracer - Stamina", "Enchanting 170: Taught by the trainer."},
+    }},
+    {"Hands", {
+      {"Silvered Gauntlets", "Quest: Twilight Falls Alliance, from level 20, reported, not checked"},
+      {"Crusader's Gloves", "Blacksmithing (80) Only its maker can wear it"},
+      {"Jutebraid Gloves", "Quest: Horde Presence ↗ Horde, level 29 in Classic, from level 15"},
+      {"Serpent Gloves", "Lord Serpentis, Wailing Caverns 19.38% in Classic"},
+    }, {
+      {"Strength +7", "Enchant Gloves - Strength", "Enchanting 225: Taught by the trainer."},
+    }},
+    {"Waist", {
+      {"Shining Sash", "Tailoring (85) Only its maker can wear it"},
+      {"Crusader's Chain Belt", "Blacksmithing (45) Only its maker can wear it"},
+      {"Heartwood Girdle", "Quest: Twilight Falls Alliance, level 25 in Classic, from level 20"},
+      {"Tuskwrap Belt", "Bjork, Ruins of Lordaeron"},
+    }},
+    {"Legs", {
+      {"Dark Ritual Leggings", "Quest: Blackfathom Villainy Alliance, from level 18, reported, not checked Quest: Blackfathom Villainy ↗ Horde, from level 18, reported, not checked"},
+      {"Ogre Loincloth", "Rhahk'Zor, The Deadmines"},
+      {"Night Watch Pantaloons", "Quest: Morbent Fel ↗ Alliance, level 32 in Classic, from level 20"},
+    }, {
+      {"Stamina +3 and Armor +24", "Heavy Armor Kit", "Leatherworking 150: Taught by the trainer."},
+    }},
+    {"Feet", {
+      {"Crusader's Boots", "Blacksmithing (85) Only its maker can wear it"},
+      {"Grizzled Boots", "Quest: The Book of Ur Horde, level 26 in Classic, from level 16"},
+      {"Quagmire Galoshes", "Quest: In Nightmares ↗ Alliance, level 25 in Classic, from level 15 Quest: In Nightmares ↗ Horde, level 25 in Classic, from level 15"},
+      {"Nimbus Boots", "Quest: Twilight Falls Alliance, level 25 in Classic, from level 20"},
+    }, {
+      {"Minor Speed Increase", "Enchant Boots - Minor Speed", "Enchanting 225: Taught by the trainer."},
+    }},
+    {"Finger", {
+      {"Philanthropist's Ring", "Quest: Greater Friend of the Library Twenty books, the necklace’s ten counted"},
+      {"Malignant Root", "Nightveiled Rotheap, a patrol of the Wetlands Alliance only, and not checked in the beta"},
+      {"Seal of Sylvanas", "Quest: Arugal Must Die Horde, level 27 in Classic, from level 18"},
+      {"Minor Channeling Ring", "Quest: WANTED: Chok'sul ↗ Alliance, level 22 in Classic, from level 17"},
+      {"Sustaining Ring", "Quest: Knowledge in the Deeps Alliance, level 23 in Classic, from level 10"},
+    }},
+    {"Trinket", {
+      {"Minor Recombobulator", "Engineering (140)"},
+      {"Lookie's Spyglass", "Cookie, The Deadmines"},
+    }},
+    {"Main hand", {
+      {"Scepter of the Abandoned", "The Abandoned, Ruins of Lordaeron"},
+      {"Thief's Blade", "Mr. Smite, The Deadmines 38.28% in Classic"},
+      {"Defias Rapier", "Trash mobs, The Deadmines 6.57% in Classic"},
+    }, {
+      {"Weapon Damage +3", "Enchant Weapon - Striking", "Enchanting 195: Taught by the trainer."},
+    }},
+    {"Off hand: shield", {
+      {"Seedcloud Buckler", "Verdan the Everliving, Wailing Caverns 39.22% in Classic"},
+      {"Arctic Buckler", "Quest: Blackfathom Villainy Alliance, level 27 in Classic, from level 18 Quest: Blackfathom Villainy Horde, level 27 in Classic, from level 18"},
+      {"Mirror of Rath'mael", "Rath'mael, Ruins of Lordaeron"},
+    }, {
+      {"Stamina +5", "Enchant Shield - Lesser Stamina", "Enchanting 155: Taught by the trainer."},
     }},
     {"Relic", {
       {"Tenets of the Silver Hand", "Enchanting (130) Only its maker can wear it"},
@@ -1334,6 +1679,8 @@ ForeverBiSLists = {
       {"Erudite's Amulet", "Quest: Friend of the Library Ten books, any class and no level asked for"},
       {"Tarnished Locket", "Quest: Remember That I Love You Ruins of Lordaeron, Alliance, from level 15"},
       {"Ephemeral Choker", "Faldrim Anvilmar, Hall of Thanes"},
+    }, {
+      {"+6 Spell Power", "Enchant Necklace - Spell Power", "Enchanting 210: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 120 Merchant’s Favor.", 249502},
     }},
     {"Shoulder", {
       {"Chestnut Mantle", "Quest: Allegiance to the Old Gods Horde, level 26 in Classic, from level 17"},
@@ -1344,22 +1691,30 @@ ForeverBiSLists = {
       {"Feyscale Cloak", "Deviate Faerie Dragon, Wailing Caverns 44.63% in Classic"},
       {"Watch Master's Cloak", "Quest: Morbent Fel ↗ Alliance, level 32 in Classic, from level 20"},
       {"Sporid Cape", "Verdan the Everliving, Wailing Caverns 19.62% in Classic"},
+    }, {
+      {"Armor +60", "Enchant Cloak - Greater Defense", "Enchanting 205: Taught by the trainer."},
     }},
     {"Chest", {
       {"Remembrance Armor", "Quest: Bloodied Insignia Ruins of Lordaeron, Alliance, from level 16"},
       {"Mutant Scale Breastplate", "Mutanus the Devourer, Wailing Caverns 22.45% in Classic"},
+    }, {
+      {"Stamina +8", "Enchant Chest - Superior Stamina", "Enchanting 220: Taught by the trainer."},
     }},
     {"Wrist", {
       {"Rift Bracers", "Arugal's Voidwalker, Shadowfang Keep 2.51% in Classic Trash mobs, Shadowfang Keep 2.36% in Classic"},
       {"Beetle Clasps", "Quest: Researching the Corruption Alliance, level 24 in Classic, from level 18"},
       {"Steel-clasped Bracers", "Quest: The Book of Ur Horde, level 26 in Classic, from level 16"},
       {"Aetherwisp Bracers", "Faldrim Anvilmar, Hall of Thanes"},
+    }, {
+      {"Stamina +5", "Enchant Bracer - Stamina", "Enchanting 170: Taught by the trainer."},
     }},
     {"Hands", {
       {"Protector's Gloves", "Blacksmithing (80) Only its maker can wear it"},
       {"Crusader's Gloves", "Blacksmithing (80) Only its maker can wear it"},
       {"Guard's Gloves", "Blacksmithing (80) Only its maker can wear it"},
       {"Grip of Fear", "The Abandoned, Ruins of Lordaeron"},
+    }, {
+      {"Stamina +3 and Armor +24", "Heavy Armor Kit", "Leatherworking 150: Taught by the trainer."},
     }},
     {"Waist", {
       {"Protector's Chain Belt", "Blacksmithing (45) Only its maker can wear it"},
@@ -1372,17 +1727,21 @@ ForeverBiSLists = {
       {"Chausses of Westfall", "Quest: The Defias Brotherhood Alliance, level 22 in Classic, from level 14"},
       {"Juggernaut Leggings", "Quest: The Den ↗ Horde, level 29 in Classic, from level 20"},
       {"Bonerust Leggings", "Bjork, Ruins of Lordaeron"},
+    }, {
+      {"Stamina +3 and Armor +24", "Heavy Armor Kit", "Leatherworking 150: Taught by the trainer."},
     }},
     {"Feet", {
       {"Protector's Boots", "Blacksmithing (85) Only its maker can wear it"},
       {"Crusader's Boots", "Blacksmithing (85) Only its maker can wear it"},
       {"Vilewalkers", "Viktor the Vile, Ruins of Lordaeron"},
+    }, {
+      {"Stamina +5", "Enchant Boots - Stamina", "Enchanting 215: Taught by the trainer."},
     }},
     {"Finger", {
       {"Philanthropist's Ring", "Quest: Greater Friend of the Library Twenty books, the necklace’s ten counted"},
       {"Malignant Root", "Nightveiled Rotheap, a patrol of the Wetlands Alliance only, and not checked in the beta"},
       {"Seal of Sylvanas", "Quest: Arugal Must Die Horde, level 27 in Classic, from level 18"},
-      {"Slain Baron's Signet", "Quest: Abominable Creatures Ruins of Lordaeron, Alliance, from level 16"},
+      {"Slain Baron's Signet", "Quest: Unending Torment Ruins of Lordaeron, Horde, from level 16 Quest: Abominable Creatures Ruins of Lordaeron, Alliance, from level 16"},
       {"Minor Channeling Ring", "Quest: WANTED: Chok'sul ↗ Alliance, level 22 in Classic, from level 17"},
     }},
     {"Trinket", {
@@ -1392,6 +1751,8 @@ ForeverBiSLists = {
     {"Main hand", {
       {"Scepter of the Abandoned", "The Abandoned, Ruins of Lordaeron"},
       {"Goblin Hammer", "Gilnid, The Deadmines"},
+    }, {
+      {"Revelation", "Enchant Weapon - Revelation", "Enchanting 140: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 45 Merchant’s Favor.How often it triggers is in no game file and nobody has measured it yet: it is here because a one-handed weapon has nothing else at this skill.", 249481},
     }},
     {"Off hand: shield", {
       {"Crest of Darkshire", "Quest: Bride of the Embalmer ↗ Alliance, level 30 in Classic, from level 20"},
@@ -1399,6 +1760,8 @@ ForeverBiSLists = {
       {"Arctic Buckler", "Quest: Blackfathom Villainy Alliance, level 27 in Classic, from level 18 Quest: Blackfathom Villainy Horde, level 27 in Classic, from level 18"},
       {"Mirror of Rath'mael", "Rath'mael, Ruins of Lordaeron"},
       {"Seedcloud Buckler", "Verdan the Everliving, Wailing Caverns 39.22% in Classic"},
+    }, {
+      {"Stamina +5", "Enchant Shield - Lesser Stamina", "Enchanting 155: Taught by the trainer."},
     }},
     {"Relic", {
       {"Tenets of the Silver Hand", "Enchanting (130) Only its maker can wear it"},
@@ -1417,6 +1780,8 @@ ForeverBiSLists = {
       {"Tarnished Locket", "Quest: Remember That I Love You Ruins of Lordaeron, Alliance, from level 15"},
       {"Ephemeral Choker", "Faldrim Anvilmar, Hall of Thanes"},
       {"Sorcerer Collar", "Rethilgore, Shadowfang Keep"},
+    }, {
+      {"+6 Spell Power", "Enchant Necklace - Spell Power", "Enchanting 210: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 120 Merchant’s Favor.", 249502},
     }},
     {"Shoulder", {
       {"Chestnut Mantle", "Quest: Allegiance to the Old Gods Horde, level 26 in Classic, from level 17"},
@@ -1429,6 +1794,8 @@ ForeverBiSLists = {
       {"Heavy Woolen Cloak", "Tailoring (80)"},
       {"Prelacy Cape", "Quest: Researching the Corruption Alliance, level 24 in Classic, from level 18"},
       {"Sporid Cape", "Verdan the Everliving, Wailing Caverns 19.62% in Classic"},
+    }, {
+      {"Armor +60", "Enchant Cloak - Greater Defense", "Enchanting 205: Taught by the trainer."},
     }},
     {"Chest", {
       {"Necrology Robes", "Trash mobs, Shadowfang Keep 0.02% in Classic"},
@@ -1436,18 +1803,24 @@ ForeverBiSLists = {
       {"Dro'zem's Tunic", "Dro'zem the Blasphemous, a rare elite of the Redridge Mountains Reported, not checked"},
       {"Bloody Apron", "Razorclaw the Butcher, Shadowfang Keep 43.55% in Classic"},
       {"Leftover Abomination Skin", "The Baron, Ruins of Lordaeron"},
+    }, {
+      {"All Stats +2", "Enchant Chest - Lesser Stats", "Enchanting 200: Taught by the trainer."},
     }},
     {"Wrist", {
       {"Aetherwisp Bracers", "Faldrim Anvilmar, Hall of Thanes"},
       {"Tabitha's Cuffs", "Quest: A Frightened Request Ruins of Lordaeron, Horde, from level 15"},
       {"Mindthrust Bracers", "Trash mobs, Shadowfang Keep 0.03% in Classic"},
       {"Owlbeard Bracers", "Quest: Earthen Arise ↗ Horde, level 20 in Classic, from level 14"},
+    }, {
+      {"Intellect +5", "Enchant Bracer - Lesser Intellect", "Enchanting 150: Taught by the trainer."},
     }},
     {"Hands", {
       {"Shadow Gloves", "Tailoring (75) Only its maker can wear it"},
       {"Tattered Mittens", "Horde quest The Book of Ur, from level 16 A choice of reward, from Keeper Bel'dugur in Undercity"},
       {"Serpent Gloves", "Lord Serpentis, Wailing Caverns 19.38% in Classic"},
       {"Pristine Gloves", "Tailoring (75) Only its maker can wear it"},
+    }, {
+      {"Spell Power +2 and Armor +16", "Mystic Medium Armor Kit", "Leatherworking 80: Pattern sold by leatherworking suppliers in the capitals.", 252783},
     }},
     {"Waist", {
       {"Shadow Sash", "Tailoring (85) Only its maker can wear it"},
@@ -1460,12 +1833,16 @@ ForeverBiSLists = {
       {"Filigreed Pristine Leggings", "Tailoring (100) Only its maker can wear it Pattern drops from Verdan the Everliving, Wailing Caverns"},
       {"Ogre Loincloth", "Rhahk'Zor, The Deadmines"},
       {"Rotmender's Leggings", "The Abandoned, Ruins of Lordaeron"},
+    }, {
+      {"Spell Power +2 and Armor +16", "Mystic Medium Armor Kit", "Leatherworking 80: Pattern sold by leatherworking suppliers in the capitals.", 252783},
     }},
     {"Feet", {
       {"Spidersilk Boots", "Tailoring"},
       {"Shadow Boots", "Tailoring (60) Only its maker can wear it"},
       {"Rotmender's Treads", "Rath'mael, Ruins of Lordaeron"},
       {"Pristine Boots", "Tailoring (60) Only its maker can wear it"},
+    }, {
+      {"Minor Speed Increase", "Enchant Boots - Minor Speed", "Enchanting 225: Taught by the trainer."},
     }},
     {"Finger", {
       {"Philanthropist's Ring", "Quest: Greater Friend of the Library Twenty books, the necklace’s ten counted"},
@@ -1473,7 +1850,7 @@ ForeverBiSLists = {
       {"Malignant Root", "Nightveiled Rotheap, a patrol of the Wetlands Alliance only, and not checked in the beta"},
       {"Sustaining Ring", "Quest: Knowledge in the Deeps Alliance, level 23 in Classic, from level 10"},
       {"Skull Ring", "Quest: Souvenirs of Death ↗ Horde, level 25 in Classic, from level 20"},
-      {"Slain Baron's Signet", "Quest: Abominable Creatures Ruins of Lordaeron, Alliance, from level 16"},
+      {"Slain Baron's Signet", "Quest: Unending Torment Ruins of Lordaeron, Horde, from level 16 Quest: Abominable Creatures Ruins of Lordaeron, Alliance, from level 16"},
     }},
     {"Trinket", {
       {"Minor Recombobulator", "Engineering (140)"},
@@ -1485,12 +1862,16 @@ ForeverBiSLists = {
       {"Gnarled Necromancer's Staff", "Quest: The Wrath of Rath'mael Ruins of Lordaeron, Horde, from level 15"},
       {"Crescent Staff", "Quest: Leaders of the Fang Horde, level 22 in Classic, from level 11"},
       {"Emberstone Staff", "Captain Greenskin, The Deadmines 37.84% in Classic"},
+    }, {
+      {"Intellect +5", "Enchant 2H Weapon - Lesser Intellect", "Enchanting 100: Formula sold by Tilli Thistlefuzz in Dun Morogh, Kithas in Orgrimmar and Leo Sarn in Silverpine Forest.", 6349},
     }},
     {"Main hand", {
       {"Evocator's Blade", "Trash mobs, Blackfathom Deeps 0.05% in Classic"},
       {"Scepter of the Abandoned", "The Abandoned, Ruins of Lordaeron"},
       {"Buzzer Blade", "Sneed's Shredder, The Deadmines 52.23% in Classic"},
       {"The Stitcher", "Quest: Light's Justice Ruins of Lordaeron, Horde, from level 15"},
+    }, {
+      {"Revelation", "Enchant Weapon - Revelation", "Enchanting 140: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 45 Merchant’s Favor.How often it triggers is in no game file and nobody has measured it yet: it is here because a one-handed weapon has nothing else at this skill.", 249481},
     }},
     {"Off hand: held item", {
       {"Dwarven Tome", "Quest: Important Heirlooms Hall of Thanes, Alliance, from level 10"},
@@ -1506,6 +1887,120 @@ ForeverBiSLists = {
       {"Cookie's Stirring Rod", "Cookie, The Deadmines 33.38% in Classic"},
     }},
   }},
+  ["priest/discipline-pvp"] = { title = "Discipline Priest PvP best in slot at level 20", slots = {
+    {"Head", {
+      {"Pristine Circlet", "Tailoring (100) Only its maker can wear it"},
+      {"Lakeshire Firefighter's Headband", "Where it comes from is not known yet Nothing places it yet: tell us if you know"},
+      {"Taurajo Headband", "Quest: Field to Clear ↗ Horde, from level 18, reported, not checked"},
+      {"Lucky Fishing Hat", "Quest: Rare Fish - Keefer's Angelfish level 0 in Classic, from level 1 A fishing quest in Booty Bay, for a Keefer's Angelfish Fishing only, no level needed"},
+    }},
+    {"Neck", {
+      {"Scholarly Pendant", "Quest: Friend of the Library Ten books, any class and no level asked for"},
+      {"Tarnished Locket", "Quest: Remember That I Love You Ruins of Lordaeron, Alliance, from level 15"},
+      {"Ephemeral Choker", "Faldrim Anvilmar, Hall of Thanes"},
+    }, {
+      {"Healing Spells +11, Damage Spells +4", "Enchant Necklace - Healing Power", "Enchanting 210: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 120 Merchant’s Favor.", 249503},
+    }},
+    {"Shoulder", {
+      {"Chestnut Mantle", "Quest: Allegiance to the Old Gods Horde, level 26 in Classic, from level 17"},
+      {"Ghostly Mantle", "Quest: Deathstalkers in Shadowfang Horde, level 25 in Classic, from level 18"},
+      {"Magician's Mantle", "A world drop, not bound: the auction house is quickest Reported, not checked"},
+      {"Luminescent Amice", "Quest: Fallen Sky Lake ↗ Alliance, level 30 in Classic, from level 20"},
+      {"Double-Stitched Woolen Shoulders", "Tailoring"},
+    }},
+    {"Back", {
+      {"Prelacy Cape", "Quest: Researching the Corruption Alliance, level 24 in Classic, from level 18"},
+      {"Feyscale Cloak", "Deviate Faerie Dragon, Wailing Caverns 44.63% in Classic"},
+      {"Watch Master's Cloak", "Quest: Morbent Fel ↗ Alliance, level 32 in Classic, from level 20"},
+      {"Sporid Cape", "Verdan the Everliving, Wailing Caverns 19.62% in Classic"},
+    }, {
+      {"Armor +60", "Enchant Cloak - Greater Defense", "Enchanting 205: Taught by the trainer."},
+    }},
+    {"Chest", {
+      {"Bloody Apron", "Razorclaw the Butcher, Shadowfang Keep 43.55% in Classic"},
+      {"Filigreed Pristine Gown", "Tailoring (75) Only its maker can wear it Pattern drops in Wailing Caverns"},
+      {"Corsair's Overshirt", "Edwin VanCleef, The Deadmines 23.19% in Classic"},
+      {"Dro'zem's Tunic", "Dro'zem the Blasphemous, a rare elite of the Redridge Mountains Reported, not checked"},
+    }, {
+      {"Stamina +8", "Enchant Chest - Superior Stamina", "Enchanting 220: Taught by the trainer."},
+    }},
+    {"Wrist", {
+      {"Aetherwisp Bracers", "Faldrim Anvilmar, Hall of Thanes"},
+      {"Tabitha's Cuffs", "Quest: A Frightened Request Ruins of Lordaeron, Horde, from level 15"},
+      {"Mindthrust Bracers", "Trash mobs, Shadowfang Keep 0.03% in Classic"},
+      {"Owlbeard Bracers", "Quest: Earthen Arise ↗ Horde, level 20 in Classic, from level 14"},
+    }, {
+      {"Stamina +5", "Enchant Bracer - Stamina", "Enchanting 170: Taught by the trainer."},
+    }},
+    {"Hands", {
+      {"Tattered Mittens", "Horde quest The Book of Ur, from level 16 A choice of reward, from Keeper Bel'dugur in Undercity"},
+      {"Pristine Gloves", "Tailoring (75) Only its maker can wear it"},
+      {"Tomb Robber's Gloves", "Quest: Important Heirlooms Hall of Thanes, Alliance, from level 10"},
+    }, {
+      {"Stamina +3 and Armor +24", "Heavy Armor Kit", "Leatherworking 150: Taught by the trainer."},
+    }},
+    {"Waist", {
+      {"Pristine Sash", "Tailoring (85) Only its maker can wear it"},
+      {"Tuskwrap Belt", "Bjork, Ruins of Lordaeron"},
+      {"Novice Arcanist's Sash", "Tailoring (50) Only its maker can wear it Pattern: nobody has found it in the beta yet"},
+      {"Novice Ardent's Sash", "Tailoring (50) Only its maker can wear it Pattern: nobody has found it in the beta yet"},
+    }},
+    {"Legs", {
+      {"Filigreed Pristine Leggings", "Tailoring (100) Only its maker can wear it Pattern drops from Verdan the Everliving, Wailing Caverns"},
+      {"Ogre Loincloth", "Rhahk'Zor, The Deadmines"},
+      {"Night Watch Pantaloons", "Quest: Morbent Fel ↗ Alliance, level 32 in Classic, from level 20"},
+      {"Rotmender's Leggings", "The Abandoned, Ruins of Lordaeron"},
+    }, {
+      {"Stamina +3 and Armor +24", "Heavy Armor Kit", "Leatherworking 150: Taught by the trainer."},
+    }},
+    {"Feet", {
+      {"Nimbus Boots", "Quest: Twilight Falls Alliance, level 25 in Classic, from level 20"},
+      {"Pristine Boots", "Tailoring (60) Only its maker can wear it"},
+      {"Spidersilk Boots", "Tailoring"},
+      {"Rotmender's Treads", "Rath'mael, Ruins of Lordaeron"},
+    }, {
+      {"Minor Speed Increase", "Enchant Boots - Minor Speed", "Enchanting 225: Taught by the trainer."},
+    }},
+    {"Finger", {
+      {"Philanthropist's Ring", "Quest: Greater Friend of the Library Twenty books, the necklace’s ten counted"},
+      {"Malignant Root", "Nightveiled Rotheap, a patrol of the Wetlands Alliance only, and not checked in the beta"},
+      {"Seal of Sylvanas", "Quest: Arugal Must Die Horde, level 27 in Classic, from level 18"},
+      {"Sustaining Ring", "Quest: Knowledge in the Deeps Alliance, level 23 in Classic, from level 10"},
+      {"Minor Channeling Ring", "Quest: WANTED: Chok'sul ↗ Alliance, level 22 in Classic, from level 17"},
+    }},
+    {"Trinket", {
+      {"Minor Recombobulator", "Engineering (140)"},
+      {"Lookie's Spyglass", "Cookie, The Deadmines"},
+    }},
+    {"Two-hand weapon", {
+      {"Staff of Westfall", "Quest: The Defias Brotherhood Alliance, level 22 in Classic, from level 14"},
+      {"Living Root", "Verdan the Everliving, Wailing Caverns 37.82% in Classic"},
+      {"Staff of the Blessed Seer", "Trash mobs, Blackfathom Deeps 0.05% in Classic"},
+      {"Crescent Staff", "Quest: Leaders of the Fang Horde, level 22 in Classic, from level 11"},
+      {"Gnarled Necromancer's Staff", "Quest: The Wrath of Rath'mael Ruins of Lordaeron, Horde, from level 15"},
+    }, {
+      {"Intellect +5", "Enchant 2H Weapon - Lesser Intellect", "Enchanting 100: Formula sold by Tilli Thistlefuzz in Dun Morogh, Kithas in Orgrimmar and Leo Sarn in Silverpine Forest.", 6349},
+    }},
+    {"Main hand", {
+      {"The Stitcher", "Quest: Light's Justice Ruins of Lordaeron, Horde, from level 15"},
+      {"Trogg Scepter", "Oggleflint, Ragefire Chasm"},
+      {"Evocator's Blade", "Trash mobs, Blackfathom Deeps 0.05% in Classic"},
+    }, {
+      {"Revelation", "Enchant Weapon - Revelation", "Enchanting 140: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 45 Merchant’s Favor.How often it triggers is in no game file and nobody has measured it yet: it is here because a one-handed weapon has nothing else at this skill.", 249481},
+    }},
+    {"Off hand: held item", {
+      {"Skum's Bucket", "Skum, Wailing Caverns"},
+      {"Dwarven Tome", "Quest: Important Heirlooms Hall of Thanes, Alliance, from level 10"},
+      {"Eerie Stable Lantern", "Fel Steed / Shadow Charger, Shadowfang Keep 6.24% in Classic Trash mobs, Shadowfang Keep 7.79% in Classic"},
+    }},
+    {"Ranged", {
+      {"Gravestone Scepter", "Quest: Blackfathom Villainy Alliance, level 27 in Classic, from level 18 Quest: Blackfathom Villainy Horde, level 27 in Classic, from level 18"},
+      {"Sizzle Stick", "Quest: Deviate Eradication level 21 in Classic, from level 15"},
+      {"Sable Wand", "Quest: Underground Assault Alliance, level 20 in Classic, from level 15"},
+      {"Branding Rod", "Quest: Isha Awak ↗ Horde, level 27 in Classic, from level 10"},
+      {"Cookie's Stirring Rod", "Cookie, The Deadmines 33.38% in Classic"},
+    }},
+  }},
   ["priest/holy"] = { title = "Holy Priest PvE best in slot at level 20", slots = {
     {"Head", {
       {"Pristine Circlet", "Tailoring (100) Only its maker can wear it"},
@@ -1518,6 +2013,8 @@ ForeverBiSLists = {
       {"Tarnished Locket", "Quest: Remember That I Love You Ruins of Lordaeron, Alliance, from level 15"},
       {"Ephemeral Choker", "Faldrim Anvilmar, Hall of Thanes"},
       {"Sorcerer Collar", "Rethilgore, Shadowfang Keep"},
+    }, {
+      {"Healing Spells +11, Damage Spells +4", "Enchant Necklace - Healing Power", "Enchanting 210: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 120 Merchant’s Favor.", 249503},
     }},
     {"Shoulder", {
       {"Chestnut Mantle", "Quest: Allegiance to the Old Gods Horde, level 26 in Classic, from level 17"},
@@ -1532,25 +2029,33 @@ ForeverBiSLists = {
       {"Heavy Woolen Cloak", "Tailoring (80)"},
       {"Feyscale Cloak", "Deviate Faerie Dragon, Wailing Caverns 44.63% in Classic"},
       {"Engineer's Cloak", "Quest: Gerenzo Wrenchwhistle ↗ level 27 in Classic, from level 16"},
+    }, {
+      {"Armor +60", "Enchant Cloak - Greater Defense", "Enchanting 205: Taught by the trainer."},
     }},
     {"Chest", {
-      {"Filigreed Pristine Gown", "Tailoring (75) Only its maker can wear it Pattern: drops in low-level dungeons, nobody has found which one yet"},
+      {"Filigreed Pristine Gown", "Tailoring (75) Only its maker can wear it Pattern drops in Wailing Caverns"},
       {"Dro'zem's Tunic", "Dro'zem the Blasphemous, a rare elite of the Redridge Mountains Reported, not checked"},
       {"Corsair's Overshirt", "Edwin VanCleef, The Deadmines 23.19% in Classic"},
       {"Robe of the Moccasin", "Lord Cobrahn, Wailing Caverns 54.69% in Classic"},
       {"Bloody Apron", "Razorclaw the Butcher, Shadowfang Keep 43.55% in Classic"},
+    }, {
+      {"All Stats +2", "Enchant Chest - Lesser Stats", "Enchanting 200: Taught by the trainer."},
     }},
     {"Wrist", {
       {"Aetherwisp Bracers", "Faldrim Anvilmar, Hall of Thanes"},
       {"Tabitha's Cuffs", "Quest: A Frightened Request Ruins of Lordaeron, Horde, from level 15"},
       {"Mindthrust Bracers", "Trash mobs, Shadowfang Keep 0.03% in Classic"},
       {"Owlbeard Bracers", "Quest: Earthen Arise ↗ Horde, level 20 in Classic, from level 14"},
+    }, {
+      {"Intellect +5", "Enchant Bracer - Lesser Intellect", "Enchanting 150: Taught by the trainer."},
     }},
     {"Hands", {
       {"Tattered Mittens", "Horde quest The Book of Ur, from level 16 A choice of reward, from Keeper Bel'dugur in Undercity"},
       {"Pristine Gloves", "Tailoring (75) Only its maker can wear it"},
       {"Blight Gloves", "Quest: The New Plague Ruins of Lordaeron, Horde, from level 16"},
       {"Tomb Robber's Gloves", "Quest: Important Heirlooms Hall of Thanes, Alliance, from level 10"},
+    }, {
+      {"Spell Power +2 and Armor +16", "Mystic Medium Armor Kit", "Leatherworking 80: Pattern sold by leatherworking suppliers in the capitals.", 252783},
     }},
     {"Waist", {
       {"Pristine Sash", "Tailoring (85) Only its maker can wear it"},
@@ -1563,12 +2068,16 @@ ForeverBiSLists = {
       {"Ogre Loincloth", "Rhahk'Zor, The Deadmines"},
       {"Rotmender's Leggings", "The Abandoned, Ruins of Lordaeron"},
       {"Ghastly Trousers", "Quest: The Power to Destroy... Horde, level 16 in Classic, from level 9"},
+    }, {
+      {"Spell Power +2 and Armor +16", "Mystic Medium Armor Kit", "Leatherworking 80: Pattern sold by leatherworking suppliers in the capitals.", 252783},
     }},
     {"Feet", {
       {"Spidersilk Boots", "Tailoring"},
       {"Nimbus Boots", "Quest: Twilight Falls Alliance, level 25 in Classic, from level 20"},
       {"Pristine Boots", "Tailoring (60) Only its maker can wear it"},
       {"Rotmender's Treads", "Rath'mael, Ruins of Lordaeron"},
+    }, {
+      {"Minor Speed Increase", "Enchant Boots - Minor Speed", "Enchanting 225: Taught by the trainer."},
     }},
     {"Finger", {
       {"Philanthropist's Ring", "Quest: Greater Friend of the Library Twenty books, the necklace’s ten counted"},
@@ -1587,12 +2096,16 @@ ForeverBiSLists = {
       {"Living Root", "Verdan the Everliving, Wailing Caverns 37.82% in Classic"},
       {"Gnarled Necromancer's Staff", "Quest: The Wrath of Rath'mael Ruins of Lordaeron, Horde, from level 15"},
       {"Staff of the Blessed Seer", "Trash mobs, Blackfathom Deeps 0.05% in Classic"},
+    }, {
+      {"Intellect +5", "Enchant 2H Weapon - Lesser Intellect", "Enchanting 100: Formula sold by Tilli Thistlefuzz in Dun Morogh, Kithas in Orgrimmar and Leo Sarn in Silverpine Forest.", 6349},
     }},
     {"Main hand", {
       {"The Stitcher", "Quest: Light's Justice Ruins of Lordaeron, Horde, from level 15"},
       {"Trogg Scepter", "Oggleflint, Ragefire Chasm"},
       {"Evocator's Blade", "Trash mobs, Blackfathom Deeps 0.05% in Classic"},
       {"Scepter of the Abandoned", "The Abandoned, Ruins of Lordaeron"},
+    }, {
+      {"Revelation", "Enchant Weapon - Revelation", "Enchanting 140: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 45 Merchant’s Favor.How often it triggers is in no game file and nobody has measured it yet: it is here because a one-handed weapon has nothing else at this skill.", 249481},
     }},
     {"Off hand: held item", {
       {"Skum's Bucket", "Skum, Wailing Caverns"},
@@ -1602,102 +2115,6 @@ ForeverBiSLists = {
     {"Ranged", {
       {"Sizzle Stick", "Quest: Deviate Eradication level 21 in Classic, from level 15"},
       {"Gravestone Scepter", "Quest: Blackfathom Villainy Alliance, level 27 in Classic, from level 18 Quest: Blackfathom Villainy Horde, level 27 in Classic, from level 18"},
-      {"Sable Wand", "Quest: Underground Assault Alliance, level 20 in Classic, from level 15"},
-      {"Branding Rod", "Quest: Isha Awak ↗ Horde, level 27 in Classic, from level 10"},
-      {"Cookie's Stirring Rod", "Cookie, The Deadmines 33.38% in Classic"},
-    }},
-  }},
-  ["priest/holy-pvp"] = { title = "Holy Priest PvP best in slot at level 20", slots = {
-    {"Head", {
-      {"Pristine Circlet", "Tailoring (100) Only its maker can wear it"},
-      {"Lakeshire Firefighter's Headband", "Where it comes from is not known yet Nothing places it yet: tell us if you know"},
-      {"Taurajo Headband", "Quest: Field to Clear ↗ Horde, from level 18, reported, not checked"},
-      {"Lucky Fishing Hat", "Quest: Rare Fish - Keefer's Angelfish level 0 in Classic, from level 1 A fishing quest in Booty Bay, for a Keefer's Angelfish Fishing only, no level needed"},
-    }},
-    {"Neck", {
-      {"Scholarly Pendant", "Quest: Friend of the Library Ten books, any class and no level asked for"},
-      {"Tarnished Locket", "Quest: Remember That I Love You Ruins of Lordaeron, Alliance, from level 15"},
-      {"Ephemeral Choker", "Faldrim Anvilmar, Hall of Thanes"},
-    }},
-    {"Shoulder", {
-      {"Chestnut Mantle", "Quest: Allegiance to the Old Gods Horde, level 26 in Classic, from level 17"},
-      {"Ghostly Mantle", "Quest: Deathstalkers in Shadowfang Horde, level 25 in Classic, from level 18"},
-      {"Magician's Mantle", "A world drop, not bound: the auction house is quickest Reported, not checked"},
-      {"Luminescent Amice", "Quest: Fallen Sky Lake ↗ Alliance, level 30 in Classic, from level 20"},
-      {"Double-Stitched Woolen Shoulders", "Tailoring"},
-    }},
-    {"Back", {
-      {"Prelacy Cape", "Quest: Researching the Corruption Alliance, level 24 in Classic, from level 18"},
-      {"Feyscale Cloak", "Deviate Faerie Dragon, Wailing Caverns 44.63% in Classic"},
-      {"Watch Master's Cloak", "Quest: Morbent Fel ↗ Alliance, level 32 in Classic, from level 20"},
-      {"Sporid Cape", "Verdan the Everliving, Wailing Caverns 19.62% in Classic"},
-    }},
-    {"Chest", {
-      {"Bloody Apron", "Razorclaw the Butcher, Shadowfang Keep 43.55% in Classic"},
-      {"Filigreed Pristine Gown", "Tailoring (75) Only its maker can wear it Pattern: drops in low-level dungeons, nobody has found which one yet"},
-      {"Corsair's Overshirt", "Edwin VanCleef, The Deadmines 23.19% in Classic"},
-      {"Dro'zem's Tunic", "Dro'zem the Blasphemous, a rare elite of the Redridge Mountains Reported, not checked"},
-    }},
-    {"Wrist", {
-      {"Aetherwisp Bracers", "Faldrim Anvilmar, Hall of Thanes"},
-      {"Tabitha's Cuffs", "Quest: A Frightened Request Ruins of Lordaeron, Horde, from level 15"},
-      {"Mindthrust Bracers", "Trash mobs, Shadowfang Keep 0.03% in Classic"},
-      {"Owlbeard Bracers", "Quest: Earthen Arise ↗ Horde, level 20 in Classic, from level 14"},
-    }},
-    {"Hands", {
-      {"Tattered Mittens", "Horde quest The Book of Ur, from level 16 A choice of reward, from Keeper Bel'dugur in Undercity"},
-      {"Pristine Gloves", "Tailoring (75) Only its maker can wear it"},
-      {"Tomb Robber's Gloves", "Quest: Important Heirlooms Hall of Thanes, Alliance, from level 10"},
-    }},
-    {"Waist", {
-      {"Pristine Sash", "Tailoring (85) Only its maker can wear it"},
-      {"Tuskwrap Belt", "Bjork, Ruins of Lordaeron"},
-      {"Novice Arcanist's Sash", "Tailoring (50) Only its maker can wear it Pattern: nobody has found it in the beta yet"},
-      {"Novice Ardent's Sash", "Tailoring (50) Only its maker can wear it Pattern: nobody has found it in the beta yet"},
-    }},
-    {"Legs", {
-      {"Filigreed Pristine Leggings", "Tailoring (100) Only its maker can wear it Pattern drops from Verdan the Everliving, Wailing Caverns"},
-      {"Ogre Loincloth", "Rhahk'Zor, The Deadmines"},
-      {"Night Watch Pantaloons", "Quest: Morbent Fel ↗ Alliance, level 32 in Classic, from level 20"},
-      {"Rotmender's Leggings", "The Abandoned, Ruins of Lordaeron"},
-    }},
-    {"Feet", {
-      {"Nimbus Boots", "Quest: Twilight Falls Alliance, level 25 in Classic, from level 20"},
-      {"Pristine Boots", "Tailoring (60) Only its maker can wear it"},
-      {"Spidersilk Boots", "Tailoring"},
-      {"Rotmender's Treads", "Rath'mael, Ruins of Lordaeron"},
-    }},
-    {"Finger", {
-      {"Philanthropist's Ring", "Quest: Greater Friend of the Library Twenty books, the necklace’s ten counted"},
-      {"Malignant Root", "Nightveiled Rotheap, a patrol of the Wetlands Alliance only, and not checked in the beta"},
-      {"Seal of Sylvanas", "Quest: Arugal Must Die Horde, level 27 in Classic, from level 18"},
-      {"Sustaining Ring", "Quest: Knowledge in the Deeps Alliance, level 23 in Classic, from level 10"},
-      {"Minor Channeling Ring", "Quest: WANTED: Chok'sul ↗ Alliance, level 22 in Classic, from level 17"},
-    }},
-    {"Trinket", {
-      {"Minor Recombobulator", "Engineering (140)"},
-      {"Lookie's Spyglass", "Cookie, The Deadmines"},
-    }},
-    {"Two-hand weapon", {
-      {"Staff of Westfall", "Quest: The Defias Brotherhood Alliance, level 22 in Classic, from level 14"},
-      {"Living Root", "Verdan the Everliving, Wailing Caverns 37.82% in Classic"},
-      {"Staff of the Blessed Seer", "Trash mobs, Blackfathom Deeps 0.05% in Classic"},
-      {"Crescent Staff", "Quest: Leaders of the Fang Horde, level 22 in Classic, from level 11"},
-      {"Gnarled Necromancer's Staff", "Quest: The Wrath of Rath'mael Ruins of Lordaeron, Horde, from level 15"},
-    }},
-    {"Main hand", {
-      {"The Stitcher", "Quest: Light's Justice Ruins of Lordaeron, Horde, from level 15"},
-      {"Trogg Scepter", "Oggleflint, Ragefire Chasm"},
-      {"Evocator's Blade", "Trash mobs, Blackfathom Deeps 0.05% in Classic"},
-    }},
-    {"Off hand: held item", {
-      {"Skum's Bucket", "Skum, Wailing Caverns"},
-      {"Dwarven Tome", "Quest: Important Heirlooms Hall of Thanes, Alliance, from level 10"},
-      {"Eerie Stable Lantern", "Fel Steed / Shadow Charger, Shadowfang Keep 6.24% in Classic Trash mobs, Shadowfang Keep 7.79% in Classic"},
-    }},
-    {"Ranged", {
-      {"Gravestone Scepter", "Quest: Blackfathom Villainy Alliance, level 27 in Classic, from level 18 Quest: Blackfathom Villainy Horde, level 27 in Classic, from level 18"},
-      {"Sizzle Stick", "Quest: Deviate Eradication level 21 in Classic, from level 15"},
       {"Sable Wand", "Quest: Underground Assault Alliance, level 20 in Classic, from level 15"},
       {"Branding Rod", "Quest: Isha Awak ↗ Horde, level 27 in Classic, from level 10"},
       {"Cookie's Stirring Rod", "Cookie, The Deadmines 33.38% in Classic"},
@@ -1715,6 +2132,8 @@ ForeverBiSLists = {
       {"Scholarly Pendant", "Quest: Friend of the Library Ten books, any class and no level asked for"},
       {"Tarnished Locket", "Quest: Remember That I Love You Ruins of Lordaeron, Alliance, from level 15"},
       {"Ephemeral Choker", "Faldrim Anvilmar, Hall of Thanes"},
+    }, {
+      {"+6 Spell Power", "Enchant Necklace - Spell Power", "Enchanting 210: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 120 Merchant’s Favor.", 249502},
     }},
     {"Shoulder", {
       {"Chestnut Mantle", "Quest: Allegiance to the Old Gods Horde, level 26 in Classic, from level 17"},
@@ -1727,6 +2146,8 @@ ForeverBiSLists = {
       {"Watch Master's Cloak", "Quest: Morbent Fel ↗ Alliance, level 32 in Classic, from level 20"},
       {"Sporid Cape", "Verdan the Everliving, Wailing Caverns 19.62% in Classic"},
       {"Engineer's Cloak", "Quest: Gerenzo Wrenchwhistle ↗ level 27 in Classic, from level 16"},
+    }, {
+      {"Armor +60", "Enchant Cloak - Greater Defense", "Enchanting 205: Taught by the trainer."},
     }},
     {"Chest", {
       {"Necrology Robes", "Trash mobs, Shadowfang Keep 0.02% in Classic"},
@@ -1734,18 +2155,24 @@ ForeverBiSLists = {
       {"Dro'zem's Tunic", "Dro'zem the Blasphemous, a rare elite of the Redridge Mountains Reported, not checked"},
       {"Bloody Apron", "Razorclaw the Butcher, Shadowfang Keep 43.55% in Classic"},
       {"Efflorescent Robe", "Quest: Reception from Tyrande ↗ Alliance, level 28 in Classic, from level 17"},
+    }, {
+      {"Stamina +8", "Enchant Chest - Superior Stamina", "Enchanting 220: Taught by the trainer."},
     }},
     {"Wrist", {
       {"Aetherwisp Bracers", "Faldrim Anvilmar, Hall of Thanes"},
       {"Tabitha's Cuffs", "Quest: A Frightened Request Ruins of Lordaeron, Horde, from level 15"},
       {"Mindthrust Bracers", "Trash mobs, Shadowfang Keep 0.03% in Classic"},
       {"Owlbeard Bracers", "Quest: Earthen Arise ↗ Horde, level 20 in Classic, from level 14"},
+    }, {
+      {"Stamina +5", "Enchant Bracer - Stamina", "Enchanting 170: Taught by the trainer."},
     }},
     {"Hands", {
       {"Shadow Gloves", "Tailoring (75) Only its maker can wear it"},
       {"Tattered Mittens", "Horde quest The Book of Ur, from level 16 A choice of reward, from Keeper Bel'dugur in Undercity"},
       {"Pristine Gloves", "Tailoring (75) Only its maker can wear it"},
       {"Serpent Gloves", "Lord Serpentis, Wailing Caverns 19.38% in Classic"},
+    }, {
+      {"Stamina +3 and Armor +24", "Heavy Armor Kit", "Leatherworking 150: Taught by the trainer."},
     }},
     {"Waist", {
       {"Shadow Sash", "Tailoring (85) Only its maker can wear it"},
@@ -1758,12 +2185,16 @@ ForeverBiSLists = {
       {"Night Watch Pantaloons", "Quest: Morbent Fel ↗ Alliance, level 32 in Classic, from level 20"},
       {"Filigreed Pristine Leggings", "Tailoring (100) Only its maker can wear it Pattern drops from Verdan the Everliving, Wailing Caverns"},
       {"Rotmender's Leggings", "The Abandoned, Ruins of Lordaeron"},
+    }, {
+      {"Stamina +3 and Armor +24", "Heavy Armor Kit", "Leatherworking 150: Taught by the trainer."},
     }},
     {"Feet", {
       {"Spidersilk Boots", "Tailoring"},
       {"Shadow Boots", "Tailoring (60) Only its maker can wear it"},
       {"Rotmender's Treads", "Rath'mael, Ruins of Lordaeron"},
       {"Pristine Boots", "Tailoring (60) Only its maker can wear it"},
+    }, {
+      {"Minor Speed Increase", "Enchant Boots - Minor Speed", "Enchanting 225: Taught by the trainer."},
     }},
     {"Finger", {
       {"Philanthropist's Ring", "Quest: Greater Friend of the Library Twenty books, the necklace’s ten counted"},
@@ -1782,12 +2213,16 @@ ForeverBiSLists = {
       {"Crescent Staff", "Quest: Leaders of the Fang Horde, level 22 in Classic, from level 11"},
       {"Gnarled Necromancer's Staff", "Quest: The Wrath of Rath'mael Ruins of Lordaeron, Horde, from level 15"},
       {"Emberstone Staff", "Captain Greenskin, The Deadmines 37.84% in Classic"},
+    }, {
+      {"Intellect +5", "Enchant 2H Weapon - Lesser Intellect", "Enchanting 100: Formula sold by Tilli Thistlefuzz in Dun Morogh, Kithas in Orgrimmar and Leo Sarn in Silverpine Forest.", 6349},
     }},
     {"Main hand", {
       {"Evocator's Blade", "Trash mobs, Blackfathom Deeps 0.05% in Classic"},
       {"Scepter of the Abandoned", "The Abandoned, Ruins of Lordaeron"},
       {"Buzzer Blade", "Sneed's Shredder, The Deadmines 52.23% in Classic"},
       {"Fang of Magmatus", "Magmatus, Hall of Thanes"},
+    }, {
+      {"Revelation", "Enchant Weapon - Revelation", "Enchanting 140: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 45 Merchant’s Favor.How often it triggers is in no game file and nobody has measured it yet: it is here because a one-handed weapon has nothing else at this skill.", 249481},
     }},
     {"Off hand: held item", {
       {"Skum's Bucket", "Skum, Wailing Caverns"},
@@ -1815,6 +2250,8 @@ ForeverBiSLists = {
       {"Snake Eye Kaleidoscope", "Lady Anacondra, Wailing Caverns"},
       {"Tarnished Locket", "Quest: Remember That I Love You Ruins of Lordaeron, Alliance, from level 15"},
       {"Ephemeral Choker", "Faldrim Anvilmar, Hall of Thanes"},
+    }, {
+      {"Agility +5", "Enchant Necklace - Agility", "Enchanting 210: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 120 Merchant’s Favor.", 249504},
     }},
     {"Shoulder", {
       {"Serpent's Shoulders", "Lady Anacondra, Wailing Caverns 43.33% in Classic"},
@@ -1825,12 +2262,16 @@ ForeverBiSLists = {
       {"Cape of the Brotherhood", "Edwin VanCleef, The Deadmines 23.08% in Classic"},
       {"Spritekin Cloak", "Quest: Bloodfury Bloodline ↗ Horde, level 26 in Classic, from level 18"},
       {"Spiritwraith Drape", "Faldrim Anvilmar, Hall of Thanes"},
+    }, {
+      {"Agility +3", "Enchant Cloak - Minor Agility", "Enchanting 110: Formula sold by Dalria in Ashenvale and Kulwia in Stonetalon Mountains.", 11039},
     }},
     {"Chest", {
       {"Tunic of Westfall", "Quest: The Defias Brotherhood Alliance, level 22 in Classic, from level 14"},
       {"Panther Armor", "Quest: The Den ↗ Horde, level 29 in Classic, from level 20"},
       {"Bloodied Chestwraps", "Viktor the Vile, Ruins of Lordaeron"},
       {"Blackened Defias Armor", "Edwin VanCleef, The Deadmines 14.66% in Classic"},
+    }, {
+      {"All Stats +2", "Enchant Chest - Lesser Stats", "Enchanting 200: Taught by the trainer."},
     }},
     {"Wrist", {
       {"Staghide Armguards", "Quest: Researching the Corruption Alliance, from level 18, reported, not checked"},
@@ -1838,12 +2279,16 @@ ForeverBiSLists = {
       {"Bravo's Armbands", "Quest: Underground Assault Alliance, from level 15, reported, not checked"},
       {"Spare Part Bindings", "Quest: Light's Justice Ruins of Lordaeron, Horde, from level 15"},
       {"Witherbite Bracers", "Witherfang, Ruins of Lordaeron"},
+    }, {
+      {"Agility +3", "Enchant Bracer - Minor Agility", "Enchanting 80: Taught by the trainer."},
     }},
     {"Hands", {
       {"Gloves of the Fang", "Trash mobs, Wailing Caverns 2.36% in Classic"},
       {"Fletcher's Gloves", "Leatherworking"},
       {"Brawler's Leather Gloves", "Leatherworking (75) Only its maker can wear it"},
       {"Nimble Leather Gloves", "Leatherworking"},
+    }, {
+      {"Agility +7", "Enchant Gloves - Agility", "Enchanting 210: Taught by the trainer."},
     }},
     {"Waist", {
       {"Blackened Defias Belt", "Captain Greenskin, The Deadmines 26.64% in Classic"},
@@ -1855,12 +2300,16 @@ ForeverBiSLists = {
       {"Leggings of the Fang", "Lord Cobrahn, Wailing Caverns 17.48% in Classic"},
       {"Duty Bound Leggings", "Quest: Bloodied Insignia Ruins of Lordaeron, Alliance, from level 16"},
       {"Blackened Defias Leggings", "Trash mobs, The Deadmines 3.38% in Classic"},
+    }, {
+      {"Attack Power +4 and Armor +16", "Forceful Medium Armor Kit", "Leatherworking 80: Pattern sold by leatherworking suppliers in the capitals.", 252784},
     }},
     {"Feet", {
       {"Footpads of the Fang", "Lord Serpentis, Wailing Caverns 21.1% in Classic"},
       {"Trailblazer Boots", "Quest: Horde Presence ↗ Horde, level 29 in Classic, from level 15"},
       {"Brawler's Leather Boots", "Leatherworking (85) Only its maker can wear it"},
       {"Blackened Defias Boots", "Trash mobs, The Deadmines 2.7% in Classic"},
+    }, {
+      {"Agility +4", "Enchant Boots - Lesser Agility", "Enchanting 160: Taught by the trainer."},
     }},
     {"Finger", {
       {"Field Researcher's Loop", "Quest: Greater Friend of the Library Twenty books, the necklace’s ten counted"},
@@ -1880,6 +2329,8 @@ ForeverBiSLists = {
       {"Shadowfang", "Trash mobs, Shadowfang Keep 0.03% in Classic"},
       {"Stinging Viper", "Lord Pythas, Wailing Caverns 29.57% in Classic"},
       {"Wingblade", "Quest: Leaders of the Fang Horde, level 22 in Classic, from level 11"},
+    }, {
+      {"Weapon Damage +3", "Enchant Weapon - Striking", "Enchanting 195: Taught by the trainer."},
     }},
     {"Off hand", {
       {"Butcher's Cleaver", "Razorclaw the Butcher, Shadowfang Keep 9.83% in Classic"},
@@ -1887,6 +2338,8 @@ ForeverBiSLists = {
       {"Assassin's Blade", "Trash mobs, Shadowfang Keep 0.03% in Classic"},
       {"Edward's Knife", "Quest: A Frightened Request Ruins of Lordaeron, Horde, from level 15"},
       {"Thief's Blade", "Mr. Smite, The Deadmines 38.28% in Classic"},
+    }, {
+      {"Weapon Damage +3", "Enchant Weapon - Striking", "Enchanting 195: Taught by the trainer."},
     }},
     {"Ranged", {
       {"Lil Timmy's Peashooter", "A world drop, not bound: the auction house is quickest Reported, not checked"},
@@ -1909,6 +2362,8 @@ ForeverBiSLists = {
       {"Tarnished Locket", "Quest: Remember That I Love You Ruins of Lordaeron, Alliance, from level 15"},
       {"Snake Eye Kaleidoscope", "Lady Anacondra, Wailing Caverns"},
       {"Ephemeral Choker", "Faldrim Anvilmar, Hall of Thanes"},
+    }, {
+      {"Agility +5", "Enchant Necklace - Agility", "Enchanting 210: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 120 Merchant’s Favor.", 249504},
     }},
     {"Shoulder", {
       {"Serpent's Shoulders", "Lady Anacondra, Wailing Caverns 43.33% in Classic"},
@@ -1918,13 +2373,17 @@ ForeverBiSLists = {
       {"Cape of the Brotherhood", "Edwin VanCleef, The Deadmines 23.08% in Classic"},
       {"Glowing Lizardscale Cloak", "Skum, Wailing Caverns 45.48% in Classic"},
       {"Spritekin Cloak", "Quest: Bloodfury Bloodline ↗ Horde, level 26 in Classic, from level 18"},
-      {"Grave Shroud", "Quest: Abominable Creatures Ruins of Lordaeron, Alliance, from level 16"},
+      {"Grave Shroud", "Quest: Unending Torment Ruins of Lordaeron, Horde, from level 16 Quest: Abominable Creatures Ruins of Lordaeron, Alliance, from level 16"},
+    }, {
+      {"Agility +3", "Enchant Cloak - Minor Agility", "Enchanting 110: Formula sold by Dalria in Ashenvale and Kulwia in Stonetalon Mountains.", 11039},
     }},
     {"Chest", {
       {"Tunic of Westfall", "Quest: The Defias Brotherhood Alliance, level 22 in Classic, from level 14"},
       {"Panther Armor", "Quest: The Den ↗ Horde, level 29 in Classic, from level 20"},
       {"Blackened Defias Armor", "Edwin VanCleef, The Deadmines 14.66% in Classic"},
       {"Bloodied Chestwraps", "Viktor the Vile, Ruins of Lordaeron"},
+    }, {
+      {"All Stats +2", "Enchant Chest - Lesser Stats", "Enchanting 200: Taught by the trainer."},
     }},
     {"Wrist", {
       {"Cultist's Armguards", "Quest: Blackfathom Villainy Alliance, from level 18, reported, not checked Quest: Blackfathom Villainy ↗ Horde, from level 18, reported, not checked"},
@@ -1932,12 +2391,16 @@ ForeverBiSLists = {
       {"Spare Part Bindings", "Quest: Light's Justice Ruins of Lordaeron, Horde, from level 15"},
       {"Bravo's Armbands", "Quest: Underground Assault Alliance, from level 15, reported, not checked"},
       {"Witherbite Bracers", "Witherfang, Ruins of Lordaeron"},
+    }, {
+      {"Agility +3", "Enchant Bracer - Minor Agility", "Enchanting 80: Taught by the trainer."},
     }},
     {"Hands", {
       {"Gloves of the Fang", "Trash mobs, Wailing Caverns 2.36% in Classic"},
       {"Fletcher's Gloves", "Leatherworking"},
       {"Brawler's Leather Gloves", "Leatherworking (75) Only its maker can wear it"},
       {"Nimble Leather Gloves", "Leatherworking"},
+    }, {
+      {"Agility +7", "Enchant Gloves - Agility", "Enchanting 210: Taught by the trainer."},
     }},
     {"Waist", {
       {"Deviate Scale Belt", "Leatherworking (90)"},
@@ -1948,19 +2411,23 @@ ForeverBiSLists = {
     {"Legs", {
       {"Leggings of the Fang", "Lord Cobrahn, Wailing Caverns 17.48% in Classic"},
       {"Duty Bound Leggings", "Quest: Bloodied Insignia Ruins of Lordaeron, Alliance, from level 16"},
+    }, {
+      {"Stamina +3 and Armor +24", "Heavy Armor Kit", "Leatherworking 150: Taught by the trainer."},
     }},
     {"Feet", {
       {"Footpads of the Fang", "Lord Serpentis, Wailing Caverns 21.1% in Classic"},
       {"Grizzled Boots", "Quest: The Book of Ur Horde, level 26 in Classic, from level 16"},
       {"Trailblazer Boots", "Quest: Horde Presence ↗ Horde, level 29 in Classic, from level 15"},
       {"Brawler's Leather Boots", "Leatherworking (85) Only its maker can wear it"},
+    }, {
+      {"Minor Speed Increase", "Enchant Boots - Minor Speed", "Enchanting 225: Taught by the trainer."},
     }},
     {"Finger", {
       {"Field Researcher's Loop", "Quest: Greater Friend of the Library Twenty books, the necklace’s ten counted"},
       {"Pyrewood Signet Ring", "Rogue quest The Horn of Xelthos, from level 20 Reported, not checked"},
       {"Malignant Root", "Nightveiled Rotheap, a patrol of the Wetlands Alliance only, and not checked in the beta"},
       {"Seal of Sylvanas", "Quest: Arugal Must Die Horde, level 27 in Classic, from level 18"},
-      {"Slain Baron's Signet", "Quest: Abominable Creatures Ruins of Lordaeron, Alliance, from level 16"},
+      {"Slain Baron's Signet", "Quest: Unending Torment Ruins of Lordaeron, Horde, from level 16 Quest: Abominable Creatures Ruins of Lordaeron, Alliance, from level 16"},
       {"Band of the Fist", "Quest: Allegiance to the Old Gods Horde, level 26 in Classic, from level 17"},
     }},
     {"Trinket", {
@@ -1973,6 +2440,8 @@ ForeverBiSLists = {
       {"Butcher's Slicer", "Razorclaw the Butcher, Shadowfang Keep 41.95% in Classic"},
       {"Edward's Knife", "Quest: A Frightened Request Ruins of Lordaeron, Horde, from level 15"},
       {"Meathook Slicer", "The Baron, Ruins of Lordaeron"},
+    }, {
+      {"Weapon Damage +3", "Enchant Weapon - Striking", "Enchanting 195: Taught by the trainer."},
     }},
     {"Off hand", {
       {"Butcher's Cleaver", "Razorclaw the Butcher, Shadowfang Keep 9.83% in Classic"},
@@ -1980,6 +2449,8 @@ ForeverBiSLists = {
       {"Shoni's Disarming Tool", "Quest: Gyrodrillmatic Excavationators Alliance, level 30 in Classic, from level 20 Not recorded in the beta yet Its damage is the client’s number, not a tooltip"},
       {"Tail Spike", "Skum, Wailing Caverns 46.63% in Classic"},
       {"Thief's Blade", "Mr. Smite, The Deadmines 38.28% in Classic"},
+    }, {
+      {"Weapon Damage +3", "Enchant Weapon - Striking", "Enchanting 195: Taught by the trainer."},
     }},
     {"Ranged", {
       {"Dull Sawblade", "Sneed's Shredder, The Deadmines"},
@@ -2002,6 +2473,8 @@ ForeverBiSLists = {
       {"Scholarly Pendant", "Quest: Friend of the Library Ten books, any class and no level asked for"},
       {"Tarnished Locket", "Quest: Remember That I Love You Ruins of Lordaeron, Alliance, from level 15"},
       {"Sorcerer Collar", "Rethilgore, Shadowfang Keep"},
+    }, {
+      {"+6 Spell Power", "Enchant Necklace - Spell Power", "Enchanting 210: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 120 Merchant’s Favor.", 249502},
     }},
     {"Shoulder", {
       {"Magician's Mantle", "A world drop, not bound: the auction house is quickest Reported, not checked"},
@@ -2015,23 +2488,31 @@ ForeverBiSLists = {
       {"Heavy Woolen Cloak", "Tailoring (80)"},
       {"Feyscale Cloak", "Deviate Faerie Dragon, Wailing Caverns 44.63% in Classic"},
       {"Engineer's Cloak", "Quest: Gerenzo Wrenchwhistle ↗ level 27 in Classic, from level 16"},
+    }, {
+      {"Armor +60", "Enchant Cloak - Greater Defense", "Enchanting 205: Taught by the trainer."},
     }},
     {"Chest", {
       {"Barkshell Tunic", "Quest: Betrayal from Within ↗ Horde, level 25 in Classic, from level 17"},
       {"Dro'zem's Tunic", "Dro'zem the Blasphemous, a rare elite of the Redridge Mountains Reported, not checked"},
       {"Leftover Abomination Skin", "The Baron, Ruins of Lordaeron"},
+    }, {
+      {"All Stats +2", "Enchant Chest - Lesser Stats", "Enchanting 200: Taught by the trainer."},
     }},
     {"Wrist", {
       {"Aetherwisp Bracers", "Faldrim Anvilmar, Hall of Thanes"},
       {"Tabitha's Cuffs", "Quest: A Frightened Request Ruins of Lordaeron, Horde, from level 15"},
       {"Mindthrust Bracers", "Trash mobs, Shadowfang Keep 0.03% in Classic"},
       {"Owlbeard Bracers", "Quest: Earthen Arise ↗ Horde, level 20 in Classic, from level 14"},
+    }, {
+      {"Intellect +5", "Enchant Bracer - Lesser Intellect", "Enchanting 150: Taught by the trainer."},
     }},
     {"Hands", {
       {"Stormrider's Leather Gloves", "Leatherworking (75) Only its maker can wear it"},
       {"Jutebraid Gloves", "Quest: Horde Presence ↗ Horde, level 29 in Classic, from level 15"},
       {"Serpent Gloves", "Lord Serpentis, Wailing Caverns 19.38% in Classic"},
       {"Totemic Leather Gloves", "Leatherworking (75) Only its maker can wear it"},
+    }, {
+      {"Spell Power +2 and Armor +16", "Mystic Medium Armor Kit", "Leatherworking 80: Pattern sold by leatherworking suppliers in the capitals.", 252783},
     }},
     {"Waist", {
       {"Heartwood Girdle", "Quest: Twilight Falls Alliance, level 25 in Classic, from level 20"},
@@ -2043,12 +2524,16 @@ ForeverBiSLists = {
     {"Legs", {
       {"Dark Ritual Leggings", "Quest: Blackfathom Villainy Alliance, from level 18, reported, not checked Quest: Blackfathom Villainy ↗ Horde, from level 18, reported, not checked"},
       {"Filigreed Pristine Leggings", "Tailoring (100) Only its maker can wear it Pattern drops from Verdan the Everliving, Wailing Caverns"},
+    }, {
+      {"Spell Power +2 and Armor +16", "Mystic Medium Armor Kit", "Leatherworking 80: Pattern sold by leatherworking suppliers in the capitals.", 252783},
     }},
     {"Feet", {
       {"Stormrider's Leather Boots", "Leatherworking (85) Only its maker can wear it"},
       {"Spidersilk Boots", "Tailoring"},
       {"Totemic Leather Boots", "Leatherworking (85) Only its maker can wear it"},
       {"Moonglow Boots", "Leatherworking (35) Only its maker can wear it"},
+    }, {
+      {"Minor Speed Increase", "Enchant Boots - Minor Speed", "Enchanting 225: Taught by the trainer."},
     }},
     {"Finger", {
       {"Philanthropist's Ring", "Quest: Greater Friend of the Library Twenty books, the necklace’s ten counted"},
@@ -2068,17 +2553,23 @@ ForeverBiSLists = {
       {"Crescent Staff", "Quest: Leaders of the Fang Horde, level 22 in Classic, from level 11"},
       {"Coldspire Staff", "Rath'mael, Ruins of Lordaeron"},
       {"Emberstone Staff", "Captain Greenskin, The Deadmines 37.84% in Classic"},
+    }, {
+      {"Intellect +5", "Enchant 2H Weapon - Lesser Intellect", "Enchanting 100: Formula sold by Tilli Thistlefuzz in Dun Morogh, Kithas in Orgrimmar and Leo Sarn in Silverpine Forest.", 6349},
     }},
     {"Main hand", {
       {"Scepter of the Abandoned", "The Abandoned, Ruins of Lordaeron"},
       {"The Stitcher", "Quest: Light's Justice Ruins of Lordaeron, Horde, from level 15"},
       {"Goblin Hammer", "Gilnid, The Deadmines"},
+    }, {
+      {"Revelation", "Enchant Weapon - Revelation", "Enchanting 140: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 45 Merchant’s Favor.How often it triggers is in no game file and nobody has measured it yet: it is here because a one-handed weapon has nothing else at this skill.", 249481},
     }},
     {"Off hand: shield", {
       {"Seedcloud Buckler", "Verdan the Everliving, Wailing Caverns 39.22% in Classic"},
       {"Arctic Buckler", "Quest: Blackfathom Villainy Alliance, level 27 in Classic, from level 18 Quest: Blackfathom Villainy Horde, level 27 in Classic, from level 18"},
       {"Mirror of Rath'mael", "Rath'mael, Ruins of Lordaeron"},
       {"Gold-plated Buckler", "Miner Johnson, The Deadmines 40.35% in Classic"},
+    }, {
+      {"Stamina +5", "Enchant Shield - Lesser Stamina", "Enchanting 155: Taught by the trainer."},
     }},
     {"Relic", {
       {"Polished Driftwood Icon", "Enchanting (130) Only its maker can wear it"},
@@ -2098,6 +2589,8 @@ ForeverBiSLists = {
       {"Erudite's Amulet", "Quest: Friend of the Library Ten books, any class and no level asked for"},
       {"Tarnished Locket", "Quest: Remember That I Love You Ruins of Lordaeron, Alliance, from level 15"},
       {"Ephemeral Choker", "Faldrim Anvilmar, Hall of Thanes"},
+    }, {
+      {"+6 Spell Power", "Enchant Necklace - Spell Power", "Enchanting 210: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 120 Merchant’s Favor.", 249502},
     }},
     {"Shoulder", {
       {"Chestnut Mantle", "Quest: Allegiance to the Old Gods Horde, level 26 in Classic, from level 17"},
@@ -2110,18 +2603,24 @@ ForeverBiSLists = {
       {"Watch Master's Cloak", "Quest: Morbent Fel ↗ Alliance, level 32 in Classic, from level 20"},
       {"Sporid Cape", "Verdan the Everliving, Wailing Caverns 19.62% in Classic"},
       {"Engineer's Cloak", "Quest: Gerenzo Wrenchwhistle ↗ level 27 in Classic, from level 16"},
+    }, {
+      {"Armor +60", "Enchant Cloak - Greater Defense", "Enchanting 205: Taught by the trainer."},
     }},
     {"Chest", {
       {"Barkshell Tunic", "Quest: Betrayal from Within ↗ Horde, level 25 in Classic, from level 17"},
       {"Dro'zem's Tunic", "Dro'zem the Blasphemous, a rare elite of the Redridge Mountains Reported, not checked"},
       {"Grizzly Tunic", "Quest: Reception from Tyrande ↗ Alliance, level 28 in Classic, from level 17"},
       {"Bloody Apron", "Razorclaw the Butcher, Shadowfang Keep 43.55% in Classic"},
+    }, {
+      {"Stamina +8", "Enchant Chest - Superior Stamina", "Enchanting 220: Taught by the trainer."},
     }},
     {"Wrist", {
       {"Aetherwisp Bracers", "Faldrim Anvilmar, Hall of Thanes"},
       {"Spare Part Bindings", "Quest: Light's Justice Ruins of Lordaeron, Horde, from level 15"},
       {"Tabitha's Cuffs", "Quest: A Frightened Request Ruins of Lordaeron, Horde, from level 15"},
       {"Savannah Bracers", "Quest: Returning the Lost Satchel Horde, level 16 in Classic, from level 9"},
+    }, {
+      {"Stamina +5", "Enchant Bracer - Stamina", "Enchanting 170: Taught by the trainer."},
     }},
     {"Hands", {
       {"Stormrider's Leather Gloves", "Leatherworking (75) Only its maker can wear it"},
@@ -2129,6 +2628,8 @@ ForeverBiSLists = {
       {"Totemic Leather Gloves", "Leatherworking (75) Only its maker can wear it"},
       {"Jutebraid Gloves", "Quest: Horde Presence ↗ Horde, level 29 in Classic, from level 15"},
       {"Serpent Gloves", "Lord Serpentis, Wailing Caverns 19.38% in Classic"},
+    }, {
+      {"Stamina +3 and Armor +24", "Heavy Armor Kit", "Leatherworking 150: Taught by the trainer."},
     }},
     {"Waist", {
       {"Heartwood Girdle", "Quest: Twilight Falls Alliance, level 25 in Classic, from level 20"},
@@ -2141,12 +2642,16 @@ ForeverBiSLists = {
       {"Night Watch Pantaloons", "Quest: Morbent Fel ↗ Alliance, level 32 in Classic, from level 20"},
       {"Duty Bound Leggings", "Quest: Bloodied Insignia Ruins of Lordaeron, Alliance, from level 16"},
       {"Filigreed Pristine Leggings", "Tailoring (100) Only its maker can wear it Pattern drops from Verdan the Everliving, Wailing Caverns"},
+    }, {
+      {"Stamina +3 and Armor +24", "Heavy Armor Kit", "Leatherworking 150: Taught by the trainer."},
     }},
     {"Feet", {
       {"Stormrider's Leather Boots", "Leatherworking (85) Only its maker can wear it"},
       {"Spidersilk Boots", "Tailoring"},
       {"Grizzled Boots", "Quest: The Book of Ur Horde, level 26 in Classic, from level 16"},
       {"Totemic Leather Boots", "Leatherworking (85) Only its maker can wear it"},
+    }, {
+      {"Minor Speed Increase", "Enchant Boots - Minor Speed", "Enchanting 225: Taught by the trainer."},
     }},
     {"Finger", {
       {"Philanthropist's Ring", "Quest: Greater Friend of the Library Twenty books, the necklace’s ten counted"},
@@ -2164,17 +2669,23 @@ ForeverBiSLists = {
       {"Crescent Staff", "Quest: Leaders of the Fang Horde, level 22 in Classic, from level 11"},
       {"Gnarled Necromancer's Staff", "Quest: The Wrath of Rath'mael Ruins of Lordaeron, Horde, from level 15"},
       {"Emberstone Staff", "Captain Greenskin, The Deadmines 37.84% in Classic"},
+    }, {
+      {"Intellect +5", "Enchant 2H Weapon - Lesser Intellect", "Enchanting 100: Formula sold by Tilli Thistlefuzz in Dun Morogh, Kithas in Orgrimmar and Leo Sarn in Silverpine Forest.", 6349},
     }},
     {"Main hand", {
       {"Scepter of the Abandoned", "The Abandoned, Ruins of Lordaeron"},
       {"The Stitcher", "Quest: Light's Justice Ruins of Lordaeron, Horde, from level 15"},
       {"Goblin Hammer", "Gilnid, The Deadmines"},
+    }, {
+      {"Revelation", "Enchant Weapon - Revelation", "Enchanting 140: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 45 Merchant’s Favor.How often it triggers is in no game file and nobody has measured it yet: it is here because a one-handed weapon has nothing else at this skill.", 249481},
     }},
     {"Off hand: shield", {
       {"Arctic Buckler", "Quest: Blackfathom Villainy Alliance, level 27 in Classic, from level 18 Quest: Blackfathom Villainy Horde, level 27 in Classic, from level 18"},
       {"Mirror of Rath'mael", "Rath'mael, Ruins of Lordaeron"},
       {"Crest of Darkshire", "Quest: Bride of the Embalmer ↗ Alliance, level 30 in Classic, from level 20"},
       {"Deadskull Shield", "Quest: Battle of Hillsbrad ↗ Horde, level 32 in Classic, from level 19"},
+    }, {
+      {"Stamina +5", "Enchant Shield - Lesser Stamina", "Enchanting 155: Taught by the trainer."},
     }},
     {"Relic", {
       {"Polished Driftwood Icon", "Enchanting (130) Only its maker can wear it"},
@@ -2194,6 +2705,8 @@ ForeverBiSLists = {
       {"Mark of the Pack Leader", "Humar the Pridelord, the rare black lion of the Barrens Reported, not checked"},
       {"Tarnished Locket", "Quest: Remember That I Love You Ruins of Lordaeron, Alliance, from level 15"},
       {"Ephemeral Choker", "Faldrim Anvilmar, Hall of Thanes"},
+    }, {
+      {"Strength +5", "Enchant Necklace - Strength", "Enchanting 210: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 120 Merchant’s Favor.", 249496},
     }},
     {"Shoulder", {
       {"Serpent's Shoulders", "Lady Anacondra, Wailing Caverns 43.33% in Classic"},
@@ -2204,8 +2717,10 @@ ForeverBiSLists = {
     {"Back", {
       {"Cape of the Brotherhood", "Edwin VanCleef, The Deadmines 23.08% in Classic"},
       {"Glowing Lizardscale Cloak", "Skum, Wailing Caverns 45.48% in Classic"},
-      {"Grave Shroud", "Quest: Abominable Creatures Ruins of Lordaeron, Alliance, from level 16"},
+      {"Grave Shroud", "Quest: Unending Torment Ruins of Lordaeron, Horde, from level 16 Quest: Abominable Creatures Ruins of Lordaeron, Alliance, from level 16"},
       {"Catacomb Cloak", "Quest: An Ancient Grudge Hall of Thanes, Alliance, from level 10"},
+    }, {
+      {"Agility +3", "Enchant Cloak - Minor Agility", "Enchanting 110: Formula sold by Dalria in Ashenvale and Kulwia in Stonetalon Mountains.", 11039},
     }},
     {"Chest", {
       {"Armor of the Fang", "Lord Pythas, Wailing Caverns 55.18% in Classic"},
@@ -2213,18 +2728,24 @@ ForeverBiSLists = {
       {"Panther Armor", "Quest: The Den ↗ Horde, level 29 in Classic, from level 20"},
       {"Blackened Defias Armor", "Edwin VanCleef, The Deadmines 14.66% in Classic"},
       {"Bloodied Chestwraps", "Viktor the Vile, Ruins of Lordaeron"},
+    }, {
+      {"All Stats +2", "Enchant Chest - Lesser Stats", "Enchanting 200: Taught by the trainer."},
     }},
     {"Wrist", {
       {"Cultist's Armguards", "Quest: Blackfathom Villainy Alliance, from level 18, reported, not checked Quest: Blackfathom Villainy ↗ Horde, from level 18, reported, not checked"},
       {"Staghide Armguards", "Quest: Researching the Corruption Alliance, from level 18, reported, not checked"},
       {"Spare Part Bindings", "Quest: Light's Justice Ruins of Lordaeron, Horde, from level 15"},
       {"Witherbite Bracers", "Witherfang, Ruins of Lordaeron"},
+    }, {
+      {"Strength +5", "Enchant Bracer - Strength", "Enchanting 180: Taught by the trainer."},
     }},
     {"Hands", {
       {"Gloves of the Fang", "Trash mobs, Wailing Caverns 2.36% in Classic"},
       {"Brawler's Leather Gloves", "Leatherworking (75) Only its maker can wear it"},
       {"Nimble Leather Gloves", "Leatherworking"},
       {"Blackened Defias Gloves", "Trash mobs, The Deadmines 3.13% in Classic"},
+    }, {
+      {"Strength +7", "Enchant Gloves - Strength", "Enchanting 225: Taught by the trainer."},
     }},
     {"Waist", {
       {"Blackened Defias Belt", "Captain Greenskin, The Deadmines 26.64% in Classic"},
@@ -2235,12 +2756,16 @@ ForeverBiSLists = {
     {"Legs", {
       {"Leggings of the Fang", "Lord Cobrahn, Wailing Caverns 17.48% in Classic"},
       {"Duty Bound Leggings", "Quest: Bloodied Insignia Ruins of Lordaeron, Alliance, from level 16"},
+    }, {
+      {"Stamina +3 and Armor +24", "Heavy Armor Kit", "Leatherworking 150: Taught by the trainer."},
     }},
     {"Feet", {
       {"Footpads of the Fang", "Lord Serpentis, Wailing Caverns 21.1% in Classic"},
       {"Brawler's Leather Boots", "Leatherworking (85) Only its maker can wear it"},
       {"Grizzled Boots", "Quest: The Book of Ur Horde, level 26 in Classic, from level 16"},
       {"Defender's Leather Boots", "Leatherworking (85) Only its maker can wear it"},
+    }, {
+      {"Minor Speed Increase", "Enchant Boots - Minor Speed", "Enchanting 225: Taught by the trainer."},
     }},
     {"Finger", {
       {"Malignant Root", "Nightveiled Rotheap, a patrol of the Wetlands Alliance only, and not checked in the beta"},
@@ -2260,18 +2785,24 @@ ForeverBiSLists = {
       {"Forsaken Greataxe", "Quest: The Wrath of Rath'mael Ruins of Lordaeron, Horde, from level 15"},
       {"Rockslicer", "Rhahk'Zor, The Deadmines 3.91% in Classic"},
       {"Corpse Chopper", "Bjork, Ruins of Lordaeron"},
+    }, {
+      {"Weapon Damage +6", "Enchant 2H Weapon - Impact", "Enchanting 200: Taught by the trainer."},
     }},
     {"Main hand", {
       {"Stinging Viper", "Lord Pythas, Wailing Caverns 29.57% in Classic"},
       {"Cookie's Tenderizer", "Cookie, The Deadmines 55.31% in Classic"},
       {"Face Smasher", "Trash mobs, Shadowfang Keep 0.04% in Classic"},
       {"Butcher's Cleaver", "Razorclaw the Butcher, Shadowfang Keep 9.83% in Classic"},
+    }, {
+      {"Weapon Damage +3", "Enchant Weapon - Striking", "Enchanting 195: Taught by the trainer."},
     }},
     {"Off hand: shield", {
       {"Crest of Darkshire", "Quest: Bride of the Embalmer ↗ Alliance, level 30 in Classic, from level 20"},
       {"Arctic Buckler", "Quest: Blackfathom Villainy Alliance, level 27 in Classic, from level 18 Quest: Blackfathom Villainy Horde, level 27 in Classic, from level 18"},
       {"Mirror of Rath'mael", "Rath'mael, Ruins of Lordaeron"},
       {"Deadskull Shield", "Quest: Battle of Hillsbrad ↗ Horde, level 32 in Classic, from level 19"},
+    }, {
+      {"Stamina +5", "Enchant Shield - Lesser Stamina", "Enchanting 155: Taught by the trainer."},
     }},
     {"Relic", {
       {"Polished Driftwood Icon", "Enchanting (130) Only its maker can wear it"},
@@ -2291,6 +2822,8 @@ ForeverBiSLists = {
       {"Mark of the Pack Leader", "Humar the Pridelord, the rare black lion of the Barrens Reported, not checked"},
       {"Tarnished Locket", "Quest: Remember That I Love You Ruins of Lordaeron, Alliance, from level 15"},
       {"Ephemeral Choker", "Faldrim Anvilmar, Hall of Thanes"},
+    }, {
+      {"Strength +5", "Enchant Necklace - Strength", "Enchanting 210: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 120 Merchant’s Favor.", 249496},
     }},
     {"Shoulder", {
       {"Serpent's Shoulders", "Lady Anacondra, Wailing Caverns 43.33% in Classic"},
@@ -2298,28 +2831,36 @@ ForeverBiSLists = {
       {"Double-Stitched Woolen Shoulders", "Tailoring"},
     }},
     {"Back", {
-      {"Grave Shroud", "Quest: Abominable Creatures Ruins of Lordaeron, Alliance, from level 16"},
+      {"Grave Shroud", "Quest: Unending Torment Ruins of Lordaeron, Horde, from level 16 Quest: Abominable Creatures Ruins of Lordaeron, Alliance, from level 16"},
       {"Cape of the Brotherhood", "Edwin VanCleef, The Deadmines 23.08% in Classic"},
       {"Watch Master's Cloak", "Quest: Morbent Fel ↗ Alliance, level 32 in Classic, from level 20"},
       {"Glowing Lizardscale Cloak", "Skum, Wailing Caverns 45.48% in Classic"},
+    }, {
+      {"Agility +3", "Enchant Cloak - Minor Agility", "Enchanting 110: Formula sold by Dalria in Ashenvale and Kulwia in Stonetalon Mountains.", 11039},
     }},
     {"Chest", {
       {"Blackened Defias Armor", "Edwin VanCleef, The Deadmines 14.66% in Classic"},
       {"Tunic of Westfall", "Quest: The Defias Brotherhood Alliance, level 22 in Classic, from level 14"},
       {"Gloomshroud Armor", "Trash mobs, Shadowfang Keep 0.02% in Classic"},
       {"Bloodied Chestwraps", "Viktor the Vile, Ruins of Lordaeron"},
+    }, {
+      {"Stamina +8", "Enchant Chest - Superior Stamina", "Enchanting 220: Taught by the trainer."},
     }},
     {"Wrist", {
       {"Cultist's Armguards", "Quest: Blackfathom Villainy Alliance, from level 18, reported, not checked Quest: Blackfathom Villainy ↗ Horde, from level 18, reported, not checked"},
       {"Staghide Armguards", "Quest: Researching the Corruption Alliance, from level 18, reported, not checked"},
       {"Spare Part Bindings", "Quest: Light's Justice Ruins of Lordaeron, Horde, from level 15"},
       {"Savannah Bracers", "Quest: Returning the Lost Satchel Horde, level 16 in Classic, from level 9"},
+    }, {
+      {"Stamina +5", "Enchant Bracer - Stamina", "Enchanting 170: Taught by the trainer."},
     }},
     {"Hands", {
       {"Brawler's Leather Gloves", "Leatherworking (75) Only its maker can wear it"},
       {"Defender's Leather Gloves", "Leatherworking (75) Only its maker can wear it"},
       {"Nimble Leather Gloves", "Leatherworking"},
       {"Gloves of the Fang", "Trash mobs, Wailing Caverns 2.36% in Classic"},
+    }, {
+      {"Strength +7", "Enchant Gloves - Strength", "Enchanting 225: Taught by the trainer."},
     }},
     {"Waist", {
       {"Deviate Scale Belt", "Leatherworking (90)"},
@@ -2331,12 +2872,16 @@ ForeverBiSLists = {
       {"Duty Bound Leggings", "Quest: Bloodied Insignia Ruins of Lordaeron, Alliance, from level 16"},
       {"Leggings of the Fang", "Lord Cobrahn, Wailing Caverns 17.48% in Classic"},
       {"Blackened Defias Leggings", "Trash mobs, The Deadmines 3.38% in Classic"},
+    }, {
+      {"Stamina +3 and Armor +24", "Heavy Armor Kit", "Leatherworking 150: Taught by the trainer."},
     }},
     {"Feet", {
       {"Grizzled Boots", "Quest: The Book of Ur Horde, level 26 in Classic, from level 16"},
       {"Brawler's Leather Boots", "Leatherworking (85) Only its maker can wear it"},
       {"Footpads of the Fang", "Lord Serpentis, Wailing Caverns 21.1% in Classic"},
       {"Defender's Leather Boots", "Leatherworking (85) Only its maker can wear it"},
+    }, {
+      {"Minor Speed Increase", "Enchant Boots - Minor Speed", "Enchanting 225: Taught by the trainer."},
     }},
     {"Finger", {
       {"Malignant Root", "Nightveiled Rotheap, a patrol of the Wetlands Alliance only, and not checked in the beta"},
@@ -2355,18 +2900,24 @@ ForeverBiSLists = {
       {"Forsaken Greataxe", "Quest: The Wrath of Rath'mael Ruins of Lordaeron, Horde, from level 15"},
       {"Rockslicer", "Rhahk'Zor, The Deadmines 3.91% in Classic"},
       {"Orc Crusher", "Quest: Tharil'zun ↗ Alliance, level 25 in Classic, from level 18"},
+    }, {
+      {"Weapon Damage +6", "Enchant 2H Weapon - Impact", "Enchanting 200: Taught by the trainer."},
     }},
     {"Main hand", {
       {"Stinging Viper", "Lord Pythas, Wailing Caverns 29.57% in Classic"},
       {"Cookie's Tenderizer", "Cookie, The Deadmines 55.31% in Classic"},
       {"Face Smasher", "Trash mobs, Shadowfang Keep 0.04% in Classic"},
       {"Goblin Hammer", "Gilnid, The Deadmines"},
+    }, {
+      {"Weapon Damage +3", "Enchant Weapon - Striking", "Enchanting 195: Taught by the trainer."},
     }},
     {"Off hand: shield", {
       {"Crest of Darkshire", "Quest: Bride of the Embalmer ↗ Alliance, level 30 in Classic, from level 20"},
       {"Mirror of Rath'mael", "Rath'mael, Ruins of Lordaeron"},
       {"Deadskull Shield", "Quest: Battle of Hillsbrad ↗ Horde, level 32 in Classic, from level 19"},
       {"Arctic Buckler", "Quest: Blackfathom Villainy Alliance, level 27 in Classic, from level 18 Quest: Blackfathom Villainy Horde, level 27 in Classic, from level 18"},
+    }, {
+      {"Stamina +5", "Enchant Shield - Lesser Stamina", "Enchanting 155: Taught by the trainer."},
     }},
     {"Relic", {
       {"Polished Driftwood Icon", "Enchanting (130) Only its maker can wear it"},
@@ -2386,6 +2937,8 @@ ForeverBiSLists = {
       {"Tarnished Locket", "Quest: Remember That I Love You Ruins of Lordaeron, Alliance, from level 15"},
       {"Sorcerer Collar", "Rethilgore, Shadowfang Keep"},
       {"Ephemeral Choker", "Faldrim Anvilmar, Hall of Thanes"},
+    }, {
+      {"Healing Spells +11, Damage Spells +4", "Enchant Necklace - Healing Power", "Enchanting 210: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 120 Merchant’s Favor.", 249503},
     }},
     {"Shoulder", {
       {"Ghostly Mantle", "Quest: Deathstalkers in Shadowfang Horde, level 25 in Classic, from level 18"},
@@ -2399,18 +2952,24 @@ ForeverBiSLists = {
       {"Heavy Woolen Cloak", "Tailoring (80)"},
       {"Feyscale Cloak", "Deviate Faerie Dragon, Wailing Caverns 44.63% in Classic"},
       {"Engineer's Cloak", "Quest: Gerenzo Wrenchwhistle ↗ level 27 in Classic, from level 16"},
+    }, {
+      {"Armor +60", "Enchant Cloak - Greater Defense", "Enchanting 205: Taught by the trainer."},
     }},
     {"Chest", {
-      {"Filigreed Pristine Gown", "Tailoring (75) Only its maker can wear it Pattern: drops in low-level dungeons, nobody has found which one yet"},
+      {"Filigreed Pristine Gown", "Tailoring (75) Only its maker can wear it Pattern drops in Wailing Caverns"},
       {"Dro'zem's Tunic", "Dro'zem the Blasphemous, a rare elite of the Redridge Mountains Reported, not checked"},
       {"Corsair's Overshirt", "Edwin VanCleef, The Deadmines 23.19% in Classic"},
       {"Robe of the Moccasin", "Lord Cobrahn, Wailing Caverns 54.69% in Classic"},
+    }, {
+      {"All Stats +2", "Enchant Chest - Lesser Stats", "Enchanting 200: Taught by the trainer."},
     }},
     {"Wrist", {
       {"Aetherwisp Bracers", "Faldrim Anvilmar, Hall of Thanes"},
       {"Mindthrust Bracers", "Trash mobs, Shadowfang Keep 0.03% in Classic"},
       {"Tabitha's Cuffs", "Quest: A Frightened Request Ruins of Lordaeron, Horde, from level 15"},
       {"Owlbeard Bracers", "Quest: Earthen Arise ↗ Horde, level 20 in Classic, from level 14"},
+    }, {
+      {"Intellect +5", "Enchant Bracer - Lesser Intellect", "Enchanting 150: Taught by the trainer."},
     }},
     {"Hands", {
       {"Tattered Mittens", "Horde quest The Book of Ur, from level 16 A choice of reward, from Keeper Bel'dugur in Undercity"},
@@ -2418,6 +2977,8 @@ ForeverBiSLists = {
       {"Wisdom's Leather Gloves", "Leatherworking (75) Only its maker can wear it"},
       {"Blight Gloves", "Quest: The New Plague Ruins of Lordaeron, Horde, from level 16"},
       {"Serpent Gloves", "Lord Serpentis, Wailing Caverns 19.38% in Classic"},
+    }, {
+      {"Spell Power +2 and Armor +16", "Mystic Medium Armor Kit", "Leatherworking 80: Pattern sold by leatherworking suppliers in the capitals.", 252783},
     }},
     {"Waist", {
       {"Pristine Sash", "Tailoring (85) Only its maker can wear it"},
@@ -2430,12 +2991,16 @@ ForeverBiSLists = {
       {"Filigreed Pristine Leggings", "Tailoring (100) Only its maker can wear it Pattern drops from Verdan the Everliving, Wailing Caverns"},
       {"Ogre Loincloth", "Rhahk'Zor, The Deadmines"},
       {"Rotmender's Leggings", "The Abandoned, Ruins of Lordaeron"},
+    }, {
+      {"Spell Power +2 and Armor +16", "Mystic Medium Armor Kit", "Leatherworking 80: Pattern sold by leatherworking suppliers in the capitals.", 252783},
     }},
     {"Feet", {
       {"Nimbus Boots", "Quest: Twilight Falls Alliance, level 25 in Classic, from level 20"},
       {"Wisdom's Leather Boots", "Leatherworking (85) Only its maker can wear it"},
       {"Spidersilk Boots", "Tailoring"},
       {"Pristine Boots", "Tailoring (60) Only its maker can wear it"},
+    }, {
+      {"Minor Speed Increase", "Enchant Boots - Minor Speed", "Enchanting 225: Taught by the trainer."},
     }},
     {"Finger", {
       {"Philanthropist's Ring", "Quest: Greater Friend of the Library Twenty books, the necklace’s ten counted"},
@@ -2454,18 +3019,24 @@ ForeverBiSLists = {
       {"Living Root", "Verdan the Everliving, Wailing Caverns 37.82% in Classic"},
       {"Gnarled Necromancer's Staff", "Quest: The Wrath of Rath'mael Ruins of Lordaeron, Horde, from level 15"},
       {"Coldspire Staff", "Rath'mael, Ruins of Lordaeron"},
+    }, {
+      {"Intellect +5", "Enchant 2H Weapon - Lesser Intellect", "Enchanting 100: Formula sold by Tilli Thistlefuzz in Dun Morogh, Kithas in Orgrimmar and Leo Sarn in Silverpine Forest.", 6349},
     }},
     {"Main hand", {
       {"The Stitcher", "Quest: Light's Justice Ruins of Lordaeron, Horde, from level 15"},
       {"Trogg Scepter", "Oggleflint, Ragefire Chasm"},
       {"Scepter of the Abandoned", "The Abandoned, Ruins of Lordaeron"},
       {"Kris of Orgrimmar", "Quest: Hidden Enemies Horde, level 16 in Classic, from level 9"},
+    }, {
+      {"Revelation", "Enchant Weapon - Revelation", "Enchanting 140: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 45 Merchant’s Favor.How often it triggers is in no game file and nobody has measured it yet: it is here because a one-handed weapon has nothing else at this skill.", 249481},
     }},
     {"Off hand: shield", {
       {"Seedcloud Buckler", "Verdan the Everliving, Wailing Caverns 39.22% in Classic"},
       {"Arctic Buckler", "Quest: Blackfathom Villainy Alliance, level 27 in Classic, from level 18 Quest: Blackfathom Villainy Horde, level 27 in Classic, from level 18"},
       {"Mirror of Rath'mael", "Rath'mael, Ruins of Lordaeron"},
       {"Worn Turtle Shell Shield", "Kresh, Wailing Caverns 66.7% in Classic"},
+    }, {
+      {"Spirit +5", "Enchant Shield - Spirit", "Enchanting 180: Taught by the trainer."},
     }},
     {"Relic", {
       {"Polished Driftwood Icon", "Enchanting (130) Only its maker can wear it"},
@@ -2486,6 +3057,8 @@ ForeverBiSLists = {
       {"Scholarly Pendant", "Quest: Friend of the Library Ten books, any class and no level asked for"},
       {"Tarnished Locket", "Quest: Remember That I Love You Ruins of Lordaeron, Alliance, from level 15"},
       {"Sorcerer Collar", "Rethilgore, Shadowfang Keep"},
+    }, {
+      {"+6 Spell Power", "Enchant Necklace - Spell Power", "Enchanting 210: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 120 Merchant’s Favor.", 249502},
     }},
     {"Shoulder", {
       {"Magician's Mantle", "A world drop, not bound: the auction house is quickest Reported, not checked"},
@@ -2499,6 +3072,8 @@ ForeverBiSLists = {
       {"Prelacy Cape", "Quest: Researching the Corruption Alliance, level 24 in Classic, from level 18"},
       {"Feyscale Cloak", "Deviate Faerie Dragon, Wailing Caverns 44.63% in Classic"},
       {"Black Whelp Cloak", "Leatherworking (75)"},
+    }, {
+      {"Armor +60", "Enchant Cloak - Greater Defense", "Enchanting 205: Taught by the trainer."},
     }},
     {"Chest", {
       {"Necrology Robes", "Trash mobs, Shadowfang Keep 0.02% in Classic"},
@@ -2506,18 +3081,24 @@ ForeverBiSLists = {
       {"Dro'zem's Tunic", "Dro'zem the Blasphemous, a rare elite of the Redridge Mountains Reported, not checked"},
       {"Leftover Abomination Skin", "The Baron, Ruins of Lordaeron"},
       {"High Robe of the Adjudicator", "Quest: Assault on Fenris Isle ↗ Horde, level 24 in Classic, from level 10"},
+    }, {
+      {"All Stats +2", "Enchant Chest - Lesser Stats", "Enchanting 200: Taught by the trainer."},
     }},
     {"Wrist", {
       {"Aetherwisp Bracers", "Faldrim Anvilmar, Hall of Thanes"},
       {"Mindthrust Bracers", "Trash mobs, Shadowfang Keep 0.03% in Classic"},
       {"Tabitha's Cuffs", "Quest: A Frightened Request Ruins of Lordaeron, Horde, from level 15"},
       {"Harpy Bangles", "Quest: Bloodfury Bloodline ↗ Horde, from level 18, reported, not checked"},
+    }, {
+      {"Intellect +5", "Enchant Bracer - Lesser Intellect", "Enchanting 150: Taught by the trainer."},
     }},
     {"Hands", {
       {"Shadow Gloves", "Tailoring (75) Only its maker can wear it"},
       {"Jutebraid Gloves", "Quest: Horde Presence ↗ Horde, level 29 in Classic, from level 15"},
       {"Serpent Gloves", "Lord Serpentis, Wailing Caverns 19.38% in Classic"},
       {"Pristine Gloves", "Tailoring (75) Only its maker can wear it"},
+    }, {
+      {"Spell Power +2 and Armor +16", "Mystic Medium Armor Kit", "Leatherworking 80: Pattern sold by leatherworking suppliers in the capitals.", 252783},
     }},
     {"Waist", {
       {"Shadow Sash", "Tailoring (85) Only its maker can wear it"},
@@ -2530,12 +3111,16 @@ ForeverBiSLists = {
       {"Colorful Kilt", "Tailoring (70)"},
       {"Rotmender's Leggings", "The Abandoned, Ruins of Lordaeron"},
       {"Filigreed Flame Leggings", "Tailoring (100) Only its maker can wear it Pattern: drops in low-level dungeons, nobody has found which one yet"},
+    }, {
+      {"Spell Power +2 and Armor +16", "Mystic Medium Armor Kit", "Leatherworking 80: Pattern sold by leatherworking suppliers in the capitals.", 252783},
     }},
     {"Feet", {
       {"Spidersilk Boots", "Tailoring"},
       {"Shadow Boots", "Tailoring (60) Only its maker can wear it"},
       {"Red Woolen Boots", "Tailoring (75)"},
       {"Pristine Boots", "Tailoring (60) Only its maker can wear it"},
+    }, {
+      {"Stamina +5", "Enchant Boots - Stamina", "Enchanting 215: Taught by the trainer."},
     }},
     {"Finger", {
       {"Philanthropist's Ring", "Quest: Greater Friend of the Library Twenty books, the necklace’s ten counted"},
@@ -2555,12 +3140,16 @@ ForeverBiSLists = {
       {"Gnarled Necromancer's Staff", "Quest: The Wrath of Rath'mael Ruins of Lordaeron, Horde, from level 15"},
       {"Staff of the Blessed Seer", "Trash mobs, Blackfathom Deeps 0.05% in Classic"},
       {"Coldspire Staff", "Rath'mael, Ruins of Lordaeron"},
+    }, {
+      {"Intellect +5", "Enchant 2H Weapon - Lesser Intellect", "Enchanting 100: Formula sold by Tilli Thistlefuzz in Dun Morogh, Kithas in Orgrimmar and Leo Sarn in Silverpine Forest.", 6349},
     }},
     {"Main hand", {
       {"Evocator's Blade", "Trash mobs, Blackfathom Deeps 0.05% in Classic"},
       {"Buzzer Blade", "Sneed's Shredder, The Deadmines 52.23% in Classic"},
       {"Fang of Magmatus", "Magmatus, Hall of Thanes"},
       {"Searing Dagger", "Bazzalan, Ragefire Chasm"},
+    }, {
+      {"Revelation", "Enchant Weapon - Revelation", "Enchanting 140: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 45 Merchant’s Favor.How often it triggers is in no game file and nobody has measured it yet: it is here because a one-handed weapon has nothing else at this skill.", 249481},
     }},
     {"Off hand: held item", {
       {"Orb of Soran'ruk", "Quest: The Orb of Soran'ruk ↗ level 25 in Classic, from level 20"},
@@ -2589,6 +3178,8 @@ ForeverBiSLists = {
       {"Tarnished Locket", "Quest: Remember That I Love You Ruins of Lordaeron, Alliance, from level 15"},
       {"Ephemeral Choker", "Faldrim Anvilmar, Hall of Thanes"},
       {"Sorcerer Collar", "Rethilgore, Shadowfang Keep"},
+    }, {
+      {"+6 Spell Power", "Enchant Necklace - Spell Power", "Enchanting 210: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 120 Merchant’s Favor.", 249502},
     }},
     {"Shoulder", {
       {"Chestnut Mantle", "Quest: Allegiance to the Old Gods Horde, level 26 in Classic, from level 17"},
@@ -2601,6 +3192,8 @@ ForeverBiSLists = {
       {"Heavy Woolen Cloak", "Tailoring (80)"},
       {"Sporid Cape", "Verdan the Everliving, Wailing Caverns 19.62% in Classic"},
       {"Prelacy Cape", "Quest: Researching the Corruption Alliance, level 24 in Classic, from level 18"},
+    }, {
+      {"Armor +60", "Enchant Cloak - Greater Defense", "Enchanting 205: Taught by the trainer."},
     }},
     {"Chest", {
       {"Necrology Robes", "Trash mobs, Shadowfang Keep 0.02% in Classic"},
@@ -2608,18 +3201,24 @@ ForeverBiSLists = {
       {"Filigreed Shadow Gown", "Tailoring (75) Only its maker can wear it Pattern drops from Lord Cobrahn, Wailing Caverns"},
       {"Dro'zem's Tunic", "Dro'zem the Blasphemous, a rare elite of the Redridge Mountains Reported, not checked"},
       {"Leftover Abomination Skin", "The Baron, Ruins of Lordaeron"},
+    }, {
+      {"Stamina +8", "Enchant Chest - Superior Stamina", "Enchanting 220: Taught by the trainer."},
     }},
     {"Wrist", {
       {"Aetherwisp Bracers", "Faldrim Anvilmar, Hall of Thanes"},
       {"Tabitha's Cuffs", "Quest: A Frightened Request Ruins of Lordaeron, Horde, from level 15"},
       {"Mindthrust Bracers", "Trash mobs, Shadowfang Keep 0.03% in Classic"},
       {"Owlbeard Bracers", "Quest: Earthen Arise ↗ Horde, level 20 in Classic, from level 14"},
+    }, {
+      {"Stamina +5", "Enchant Bracer - Stamina", "Enchanting 170: Taught by the trainer."},
     }},
     {"Hands", {
       {"Shadow Gloves", "Tailoring (75) Only its maker can wear it"},
       {"Tattered Mittens", "Horde quest The Book of Ur, from level 16 A choice of reward, from Keeper Bel'dugur in Undercity"},
       {"Serpent Gloves", "Lord Serpentis, Wailing Caverns 19.38% in Classic"},
       {"Pristine Gloves", "Tailoring (75) Only its maker can wear it"},
+    }, {
+      {"Stamina +3 and Armor +24", "Heavy Armor Kit", "Leatherworking 150: Taught by the trainer."},
     }},
     {"Waist", {
       {"Shadow Sash", "Tailoring (85) Only its maker can wear it"},
@@ -2632,12 +3231,16 @@ ForeverBiSLists = {
       {"Rotmender's Leggings", "The Abandoned, Ruins of Lordaeron"},
       {"Ogre Loincloth", "Rhahk'Zor, The Deadmines"},
       {"Filigreed Flame Leggings", "Tailoring (100) Only its maker can wear it Pattern: drops in low-level dungeons, nobody has found which one yet"},
+    }, {
+      {"Stamina +3 and Armor +24", "Heavy Armor Kit", "Leatherworking 150: Taught by the trainer."},
     }},
     {"Feet", {
       {"Spidersilk Boots", "Tailoring"},
       {"Shadow Boots", "Tailoring (60) Only its maker can wear it"},
       {"Rotmender's Treads", "Rath'mael, Ruins of Lordaeron"},
       {"Pristine Boots", "Tailoring (60) Only its maker can wear it"},
+    }, {
+      {"Minor Speed Increase", "Enchant Boots - Minor Speed", "Enchanting 225: Taught by the trainer."},
     }},
     {"Finger", {
       {"Philanthropist's Ring", "Quest: Greater Friend of the Library Twenty books, the necklace’s ten counted"},
@@ -2645,7 +3248,7 @@ ForeverBiSLists = {
       {"Malignant Root", "Nightveiled Rotheap, a patrol of the Wetlands Alliance only, and not checked in the beta"},
       {"Sustaining Ring", "Quest: Knowledge in the Deeps Alliance, level 23 in Classic, from level 10"},
       {"Seal of Sylvanas", "Quest: Arugal Must Die Horde, level 27 in Classic, from level 18"},
-      {"Slain Baron's Signet", "Quest: Abominable Creatures Ruins of Lordaeron, Alliance, from level 16"},
+      {"Slain Baron's Signet", "Quest: Unending Torment Ruins of Lordaeron, Horde, from level 16 Quest: Abominable Creatures Ruins of Lordaeron, Alliance, from level 16"},
     }},
     {"Trinket", {
       {"Minor Recombobulator", "Engineering (140)"},
@@ -2657,12 +3260,16 @@ ForeverBiSLists = {
       {"Staff of the Blessed Seer", "Trash mobs, Blackfathom Deeps 0.05% in Classic"},
       {"Gnarled Necromancer's Staff", "Quest: The Wrath of Rath'mael Ruins of Lordaeron, Horde, from level 15"},
       {"Crescent Staff", "Quest: Leaders of the Fang Horde, level 22 in Classic, from level 11"},
+    }, {
+      {"Intellect +5", "Enchant 2H Weapon - Lesser Intellect", "Enchanting 100: Formula sold by Tilli Thistlefuzz in Dun Morogh, Kithas in Orgrimmar and Leo Sarn in Silverpine Forest.", 6349},
     }},
     {"Main hand", {
       {"Evocator's Blade", "Trash mobs, Blackfathom Deeps 0.05% in Classic"},
       {"Buzzer Blade", "Sneed's Shredder, The Deadmines 52.23% in Classic"},
       {"Fang of Magmatus", "Magmatus, Hall of Thanes"},
       {"Searing Dagger", "Bazzalan, Ragefire Chasm"},
+    }, {
+      {"Revelation", "Enchant Weapon - Revelation", "Enchanting 140: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 45 Merchant’s Favor.How often it triggers is in no game file and nobody has measured it yet: it is here because a one-handed weapon has nothing else at this skill.", 249481},
     }},
     {"Off hand: held item", {
       {"Orb of Soran'ruk", "Quest: The Orb of Soran'ruk ↗ level 25 in Classic, from level 20"},
@@ -2692,6 +3299,8 @@ ForeverBiSLists = {
       {"Erudite's Amulet", "Quest: Friend of the Library Ten books, any class and no level asked for"},
       {"Tarnished Locket", "Quest: Remember That I Love You Ruins of Lordaeron, Alliance, from level 15"},
       {"Snake Eye Kaleidoscope", "Lady Anacondra, Wailing Caverns"},
+    }, {
+      {"Strength +5", "Enchant Necklace - Strength", "Enchanting 210: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 120 Merchant’s Favor.", 249496},
     }},
     {"Shoulder", {
       {"Rough Bronze Shoulders", "Blacksmithing"},
@@ -2701,10 +3310,12 @@ ForeverBiSLists = {
     }},
     {"Back", {
       {"Wildhunter Cloak", "Quest: The Hunt Completed ↗ Horde, level 30 in Classic, from level 20"},
-      {"Grave Shroud", "Quest: Abominable Creatures Ruins of Lordaeron, Alliance, from level 16"},
+      {"Grave Shroud", "Quest: Unending Torment Ruins of Lordaeron, Horde, from level 16 Quest: Abominable Creatures Ruins of Lordaeron, Alliance, from level 16"},
       {"Catacomb Cloak", "Quest: An Ancient Grudge Hall of Thanes, Alliance, from level 10"},
       {"Miner's Cape", "Miner Johnson, The Deadmines 55.89% in Classic"},
       {"Cape of the Brotherhood", "Edwin VanCleef, The Deadmines 23.08% in Classic"},
+    }, {
+      {"Agility +3", "Enchant Cloak - Minor Agility", "Enchanting 110: Formula sold by Dalria in Ashenvale and Kulwia in Stonetalon Mountains.", 11039},
     }},
     {"Chest", {
       {"Mutant Scale Breastplate", "Mutanus the Devourer, Wailing Caverns 22.45% in Classic"},
@@ -2712,6 +3323,8 @@ ForeverBiSLists = {
       {"Blackened Defias Armor", "Edwin VanCleef, The Deadmines 14.66% in Classic"},
       {"Fire Hardened Hauberk", "Quest: Furen's Armor ↗ Alliance, level 28 in Classic, from level 20"},
       {"Brutal Hauberk", "Quest: Brutal Hauberk ↗ Horde, level 30 in Classic, from level 20"},
+    }, {
+      {"All Stats +2", "Enchant Chest - Lesser Stats", "Enchanting 200: Taught by the trainer."},
     }},
     {"Wrist", {
       {"Technician's Bracers", "Quest: A Fine Mess from level 20, reported, not checked"},
@@ -2719,6 +3332,8 @@ ForeverBiSLists = {
       {"Cultist's Armguards", "Quest: Blackfathom Villainy Alliance, from level 18, reported, not checked Quest: Blackfathom Villainy ↗ Horde, from level 18, reported, not checked"},
       {"Cryptwalker Bracers", "Quest: The Restless Dead Hall of Thanes, Alliance, from level 10"},
       {"Beetle Clasps", "Quest: Researching the Corruption Alliance, level 24 in Classic, from level 18"},
+    }, {
+      {"Strength +5", "Enchant Bracer - Strength", "Enchanting 180: Taught by the trainer."},
     }},
     {"Hands", {
       {"Thorbia's Gauntlets", "A world drop, not bound: the auction house is quickest Reported, not checked"},
@@ -2727,6 +3342,8 @@ ForeverBiSLists = {
       {"Fire Hardened Gauntlets", "Quest: Klockmort's Creation ↗ Alliance, level 30 in Classic, from level 20"},
       {"Brutal Gauntlets", "Quest: Brutal Gauntlets ↗ Horde, level 30 in Classic, from level 20"},
       {"Blackened Defias Gloves", "Trash mobs, The Deadmines 3.13% in Classic"},
+    }, {
+      {"Strength +7", "Enchant Gloves - Strength", "Enchanting 225: Taught by the trainer."},
     }},
     {"Waist", {
       {"Blackened Defias Belt", "Captain Greenskin, The Deadmines 26.64% in Classic"},
@@ -2739,6 +3356,8 @@ ForeverBiSLists = {
       {"Chausses of Westfall", "Quest: The Defias Brotherhood Alliance, level 22 in Classic, from level 14"},
       {"Juggernaut Leggings", "Quest: The Den ↗ Horde, level 29 in Classic, from level 20"},
       {"Duty Bound Leggings", "Quest: Bloodied Insignia Ruins of Lordaeron, Alliance, from level 16"},
+    }, {
+      {"Attack Power +4 and Armor +16", "Forceful Medium Armor Kit", "Leatherworking 80: Pattern sold by leatherworking suppliers in the capitals.", 252784},
     }},
     {"Feet", {
       {"Vilewalkers", "Viktor the Vile, Ruins of Lordaeron"},
@@ -2746,6 +3365,8 @@ ForeverBiSLists = {
       {"Veteran's Boots", "Blacksmithing (85) Only its maker can wear it"},
       {"Brawler's Leather Boots", "Leatherworking (85) Only its maker can wear it"},
       {"Draftsman Boots", "Quest: Gerenzo Wrenchwhistle ↗ level 27 in Classic, from level 16"},
+    }, {
+      {"Agility +4", "Enchant Boots - Lesser Agility", "Enchanting 160: Taught by the trainer."},
     }},
     {"Finger", {
       {"First Mate Band", "Mr. Smite, The Deadmines"},
@@ -2762,9 +3383,11 @@ ForeverBiSLists = {
       {"Hammerbone", "Quest: Leaders of the Fang Horde, from level 10, reported, not checked"},
       {"Smite's Mighty Hammer", "Mr. Smite, The Deadmines 18.58% in Classic"},
       {"Forsaken Greataxe", "Quest: The Wrath of Rath'mael Ruins of Lordaeron, Horde, from level 15"},
-      {"Monstrous Cleaver", "Quest: Abominable Creatures Ruins of Lordaeron, Alliance, from level 16"},
+      {"Monstrous Cleaver", "Quest: Unending Torment Ruins of Lordaeron, Horde, from level 16 Quest: Abominable Creatures Ruins of Lordaeron, Alliance, from level 16"},
       {"Rockslicer", "Rhahk'Zor, The Deadmines 3.91% in Classic"},
       {"Corpse Chopper", "Bjork, Ruins of Lordaeron"},
+    }, {
+      {"Weapon Damage +6", "Enchant 2H Weapon - Impact", "Enchanting 200: Taught by the trainer."},
     }},
     {"Ranged", {
       {"Fine Longbow", "Sold by the bowyers, for silver Classic’s vendors, not checked in the beta"},
@@ -2789,6 +3412,8 @@ ForeverBiSLists = {
       {"Scholarly Pendant", "Quest: Friend of the Library Ten books, any class and no level asked for"},
       {"Tarnished Locket", "Quest: Remember That I Love You Ruins of Lordaeron, Alliance, from level 15"},
       {"Ephemeral Choker", "Faldrim Anvilmar, Hall of Thanes"},
+    }, {
+      {"Strength +5", "Enchant Necklace - Strength", "Enchanting 210: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 120 Merchant’s Favor.", 249496},
     }},
     {"Shoulder", {
       {"Rough Bronze Shoulders", "Blacksmithing"},
@@ -2797,11 +3422,13 @@ ForeverBiSLists = {
       {"Serpent's Shoulders", "Lady Anacondra, Wailing Caverns 43.33% in Classic"},
     }},
     {"Back", {
-      {"Grave Shroud", "Quest: Abominable Creatures Ruins of Lordaeron, Alliance, from level 16"},
+      {"Grave Shroud", "Quest: Unending Torment Ruins of Lordaeron, Horde, from level 16 Quest: Abominable Creatures Ruins of Lordaeron, Alliance, from level 16"},
       {"Sporid Cape", "Verdan the Everliving, Wailing Caverns 19.62% in Classic"},
       {"Watch Master's Cloak", "Quest: Morbent Fel ↗ Alliance, level 32 in Classic, from level 20"},
       {"Miner's Cape", "Miner Johnson, The Deadmines 55.89% in Classic"},
       {"Cape of the Brotherhood", "Edwin VanCleef, The Deadmines 23.08% in Classic"},
+    }, {
+      {"Agility +3", "Enchant Cloak - Minor Agility", "Enchanting 110: Formula sold by Dalria in Ashenvale and Kulwia in Stonetalon Mountains.", 11039},
     }},
     {"Chest", {
       {"Fire Hardened Hauberk", "Quest: Furen's Armor ↗ Alliance, level 28 in Classic, from level 20"},
@@ -2809,6 +3436,8 @@ ForeverBiSLists = {
       {"Remembrance Armor", "Quest: Bloodied Insignia Ruins of Lordaeron, Alliance, from level 16"},
       {"Mutant Scale Breastplate", "Mutanus the Devourer, Wailing Caverns 22.45% in Classic"},
       {"Blackened Defias Armor", "Edwin VanCleef, The Deadmines 14.66% in Classic"},
+    }, {
+      {"All Stats +2", "Enchant Chest - Lesser Stats", "Enchanting 200: Taught by the trainer."},
     }},
     {"Wrist", {
       {"Beetle Clasps", "Quest: Researching the Corruption Alliance, level 24 in Classic, from level 18"},
@@ -2816,6 +3445,8 @@ ForeverBiSLists = {
       {"Steel-clasped Bracers", "Quest: The Book of Ur Horde, level 26 in Classic, from level 16"},
       {"Cryptwalker Bracers", "Quest: The Restless Dead Hall of Thanes, Alliance, from level 10"},
       {"Bandsaw Wristbands", "Sneed, The Deadmines"},
+    }, {
+      {"Strength +5", "Enchant Bracer - Strength", "Enchanting 180: Taught by the trainer."},
     }},
     {"Hands", {
       {"Grip of Fear", "The Abandoned, Ruins of Lordaeron"},
@@ -2823,6 +3454,8 @@ ForeverBiSLists = {
       {"Thorbia's Gauntlets", "A world drop, not bound: the auction house is quickest Reported, not checked"},
       {"Fire Hardened Gauntlets", "Quest: Klockmort's Creation ↗ Alliance, level 30 in Classic, from level 20"},
       {"Brutal Gauntlets", "Quest: Brutal Gauntlets ↗ Horde, level 30 in Classic, from level 20"},
+    }, {
+      {"Strength +7", "Enchant Gloves - Strength", "Enchanting 225: Taught by the trainer."},
     }},
     {"Waist", {
       {"Belt of the Stars", "Quest: Look To The Stars ↗ Alliance, level 30 in Classic, from level 20"},
@@ -2836,6 +3469,8 @@ ForeverBiSLists = {
       {"Fire Hardened Leggings", "Quest: Mathiel's Armor ↗ Alliance, level 30 in Classic, from level 20"},
       {"Brutal Legguards", "Quest: Brutal Legguards ↗ Horde, level 30 in Classic, from level 20"},
       {"Duty Bound Leggings", "Quest: Bloodied Insignia Ruins of Lordaeron, Alliance, from level 16"},
+    }, {
+      {"Stamina +3 and Armor +24", "Heavy Armor Kit", "Leatherworking 150: Taught by the trainer."},
     }},
     {"Feet", {
       {"Vilewalkers", "Viktor the Vile, Ruins of Lordaeron"},
@@ -2843,6 +3478,8 @@ ForeverBiSLists = {
       {"Grizzled Boots", "Quest: The Book of Ur Horde, level 26 in Classic, from level 16"},
       {"Veteran's Boots", "Blacksmithing (85) Only its maker can wear it"},
       {"Brawler's Leather Boots", "Leatherworking (85) Only its maker can wear it"},
+    }, {
+      {"Minor Speed Increase", "Enchant Boots - Minor Speed", "Enchanting 225: Taught by the trainer."},
     }},
     {"Finger", {
       {"Malignant Root", "Nightveiled Rotheap, a patrol of the Wetlands Alliance only, and not checked in the beta"},
@@ -2850,7 +3487,7 @@ ForeverBiSLists = {
       {"First Mate Band", "Mr. Smite, The Deadmines"},
       {"Sustaining Ring", "Quest: Knowledge in the Deeps Alliance, level 23 in Classic, from level 10"},
       {"Band of the Fist", "Quest: Allegiance to the Old Gods Horde, level 26 in Classic, from level 17"},
-      {"Slain Baron's Signet", "Quest: Abominable Creatures Ruins of Lordaeron, Alliance, from level 16"},
+      {"Slain Baron's Signet", "Quest: Unending Torment Ruins of Lordaeron, Horde, from level 16 Quest: Abominable Creatures Ruins of Lordaeron, Alliance, from level 16"},
     }},
     {"Trinket", {
       {"Minor Recombobulator", "Engineering (140)"},
@@ -2859,10 +3496,12 @@ ForeverBiSLists = {
     {"Two-hand weapon", {
       {"Hammerbone", "Quest: Leaders of the Fang Horde, from level 10, reported, not checked"},
       {"Smite's Mighty Hammer", "Mr. Smite, The Deadmines 18.58% in Classic"},
-      {"Monstrous Cleaver", "Quest: Abominable Creatures Ruins of Lordaeron, Alliance, from level 16"},
+      {"Monstrous Cleaver", "Quest: Unending Torment Ruins of Lordaeron, Horde, from level 16 Quest: Abominable Creatures Ruins of Lordaeron, Alliance, from level 16"},
       {"Forsaken Greataxe", "Quest: The Wrath of Rath'mael Ruins of Lordaeron, Horde, from level 15"},
       {"Rockslicer", "Rhahk'Zor, The Deadmines 3.91% in Classic"},
       {"Corpse Chopper", "Bjork, Ruins of Lordaeron"},
+    }, {
+      {"Weapon Damage +6", "Enchant 2H Weapon - Impact", "Enchanting 200: Taught by the trainer."},
     }},
     {"Ranged", {
       {"Calibrated Blunderbuss", "Quest: Old Ironforge Incursion Hall of Thanes, Alliance, from level 9"},
@@ -2886,6 +3525,8 @@ ForeverBiSLists = {
       {"Scholarly Pendant", "Quest: Friend of the Library Ten books, any class and no level asked for"},
       {"Tarnished Locket", "Quest: Remember That I Love You Ruins of Lordaeron, Alliance, from level 15"},
       {"Ephemeral Choker", "Faldrim Anvilmar, Hall of Thanes"},
+    }, {
+      {"Defense +5", "Enchant Necklace - Deflection", "Enchanting 210: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 120 Merchant’s Favor.", 249505},
     }},
     {"Shoulder", {
       {"Bronzed Shoulderguards", "Quest: Deathstalkers in Shadowfang Horde, from level 18, reported, not checked"},
@@ -2896,14 +3537,18 @@ ForeverBiSLists = {
     {"Back", {
       {"Watch Master's Cloak", "Quest: Morbent Fel ↗ Alliance, level 32 in Classic, from level 20"},
       {"Sporid Cape", "Verdan the Everliving, Wailing Caverns 19.62% in Classic"},
-      {"Grave Shroud", "Quest: Abominable Creatures Ruins of Lordaeron, Alliance, from level 16"},
+      {"Grave Shroud", "Quest: Unending Torment Ruins of Lordaeron, Horde, from level 16 Quest: Abominable Creatures Ruins of Lordaeron, Alliance, from level 16"},
       {"Miner's Cape", "Miner Johnson, The Deadmines 55.89% in Classic"},
       {"Cape of the Brotherhood", "Edwin VanCleef, The Deadmines 23.08% in Classic"},
+    }, {
+      {"Armor +60", "Enchant Cloak - Greater Defense", "Enchanting 205: Taught by the trainer."},
     }},
     {"Chest", {
       {"Fire Hardened Hauberk", "Quest: Furen's Armor ↗ Alliance, level 28 in Classic, from level 20"},
       {"Brutal Hauberk", "Quest: Brutal Hauberk ↗ Horde, level 30 in Classic, from level 20"},
       {"Remembrance Armor", "Quest: Bloodied Insignia Ruins of Lordaeron, Alliance, from level 16"},
+    }, {
+      {"Stamina +8", "Enchant Chest - Superior Stamina", "Enchanting 220: Taught by the trainer."},
     }},
     {"Wrist", {
       {"Beetle Clasps", "Quest: Researching the Corruption Alliance, level 24 in Classic, from level 18"},
@@ -2911,6 +3556,8 @@ ForeverBiSLists = {
       {"Bandsaw Wristbands", "Sneed, The Deadmines"},
       {"Cultist's Armguards", "Quest: Blackfathom Villainy Alliance, from level 18, reported, not checked Quest: Blackfathom Villainy ↗ Horde, from level 18, reported, not checked"},
       {"Cryptwalker Bracers", "Quest: The Restless Dead Hall of Thanes, Alliance, from level 10"},
+    }, {
+      {"Stamina +5", "Enchant Bracer - Stamina", "Enchanting 170: Taught by the trainer."},
     }},
     {"Hands", {
       {"Fire Hardened Gauntlets", "Quest: Klockmort's Creation ↗ Alliance, level 30 in Classic, from level 20"},
@@ -2918,6 +3565,8 @@ ForeverBiSLists = {
       {"Guard's Gloves", "Blacksmithing (80) Only its maker can wear it"},
       {"Grip of Fear", "The Abandoned, Ruins of Lordaeron"},
       {"Veteran's Gloves", "Blacksmithing (80) Only its maker can wear it"},
+    }, {
+      {"Agility +7", "Enchant Gloves - Agility", "Enchanting 210: Taught by the trainer."},
     }},
     {"Waist", {
       {"Belt of the Stars", "Quest: Look To The Stars ↗ Alliance, level 30 in Classic, from level 20"},
@@ -2930,6 +3579,8 @@ ForeverBiSLists = {
       {"Fire Hardened Leggings", "Quest: Mathiel's Armor ↗ Alliance, level 30 in Classic, from level 20"},
       {"Brutal Legguards", "Quest: Brutal Legguards ↗ Horde, level 30 in Classic, from level 20"},
       {"Chausses of Westfall", "Quest: The Defias Brotherhood Alliance, level 22 in Classic, from level 14"},
+    }, {
+      {"Stamina +3 and Armor +24", "Heavy Armor Kit", "Leatherworking 150: Taught by the trainer."},
     }},
     {"Feet", {
       {"Guard's Boots", "Blacksmithing (85) Only its maker can wear it"},
@@ -2937,11 +3588,13 @@ ForeverBiSLists = {
       {"Veteran's Boots", "Blacksmithing (85) Only its maker can wear it"},
       {"Grizzled Boots", "Quest: The Book of Ur Horde, level 26 in Classic, from level 16"},
       {"Protector's Boots", "Blacksmithing (85) Only its maker can wear it"},
+    }, {
+      {"Stamina +5", "Enchant Boots - Stamina", "Enchanting 215: Taught by the trainer."},
     }},
     {"Finger", {
       {"Seal of Sylvanas", "Quest: Arugal Must Die Horde, level 27 in Classic, from level 18"},
       {"Seal of Wrynn", "Quest: An Audience with the King Alliance, level 31 in Classic, from level 16"},
-      {"Slain Baron's Signet", "Quest: Abominable Creatures Ruins of Lordaeron, Alliance, from level 16"},
+      {"Slain Baron's Signet", "Quest: Unending Torment Ruins of Lordaeron, Horde, from level 16 Quest: Abominable Creatures Ruins of Lordaeron, Alliance, from level 16"},
       {"Sustaining Ring", "Quest: Knowledge in the Deeps Alliance, level 23 in Classic, from level 10"},
       {"Ring of Scorn", "Quest: A Husband's Revenge Horde, level 20 in Classic, from level 10"},
       {"Skull Ring", "Quest: Souvenirs of Death ↗ Horde, level 25 in Classic, from level 20"},
@@ -2958,6 +3611,8 @@ ForeverBiSLists = {
       {"Vileblood Scimitar", "Viktor the Vile, Ruins of Lordaeron"},
       {"Wingblade", "Quest: Leaders of the Fang Horde, level 22 in Classic, from level 11"},
       {"Butcher's Cleaver", "Razorclaw the Butcher, Shadowfang Keep 9.83% in Classic"},
+    }, {
+      {"Weapon Damage +3", "Enchant Weapon - Striking", "Enchanting 195: Taught by the trainer."},
     }},
     {"Off hand: shield", {
       {"Crest of Darkshire", "Quest: Bride of the Embalmer ↗ Alliance, level 30 in Classic, from level 20"},
@@ -2966,6 +3621,8 @@ ForeverBiSLists = {
       {"Mirror of Rath'mael", "Rath'mael, Ruins of Lordaeron"},
       {"Kresh's Back", "Kresh, Wailing Caverns 13.47% in Classic"},
       {"Gold-plated Buckler", "Miner Johnson, The Deadmines 40.35% in Classic"},
+    }, {
+      {"Stamina +5", "Enchant Shield - Lesser Stamina", "Enchanting 155: Taught by the trainer."},
     }},
     {"Ranged", {
       {"Calibrated Blunderbuss", "Quest: Old Ironforge Incursion Hall of Thanes, Alliance, from level 9"},
@@ -3058,6 +3715,7 @@ ForeverBiSItemIDs = {
   ["Defender's Leather Boots"] = 252441,
   ["Defender's Leather Gloves"] = 252496,
   ["Defender's Leather Hood"] = 252447,
+  ["Defias Rapier"] = 1925,
   ["Deviate Scale Belt"] = 6468,
   ["Direhammer Leggings"] = 270260,
   ["Disjointed Shoes"] = 277226,
@@ -3224,6 +3882,8 @@ ForeverBiSItemIDs = {
   ["Shadow Gloves"] = 253919,
   ["Shadow Sash"] = 253931,
   ["Shadowfang"] = 1482,
+  ["Shining Circlet"] = 253959,
+  ["Shining Sash"] = 253935,
   ["Shoni's Disarming Tool"] = 9608,
   ["Signet of the Zhevra"] = 285330,
   ["Silky Boots"] = 253891,
@@ -3324,10 +3984,11 @@ ForeverBiSBuildLabels = {
   ["paladin/holy"] = "Holy PvE",
   ["paladin/holy-pvp"] = "Holy PvP",
   ["paladin/retribution-pvp"] = "Retribution PvP",
+  ["paladin/shockadin"] = "Shockadin PvP",
   ["paladin/tank"] = "Tank",
   ["priest"] = "Shadow PvE",
+  ["priest/discipline-pvp"] = "Discipline PvP",
   ["priest/holy"] = "Holy PvE",
-  ["priest/holy-pvp"] = "Holy PvP",
   ["priest/shadow-pvp"] = "Shadow PvP",
   ["rogue"] = "PvE",
   ["rogue/pvp"] = "PvP",
@@ -3342,4 +4003,3 @@ ForeverBiSBuildLabels = {
   ["warrior/pvp"] = "PvP",
   ["warrior/tank"] = "Tank",
 }
-
