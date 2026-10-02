@@ -571,6 +571,24 @@ describe("ForeverBiS phase selector", function()
             assert.is_truthy(found, "no Equip: line for the bagged upgrade")
         end)
 
+        it("breaks the missing slots down by source category, adding up to the missing count", function()
+            WowStub.load({ class = "druid", build = "" })
+            local remaining
+            for _, line in ipairs(hover().lines) do
+                if line:find("^Remaining: ") then
+                    remaining = line
+                end
+            end
+            assert.is_truthy(remaining, "no Remaining line")
+            local plain = remaining:gsub("|T.-|t", "")
+            local sum = 0
+            for count in plain:gmatch(" (%d+)") do
+                sum = sum + tonumber(count)
+            end
+            assert.are.equal(totalSlots(), sum)
+            assert.is_nil(plain:find(" 0"), "a category with nothing missing should be hidden")
+        end)
+
         it("follows the class selection", function()
             WowStub.load({ class = "druid", build = "" })
             local rogue = ForeverBiSModel.progress(ForeverBiSModel.list("rogue"), { equipped = {} }).total
@@ -588,9 +606,9 @@ describe("ForeverBiS phase selector", function()
             local lines = tooltip.lines
             assert.is_truthy(tooltip.title:find("%S"))
             assert.are.equal("BiS: 0/" .. total .. " slots - Listed: 0/" .. total, lines[1])
-            assert.are.equal(1 + 8 + 1, #lines)
+            assert.are.equal(1 + 1 + 8 + 1, #lines) -- summary, remaining by category, 8 slots, +N more
             assert.are.equal("+" .. (total - 8) .. " more", lines[#lines])
-            assert.is_truthy(lines[2]:match("^[%w ]+: .+"))
+            assert.is_truthy(lines[3]:match("^[%w ]+: .+"))
         end)
 
         it("lists every open slot without a +N more line when there are few", function()
@@ -606,7 +624,7 @@ describe("ForeverBiS phase selector", function()
                 end
             end)
             local lines = hover().lines
-            assert.are.equal(1 + 3, #lines)
+            assert.are.equal(1 + 1 + 3, #lines)
             assert.is_nil(lines[#lines]:find("more", 1, true))
         end)
 

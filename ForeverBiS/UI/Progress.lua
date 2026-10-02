@@ -4,7 +4,7 @@ local _, ns = ...
 local Progress = {}
 ns.Progress = Progress
 
-local Catalog, Inventory, L = ns.Catalog, ns.Inventory, ns.L
+local Catalog, Inventory, Sources, L = ns.Catalog, ns.Inventory, ns.Sources, ns.L
 
 local TOOLTIP_LINES = 8
 local SOURCE_LENGTH = 36
@@ -45,6 +45,32 @@ local function pendingLine(slot)
     return line
 end
 
+-- Short category names for the "Dungeon 4 · Profession 2" line.
+local CATEGORY_NAMES = {
+    quest = "Quest",
+    dungeon = "Dungeon",
+    world = "World",
+    profession = "Profession",
+}
+
+--- "|Ticon:14|t Dungeon 4 · |Ticon:14|t Profession 2", or nil when nothing is missing.
+local function remainingLine()
+    local parts = {}
+    for _, entry in ipairs(Sources.remainingByCategory(current.slots)) do
+        local category, count = entry[1], entry[2]
+        parts[#parts + 1] = "|T"
+            .. Sources.categoryIcons[category]
+            .. ":14|t "
+            .. L[CATEGORY_NAMES[category]]
+            .. " "
+            .. count
+    end
+    if #parts == 0 then
+        return nil
+    end
+    return table.concat(parts, " · ")
+end
+
 local function showTooltip(owner)
     if not current then
         return
@@ -58,6 +84,10 @@ local function showTooltip(owner)
         1,
         1
     )
+    local remaining = remainingLine()
+    if remaining then
+        GameTooltip:AddLine(L["Remaining: %s"]:format(remaining), 1, 0.82, 0.2)
+    end
     local pending = pendingSlots()
     for index = 1, math.min(#pending, TOOLTIP_LINES) do
         GameTooltip:AddLine(pendingLine(pending[index]), 0.85, 0.85, 0.85)
