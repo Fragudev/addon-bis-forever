@@ -1,0 +1,25 @@
+ForeverBiS/Adapters/Inventory.lua
+  s_2e9d4926efb663::t_7eaf5e755065c8 1-69
+ForeverBiS/Adapters/Items.lua
+  s_2e9d4926efb663::t_233a86cbe9a505 1-94
+ForeverBiS/Adapters/Player.lua
+  s_2e9d4926efb663::t_8baa68395ae528 1-49
+tests/adapters_spec.lua
+  s_2e9d4926efb663::t_a9a38f7212fb17 1-173
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "f2e217746a06012543b82035f2d6c4d42646c9cf",
+  "prompts": {},
+  "sessions": {
+    "s_2e9d4926efb663": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "bbe1029b-52bc-4bd0-892a-ccbb66badc23",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Francis Gutiérrez <francisge@ext.inditex.com>"
+    }
+  }
+}
