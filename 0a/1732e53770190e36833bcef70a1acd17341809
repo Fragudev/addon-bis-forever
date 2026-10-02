@@ -1,0 +1,21 @@
+.github/workflows/ci.yml
+  s_2e9d4926efb663::t_87b18101838418 44-51
+README.md
+  s_2e9d4926efb663::t_1bf6c58cc05725 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "0a1732e53770190e36833bcef70a1acd17341809",
+  "prompts": {},
+  "sessions": {
+    "s_2e9d4926efb663": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "bbe1029b-52bc-4bd0-892a-ccbb66badc23",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Francis Gutiérrez <francisge@ext.inditex.com>"
+    }
+  }
+}
