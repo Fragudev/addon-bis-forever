@@ -1,6 +1,9 @@
 -- Read model over ForeverBiSData (schema 2). It never touches ForeverBiSDB: saved variables are not
 -- reliable while files execute. The UI still consumes the legacy globals built at the bottom of this file.
+local _, ns = ...
+
 local Model = {}
+ns.Model = Model
 ForeverBiSModel = Model
 
 local function asTable(value)
