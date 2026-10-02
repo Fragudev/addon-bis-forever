@@ -359,6 +359,85 @@ describe("ForeverBiS interactions", function()
         end)
     end)
 
+    describe("equipped item beside slot headings", function()
+        local function count(fragment)
+            local found = 0
+            for _, fontString in ipairs(WowStub.fontStrings) do
+                if fontString.text == fragment and WowStub.attached(fontString) then
+                    found = found + 1
+                end
+            end
+            return found
+        end
+
+        local function itemWatcher()
+            for _, candidate in ipairs(WowStub.frames) do
+                if candidate.events.BAG_UPDATE then
+                    return candidate
+                end
+            end
+        end
+
+        local function listedIds(slotName)
+            for _, slot in ipairs(ForeverBiSLists["druid"].slots) do
+                if slot[1] == slotName then
+                    local ids = {}
+                    for _, item in ipairs(slot[2]) do
+                        ids[#ids + 1] = ForeverBiSItemIDs[item[1]]
+                    end
+                    return ids
+                end
+            end
+        end
+
+        local function equip(slotID, itemID)
+            WowStub.equipped[slotID] = itemID
+            ForeverBiSFrame:Show()
+            WowStub.fire(itemWatcher(), "OnEvent", "PLAYER_EQUIPMENT_CHANGED")
+        end
+
+        it("shows nothing for a slot with nothing worn", function()
+            WowStub.load({ class = "druid", build = "" })
+            assert.are.equal(0, count("Not listed"))
+        end)
+
+        it("shows the rank of a worn item that the slot lists", function()
+            WowStub.load({ class = "druid", build = "" })
+            equip(SLOT_IDS.head, listedIds("Head")[2])
+            assert.are.equal(1, count("#2"))
+            assert.are.equal(0, count("Not listed"))
+        end)
+
+        it("shows Not listed for a worn item the slot does not list", function()
+            WowStub.load({ class = "druid", build = "" })
+            equip(SLOT_IDS.head, 987654)
+            assert.are.equal(1, count("Not listed"))
+        end)
+
+        it("shows both rings under the finger heading", function()
+            WowStub.load({ class = "druid", build = "" })
+            WowStub.equipped[12] = 987654
+            equip(11, listedIds("Finger")[1])
+            assert.are.equal(1, count("#1"))
+            assert.are.equal(1, count("Not listed"))
+        end)
+
+        it("resolves every weapon variant heading to the main hand slot", function()
+            WowStub.load({ class = "druid", build = "" })
+            equip(16, 987654)
+            -- "Two-hand weapon" and "Main hand" both map to the main hand, so both headings show it.
+            assert.are.equal(2, count("Not listed"))
+        end)
+
+        it("updates when the equipment changes", function()
+            WowStub.load({ class = "druid", build = "" })
+            equip(SLOT_IDS.head, 987654)
+            assert.are.equal(1, count("Not listed"))
+            equip(SLOT_IDS.head, nil)
+            assert.are.equal(0, count("Not listed"))
+        end)
+    end)
+
     describe("item data events", function()
         local function watcher()
             for _, candidate in ipairs(WowStub.frames) do

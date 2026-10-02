@@ -4,7 +4,8 @@ local _, ns = ...
 local ItemRows = {}
 ns.ItemRows = ItemRows
 
-local Items, Sources, ItemWidgets, L = ns.Items, ns.Sources, ns.ItemWidgets, ns.L
+local Items, Inventory, Lists, Sources, ItemWidgets, L =
+    ns.Items, ns.Inventory, ns.Lists, ns.Sources, ns.ItemWidgets, ns.L
 
 local SOURCE_X = 86
 
@@ -148,4 +149,41 @@ function ItemRows.addEnchants(content, y, enchants)
         y = rowTop - math.max(36, effectText:GetStringHeight() + detailText:GetStringHeight() + 10)
     end
     return y - 3
+end
+
+local EQUIPPED_ICON_SIZE = 12
+local EQUIPPED_LINE_HEIGHT = 14
+
+--- One right-aligned "[icon] Name  #3" (or "Not listed") line for something worn in the slot.
+local function addEquippedLine(content, lineY, itemID, rank)
+    local rankText = content:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+    rankText:SetPoint("TOPRIGHT", content, "TOPRIGHT", -4, lineY)
+    rankText:SetJustifyH("RIGHT")
+    if rank then
+        rankText:SetText(L["#%d"]:format(rank))
+        rankText:SetTextColor(1, 0.82, 0.2)
+    else
+        rankText:SetText(L["Not listed"])
+        rankText:SetTextColor(0.6, 0.6, 0.6)
+    end
+    local name = content:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+    name:SetPoint("RIGHT", rankText, "LEFT", -5, 0)
+    name:SetWidth(150)
+    name:SetJustifyH("RIGHT")
+    name:SetText(Items.nameById(itemID) or L["Item %d"]:format(itemID))
+    name:SetTextColor(Items.qualityColorById(itemID))
+    local icon = content:CreateTexture(nil, "ARTWORK")
+    icon:SetSize(EQUIPPED_ICON_SIZE, EQUIPPED_ICON_SIZE)
+    icon:SetPoint("RIGHT", name, "LEFT", -3, 0)
+    icon:SetTexture(Items.iconById(itemID))
+end
+
+--- Shows what the player wears in a slot beside its heading, with its rank in the slot's list. A ring or trinket
+--- slot shows both items. slotItems are the slot's { name, source } entries.
+function ItemRows.addEquipped(content, y, slotKey, slotItems)
+    for index, itemID in ipairs(Inventory.equippedIds(slotKey)) do
+        Items.track(itemID)
+        local rank = Lists.rankOf(slotItems, itemID, Items.id)
+        addEquippedLine(content, y - 2 - (index - 1) * EQUIPPED_LINE_HEIGHT, itemID, rank)
+    end
 end

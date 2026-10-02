@@ -121,6 +121,7 @@ local function addSlot(view, slot, y, faction)
     local collapseKey = view.route .. ":" .. slot[1]
     local collapsed = Settings.isCollapsed(collapseKey)
     slotTops[slotKey] = y
+    ItemRows.addEquipped(content, y, slotKey, slot[2])
     y = addSlotHeading(y, slot[1], collapseKey, collapsed)
     if collapsed then
         return y, #visibleItems

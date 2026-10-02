@@ -16,6 +16,7 @@ local translations = {
         ["Currently equipped"] = "Equipado actualmente",
         ["In bags: %d"] = "En bolsas: %d",
         ["Source: %s"] = "Origen: %s",
+        ["Not listed"] = "No listado",
         ["Click to open or close"] = "Clic para abrir o cerrar",
         ["Drag to move the button"] = "Arrastra para mover el botón",
     },

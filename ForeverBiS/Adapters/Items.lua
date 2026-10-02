@@ -44,9 +44,22 @@ function Items.prefetch(itemID)
     end
 end
 
+--- Marks an id as worth a redraw when the client delivers it, and asks the client to load it.
+function Items.track(itemID)
+    trackedItemIDs[itemID] = true
+    Items.prefetch(itemID)
+end
+
+--- The item name, or nil while the client has not loaded the item.
+function Items.nameById(itemID)
+    if itemID and GetItemInfo then
+        return (GetItemInfo(itemID))
+    end
+    return nil
+end
+
 --- The item icon texture, or the question mark while the client has not loaded the item.
-function Items.icon(itemName)
-    local itemID = Items.id(itemName)
+function Items.iconById(itemID)
     Items.prefetch(itemID)
     if itemID and C_Item and C_Item.GetItemIconByID then
         local texture = C_Item.GetItemIconByID(itemID)
@@ -69,9 +82,13 @@ function Items.icon(itemName)
     return "Interface\\Icons\\INV_Misc_QuestionMark"
 end
 
+--- The item icon for a name; see iconById.
+function Items.icon(itemName)
+    return Items.iconById(Items.id(itemName))
+end
+
 --- The red, green and blue of the item's rarity; white while the client has not loaded it.
-function Items.qualityColor(itemName)
-    local itemID = Items.id(itemName)
+function Items.qualityColorById(itemID)
     local quality
     if itemID and GetItemInfo then
         local _, itemLink, itemQuality = GetItemInfo(itemID)
@@ -91,4 +108,9 @@ function Items.qualityColor(itemName)
         return color.r or 1, color.g or 1, color.b or 1
     end
     return 1, 1, 1
+end
+
+--- The rarity color for a name; see qualityColorById.
+function Items.qualityColor(itemName)
+    return Items.qualityColorById(Items.id(itemName))
 end
