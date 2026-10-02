@@ -634,6 +634,8 @@ describe("ForeverBiS phase selector", function()
                 end
             end)
             assert.are.equal(0, #gearIcons())
+        end)
+
         it("breaks the missing slots down by source category, adding up to the missing count", function()
             WowStub.load({ class = "druid", build = "" })
             local remaining
