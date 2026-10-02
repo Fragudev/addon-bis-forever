@@ -114,7 +114,7 @@ describe("Events", function()
             _G.ForeverBiSDB = { class = "mage", build = "pve" }
             WowStub.player = { class = "Druid", token = "DRUID", level = 30 }
             WowStub.fire(frameWithEvent("PLAYER_LOGIN"), "OnEvent")
-            assert.are.equal("druid", ForeverBiSDB.class)
+            assert.are.equal("druid", ForeverBiSCharDB.class)
             assert.is_table(ForeverBiSDB.minimap)
             assert.are.equal(1, renders)
         end)
@@ -122,7 +122,7 @@ describe("Events", function()
         it("creates the saved variables on a first run", function()
             _G.ForeverBiSDB = nil
             WowStub.fire(frameWithEvent("PLAYER_LOGIN"), "OnEvent")
-            assert.are.equal("rogue", ForeverBiSDB.class)
+            assert.are.equal("rogue", ForeverBiSCharDB.class)
         end)
     end)
 end)

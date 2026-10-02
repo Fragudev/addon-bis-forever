@@ -43,7 +43,7 @@ files["ForeverBiS/ForeverBiS_Model.lua"] = {
 files["ForeverBiS/ForeverBiS_Locale.lua"] = { read_globals = { "GetLocale" } }
 
 files["ForeverBiS/Core/"] = { read_globals = with() }
-files["ForeverBiS/Core/Settings.lua"] = { read_globals = with(), globals = { "ForeverBiSDB" } }
+files["ForeverBiS/Core/Settings.lua"] = { read_globals = with(), globals = { "ForeverBiSDB", "ForeverBiSCharDB" } }
 
 files["ForeverBiS/Adapters/Items.lua"] = {
   read_globals = with({ "C_Item", "GetItemIcon", "GetItemInfo", "GetItemInfoInstant", "ITEM_QUALITY_COLORS" }),
@@ -79,7 +79,7 @@ files["ForeverBiS/ForeverBiS_Tooltip.lua"] = {
 
 files["tests/"] = {
   std = "+busted",
-  globals = { "_G", "WowStub", "ForeverBiSMinimapButton", "ForeverBiSData", "ForeverBiSDB", "ForeverBiSTooltip" },
+  globals = { "_G", "WowStub", "ForeverBiSMinimapButton", "ForeverBiSData", "ForeverBiSDB", "ForeverBiSCharDB", "ForeverBiSTooltip" },
   -- Frames the addon registers by name through CreateFrame.
   read_globals = {
     "ItemRefTooltip",

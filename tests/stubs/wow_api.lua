@@ -235,8 +235,23 @@ function Stub.reset()
     _G.GameTooltip = tooltip
     _G.SlashCmdList = {}
     _G.TooltipDataProcessor, _G.Enum, _G.ItemRefTooltip, _G.ForeverBiSTooltip = nil, nil, nil, nil
-    _G.ForeverBiSDB = nil
+    _G.ForeverBiSDB, _G.ForeverBiSCharDB = nil, nil
     _G.SLASH_FOREVERBIS1, _G.SLASH_FOREVERBIS2 = nil, nil
+end
+
+-- Saved values that live account-wide; everything else a spec seeds belongs to the character.
+local ACCOUNT_KEYS = { minimap = true, tooltip = true, tooltipAllClasses = true }
+
+--- Splits a seed table the way the saved variables are split: account-wide keys and per-character keys.
+local function seedSavedVariables(db)
+    if db == nil then
+        return
+    end
+    _G.ForeverBiSDB, _G.ForeverBiSCharDB = {}, { migrated = true }
+    for key, value in pairs(db) do
+        local target = ACCOUNT_KEYS[key] and _G.ForeverBiSDB or _G.ForeverBiSCharDB
+        target[key] = value
+    end
 end
 
 --- Loads every file listed in the .toc into a fresh namespace. An optional hook runs right after the data file,
@@ -244,7 +259,7 @@ end
 function Stub.load(db, dataHook, player)
     Stub.reset()
     Stub.player = player or Stub.player
-    _G.ForeverBiSDB = db
+    seedSavedVariables(db)
     Stub.ns = Toc.load({
         after = {
             ["ForeverBiS_Data.lua"] = dataHook and function()

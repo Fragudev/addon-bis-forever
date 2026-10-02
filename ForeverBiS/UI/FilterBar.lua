@@ -5,16 +5,16 @@ local _, ns = ...
 local FilterBar = {}
 ns.FilterBar = FilterBar
 
-local Filters, Player, L = ns.Filters, ns.Player, ns.L
+local Filters, Player, Sources, L = ns.Filters, ns.Player, ns.Sources, ns.L
 
 local FILTER_LEFT = 22
 local FILTER_ROW_SEARCH, FILTER_ROW_BUTTONS, FILTER_ROW_DUNGEON = -84, -110, -130
 
 local sourceChips = {
-    { "quest", "Quests", "Interface\\GossipFrame\\AvailableQuestIcon" },
-    { "dungeon", "Dungeons and raids", "Interface\\AddOns\\ForeverBiS\\ForeverBiSDungeonIcon.tga" },
-    { "world", "World", "Interface\\WorldMap\\UI-World-Icon" },
-    { "profession", "Professions", "Interface\\Icons\\Trade_Engineering" },
+    { "quest", "Quests", Sources.categoryIcons.quest },
+    { "dungeon", "Dungeons and raids", Sources.categoryIcons.dungeon },
+    { "world", "World", Sources.categoryIcons.world },
+    { "profession", "Professions", Sources.categoryIcons.profession },
 }
 
 local searchBox, searchHint, clearSearchButton

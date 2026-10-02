@@ -79,7 +79,7 @@ describe("ForeverBiS interactions", function()
                 end)[1],
                 "OnClick"
             )
-            assert.is_true(ForeverBiSDB.collapsed["druid:" .. slot[1]])
+            assert.is_true(ForeverBiSCharDB.collapsed["druid:" .. slot[1]])
             assert.is_false(WowStub.hasText(topItem))
 
             WowStub.fire(
@@ -88,7 +88,7 @@ describe("ForeverBiS interactions", function()
                 end)[1],
                 "OnClick"
             )
-            assert.is_nil(ForeverBiSDB.collapsed["druid:" .. slot[1]])
+            assert.is_nil(ForeverBiSCharDB.collapsed["druid:" .. slot[1]])
             assert.is_true(WowStub.hasText(topItem))
         end)
     end)
@@ -432,12 +432,12 @@ describe("ForeverBiS phase selector", function()
         assert.is_true(WowStub.hasText("Level Forty Hood"))
 
         chooseOption(ForeverBiSPhaseDropDown, "Level 30")
-        assert.are.equal("lvl30", ForeverBiSDB.phase)
+        assert.are.equal("lvl30", ForeverBiSCharDB.phase)
         assert.are.equal("Level 30", ForeverBiSPhaseDropDown.menuText)
         assert.is_false(WowStub.hasText("Level Forty Hood"))
 
         chooseOption(ForeverBiSPhaseDropDown, "Auto (Level 40)")
-        assert.is_nil(ForeverBiSDB.phase)
+        assert.is_nil(ForeverBiSCharDB.phase)
         assert.is_true(WowStub.hasText("Level Forty Hood"))
     end)
 
@@ -455,19 +455,19 @@ describe("ForeverBiS phase selector", function()
 
     it("drops a saved phase the route does not have, and when the class changes to such a route", function()
         WowStub.load({ class = "druid", build = "", phase = "lvl99" })
-        assert.is_nil(ForeverBiSDB.phase)
+        assert.is_nil(ForeverBiSCharDB.phase)
 
         WowStub.load({ class = "druid", build = "", phase = "lvl40" }, withSecondPhase)
         chooseOption(ForeverBiSClassDropDown, "Rogue")
-        assert.is_nil(ForeverBiSDB.phase)
+        assert.is_nil(ForeverBiSCharDB.phase)
         assert.is_false(ForeverBiSPhaseDropDown:IsShown())
     end)
 
     it("marks the class as chosen when picked by hand", function()
         WowStub.load({ class = "druid", build = "" })
-        assert.is_nil(ForeverBiSDB.classChosen)
+        assert.is_nil(ForeverBiSCharDB.classChosen)
         chooseOption(ForeverBiSClassDropDown, "Mage")
-        assert.is_true(ForeverBiSDB.classChosen)
+        assert.is_true(ForeverBiSCharDB.classChosen)
     end)
 
     it("keeps collapsed state keyed by route so it survives a phase change", function()
@@ -479,9 +479,9 @@ describe("ForeverBiS phase selector", function()
             end)[1],
             "OnClick"
         )
-        assert.is_true(ForeverBiSDB.collapsed["druid:" .. head])
+        assert.is_true(ForeverBiSCharDB.collapsed["druid:" .. head])
         chooseOption(ForeverBiSPhaseDropDown, "Level 30")
-        assert.is_true(ForeverBiSDB.collapsed["druid:" .. head])
+        assert.is_true(ForeverBiSCharDB.collapsed["druid:" .. head])
     end)
 
     describe("progress line", function()
@@ -634,12 +634,28 @@ describe("ForeverBiS phase selector", function()
                 end
             end)
             assert.are.equal(0, #gearIcons())
+        it("breaks the missing slots down by source category, adding up to the missing count", function()
+            WowStub.load({ class = "druid", build = "" })
+            local remaining
+            for _, line in ipairs(hover().lines) do
+                if line:find("^Remaining: ") then
+                    remaining = line
+                end
+            end
+            assert.is_truthy(remaining, "no Remaining line")
+            local plain = remaining:gsub("|T.-|t", "")
+            local sum = 0
+            for count in plain:gmatch(" (%d+)") do
+                sum = sum + tonumber(count)
+            end
+            assert.are.equal(totalSlots(), sum)
+            assert.is_nil(plain:find(" 0"), "a category with nothing missing should be hidden")
         end)
 
         it("follows the class selection", function()
             WowStub.load({ class = "druid", build = "" })
             local rogue = ForeverBiSModel.progress(ForeverBiSModel.list("rogue"), { equipped = {} }).total
-            ForeverBiSDB.class, ForeverBiSDB.build = "rogue", ""
+            ForeverBiSCharDB.class, ForeverBiSCharDB.build = "rogue", ""
             ForeverBiSFrame:Show()
             WowStub.fire(itemWatcher(), "OnEvent", "BAG_UPDATE")
             assert.are.equal("BiS 0/" .. rogue, progressText().text)
@@ -653,9 +669,9 @@ describe("ForeverBiS phase selector", function()
             local lines = tooltip.lines
             assert.is_truthy(tooltip.title:find("%S"))
             assert.are.equal("BiS: 0/" .. total .. " slots - Listed: 0/" .. total, lines[1])
-            assert.are.equal(1 + 8 + 1, #lines)
+            assert.are.equal(1 + 1 + 8 + 1, #lines) -- summary, remaining by category, 8 slots, +N more
             assert.are.equal("+" .. (total - 8) .. " more", lines[#lines])
-            assert.is_truthy(lines[2]:match("^[%w ]+: .+"))
+            assert.is_truthy(lines[3]:match("^[%w ]+: .+"))
         end)
 
         it("lists every open slot without a +N more line when there are few", function()
@@ -671,7 +687,7 @@ describe("ForeverBiS phase selector", function()
                 end
             end)
             local lines = hover().lines
-            assert.are.equal(1 + 3, #lines)
+            assert.are.equal(1 + 1 + 3, #lines)
             assert.is_nil(lines[#lines]:find("more", 1, true))
         end)
 
@@ -694,7 +710,7 @@ describe("ForeverBiS phase selector", function()
             WowStub.load({ class = "druid", build = "" }, function(data)
                 data.lists = {}
             end)
-            ForeverBiSDB.class = "druid"
+            ForeverBiSCharDB.class = "druid"
             assert.is_false(progressFrame().shown)
         end)
     end)

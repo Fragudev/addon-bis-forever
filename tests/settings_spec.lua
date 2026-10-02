@@ -1,52 +1,112 @@
-local function loadSettings(db, labels)
+--- character seeds ForeverBiSCharDB and account seeds ForeverBiSDB.
+local function loadSettings(character, account)
     WowStub.reset()
-    _G.ForeverBiSDB = db
-    _G.ForeverBiSBuildLabels = labels
+    _G.ForeverBiSCharDB = character
+    _G.ForeverBiSDB = account
     WowStub.loadFiles({ "ForeverBiS_Data.lua", "ForeverBiS_Model.lua", "Core/Settings.lua", "Core/Catalog.lua" })
     return WowStub.ns.Settings
 end
 
 describe("Settings", function()
     after_each(function()
-        _G.ForeverBiSDB, _G.ForeverBiSBuildLabels = nil, nil
+        _G.ForeverBiSDB, _G.ForeverBiSCharDB = nil, nil
     end)
 
     describe("bind", function()
         it("creates the saved variables with the rogue as the default class", function()
             local Settings = loadSettings(nil)
             Settings.bind()
-            assert.are.equal("rogue", ForeverBiSDB.class)
-            assert.are.equal("pve", ForeverBiSDB.build)
+            assert.are.equal("rogue", ForeverBiSCharDB.class)
+            assert.are.equal("pve", ForeverBiSCharDB.build)
             assert.is_table(ForeverBiSDB.minimap)
-            assert.is_table(ForeverBiSDB.collapsed)
+            assert.is_table(ForeverBiSCharDB.collapsed)
+        end)
+
+        it("keeps the account-wide and per-character tables apart", function()
+            local Settings = loadSettings(nil, nil)
+            Settings.bind()
+            assert.are.equal("rogue", ForeverBiSCharDB.class)
+            assert.is_table(ForeverBiSDB.minimap)
+            assert.is_nil(ForeverBiSDB.class)
         end)
 
         it("keeps what the client already loaded", function()
             local collapsed = { ["druid:Head"] = true }
             local Settings = loadSettings({ class = "druid", build = "tank", collapsed = collapsed })
             Settings.bind()
-            assert.are.equal("druid", ForeverBiSDB.class)
-            assert.are.equal(collapsed, ForeverBiSDB.collapsed)
+            assert.are.equal("druid", ForeverBiSCharDB.class)
+            assert.are.equal(collapsed, ForeverBiSCharDB.collapsed)
         end)
 
         it("replaces a collapsed value that is not a table", function()
             local Settings = loadSettings({ collapsed = "broken" })
             Settings.bind()
-            assert.are.same({}, ForeverBiSDB.collapsed)
+            assert.are.same({}, ForeverBiSCharDB.collapsed)
         end)
 
         it("follows a saved variables table the client swaps in later", function()
             local Settings = loadSettings({ class = "mage" })
             Settings.bind()
-            _G.ForeverBiSDB = { class = "hunter" }
+            _G.ForeverBiSCharDB = { class = "hunter" }
             Settings.bind()
             assert.are.equal("hunter", Settings.classKey())
         end)
     end)
 
+    describe("migrate", function()
+        local function account()
+            return { class = "druid", build = "/tank", phase = "lvl30", classChosen = true, minimap = { angle = 90 } }
+        end
+
+        it("moves the account-wide selection into the character", function()
+            local Settings = loadSettings(nil, account())
+            Settings.migrate()
+            assert.are.equal("druid", ForeverBiSCharDB.class)
+            assert.are.equal("/tank", ForeverBiSCharDB.build)
+            assert.are.equal("lvl30", ForeverBiSCharDB.phase)
+            assert.is_true(ForeverBiSCharDB.classChosen)
+        end)
+
+        it("keeps minimap and tooltip settings account-wide", function()
+            local Settings = loadSettings(nil, account())
+            Settings.migrate()
+            assert.are.equal(90, ForeverBiSDB.minimap.angle)
+            assert.is_nil(ForeverBiSDB.class)
+            assert.is_nil(ForeverBiSDB.build)
+        end)
+
+        it("only migrates once: a second character starts fresh", function()
+            local Settings = loadSettings(nil, account())
+            Settings.migrate()
+            local sharedAccount = ForeverBiSDB
+            _G.ForeverBiSCharDB = nil
+            _G.ForeverBiSDB = sharedAccount
+            Settings.migrate()
+            assert.are.equal("rogue", ForeverBiSCharDB.class)
+            assert.is_nil(ForeverBiSCharDB.classChosen)
+        end)
+
+        it("does not overwrite a character that was already migrated", function()
+            local Settings = loadSettings({ class = "mage", build = "pve", migrated = true }, account())
+            Settings.migrate()
+            assert.are.equal("mage", ForeverBiSCharDB.class)
+            assert.are.equal("druid", ForeverBiSDB.class)
+        end)
+
+        it("gives two characters their own selection", function()
+            local Settings = loadSettings({ class = "mage", build = "pve", migrated = true }, {})
+            local alt = { class = "hunter", build = "pve", migrated = true }
+            local main = ForeverBiSCharDB
+            _G.ForeverBiSCharDB = alt
+            Settings.chooseClass(WowStub.ns.Catalog.findClass("druid"))
+            assert.are.equal("druid", alt.class)
+            assert.are.equal("mage", main.class)
+        end)
+    end)
+
     describe("get", function()
         it("reads a saved value", function()
-            local Settings = loadSettings({ tooltip = false })
+            local Settings = loadSettings({}, { tooltip = false })
             assert.is_false(Settings.get("tooltip"))
         end)
 
@@ -63,8 +123,8 @@ describe("Settings", function()
             assert.are.equal("rogue", route)
             assert.are.equal("rogue", class.key)
             assert.are.equal("", build[1]) -- the default build has an empty route suffix
-            assert.are.equal("rogue", ForeverBiSDB.class)
-            assert.are.equal("", ForeverBiSDB.build)
+            assert.are.equal("rogue", ForeverBiSCharDB.class)
+            assert.are.equal("", ForeverBiSCharDB.build)
         end)
 
         it("includes the build suffix", function()
@@ -77,9 +137,9 @@ describe("Settings", function()
         it("chooses a class with its default build and stops auto-detection", function()
             local Settings = loadSettings({ class = "rogue", build = "/pvp" })
             Settings.chooseClass(WowStub.ns.Catalog.findClass("druid"))
-            assert.are.equal("druid", ForeverBiSDB.class)
-            assert.are.equal("", ForeverBiSDB.build)
-            assert.is_true(ForeverBiSDB.classChosen)
+            assert.are.equal("druid", ForeverBiSCharDB.class)
+            assert.are.equal("", ForeverBiSCharDB.build)
+            assert.is_true(ForeverBiSCharDB.classChosen)
         end)
 
         it("chooses a build without touching the class", function()
@@ -92,24 +152,24 @@ describe("Settings", function()
         it("detects the player's class and resets the build only when the class changes", function()
             local Settings = loadSettings({ class = "rogue", build = "/pvp" })
             Settings.applyDetectedClass("DRUID")
-            assert.are.equal("druid", ForeverBiSDB.class)
-            assert.are.equal("", ForeverBiSDB.build)
-            ForeverBiSDB.build = "/tank"
+            assert.are.equal("druid", ForeverBiSCharDB.class)
+            assert.are.equal("", ForeverBiSCharDB.build)
+            ForeverBiSCharDB.build = "/tank"
             Settings.applyDetectedClass("DRUID")
-            assert.are.equal("/tank", ForeverBiSDB.build)
+            assert.are.equal("/tank", ForeverBiSCharDB.build)
         end)
 
         it("does not detect over a class chosen by hand", function()
             local Settings = loadSettings({ class = "rogue", build = "pve", classChosen = true })
             Settings.applyDetectedClass("DRUID")
-            assert.are.equal("rogue", ForeverBiSDB.class)
+            assert.are.equal("rogue", ForeverBiSCharDB.class)
         end)
 
         it("ignores a missing or unknown class token", function()
             local Settings = loadSettings({ class = "rogue", build = "pve" })
             Settings.applyDetectedClass(nil)
             Settings.applyDetectedClass("DEATHKNIGHT")
-            assert.are.equal("rogue", ForeverBiSDB.class)
+            assert.are.equal("rogue", ForeverBiSCharDB.class)
         end)
     end)
 
@@ -151,13 +211,13 @@ describe("Settings", function()
 
     describe("minimap", function()
         it("defaults to 220 degrees and visible", function()
-            local Settings = loadSettings({})
+            local Settings = loadSettings({}, {})
             assert.are.equal(220, Settings.minimapAngle())
             assert.is_false(Settings.minimapHidden())
         end)
 
         it("stores the angle and honors the hide flag", function()
-            local Settings = loadSettings({ minimap = { hide = true } })
+            local Settings = loadSettings({}, { minimap = { hide = true } })
             Settings.setMinimapAngle(90)
             assert.are.equal(90, Settings.minimapAngle())
             assert.is_true(Settings.minimapHidden())
@@ -166,7 +226,7 @@ describe("Settings", function()
 
     describe("tooltip", function()
         it("is on by default and toggles", function()
-            local Settings = loadSettings({})
+            local Settings = loadSettings({}, {})
             assert.is_true(Settings.tooltipEnabled())
             assert.is_false(Settings.toggleTooltip())
             assert.is_false(Settings.tooltipEnabled())
@@ -174,7 +234,7 @@ describe("Settings", function()
         end)
 
         it("shows other classes only after toggling them on", function()
-            local Settings = loadSettings({})
+            local Settings = loadSettings({}, {})
             assert.is_false(Settings.tooltipAllClasses())
             assert.is_true(Settings.toggleTooltipAllClasses())
             assert.is_true(Settings.tooltipAllClasses())

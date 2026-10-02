@@ -28,6 +28,17 @@ Sources.dungeons = {
     { "ruins of lordaeron", "Ruins of Lordaeron" },
 }
 
+--- Icon of each source category, shared by the filter bar and the progress tooltip.
+Sources.categoryIcons = {
+    quest = "Interface\\GossipFrame\\AvailableQuestIcon",
+    dungeon = "Interface\\AddOns\\ForeverBiS\\ForeverBiSDungeonIcon.tga",
+    world = "Interface\\WorldMap\\UI-World-Icon",
+    profession = "Interface\\Icons\\Trade_Engineering",
+}
+
+--- Categories in display order.
+Sources.categories = { "quest", "dungeon", "world", "profession" }
+
 --- The lookup key of a list slot name.
 function Sources.normalizeSlotName(name)
     return ForeverBiSModel.slotKey(name)
@@ -97,4 +108,23 @@ end
 --- Whether only the player who crafted the item can wear it.
 function Sources.isMakerOnly(sourceText)
     return string.find(string.lower(sourceText or ""), "only its maker can wear it", 1, true) ~= nil
+end
+
+--- Counts the slots still missing their BiS item by the category of the item to get.
+--- slots is the progress result's list; returns { { category, count }, ... } in display order, zeros left out.
+function Sources.remainingByCategory(slots)
+    local counts = {}
+    for _, slot in ipairs(slots) do
+        if not slot.done and slot.target then
+            local category = Sources.category(slot.target.source)
+            counts[category] = (counts[category] or 0) + 1
+        end
+    end
+    local result = {}
+    for _, category in ipairs(Sources.categories) do
+        if counts[category] then
+            result[#result + 1] = { category, counts[category] }
+        end
+    end
+    return result
 end
