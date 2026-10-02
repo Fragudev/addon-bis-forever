@@ -1,0 +1,43 @@
+.luacheckrc
+  s_2e9d4926efb663::t_f57659da2cb32b 52-54
+ForeverBiS/Adapters/Chat.lua
+  s_2e9d4926efb663::t_869ae373550c56 1-30
+ForeverBiS/Adapters/Items.lua
+  s_2e9d4926efb663::t_b09df076c7b4c5 117-132
+ForeverBiS/App/Commands.lua
+  s_2e9d4926efb663::t_6f812a592bc788 7-8,10-73,89,92-93,95-97,101,103
+ForeverBiS/Core/Share.lua
+  s_2e9d4926efb663::t_938f13eaa33559 1-75
+ForeverBiS/ForeverBiS.toc
+  s_2e9d4926efb663::t_5cab0e5a70722d 17,21
+ForeverBiS/UI/ItemRows.lua
+  s_2e9d4926efb663::t_aaf4c3d628cd70 7-8,39-44
+README.md
+  s_2e9d4926efb663::t_e126f40cbb6618 34-37
+tests/adapters_spec.lua
+  s_2e9d4926efb663::t_6c50a31fab5c5e 182-238
+tests/commands_spec.lua
+  s_2e9d4926efb663::t_1bf8877468c77b 7-21,45-51,56-58,116-184
+tests/interaction_spec.lua
+  s_2e9d4926efb663::t_095a840ba108c6 441-456
+tests/share_spec.lua
+  s_2e9d4926efb663::t_77798a6343bd1e 1-106
+tests/stubs/wow_api.lua
+  s_2e9d4926efb663::t_c66a987b9e5872 211,327-345
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "a59e4387456c7c44e56815454e10758bb02d7a81",
+  "prompts": {},
+  "sessions": {
+    "s_2e9d4926efb663": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "bbe1029b-52bc-4bd0-892a-ccbb66badc23",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Francis Gutiérrez <francisge@ext.inditex.com>"
+    }
+  }
+}
