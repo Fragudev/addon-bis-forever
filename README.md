@@ -35,7 +35,7 @@ Hover over an item icon to see its tooltip. The help icon on the selector row ex
 
 The right-side paper-doll panel has a brown character-panel frame, with item icons arranged around a static render of your character. Each item icon has a border matching its rarity. `Equipped Only` filters the panel to BiS-ranked items already equipped in their matching slots, including the correct first or second ring and trinket slots. The three weapon slots are grouped together in the center below the character. Click a BiS icon to jump to its slot in the list.
 
-The window opens at its minimum size and can be enlarged vertically from its bottom edge; the minimum size keeps the BiS panel visible. Drag the minimap button around the minimap to reposition it. The minimap portrait with its blue-and-gold circular frame is `ForeverBiSMinimapIcon.tga`.
+The window opens at its minimum size and can be enlarged vertically from its bottom edge; the minimum size keeps the BiS panel visible. Drag the minimap button around the minimap to reposition it. The minimap icon (an epic-purple shield with a gold sparkle inside the gold ring) is `ForeverBiSMinimapIcon.tga`; regenerate its artwork with `python3 tools/generate_minimap_icon.py`.
 
 ## Current scope
 
