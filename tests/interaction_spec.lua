@@ -28,7 +28,7 @@ end
 
 --- The first list holding an item whose source satisfies the predicate.
 local function findListWithItem(predicate)
-    assert(loadfile("ForeverBiS/ForeverBiS_Data.lua"))()
+    WowStub.loadData()
     for _, key in ipairs(sortedKeys(ForeverBiSLists)) do
         for _, slot in ipairs(ForeverBiSLists[key].slots) do
             for _, item in ipairs(slot[2]) do

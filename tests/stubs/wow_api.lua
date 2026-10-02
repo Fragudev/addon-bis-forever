@@ -209,10 +209,16 @@ function Stub.reset()
     _G.SLASH_FOREVERBIS1, _G.SLASH_FOREVERBIS2 = nil, nil
 end
 
+--- Loads the bundled data and the model that derives the legacy globals from it (the .toc order).
+function Stub.loadData()
+    assert(loadfile("ForeverBiS/ForeverBiS_Data.lua"))()
+    assert(loadfile("ForeverBiS/ForeverBiS_Model.lua"))()
+end
+
 function Stub.load(db)
     Stub.reset()
     _G.ForeverBiSDB = db
-    assert(loadfile("ForeverBiS/ForeverBiS_Data.lua"))()
+    Stub.loadData()
     assert(loadfile("ForeverBiS/ForeverBiS.lua"))()
 end
 

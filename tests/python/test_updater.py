@@ -112,30 +112,133 @@ class ParseListTest(unittest.TestCase):
         self.assertEqual(("Erudite's Amulet", "Quest: Friend of the Library", 1234), self.by_slot["Neck"][0][0])
 
 
+class PhaseFromTitleTest(unittest.TestCase):
+    def test_reads_the_level_from_the_title(self):
+        self.assertEqual(
+            {"id": "lvl30", "label": "Level 30", "level": 30},
+            updater.phase_from_title("Feral Druid PvE best in slot at level 30"),
+        )
+
+    def test_reads_a_different_level(self):
+        self.assertEqual("lvl60", updater.phase_from_title("Mage PvP best in slot at level 60")["id"])
+
+    def test_falls_back_to_the_current_phase_without_a_level(self):
+        self.assertEqual(
+            {"id": "current", "label": "Current", "level": None},
+            updater.phase_from_title("Mage PvE best in slot"),
+        )
+
+    def test_collects_phases_by_level_with_levelless_ones_last(self):
+        data = {
+            "/bis/a": {"lvl60": ("A at level 60", []), "current": ("A best in slot", [])},
+            "/bis/b": {"lvl30": ("B at level 30", [])},
+        }
+        self.assertEqual(["lvl30", "lvl60", "current"], [p["id"] for p in updater.collect_phases(data)])
+
+
+class StructureSourceTest(unittest.TestCase):
+    def test_keeps_the_raw_text(self):
+        text = "Quest: Friend of the Library Ten books"
+        self.assertEqual(text, updater.structure_source(text)["text"])
+
+    def test_classifies_a_quest_and_extracts_its_name(self):
+        source = updater.structure_source("Quest: Bartolo's Yeti Fur Cloak \u2197 Alliance, level 34 in Classic")
+        self.assertEqual("quest", source["kind"])
+        self.assertEqual("Bartolo's Yeti Fur Cloak", source["quest"])
+        self.assertEqual("Alliance", source["faction"])
+
+    def test_classifies_a_profession_with_skill_and_level(self):
+        source = updater.structure_source("Leatherworking (100) Only its maker can wear it")
+        self.assertEqual("profession", source["kind"])
+        self.assertEqual("Leatherworking", source["skill"])
+        self.assertEqual(100, source["skillLevel"])
+        self.assertTrue(source["bindsToMaker"])
+
+    def test_profession_without_a_level_has_no_skill_level(self):
+        source = updater.structure_source("Leatherworking")
+        self.assertEqual("Leatherworking", source["skill"])
+        self.assertNotIn("skillLevel", source)
+
+    def test_classifies_a_dungeon_with_boss_zone_and_drop_rate(self):
+        source = updater.structure_source("Archmage Arugal, Shadowfang Keep 34.05% in Classic")
+        self.assertEqual("dungeon", source["kind"])
+        self.assertEqual("Shadowfang Keep", source["zone"])
+        self.assertEqual("Archmage Arugal", source["boss"])
+        self.assertEqual(34.05, source["dropRate"])
+
+    def test_a_zone_outside_the_dungeon_list_keeps_the_world_kind(self):
+        source = updater.structure_source("Crowd Pummeler 9-60, Gnomeregan")
+        self.assertEqual("world", source["kind"])
+        self.assertEqual("Gnomeregan", source["zone"])
+        self.assertEqual("Crowd Pummeler 9-60", source["boss"])
+
+    def test_classifies_a_world_drop_and_flags_it_as_reported(self):
+        source = updater.structure_source("A world drop, not bound: the auction house is quickest Reported, not checked")
+        self.assertEqual("world", source["kind"])
+        self.assertTrue(source["reported"])
+        self.assertNotIn("zone", source)
+        self.assertNotIn("boss", source)
+
+    def test_classifies_unknown_sources(self):
+        source = updater.structure_source("Where it comes from is not known yet Nothing places it yet")
+        self.assertEqual({"kind": "unknown", "text": source["text"]}, source)
+
+    def test_detects_a_horde_exclusive_source_but_not_a_shared_one(self):
+        self.assertEqual("Horde", updater.structure_source("Horde quest The Book of Ur")["faction"])
+        self.assertNotIn("faction", updater.structure_source("Quest: Both Horde and Alliance"))
+
+
 class EmitLuaTest(unittest.TestCase):
     def setUp(self):
-        data = {"/bis/druid": updater.parse_list("/bis/druid", PAGE)}
+        title, slots = updater.parse_list("/bis/druid", PAGE)
+        data = {"/bis/druid": {updater.phase_from_title(title)["id"]: (title, slots)}}
         self.lua = updater.emit_lua(data, {"druid": "Feral PvE"})
 
-    def test_writes_enchants_as_a_third_element_of_the_slot(self):
+    def test_defines_only_the_v2_table(self):
+        self.assertTrue(self.lua.startswith("ForeverBiSData = {\n  schema = 2,\n"))
+        for legacy in ("ForeverBiSLists", "ForeverBiSItemIDs", "ForeverBiSBuildLabels"):
+            self.assertNotIn(legacy, self.lua)
+
+    def test_emits_the_phase_list_and_the_route_label(self):
+        self.assertIn('{ id = "lvl30", label = "Level 30", level = 30 },', self.lua)
+        self.assertIn('["druid"] = {\n      label = "Feral PvE",', self.lua)
+        self.assertIn("        lvl30 = {\n          title = \"Feral Druid PvE best in slot at level 30\",", self.lua)
+
+    def test_writes_one_line_per_item_with_id_and_structured_source(self):
         self.assertIn(
-            '    }, {\n      {"Agility +5", "Enchant Necklace - Agility", "Enchanting 210: Formula sold by Alynsia.", 249504},',
+            '{ id = 1234, name = "Erudite\'s Amulet", source = { kind = "quest", '
+            'text = "Quest: Friend of the Library", quest = "Friend of the Library" } },',
+            self.lua,
+        )
+
+    def test_writes_one_line_per_enchant_with_the_formula_id(self):
+        self.assertIn(
+            '{ effect = "Agility +5", spell = "Enchant Necklace - Agility", '
+            'source = "Enchanting 210: Formula sold by Alynsia.", formulaId = 249504 },',
             self.lua,
         )
 
     def test_omits_the_formula_when_the_enchant_has_none(self):
-        self.assertIn('{"Agility +7", "Enchant Gloves - Agility", "Enchanting 210: Taught by the trainer."},', self.lua)
+        self.assertIn(
+            '{ effect = "Agility +7", spell = "Enchant Gloves - Agility", source = "Enchanting 210: Taught by the trainer." },',
+            self.lua,
+        )
 
-    def test_writes_slots_without_enchants_in_the_two_element_form(self):
-        slot = self.lua.split('{"Off hand: shield", {')[1]
-        self.assertIn('{"Stamina +3"', slot)
+    def test_writes_an_enchants_block_per_slot_that_has_enchants(self):
+        slot = self.lua.split('{ slot = "Off hand: shield",')[1]
+        self.assertIn('effect = "Stamina +3"', slot)
+        self.assertEqual(4, self.lua.count("enchants = {"))
+
+    def test_omits_the_id_when_unknown(self):
+        data = {"/bis/x": {"current": ("X", [("Slot", [("Plain", "Vendor", None)], [])])}}
+        lua = updater.emit_lua(data, {})
+        self.assertIn('{ name = "Plain", source = { kind = "world", text = "Vendor" } },', lua)
+        self.assertNotIn("label =", lua.split("lists")[1])
+        self.assertNotIn("enchants", lua)
+        self.assertIn('{ id = "current", label = "Current" },', lua)
 
     def test_escapes_quotes_in_lua_strings(self):
         self.assertEqual('"say \\"hi\\""', updater.lua_quote('say "hi"'))
-
-    def test_emits_the_item_id_and_build_label_tables(self):
-        self.assertIn('["Erudite\'s Amulet"] = 1234,', self.lua)
-        self.assertIn('["druid"] = "Feral PvE",', self.lua)
 
 
 if __name__ == "__main__":
