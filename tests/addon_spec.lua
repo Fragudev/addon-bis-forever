@@ -49,6 +49,75 @@ describe("ForeverBiS", function()
         end)
     end)
 
+    describe("class auto-detection", function()
+        local function login()
+            for _, candidate in ipairs(WowStub.frames) do
+                if candidate.events.PLAYER_LOGIN then
+                    return WowStub.fire(candidate, "OnEvent", "PLAYER_LOGIN")
+                end
+            end
+            error("no PLAYER_LOGIN watcher")
+        end
+
+        local druid = { class = "Druid", token = "DRUID", level = 20 }
+
+        it("selects the player's class and its default build on login", function()
+            WowStub.load({ class = "rogue", build = "/pvp" }, nil, druid)
+            login()
+            assert.are.equal("druid", ForeverBiSDB.class)
+            assert.are_not.equal("/pvp", ForeverBiSDB.build)
+            assert.is_nil(ForeverBiSDB.classChosen)
+            assert.are.equal("Druid", ForeverBiSClassDropDown.menuText)
+        end)
+
+        it("keeps the build when the detected class is already selected", function()
+            WowStub.load({ class = "druid", build = "/tank" }, nil, druid)
+            login()
+            assert.are.equal("druid", ForeverBiSDB.class)
+            assert.are.equal("/tank", ForeverBiSDB.build)
+        end)
+
+        it("never overrides a class the user chose", function()
+            WowStub.load({ class = "rogue", build = "", classChosen = true }, nil, druid)
+            login()
+            assert.are.equal("rogue", ForeverBiSDB.class)
+        end)
+
+        it("ignores a class token the addon does not know", function()
+            WowStub.load(
+                { class = "mage", build = "" },
+                nil,
+                { class = "Death Knight", token = "DEATHKNIGHT", level = 20 }
+            )
+            login()
+            assert.are.equal("mage", ForeverBiSDB.class)
+        end)
+
+        it("uses the saved variables the client loaded after the files ran", function()
+            WowStub.load(nil, nil, druid)
+            _G.ForeverBiSDB =
+                { class = "hunter", build = "", classChosen = true, collapsed = { ["hunter:Head"] = true } }
+            login()
+            assert.are.equal("hunter", ForeverBiSDB.class)
+            assert.is_true(ForeverBiSDB.collapsed["hunter:Head"])
+            assert.is_table(ForeverBiSDB.minimap)
+        end)
+
+        it("creates the saved variables when the client provides none", function()
+            WowStub.load(nil, nil, druid)
+            _G.ForeverBiSDB = nil
+            login()
+            assert.are.equal("druid", ForeverBiSDB.class)
+        end)
+
+        it("re-applies a hidden minimap button", function()
+            WowStub.load(nil, nil, druid)
+            _G.ForeverBiSDB = { class = "rogue", build = "", minimap = { hide = true } }
+            login()
+            assert.is_false(ForeverBiSMinimapButton:IsShown())
+        end)
+    end)
+
     describe("slash command", function()
         it("toggles the main window", function()
             WowStub.load(nil)
@@ -79,9 +148,12 @@ describe("ForeverBiS", function()
 
         it("hides the ENCHANTS block when no slot of the list has enchants", function()
             WowStub.load({ class = "druid", build = "feral-pve" })
-            for _, list in pairs(ForeverBiSLists) do
-                for _, slot in ipairs(list.slots) do
-                    slot[3] = nil
+            -- The UI reads each phase from ForeverBiSData through the model, so strip the enchants at the source.
+            for _, entry in pairs(ForeverBiSData.lists) do
+                for _, phase in pairs(entry.phases) do
+                    for _, slot in ipairs(phase.slots) do
+                        slot.enchants = nil
+                    end
                 end
             end
             ForeverBiSFrame:Show()

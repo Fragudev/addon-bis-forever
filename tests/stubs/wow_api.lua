@@ -185,6 +185,7 @@ function Stub.reset()
     Stub.menus = {}
     Stub.equipped = {}
     Stub.bagCounts = {}
+    Stub.player = { class = "Rogue", token = "ROGUE", level = 30 }
 
     _G.UIParent = newFrame("Frame", nil)
     _G.Minimap = newFrame("Frame", nil)
@@ -210,15 +211,21 @@ function Stub.reset()
 end
 
 --- Loads the bundled data and the model that derives the legacy globals from it (the .toc order).
-function Stub.loadData()
+--- An optional hook runs between the data file and the model, to reshape ForeverBiSData before the legacy globals exist.
+function Stub.loadData(hook)
     assert(loadfile("ForeverBiS/ForeverBiS_Data.lua"))()
+    if hook then
+        hook(_G.ForeverBiSData)
+    end
     assert(loadfile("ForeverBiS/ForeverBiS_Model.lua"))()
 end
 
-function Stub.load(db)
+--- Optional arguments: a data hook (see loadData) and a player ({ class, token, level }) in place of the default rogue.
+function Stub.load(db, dataHook, player)
     Stub.reset()
+    Stub.player = player or Stub.player
     _G.ForeverBiSDB = db
-    Stub.loadData()
+    Stub.loadData(dataHook)
     assert(loadfile("ForeverBiS/ForeverBiS.lua"))()
 end
 
@@ -263,11 +270,12 @@ end
 _G.GetRealmName = function()
     return "Realm"
 end
+-- Configure per test through Stub.player = { class = "Druid", token = "DRUID", level = 12 }.
 _G.UnitClass = function()
-    return "Rogue", "ROGUE"
+    return Stub.player.class, Stub.player.token
 end
 _G.UnitLevel = function()
-    return 30
+    return Stub.player.level
 end
 
 -- Dropdown helpers record what a menu would show; specs drive them through Stub.menus.

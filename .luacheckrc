@@ -52,6 +52,7 @@ files["tests/"] = {
     "ForeverBiSFrame",
     "ForeverBiSClassDropDown",
     "ForeverBiSBuildDropDown",
+    "ForeverBiSPhaseDropDown",
     "ForeverBiSFactionFilter",
     "ForeverBiSSourceFilter",
   },
