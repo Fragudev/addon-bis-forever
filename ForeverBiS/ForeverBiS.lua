@@ -699,7 +699,7 @@ buildLabel:SetText("Build")
 local buildDrop = CreateFrame("Frame", "ForeverBiSBuildDropDown", frame, "UIDropDownMenuTemplate")
 buildDrop:SetPoint("LEFT", buildLabel, "RIGHT", -5, -3)
 UIDropDownMenu_SetWidth(buildDrop, 120)
--- No label: "Auto (Level 30)" explains itself, and a label would collide with the filter button at the minimum width.
+-- No label: "Auto (Level 30)" explains itself and keeps the selector row short at the minimum width.
 local phaseDrop = CreateFrame("Frame", "ForeverBiSPhaseDropDown", frame, "UIDropDownMenuTemplate")
 phaseDrop:SetPoint("LEFT", buildDrop, "RIGHT", -12, 0)
 UIDropDownMenu_SetWidth(phaseDrop, 105)
@@ -731,13 +731,19 @@ local function showAddonHelp()
     GameTooltip:AddLine(" ")
     addHelpHeader("SEARCH & FILTERS")
     GameTooltip:AddLine(
-        "Use the Filters button to show or hide item search, faction, source type, and dungeon filters.",
+        "Search by item, boss or zone. The icon buttons filter by source and can be combined; the dungeon list appears with the dungeon button.",
         0.9,
         0.9,
         0.9,
         true
     )
-    GameTooltip:AddLine("Clear Filters resets the search and all filter selections.", 0.9, 0.9, 0.9, true)
+    GameTooltip:AddLine(
+        "The faction button hides items exclusive to the other faction. Maker only hides profession items that only their maker can wear.",
+        0.9,
+        0.9,
+        0.9,
+        true
+    )
     GameTooltip:AddLine("Faction-exclusive items show a faction emblem and colored faction name.", 0.9, 0.9, 0.9, true)
     GameTooltip:AddLine(" ")
     addHelpHeader("ITEM LIST")
@@ -1120,24 +1126,47 @@ local function formatItemSource(sourceText)
     return "|cffffd100" .. source .. "|r, |cff65d9ff" .. location .. "|r"
 end
 
-local listFilters = { search = "", faction = "all", source = "all", dungeon = "all" }
+local listFilters = { search = "", sources = {}, dungeon = "all", bothFactions = false, hideMaker = false }
+local FILTER_LEFT, FILTER_RIGHT = 22, 376
+local FILTER_ROW_SEARCH, FILTER_ROW_BUTTONS, FILTER_ROW_DUNGEON = -84, -110, -130
+
+local function getPlayerFaction()
+    return UnitFactionGroup and UnitFactionGroup("player") or nil
+end
+
 local searchBox = CreateFrame("EditBox", nil, frame, "InputBoxTemplate")
-searchBox:SetSize(126, 20)
-searchBox:SetPoint("TOPLEFT", frame, "TOPLEFT", 22, -84)
+searchBox:SetSize(224, 20)
+searchBox:SetPoint("TOPLEFT", frame, "TOPLEFT", FILTER_LEFT, FILTER_ROW_SEARCH)
 searchBox:SetAutoFocus(false)
 searchBox:SetMaxLetters(48)
-searchBox:SetTextInsets(5, 5, 0, 0)
+searchBox:SetTextInsets(5, 22, 0, 0)
 local searchHint = frame:CreateFontString(nil, "OVERLAY", "GameFontDisableSmall")
 searchHint:SetPoint("LEFT", searchBox, "LEFT", 6, 0)
-searchHint:SetText("Search items...")
-searchBox:SetScript("OnTextChanged", function(self)
-    local text = self:GetText() or ""
-    listFilters.search = string.lower(text)
-    if text == "" then
-        searchHint:Show()
-    else
+searchHint:SetText("Search item, boss or zone")
+local clearSearchButton = CreateFrame("Button", nil, frame, "UIPanelButtonTemplate")
+clearSearchButton:SetSize(16, 16)
+clearSearchButton:SetPoint("RIGHT", searchBox, "RIGHT", 0, 0)
+clearSearchButton:SetText("x")
+clearSearchButton:Hide()
+local countText = frame:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
+countText:SetPoint("TOPRIGHT", frame, "TOPLEFT", FILTER_RIGHT, FILTER_ROW_SEARCH - 4)
+countText:SetWidth(96)
+countText:SetJustifyH("RIGHT")
+
+local function refreshSearchWidgets()
+    local hasText = (searchBox:GetText() or "") ~= ""
+    if hasText then
         searchHint:Hide()
+        clearSearchButton:Show()
+    else
+        searchHint:Show()
+        clearSearchButton:Hide()
     end
+end
+
+searchBox:SetScript("OnTextChanged", function(self)
+    listFilters.search = string.lower(self:GetText() or "")
+    refreshSearchWidgets()
     scroll:SetVerticalScroll(0)
     if render then
         render()
@@ -1149,199 +1178,228 @@ end)
 searchBox:SetScript("OnEscapePressed", function(self)
     self:ClearFocus()
 end)
+clearSearchButton:SetScript("OnClick", function()
+    searchBox:SetText("")
+    searchBox:ClearFocus()
+end)
 
-local factionDrop = CreateFrame("Frame", "ForeverBiSFactionFilter", frame, "UIDropDownMenuTemplate")
-factionDrop:SetPoint("TOPLEFT", frame, "TOPLEFT", 150, -78)
-UIDropDownMenu_SetWidth(factionDrop, 68)
-local sourceDrop = CreateFrame("Frame", "ForeverBiSSourceFilter", frame, "UIDropDownMenuTemplate")
-sourceDrop:SetPoint("TOPLEFT", frame, "TOPLEFT", 253, -78)
-UIDropDownMenu_SetWidth(sourceDrop, 76)
+local function setFilterActive(button, active)
+    button.filterActive = active
+    if active then
+        button:LockHighlight()
+    else
+        button:UnlockHighlight()
+    end
+    local label = button:GetFontString()
+    if label then
+        if active then
+            label:SetTextColor(1, 0.89, 0.35)
+        else
+            label:SetTextColor(0.75, 0.75, 0.75)
+        end
+    end
+end
+
+local function attachFilterTooltip(button, heading, description)
+    button:SetScript("OnEnter", function(self)
+        GameTooltip:SetOwner(self, "ANCHOR_TOP")
+        GameTooltip:SetText(heading, 1, 0.89, 0.35)
+        GameTooltip:AddLine(description, 1, 1, 1, true)
+        GameTooltip:Show()
+    end)
+    button:SetScript("OnLeave", function()
+        GameTooltip:Hide()
+    end)
+end
+
+local function createFilterButton(name, width)
+    local button = CreateFrame("Button", name, frame, "UIPanelButtonTemplate")
+    button:SetSize(width, 22)
+    return button
+end
+
+local sourceChips = {
+    { "quest", "Quests", "Interface\\GossipFrame\\AvailableQuestIcon" },
+    { "dungeon", "Dungeons and raids", "Interface\\AddOns\\ForeverBiS\\ForeverBiSDungeonIcon.tga" },
+    { "world", "World", "Interface\\WorldMap\\UI-World-Icon" },
+    { "profession", "Professions", "Interface\\Icons\\Trade_Engineering" },
+}
+local sourceChipButtons = {}
+local lastChip
+for _, chip in ipairs(sourceChips) do
+    local category, label, texture = chip[1], chip[2], chip[3]
+    local button = createFilterButton("ForeverBiSFilter" .. category, 28)
+    if lastChip then
+        button:SetPoint("LEFT", lastChip, "RIGHT", 4, 0)
+    else
+        button:SetPoint("TOPLEFT", frame, "TOPLEFT", FILTER_LEFT, FILTER_ROW_BUTTONS)
+    end
+    local icon = button:CreateTexture(nil, "OVERLAY")
+    icon:SetTexture(texture)
+    icon:SetSize(14, 14)
+    icon:SetPoint("CENTER", button, "CENTER", 0, 0)
+    attachFilterTooltip(
+        button,
+        label,
+        "Show only " .. string.lower(label) .. " sources. Select several to combine them."
+    )
+    sourceChipButtons[category] = button
+    lastChip = button
+end
+
+local factionButton = createFilterButton("ForeverBiSFilterFaction", 70)
+local makerButton = createFilterButton("ForeverBiSFilterMaker", 92)
+makerButton:SetText("Maker only")
+attachFilterTooltip(
+    makerButton,
+    "Maker only",
+    "Hide profession items that only their maker can wear. Items any player can use stay visible."
+)
+attachFilterTooltip(factionButton, "Faction", "Show items for your faction only. Click to show both factions.")
+
 local dungeonDrop = CreateFrame("Frame", "ForeverBiSDungeonFilter", frame, "UIDropDownMenuTemplate")
-dungeonDrop:SetPoint("TOPLEFT", frame, "TOPLEFT", 130, -109)
-UIDropDownMenu_SetWidth(dungeonDrop, 120)
+dungeonDrop:SetPoint("TOPLEFT", frame, "TOPLEFT", FILTER_LEFT - 16, FILTER_ROW_DUNGEON)
+UIDropDownMenu_SetWidth(dungeonDrop, 150)
 
-local filtersExpanded = false
-local sourceLegendWidgets = {}
-local filterToggle = CreateFrame("Button", nil, frame, "UIPanelButtonTemplate")
-filterToggle:SetSize(100, 22)
-filterToggle:SetPoint("RIGHT", helpButton, "LEFT", -8, 0)
-local clearFiltersButton = CreateFrame("Button", nil, frame, "UIPanelButtonTemplate")
-clearFiltersButton:SetSize(90, 22)
-clearFiltersButton:SetPoint("LEFT", dungeonDrop, "RIGHT", 4, 0)
-clearFiltersButton:SetText("Clear Filters")
-clearFiltersButton:SetScript("OnClick", function()
-    resetListFilters()
+local dungeonOptions = { { "all", "All dungeons" } }
+for _, dungeon in ipairs(dungeonSourceNames) do
+    table.insert(dungeonOptions, { dungeon[1], dungeon[2] })
+end
+
+local function updateDungeonText()
+    for _, option in ipairs(dungeonOptions) do
+        if option[1] == listFilters.dungeon then
+            UIDropDownMenu_SetText(dungeonDrop, option[2])
+            break
+        end
+    end
+end
+
+--- Syncs every filter widget with listFilters and places the list below the bar.
+local function layoutFilterBar()
+    for category, button in pairs(sourceChipButtons) do
+        setFilterActive(button, listFilters.sources[category] == true)
+    end
+
+    local faction = getPlayerFaction()
+    factionButton:ClearAllPoints()
+    makerButton:ClearAllPoints()
+    if faction then
+        factionButton:Show()
+        factionButton:SetPoint("LEFT", lastChip, "RIGHT", 10, 0)
+        factionButton:SetText(listFilters.bothFactions and "Both" or faction)
+        setFilterActive(factionButton, not listFilters.bothFactions)
+        makerButton:SetPoint("LEFT", factionButton, "RIGHT", 4, 0)
+    else
+        factionButton:Hide()
+        makerButton:SetPoint("LEFT", lastChip, "RIGHT", 10, 0)
+    end
+    setFilterActive(makerButton, listFilters.hideMaker)
+
+    local showDungeons = listFilters.sources.dungeon == true
+    if showDungeons then
+        dungeonDrop:Show()
+    else
+        dungeonDrop:Hide()
+    end
+    updateDungeonText()
+
+    scroll:ClearAllPoints()
+    scroll:SetPoint("TOPLEFT", frame, "TOPLEFT", 20, showDungeons and -166 or -140)
+    scroll:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -384, 38)
+end
+
+local function refreshList()
+    layoutFilterBar()
     scroll:SetVerticalScroll(0)
     if render then
         render()
     end
-end)
-clearFiltersButton:SetScript("OnEnter", function(self)
-    GameTooltip:SetOwner(self, "ANCHOR_TOP")
-    GameTooltip:SetText("Clear Filters", 1, 0.89, 0.35)
-    GameTooltip:AddLine("Clear the search and reset faction, source, and dungeon filters.", 1, 1, 1, true)
-    GameTooltip:Show()
-end)
-clearFiltersButton:SetScript("OnLeave", function()
-    GameTooltip:Hide()
-end)
-filterToggle:SetScript("OnClick", function()
-    filtersExpanded = not filtersExpanded
-    if filtersExpanded then
-        searchBox:Show()
-        searchHint:Show()
-        if searchBox:GetText() ~= "" then
-            searchHint:Hide()
-        end
-        factionDrop:Show()
-        sourceDrop:Show()
-        dungeonDrop:Show()
-        clearFiltersButton:Show()
-        for _, entry in ipairs(sourceLegendWidgets) do
-            entry:Show()
-        end
-        scroll:ClearAllPoints()
-        scroll:SetPoint("TOPLEFT", frame, "TOPLEFT", 20, -164)
-        scroll:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -384, 38)
-    else
-        searchBox:Hide()
-        searchHint:Hide()
-        factionDrop:Hide()
-        sourceDrop:Hide()
-        dungeonDrop:Hide()
-        clearFiltersButton:Hide()
-        for _, entry in ipairs(sourceLegendWidgets) do
-            entry:Hide()
-        end
-        scroll:ClearAllPoints()
-        scroll:SetPoint("TOPLEFT", frame, "TOPLEFT", 20, -96)
-        scroll:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -384, 38)
-    end
-    filterToggle:SetText(filtersExpanded and "Hide Filters" or "Show Filters")
-end)
-filterToggle:SetText("Show Filters")
-
-local filterOptions = {
-    faction = { { "all", "All Factions" }, { "alliance", "Alliance" }, { "horde", "Horde" } },
-    source = {
-        { "all", "All Sources" },
-        { "quest", "Quests" },
-        { "dungeon", "Dungeons/Raids" },
-        { "world", "World" },
-        { "profession", "Professions" },
-    },
-    dungeon = { { "all", "All Dungeons" } },
-}
-for _, dungeon in ipairs(dungeonSourceNames) do
-    table.insert(filterOptions.dungeon, { dungeon[1], dungeon[2] })
 end
 
-local filterDropdowns = {
-    faction = factionDrop,
-    source = sourceDrop,
-    dungeon = dungeonDrop,
-}
-
-local function updateFilterDropdownText()
-    for filterKey, options in pairs(filterOptions) do
-        local selected = listFilters[filterKey]
-        for _, option in ipairs(options) do
-            if option[1] == selected then
-                UIDropDownMenu_SetText(filterDropdowns[filterKey], option[2])
-                break
+for category, button in pairs(sourceChipButtons) do
+    button:SetScript("OnClick", function()
+        if listFilters.sources[category] then
+            listFilters.sources[category] = nil
+            if category == "dungeon" then
+                listFilters.dungeon = "all"
             end
+        else
+            listFilters.sources[category] = true
         end
-    end
-end
-
-for filterKey, dropdown in pairs(filterDropdowns) do
-    local currentFilterKey = filterKey
-    UIDropDownMenu_Initialize(dropdown, function(_, level)
-        for _, option in ipairs(filterOptions[currentFilterKey]) do
-            local optionValue, optionLabel = option[1], option[2]
-            local info = UIDropDownMenu_CreateInfo()
-            info.text = optionLabel
-            info.checked = listFilters[currentFilterKey] == optionValue
-            info.func = function()
-                listFilters[currentFilterKey] = optionValue
-                updateFilterDropdownText()
-                scroll:SetVerticalScroll(0)
-                if render then
-                    render()
-                end
-            end
-            UIDropDownMenu_AddButton(info, level)
-        end
+        refreshList()
     end)
 end
-updateFilterDropdownText()
+factionButton:SetScript("OnClick", function()
+    listFilters.bothFactions = not listFilters.bothFactions
+    refreshList()
+end)
+makerButton:SetScript("OnClick", function()
+    listFilters.hideMaker = not listFilters.hideMaker
+    refreshList()
+end)
 
-local sourceLegend = {
-    { "Interface\\GossipFrame\\AvailableQuestIcon", "Quest", 174 },
-    { "Interface\\AddOns\\ForeverBiS\\ForeverBiSDungeonIcon.tga", "Dungeon", 225 },
-    { "Interface\\WorldMap\\UI-World-Icon", "World", 285 },
-    { "Interface\\Icons\\Trade_Engineering", "Trade", 341 },
-}
-for _, entry in ipairs(sourceLegend) do
-    local icon = frame:CreateTexture(nil, "ARTWORK")
-    icon:SetTexture(entry[1])
-    icon:SetSize(14, 14)
-    icon:SetPoint("TOPLEFT", frame, "TOPLEFT", entry[3], -143)
-    local label = frame:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
-    label:SetPoint("LEFT", icon, "RIGHT", 2, 0)
-    label:SetText(entry[2])
-    table.insert(sourceLegendWidgets, icon)
-    table.insert(sourceLegendWidgets, label)
-end
-if not filtersExpanded then
-    searchBox:Hide()
-    searchHint:Hide()
-    factionDrop:Hide()
-    sourceDrop:Hide()
-    dungeonDrop:Hide()
-    clearFiltersButton:Hide()
-    for _, entry in ipairs(sourceLegendWidgets) do
-        entry:Hide()
+UIDropDownMenu_Initialize(dungeonDrop, function(_, level)
+    for _, option in ipairs(dungeonOptions) do
+        local optionValue, optionLabel = option[1], option[2]
+        local info = UIDropDownMenu_CreateInfo()
+        info.text = optionLabel
+        info.checked = listFilters.dungeon == optionValue
+        info.func = function()
+            listFilters.dungeon = optionValue
+            updateDungeonText()
+            scroll:SetVerticalScroll(0)
+            if render then
+                render()
+            end
+        end
+        UIDropDownMenu_AddButton(info, level)
     end
+end)
+layoutFilterBar()
+refreshSearchWidgets()
+
+local function isMakerOnly(sourceText)
+    return string.find(string.lower(sourceText or ""), "only its maker can wear it", 1, true) ~= nil
 end
 
 local function itemMatchesFilters(item)
     local itemName, itemSource = item[1], item[2] or ""
-    if listFilters.search ~= "" and not string.find(string.lower(itemName), listFilters.search, 1, true) then
-        return false
-    end
     local lowerSource = string.lower(itemSource)
-    if
-        listFilters.faction == "alliance"
-        and string.find(lowerSource, "horde", 1, true)
-        and not string.find(lowerSource, "alliance", 1, true)
-    then
-        return false
+    if listFilters.search ~= "" then
+        local haystack = string.lower(itemName) .. " " .. lowerSource
+        if not string.find(haystack, listFilters.search, 1, true) then
+            return false
+        end
     end
-    if
-        listFilters.faction == "horde"
-        and string.find(lowerSource, "alliance", 1, true)
-        and not string.find(lowerSource, "horde", 1, true)
-    then
-        return false
+    local faction = getPlayerFaction()
+    if faction and not listFilters.bothFactions then
+        local exclusive = getExclusiveFaction(itemSource)
+        if exclusive and exclusive ~= faction then
+            return false
+        end
     end
-    if listFilters.source ~= "all" and getSourceCategory(itemSource) ~= listFilters.source then
+    if next(listFilters.sources) and not listFilters.sources[getSourceCategory(itemSource)] then
         return false
     end
     if listFilters.dungeon ~= "all" and not string.find(lowerSource, listFilters.dungeon, 1, true) then
+        return false
+    end
+    if listFilters.hideMaker and isMakerOnly(itemSource) then
         return false
     end
     return true
 end
 
 resetListFilters = function()
-    listFilters.search, listFilters.faction = "", "all"
-    listFilters.source, listFilters.dungeon = "all", "all"
+    listFilters.search, listFilters.dungeon = "", "all"
+    listFilters.sources = {}
+    listFilters.bothFactions, listFilters.hideMaker = false, false
     if searchBox:GetText() ~= "" then
         searchBox:SetText("")
     end
-    searchHint:Show()
-    updateFilterDropdownText()
+    layoutFilterBar()
+    refreshSearchWidgets()
 end
 
 local function routePhases()
@@ -1524,6 +1582,7 @@ render = function()
         msg:SetWidth(content:GetWidth())
         msg:SetJustifyH("LEFT")
         msg:SetText("This installed version does not include the selected BiS list yet.")
+        countText:SetText("")
         content:SetHeight(45)
         scroll:SetVerticalScroll(0)
         if not userSized then
@@ -1538,6 +1597,7 @@ render = function()
     local rankedItems = {}
     local slotDisplayNames = {}
     local anyFilteredItems = false
+    local totalItems, shownItems = 0, 0
     for _, slot in ipairs(data.slots) do
         local slotKey = normalizeSlotName(slot[1])
         bestItems[slotKey] = slot[2][1]
@@ -1550,6 +1610,8 @@ render = function()
             end
         end
 
+        totalItems = totalItems + #slot[2]
+        shownItems = shownItems + #visibleItems
         if #visibleItems > 0 then
             anyFilteredItems = true
             y = y - 4
@@ -1735,7 +1797,20 @@ render = function()
         empty:SetWidth(content:GetWidth() - 16)
         empty:SetJustifyH("LEFT")
         empty:SetText("No items match the current search and filters.")
-        y = y - 36
+        local clearAll = CreateFrame("Button", nil, content, "UIPanelButtonTemplate")
+        clearAll:SetSize(100, 22)
+        clearAll:SetPoint("TOPLEFT", content, "TOPLEFT", 8, y - 34)
+        clearAll:SetText("Clear filters")
+        clearAll:SetScript("OnClick", function()
+            resetListFilters()
+            render()
+        end)
+        y = y - 66
+    end
+    if shownItems == totalItems then
+        countText:SetText(totalItems .. " items")
+    else
+        countText:SetText("|cffffe35b" .. shownItems .. "|r/" .. totalItems)
     end
 
     local equippedBisShown = false
@@ -1775,6 +1850,10 @@ render = function()
             button:SetScript("OnClick", function()
                 if not itemMatchesFilters(targetItem) then
                     resetListFilters()
+                    if not itemMatchesFilters(targetItem) then
+                        listFilters.bothFactions = true
+                        layoutFilterBar()
+                    end
                     render()
                 end
                 local sectionName = slotDisplayNames[targetSlot] or targetSlot
@@ -1826,6 +1905,10 @@ render = function()
             button:SetScript("OnClick", function()
                 if not itemMatchesFilters(targetItem) then
                     resetListFilters()
+                    if not itemMatchesFilters(targetItem) then
+                        listFilters.bothFactions = true
+                        layoutFilterBar()
+                    end
                     render()
                 end
                 local sectionName = slotDisplayNames[targetSlot] or targetSlot
