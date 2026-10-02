@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Download the current ForeverChanges BiS lists into ForeverBiS_Data.lua."""
+"""Download the current ForeverChanges BiS lists into ForeverBiS_Data.lua (schema 2)."""
 
 from __future__ import annotations
 
@@ -237,34 +237,204 @@ def discover_routes():
     return sorted(routes), labels
 
 
+# --- Structured item sources -------------------------------------------------------------
+# These lists mirror professionSourceIcons / dungeonSourceNames in ForeverBiS/ForeverBiS.lua so the
+# "kind" computed here matches the category the addon derived from the free text. A new raid or
+# dungeon is a one-line addition to the data below.
+
+UNKNOWN_SOURCE_MARKER = "where it comes from is not known yet"
+
+PROFESSIONS = (
+    "Alchemy",
+    "Blacksmithing",
+    "Cooking",
+    "Enchanting",
+    "Engineering",
+    "Fishing",
+    "Herbalism",
+    "Leatherworking",
+    "Mining",
+    "Skinning",
+    "Tailoring",
+)
+
+# Places whose presence in the source text makes the item a "dungeon" drop (lowercase match, display name).
+DUNGEON_SOURCES = (
+    ("the deadmines", "The Deadmines"),
+    ("wailing caverns", "Wailing Caverns"),
+    ("shadowfang keep", "Shadowfang Keep"),
+    ("blackfathom deeps", "Blackfathom Deeps"),
+    ("ragefire chasm", "Ragefire Chasm"),
+    ("ruins of lordaeron", "Ruins of Lordaeron"),
+)
+
+# Extra zone names that only fill `zone` and `boss`; they never change `kind`, so behaviour stays identical.
+EXTRA_ZONES = (
+    ("gnomeregan", "Gnomeregan"),
+    ("the stockade", "The Stockade"),
+    ("razorfen kraul", "Razorfen Kraul"),
+    ("razorfen downs", "Razorfen Downs"),
+    ("scarlet monastery", "Scarlet Monastery"),
+    ("hall of thanes", "Hall of Thanes"),
+)
+
+QUEST_END = re.compile(r"\s*\u2197|\s+(?:Horde|Alliance)\b|,|\s+(?:from\s+)?level\b")
+
+
+def source_zone(text):
+    """Return (zone display name, character offset) of the first known zone in the text, or None."""
+    lower = text.lower()
+    found = [(lower.find(key), name) for key, name in DUNGEON_SOURCES + EXTRA_ZONES if key in lower]
+    if not found:
+        return None
+    offset, name = min(found)
+    return name, offset
+
+
+def structure_source(text):
+    """Turn the raw source text of an item into a dict; `text` is always kept verbatim."""
+    lower = text.lower()
+    if UNKNOWN_SOURCE_MARKER in lower:
+        kind = "unknown"
+    elif "quest" in lower:
+        kind = "quest"
+    elif any(profession.lower() in lower for profession in PROFESSIONS):
+        kind = "profession"
+    elif any(key in lower for key, _ in DUNGEON_SOURCES):
+        kind = "dungeon"
+    else:
+        kind = "world"
+    source = {"kind": kind, "text": text}
+
+    has_horde, has_alliance = "horde" in lower, "alliance" in lower
+    if has_horde != has_alliance:
+        source["faction"] = "Horde" if has_horde else "Alliance"
+
+    if kind in ("dungeon", "world"):
+        zone = source_zone(text)
+        if zone:
+            source["zone"] = zone[0]
+            boss = re.match(r"^([^,]+),\s*" + re.escape(text[zone[1] : zone[1] + len(zone[0])]), text)
+            if boss:
+                source["boss"] = boss.group(1).strip()
+
+    rate = re.search(r"(\d+(?:\.\d+)?)%", text)
+    if rate:
+        source["dropRate"] = float(rate.group(1))
+
+    if kind == "quest":
+        quest = re.search(r"Quest:\s*(.+)", text)
+        name = QUEST_END.split(quest.group(1), maxsplit=1)[0].strip() if quest else ""
+        if name:
+            source["quest"] = name
+
+    if kind == "profession":
+        matches = [
+            (match.start(), profession, match.group(1) or match.group(2))
+            for profession in PROFESSIONS
+            if (match := re.search(rf"\b{profession}\b(?:\s*\((\d+)\)|\s+(\d+)\b)?", text, re.I))
+        ]
+        if matches:
+            _, skill, level = min(matches)
+            source["skill"] = skill
+            if level:
+                source["skillLevel"] = int(level)
+
+    if "only its maker can wear it" in lower:
+        source["bindsToMaker"] = True
+    if "reported, not checked" in lower:
+        source["reported"] = True
+    return source
+
+
+# --- Phases -------------------------------------------------------------------------------
+
+
+def phase_from_title(title):
+    """Derive the phase of a list from its title.
+
+    NOTE: real phase discovery from ForeverChanges is pending because the page structure after launch is
+    unknown; for now the phase comes from the title only ("... at level 30" -> lvl30, otherwise "current").
+    """
+    match = re.search(r"\bat level\s+(\d+)\s*$", title.strip(), re.I)
+    if match:
+        level = int(match.group(1))
+        return {"id": f"lvl{level}", "label": f"Level {level}", "level": level}
+    return {"id": "current", "label": "Current", "level": None}
+
+
+def collect_phases(data):
+    """Sorted union of the phases used by every list: by level, lists without a level last."""
+    found = {}
+    for phases in data.values():
+        for title, _ in phases.values():
+            phase = phase_from_title(title)
+            found[phase["id"]] = phase
+    return sorted(found.values(), key=lambda phase: (phase["level"] is None, phase["level"] or 0, phase["id"]))
+
+
+# --- Lua output ---------------------------------------------------------------------------
+
+SOURCE_FIELDS = ("faction", "zone", "boss", "dropRate", "quest", "skill", "skillLevel", "bindsToMaker", "reported")
+
+
+def lua_key(key):
+    return key if re.fullmatch(r"[A-Za-z_][A-Za-z0-9_]*", key) else f"[{lua_quote(key)}]"
+
+
+def lua_value(value):
+    if value is True:
+        return "true"
+    if isinstance(value, (int, float)):
+        return repr(value)
+    return lua_quote(value)
+
+
+def lua_source(source):
+    parts = [f"kind = {lua_quote(source['kind'])}", f"text = {lua_quote(source['text'])}"]
+    parts.extend(f"{field} = {lua_value(source[field])}" for field in SOURCE_FIELDS if field in source)
+    return "{ " + ", ".join(parts) + " }"
+
+
 def emit_lua(data, labels):
-    lines = ["ForeverBiSLists = {"]
-    item_ids = {}
-    for route, (title, slots) in sorted(data.items()):
+    """Write ForeverBiSData (schema 2). `data` maps route -> {phase id: (title, slots)}."""
+    lines = ["ForeverBiSData = {", "  schema = 2,", "  phases = {"]
+    for phase in collect_phases(data):
+        level = f", level = {phase['level']}" if phase["level"] is not None else ""
+        lines.append(f"    {{ id = {lua_quote(phase['id'])}, label = {lua_quote(phase['label'])}{level} }},")
+    lines.extend(["  },", "  lists = {"])
+    for route, phases in sorted(data.items()):
         key = route.removeprefix("/bis/")
-        lines.append(f"  [{lua_quote(key)}] = {{ title = {lua_quote(title)}, slots = {{")
-        for slot_name, items, enchants in slots:
-            lines.append(f"    {{{lua_quote(slot_name)}, {{")
-            for name, source, itemid in items:
-                lines.append(f"      {{{lua_quote(name)}, {lua_quote(source)}}},")
-                if itemid:
-                    item_ids[name] = itemid
-            if enchants:
-                lines.append("    }, {")
-                for effect, spell, source, formula in enchants:
-                    formula_part = f", {formula}" if formula else ""
-                    lines.append(f"      {{{lua_quote(effect)}, {lua_quote(spell)}, {lua_quote(source)}{formula_part}}},")
-            lines.append("    }},")
-        lines.append("  }},")
-    lines.append("}")
-    lines.append("ForeverBiSItemIDs = {")
-    for name, itemid in sorted(item_ids.items()):
-        lines.append(f"  [{lua_quote(name)}] = {itemid},")
-    lines.append("}")
-    lines.append("ForeverBiSBuildLabels = {")
-    for route, label in sorted(labels.items()):
-        lines.append(f"  [{lua_quote(route)}] = {lua_quote(label)},")
-    lines.append("}")
+        lines.append(f"    [{lua_quote(key)}] = {{")
+        if key in labels:
+            lines.append(f"      label = {lua_quote(labels[key])},")
+        lines.append("      phases = {")
+        for phase_id, (title, slots) in sorted(phases.items()):
+            lines.append(f"        {lua_key(phase_id)} = {{")
+            lines.append(f"          title = {lua_quote(title)},")
+            lines.append("          slots = {")
+            for slot_name, items, enchants in slots:
+                lines.append(f"            {{ slot = {lua_quote(slot_name)},")
+                lines.append("              items = {")
+                for name, source, itemid in items:
+                    item_id = f"id = {itemid}, " if itemid else ""
+                    lines.append(
+                        f"                {{ {item_id}name = {lua_quote(name)}, source = {lua_source(structure_source(source))} }},"
+                    )
+                lines.append("              },")
+                if enchants:
+                    lines.append("              enchants = {")
+                    for effect, spell, source, formula in enchants:
+                        formula_part = f", formulaId = {formula}" if formula else ""
+                        lines.append(
+                            f"                {{ effect = {lua_quote(effect)}, spell = {lua_quote(spell)}, "
+                            f"source = {lua_quote(source)}{formula_part} }},"
+                        )
+                    lines.append("              },")
+                lines.append("            },")
+            lines.extend(["          },", "        },"])
+        lines.extend(["      },", "    },"])
+    lines.extend(["  },", "}"])
     return "\n".join(lines) + "\n"
 
 
@@ -287,7 +457,7 @@ def main():
             title, slots = parse_list(route, html)
             if not slots:
                 raise RuntimeError("no item slots were found in the page")
-            data[route] = (title, slots)
+            data[route] = {phase_from_title(title)["id"]: (title, slots)}
             class_name = route.split("/")[2].replace("-", " ").title()
             build_label = re.sub(rf"\b{re.escape(class_name)}\b", "", title, count=1, flags=re.I).strip()
             build_label = re.sub(r"\s+best in slot at level\s+\d+\s*$", "", build_label, flags=re.I)

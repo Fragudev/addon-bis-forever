@@ -6,6 +6,10 @@ exclude_files = { "ForeverBiS/ForeverBiS_Data.lua" }
 
 globals = {
   "ForeverBiSDB",
+  "ForeverBiSLists",
+  "ForeverBiSItemIDs",
+  "ForeverBiSBuildLabels",
+  "ForeverBiSModel",
   "SLASH_FOREVERBIS1",
   "SLASH_FOREVERBIS2",
   "SlashCmdList",
@@ -37,14 +41,12 @@ read_globals = {
   "UnitFullName",
   "UnitLevel",
   "UnitName",
-  "ForeverBiSLists",
-  "ForeverBiSItemIDs",
-  "ForeverBiSBuildLabels",
+  "ForeverBiSData",
 }
 
 files["tests/"] = {
   std = "+busted",
-  globals = { "_G", "WowStub", "ForeverBiSMinimapButton" },
+  globals = { "_G", "WowStub", "ForeverBiSMinimapButton", "ForeverBiSData" },
   -- Frames the addon registers by name through CreateFrame.
   read_globals = {
     "ForeverBiSFrame",
