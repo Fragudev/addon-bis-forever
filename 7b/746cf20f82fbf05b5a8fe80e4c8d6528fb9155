@@ -1,0 +1,41 @@
+.luacheckrc
+  s_2e9d4926efb663::t_19d926f9c0f034 53-66,75
+ForeverBiS/Adapters/Chat.lua
+  s_2e9d4926efb663::t_285751c5ff5872 31-59
+ForeverBiS/App/Alerts.lua
+  s_2e9d4926efb663::t_d823d5dd9cc7b1 1-49
+ForeverBiS/App/Commands.lua
+  s_2e9d4926efb663::t_9e8388cb3bb4b7 90-95
+ForeverBiS/Core/Loot.lua
+  s_2e9d4926efb663::t_3af9d291d9550d 1-60
+ForeverBiS/Core/Settings.lua
+  s_2e9d4926efb663::t_c52e7cac9e4939 173-182
+ForeverBiS/ForeverBiS.lua
+  s_2e9d4926efb663::t_1e9598f9b7ad44 56
+ForeverBiS/ForeverBiS.toc
+  s_2e9d4926efb663::t_5ad0d47e21079f 18,34
+README.md
+  s_2e9d4926efb663::t_982367a19ba3ba 38-41
+tests/alerts_spec.lua
+  s_2e9d4926efb663::t_01902910de195d 1-110
+tests/loot_spec.lua
+  s_2e9d4926efb663::t_5f95adcea31f58 1-105
+tests/stubs/wow_api.lua
+  s_2e9d4926efb663::t_a8211a8412198c 218,353-367
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "7b746cf20f82fbf05b5a8fe80e4c8d6528fb9155",
+  "prompts": {},
+  "sessions": {
+    "s_2e9d4926efb663": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "bbe1029b-52bc-4bd0-892a-ccbb66badc23",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Francis Gutiérrez <francisge@ext.inditex.com>"
+    }
+  }
+}
