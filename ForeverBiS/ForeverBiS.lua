@@ -913,36 +913,130 @@ local paperDollSlots = {
 }
 local weaponSlots = { "Main Hand", "Off Hand", "Ranged" }
 
-local slotNameAliases = {
-    ["head"] = "Head",
-    ["neck"] = "Neck",
-    ["shoulder"] = "Shoulder",
-    ["back"] = "Back",
-    ["chest"] = "Chest",
-    ["wrist"] = "Wrist",
-    ["hands"] = "Hands",
-    ["waist"] = "Waist",
-    ["legs"] = "Legs",
-    ["feet"] = "Feet",
-    ["finger"] = "Finger",
-    ["trinket"] = "Trinket",
-    ["relic"] = "Ranged",
-    ["main hand"] = "Main Hand",
-    ["mainhand"] = "Main Hand",
-    ["two-hand weapon"] = "Main Hand",
-    ["two-handed weapon"] = "Main Hand",
-    ["two hand weapon"] = "Main Hand",
-    ["two handed weapon"] = "Main Hand",
-    ["off hand"] = "Off Hand",
-    ["offhand"] = "Off Hand",
-    ["off hand: held item"] = "Off Hand",
-    ["off hand: shield"] = "Off Hand",
-    ["ranged"] = "Ranged",
-}
+-- Progress towards the selected list: "BiS 3/17" and a thin bar beside the Equipped Only button, with a tooltip.
+local PROGRESS_TOOLTIP_LINES = 8
+local PROGRESS_SOURCE_LENGTH = 36
+local PROGRESS_BAR_WIDTH = 78
+local progressKeys = {}
+do
+    local seen = {}
+    for _, slotInfo in ipairs(paperDollSlots) do
+        if not seen[slotInfo[2]] then
+            seen[slotInfo[2]] = true
+            progressKeys[#progressKeys + 1] = slotInfo[2]
+        end
+    end
+    for _, slotName in ipairs(weaponSlots) do
+        progressKeys[#progressKeys + 1] = slotName
+    end
+end
+
+local progressFrame = CreateFrame("Frame", nil, gearPanel)
+progressFrame:SetSize(PROGRESS_BAR_WIDTH, 20)
+progressFrame:SetPoint("TOPLEFT", gearPanel, "TOPLEFT", 14, -30)
+progressFrame:EnableMouse(true)
+local progressText = progressFrame:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+progressText:SetPoint("TOPLEFT", progressFrame, "TOPLEFT", 0, 0)
+local progressTrack = progressFrame:CreateTexture(nil, "BACKGROUND")
+progressTrack:SetTexture("Interface\\Buttons\\WHITE8X8")
+progressTrack:SetVertexColor(0.05, 0.03, 0.02, 0.9)
+progressTrack:SetSize(PROGRESS_BAR_WIDTH, 4)
+progressTrack:SetPoint("BOTTOMLEFT", progressFrame, "BOTTOMLEFT", 0, 0)
+local progressFill = progressFrame:CreateTexture(nil, "ARTWORK")
+progressFill:SetTexture("Interface\\Buttons\\WHITE8X8")
+progressFill:SetVertexColor(1, 0.82, 0.2, 1)
+progressFill:SetHeight(4)
+progressFill:SetPoint("BOTTOMLEFT", progressFrame, "BOTTOMLEFT", 0, 0)
+local currentProgress, currentProgressLabel
+
+--- What the player has, read with the same slot ids and counts the row marks use.
+local function buildOwned()
+    local equipped = {}
+    for _, key in ipairs(progressKeys) do
+        local ids = {}
+        for _, inventorySlotID in ipairs(equippedSlotIDs[string.lower(key)] or {}) do
+            local itemID = GetInventoryItemID and GetInventoryItemID("player", inventorySlotID)
+            if itemID then
+                ids[#ids + 1] = itemID
+            end
+        end
+        equipped[key] = ids
+    end
+    return { equipped = equipped, bags = getItemBagCount, itemId = getItemID }
+end
+
+local function phaseLabelFor(route, phaseId)
+    for _, phase in ipairs(ForeverBiSModel.phases(route)) do
+        if phase.id == phaseId then
+            return phase.label or phase.id
+        end
+    end
+    return phaseId
+end
+
+--- Recomputes the line from a legacy list (nil hides it); the tooltip reads the stored result.
+local function refreshProgress(data, route, phaseId)
+    currentProgress = data and ForeverBiSModel.progress(data, buildOwned())
+    if not currentProgress or currentProgress.total == 0 then
+        currentProgress = nil
+        progressFrame:Hide()
+        return
+    end
+    local routeLabel = route and ForeverBiSModel.label(route)
+    local phaseLabel = route and phaseId and phaseLabelFor(route, phaseId)
+    currentProgressLabel = routeLabel and phaseLabel and (routeLabel .. " - " .. phaseLabel) or routeLabel or "BiS"
+    progressText:SetText("BiS " .. currentProgress.bis .. "/" .. currentProgress.total)
+    if currentProgress.bis > 0 then
+        progressFill:SetWidth(PROGRESS_BAR_WIDTH * currentProgress.bis / currentProgress.total)
+        progressFill:Show()
+    else
+        progressFill:Hide()
+    end
+    progressFrame:Show()
+end
+
+progressFrame:SetScript("OnEnter", function(self)
+    if not currentProgress then
+        return
+    end
+    local total = currentProgress.total
+    GameTooltip:SetOwner(self, "ANCHOR_BOTTOMRIGHT")
+    GameTooltip:SetText(currentProgressLabel, 1, 0.89, 0.35)
+    GameTooltip:AddLine(
+        "BiS: " .. currentProgress.bis .. "/" .. total .. " slots - Listed: " .. currentProgress.listed .. "/" .. total,
+        1,
+        1,
+        1
+    )
+    local pending = {}
+    for _, slot in ipairs(currentProgress.slots) do
+        if not slot.done and slot.target then
+            pending[#pending + 1] = slot
+        end
+    end
+    for index = 1, math.min(#pending, PROGRESS_TOOLTIP_LINES) do
+        local slot = pending[index]
+        local source = slot.target.source or ""
+        if #source > PROGRESS_SOURCE_LENGTH then
+            source = source:sub(1, PROGRESS_SOURCE_LENGTH - 3) .. "..."
+        end
+        local line = slot.slot .. ": " .. (slot.target.inBags and "Equip: " or "") .. slot.target.name
+        if source ~= "" then
+            line = line .. " (" .. source .. ")"
+        end
+        GameTooltip:AddLine(line, 0.85, 0.85, 0.85)
+    end
+    if #pending > PROGRESS_TOOLTIP_LINES then
+        GameTooltip:AddLine("+" .. (#pending - PROGRESS_TOOLTIP_LINES) .. " more", 0.6, 0.6, 0.6)
+    end
+    GameTooltip:Show()
+end)
+progressFrame:SetScript("OnLeave", function()
+    GameTooltip:Hide()
+end)
 
 local function normalizeSlotName(name)
-    local normalized = string.lower(name or "")
-    return slotNameAliases[normalized] or name
+    return ForeverBiSModel.slotKey(name)
 end
 
 local professionSourceIcons = {
@@ -1363,6 +1457,7 @@ render = function()
     local phaseId = key and effectivePhaseFor(key)
     local data = key and (phaseId and ForeverBiSModel.list(key, phaseId) or lists[key])
     title:SetText("BiS Forever")
+    refreshProgress(data, key, phaseId)
     clearContent()
     for _, child in ipairs({ gearContent:GetChildren() }) do
         if child ~= characterModel then
@@ -1870,16 +1965,31 @@ local itemDataWatcher = CreateFrame("Frame")
 itemDataWatcher:RegisterEvent("GET_ITEM_INFO_RECEIVED")
 itemDataWatcher:RegisterEvent("PLAYER_EQUIPMENT_CHANGED")
 itemDataWatcher:RegisterEvent("BAG_UPDATE")
+-- Item data arrives in bursts (one event per requested item); coalesce them into a single render per burst.
+local renderPending = false
+local function scheduleRender()
+    if renderPending then
+        return
+    end
+    renderPending = true
+    C_Timer.After(0.2, function()
+        renderPending = false
+        if frame:IsShown() then
+            render()
+        end
+    end)
+end
+
 itemDataWatcher:SetScript("OnEvent", function(_, event, itemID, success)
     if not frame:IsShown() then
         return
     end
     if event == "GET_ITEM_INFO_RECEIVED" then
         if success and trackedItemIDs[itemID] then
-            render()
+            scheduleRender()
         end
     else
-        render()
+        scheduleRender()
     end
 end)
 

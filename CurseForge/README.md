@@ -23,6 +23,7 @@ A comprehensive Best in Slot (BiS) gear guide for World of Warcraft: Forever.
 - **Detailed Item Info** — Each item shows rank, icon, rarity, and source
 - **Equipped Tracking** — Green checkmarks show what you already have equipped
 - **Bag Count** — Gold "xN" shows copies in your bags
+- **BiS Progress** — A "BiS x/y" line and tooltip show how close you are to the list and what to get next
 - **Advanced Filters** — Filter by faction, source, dungeon, and search items
 - **Minimap Button** — Quick access from anywhere
 - **Resizable Window** — Adjust the panel to fit your screen

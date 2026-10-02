@@ -42,6 +42,8 @@ Hover over an item icon to see its tooltip. The help icon on the selector row ex
 
 The right-side paper-doll panel has a brown character-panel frame, with item icons arranged around a static render of your character. Each item icon has a border matching its rarity. `Equipped Only` filters the panel to BiS-ranked items already equipped in their matching slots, including the correct first or second ring and trinket slots. The three weapon slots are grouped together in the center below the character. Click a BiS icon to jump to its slot in the list.
 
+The progress line beside `Equipped Only` (for example `BiS 3/17` with a thin gold bar) shows how many tracked slots of the selected build and phase already hold their BiS item; a slot counts as BiS when its top-ranked item is equipped, and rings and trinkets need the top two items in either order. Hover it for the build and phase, the BiS and `Listed` (at least one listed item equipped) totals, and up to eight slots with the next item to get and where it comes from; items already in your bags are prefixed with `Equip:`, and `+N more` marks a truncated list. Weapon variants (one-hand, two-hand, shield, held item) share one position each, and enchants are not part of the count. The line hides when the list has no trackable slots.
+
 The window opens at its minimum size and can be enlarged vertically from its bottom edge; the minimum size keeps the BiS panel visible. Drag the minimap button around the minimap to reposition it. The minimap icon (a gold "FB" monogram inside the gold ring) is `ForeverBiSMinimapIcon.tga`; regenerate its artwork with `python3 tools/generate_minimap_icon.py`.
 
 ## Current scope

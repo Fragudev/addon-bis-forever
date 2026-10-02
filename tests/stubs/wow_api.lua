@@ -279,6 +279,13 @@ _G.GetItemCount = function(itemID)
     return Stub.bagCounts[itemID] or 0
 end
 
+-- Timers run immediately so debounced renders stay synchronous under test.
+_G.C_Timer = {
+    After = function(_, callback)
+        callback()
+    end,
+}
+
 _G.GetCursorPosition = function()
     return 0, 0
 end

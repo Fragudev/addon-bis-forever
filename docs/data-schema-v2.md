@@ -49,6 +49,41 @@ every numeric phase, or with a nil/invalid level, it returns the final phase; ph
 (e.g. `current`) count as endgame and sort after all numeric ones. Unknown routes return nil. `availablePhase` returns
 a saved phase id only if the route has it (else nil, meaning automatic), and `effectivePhase` combines both.
 
+## Progress
+
+`ForeverBiSModel.progress(list, owned)` measures how close the player is to a legacy-shape list without calling the
+game. `owned` is injected:
+
+```lua
+owned = {
+  equipped = { ["Head"] = { 252504 }, ["Finger"] = { 111, 222 }, ["Main Hand"] = { 333 } }, -- canonical slot key -> equipped item ids
+  bags = function(itemId) return 1 end,       -- optional: copies in bags (0 or nil when none)
+  itemId = function(itemName) return 252504 end, -- optional: name -> id; defaults to ForeverBiSItemIDs
+}
+```
+
+Slot keys are canonical (`ForeverBiSModel.slotKey(name)`, the gear panel's normalization): `Head`, `Neck`,
+`Shoulder`, `Back`, `Chest`, `Wrist`, `Hands`, `Waist`, `Legs`, `Feet`, `Finger`, `Trinket`, `Main Hand`, `Off Hand`,
+`Ranged`. `Finger` and `Trinket` carry up to two ids, one per inventory slot. The UI builds `equipped` from the same
+`equippedSlotIDs` + `GetInventoryItemID` and `GetItemCount` reads the row marks use, so both agree.
+
+It returns `{ total, bis, listed, slots = { { slot, rank, target, done }, ... } }`:
+
+- `total` counts tracked positions that have at least one listed item; `bis` counts the `done` ones; `listed` counts
+  those with at least one listed item equipped. `rank` is the best equipped rank (nil when none is listed).
+- A slot is BiS (`done`) when nothing listed would be an upgrade: for single slots the rank 1 item is equipped; for
+  rings and trinkets the top two listed items are equipped, in any order (a list with one item needs just that one).
+- `target` is the next item to get: `{ name, rank, source, inBags }`. Candidates are listed items ranked above the
+  weakest equipped item (an empty inventory slot counts as weakest) that are not already equipped. A candidate held in
+  bags wins and sets `inBags = true` ("equip this"); otherwise the best-ranked candidate is used.
+- Items match by id only; an item whose id is unknown never counts as owned, so a rank 1 item without an id keeps its
+  slot from ever being BiS.
+- Weapons: list slots that normalize to the same key (`Main hand` and `Two-hand weapon`; `Off hand: shield` and
+  `Off hand: held item`; `Relic` and `Ranged`) are mutually exclusive variants of one position, matching the three
+  paper-doll weapon positions, and count once. Each variant is evaluated on its own ranks and the one holding the best
+  equipped item wins (the first listed when tied). A two-hander therefore leaves `Off Hand` open.
+- Enchants are ignored. A missing, empty or malformed list returns `total = 0`.
+
 ## Extending
 
 - **New phase**: `phase_from_title()` derives it from the list title ("... at level 60" gives `lvl60`); no code change
