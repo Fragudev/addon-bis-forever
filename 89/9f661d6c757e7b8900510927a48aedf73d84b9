@@ -1,0 +1,23 @@
+ForeverBiS/ForeverBiS.lua
+  s_4afa73c3456991::t_1bb79f49f9ca37 741,1129,1252-1253,1256-1257,1298-1299,1340,1390-1393,1402
+README.md
+  s_4afa73c3456991::t_710cddb6ce54c4 30
+tests/interaction_spec.lua
+  s_4afa73c3456991::t_94219faeb9df4a 214-217,222-230,232-233,235,238,240-244,246,249,251
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "899f661d6c757e7b8900510927a48aedf73d84b9",
+  "prompts": {},
+  "sessions": {
+    "s_4afa73c3456991": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "db373233-9f9e-4a7f-9a14-1cf3aef4d4c8",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Francis Gutiérrez <francisge@ext.inditex.com>"
+    }
+  }
+}
