@@ -738,7 +738,7 @@ local function showAddonHelp()
         true
     )
     GameTooltip:AddLine(
-        "The faction button hides items exclusive to the other faction. Maker only hides profession items that only their maker can wear.",
+        "The faction button hides items exclusive to the other faction. The maker button cycles between all items, only items their maker alone can wear, and hiding those items.",
         0.9,
         0.9,
         0.9,
@@ -1126,7 +1126,7 @@ local function formatItemSource(sourceText)
     return "|cffffd100" .. source .. "|r, |cff65d9ff" .. location .. "|r"
 end
 
-local listFilters = { search = "", sources = {}, dungeon = "all", bothFactions = false, hideMaker = false }
+local listFilters = { search = "", sources = {}, dungeon = "all", bothFactions = false, maker = "all" }
 local FILTER_LEFT, FILTER_RIGHT = 22, 376
 local FILTER_ROW_SEARCH, FILTER_ROW_BUTTONS, FILTER_ROW_DUNGEON = -84, -110, -130
 
@@ -1249,11 +1249,12 @@ end
 
 local factionButton = createFilterButton("ForeverBiSFilterFaction", 70)
 local makerButton = createFilterButton("ForeverBiSFilterMaker", 92)
-makerButton:SetText("Maker only")
+local makerModes = { all = "Maker: all", only = "Maker: only", hide = "Maker: hide" }
+local nextMakerMode = { all = "only", only = "hide", hide = "all" }
 attachFilterTooltip(
     makerButton,
-    "Maker only",
-    "Hide profession items that only their maker can wear. Items any player can use stay visible."
+    "Maker-only items",
+    "Some profession items can only be worn by the player who crafted them. Click to cycle: all items, only those maker-only items, or hide them. Items any player can use are treated as normal."
 )
 attachFilterTooltip(factionButton, "Faction", "Show items for your faction only. Click to show both factions.")
 
@@ -1294,7 +1295,8 @@ local function layoutFilterBar()
         factionButton:Hide()
         makerButton:SetPoint("LEFT", lastChip, "RIGHT", 10, 0)
     end
-    setFilterActive(makerButton, listFilters.hideMaker)
+    makerButton:SetText(makerModes[listFilters.maker])
+    setFilterActive(makerButton, listFilters.maker ~= "all")
 
     local showDungeons = listFilters.sources.dungeon == true
     if showDungeons then
@@ -1335,7 +1337,7 @@ factionButton:SetScript("OnClick", function()
     refreshList()
 end)
 makerButton:SetScript("OnClick", function()
-    listFilters.hideMaker = not listFilters.hideMaker
+    listFilters.maker = nextMakerMode[listFilters.maker]
     refreshList()
 end)
 
@@ -1385,7 +1387,10 @@ local function itemMatchesFilters(item)
     if listFilters.dungeon ~= "all" and not string.find(lowerSource, listFilters.dungeon, 1, true) then
         return false
     end
-    if listFilters.hideMaker and isMakerOnly(itemSource) then
+    if listFilters.maker == "only" and not isMakerOnly(itemSource) then
+        return false
+    end
+    if listFilters.maker == "hide" and isMakerOnly(itemSource) then
         return false
     end
     return true
@@ -1394,7 +1399,7 @@ end
 resetListFilters = function()
     listFilters.search, listFilters.dungeon = "", "all"
     listFilters.sources = {}
-    listFilters.bothFactions, listFilters.hideMaker = false, false
+    listFilters.bothFactions, listFilters.maker = false, "all"
     if searchBox:GetText() ~= "" then
         searchBox:SetText("")
     end
