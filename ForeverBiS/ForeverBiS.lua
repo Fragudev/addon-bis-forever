@@ -1870,16 +1870,31 @@ local itemDataWatcher = CreateFrame("Frame")
 itemDataWatcher:RegisterEvent("GET_ITEM_INFO_RECEIVED")
 itemDataWatcher:RegisterEvent("PLAYER_EQUIPMENT_CHANGED")
 itemDataWatcher:RegisterEvent("BAG_UPDATE")
+-- Item data arrives in bursts (one event per requested item); coalesce them into a single render per burst.
+local renderPending = false
+local function scheduleRender()
+    if renderPending then
+        return
+    end
+    renderPending = true
+    C_Timer.After(0.2, function()
+        renderPending = false
+        if frame:IsShown() then
+            render()
+        end
+    end)
+end
+
 itemDataWatcher:SetScript("OnEvent", function(_, event, itemID, success)
     if not frame:IsShown() then
         return
     end
     if event == "GET_ITEM_INFO_RECEIVED" then
         if success and trackedItemIDs[itemID] then
-            render()
+            scheduleRender()
         end
     else
-        render()
+        scheduleRender()
     end
 end)
 
