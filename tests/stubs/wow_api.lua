@@ -302,6 +302,10 @@ end
 _G.UnitClass = function()
     return Stub.player.class, Stub.player.token
 end
+-- Nil by default so specs see no faction filtering; set Stub.player.faction = "Horde" to opt in.
+_G.UnitFactionGroup = function()
+    return Stub.player.faction
+end
 _G.UnitLevel = function()
     return Stub.player.level
 end

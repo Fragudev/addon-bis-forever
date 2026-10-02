@@ -144,76 +144,145 @@ describe("ForeverBiS interactions", function()
     end)
 
     describe("filters", function()
-        it("hides items exclusive to the other faction", function()
+        local function click(button)
+            WowStub.fire(button, "OnClick")
+        end
+
+        local function loadWithFaction(key, faction)
+            WowStub.load({ class = key:match("^[^/]+"), build = key:match("/.*") or "" }, nil, {
+                class = "Rogue",
+                token = "ROGUE",
+                level = 30,
+                faction = faction,
+            })
+        end
+
+        it("hides items exclusive to the other faction by default and shows them with Both", function()
             local key, item = findListWithItem(function(source)
                 return source:find("alliance", 1, true) and not source:find("horde", 1, true)
             end)
             assert(key, "no alliance-only item in the data")
-            loadList(key)
-            assert.is_true(WowStub.hasText(item[1]))
-
-            chooseOption(ForeverBiSFactionFilter, "Horde")
+            loadWithFaction(key, "Horde")
             assert.is_false(WowStub.hasText(item[1]))
-            chooseOption(ForeverBiSFactionFilter, "Alliance")
-            assert.is_true(WowStub.hasText(item[1]))
-            chooseOption(ForeverBiSFactionFilter, "All Factions")
+            assert.are.equal("Horde", ForeverBiSFilterFaction:GetText())
+
+            click(ForeverBiSFilterFaction)
+            assert.are.equal("Both", ForeverBiSFilterFaction:GetText())
             assert.is_true(WowStub.hasText(item[1]))
         end)
 
-        it("hides items exclusive to the other faction when filtering for alliance", function()
+        it("keeps alliance-exclusive items for an alliance player", function()
             local key, item = findListWithItem(function(source)
-                return source:find("horde", 1, true) and not source:find("alliance", 1, true)
+                return source:find("alliance", 1, true) and not source:find("horde", 1, true)
             end)
-            assert(key, "no horde-only item in the data")
-            loadList(key)
-            chooseOption(ForeverBiSFactionFilter, "Alliance")
-            assert.is_false(WowStub.hasText(item[1]))
+            loadWithFaction(key, "Alliance")
+            assert.is_true(WowStub.hasText(item[1]))
         end)
 
-        it("filters by source category", function()
-            local key, item = findListWithItem(function(source)
+        it("hides the faction button when the faction is unknown", function()
+            WowStub.load(nil)
+            assert.is_false(ForeverBiSFilterFaction:IsShown())
+        end)
+
+        it("filters by source category and combines several", function()
+            local key, quest = findListWithItem(function(source)
                 return source:find("^quest:") ~= nil
             end)
             assert(key, "no quest item in the data")
             loadList(key)
-            assert.is_true(WowStub.hasText(item[1]))
-            chooseOption(ForeverBiSSourceFilter, "Professions")
-            assert.is_false(WowStub.hasText(item[1]))
-            chooseOption(ForeverBiSSourceFilter, "Quests")
-            assert.is_true(WowStub.hasText(item[1]))
+            assert.is_true(WowStub.hasText(quest[1]))
+
+            click(ForeverBiSFilterprofession)
+            assert.is_false(WowStub.hasText(quest[1]))
+            click(ForeverBiSFilterquest)
+            assert.is_true(WowStub.hasText(quest[1]))
+            click(ForeverBiSFilterprofession)
+            click(ForeverBiSFilterquest)
+            assert.is_true(WowStub.hasText(quest[1]))
         end)
 
-        it("clears the search and every dropdown filter", function()
+        it("shows the dungeon picker only while the dungeon button is active", function()
+            WowStub.load(nil)
+            assert.is_false(ForeverBiSDungeonFilter:IsShown())
+            click(ForeverBiSFilterdungeon)
+            assert.is_true(ForeverBiSDungeonFilter:IsShown())
+            chooseOption(ForeverBiSDungeonFilter, "The Deadmines")
+            click(ForeverBiSFilterdungeon)
+            assert.is_false(ForeverBiSDungeonFilter:IsShown())
+        end)
+
+        it("hides maker-only profession items without touching tradeable ones", function()
+            local key, maker = findListWithItem(function(source)
+                return source:find("only its maker can wear it", 1, true) ~= nil
+            end)
+            assert(key, "no maker-only item in the data")
+            loadList(key)
+            assert.is_true(WowStub.hasText(maker[1]))
+
+            click(ForeverBiSFilterMaker)
+            assert.is_true(ForeverBiSFilterMaker.filterActive)
+            assert.is_false(WowStub.hasText(maker[1]))
+
+            click(ForeverBiSFilterMaker)
+            assert.is_true(WowStub.hasText(maker[1]))
+        end)
+
+        it("searches the source text as well as the name", function()
             local key, item = findListWithItem(function(source)
                 return source:find("^quest:") ~= nil
             end)
             loadList(key)
-            chooseOption(ForeverBiSSourceFilter, "Professions")
+            local searchBox = textChangedBox()
+            searchBox:SetText("quest:")
+            WowStub.fire(searchBox, "OnTextChanged")
+            assert.is_true(WowStub.hasText(item[1]))
+        end)
+
+        it("shows how many items match once something is filtered", function()
+            local key = findListWithItem(function(source)
+                return source:find("^quest:") ~= nil
+            end)
+            loadList(key)
+            assert.is_true(WowStub.hasText(" items"))
+            click(ForeverBiSFilterquest)
+            assert.is_true(WowStub.hasText("|r/"))
+        end)
+
+        it("clears the search and every filter from the empty state", function()
+            local key, item = findListWithItem(function(source)
+                return source:find("^quest:") ~= nil
+            end)
+            loadList(key)
+            click(ForeverBiSFilterprofession)
             local searchBox = textChangedBox()
             searchBox:SetText("zzzz-no-such-item")
             WowStub.fire(searchBox, "OnTextChanged")
             assert.is_true(WowStub.hasText("No items match"))
 
             local clear = WowStub.find("Button", function(b)
-                return b.text == "Clear Filters"
+                return b.text == "Clear filters"
             end)[1]
-            WowStub.fire(clear, "OnClick")
+            click(clear)
             assert.is_false(WowStub.hasText("No items match"))
             assert.is_true(WowStub.hasText(item[1]))
             assert.are.equal("", searchBox:GetText())
+            assert.is_false(ForeverBiSFilterprofession.filterActive)
         end)
 
-        it("collapses and expands the filter bar", function()
+        it("clears only the search with the x button", function()
             WowStub.load(nil)
-            local toggle = WowStub.find("Button", function(b)
-                return b.text == "Show Filters"
+            local searchBox = textChangedBox()
+            searchBox:SetText("abc")
+            WowStub.fire(searchBox, "OnTextChanged")
+            local clear = WowStub.find("Button", function(b)
+                return b.text == "x"
             end)[1]
-            WowStub.fire(toggle, "OnClick")
-            assert.are.equal("Hide Filters", toggle:GetText())
-            assert.is_true(ForeverBiSFactionFilter:IsShown())
-            WowStub.fire(toggle, "OnClick")
-            assert.are.equal("Show Filters", toggle:GetText())
-            assert.is_false(ForeverBiSFactionFilter:IsShown())
+            assert.is_true(clear:IsShown())
+            click(clear)
+            assert.are.equal("", searchBox:GetText())
+            -- The client fires OnTextChanged from SetText; the stub does not.
+            WowStub.fire(searchBox, "OnTextChanged")
+            assert.is_false(clear:IsShown())
         end)
     end)
 
