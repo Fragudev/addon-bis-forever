@@ -1,0 +1,31 @@
+.github/dependabot.yml
+  s_bd77f31c62a30a::t_675f5de54b624a 1-8
+.github/workflows/ci.yml
+  s_bd77f31c62a30a::t_ab84c7c9385568 1-82
+.github/workflows/pr-title.yml
+  s_bd77f31c62a30a::t_fa2876a97b73cf 1-17
+.github/workflows/release.yml
+  s_bd77f31c62a30a::t_7cb178815b5806 1-34
+.gitignore
+  s_bd77f31c62a30a::t_08eda1196013aa 9-12
+tools/check_coverage.sh
+  s_bd77f31c62a30a::t_583d9934971c1f 1-24
+tools/package.sh
+  s_bd77f31c62a30a::t_9d6b4179c342ea 1-40
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "87ba44681a994a5f22fc0053686635dddce74f2b",
+  "prompts": {},
+  "sessions": {
+    "s_bd77f31c62a30a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a4c512c3-faad-4687-93bf-9b364929c9bb",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Francis Gutiérrez <francisge@ext.inditex.com>"
+    }
+  }
+}
