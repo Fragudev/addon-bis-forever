@@ -75,6 +75,14 @@ end
 function frameMethods.SetScript(self, name, handler)
     self.scripts[name] = handler
 end
+function frameMethods.HookScript(self, name, handler)
+    self.hooks = self.hooks or {}
+    self.hooks[name] = self.hooks[name] or {}
+    table.insert(self.hooks[name], handler)
+end
+function frameMethods.GetParent(self)
+    return self.parent
+end
 function frameMethods.GetScript(self, name)
     return self.scripts[name]
 end
@@ -137,6 +145,18 @@ end
 function Stub.fire(frame, script, ...)
     local handler = assert(frame.scripts[script], "no " .. script .. " handler")
     return handler(frame, ...)
+end
+
+--- Run the HookScript handlers a frame registered for a script, e.g. Stub.fireHooks(GameTooltip, "OnTooltipSetItem").
+function Stub.fireHooks(frame, script, ...)
+    for _, handler in ipairs(frame.hooks and frame.hooks[script] or {}) do
+        handler(frame, ...)
+    end
+end
+
+--- Loads the tooltip decorator (after the model, like the .toc) with whatever tooltip API globals are currently set.
+function Stub.loadTooltip()
+    assert(loadfile("ForeverBiS/ForeverBiS_Tooltip.lua"))()
 end
 
 --- A frame is live while its parent chain still reaches UIParent (cleared content is detached).
@@ -206,6 +226,7 @@ function Stub.reset()
     end
     _G.GameTooltip = tooltip
     _G.SlashCmdList = {}
+    _G.TooltipDataProcessor, _G.Enum, _G.ItemRefTooltip, _G.ForeverBiSTooltip = nil, nil, nil, nil
     _G.ForeverBiSDB = nil
     _G.SLASH_FOREVERBIS1, _G.SLASH_FOREVERBIS2 = nil, nil
 end

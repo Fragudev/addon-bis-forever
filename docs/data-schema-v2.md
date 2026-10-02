@@ -36,6 +36,13 @@ ForeverBiSData = {
 `.list(route[, phaseId])` (legacy `{title, slots}` shape), `.phaseForLevel(route, level)`,
 `.availablePhase(route, phaseId)`, `.effectivePhase(route, savedPhase, level)`, and `.buildLegacy()`.
 
+`ForeverBiSModel.bisEntries(itemId, itemName)` answers "where is this item BiS?" from a reverse index built lazily on
+first use (and reset by `buildLegacy`). It returns `{ route, class, phase, phaseLabel, slot, rank, label }` entries in
+route, phase and slot order, where `class` is the first route segment and `rank` the 1-based position in the slot. The
+id is matched first; the exact name only matches data rows that have no `id`. An item repeated in one slot list yields
+one entry, and unknown items, nil arguments or missing data yield an empty list. The tooltip decorator
+(`ForeverBiS_Tooltip.lua`) consumes it.
+
 `phaseForLevel` returns the phase the player should see by default: among the phases the route has data for, the
 numeric-`level` phase with the smallest level that is >= the player's level (a level-25 character gets `lvl30`). Above
 every numeric phase, or with a nil/invalid level, it returns the final phase; phases without a numeric `level`
