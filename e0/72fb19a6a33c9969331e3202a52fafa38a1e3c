@@ -1,0 +1,31 @@
+.busted
+  s_bd77f31c62a30a::t_512affbde2497f 1-7
+.luacov
+  s_bd77f31c62a30a::t_71ab300ee74d47 1-6
+tests/addon_spec.lua
+  s_bd77f31c62a30a::t_d0f95280d4d747 1-225
+tests/data_spec.lua
+  s_bd77f31c62a30a::t_a06ea2b165ab53 1-64
+tests/interaction_spec.lua
+  s_bd77f31c62a30a::t_deaea164b67dbb 1-292
+tests/python/test_updater.py
+  s_bd77f31c62a30a::t_a13fa94ae4a15a 1-142
+tests/stubs/wow_api.lua
+  s_bd77f31c62a30a::t_94770e0de45501 1-282
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "e072fb19a6a33c9969331e3202a52fafa38a1e3c",
+  "prompts": {},
+  "sessions": {
+    "s_bd77f31c62a30a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a4c512c3-faad-4687-93bf-9b364929c9bb",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Francis Gutiérrez <francisge@ext.inditex.com>"
+    }
+  }
+}
