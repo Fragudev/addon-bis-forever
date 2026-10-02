@@ -323,6 +323,138 @@ describe("ForeverBiSModel", function()
         end)
     end)
 
+    describe("bisEntries", function()
+        local function slotOf(data, route, phase, index)
+            return data.lists[route].phases[phase].slots[index]
+        end
+
+        it("matches by item id with route, class, phase, slot, rank and build label", function()
+            load(fixture())
+            assert.are.same({
+                {
+                    route = "druid",
+                    class = "druid",
+                    phase = "lvl30",
+                    phaseLabel = "Level 30",
+                    slot = "Head",
+                    rank = 1,
+                    label = "Feral PvE",
+                },
+            }, ForeverBiSModel.bisEntries(11))
+        end)
+
+        it("derives the class key from the first route segment", function()
+            local data = fixture()
+            data.lists["druid/tank"] = { label = "Bear Tank", phases = { lvl30 = data.lists.druid.phases.lvl30 } }
+            load(data)
+            local entries = ForeverBiSModel.bisEntries(11)
+            assert.are.equal(2, #entries)
+            assert.are.equal("druid", entries[1].class)
+            assert.are.equal("druid/tank", entries[2].route)
+            assert.are.equal("druid", entries[2].class)
+            assert.are.equal("Bear Tank", entries[2].label)
+        end)
+
+        it("falls back to the exact name only for rows without an id", function()
+            load(fixture())
+            assert.are.equal(2, ForeverBiSModel.bisEntries(nil, "Cap")[1].rank)
+            assert.are.equal(2, ForeverBiSModel.bisEntries(99999, "Cap")[1].rank)
+            assert.are.same({}, ForeverBiSModel.bisEntries(nil, "cap"))
+            assert.are.same({}, ForeverBiSModel.bisEntries(nil, "Hood")) -- Hood has an id in the data
+            assert.are.same({}, ForeverBiSModel.bisEntries(99999, "Hood"))
+        end)
+
+        it("reports an item once per slot list even when it is repeated", function()
+            local data = fixture()
+            local items = slotOf(data, "druid", "lvl30", 1).items
+            items[#items + 1] = { id = 11, name = "Hood", source = { text = "Again" } }
+            items[#items + 1] = { name = "Cap", source = { text = "Again" } }
+            load(data)
+            assert.are.equal(1, #ForeverBiSModel.bisEntries(11))
+            assert.are.equal(1, #ForeverBiSModel.bisEntries(nil, "Cap"))
+        end)
+
+        it("lists every phase, slot and build that carries the item", function()
+            local data = fixture()
+            data.lists.druid.phases.lvl60.slots[2] = {
+                slot = "Neck",
+                items = { { id = 5, name = "Other" }, { id = 11, name = "Hood" } },
+            }
+            data.lists.mage.phases.current.slots[1] = { slot = "Head", items = { { id = 11, name = "Hood" } } }
+            load(data)
+            local entries = ForeverBiSModel.bisEntries(11)
+            assert.are.equal(3, #entries)
+            assert.are.same(
+                { "druid", "lvl30", "Head", 1 },
+                { entries[1].route, entries[1].phase, entries[1].slot, entries[1].rank }
+            )
+            assert.are.same(
+                { "druid", "lvl60", "Neck", 2 },
+                { entries[2].route, entries[2].phase, entries[2].slot, entries[2].rank }
+            )
+            assert.are.same(
+                { "mage", "current", "Head", 1 },
+                { entries[3].route, entries[3].phase, entries[3].slot, entries[3].rank }
+            )
+            assert.are.equal("mage", entries[3].label) -- no label falls back to the route
+        end)
+
+        it("returns an empty list for unknown items, nil arguments and bad types", function()
+            load(fixture())
+            assert.are.same({}, ForeverBiSModel.bisEntries(424242))
+            assert.are.same({}, ForeverBiSModel.bisEntries())
+            assert.are.same({}, ForeverBiSModel.bisEntries(nil, nil))
+            assert.are.same({}, ForeverBiSModel.bisEntries("11", {}))
+        end)
+
+        it("returns an empty list when the data is missing or of another schema", function()
+            load(nil)
+            assert.are.same({}, ForeverBiSModel.bisEntries(11, "Hood"))
+            load("garbage")
+            assert.are.same({}, ForeverBiSModel.bisEntries(11))
+        end)
+
+        it("never errors on malformed rows", function()
+            load({
+                schema = 2,
+                phases = {},
+                lists = {
+                    druid = {
+                        phases = {
+                            a = {
+                                slots = {
+                                    "x",
+                                    { slot = 5 },
+                                    { slot = "Head", items = { "x", {}, { id = "7" }, { id = 7 } } },
+                                },
+                            },
+                            b = "x",
+                        },
+                    },
+                },
+            })
+            local entries = ForeverBiSModel.bisEntries(7)
+            assert.are.equal(1, #entries)
+            assert.are.equal(4, entries[1].rank)
+            assert.are.same({}, ForeverBiSModel.bisEntries(nil, "7"))
+        end)
+
+        it("returns copies so callers cannot corrupt the cached index", function()
+            load(fixture())
+            ForeverBiSModel.bisEntries(11)[1].rank = 99
+            assert.are.equal(1, ForeverBiSModel.bisEntries(11)[1].rank)
+        end)
+
+        it("rebuilds the index when the legacy data is rebuilt", function()
+            load(fixture())
+            assert.are.equal(1, #ForeverBiSModel.bisEntries(11))
+            _G.ForeverBiSData.lists.druid.phases.lvl30.slots[1].items[1].id = 77
+            ForeverBiSModel.buildLegacy()
+            assert.are.same({}, ForeverBiSModel.bisEntries(11))
+            assert.are.equal(1, #ForeverBiSModel.bisEntries(77))
+        end)
+    end)
+
     it("does not read the saved variables", function()
         _G.ForeverBiSDB = setmetatable({}, {
             __index = function()

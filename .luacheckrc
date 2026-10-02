@@ -10,6 +10,7 @@ globals = {
   "ForeverBiSItemIDs",
   "ForeverBiSBuildLabels",
   "ForeverBiSModel",
+  "ForeverBiSTooltip",
   "SLASH_FOREVERBIS1",
   "SLASH_FOREVERBIS2",
   "SlashCmdList",
@@ -18,6 +19,7 @@ globals = {
 -- WoW client API and data tables used by the addon.
 read_globals = {
   "C_Item",
+  "Enum",
   "CreateFrame",
   "GameTooltip",
   "GetCursorPosition",
@@ -27,6 +29,7 @@ read_globals = {
   "GetItemInfo",
   "GetItemInfoInstant",
   "GetRealmName",
+  "ItemRefTooltip",
   "ITEM_QUALITY_COLORS",
   "Minimap",
   "RAID_CLASS_COLORS",
@@ -36,12 +39,14 @@ read_globals = {
   "UIDropDownMenu_Initialize",
   "UIDropDownMenu_SetText",
   "UIDropDownMenu_SetWidth",
+  "TooltipDataProcessor",
   "UIParent",
   "UnitClass",
   "UnitFullName",
   "UnitLevel",
   "UnitName",
   "ForeverBiSData",
+  "ForeverBiSFrame",
 }
 
 files["tests/"] = {

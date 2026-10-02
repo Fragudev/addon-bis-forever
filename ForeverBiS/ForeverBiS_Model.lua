@@ -163,8 +163,78 @@ local function sortedRoutes()
     return routes
 end
 
+local bisIndex -- built lazily from ForeverBiSData; reset by buildLegacy
+
+local function addIndexEntry(bucket, key, entry)
+    local list = bucket[key]
+    if not list then
+        list = {}
+        bucket[key] = list
+    end
+    list[#list + 1] = entry
+end
+
+--- Reverse index: item id -> entries, plus item name -> entries for rows that carry no id.
+local function buildBisIndex()
+    local index = { byId = {}, byName = {} }
+    for _, route in ipairs(sortedRoutes()) do
+        local class = route:match("^[^/]+") or route
+        local label = Model.label(route) or route
+        for _, phase in ipairs(Model.phases(route)) do
+            for _, slot in ipairs(asTable(asTable(routeEntry(route).phases[phase.id]).slots)) do
+                local slotName = type(slot) == "table" and slot.slot
+                if type(slotName) == "string" then
+                    local seen = {} -- an item repeated inside one slot list keeps only its best rank
+                    for rank, item in ipairs(asTable(slot.items)) do
+                        if type(item) == "table" then
+                            local byId = type(item.id) == "number"
+                            local key = byId and item.id or item.name
+                            if (byId or type(key) == "string") and not seen[key] then
+                                seen[key] = true
+                                addIndexEntry(byId and index.byId or index.byName, key, {
+                                    route = route,
+                                    class = class,
+                                    phase = phase.id,
+                                    phaseLabel = phase.label or phase.id,
+                                    slot = slotName,
+                                    rank = rank,
+                                    label = label,
+                                })
+                            end
+                        end
+                    end
+                end
+            end
+        end
+    end
+    return index
+end
+
+--- Every place an item is BiS, as { route, class, phase, phaseLabel, slot, rank, label } in route, phase and slot order.
+--- The id is matched first; the exact name only matches data rows that have no id. Unknown items give an empty list.
+function Model.bisEntries(itemId, itemName)
+    bisIndex = bisIndex or buildBisIndex()
+    local found
+    if type(itemId) == "number" then
+        found = bisIndex.byId[itemId]
+    end
+    if not found and type(itemName) == "string" then
+        found = bisIndex.byName[itemName]
+    end
+    local result = {}
+    for _, entry in ipairs(found or {}) do
+        local copy = {}
+        for field, value in pairs(entry) do
+            copy[field] = value
+        end
+        result[#result + 1] = copy
+    end
+    return result
+end
+
 --- (Re)build ForeverBiSLists, ForeverBiSItemIDs and ForeverBiSBuildLabels from ForeverBiSData.
 function Model.buildLegacy()
+    bisIndex = nil
     local lists, itemIDs, labels = {}, {}, {}
     for _, route in ipairs(sortedRoutes()) do
         lists[route] = Model.list(route)

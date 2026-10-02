@@ -1920,6 +1920,21 @@ end)
 
 SLASH_FOREVERBIS1 = "/bis"
 SLASH_FOREVERBIS2 = "/foreverbis"
-SlashCmdList["FOREVERBIS"] = toggleAddonFrame
+
+--- /bis tooltip toggles the BiS tooltip block, /bis tooltip all toggles other classes in it; anything else toggles the window.
+local function handleSlashCommand(message)
+    local command, argument = string.lower(message or ""):match("^%s*(%S+)%s*(%S*)")
+    if command == "tooltip" and argument == "all" then
+        ForeverBiSDB.tooltipAllClasses = ForeverBiSDB.tooltipAllClasses ~= true
+        print("Forever BiS tooltips: " .. (ForeverBiSDB.tooltipAllClasses and "all classes" or "your class only"))
+    elseif command == "tooltip" and argument == "" then
+        ForeverBiSDB.tooltip = ForeverBiSDB.tooltip == false
+        print("Forever BiS tooltips: " .. (ForeverBiSDB.tooltip and "on" or "off"))
+    else
+        toggleAddonFrame()
+    end
+end
+
+SlashCmdList["FOREVERBIS"] = handleSlashCommand
 updateSelectors()
 render()

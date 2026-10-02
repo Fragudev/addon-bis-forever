@@ -45,6 +45,7 @@ A comprehensive Best in Slot (BiS) gear guide for World of Warcraft: Forever.
 - Browse gear by equipment slot
 - Use filters to narrow down your options
 - Hover over item icons for detailed tooltips
+- Any item tooltip in the game shows its BiS ranks for your class (`/bis tooltip` toggles, `/bis tooltip all` shows every class)
 - Click any BiS icon to jump to that slot in the list
 
 ## License

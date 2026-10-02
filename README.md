@@ -31,6 +31,13 @@ Choose a class and build from the dropdowns. Your selection is saved between ses
 
 Faction-exclusive items show a faction emblem and a red Horde or blue Alliance label. Use the plus/minus button beside a slot heading to collapse or expand its list. Each item row shows its rank, icon with a rarity-colored border, item name in its rarity color, and source. Boss or source names and their locations use separate colors. Drop rates omit the redundant Classic label. A green check marks items equipped in that slot, and a gold `xN` marks copies in your bags.
 
+## Tooltips
+
+Any item tooltip in the game (bags, equipped gear, links, vendors, the auction house, comparison tooltips) gets a gold `Forever BiS` block listing where the item is BiS for your class, such as `BiS #2 Head - Feral PvE (Level 30)`. Each build shows the phase that matches your character's level, independent of the phase picked in the window; an item that is BiS only in another phase still appears, with that phase named. At most four lines are shown, followed by `+N more`. The addon's own window keeps its source and ownership tooltips without this block.
+
+- `/bis tooltip` turns the block on or off (on by default).
+- `/bis tooltip all` toggles showing every class instead of only your own.
+
 Hover over an item icon to see its tooltip. The help icon on the selector row explains the addon features; hover to read it or click to keep it open.
 
 The right-side paper-doll panel has a brown character-panel frame, with item icons arranged around a static render of your character. Each item icon has a border matching its rarity. `Equipped Only` filters the panel to BiS-ranked items already equipped in their matching slots, including the correct first or second ring and trinket slots. The three weapon slots are grouped together in the center below the character. Click a BiS icon to jump to its slot in the list.

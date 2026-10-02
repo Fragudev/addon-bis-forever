@@ -8,3 +8,4 @@
 ForeverBiS_Data.lua
 ForeverBiS_Model.lua
 ForeverBiS.lua
+ForeverBiS_Tooltip.lua
