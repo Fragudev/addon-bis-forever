@@ -28,3 +28,32 @@ end
 function Chat.linkModifierHeld()
     return IsShiftKeyDown ~= nil and IsShiftKeyDown() == true
 end
+
+local LOOT_FORMAT_NAMES = {
+    "LOOT_ITEM",
+    "LOOT_ITEM_SELF",
+    "LOOT_ITEM_MULTIPLE",
+    "LOOT_ITEM_SELF_MULTIPLE",
+    "LOOT_ITEM_PUSHED",
+    "LOOT_ITEM_PUSHED_SELF",
+}
+
+--- The client's "receives loot" message formats (own loot and other players', single and stacked).
+function Chat.lootFormats()
+    local formats = {}
+    for _, name in ipairs(LOOT_FORMAT_NAMES) do
+        if type(_G[name]) == "string" then
+            formats[#formats + 1] = _G[name]
+        end
+    end
+    return formats
+end
+
+-- The raid warning sound: short and distinct from the usual chat noises.
+local ALERT_SOUND = 8959
+
+function Chat.playAlertSound()
+    if PlaySound then
+        PlaySound(ALERT_SOUND)
+    end
+end

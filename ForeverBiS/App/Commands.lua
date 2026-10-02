@@ -87,6 +87,12 @@ Commands.handlers = {
         return false
     end,
     link = postLinks,
+    -- /bis alerts toggles the BiS loot alerts (on by default).
+    alerts = function()
+        local on = Settings.toggleAlerts()
+        print(L["Forever BiS alerts: "] .. (on and L["on"] or L["off"]))
+        return true
+    end,
 }
 
 --- Splits "command argument rest" into lowercase parts: the command, its first word and everything after the

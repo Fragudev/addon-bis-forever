@@ -15,6 +15,7 @@ Core\Sources.lua
 Core\Filters.lua
 Core\Lists.lua
 Core\Share.lua
+Core\Loot.lua
 Adapters\Items.lua
 Adapters\Inventory.lua
 Adapters\Player.lua
@@ -30,6 +31,7 @@ UI\PaperDoll.lua
 UI\Progress.lua
 UI\Minimap.lua
 App\Events.lua
+App\Alerts.lua
 App\Commands.lua
 ForeverBiS.lua
 ForeverBiS_Tooltip.lua
