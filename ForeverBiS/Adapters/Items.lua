@@ -114,3 +114,19 @@ end
 function Items.qualityColor(itemName)
     return Items.qualityColorById(Items.id(itemName))
 end
+
+--- A clickable chat link for the item, built from its id when the client has not cached it. A name the addon
+--- cannot resolve to an id stays plain text.
+function Items.link(itemName)
+    local itemID = Items.id(itemName)
+    if not itemID then
+        return "[" .. itemName .. "]"
+    end
+    if GetItemInfo then
+        local _, link = GetItemInfo(itemID)
+        if link then
+            return link
+        end
+    end
+    return "|cffffffff|Hitem:" .. itemID .. "::::::::|h[" .. itemName .. "]|h|r"
+end

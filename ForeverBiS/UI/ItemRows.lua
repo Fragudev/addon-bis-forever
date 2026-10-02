@@ -4,8 +4,8 @@ local _, ns = ...
 local ItemRows = {}
 ns.ItemRows = ItemRows
 
-local Items, Inventory, Lists, Sources, ItemWidgets, L =
-    ns.Items, ns.Inventory, ns.Lists, ns.Sources, ns.ItemWidgets, ns.L
+local Items, Inventory, Lists, Sources, ItemWidgets, Chat, L =
+    ns.Items, ns.Inventory, ns.Lists, ns.Sources, ns.ItemWidgets, ns.Chat, ns.L
 
 local SOURCE_X = 86
 
@@ -35,6 +35,12 @@ local function addIconButton(content, rowTop, itemName, slotKey, itemSource)
     end)
     iconButton:SetScript("OnLeave", function()
         GameTooltip:Hide()
+    end)
+    -- Shift-click puts the item link in the chat edit box, like any item in the game.
+    iconButton:SetScript("OnClick", function()
+        if Chat.linkModifierHeld() then
+            Chat.insertLink(Items.link(itemName))
+        end
     end)
 end
 

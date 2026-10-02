@@ -4,7 +4,21 @@ local printed, toggles
 local function loadCommands(db)
     WowStub.reset()
     _G.ForeverBiSDB = db or {}
-    local ns = WowStub.loadFiles({ "ForeverBiS_Locale.lua", "Core/Settings.lua", "App/Commands.lua" })
+    local ns = WowStub.loadFiles({
+        "ForeverBiS_Locale.lua",
+        "ForeverBiS_Data.lua",
+        "ForeverBiS_Model.lua",
+        "Core/Settings.lua",
+        "Core/Catalog.lua",
+        "Core/Sources.lua",
+        "Core/Lists.lua",
+        "Core/Share.lua",
+        "Adapters/Items.lua",
+        "Adapters/Player.lua",
+        "Adapters/Chat.lua",
+        "App/Commands.lua",
+    })
+    ns.Settings.bind()
     toggles = 0
     ns.toggleWindow = function()
         toggles = toggles + 1
@@ -28,15 +42,20 @@ describe("Commands", function()
     describe("parse", function()
         it("splits the command from its argument in lowercase", function()
             local Commands = loadCommands()
-            assert.are.same({ "tooltip", "all" }, { Commands.parse("  Tooltip   ALL  ") })
-            assert.are.same({ "tooltip", "" }, { Commands.parse("tooltip") })
+            assert.are.same({ "tooltip", "all", "all" }, { Commands.parse("  Tooltip   ALL  ") })
+            assert.are.same({ "tooltip", "", "" }, { Commands.parse("tooltip") })
+        end)
+
+        it("keeps everything after the command so a slot name can have several words", function()
+            local Commands = loadCommands()
+            assert.are.same({ "link", "main", "main hand" }, { Commands.parse("link  Main Hand ") })
         end)
 
         it("returns empty parts for blank or missing input", function()
             local Commands = loadCommands()
-            assert.are.same({ "", "" }, { Commands.parse("") })
-            assert.are.same({ "", "" }, { Commands.parse("   ") })
-            assert.are.same({ "", "" }, { Commands.parse(nil) })
+            assert.are.same({ "", "", "" }, { Commands.parse("") })
+            assert.are.same({ "", "", "" }, { Commands.parse("   ") })
+            assert.are.same({ "", "", "" }, { Commands.parse(nil) })
         end)
     end)
 
@@ -93,5 +112,74 @@ describe("Commands", function()
         assert.are.equal("/bis", _G.SLASH_FOREVERBIS1)
         assert.are.equal("/foreverbis", _G.SLASH_FOREVERBIS2)
         assert.are.equal(Commands.dispatch, SlashCmdList["FOREVERBIS"])
+    end)
+
+    describe("link", function()
+        local function sent()
+            local messages = {}
+            for _, entry in ipairs(WowStub.chat) do
+                table.insert(messages, entry.message)
+            end
+            return messages
+        end
+
+        it("posts the ranked items of a slot", function()
+            local Commands = loadCommands()
+            Commands.dispatch("link head")
+            local messages = sent()
+            assert.is_true(#messages >= 1)
+            assert.are.equal("Head BiS: 1. ", messages[1]:sub(1, 13))
+            assert.is_truthy(messages[1]:find("|Hitem:", 1, true))
+            assert.are.equal(0, toggles)
+        end)
+
+        it("accepts a slot name with several words, in any case", function()
+            local Commands = loadCommands()
+            Commands.dispatch("link Main Hand")
+            assert.is_true(#sent() >= 1)
+            for _, message in ipairs(sent()) do
+                assert.is_truthy(message:find(" BiS: ", 1, true))
+            end
+        end)
+
+        it("posts one top item per slot, split under the chat limit", function()
+            local Commands = loadCommands()
+            Commands.dispatch("link")
+            local messages = sent()
+            assert.is_true(#messages > 1)
+            for _, message in ipairs(messages) do
+                assert.is_true(#message < 255, #message)
+                assert.is_truthy(message:find("BiS: ", 1, true))
+            end
+            assert.is_truthy(messages[1]:find("Head: ", 1, true))
+        end)
+
+        it("posts to the party, the raid or say depending on the group", function()
+            local Commands = loadCommands()
+            local channels = {}
+            for _, group in ipairs({ "solo", "party", "raid" }) do
+                WowStub.chat = {}
+                WowStub.group = group ~= "solo" and group or nil
+                Commands.dispatch("link head")
+                channels[#channels + 1] = WowStub.chat[1].channel
+            end
+            assert.are.same({ "SAY", "PARTY", "RAID" }, channels)
+        end)
+
+        it("prints the valid slots for an unknown slot name and sends nothing", function()
+            local Commands = loadCommands()
+            Commands.dispatch("link tabard")
+            assert.are.equal(0, #WowStub.chat)
+            assert.is_truthy(printed[1]:find("Unknown slot 'tabard'", 1, true))
+            assert.is_truthy(printed[1]:find("Head", 1, true))
+        end)
+
+        it("says so when no list is loaded", function()
+            local Commands = loadCommands()
+            _G.ForeverBiSData, _G.ForeverBiSLists = nil, nil
+            Commands.dispatch("link")
+            assert.are.equal(0, #WowStub.chat)
+            assert.is_truthy(printed[1]:find("No BiS list", 1, true))
+        end)
     end)
 end)

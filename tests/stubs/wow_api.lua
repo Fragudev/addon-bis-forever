@@ -214,6 +214,7 @@ function Stub.reset()
     Stub.equipped = {}
     Stub.bagCounts = {}
     Stub.player = { class = "Rogue", token = "ROGUE", level = 30 }
+    Stub.chat, Stub.insertedLinks, Stub.group, Stub.shift = {}, {}, nil, false
 
     _G.UIParent = newFrame("Frame", nil)
     _G.Minimap = newFrame("Frame", nil)
@@ -328,6 +329,25 @@ _G.C_Timer = {
         callback()
     end,
 }
+
+-- Chat: Stub.chat records { message, channel }, Stub.group is "party" or "raid" (nil = solo), Stub.shift is the
+-- shift key, and Stub.insertedLinks records what went into the edit box.
+_G.SendChatMessage = function(message, channel)
+    table.insert(Stub.chat, { message = message, channel = channel })
+end
+_G.IsInGroup = function()
+    return Stub.group == "party" or Stub.group == "raid"
+end
+_G.IsInRaid = function()
+    return Stub.group == "raid"
+end
+_G.IsShiftKeyDown = function()
+    return Stub.shift
+end
+_G.ChatEdit_InsertLink = function(link)
+    table.insert(Stub.insertedLinks, link)
+    return true
+end
 
 _G.GetCursorPosition = function()
     return 0, 0
