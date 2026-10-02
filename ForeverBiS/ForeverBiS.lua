@@ -1200,10 +1200,10 @@ local function setFilterActive(button, active)
     end
 end
 
-local function attachFilterTooltip(button, title, description)
+local function attachFilterTooltip(button, heading, description)
     button:SetScript("OnEnter", function(self)
         GameTooltip:SetOwner(self, "ANCHOR_TOP")
-        GameTooltip:SetText(title, 1, 0.89, 0.35)
+        GameTooltip:SetText(heading, 1, 0.89, 0.35)
         GameTooltip:AddLine(description, 1, 1, 1, true)
         GameTooltip:Show()
     end)
