@@ -179,6 +179,63 @@ describe("Adapters", function()
         end)
     end)
 
+    describe("Chat", function()
+        local function chatNs()
+            WowStub.reset()
+            return WowStub.loadFiles({ "Adapters/Chat.lua" })
+        end
+
+        it("chooses raid, party or say by the group", function()
+            local ns = chatNs()
+            assert.are.equal("SAY", ns.Chat.channel())
+            WowStub.group = "party"
+            assert.are.equal("PARTY", ns.Chat.channel())
+            WowStub.group = "raid"
+            assert.are.equal("RAID", ns.Chat.channel())
+        end)
+
+        it("sends on the chosen channel", function()
+            local ns = chatNs()
+            WowStub.group = "party"
+            ns.Chat.send("hello")
+            assert.are.same({ { message = "hello", channel = "PARTY" } }, WowStub.chat)
+        end)
+
+        it("inserts a link in the edit box", function()
+            local ns = chatNs()
+            assert.is_true(ns.Chat.insertLink("|Hitem:1|h[X]|h"))
+            assert.are.same({ "|Hitem:1|h[X]|h" }, WowStub.insertedLinks)
+        end)
+
+        it("reads the shift key", function()
+            local ns = chatNs()
+            assert.is_false(ns.Chat.linkModifierHeld())
+            WowStub.shift = true
+            assert.is_true(ns.Chat.linkModifierHeld())
+        end)
+
+        it("does nothing when the client lacks the chat APIs", function()
+            local ns = chatNs()
+            local insert, shift, group, raid = _G.ChatEdit_InsertLink, _G.IsShiftKeyDown, _G.IsInGroup, _G.IsInRaid
+            _G.ChatEdit_InsertLink, _G.IsShiftKeyDown, _G.IsInGroup, _G.IsInRaid = nil, nil, nil, nil
+            local inserted, held, channel = ns.Chat.insertLink("x"), ns.Chat.linkModifierHeld(), ns.Chat.channel()
+            _G.ChatEdit_InsertLink, _G.IsShiftKeyDown, _G.IsInGroup, _G.IsInRaid = insert, shift, group, raid
+            assert.is_false(inserted)
+            assert.is_false(held)
+            assert.are.equal("SAY", channel)
+        end)
+
+        it("builds an item link from the id, or plain text for an unknown name", function()
+            local ns = load({ ["Cape"] = 5193 })
+            assert.are.equal("|cffffffff|Hitem:5193::::::::|h[Cape]|h|r", ns.Items.link("Cape"))
+            assert.are.equal("[Mystery]", ns.Items.link("Mystery"))
+            _G.GetItemInfo = function()
+                return "Cape", "|cff0070dd|Hitem:5193|h[Cape]|h|r"
+            end
+            assert.are.equal("|cff0070dd|Hitem:5193|h[Cape]|h|r", ns.Items.link("Cape"))
+        end)
+    end)
+
     describe("Player", function()
         it("reads level, faction and class token", function()
             local ns = load()

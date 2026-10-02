@@ -31,6 +31,10 @@ Choose a class and build from the dropdowns. Your selection is saved between ses
 
 Faction-exclusive items show a faction emblem and a red Horde or blue Alliance label. Use the plus/minus button beside a slot heading to collapse or expand its list. Each item row shows its rank, icon with a rarity-colored border, item name in its rarity color, and source. Boss or source names and their locations use separate colors. Drop rates omit the redundant Classic label. A green check marks items equipped in that slot, and a gold `xN` marks copies in your bags.
 
+## Sharing in chat
+
+`/bis link head` posts the ranked BiS items for a slot (any slot name or its first letters, such as `main hand` or `off`) with clickable item links. `/bis link` posts the top item of every slot, split into several messages under the chat limit. Messages go to the raid or party chat, or to say when you are alone. Shift-click an item icon in the list to put its link in the chat box. An unknown slot name prints the valid slots.
+
 ## Tooltips
 
 Any item tooltip in the game (bags, equipped gear, links, vendors, the auction house, comparison tooltips) gets a gold `Forever BiS` block listing where the item is BiS for your class, such as `BiS #2 Head - Feral PvE (Level 30)`. Each build shows the phase that matches your character's level, independent of the phase picked in the window; an item that is BiS only in another phase still appears, with that phase named. At most four lines are shown, followed by `+N more`. The addon's own window keeps its source and ownership tooltips without this block.

@@ -438,6 +438,22 @@ describe("ForeverBiS interactions", function()
         end)
     end)
 
+    describe("shift-click on a list row", function()
+        it("puts the item link in the chat edit box", function()
+            WowStub.load({ class = "druid", build = "" })
+            WowStub.shift = true
+            WowStub.fire(iconButtons(38)[1], "OnClick")
+            assert.are.equal(1, #WowStub.insertedLinks)
+            assert.is_truthy(WowStub.insertedLinks[1]:find("Hitem:", 1, true))
+        end)
+
+        it("does nothing without shift", function()
+            WowStub.load({ class = "druid", build = "" })
+            WowStub.fire(iconButtons(38)[1], "OnClick")
+            assert.are.equal(0, #WowStub.insertedLinks)
+        end)
+    end)
+
     describe("item data events", function()
         local function watcher()
             for _, candidate in ipairs(WowStub.frames) do

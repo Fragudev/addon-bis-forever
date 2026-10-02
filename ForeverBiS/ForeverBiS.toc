@@ -14,9 +14,11 @@ Core\Catalog.lua
 Core\Sources.lua
 Core\Filters.lua
 Core\Lists.lua
+Core\Share.lua
 Adapters\Items.lua
 Adapters\Inventory.lua
 Adapters\Player.lua
+Adapters\Chat.lua
 UI\MainFrame.lua
 UI\ItemWidgets.lua
 UI\Selectors.lua

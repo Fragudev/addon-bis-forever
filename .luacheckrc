@@ -49,6 +49,9 @@ files["ForeverBiS/Adapters/Items.lua"] = {
   read_globals = with({ "C_Item", "GetItemIcon", "GetItemInfo", "GetItemInfoInstant", "ITEM_QUALITY_COLORS" }),
 }
 files["ForeverBiS/Adapters/Inventory.lua"] = { read_globals = with({ "GetInventoryItemID", "GetItemCount" }) }
+files["ForeverBiS/Adapters/Chat.lua"] = {
+  read_globals = with({ "ChatEdit_InsertLink", "IsInGroup", "IsInRaid", "IsShiftKeyDown", "SendChatMessage" }),
+}
 files["ForeverBiS/Adapters/Player.lua"] = {
   read_globals = with({ "GetRealmName", "UnitClass", "UnitFactionGroup", "UnitFullName", "UnitLevel", "UnitName" }),
 }
