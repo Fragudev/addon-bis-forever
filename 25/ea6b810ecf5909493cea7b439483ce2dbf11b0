@@ -1,0 +1,21 @@
+.github/ISSUE_TEMPLATE/config.yml
+  s_c79b5bd0e23a1d::t_e5b94428f851d4 1
+.github/ISSUE_TEMPLATE/feature.yml
+  s_c79b5bd0e23a1d::t_ff7d4ff0057405 1-59
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "25ea6b810ecf5909493cea7b439483ce2dbf11b0",
+  "prompts": {},
+  "sessions": {
+    "s_c79b5bd0e23a1d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "f2b0e494-cd25-47cc-a2cc-263decb70342",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Francis Gutiérrez <francisge@ext.inditex.com>"
+    }
+  }
+}
