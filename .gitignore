@@ -10,3 +10,6 @@ luacov.stats.out
 luacov.report.out
 Forever-ci-*.zip
 __pycache__/
+*.zip
+desktop.ini
+.DS_Store
