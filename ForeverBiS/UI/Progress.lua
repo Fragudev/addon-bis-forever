@@ -4,7 +4,7 @@ local _, ns = ...
 local Progress = {}
 ns.Progress = Progress
 
-local Catalog, Inventory = ns.Catalog, ns.Inventory
+local Catalog, Inventory, L = ns.Catalog, ns.Inventory, ns.L
 
 local TOOLTIP_LINES = 8
 local SOURCE_LENGTH = 36
@@ -38,7 +38,7 @@ local function pendingLine(slot)
     if #source > SOURCE_LENGTH then
         source = source:sub(1, SOURCE_LENGTH - 3) .. "..."
     end
-    local line = slot.slot .. ": " .. (slot.target.inBags and "Equip: " or "") .. slot.target.name
+    local line = slot.slot .. ": " .. (slot.target.inBags and L["Equip: "] or "") .. slot.target.name
     if source ~= "" then
         line = line .. " (" .. source .. ")"
     end
@@ -53,7 +53,7 @@ local function showTooltip(owner)
     GameTooltip:SetOwner(owner, "ANCHOR_BOTTOMRIGHT")
     GameTooltip:SetText(currentLabel, 1, 0.89, 0.35)
     GameTooltip:AddLine(
-        "BiS: " .. current.bis .. "/" .. total .. " slots - Listed: " .. current.listed .. "/" .. total,
+        L["BiS: %d/%d slots - Listed: %d/%d"]:format(current.bis, total, current.listed, total),
         1,
         1,
         1
@@ -63,7 +63,7 @@ local function showTooltip(owner)
         GameTooltip:AddLine(pendingLine(pending[index]), 0.85, 0.85, 0.85)
     end
     if #pending > TOOLTIP_LINES then
-        GameTooltip:AddLine("+" .. (#pending - TOOLTIP_LINES) .. " more", 0.6, 0.6, 0.6)
+        GameTooltip:AddLine(L["+%d more"]:format(#pending - TOOLTIP_LINES), 0.6, 0.6, 0.6)
     end
     GameTooltip:Show()
 end
@@ -103,8 +103,8 @@ function Progress.refresh(view)
     local route, phaseId = view.route, view.phaseId
     local routeLabel = route and ForeverBiSModel.label(route)
     local phaseLabel = route and phaseId and phaseLabelFor(route, phaseId)
-    currentLabel = routeLabel and phaseLabel and (routeLabel .. " - " .. phaseLabel) or routeLabel or "BiS"
-    progressText:SetText("BiS " .. current.bis .. "/" .. current.total)
+    currentLabel = routeLabel and phaseLabel and (routeLabel .. " - " .. phaseLabel) or routeLabel or L["BiS"]
+    progressText:SetText(L["BiS %d/%d"]:format(current.bis, current.total))
     if current.bis > 0 then
         progressFill:SetWidth(BAR_WIDTH * current.bis / current.total)
         progressFill:Show()

@@ -4,6 +4,8 @@ local _, ns = ...
 local Help = {}
 ns.Help = Help
 
+local L = ns.L
+
 -- Sections of { heading, lines }; a line is plain text or { text, red, green, blue } for a colored one.
 local SECTIONS = {
     {
@@ -47,7 +49,7 @@ local button
 local pinned = false
 
 local function addHeader(text)
-    GameTooltip:AddLine("|cffffe35b" .. text .. "|r", 1, 1, 1, true)
+    GameTooltip:AddLine("|cffffe35b" .. L[text] .. "|r", 1, 1, 1, true)
     local line = _G["GameTooltipTextLeft" .. GameTooltip:NumLines()]
     if line then
         line:SetFont(STANDARD_TEXT_FONT, 12, "THICKOUTLINE")
@@ -57,16 +59,16 @@ end
 
 local function addLine(line)
     if type(line) == "table" then
-        GameTooltip:AddLine(line[1], line[2], line[3], line[4], true)
+        GameTooltip:AddLine(L[line[1]], line[2], line[3], line[4], true)
     else
-        GameTooltip:AddLine(line, 0.9, 0.9, 0.9, true)
+        GameTooltip:AddLine(L[line], 0.9, 0.9, 0.9, true)
     end
 end
 
 local function showHelp()
     GameTooltip:SetOwner(button, "ANCHOR_LEFT")
     GameTooltip:ClearLines()
-    GameTooltip:SetText("BiS Forever Help", 1, 0.89, 0.35)
+    GameTooltip:SetText(L["BiS Forever Help"], 1, 0.89, 0.35)
     for index, section in ipairs(SECTIONS) do
         addHeader(section[1])
         for _, line in ipairs(section[2]) do

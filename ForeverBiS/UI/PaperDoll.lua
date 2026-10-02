@@ -5,8 +5,8 @@ local _, ns = ...
 local PaperDoll = {}
 ns.PaperDoll = PaperDoll
 
-local Catalog, Filters, Settings, Items, Inventory, ItemWidgets, Player =
-    ns.Catalog, ns.Filters, ns.Settings, ns.Items, ns.Inventory, ns.ItemWidgets, ns.Player
+local Catalog, Filters, Settings, Items, Inventory, ItemWidgets, Player, L =
+    ns.Catalog, ns.Filters, ns.Settings, ns.Items, ns.Inventory, ns.ItemWidgets, ns.Player, ns.L
 
 local gearPanel, gearContent, characterModel, equippedOnlyButton
 local showEquippedOnly = false
@@ -55,7 +55,7 @@ local function createEquippedOnlyButton()
     equippedOnlyButton:SetSize(142, 20)
     equippedOnlyButton:SetPoint("TOP", gearPanel, "TOP", 0, -30)
     local function updateText()
-        equippedOnlyButton:SetText(showEquippedOnly and "Equipped Only: On" or "Equipped Only: Off")
+        equippedOnlyButton:SetText(showEquippedOnly and L["Equipped Only: On"] or L["Equipped Only: Off"])
     end
     equippedOnlyButton:SetScript("OnClick", function()
         showEquippedOnly = not showEquippedOnly
@@ -64,8 +64,8 @@ local function createEquippedOnlyButton()
     end)
     equippedOnlyButton:SetScript("OnEnter", function(self)
         GameTooltip:SetOwner(self, "ANCHOR_TOP")
-        GameTooltip:SetText("Equipped Only", 1, 0.89, 0.35)
-        GameTooltip:AddLine("Show only BiS items already equipped in their matching slots.", 1, 1, 1, true)
+        GameTooltip:SetText(L["Equipped Only"], 1, 0.89, 0.35)
+        GameTooltip:AddLine(L["Show only BiS items already equipped in their matching slots."], 1, 1, 1, true)
         GameTooltip:Show()
     end)
     equippedOnlyButton:SetScript("OnLeave", function()
@@ -91,7 +91,7 @@ function PaperDoll.create(parent)
     gearPanel:SetBackdropBorderColor(0.58, 0.39, 0.18, 1)
     local gearTitle = gearPanel:CreateFontString(nil, "OVERLAY", "GameFontNormal")
     gearTitle:SetPoint("TOP", gearPanel, "TOP", 0, -12)
-    gearTitle:SetText("|cffffe35bBEST IN SLOT|r")
+    gearTitle:SetText("|cffffe35b" .. L["BEST IN SLOT"] .. "|r")
     createEquippedOnlyButton()
     gearContent = CreateFrame("Frame", nil, gearPanel)
     gearContent:SetPoint("TOPLEFT", gearPanel, "TOPLEFT", 5, -55)
@@ -137,7 +137,7 @@ local function addPlayerLabels()
 
     local levelLabel = gearContent:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
     levelLabel:SetPoint("TOP", gearContent, "TOP", 0, -272)
-    levelLabel:SetText("Level " .. tostring(player.level))
+    levelLabel:SetText(L["Level %s"]:format(tostring(player.level)))
     levelLabel:SetTextColor(1, 0.89, 0.35)
 end
 
@@ -173,8 +173,8 @@ local function addSlotButton(view, item, slot, x, y, anchor)
     ItemWidgets.addOwnershipMark(button, item[1], slot.markSlot)
     button:SetScript("OnEnter", function(self)
         ItemWidgets.showItemTooltip(self, anchor, item[1])
-        GameTooltip:AddLine("Best in slot: " .. slot.label, 1, 0.89, 0.35)
-        GameTooltip:AddLine("Source: " .. item[2], 0.85, 0.85, 0.85, true)
+        GameTooltip:AddLine(L["Best in slot: %s"]:format(slot.label), 1, 0.89, 0.35)
+        GameTooltip:AddLine(L["Source: %s"]:format(item[2]), 0.85, 0.85, 0.85, true)
         ItemWidgets.addOwnershipTooltip(item[1], slot.ownerSlot)
         GameTooltip:Show()
     end)
@@ -237,6 +237,6 @@ function PaperDoll.refresh(view)
         empty:SetWidth(gearContent:GetWidth() - 36)
         empty:SetJustifyH("CENTER")
         empty:SetWordWrap(true)
-        empty:SetText("No equipped BiS items found.")
+        empty:SetText(L["No equipped BiS items found."])
     end
 end

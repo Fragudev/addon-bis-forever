@@ -158,7 +158,7 @@ end
 
 --- Loads the tooltip decorator (after the model, like the .toc) with whatever tooltip API globals are currently set.
 function Stub.loadTooltip()
-    Stub.ns = Toc.load({ only = { "Core/Settings.lua", "ForeverBiS_Tooltip.lua" } })
+    Stub.ns = Toc.load({ only = { "ForeverBiS_Locale.lua", "Core/Settings.lua", "ForeverBiS_Tooltip.lua" } })
 end
 
 --- A frame is live while its parent chain still reaches UIParent (cleared content is detached).
@@ -268,6 +268,12 @@ end
 
 _G.CreateFrame = function(kind, name, parent)
     return newFrame(kind, name, parent)
+end
+
+-- Specs switch the client locale through Stub.locale before loading the addon.
+Stub.locale = "enUS"
+_G.GetLocale = function()
+    return Stub.locale
 end
 
 _G.STANDARD_TEXT_FONT = "Fonts\\FRIZQT__.TTF"

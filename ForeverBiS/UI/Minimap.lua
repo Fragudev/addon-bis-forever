@@ -5,7 +5,7 @@ local _, ns = ...
 local MinimapButton = {}
 ns.MinimapButton = MinimapButton
 
-local Settings = ns.Settings
+local Settings, L = ns.Settings, ns.L
 
 local button
 
@@ -46,9 +46,9 @@ function MinimapButton.create()
 
     button:SetScript("OnEnter", function(self)
         GameTooltip:SetOwner(self, "ANCHOR_LEFT")
-        GameTooltip:SetText("Forever BiS", 1, 0.89, 0.35)
-        GameTooltip:AddLine("Click to open or close", 1, 1, 1)
-        GameTooltip:AddLine("Drag to move the button", 0.75, 0.75, 0.75)
+        GameTooltip:SetText(L["Forever BiS"], 1, 0.89, 0.35)
+        GameTooltip:AddLine(L["Click to open or close"], 1, 1, 1)
+        GameTooltip:AddLine(L["Drag to move the button"], 0.75, 0.75, 0.75)
         GameTooltip:Show()
     end)
     button:SetScript("OnLeave", function()

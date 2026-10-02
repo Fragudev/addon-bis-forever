@@ -4,9 +4,9 @@ local _, ns = ...
 local Filters = {}
 ns.Filters = Filters
 
-local Sources = ns.Sources
+local Sources, L = ns.Sources, ns.L
 
-Filters.makerLabels = { all = "Maker: all", only = "Maker: only", hide = "Maker: hide" }
+Filters.makerLabels = { all = L["Maker: all"], only = L["Maker: only"], hide = L["Maker: hide"] }
 local nextMakerMode = { all = "only", only = "hide", hide = "all" }
 
 --- Shared by the filter bar (writes) and the item list (reads).
@@ -50,7 +50,7 @@ end
 
 --- { match key, label } entries for the dungeon dropdown, starting with "all".
 function Filters.dungeonOptions()
-    local options = { { "all", "All dungeons" } }
+    local options = { { "all", L["All dungeons"] } }
     for _, dungeon in ipairs(Sources.dungeons) do
         table.insert(options, { dungeon[1], dungeon[2] })
     end

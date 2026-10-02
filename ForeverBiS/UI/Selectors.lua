@@ -4,7 +4,7 @@ local _, ns = ...
 local Selectors = {}
 ns.Selectors = Selectors
 
-local Catalog, Settings, Player = ns.Catalog, ns.Settings, ns.Player
+local Catalog, Settings, Player, L = ns.Catalog, ns.Settings, ns.Player, ns.L
 
 local classDrop, buildDrop, phaseDrop
 
@@ -55,7 +55,7 @@ end
 local function initPhaseMenu(_, level)
     local phases, route = routePhases()
     local autoPhase = ForeverBiSModel and ForeverBiSModel.phaseForLevel(route, Player.level())
-    addItem("Auto (" .. tostring(labelOf(phases, autoPhase)) .. ")", Settings.phase() == nil, function()
+    addItem(L["Auto (%s)"]:format(tostring(labelOf(phases, autoPhase))), Settings.phase() == nil, function()
         Settings.choosePhase(nil)
         selected()
     end, level)
@@ -70,13 +70,13 @@ end
 function Selectors.create(parent)
     local classLabel = parent:CreateFontString(nil, "OVERLAY", "GameFontNormal")
     classLabel:SetPoint("TOPLEFT", parent, "TOPLEFT", 24, -55)
-    classLabel:SetText("Class")
+    classLabel:SetText(L["Class"])
     classDrop = CreateFrame("Frame", "ForeverBiSClassDropDown", parent, "UIDropDownMenuTemplate")
     classDrop:SetPoint("TOPLEFT", parent, "TOPLEFT", 65, -46)
     UIDropDownMenu_SetWidth(classDrop, 145)
     local buildLabel = parent:CreateFontString(nil, "OVERLAY", "GameFontNormal")
     buildLabel:SetPoint("LEFT", classDrop, "RIGHT", 5, 3)
-    buildLabel:SetText("Build")
+    buildLabel:SetText(L["Build"])
     buildDrop = CreateFrame("Frame", "ForeverBiSBuildDropDown", parent, "UIDropDownMenuTemplate")
     buildDrop:SetPoint("LEFT", buildLabel, "RIGHT", -5, -3)
     UIDropDownMenu_SetWidth(buildDrop, 120)
@@ -101,7 +101,7 @@ function Selectors.refresh()
     local effective = Settings.effectivePhase(route, Player.level())
     local effectiveLabel = labelOf(phases, effective)
     if effectiveLabel then
-        UIDropDownMenu_SetText(phaseDrop, Settings.phase() and effectiveLabel or "Auto (" .. effectiveLabel .. ")")
+        UIDropDownMenu_SetText(phaseDrop, Settings.phase() and effectiveLabel or L["Auto (%s)"]:format(effectiveLabel))
     end
     if #phases > 1 then
         phaseDrop:Show()

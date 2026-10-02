@@ -66,7 +66,7 @@ local function visibleEntries(itemId, itemName)
 end
 
 local function entryLine(entry)
-    return string.format("BiS #%d %s - %s (%s)", entry.rank, entry.slot, entry.label, entry.phaseLabel)
+    return string.format(ns.L["BiS #%d %s - %s (%s)"], entry.rank, entry.slot, entry.label, entry.phaseLabel)
 end
 
 --- Append the BiS block to a tooltip for an item. Returns true when lines were added.
@@ -79,13 +79,13 @@ function Tooltip.decorate(tooltip, itemId, itemName)
         return false
     end
     tooltip:AddLine(" ")
-    tooltip:AddLine("Forever BiS", GOLD[1], GOLD[2], GOLD[3])
+    tooltip:AddLine(ns.L["Forever BiS"], GOLD[1], GOLD[2], GOLD[3])
     for index = 1, math.min(#entries, MAX_LINES) do
         local color = entries[index].rank == 1 and RANK_ONE or OTHER_RANK
         tooltip:AddLine(entryLine(entries[index]), color[1], color[2], color[3])
     end
     if #entries > MAX_LINES then
-        tooltip:AddLine("+" .. (#entries - MAX_LINES) .. " more", OTHER_RANK[1], OTHER_RANK[2], OTHER_RANK[3])
+        tooltip:AddLine(ns.L["+%d more"]:format(#entries - MAX_LINES), OTHER_RANK[1], OTHER_RANK[2], OTHER_RANK[3])
     end
     return true
 end
