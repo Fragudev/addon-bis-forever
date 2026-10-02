@@ -1,0 +1,39 @@
+.luacheckrc
+  s_2e9d4926efb663::t_fe52e8cd8b4bac 7-22,24,27,34-75,80,83-84
+ForeverBiS/UI/FilterBar.lua
+  s_2e9d4926efb663::t_2a4489f96d6a35 1-222
+ForeverBiS/UI/Help.lua
+  s_2e9d4926efb663::t_26725d21c4682e 1-104
+ForeverBiS/UI/ItemList.lua
+  s_2e9d4926efb663::t_b0bdb259945954 1-202
+ForeverBiS/UI/ItemRows.lua
+  s_2e9d4926efb663::t_c1791c603092b4 1-151
+ForeverBiS/UI/ItemWidgets.lua
+  s_2e9d4926efb663::t_405a5d37930657 1-75
+ForeverBiS/UI/MainFrame.lua
+  s_2e9d4926efb663::t_42eecd6efc604a 1-108
+ForeverBiS/UI/Minimap.lua
+  s_2e9d4926efb663::t_d09383301f28b9 1-82
+ForeverBiS/UI/PaperDoll.lua
+  s_2e9d4926efb663::t_a46a9aa1e844cb 1-242
+ForeverBiS/UI/Progress.lua
+  s_2e9d4926efb663::t_7ba68b3b6b27b4 1-115
+ForeverBiS/UI/Selectors.lua
+  s_2e9d4926efb663::t_048f65ab5a8649 1-111
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "58bee9ec5f00f5c83f98452eb67daf0cdf18523b",
+  "prompts": {},
+  "sessions": {
+    "s_2e9d4926efb663": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "bbe1029b-52bc-4bd0-892a-ccbb66badc23",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Francis Gutiérrez <francisge@ext.inditex.com>"
+    }
+  }
+}
