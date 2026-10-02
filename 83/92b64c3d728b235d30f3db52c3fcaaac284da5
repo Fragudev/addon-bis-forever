@@ -1,0 +1,19 @@
+.github/workflows/release.yml
+  s_1cf24937ca38a4::t_0f6c4f9b73f03e 37,79-87,90
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "8392b64c3d728b235d30f3db52c3fcaaac284da5",
+  "prompts": {},
+  "sessions": {
+    "s_1cf24937ca38a4": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "52b25189-482f-40ae-9268-f6ae0e59ffa0",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Francis Gutiérrez <francisge@ext.inditex.com>"
+    }
+  }
+}
