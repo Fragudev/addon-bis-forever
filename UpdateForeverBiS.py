@@ -238,7 +238,7 @@ def discover_routes():
 
 
 # --- Structured item sources -------------------------------------------------------------
-# These lists mirror professionSourceIcons / dungeonSourceNames in ForeverBiS/ForeverBiS.lua so the
+# These lists mirror professionSourceIcons / Sources.dungeons in ForeverBiS/Core/Sources.lua so the
 # "kind" computed here matches the category the addon derived from the free text. A new raid or
 # dungeon is a one-line addition to the data below.
 

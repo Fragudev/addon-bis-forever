@@ -50,6 +50,29 @@ The window opens at its minimum size and can be enlarged vertically from its bot
 
 The selector includes the class and build variants discovered on ForeverChanges. The addon reads its bundled `ForeverBiS_Data.lua` (schema 2: lists per phase with structured item sources, see [docs/data-schema-v2.md](docs/data-schema-v2.md)); the UI shows the phase matching your level (or the one you pick); the included updater can refresh that file from the current public lists. The window sizes itself to the content, can be resized from its bottom-right corner, and allows scrolling when a list is taller than the window.
 
+## Code layout
+
+The addon is split into layers. Every file starts with `local _, ns = ...` and shares the private namespace `ns`; the only globals are the saved variables, the data and the legacy `ForeverBiSModel` kept for compatibility.
+
+```
+ForeverBiS/
+  ForeverBiS_Data.lua, ForeverBiS_Model.lua, ForeverBiS_Tooltip.lua
+  Core/      Settings, Catalog, Sources, Filters, Lists
+  Adapters/  Items, Inventory, Player
+  UI/        MainFrame, ItemWidgets, Selectors, Help, FilterBar, ItemRows, ItemList, PaperDoll, Progress, Minimap
+  App/       Events, Commands
+  ForeverBiS.lua  (composition root)
+```
+
+**Layering rule: Core never touches frames or the WoW API; Adapters are the only callers of the item, inventory and unit APIs; UI only draws; App wires everything.**
+
+- **Core** is pure logic (class and build catalog, source parsing, filters, saved variables). `Core/Settings.lua` is the only file that reads or writes `ForeverBiSDB`.
+- **UI** panels never call each other. They share state through Core (for example `Filters.state`) and ask for a redraw with `ns.requestRender()`; its options are `scrollTop` and `jumpTo`.
+- **App** owns the client events and the slash commands. A new slash command is one entry in `Commands.handlers`.
+- `ForeverBiS.lua` only creates the panels and defines `ns.requestRender()`.
+
+`.luacheckrc` enforces the rule: a file that uses an API outside its layer fails `luacheck` as an undefined variable. To add a file, list it in `ForeverBiS.toc` (specs load files from the `.toc`, so the test stubs need no change).
+
 ## List updates
 
 The released addon package must include `ForeverBiS_Data.lua` with the current lists. Players only need to install or update the addon normally, then select a class and build in-game. WoW addons cannot make web requests, so ForeverChanges updates must be collected and bundled by the addon maintainer before publishing a new addon version. `UpdateForeverBiS.py` is a maintainer tool and is not part of the player's installation steps.

@@ -176,6 +176,58 @@ describe("ForeverBiS", function()
         end)
     end)
 
+    describe("without bundled data", function()
+        it("shows the empty state instead of a placeholder list", function()
+            WowStub.load(nil, function()
+                _G.ForeverBiSData = nil
+            end)
+            WowStub.fire(ForeverBiSMinimapButton, "OnClick")
+            assert.is_true(WowStub.hasText("does not include the selected BiS list yet"))
+            assert.is_false(WowStub.hasText("ROGUE"))
+        end)
+    end)
+
+    describe("render requests", function()
+        it("only scrolls when a jump needs no redraw", function()
+            WowStub.load(nil)
+            local frames = #WowStub.frames
+            WowStub.ns.requestRender({ jumpTo = "head", redraw = false })
+            assert.are.equal(frames, #WowStub.frames)
+        end)
+
+        it("runs a request made while drawing once, after the current draw", function()
+            WowStub.load(nil)
+            local itemList = WowStub.ns.ItemList
+            local refresh, draws, requested = itemList.refresh, 0, false
+            itemList.refresh = function(...)
+                draws = draws + 1
+                if not requested then
+                    requested = true
+                    WowStub.ns.requestRender()
+                end
+                return refresh(...)
+            end
+            WowStub.ns.requestRender()
+            assert.are.equal(2, draws)
+        end)
+
+        it("keeps accepting requests after a draw fails", function()
+            WowStub.load(nil)
+            local paperDoll = WowStub.ns.PaperDoll
+            local refresh = paperDoll.refresh
+            paperDoll.refresh = function()
+                error("boom", 0)
+            end
+            assert.has_error(function()
+                WowStub.ns.requestRender()
+            end, "boom")
+            paperDoll.refresh = refresh
+            assert.has_no.errors(function()
+                WowStub.ns.requestRender()
+            end)
+        end)
+    end)
+
     describe("selectors", function()
         it("lists every class in the class dropdown", function()
             WowStub.load(nil)

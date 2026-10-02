@@ -3,7 +3,7 @@ local VALID_KINDS = { quest = true, profession = true, dungeon = true, world = t
 
 describe("ForeverBiS_Data", function()
     setup(function()
-        assert(loadfile("ForeverBiS/ForeverBiS_Data.lua"))()
+        WowStub.loadFiles({ "ForeverBiS_Data.lua" })
     end)
 
     local function eachPhase(visit)

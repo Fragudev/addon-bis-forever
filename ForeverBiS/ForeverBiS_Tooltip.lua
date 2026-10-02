@@ -1,19 +1,18 @@
 -- Adds Forever BiS lines to item tooltips anywhere in the game. Every failure is silent: a tooltip must never error.
+local _, ns = ...
+
 local MAX_LINES = 4
 local GOLD = { 1, 0.89, 0.35 }
 local RANK_ONE = { 0.35, 1, 0.35 }
 local OTHER_RANK = { 0.85, 0.85, 0.85 }
 
 local Tooltip = {}
+ns.Tooltip = Tooltip
 ForeverBiSTooltip = Tooltip
 
--- ForeverBiSDB is re-bound at PLAYER_LOGIN, so it is read at tooltip time and never cached.
+-- The saved variables are re-bound at PLAYER_LOGIN, so settings are read at tooltip time and never cached.
 local function setting(name)
-    local db = ForeverBiSDB
-    if type(db) == "table" then
-        return db[name]
-    end
-    return nil
+    return ns.Settings.get(name)
 end
 
 local function playerClassKey()
