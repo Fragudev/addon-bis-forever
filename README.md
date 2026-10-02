@@ -35,6 +35,10 @@ Faction-exclusive items show a faction emblem and a red Horde or blue Alliance l
 
 `/bis link head` posts the ranked BiS items for a slot (any slot name or its first letters, such as `main hand` or `off`) with clickable item links. `/bis link` posts the top item of every slot, split into several messages under the chat limit. Messages go to the raid or party chat, or to say when you are alone. Shift-click an item icon in the list to put its link in the chat box. An unknown slot name prints the valid slots.
 
+## Loot alerts
+
+When you or anyone in your group receives an item that is BiS for your selected build and phase, a highlighted chat message (worded like the tooltip: rank, slot, build and phase) is printed and a short sound plays. Each drop alerts once, and items that are not on your build stay silent. `/bis alerts` turns the alerts on or off (on by default; the choice is account-wide).
+
 ## Tooltips
 
 Any item tooltip in the game (bags, equipped gear, links, vendors, the auction house, comparison tooltips) gets a gold `Forever BiS` block listing where the item is BiS for your class, such as `BiS #2 Head - Feral PvE (Level 30)`. Each build shows the phase that matches your character's level, independent of the phase picked in the window; an item that is BiS only in another phase still appears, with that phase named. At most four lines are shown, followed by `+N more`. The addon's own window keeps its source and ownership tooltips without this block.

@@ -215,6 +215,7 @@ function Stub.reset()
     Stub.bagCounts = {}
     Stub.player = { class = "Rogue", token = "ROGUE", level = 30 }
     Stub.chat, Stub.insertedLinks, Stub.group, Stub.shift = {}, {}, nil, false
+    Stub.sounds, Stub.now = {}, 0
 
     _G.UIParent = newFrame("Frame", nil)
     _G.Minimap = newFrame("Frame", nil)
@@ -347,6 +348,21 @@ end
 _G.ChatEdit_InsertLink = function(link)
     table.insert(Stub.insertedLinks, link)
     return true
+end
+
+-- Loot message formats as the English client defines them.
+_G.LOOT_ITEM = "%s receives loot: %s."
+_G.LOOT_ITEM_SELF = "You receive loot: %s."
+_G.LOOT_ITEM_MULTIPLE = "%s receives loot: %sx%d."
+_G.LOOT_ITEM_SELF_MULTIPLE = "You receive loot: %sx%d."
+_G.LOOT_ITEM_PUSHED = "%s receives item: %s."
+_G.LOOT_ITEM_PUSHED_SELF = "You receive item: %s."
+-- Stub.now is the clock and Stub.sounds records every sound played.
+_G.GetTime = function()
+    return Stub.now
+end
+_G.PlaySound = function(sound)
+    table.insert(Stub.sounds, sound)
 end
 
 _G.GetCursorPosition = function()

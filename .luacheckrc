@@ -50,7 +50,20 @@ files["ForeverBiS/Adapters/Items.lua"] = {
 }
 files["ForeverBiS/Adapters/Inventory.lua"] = { read_globals = with({ "GetInventoryItemID", "GetItemCount" }) }
 files["ForeverBiS/Adapters/Chat.lua"] = {
-  read_globals = with({ "ChatEdit_InsertLink", "IsInGroup", "IsInRaid", "IsShiftKeyDown", "SendChatMessage" }),
+  read_globals = with({
+    "ChatEdit_InsertLink",
+    "IsInGroup",
+    "IsInRaid",
+    "IsShiftKeyDown",
+    "LOOT_ITEM",
+    "LOOT_ITEM_MULTIPLE",
+    "LOOT_ITEM_PUSHED",
+    "LOOT_ITEM_PUSHED_SELF",
+    "LOOT_ITEM_SELF",
+    "LOOT_ITEM_SELF_MULTIPLE",
+    "PlaySound",
+    "SendChatMessage",
+  }),
 }
 files["ForeverBiS/Adapters/Player.lua"] = {
   read_globals = with({ "GetRealmName", "UnitClass", "UnitFactionGroup", "UnitFullName", "UnitLevel", "UnitName" }),
@@ -59,6 +72,7 @@ files["ForeverBiS/Adapters/Player.lua"] = {
 files["ForeverBiS/UI/"] = { read_globals = with(widget_api, { "Minimap", "GetCursorPosition", "RAID_CLASS_COLORS" }) }
 
 files["ForeverBiS/App/Events.lua"] = { read_globals = with(widget_api, { "C_Timer" }) }
+files["ForeverBiS/App/Alerts.lua"] = { read_globals = with(widget_api, { "GetTime" }) }
 files["ForeverBiS/App/Commands.lua"] = {
   read_globals = with(),
   globals = { "SlashCmdList", "SLASH_FOREVERBIS1", "SLASH_FOREVERBIS2" },

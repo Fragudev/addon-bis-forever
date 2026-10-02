@@ -170,6 +170,16 @@ function Settings.toggleTooltip()
     return account().tooltip
 end
 
+function Settings.alertsEnabled()
+    return account().alerts ~= false
+end
+
+--- Returns the new state.
+function Settings.toggleAlerts()
+    account().alerts = account().alerts == false
+    return account().alerts
+end
+
 function Settings.tooltipAllClasses()
     return account().tooltipAllClasses == true
 end
