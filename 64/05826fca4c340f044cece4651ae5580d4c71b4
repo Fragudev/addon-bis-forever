@@ -1,0 +1,33 @@
+.luacov
+  s_2e9d4926efb663::t_34c2bb15283428 2
+tests/addon_spec.lua
+  s_2e9d4926efb663::t_bb6f4219d12c08 179-230
+tests/data_spec.lua
+  s_2e9d4926efb663::t_afc948da356d25 6
+tests/model_spec.lua
+  s_2e9d4926efb663::t_95cdf0a6ad1ff2 60
+tests/stubs/wow_api.lua
+  s_2e9d4926efb663::t_e017e7f1c9bff2 4-5,161,236-237,242-266
+tests/support/toc.lua
+  s_2e9d4926efb663::t_e2c9ad08241fb3 1-51
+tests/toc_spec.lua
+  s_2e9d4926efb663::t_e05e6bb85679ce 1-43
+tests/tooltip_spec.lua
+  s_2e9d4926efb663::t_c582ce2d009897 54
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "6405826fca4c340f044cece4651ae5580d4c71b4",
+  "prompts": {},
+  "sessions": {
+    "s_2e9d4926efb663": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "bbe1029b-52bc-4bd0-892a-ccbb66badc23",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Francis Gutiérrez <francisge@ext.inditex.com>"
+    }
+  }
+}
