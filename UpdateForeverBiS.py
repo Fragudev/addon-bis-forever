@@ -290,7 +290,7 @@ def main():
             data[route] = (title, slots)
             class_name = route.split("/")[2].replace("-", " ").title()
             build_label = re.sub(rf"\b{re.escape(class_name)}\b", "", title, count=1, flags=re.I).strip()
-            build_label = re.sub(r"\s+best in slot at level\s+20\s*$", "", build_label, flags=re.I)
+            build_label = re.sub(r"\s+best in slot at level\s+\d+\s*$", "", build_label, flags=re.I)
             build_label = re.sub(r"\s+", " ", build_label).strip()
             if build_label:
                 labels[route.removeprefix("/bis/")] = build_label
