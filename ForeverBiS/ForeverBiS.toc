@@ -7,5 +7,25 @@
 ## SavedVariables: ForeverBiSDB
 ForeverBiS_Data.lua
 ForeverBiS_Model.lua
+Core\Settings.lua
+Core\Catalog.lua
+Core\Sources.lua
+Core\Filters.lua
+Core\Lists.lua
+Adapters\Items.lua
+Adapters\Inventory.lua
+Adapters\Player.lua
+UI\MainFrame.lua
+UI\ItemWidgets.lua
+UI\Selectors.lua
+UI\Help.lua
+UI\FilterBar.lua
+UI\ItemRows.lua
+UI\ItemList.lua
+UI\PaperDoll.lua
+UI\Progress.lua
+UI\Minimap.lua
+App\Events.lua
+App\Commands.lua
 ForeverBiS.lua
 ForeverBiS_Tooltip.lua

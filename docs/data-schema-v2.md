@@ -25,7 +25,7 @@ ForeverBiSData = {
 
 - `items` order is the rank. `id` is omitted when unknown. `enchants` is omitted when empty.
 - `source.text` is always the raw ForeverChanges string (lossless). `source.kind` is one of `quest`, `profession`,
-  `dungeon`, `world`, `unknown`. The classification mirrors `getSourceCategory` in `ForeverBiS.lua`;
+  `dungeon`, `world`, `unknown`. The classification mirrors `Sources.category` in `Core/Sources.lua`;
   `unknown` is used for "Where it comes from is not known yet".
 - Optional `source` fields, set only when detected: `faction` ("Horde"/"Alliance", exclusive sources only), `zone`,
   `boss`, `dropRate` (number, percent), `quest`, `skill`, `skillLevel`, `bindsToMaker`, `reported`.
