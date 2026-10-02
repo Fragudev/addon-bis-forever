@@ -1,0 +1,19 @@
+ForeverBiS/ForeverBiS.lua
+  s_a4ee6d93b6314c::t_8eace7d0c40bd5 1873-1887,1894,1897
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "93bcfb29af07af6ba0438de2ce49b1151c58df22",
+  "prompts": {},
+  "sessions": {
+    "s_a4ee6d93b6314c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "df7408bc-738e-4241-9f18-f2608ca247cb",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Francis Gutiérrez <francisge@ext.inditex.com>"
+    }
+  }
+}
