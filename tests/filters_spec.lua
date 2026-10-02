@@ -1,6 +1,12 @@
 local function loadFilters()
     WowStub.reset()
-    WowStub.loadFiles({ "ForeverBiS_Data.lua", "ForeverBiS_Model.lua", "Core/Sources.lua", "Core/Filters.lua" })
+    WowStub.loadFiles({
+        "ForeverBiS_Locale.lua",
+        "ForeverBiS_Data.lua",
+        "ForeverBiS_Model.lua",
+        "Core/Sources.lua",
+        "Core/Filters.lua",
+    })
     local Filters = WowStub.ns.Filters
     Filters.reset()
     return Filters

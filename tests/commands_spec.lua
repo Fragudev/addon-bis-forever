@@ -4,7 +4,7 @@ local printed, toggles
 local function loadCommands(db)
     WowStub.reset()
     _G.ForeverBiSDB = db or {}
-    local ns = WowStub.loadFiles({ "Core/Settings.lua", "App/Commands.lua" })
+    local ns = WowStub.loadFiles({ "ForeverBiS_Locale.lua", "Core/Settings.lua", "App/Commands.lua" })
     toggles = 0
     ns.toggleWindow = function()
         toggles = toggles + 1

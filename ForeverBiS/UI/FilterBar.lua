@@ -5,7 +5,7 @@ local _, ns = ...
 local FilterBar = {}
 ns.FilterBar = FilterBar
 
-local Filters, Player = ns.Filters, ns.Player
+local Filters, Player, L = ns.Filters, ns.Player, ns.L
 
 local FILTER_LEFT = 22
 local FILTER_ROW_SEARCH, FILTER_ROW_BUTTONS, FILTER_ROW_DUNGEON = -84, -110, -130
@@ -71,7 +71,7 @@ local function createSearch(parent)
     searchBox:SetTextInsets(5, 22, 0, 0)
     searchHint = parent:CreateFontString(nil, "OVERLAY", "GameFontDisableSmall")
     searchHint:SetPoint("LEFT", searchBox, "LEFT", 6, 0)
-    searchHint:SetText("Search item, boss or zone")
+    searchHint:SetText(L["Search item, boss or zone"])
     clearSearchButton = CreateFrame("Button", nil, parent, "UIPanelButtonTemplate")
     clearSearchButton:SetSize(16, 16)
     clearSearchButton:SetPoint("RIGHT", searchBox, "RIGHT", 0, 0)
@@ -109,8 +109,8 @@ local function createSourceChips(parent)
         icon:SetPoint("CENTER", button, "CENTER", 0, 0)
         attachFilterTooltip(
             button,
-            label,
-            "Show only " .. string.lower(label) .. " sources. Select several to combine them."
+            L[label],
+            L["Show only %s sources. Select several to combine them."]:format(string.lower(L[label]))
         )
         button:SetScript("OnClick", function()
             Filters.toggleSource(category)
@@ -126,10 +126,14 @@ local function createFactionAndMaker(parent)
     makerButton = createFilterButton(parent, "ForeverBiSFilterMaker", 92)
     attachFilterTooltip(
         makerButton,
-        "Maker-only items",
-        "Some profession items can only be worn by the player who crafted them. Click to cycle: all items, only those maker-only items, or hide them. Items any player can use are treated as normal."
+        L["Maker-only items"],
+        L["Some profession items can only be worn by the player who crafted them. Click to cycle: all items, only those maker-only items, or hide them. Items any player can use are treated as normal."]
     )
-    attachFilterTooltip(factionButton, "Faction", "Show items for your faction only. Click to show both factions.")
+    attachFilterTooltip(
+        factionButton,
+        L["Faction"],
+        L["Show items for your faction only. Click to show both factions."]
+    )
     factionButton:SetScript("OnClick", function()
         Filters.toggleBothFactions()
         changed()
@@ -202,7 +206,7 @@ function FilterBar.refresh()
     if faction then
         factionButton:Show()
         factionButton:SetPoint("LEFT", lastChip, "RIGHT", 10, 0)
-        factionButton:SetText(state.bothFactions and "Both" or faction)
+        factionButton:SetText(state.bothFactions and L["Both"] or L[faction])
         setFilterActive(factionButton, not state.bothFactions)
         makerButton:SetPoint("LEFT", factionButton, "RIGHT", 4, 0)
     else

@@ -21,9 +21,10 @@ describe("TOC loader", function()
     end)
 
     describe("files", function()
-        it("lists the addon files with the data first and the entry file after the modules", function()
+        it("lists the locale first, then the data, and only files that exist", function()
             local files = Toc.files()
-            assert.are.equal("ForeverBiS_Data.lua", files[1])
+            assert.are.equal("ForeverBiS_Locale.lua", files[1])
+            assert.are.equal("ForeverBiS_Data.lua", files[2])
             for _, path in ipairs(files) do
                 local handle = io.open("ForeverBiS/" .. path, "rb")
                 assert.is_truthy(handle, path .. " is listed in the .toc but missing")

@@ -5,7 +5,7 @@ local _, ns = ...
 local ItemList = {}
 ns.ItemList = ItemList
 
-local Filters, Settings, Player, ItemRows = ns.Filters, ns.Settings, ns.Player, ns.ItemRows
+local Filters, Settings, Player, ItemRows, L = ns.Filters, ns.Settings, ns.Player, ns.ItemRows, ns.L
 
 local HEADING_X = 24
 -- The list sits lower while the dungeon dropdown row is showing.
@@ -92,11 +92,11 @@ local function addEmptyState(y)
     empty:SetPoint("TOPLEFT", content, "TOPLEFT", 8, y - 6)
     empty:SetWidth(content:GetWidth() - 16)
     empty:SetJustifyH("LEFT")
-    empty:SetText("No items match the current search and filters.")
+    empty:SetText(L["No items match the current search and filters."])
     local clearAll = CreateFrame("Button", nil, content, "UIPanelButtonTemplate")
     clearAll:SetSize(100, 22)
     clearAll:SetPoint("TOPLEFT", content, "TOPLEFT", 8, y - 34)
-    clearAll:SetText("Clear filters")
+    clearAll:SetText(L["Clear filters"])
     clearAll:SetScript("OnClick", function()
         Filters.reset()
         ns.requestRender()
@@ -137,7 +137,7 @@ end
 
 local function updateCounter(shown, total)
     if shown == total then
-        countText:SetText(total .. " items")
+        countText:SetText(L["%d items"]:format(total))
     else
         countText:SetText("|cffffe35b" .. shown .. "|r/" .. total)
     end
@@ -174,7 +174,7 @@ function ItemList.refresh(view, options)
 
     local y = -5
     if not view.data then
-        addMessage("This installed version does not include the selected BiS list yet.", y)
+        addMessage(L["This installed version does not include the selected BiS list yet."], y)
         countText:SetText("")
         content:SetHeight(45)
         scroll:SetVerticalScroll(0)

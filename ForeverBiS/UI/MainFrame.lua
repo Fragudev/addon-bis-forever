@@ -4,6 +4,8 @@ local _, ns = ...
 local MainFrame = {}
 ns.MainFrame = MainFrame
 
+local L = ns.L
+
 local MIN_WIDTH, MIN_HEIGHT = 760, 500
 -- Once the player drags the resize handle the window keeps their size instead of fitting the screen.
 local userSized = false
@@ -92,7 +94,7 @@ end
 
 --- Sets the title and fits the width to the screen unless the player resized it. Returns the width.
 function MainFrame.refresh()
-    title:SetText("BiS Forever")
+    title:SetText(L["BiS Forever"])
     local width = userSized and frame:GetWidth() or math.min(MIN_WIDTH, UIParent:GetWidth() - 50)
     if not userSized then
         frame:SetWidth(width)
