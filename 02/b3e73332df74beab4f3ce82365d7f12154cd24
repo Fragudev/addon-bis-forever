@@ -1,0 +1,39 @@
+.luacheckrc
+  s_90bcc6f3b691bd::t_65d92512a6bd45 13,22,32,42,49
+CurseForge/README.md
+  s_90bcc6f3b691bd::t_ee65606c2907dc 48
+ForeverBiS/ForeverBiS.lua
+  s_90bcc6f3b691bd::t_770498a856a3b0 1923-1938
+ForeverBiS/ForeverBiS.toc
+  s_90bcc6f3b691bd::t_67ff70a2794f5e 11
+ForeverBiS/ForeverBiS_Model.lua
+  s_90bcc6f3b691bd::t_a9c0bf5d13182e 166-234,237
+ForeverBiS/ForeverBiS_Tooltip.lua
+  s_90bcc6f3b691bd::t_e18817bbd7548f 1-175
+README.md
+  s_90bcc6f3b691bd::t_eb51298dc91cbc 34-40
+docs/data-schema-v2.md
+  s_90bcc6f3b691bd::t_d401e8e2832ee2 39-45
+tests/model_spec.lua
+  s_90bcc6f3b691bd::t_bfc72514b57ebc 326-457
+tests/stubs/wow_api.lua
+  s_90bcc6f3b691bd::t_e80767d09bbcbf 78-85,150-161,229
+tests/tooltip_spec.lua
+  s_90bcc6f3b691bd::t_a5e4cfb46d429e 1-436
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "02b3e73332df74beab4f3ce82365d7f12154cd24",
+  "prompts": {},
+  "sessions": {
+    "s_90bcc6f3b691bd": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "b0cdf6e3-d3e9-4ce3-8db9-5125df9d4344",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Francis Gutiérrez <francisge@ext.inditex.com>"
+    }
+  }
+}
