@@ -1,0 +1,19 @@
+ForeverBiS/ForeverBiS.toc
+  s_2e9d4926efb663::t_061138d33d8d30 6
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "7b05327da81fd42672bf35f150cc76933fe0279c",
+  "prompts": {},
+  "sessions": {
+    "s_2e9d4926efb663": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "bbe1029b-52bc-4bd0-892a-ccbb66badc23",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Francis Gutiérrez <francisge@ext.inditex.com>"
+    }
+  }
+}
