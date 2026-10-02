@@ -127,6 +127,12 @@ end
 function frameMethods.GetStringWidth()
     return 60
 end
+function frameMethods.SetDesaturated(self, desaturated)
+    self.desaturated = desaturated
+end
+function frameMethods.SetVertexColor(self, red, green, blue)
+    self.vertexColor = { red, green, blue }
+end
 function frameMethods.SetTexture(self, texture)
     self.texture = texture
 end

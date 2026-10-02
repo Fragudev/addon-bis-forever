@@ -6,9 +6,15 @@ ns.ItemWidgets = ItemWidgets
 
 local Items, Inventory, L = ns.Items, ns.Inventory, ns.L
 
---- A 2px border around an icon button in the item's rarity color.
-function ItemWidgets.addQualityBorder(button, itemName)
+-- Border of an icon whose slot still lacks its BiS item: subtle, but readable on every rarity and the brown frame.
+local MISSING_BORDER = { 0.85, 0.2, 0.2 }
+
+--- A 2px border around an icon button in the item's rarity color, or red when its slot is missing the BiS item.
+function ItemWidgets.addQualityBorder(button, itemName, missing)
     local red, green, blue = Items.qualityColor(itemName)
+    if missing then
+        red, green, blue = MISSING_BORDER[1], MISSING_BORDER[2], MISSING_BORDER[3]
+    end
     local width, height = button:GetWidth(), button:GetHeight()
     local borderSize = 2
     local function addEdge(point, edgeWidth, edgeHeight)

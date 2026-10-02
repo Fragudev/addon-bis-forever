@@ -571,6 +571,71 @@ describe("ForeverBiS phase selector", function()
             assert.is_truthy(found, "no Equip: line for the bagged upgrade")
         end)
 
+        local function gearIcons()
+            return WowStub.find("Button", function(button)
+                return button.width == 32 and button.height == 32 and button.scripts.OnClick
+            end)
+        end
+
+        local function iconTexture(button)
+            return button.regions[1]
+        end
+
+        local function isRedBorder(button)
+            for _, region in ipairs(button.regions) do
+                if region.vertexColor and region.vertexColor[2] < 0.5 then
+                    return true
+                end
+            end
+            return false
+        end
+
+        local function headIcon()
+            for _, button in ipairs(gearIcons()) do
+                local point = button.points[1]
+                if point[4] == 5 and point[5] == 0 then
+                    return button
+                end
+            end
+        end
+
+        it("desaturates and reddens the paper doll icons of slots missing their BiS", function()
+            WowStub.load({ class = "druid", build = "" })
+            local icons = gearIcons()
+            assert.is_true(#icons > 0)
+            for _, button in ipairs(icons) do
+                assert.is_true(iconTexture(button).desaturated)
+                assert.is_true(isRedBorder(button))
+            end
+        end)
+
+        it("keeps the icon of a satisfied slot in full color and updates on equipment changes", function()
+            WowStub.load({ class = "druid", build = "" })
+            local slotID, first = headIds()
+            WowStub.equipped[slotID] = first
+            ForeverBiSFrame:Show()
+            WowStub.fire(itemWatcher(), "OnEvent", "PLAYER_EQUIPMENT_CHANGED")
+            local head = assert(headIcon())
+            assert.is_false(iconTexture(head).desaturated)
+            assert.is_false(isRedBorder(head))
+            for _, button in ipairs(gearIcons()) do
+                if button ~= head then
+                    assert.is_true(iconTexture(button).desaturated)
+                end
+            end
+        end)
+
+        it("leaves every icon untouched when the list has no trackable slots", function()
+            WowStub.load({ class = "druid", build = "" }, function(data)
+                for _, entry in pairs(data.lists) do
+                    for _, phase in pairs(entry.phases) do
+                        phase.slots = {}
+                    end
+                end
+            end)
+            assert.are.equal(0, #gearIcons())
+        end)
+
         it("follows the class selection", function()
             WowStub.load({ class = "druid", build = "" })
             local rogue = ForeverBiSModel.progress(ForeverBiSModel.list("rogue"), { equipped = {} }).total
