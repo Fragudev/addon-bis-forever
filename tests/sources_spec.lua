@@ -84,6 +84,50 @@ describe("Sources", function()
         end)
     end)
 
+    describe("remainingByCategory", function()
+        local function missing(source)
+            return { done = false, target = { name = "X", source = source } }
+        end
+
+        it("counts the missing slots by the category of the item to get, in display order", function()
+            local slots = {
+                missing("Boss, The Deadmines"),
+                missing("Quest: Something"),
+                missing("Tailoring"),
+                missing("Other Boss, Wailing Caverns"),
+                missing("World drop"),
+            }
+            assert.are.same(
+                { { "quest", 1 }, { "dungeon", 2 }, { "world", 1 }, { "profession", 1 } },
+                Sources.remainingByCategory(slots)
+            )
+        end)
+
+        it("hides categories with nothing missing and ignores finished slots", function()
+            local slots = { missing("Tailoring"), { done = true }, { done = false } }
+            assert.are.same({ { "profession", 1 } }, Sources.remainingByCategory(slots))
+        end)
+
+        it("sums to the number of missing slots", function()
+            local slots = { missing("Quest: A"), missing("Quest: B"), missing("World drop") }
+            local total = 0
+            for _, entry in ipairs(Sources.remainingByCategory(slots)) do
+                total = total + entry[2]
+            end
+            assert.are.equal(#slots, total)
+        end)
+
+        it("returns nothing when no slot is missing", function()
+            assert.are.same({}, Sources.remainingByCategory({}))
+        end)
+    end)
+
+    it("has an icon for every category", function()
+        for _, category in ipairs(Sources.categories) do
+            assert.is_string(Sources.categoryIcons[category])
+        end
+    end)
+
     it("normalizes slot names through the model", function()
         assert.are.equal(ForeverBiSModel.slotKey("Main Hand"), Sources.normalizeSlotName("Main Hand"))
     end)
