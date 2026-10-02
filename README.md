@@ -1,4 +1,4 @@
-# Forever BiS — beta-0.0.33
+# Forever BiS
 
 Copyright (c) 2026 Fragudev. Licensed under the [MIT License](LICENSE.md). Third-party materials, game assets, and external Best in Slot list information are not claimed by this license.
 

@@ -41,6 +41,14 @@ jobs:
       - name: Install luacheck, busted and luacov
         run: luarocks install luacheck && luarocks install busted && luarocks install luacov
 
+      - name: README carries no version
+        # The version lives only in the TOC; a copy in the README drifts on every bump.
+        run: |
+          if grep -nE 'beta[-_][0-9]+\.[0-9]+\.[0-9]+' README.md; then
+            echo "README.md must not hardcode the addon version (it lives in ForeverBiS.toc)" >&2
+            exit 1
+          fi
+
       - name: Lint
         run: luacheck ForeverBiS tests
 
