@@ -1,0 +1,21 @@
+README.md
+  s_efa4147a40cdc2::t_1467643715d9fa 38
+tools/generate_minimap_icon.py
+  s_efa4147a40cdc2::t_fa89b4d780b481 1-176
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "f7685e8811597f6e932710264c743b464eb570bb",
+  "prompts": {},
+  "sessions": {
+    "s_efa4147a40cdc2": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "2b218b21-242a-4333-a096-b1ca29ac9ddf",
+        "model": "unknown"
+      },
+      "human_author": "Francis Gutiérrez <francisge@ext.inditex.com>"
+    }
+  }
+}
