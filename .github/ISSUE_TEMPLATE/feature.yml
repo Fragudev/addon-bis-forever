@@ -1,0 +1,59 @@
+name: Feature or improvement
+description: Propose a feature, visual change, or technical improvement that an agent or contributor can implement.
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: Describe the change so that someone without prior context can implement and verify it.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Technical
+        - Feature
+        - Visual
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What is missing or wrong today, and why it matters.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal
+      description: What should be built or changed.
+    validations:
+      required: true
+  - type: textarea
+    id: files
+    attributes:
+      label: Affected files
+      description: Files or modules expected to change, with relevant functions.
+    validations:
+      required: false
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: Observable conditions that must hold when the work is done.
+    validations:
+      required: true
+  - type: textarea
+    id: testing
+    attributes:
+      label: Testing
+      description: Specs to add or update under tests/, and how to verify in-game.
+    validations:
+      required: false
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: Constraints, dependencies on other issues, or open questions.
+    validations:
+      required: false
