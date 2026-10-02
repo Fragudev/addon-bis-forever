@@ -4,13 +4,25 @@ on:
   push:
     tags:
       - "beta_*"
+  workflow_call:
+    inputs:
+      tag:
+        description: Release tag to build and publish (for example beta_0.0.37)
+        type: string
+        required: true
 
 permissions:
   contents: read
 
+env:
+  TAG: ${{ inputs.tag || github.ref_name }}
+  CF_PROJECT_ID: "1716165"
+
 jobs:
   ci:
     uses: ./.github/workflows/ci.yml
+    with:
+      ref: ${{ inputs.tag || github.ref_name }}
 
   release:
     needs: ci
@@ -20,15 +32,55 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v7
+        with:
+          ref: ${{ env.TAG }}
 
       # Fails when the tag and the TOC version disagree (beta_0.0.35 vs beta-0.0.35).
       - name: Build zip
-        run: tools/package.sh "${GITHUB_REF_NAME}"
+        run: tools/package.sh "${TAG}"
 
       - name: Create GitHub release
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "${GITHUB_REF_NAME}" "Forever-${GITHUB_REF_NAME}.zip" \
-            --title "Forever BiS ${GITHUB_REF_NAME}" \
+          gh release create "${TAG}" "Forever-${TAG}.zip" \
+            --title "Forever BiS ${TAG}" \
             --generate-notes
+
+      # The CurseForge game version is derived from the TOC Interface (16001 -> 1.60.1) and
+      # resolved to its ID. The optional CF_GAME_VERSION_ID repository variable (comma-separated
+      # IDs) overrides it. When neither resolves, the step lists the available versions.
+      - name: Upload to CurseForge
+        env:
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          CF_GAME_VERSION_ID: ${{ vars.CF_GAME_VERSION_ID }}
+        run: |
+          if [[ -z "${CF_API_TOKEN}" ]]; then
+            echo "::error::Missing CF_API_TOKEN repository secret."
+            exit 1
+          fi
+          versions="$(curl -fsS -H "X-Api-Token: ${CF_API_TOKEN}" https://wow.curseforge.com/api/game/versions)"
+          if [[ -z "${CF_GAME_VERSION_ID}" ]]; then
+            interface="$(sed -n 's/^## Interface://p' ForeverBiS/ForeverBiS.toc | grep -o '[0-9]\+' | head -n 1)"
+            game_version="$((interface / 10000)).$((interface / 100 % 100)).$((interface % 100))"
+            CF_GAME_VERSION_ID="$(jq -r --arg name "${game_version}" \
+              '[.[] | select(.name == $name) | .id] | if length == 1 then .[0] else empty end' <<<"${versions}")"
+            echo "Interface ${interface} -> CurseForge game version ${game_version} (ID '${CF_GAME_VERSION_ID}')"
+          fi
+          if ! jq -e --arg ids "${CF_GAME_VERSION_ID}" \
+            '($ids | split(",") | map(select(test("^ *[0-9]+ *$")) | tonumber)) as $wanted
+             | ($wanted | length) > 0 and ($wanted | length) == ($ids | split(",") | length)
+             and ([.[].id] as $known | all($wanted[]; IN($known[])))' <<<"${versions}" >/dev/null; then
+            echo "::error::Could not resolve a unique CurseForge game version (ID '${CF_GAME_VERSION_ID}'). Set CF_GAME_VERSION_ID to one of these IDs:"
+            jq -r '.[] | "\(.id)\t\(.name)\t(type \(.gameVersionTypeID))"' <<<"${versions}" | tail -n 40
+            exit 1
+          fi
+          metadata="$(jq -n \
+            --arg name "Forever BiS ${TAG}" \
+            --arg log "See the [GitHub release](${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/releases/tag/${TAG}) for details." \
+            --argjson versions "[${CF_GAME_VERSION_ID}]" \
+            '{displayName: $name, changelog: $log, changelogType: "markdown", releaseType: "beta", gameVersions: $versions}')"
+          curl -fsS -H "X-Api-Token: ${CF_API_TOKEN}" \
+            -F "metadata=${metadata}" \
+            -F "file=@Forever-${TAG}.zip" \
+            "https://wow.curseforge.com/api/projects/${CF_PROJECT_ID}/upload-file"

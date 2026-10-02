@@ -1,0 +1,60 @@
+name: Update BiS lists
+
+on:
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: update-lists
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    outputs:
+      tag: ${{ steps.publish.outputs.tag }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      # The updater exits non-zero and leaves the data file untouched if any page fails.
+      - name: Refresh lists from ForeverChanges
+        run: python3 UpdateForeverBiS.py ForeverBiS
+
+      - name: Bump version, commit and tag
+        id: publish
+        run: |
+          if git diff --quiet -- ForeverBiS/ForeverBiS_Data.lua; then
+            echo "Lists unchanged; nothing to release."
+            exit 0
+          fi
+          toc=ForeverBiS/ForeverBiS.toc
+          current="$(sed -n 's/^## Version: beta-//p' "$toc" | tr -d '\r')"
+          IFS=. read -r major minor patch <<<"$current"
+          next="${major}.${minor}.$((patch + 1))"
+          sed -i "s/^## Version: beta-.*/## Version: beta-${next}/" "$toc"
+          tag="beta_${next}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add ForeverBiS/ForeverBiS_Data.lua "$toc"
+          git commit -m "chore(data): refresh BiS lists from ForeverChanges"
+          git tag "$tag"
+          git push origin HEAD:main "$tag"
+          echo "tag=${tag}" >>"$GITHUB_OUTPUT"
+
+  # Tags pushed with GITHUB_TOKEN do not trigger other workflows, so call the release directly.
+  release:
+    needs: update
+    if: needs.update.outputs.tag != ''
+    permissions:
+      contents: write
+    uses: ./.github/workflows/release.yml
+    with:
+      tag: ${{ needs.update.outputs.tag }}
+    secrets: inherit
