@@ -32,20 +32,20 @@ describe("ForeverBiS", function()
         it("starts hidden and defaults to the rogue PvE list", function()
             WowStub.load(nil)
             assert.is_false(ForeverBiSFrame:IsShown())
-            assert.are.equal("rogue", ForeverBiSDB.class)
-            assert.are.equal("", ForeverBiSDB.build) -- the default build has an empty route suffix
+            assert.are.equal("rogue", ForeverBiSCharDB.class)
+            assert.are.equal("", ForeverBiSCharDB.build) -- the default build has an empty route suffix
         end)
 
         it("falls back to a valid class and build when the saved ones are unknown", function()
             WowStub.load({ class = "not-a-class", build = "not-a-build" })
-            assert.are.equal("rogue", ForeverBiSDB.class)
-            assert.are.equal("", ForeverBiSDB.build)
+            assert.are.equal("rogue", ForeverBiSCharDB.class)
+            assert.are.equal("", ForeverBiSCharDB.build)
         end)
 
         it("keeps a valid saved class and build", function()
             WowStub.load({ class = "druid", build = "/tank" })
-            assert.are.equal("druid", ForeverBiSDB.class)
-            assert.are.equal("/tank", ForeverBiSDB.build)
+            assert.are.equal("druid", ForeverBiSCharDB.class)
+            assert.are.equal("/tank", ForeverBiSCharDB.build)
         end)
     end)
 
@@ -64,23 +64,23 @@ describe("ForeverBiS", function()
         it("selects the player's class and its default build on login", function()
             WowStub.load({ class = "rogue", build = "/pvp" }, nil, druid)
             login()
-            assert.are.equal("druid", ForeverBiSDB.class)
-            assert.are_not.equal("/pvp", ForeverBiSDB.build)
-            assert.is_nil(ForeverBiSDB.classChosen)
+            assert.are.equal("druid", ForeverBiSCharDB.class)
+            assert.are_not.equal("/pvp", ForeverBiSCharDB.build)
+            assert.is_nil(ForeverBiSCharDB.classChosen)
             assert.are.equal("Druid", ForeverBiSClassDropDown.menuText)
         end)
 
         it("keeps the build when the detected class is already selected", function()
             WowStub.load({ class = "druid", build = "/tank" }, nil, druid)
             login()
-            assert.are.equal("druid", ForeverBiSDB.class)
-            assert.are.equal("/tank", ForeverBiSDB.build)
+            assert.are.equal("druid", ForeverBiSCharDB.class)
+            assert.are.equal("/tank", ForeverBiSCharDB.build)
         end)
 
         it("never overrides a class the user chose", function()
             WowStub.load({ class = "rogue", build = "", classChosen = true }, nil, druid)
             login()
-            assert.are.equal("rogue", ForeverBiSDB.class)
+            assert.are.equal("rogue", ForeverBiSCharDB.class)
         end)
 
         it("ignores a class token the addon does not know", function()
@@ -90,7 +90,7 @@ describe("ForeverBiS", function()
                 { class = "Death Knight", token = "DEATHKNIGHT", level = 20 }
             )
             login()
-            assert.are.equal("mage", ForeverBiSDB.class)
+            assert.are.equal("mage", ForeverBiSCharDB.class)
         end)
 
         it("uses the saved variables the client loaded after the files ran", function()
@@ -98,8 +98,8 @@ describe("ForeverBiS", function()
             _G.ForeverBiSDB =
                 { class = "hunter", build = "", classChosen = true, collapsed = { ["hunter:Head"] = true } }
             login()
-            assert.are.equal("hunter", ForeverBiSDB.class)
-            assert.is_true(ForeverBiSDB.collapsed["hunter:Head"])
+            assert.are.equal("hunter", ForeverBiSCharDB.class)
+            assert.is_true(ForeverBiSCharDB.collapsed["hunter:Head"])
             assert.is_table(ForeverBiSDB.minimap)
         end)
 
@@ -107,7 +107,7 @@ describe("ForeverBiS", function()
             WowStub.load(nil, nil, druid)
             _G.ForeverBiSDB = nil
             login()
-            assert.are.equal("druid", ForeverBiSDB.class)
+            assert.are.equal("druid", ForeverBiSCharDB.class)
         end)
 
         it("re-applies a hidden minimap button", function()
@@ -247,7 +247,7 @@ describe("ForeverBiS", function()
                     info.func()
                 end
             end
-            assert.are.equal("druid", ForeverBiSDB.class)
+            assert.are.equal("druid", ForeverBiSCharDB.class)
             assert.is_true(WowStub.hasText(string.upper(ForeverBiSLists["druid"].slots[1][1])))
         end)
 
@@ -260,7 +260,7 @@ describe("ForeverBiS", function()
                     info.func()
                 end
             end
-            assert.are.equal("/tank", ForeverBiSDB.build)
+            assert.are.equal("/tank", ForeverBiSCharDB.build)
         end)
     end)
 

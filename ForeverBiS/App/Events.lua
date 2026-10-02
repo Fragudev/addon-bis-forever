@@ -39,6 +39,7 @@ end
 -- (the global may even be replaced wholesale), so re-bind and auto-detect the class at PLAYER_LOGIN.
 local function onLogin()
     ns.Settings.bind()
+    ns.Settings.migrate()
     ns.Settings.applyDetectedClass(ns.Player.classToken())
     ns.MinimapButton.refresh()
     ns.requestRender()
