@@ -200,6 +200,103 @@ describe("ForeverBiSModel", function()
         end)
     end)
 
+    describe("phaseForLevel", function()
+        local function routeWith(phases)
+            local data = { schema = 2, phases = {}, lists = { druid = { phases = {} } } }
+            for _, phase in ipairs(phases) do
+                table.insert(data.phases, phase)
+                data.lists.druid.phases[phase.id] = { title = phase.id, slots = {} }
+            end
+            load(data)
+        end
+
+        local threeLevels = {
+            { id = "lvl30", label = "Level 30", level = 30 },
+            { id = "lvl40", label = "Level 40", level = 40 },
+            { id = "lvl50", label = "Level 50", level = 50 },
+        }
+
+        it("picks the smallest numeric phase at or above the level", function()
+            routeWith(threeLevels)
+            assert.are.equal("lvl30", ForeverBiSModel.phaseForLevel("druid", 1))
+            assert.are.equal("lvl30", ForeverBiSModel.phaseForLevel("druid", 30))
+            assert.are.equal("lvl40", ForeverBiSModel.phaseForLevel("druid", 31))
+            assert.are.equal("lvl40", ForeverBiSModel.phaseForLevel("druid", 40))
+            assert.are.equal("lvl50", ForeverBiSModel.phaseForLevel("druid", 41))
+        end)
+
+        it("returns the last phase above every numeric phase", function()
+            routeWith(threeLevels)
+            assert.are.equal("lvl50", ForeverBiSModel.phaseForLevel("druid", 60))
+        end)
+
+        it("returns the last phase for a nil or invalid level", function()
+            routeWith(threeLevels)
+            assert.are.equal("lvl50", ForeverBiSModel.phaseForLevel("druid", nil))
+            assert.are.equal("lvl50", ForeverBiSModel.phaseForLevel("druid", "30"))
+            assert.are.equal("lvl50", ForeverBiSModel.phaseForLevel("druid", 0))
+            assert.are.equal("lvl50", ForeverBiSModel.phaseForLevel("druid", 0 / 0))
+        end)
+
+        it("treats phases without a level as endgame and sorts them last", function()
+            routeWith({
+                { id = "current", label = "Current" },
+                { id = "lvl30", label = "Level 30", level = 30 },
+                { id = "lvl50", label = "Level 50", level = 50 },
+            })
+            assert.are.equal("lvl30", ForeverBiSModel.phaseForLevel("druid", 12))
+            assert.are.equal("lvl50", ForeverBiSModel.phaseForLevel("druid", 50))
+            assert.are.equal("current", ForeverBiSModel.phaseForLevel("druid", 51))
+            assert.are.equal("current", ForeverBiSModel.phaseForLevel("druid", nil))
+        end)
+
+        it("orders numeric phases by level whatever their declaration order", function()
+            routeWith({
+                { id = "lvl50", label = "Level 50", level = 50 },
+                { id = "lvl30", label = "Level 30", level = 30 },
+            })
+            assert.are.equal("lvl30", ForeverBiSModel.phaseForLevel("druid", 20))
+        end)
+
+        it("returns the only phase of a single-phase route", function()
+            routeWith({ { id = "lvl30", label = "Level 30", level = 30 } })
+            assert.are.equal("lvl30", ForeverBiSModel.phaseForLevel("druid", 10))
+            assert.are.equal("lvl30", ForeverBiSModel.phaseForLevel("druid", 70))
+            assert.are.equal("lvl30", ForeverBiSModel.phaseForLevel("druid", nil))
+        end)
+
+        it("only considers phases the route has data for", function()
+            local data = fixture()
+            data.lists.druid.phases.lvl30 = nil -- the global list still declares lvl30
+            load(data)
+            assert.are.equal("lvl60", ForeverBiSModel.phaseForLevel("druid", 10))
+        end)
+
+        it("returns nil for an unknown route", function()
+            load(fixture())
+            assert.is_nil(ForeverBiSModel.phaseForLevel("nope", 30))
+        end)
+    end)
+
+    describe("saved phase resolution", function()
+        it("keeps a saved phase the route has and drops any other", function()
+            load(fixture())
+            assert.are.equal("lvl60", ForeverBiSModel.availablePhase("druid", "lvl60"))
+            assert.is_nil(ForeverBiSModel.availablePhase("druid", "lvl99"))
+            assert.is_nil(ForeverBiSModel.availablePhase("druid", nil))
+            assert.is_nil(ForeverBiSModel.availablePhase("druid", 30))
+            assert.is_nil(ForeverBiSModel.availablePhase("nope", "lvl30"))
+        end)
+
+        it("falls back to the level-based phase when the saved one is unavailable", function()
+            load(fixture())
+            assert.are.equal("lvl60", ForeverBiSModel.effectivePhase("druid", "lvl60", 10))
+            assert.are.equal("lvl30", ForeverBiSModel.effectivePhase("druid", "gone", 10))
+            assert.are.equal("lvl60", ForeverBiSModel.effectivePhase("druid", nil, 45))
+            assert.is_nil(ForeverBiSModel.effectivePhase("nope", "lvl30", 10))
+        end)
+    end)
+
     describe("defensive loading", function()
         it("produces empty tables without data", function()
             load(nil)

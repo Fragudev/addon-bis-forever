@@ -27,7 +27,7 @@ WoW Forever addon (Interface 16001). Use `/bis` or `/foreverbis` in-game to open
 
 ## Using the addon
 
-Choose a class and build from the dropdowns. Your selection is saved between sessions. Filters start hidden; use `Show Filters` and `Hide Filters` beside the class and build selectors to reveal or collapse item search, faction, source, and dungeon filters, along with the source legend. `Clear Filters` resets all filters.
+Choose a class and build from the dropdowns. Your selection is saved between sessions. On login the addon selects your character's class automatically until you pick a class yourself; builds are never detected, so choose yours from the Build dropdown. When a build has lists for more than one phase, a phase dropdown appears beside the build selector: `Auto` shows the list for your character's level (the lowest phase at or above your level, or the latest phase once you pass them all), and you can pin any other phase instead. The selector stays hidden while a build has a single phase. Filters start hidden; use `Show Filters` and `Hide Filters` beside the class and build selectors to reveal or collapse item search, faction, source, and dungeon filters, along with the source legend. `Clear Filters` resets all filters.
 
 Faction-exclusive items show a faction emblem and a red Horde or blue Alliance label. Use the plus/minus button beside a slot heading to collapse or expand its list. Each item row shows its rank, icon with a rarity-colored border, item name in its rarity color, and source. Boss or source names and their locations use separate colors. Drop rates omit the redundant Classic label. A green check marks items equipped in that slot, and a gold `xN` marks copies in your bags.
 
@@ -39,7 +39,7 @@ The window opens at its minimum size and can be enlarged vertically from its bot
 
 ## Current scope
 
-The selector includes the class and build variants discovered on ForeverChanges. The addon reads its bundled `ForeverBiS_Data.lua` (schema 2: lists per phase with structured item sources, see [docs/data-schema-v2.md](docs/data-schema-v2.md)); the UI currently shows the latest phase of each list; the included updater can refresh that file from the current public lists. The window sizes itself to the content, can be resized from its bottom-right corner, and allows scrolling when a list is taller than the window.
+The selector includes the class and build variants discovered on ForeverChanges. The addon reads its bundled `ForeverBiS_Data.lua` (schema 2: lists per phase with structured item sources, see [docs/data-schema-v2.md](docs/data-schema-v2.md)); the UI shows the phase matching your level (or the one you pick); the included updater can refresh that file from the current public lists. The window sizes itself to the content, can be resized from its bottom-right corner, and allows scrolling when a list is taller than the window.
 
 ## List updates
 

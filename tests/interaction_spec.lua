@@ -290,3 +290,104 @@ describe("ForeverBiS interactions", function()
         end)
     end)
 end)
+
+-- Gives the druid list a second phase with its own title, so the phase selector has something to choose.
+local function withSecondPhase(data)
+    table.insert(data.phases, { id = "lvl40", label = "Level 40", level = 40 })
+    local base = data.lists["druid"].phases.lvl30
+    local slots = {}
+    for _, slot in ipairs(base.slots) do
+        slots[#slots + 1] = slot
+    end
+    data.lists["druid"].phases.lvl40 = { title = "Druid at level 40", slots = slots }
+    slots[1] = {
+        slot = slots[1].slot,
+        items = { { name = "Level Forty Hood", source = { kind = "unknown", text = "Somewhere" } } },
+    }
+end
+
+describe("ForeverBiS phase selector", function()
+    local function playerAt(level)
+        return { class = "Druid", token = "DRUID", level = level }
+    end
+
+    it("is hidden while the route has a single phase", function()
+        WowStub.load({ class = "druid", build = "" })
+        assert.is_false(ForeverBiSPhaseDropDown:IsShown())
+    end)
+
+    it("is shown when the route has several phases, and reports the automatic phase", function()
+        WowStub.load({ class = "druid", build = "" }, withSecondPhase, playerAt(35))
+        assert.is_true(ForeverBiSPhaseDropDown:IsShown())
+        assert.are.equal("Auto (Level 40)", ForeverBiSPhaseDropDown.menuText)
+    end)
+
+    it("lists Auto first, then every phase of the route in order", function()
+        WowStub.load({ class = "druid", build = "" }, withSecondPhase, playerAt(35))
+        WowStub.menus = {}
+        ForeverBiSPhaseDropDown.initializer(ForeverBiSPhaseDropDown, 1)
+        local labels = {}
+        for _, info in ipairs(WowStub.menus) do
+            labels[#labels + 1] = info.text
+        end
+        assert.are.same({ "Auto (Level 40)", "Level 30", "Level 40" }, labels)
+        assert.is_true(WowStub.menus[1].checked)
+    end)
+
+    it("renders the chosen phase and stores it, and Auto clears it", function()
+        WowStub.load({ class = "druid", build = "" }, withSecondPhase, playerAt(35))
+        assert.is_true(WowStub.hasText("Level Forty Hood"))
+
+        chooseOption(ForeverBiSPhaseDropDown, "Level 30")
+        assert.are.equal("lvl30", ForeverBiSDB.phase)
+        assert.are.equal("Level 30", ForeverBiSPhaseDropDown.menuText)
+        assert.is_false(WowStub.hasText("Level Forty Hood"))
+
+        chooseOption(ForeverBiSPhaseDropDown, "Auto (Level 40)")
+        assert.is_nil(ForeverBiSDB.phase)
+        assert.is_true(WowStub.hasText("Level Forty Hood"))
+    end)
+
+    it("makes Auto follow the player level", function()
+        WowStub.load({ class = "druid", build = "" }, withSecondPhase, playerAt(20))
+        assert.are.equal("Auto (Level 30)", ForeverBiSPhaseDropDown.menuText)
+        assert.is_false(WowStub.hasText("Level Forty Hood"))
+    end)
+
+    it("honours a saved phase and shows its label", function()
+        WowStub.load({ class = "druid", build = "", phase = "lvl40" }, withSecondPhase, playerAt(20))
+        assert.are.equal("Level 40", ForeverBiSPhaseDropDown.menuText)
+        assert.is_true(WowStub.hasText("Level Forty Hood"))
+    end)
+
+    it("drops a saved phase the route does not have, and when the class changes to such a route", function()
+        WowStub.load({ class = "druid", build = "", phase = "lvl99" })
+        assert.is_nil(ForeverBiSDB.phase)
+
+        WowStub.load({ class = "druid", build = "", phase = "lvl40" }, withSecondPhase)
+        chooseOption(ForeverBiSClassDropDown, "Rogue")
+        assert.is_nil(ForeverBiSDB.phase)
+        assert.is_false(ForeverBiSPhaseDropDown:IsShown())
+    end)
+
+    it("marks the class as chosen when picked by hand", function()
+        WowStub.load({ class = "druid", build = "" })
+        assert.is_nil(ForeverBiSDB.classChosen)
+        chooseOption(ForeverBiSClassDropDown, "Mage")
+        assert.is_true(ForeverBiSDB.classChosen)
+    end)
+
+    it("keeps collapsed state keyed by route so it survives a phase change", function()
+        WowStub.load({ class = "druid", build = "" }, withSecondPhase, playerAt(35))
+        local head = ForeverBiSLists["druid"].slots[1][1]
+        WowStub.fire(
+            WowStub.find("Button", function(b)
+                return b.width == 18
+            end)[1],
+            "OnClick"
+        )
+        assert.is_true(ForeverBiSDB.collapsed["druid:" .. head])
+        chooseOption(ForeverBiSPhaseDropDown, "Level 30")
+        assert.is_true(ForeverBiSDB.collapsed["druid:" .. head])
+    end)
+end)

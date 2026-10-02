@@ -400,6 +400,18 @@ local function currentListKey()
     return class.key .. build[3]
 end
 
+local function currentPlayerLevel()
+    return UnitLevel and UnitLevel("player") or nil
+end
+
+--- Phase shown for a route: the saved choice when available, otherwise the one matching the player's level.
+local function effectivePhaseFor(route)
+    if not ForeverBiSModel then
+        return nil
+    end
+    return ForeverBiSModel.effectivePhase(route, ForeverBiSDB.phase, currentPlayerLevel())
+end
+
 local itemIDs = {
     ["Brawler's Leather Hood"] = 252504,
     ["Solomon's Comfortable Hat"] = 277219,
@@ -687,6 +699,10 @@ buildLabel:SetText("Build")
 local buildDrop = CreateFrame("Frame", "ForeverBiSBuildDropDown", frame, "UIDropDownMenuTemplate")
 buildDrop:SetPoint("LEFT", buildLabel, "RIGHT", -5, -3)
 UIDropDownMenu_SetWidth(buildDrop, 120)
+-- No label: "Auto (Level 30)" explains itself, and a label would collide with the filter button at the minimum width.
+local phaseDrop = CreateFrame("Frame", "ForeverBiSPhaseDropDown", frame, "UIDropDownMenuTemplate")
+phaseDrop:SetPoint("LEFT", buildDrop, "RIGHT", -12, 0)
+UIDropDownMenu_SetWidth(phaseDrop, 105)
 
 local helpButton = CreateFrame("Button", nil, frame)
 helpButton:SetSize(20, 20)
@@ -1234,11 +1250,37 @@ resetListFilters = function()
     updateFilterDropdownText()
 end
 
+local function routePhases()
+    local route = currentListKey()
+    return ForeverBiSModel and ForeverBiSModel.phases(route) or {}, route
+end
+
 local function updateSelectors()
     local selectedClass = findClass(ForeverBiSDB.class)
     local selectedBuild = findBuild(selectedClass, ForeverBiSDB.build)
     UIDropDownMenu_SetText(classDrop, selectedClass.label)
     UIDropDownMenu_SetText(buildDrop, selectedBuild[2])
+
+    local phases, route = routePhases()
+    -- A saved phase this route does not have falls back to automatic.
+    if ForeverBiSModel and not ForeverBiSModel.availablePhase(route, ForeverBiSDB.phase) then
+        ForeverBiSDB.phase = nil
+    end
+    local effective = effectivePhaseFor(route)
+    local effectiveLabel = effective
+    for _, phase in ipairs(phases) do
+        if phase.id == effective then
+            effectiveLabel = phase.label or phase.id
+        end
+    end
+    if effectiveLabel then
+        UIDropDownMenu_SetText(phaseDrop, ForeverBiSDB.phase and effectiveLabel or "Auto (" .. effectiveLabel .. ")")
+    end
+    if #phases > 1 then
+        phaseDrop:Show()
+    else
+        phaseDrop:Hide()
+    end
 end
 
 UIDropDownMenu_Initialize(classDrop, function(_, level)
@@ -1247,6 +1289,7 @@ UIDropDownMenu_Initialize(classDrop, function(_, level)
         info.text, info.checked = class.label, class.key == ForeverBiSDB.class
         info.func = function()
             ForeverBiSDB.class, ForeverBiSDB.build = class.key, defaultBuild(class)[1]
+            ForeverBiSDB.classChosen = true -- a manual pick turns off login auto-detection for good
             updateSelectors()
             scroll:SetVerticalScroll(0)
             render()
@@ -1270,6 +1313,37 @@ UIDropDownMenu_Initialize(buildDrop, function(_, level)
     end
 end)
 
+UIDropDownMenu_Initialize(phaseDrop, function(_, level)
+    local phases, route = routePhases()
+    local autoPhase = ForeverBiSModel and ForeverBiSModel.phaseForLevel(route, currentPlayerLevel())
+    local autoLabel = autoPhase
+    for _, phase in ipairs(phases) do
+        if phase.id == autoPhase then
+            autoLabel = phase.label or phase.id
+        end
+    end
+    local info = UIDropDownMenu_CreateInfo()
+    info.text, info.checked = "Auto (" .. tostring(autoLabel) .. ")", ForeverBiSDB.phase == nil
+    info.func = function()
+        ForeverBiSDB.phase = nil
+        updateSelectors()
+        scroll:SetVerticalScroll(0)
+        render()
+    end
+    UIDropDownMenu_AddButton(info, level)
+    for _, phase in ipairs(phases) do
+        local phaseInfo = UIDropDownMenu_CreateInfo()
+        phaseInfo.text, phaseInfo.checked = phase.label or phase.id, phase.id == ForeverBiSDB.phase
+        phaseInfo.func = function()
+            ForeverBiSDB.phase = phase.id
+            updateSelectors()
+            scroll:SetVerticalScroll(0)
+            render()
+        end
+        UIDropDownMenu_AddButton(phaseInfo, level)
+    end
+end)
+
 local function clearContent()
     for _, child in ipairs({ content:GetChildren() }) do
         child:Hide()
@@ -1285,7 +1359,9 @@ render = function()
     local previousScroll = scroll:GetVerticalScroll() or 0
     currentSlotTops = {}
     local key = currentListKey()
-    local data = key and lists[key]
+    -- Prefer the selected phase's data; the bundled fallback lists cover a missing model or route.
+    local phaseId = key and effectivePhaseFor(key)
+    local data = key and (phaseId and ForeverBiSModel.list(key, phaseId) or lists[key])
     title:SetText("BiS Forever")
     clearContent()
     for _, child in ipairs({ gearContent:GetChildren() }) do
@@ -1805,6 +1881,41 @@ itemDataWatcher:SetScript("OnEvent", function(_, event, itemID, success)
     else
         render()
     end
+end)
+
+-- Saved variables are only reliable once the client has loaded them, which happens after this file executes
+-- (the global may even be replaced wholesale), so re-bind and auto-detect the class at PLAYER_LOGIN.
+local function detectPlayerClass()
+    if ForeverBiSDB.classChosen == true or not UnitClass then
+        return
+    end
+    local _, token = UnitClass("player")
+    if type(token) ~= "string" then
+        return
+    end
+    local key = string.lower(token)
+    for _, class in ipairs(classes) do
+        -- The build is reset only when the class actually changes, so a build picked by hand survives.
+        if class.key == key and ForeverBiSDB.class ~= key then
+            ForeverBiSDB.class, ForeverBiSDB.build = key, defaultBuild(class)[1]
+        end
+    end
+end
+
+local loginWatcher = CreateFrame("Frame")
+loginWatcher:RegisterEvent("PLAYER_LOGIN")
+loginWatcher:SetScript("OnEvent", function()
+    ForeverBiSDB = ForeverBiSDB or { class = "rogue", build = "pve" }
+    ForeverBiSDB.minimap = ForeverBiSDB.minimap or {}
+    collapsedSections = type(ForeverBiSDB.collapsed) == "table" and ForeverBiSDB.collapsed or {}
+    ForeverBiSDB.collapsed = collapsedSections
+    detectPlayerClass()
+    updateMinimapButtonPosition()
+    if ForeverBiSDB.minimap.hide then
+        minimapButton:Hide()
+    end
+    updateSelectors()
+    render()
 end)
 
 SLASH_FOREVERBIS1 = "/bis"

@@ -50,6 +50,60 @@ function Model.defaultPhase(route)
     return latest and latest.id or nil
 end
 
+local function numericLevel(phase)
+    local level = phase.level
+    return type(level) == "number" and level == level and level or nil
+end
+
+--- The saved phase id when this route has data for it, otherwise nil (meaning "automatic").
+function Model.availablePhase(route, phaseId)
+    if type(phaseId) ~= "string" then
+        return nil
+    end
+    for _, phase in ipairs(Model.phases(route)) do
+        if phase.id == phaseId then
+            return phaseId
+        end
+    end
+    return nil
+end
+
+--- Phase id a character of the given level should see by default: the numeric phase with the smallest level that is
+--- >= the player's level. Above every numeric phase, or with a missing/invalid level, the final phase wins; phases
+--- without a numeric level (e.g. "current") count as endgame and sort after all numeric ones. Nil for an unknown route.
+function Model.phaseForLevel(route, level)
+    local numeric, endgame = {}, {}
+    for index, phase in ipairs(Model.phases(route)) do
+        if numericLevel(phase) then
+            numeric[#numeric + 1] = { id = phase.id, level = phase.level, index = index }
+        else
+            endgame[#endgame + 1] = phase.id
+        end
+    end
+    table.sort(numeric, function(a, b)
+        if a.level ~= b.level then
+            return a.level < b.level
+        end
+        return a.index < b.index
+    end)
+    if type(level) == "number" and level == level and level >= 1 then
+        for _, phase in ipairs(numeric) do
+            if phase.level >= level then
+                return phase.id
+            end
+        end
+    end
+    if #endgame > 0 then
+        return endgame[#endgame]
+    end
+    return numeric[#numeric] and numeric[#numeric].id or nil
+end
+
+--- Phase the UI shows: the saved choice when the route has it, otherwise the one for the player's level.
+function Model.effectivePhase(route, savedPhase, level)
+    return Model.availablePhase(route, savedPhase) or Model.phaseForLevel(route, level)
+end
+
 function Model.label(route)
     local label = routeEntry(route).label
     return type(label) == "string" and label or nil

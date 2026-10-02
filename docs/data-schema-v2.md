@@ -33,7 +33,14 @@ ForeverBiSData = {
 ## Model API
 
 `ForeverBiSModel.phases(route)`, `.defaultPhase(route)` (latest available), `.label(route)`,
-`.list(route[, phaseId])` (legacy `{title, slots}` shape), and `.buildLegacy()`.
+`.list(route[, phaseId])` (legacy `{title, slots}` shape), `.phaseForLevel(route, level)`,
+`.availablePhase(route, phaseId)`, `.effectivePhase(route, savedPhase, level)`, and `.buildLegacy()`.
+
+`phaseForLevel` returns the phase the player should see by default: among the phases the route has data for, the
+numeric-`level` phase with the smallest level that is >= the player's level (a level-25 character gets `lvl30`). Above
+every numeric phase, or with a nil/invalid level, it returns the final phase; phases without a numeric `level`
+(e.g. `current`) count as endgame and sort after all numeric ones. Unknown routes return nil. `availablePhase` returns
+a saved phase id only if the route has it (else nil, meaning automatic), and `effectivePhase` combines both.
 
 ## Extending
 
