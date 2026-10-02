@@ -2,7 +2,7 @@
 """Regenerate the inner artwork of ForeverBiSMinimapIcon.tga.
 
 Keeps the existing gold minimap ring untouched and redraws everything inside it:
-a navy radial background with an epic-purple heater shield and a gold sparkle.
+a navy radial background with a bevelled gold "FB" monogram.
 Pure Python (no Pillow) so it runs anywhere; 4x4 supersampling for anti-aliasing.
 
 Usage: python3 tools/generate_minimap_icon.py [path/to/ForeverBiSMinimapIcon.tga]
@@ -59,53 +59,48 @@ def over(dst, src, alpha):
 # Palette
 NAVY_CENTER = (34, 62, 112)
 NAVY_EDGE = (8, 16, 34)
-EPIC_TOP = (190, 110, 255)
-EPIC_BOTTOM = (78, 22, 128)
-GOLD_LIGHT = (255, 228, 140)
-GOLD_MID = (225, 187, 92)
-GOLD_DARK = (120, 82, 24)
+GLOW = (90, 150, 230)
+GOLD_LIGHT = (255, 236, 160)
+GOLD_MID = (230, 186, 84)
+GOLD_DARK = (150, 96, 26)
 OUTLINE = (24, 14, 6)
 WHITE = (255, 255, 250)
 
 CX, CY = 63.5, 63.5
-SHIELD_TOP = CY - 33
-SHIELD_SHOULDER = CY + 2
-SHIELD_TIP = CY + 40
-SHIELD_HALF_WIDTH = 31
+LETTER_TOP, LETTER_BOTTOM = 40.0, 88.0
+OUTLINE_WIDTH = 2.6
 
 
-def shield_half_width(y, scale):
-    """Half width of a heater shield at height y, scaled around the shield center."""
-    mid = (SHIELD_TOP + SHIELD_TIP) / 2
-    top = mid + (SHIELD_TOP - mid) * scale
-    shoulder = mid + (SHIELD_SHOULDER - mid) * scale
-    tip = mid + (SHIELD_TIP - mid) * scale
-    hw = SHIELD_HALF_WIDTH * scale
-    if y < top or y > tip:
-        return -1.0
-    if y <= shoulder:
-        # Slightly rounded top corners.
-        corner = 5 * scale
-        if y < top + corner:
-            k = (top + corner - y) / corner
-            return hw - corner * (1 - math.sqrt(max(0.0, 1 - k * k)))
-        return hw
-    t = (y - shoulder) / (tip - shoulder)
-    return hw * math.cos(t * math.pi / 2) ** 0.75
+def box(x, y, x0, y0, x1, y1):
+    """Signed distance to an axis-aligned rectangle (negative inside)."""
+    dx = max(x0 - x, x - x1)
+    dy = max(y0 - y, y - y1)
+    outside = math.hypot(max(dx, 0.0), max(dy, 0.0))
+    return outside + min(max(dx, dy), 0.0)
 
 
-def in_shield(x, y, scale):
-    return abs(x - CX) <= shield_half_width(y, scale)
+def half_ring(x, y, cx, cy, radius, half_thickness):
+    """Signed distance to the right half of a ring (the bowl of a B)."""
+    ring = abs(math.hypot(x - cx, y - cy) - radius) - half_thickness
+    return max(ring, cx - x)
 
 
-def sparkle(x, y, cx, cy, radius, angle):
-    """Astroid-shaped four-point star; returns 0..1 depth (1 at the center)."""
-    dx, dy = x - cx, y - cy
-    ca, sa = math.cos(angle), math.sin(angle)
-    u, v = dx * ca + dy * sa, -dx * sa + dy * ca
-    s = math.sqrt(abs(u)) + math.sqrt(abs(v))
-    limit = math.sqrt(radius)
-    return 1 - s / limit if s < limit else 0.0
+def monogram(x, y):
+    """Signed distance to the FB monogram."""
+    f = min(
+        box(x, y, 32, 40, 41, 88),  # stem
+        box(x, y, 32, 40, 61, 48),  # top arm
+        box(x, y, 32, 60, 56, 67),  # middle arm
+    )
+    b = min(
+        box(x, y, 66, 40, 75, 88),  # stem
+        box(x, y, 66, 40, 82, 48),  # top bar
+        box(x, y, 66, 56.5, 83, 64.5),  # middle bar
+        box(x, y, 66, 80, 84, 88),  # bottom bar
+        half_ring(x, y, 82, 52.25, 7.75, 4.25),  # upper bowl
+        half_ring(x, y, 84, 72.25, 11.75, 4.0),  # lower bowl
+    )
+    return min(f, b)
 
 
 def shade(x, y):
@@ -116,38 +111,23 @@ def shade(x, y):
     if dist > RING_INNER_RADIUS - 6:
         color = over(color, (0, 0, 0), (dist - (RING_INNER_RADIUS - 6)) / 6 * 0.7)
 
-    # Soft purple glow behind the shield.
-    glow = max(0.0, 1 - math.hypot((x - CX) / 44, (y - CY - 3) / 50))
-    color = over(color, (150, 70, 230), glow**2 * 0.55)
+    # Soft blue glow behind the letters.
+    glow = max(0.0, 1 - math.hypot((x - CX) / 46, (y - CY) / 34))
+    color = over(color, GLOW, glow**2 * 0.45)
 
-    star_center_y = CY + 1
-    if in_shield(x, y, 1.08):
-        # Dark outline, then gold rim, then epic-purple field.
+    # Drop shadow, dark outline, then bevelled gold letters.
+    if monogram(x - 1.5, y - 2.0) < OUTLINE_WIDTH:
+        color = over(color, (0, 0, 0), 0.6)
+    d = monogram(x, y)
+    if d < OUTLINE_WIDTH:
         color = OUTLINE
-        if in_shield(x, y, 1.02):
-            vertical = (y - SHIELD_TOP) / (SHIELD_TIP - SHIELD_TOP)
-            color = mix(GOLD_LIGHT, GOLD_DARK, vertical * 0.9 + (x - CX) / 120)
-        if in_shield(x, y, 0.87):
-            color = OUTLINE
-        if in_shield(x, y, 0.83):
-            vertical = (y - SHIELD_TOP) / (SHIELD_TIP - SHIELD_TOP)
-            color = mix(EPIC_TOP, EPIC_BOTTOM, vertical)
-            # Diagonal sheen across the upper-left half of the field.
-            if (x - CX) + (y - SHIELD_TOP) * 0.9 < 18:
-                color = over(color, WHITE, 0.12)
-
-            halo = max(0.0, 1 - math.hypot(x - CX, y - star_center_y) / 24)
-            color = over(color, GOLD_LIGHT, halo**2 * 0.45)
-
-    # Gold sparkle (a large upright star plus a small diagonal one).
-    main = sparkle(x, y, CX, star_center_y, 21, 0)
-    minor = sparkle(x, y, CX, star_center_y, 15, math.pi / 4)
-    depth = max(main, minor)
-    if depth > 0:
-        color = mix(GOLD_MID, GOLD_LIGHT, depth * 2.2)
-        color = over(color, WHITE, max(0.0, depth - 0.45) * 2)
-    elif sparkle(x, y, CX, star_center_y, 24, 0) > 0 or sparkle(x, y, CX, star_center_y, 17, math.pi / 4) > 0:
-        color = over(color, OUTLINE, 0.8)
+    if d < 0:
+        vertical = (y - LETTER_TOP) / (LETTER_BOTTOM - LETTER_TOP)
+        color = mix(GOLD_LIGHT, GOLD_MID, vertical * 1.6)
+        color = mix(color, GOLD_DARK, (vertical - 0.6) * 2)
+        # Bevel: light rim on the upper-left edge of every stroke.
+        if d > -1.6 and monogram(x - 1.6, y - 1.6) > 0:
+            color = over(color, WHITE, 0.45)
 
     return color
 
