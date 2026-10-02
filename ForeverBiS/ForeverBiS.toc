@@ -6,6 +6,7 @@
 ## Version: beta-0.0.41
 ## SavedVariables: ForeverBiSDB
 ## SavedVariablesPerCharacter: ForeverBiSCharDB
+ForeverBiS_Locale.lua
 ForeverBiS_Data.lua
 ForeverBiS_Model.lua
 Core\Settings.lua

@@ -4,7 +4,7 @@ local _, ns = ...
 local ItemRows = {}
 ns.ItemRows = ItemRows
 
-local Items, Sources, ItemWidgets = ns.Items, ns.Sources, ns.ItemWidgets
+local Items, Sources, ItemWidgets, L = ns.Items, ns.Sources, ns.ItemWidgets, ns.L
 
 local SOURCE_X = 86
 
@@ -28,7 +28,7 @@ local function addIconButton(content, rowTop, itemName, slotKey, itemSource)
     ItemWidgets.addOwnershipMark(iconButton, itemName, slotKey, true)
     iconButton:SetScript("OnEnter", function(self)
         ItemWidgets.showItemTooltip(self, "ANCHOR_RIGHT", itemName)
-        GameTooltip:AddLine("Source: " .. itemSource, 0.85, 0.85, 0.85, true)
+        GameTooltip:AddLine(L["Source: %s"]:format(itemSource), 0.85, 0.85, 0.85, true)
         ItemWidgets.addOwnershipTooltip(itemName, slotKey)
         GameTooltip:Show()
     end)
@@ -46,7 +46,7 @@ local function addFactionBadge(content, rowTop, faction, nameWidth)
     )
     local factionLabel = content:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
     factionLabel:SetPoint("LEFT", factionIcon, "RIGHT", 2, 0)
-    factionLabel:SetText(faction)
+    factionLabel:SetText(L[faction])
     factionLabel:SetFont(STANDARD_TEXT_FONT, 11, "THICKOUTLINE")
     if faction == "Horde" then
         factionLabel:SetTextColor(1, 0.2, 0.2)
@@ -110,7 +110,7 @@ local function addEnchantIcon(content, rowTop, spellName, enchantSource, formula
         else
             GameTooltip:SetText(spellName, 1, 1, 1)
         end
-        GameTooltip:AddLine("Source: " .. enchantSource, 0.85, 0.85, 0.85, true)
+        GameTooltip:AddLine(L["Source: %s"]:format(enchantSource), 0.85, 0.85, 0.85, true)
         GameTooltip:Show()
     end)
     iconButton:SetScript("OnLeave", function()
@@ -123,7 +123,7 @@ function ItemRows.addEnchants(content, y, enchants)
     local sourceWidth = content:GetWidth() - SOURCE_X - 8
     local header = content:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
     header:SetPoint("TOPLEFT", content, "TOPLEFT", 32, y - 4)
-    header:SetText("|cff8fb3ffENCHANTS|r")
+    header:SetText("|cff8fb3ff" .. L["ENCHANTS"] .. "|r")
     y = y - 22
     for _, enchant in ipairs(enchants) do
         local effect, spellName, enchantSource, formulaID = enchant[1], enchant[2], enchant[3], enchant[4]

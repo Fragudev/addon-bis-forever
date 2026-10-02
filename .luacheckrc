@@ -40,6 +40,8 @@ files["ForeverBiS/ForeverBiS_Model.lua"] = {
   globals = { "ForeverBiSModel", "ForeverBiSLists", "ForeverBiSItemIDs", "ForeverBiSBuildLabels" },
 }
 
+files["ForeverBiS/ForeverBiS_Locale.lua"] = { read_globals = { "GetLocale" } }
+
 files["ForeverBiS/Core/"] = { read_globals = with() }
 files["ForeverBiS/Core/Settings.lua"] = { read_globals = with(), globals = { "ForeverBiSDB", "ForeverBiSCharDB" } }
 

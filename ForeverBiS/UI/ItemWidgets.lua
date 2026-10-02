@@ -4,7 +4,7 @@ local _, ns = ...
 local ItemWidgets = {}
 ns.ItemWidgets = ItemWidgets
 
-local Items, Inventory = ns.Items, ns.Inventory
+local Items, Inventory, L = ns.Items, ns.Inventory, ns.L
 
 --- A 2px border around an icon button in the item's rarity color.
 function ItemWidgets.addQualityBorder(button, itemName)
@@ -43,7 +43,7 @@ function ItemWidgets.addOwnershipMark(button, itemName, slotName, fullIconCheck)
     if count > 0 then
         local bagCount = button:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
         bagCount:SetPoint("BOTTOMRIGHT", button, "BOTTOMRIGHT", 3, -1)
-        bagCount:SetText("x" .. count)
+        bagCount:SetText(L["x%d"]:format(count))
         bagCount:SetTextColor(1, 0.82, 0.2)
         return "bags", count
     end
@@ -65,11 +65,11 @@ end
 function ItemWidgets.addOwnershipTooltip(itemName, slotName)
     local itemID = Items.id(itemName)
     if Inventory.isEquippedInSlot(itemID, slotName) then
-        GameTooltip:AddLine("Currently equipped", 0.35, 1, 0.35)
+        GameTooltip:AddLine(L["Currently equipped"], 0.35, 1, 0.35)
     else
         local count = Inventory.bagCount(itemID)
         if count > 0 then
-            GameTooltip:AddLine("In bags: " .. count, 1, 0.82, 0.2)
+            GameTooltip:AddLine(L["In bags: %d"]:format(count), 1, 0.82, 0.2)
         end
     end
 end
