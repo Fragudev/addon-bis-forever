@@ -180,6 +180,16 @@ function Settings.toggleAlerts()
     return account().alerts
 end
 
+function Settings.dungeonNoticeEnabled()
+    return account().dungeonNotice ~= false
+end
+
+--- Returns the new state.
+function Settings.toggleDungeonNotice()
+    account().dungeonNotice = account().dungeonNotice == false
+    return account().dungeonNotice
+end
+
 function Settings.tooltipAllClasses()
     return account().tooltipAllClasses == true
 end

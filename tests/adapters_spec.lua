@@ -236,6 +236,30 @@ describe("Adapters", function()
         end)
     end)
 
+    describe("Zone", function()
+        it("names the dungeon or raid the player is inside", function()
+            WowStub.reset()
+            local ns = WowStub.loadFiles({ "Adapters/Zone.lua" })
+            WowStub.instance = { name = "The Deadmines", type = "party" }
+            assert.are.equal("The Deadmines", ns.Zone.instanceName())
+            WowStub.instance = { name = "Molten Core", type = "raid" }
+            assert.are.equal("Molten Core", ns.Zone.instanceName())
+        end)
+
+        it("is nil outside instances, in battlegrounds and without the API", function()
+            WowStub.reset()
+            local ns = WowStub.loadFiles({ "Adapters/Zone.lua" })
+            assert.is_nil(ns.Zone.instanceName())
+            WowStub.instance = { name = "Warsong Gulch", type = "pvp" }
+            assert.is_nil(ns.Zone.instanceName())
+            local api = _G.GetInstanceInfo
+            _G.GetInstanceInfo = nil
+            local name = ns.Zone.instanceName()
+            _G.GetInstanceInfo = api
+            assert.is_nil(name)
+        end)
+    end)
+
     describe("Player", function()
         it("reads level, faction and class token", function()
             local ns = load()

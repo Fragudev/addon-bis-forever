@@ -128,3 +128,36 @@ function Sources.remainingByCategory(slots)
     end
     return result
 end
+
+local function squashName(name)
+    local lower = string.lower(name or ""):gsub("^%s*the%s+", "")
+    return (lower:gsub("[^%w]", ""))
+end
+
+--- The dungeon filter entry ({ match text, display name }) an instance name refers to, ignoring case,
+--- punctuation and a leading "The" ("Deadmines" and "The Deadmines" are the same); nil for any other name.
+function Sources.matchDungeon(instanceName)
+    local wanted = squashName(instanceName)
+    if wanted == "" then
+        return nil
+    end
+    for _, dungeon in ipairs(Sources.dungeons) do
+        if squashName(dungeon[1]) == wanted then
+            return dungeon
+        end
+    end
+    return nil
+end
+
+--- How many listed items come from the dungeon (by the same text match the dungeon filter uses).
+function Sources.countForDungeon(slots, dungeonKey)
+    local count = 0
+    for _, slot in ipairs(slots) do
+        for _, item in ipairs(slot[2]) do
+            if string.find(string.lower(item[2] or ""), dungeonKey, 1, true) then
+                count = count + 1
+            end
+        end
+    end
+    return count
+end

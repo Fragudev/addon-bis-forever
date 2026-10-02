@@ -43,6 +43,7 @@ function ns.requestRender(options)
 end
 
 ns.toggleWindow = ns.MainFrame.toggle
+ns.openWindow = ns.MainFrame.open
 
 ns.Settings.bind()
 local frame = ns.MainFrame.create()
@@ -52,7 +53,9 @@ ns.ItemList.create(frame)
 ns.Progress.create(ns.PaperDoll.create(frame))
 ns.FilterBar.create(frame)
 ns.MinimapButton.create()
+ns.DungeonNotice.create()
 ns.Events.install()
+ns.ZoneWatcher.install()
 ns.Alerts.install()
 ns.Commands.install()
 ns.requestRender()

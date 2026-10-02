@@ -215,7 +215,7 @@ function Stub.reset()
     Stub.bagCounts = {}
     Stub.player = { class = "Rogue", token = "ROGUE", level = 30 }
     Stub.chat, Stub.insertedLinks, Stub.group, Stub.shift = {}, {}, nil, false
-    Stub.sounds, Stub.now = {}, 0
+    Stub.sounds, Stub.now, Stub.instance = {}, 0, nil
 
     _G.UIParent = newFrame("Frame", nil)
     _G.Minimap = newFrame("Frame", nil)
@@ -363,6 +363,12 @@ _G.GetTime = function()
 end
 _G.PlaySound = function(sound)
     table.insert(Stub.sounds, sound)
+end
+
+-- Stub.instance = { name = "The Deadmines", type = "party" } puts the player inside an instance.
+_G.GetInstanceInfo = function()
+    local instance = Stub.instance or { name = "Eastern Kingdoms", type = "none" }
+    return instance.name, instance.type
 end
 
 _G.GetCursorPosition = function()
