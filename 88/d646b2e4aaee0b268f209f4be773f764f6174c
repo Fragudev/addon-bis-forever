@@ -1,0 +1,47 @@
+.luacheckrc
+  s_2e9d4926efb663::t_f1d05e37fe5cf0 68,76,107
+ForeverBiS/Adapters/Zone.lua
+  s_2e9d4926efb663::t_e9207fe0775e4e 1-17
+ForeverBiS/App/Commands.lua
+  s_2e9d4926efb663::t_63c7fb95a14311 90-95
+ForeverBiS/App/Zone.lua
+  s_2e9d4926efb663::t_05adaa2f57da15 1-57
+ForeverBiS/Core/Settings.lua
+  s_2e9d4926efb663::t_b2090e85fac48f 183-192
+ForeverBiS/Core/Sources.lua
+  s_2e9d4926efb663::t_edde60a932bb97 131-163
+ForeverBiS/ForeverBiS.lua
+  s_2e9d4926efb663::t_27ec0d12c4a801 46,56,58
+ForeverBiS/ForeverBiS.toc
+  s_2e9d4926efb663::t_499dc72e453581 23,34,37
+ForeverBiS/UI/DungeonNotice.lua
+  s_2e9d4926efb663::t_67048bdaa442a2 1-49
+ForeverBiS/UI/MainFrame.lua
+  s_2e9d4926efb663::t_382ed2e2d4baf6 95-102
+README.md
+  s_2e9d4926efb663::t_c7d7f50395f340 42-45
+tests/adapters_spec.lua
+  s_2e9d4926efb663::t_e6f92ef35db70a 239-262
+tests/sources_spec.lua
+  s_2e9d4926efb663::t_c3f53c5262e4ac 125-162
+tests/stubs/wow_api.lua
+  s_2e9d4926efb663::t_fbf71d7a295c0b 218,368-373
+tests/zone_spec.lua
+  s_2e9d4926efb663::t_8c091c8fadcc51 1-114
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "88d646b2e4aaee0b268f209f4be773f764f6174c",
+  "prompts": {},
+  "sessions": {
+    "s_2e9d4926efb663": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "bbe1029b-52bc-4bd0-892a-ccbb66badc23",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Francis Gutiérrez <francisge@ext.inditex.com>"
+    }
+  }
+}
