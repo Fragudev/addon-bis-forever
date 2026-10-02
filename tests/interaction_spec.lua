@@ -390,4 +390,154 @@ describe("ForeverBiS phase selector", function()
         chooseOption(ForeverBiSPhaseDropDown, "Level 30")
         assert.is_true(ForeverBiSDB.collapsed["druid:" .. head])
     end)
+
+    describe("progress line", function()
+        local function currentList()
+            local phase = ForeverBiSModel.effectivePhase("druid", nil, WowStub.player.level)
+            return ForeverBiSModel.list("druid", phase)
+        end
+
+        local function progressText()
+            for _, fontString in ipairs(WowStub.fontStrings) do
+                if fontString.text and fontString.text:match("^BiS %d+/%d+$") and WowStub.attached(fontString) then
+                    return fontString
+                end
+            end
+        end
+
+        --- The progress frame is the live frame with an OnEnter handler and the line's size, shown or not.
+        local function progressFrame()
+            for _, candidate in ipairs(WowStub.frames) do
+                if candidate.scripts.OnEnter and candidate.width == 78 and candidate.height == 20 then
+                    return candidate
+                end
+            end
+        end
+
+        local function itemWatcher()
+            for _, candidate in ipairs(WowStub.frames) do
+                if candidate.events.BAG_UPDATE then
+                    return candidate
+                end
+            end
+        end
+
+        local function hover()
+            WowStub.fire(progressFrame(), "OnEnter")
+            return WowStub.tooltip
+        end
+
+        --- First single-slot list position whose first two items have ids: slot id, rank 1 id, rank 2 id.
+        local function headIds()
+            for _, slot in ipairs(currentList().slots) do
+                if slot[1] == "Head" then
+                    return SLOT_IDS.head, ForeverBiSItemIDs[slot[2][1][1]], ForeverBiSItemIDs[slot[2][2][1]]
+                end
+            end
+        end
+
+        local function totalSlots()
+            return ForeverBiSModel.progress(currentList(), { equipped = {} }).total
+        end
+
+        it("shows BiS x/y with a gold fill that follows the owned items", function()
+            WowStub.load({ class = "druid", build = "" })
+            local text = assert(progressText())
+            assert.are.equal("BiS 0/" .. totalSlots(), text.text)
+            assert.is_true(text.parent.shown)
+
+            local slotID, first = headIds()
+            WowStub.equipped[slotID] = first
+            ForeverBiSFrame:Show()
+            WowStub.fire(itemWatcher(), "OnEvent", "PLAYER_EQUIPMENT_CHANGED")
+            local refreshed = progressText()
+            assert.are.equal("BiS 1/" .. totalSlots(), refreshed.text)
+            local fill
+            for _, region in ipairs(refreshed.parent.regions) do
+                if region.shown and region.height == 4 and region.width ~= 78 then
+                    fill = region
+                end
+            end
+            assert.is_truthy(fill)
+            assert.are.equal(78 / totalSlots(), fill.width)
+        end)
+
+        it("updates after a bag change and flags upgrades in the bags", function()
+            WowStub.load({ class = "druid", build = "" })
+            local _, _, second = headIds()
+            WowStub.bagCounts[second] = 1
+            ForeverBiSFrame:Show()
+            WowStub.fire(itemWatcher(), "OnEvent", "BAG_UPDATE")
+            local lines = hover().lines
+            local found
+            for _, line in ipairs(lines) do
+                if line:find("Head: Equip: ", 1, true) then
+                    found = line
+                end
+            end
+            assert.is_truthy(found, "no Equip: line for the bagged upgrade")
+        end)
+
+        it("follows the class selection", function()
+            WowStub.load({ class = "druid", build = "" })
+            local rogue = ForeverBiSModel.progress(ForeverBiSModel.list("rogue"), { equipped = {} }).total
+            ForeverBiSDB.class, ForeverBiSDB.build = "rogue", ""
+            ForeverBiSFrame:Show()
+            WowStub.fire(itemWatcher(), "OnEvent", "BAG_UPDATE")
+            assert.are.equal("BiS 0/" .. rogue, progressText().text)
+        end)
+
+        it("caps the tooltip at 8 slot lines plus a +N more line", function()
+            WowStub.load({ class = "druid", build = "" })
+            local total = totalSlots()
+            assert(total > 8, "fixture needs more than 8 open slots")
+            local tooltip = hover()
+            local lines = tooltip.lines
+            assert.is_truthy(tooltip.title:find("%S"))
+            assert.are.equal("BiS: 0/" .. total .. " slots - Listed: 0/" .. total, lines[1])
+            assert.are.equal(1 + 8 + 1, #lines)
+            assert.are.equal("+" .. (total - 8) .. " more", lines[#lines])
+            assert.is_truthy(lines[2]:match("^[%w ]+: .+"))
+        end)
+
+        it("lists every open slot without a +N more line when there are few", function()
+            WowStub.load({ class = "druid", build = "" }, function(data)
+                for _, entry in pairs(data.lists) do
+                    for _, phase in pairs(entry.phases) do
+                        local kept = {}
+                        for index = 1, 3 do
+                            kept[index] = phase.slots[index]
+                        end
+                        phase.slots = kept
+                    end
+                end
+            end)
+            local lines = hover().lines
+            assert.are.equal(1 + 3, #lines)
+            assert.is_nil(lines[#lines]:find("more", 1, true))
+        end)
+
+        it("hides the progress line when the list has no trackable slots", function()
+            WowStub.load({ class = "druid", build = "" }, function(data)
+                for _, entry in pairs(data.lists) do
+                    for _, phase in pairs(entry.phases) do
+                        for _, slot in ipairs(phase.slots) do
+                            slot.slot = "Tabard"
+                        end
+                    end
+                end
+            end)
+            assert.is_false(progressFrame().shown)
+            local lines = hover().lines
+            assert.are.equal(0, #lines)
+        end)
+
+        it("hides the progress line when the selected list is missing", function()
+            WowStub.load({ class = "druid", build = "" }, function(data)
+                data.lists = {}
+            end)
+            ForeverBiSDB.class = "druid"
+            assert.is_false(progressFrame().shown)
+        end)
+    end)
 end)

@@ -232,6 +232,157 @@ function Model.bisEntries(itemId, itemName)
     return result
 end
 
+local slotAliases = {
+    ["head"] = "Head",
+    ["neck"] = "Neck",
+    ["shoulder"] = "Shoulder",
+    ["back"] = "Back",
+    ["chest"] = "Chest",
+    ["wrist"] = "Wrist",
+    ["hands"] = "Hands",
+    ["waist"] = "Waist",
+    ["legs"] = "Legs",
+    ["feet"] = "Feet",
+    ["finger"] = "Finger",
+    ["trinket"] = "Trinket",
+    ["relic"] = "Ranged",
+    ["main hand"] = "Main Hand",
+    ["mainhand"] = "Main Hand",
+    ["two-hand weapon"] = "Main Hand",
+    ["two-handed weapon"] = "Main Hand",
+    ["two hand weapon"] = "Main Hand",
+    ["two handed weapon"] = "Main Hand",
+    ["off hand"] = "Off Hand",
+    ["offhand"] = "Off Hand",
+    ["off hand: held item"] = "Off Hand",
+    ["off hand: shield"] = "Off Hand",
+    ["ranged"] = "Ranged",
+}
+
+--- Canonical slot key of a list slot name ("Two-hand weapon" is "Main Hand"); unknown names come back unchanged.
+function Model.slotKey(name)
+    return slotAliases[string.lower(name or "")] or name
+end
+
+-- Equipment positions that count towards progress, with how many inventory slots each one has.
+local slotCapacity = {
+    ["Head"] = 1,
+    ["Neck"] = 1,
+    ["Shoulder"] = 1,
+    ["Back"] = 1,
+    ["Chest"] = 1,
+    ["Wrist"] = 1,
+    ["Hands"] = 1,
+    ["Waist"] = 1,
+    ["Legs"] = 1,
+    ["Feet"] = 1,
+    ["Finger"] = 2,
+    ["Trinket"] = 2,
+    ["Main Hand"] = 1,
+    ["Off Hand"] = 1,
+    ["Ranged"] = 1,
+}
+
+local function itemIdOf(owned, name)
+    local resolver = owned.itemId
+    local id
+    if type(resolver) == "function" then
+        id = resolver(name)
+    elseif type(ForeverBiSItemIDs) == "table" then
+        id = ForeverBiSItemIDs[name]
+    end
+    return type(id) == "number" and id or nil
+end
+
+local function inBags(owned, id)
+    local count = type(owned.bags) == "function" and owned.bags(id)
+    return type(count) == "number" and count > 0
+end
+
+--- Progress of one list slot (one variant) for a position that has `capacity` inventory slots.
+--- The weakest equipped rank (nil entries count as infinitely bad) decides which listed items would be upgrades.
+local function evaluateVariant(slot, capacity, owned, equippedIds)
+    local items, rankById = {}, {}
+    for _, item in ipairs(asTable(slot[2])) do
+        if type(item) == "table" and type(item[1]) == "string" then
+            local id = itemIdOf(owned, item[1])
+            local rank = #items + 1
+            items[rank] = { name = item[1], source = type(item[2]) == "string" and item[2] or "", id = id, rank = rank }
+            if id and not rankById[id] then
+                rankById[id] = rank
+            end
+        end
+    end
+    local equippedRanks, equipped = {}, {}
+    for _, id in ipairs(equippedIds) do
+        if type(id) == "number" and not equipped[id] and #equippedRanks < capacity then
+            equipped[id] = true
+            equippedRanks[#equippedRanks + 1] = rankById[id] or math.huge
+        end
+    end
+    local best, weakest = math.huge, #equippedRanks < capacity and math.huge or 0
+    for _, rank in ipairs(equippedRanks) do
+        best = math.min(best, rank)
+        weakest = math.max(weakest, rank)
+    end
+    local target
+    for _, item in ipairs(items) do
+        local isCandidate = item.rank < weakest and not (item.id and equipped[item.id])
+        if isCandidate then
+            local held = item.id and inBags(owned, item.id)
+            if held then
+                target = { name = item.name, rank = item.rank, source = item.source, inBags = true }
+                break
+            end
+            target = target or { name = item.name, rank = item.rank, source = item.source }
+        end
+    end
+    return { rank = best < math.huge and best or nil, target = target, done = target == nil, score = best }
+end
+
+--- How close the player is to a list. `list` is the legacy shape; `owned` describes the player without any game call:
+---   owned.equipped  table: canonical slot key ("Head", "Finger", "Main Hand", see slotKey) -> array of equipped item ids
+---   owned.bags      function(itemId) -> number of copies in bags (optional)
+---   owned.itemId    function(itemName) -> item id or nil (optional; defaults to ForeverBiSItemIDs)
+--- Positions are the paper-doll ones: every list slot whose name maps to the same key (Main hand, Two-hand weapon,
+--- Off hand: shield...) is a variant of one position, counted once, and the variant the player is closest to wins.
+--- Returns { total, bis, listed, slots = { { slot, rank, target, done }, ... } }.
+function Model.progress(list, owned)
+    owned = asTable(owned)
+    local equippedBySlot = asTable(owned.equipped)
+    local order, variants = {}, {}
+    for _, slot in ipairs(asTable(asTable(list).slots)) do
+        local key = type(slot) == "table" and type(slot[1]) == "string" and Model.slotKey(slot[1])
+        if key and slotCapacity[key] and type(slot[2]) == "table" and #slot[2] > 0 then
+            if not variants[key] then
+                variants[key] = {}
+                order[#order + 1] = key
+            end
+            variants[key][#variants[key] + 1] = slot
+        end
+    end
+    local result = { total = 0, bis = 0, listed = 0, slots = {} }
+    for _, key in ipairs(order) do
+        local equippedIds = asTable(equippedBySlot[key])
+        local chosen
+        for _, slot in ipairs(variants[key]) do
+            local outcome = evaluateVariant(slot, slotCapacity[key], owned, equippedIds)
+            if not chosen or outcome.score < chosen.score then
+                chosen = outcome
+            end
+        end
+        result.total = result.total + 1
+        if chosen.done then
+            result.bis = result.bis + 1
+        end
+        if chosen.rank then
+            result.listed = result.listed + 1
+        end
+        result.slots[#result.slots + 1] = { slot = key, rank = chosen.rank, target = chosen.target, done = chosen.done }
+    end
+    return result
+end
+
 --- (Re)build ForeverBiSLists, ForeverBiSItemIDs and ForeverBiSBuildLabels from ForeverBiSData.
 function Model.buildLegacy()
     bisIndex = nil

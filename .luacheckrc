@@ -19,6 +19,7 @@ globals = {
 -- WoW client API and data tables used by the addon.
 read_globals = {
   "C_Item",
+  "C_Timer",
   "Enum",
   "CreateFrame",
   "GameTooltip",
