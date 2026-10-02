@@ -1,0 +1,82 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_call:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+env:
+  COVERAGE_MINIMUM: 80
+
+jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Set up Lua 5.1
+        uses: leafo/gh-actions-lua@v13
+        with:
+          luaVersion: "5.1"
+
+      - name: Set up LuaRocks
+        uses: leafo/gh-actions-luarocks@v6
+
+      - name: Install luacheck, busted and luacov
+        run: luarocks install luacheck && luarocks install busted && luarocks install luacov
+
+      - name: Lint
+        run: luacheck ForeverBiS tests
+
+      - name: Test
+        run: busted --coverage
+
+      - name: Coverage
+        run: |
+          luacov
+          sed -n '/^Summary/,$p' luacov.report.out | sed '1,2d' | {
+            echo '```'
+            cat
+            echo '```'
+          } >>"$GITHUB_STEP_SUMMARY"
+          tools/check_coverage.sh "$COVERAGE_MINIMUM"
+
+  updater-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Test the BiS updater
+        run: python3 -m unittest discover -s tests/python -v
+
+  format:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Check formatting
+        uses: JohnnyMorganz/stylua-action@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          version: 2.5.2
+          args: --check ForeverBiS tests
+
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Build and verify the addon zip
+        run: tools/package.sh "ci-${GITHUB_SHA::7}"
