@@ -57,7 +57,7 @@ end
 -- Chunks from loadfile run in the real _G, while busted sandboxes the spec's own globals: write through _G.
 local function load(data)
     _G.ForeverBiSData = data
-    assert(loadfile("ForeverBiS/ForeverBiS_Model.lua"))()
+    WowStub.loadFiles({ "ForeverBiS_Model.lua" })
 end
 
 describe("ForeverBiSModel", function()

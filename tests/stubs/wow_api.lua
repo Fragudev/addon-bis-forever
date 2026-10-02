@@ -1,6 +1,8 @@
 -- Minimal WoW API stubs so the addon can load and render under busted outside the client.
 -- Extend only with the APIs a spec actually needs.
 
+local Toc = dofile("tests/support/toc.lua")
+
 local Stub = {}
 _G.WowStub = Stub
 
@@ -156,7 +158,7 @@ end
 
 --- Loads the tooltip decorator (after the model, like the .toc) with whatever tooltip API globals are currently set.
 function Stub.loadTooltip()
-    assert(loadfile("ForeverBiS/ForeverBiS_Tooltip.lua"))()
+    Stub.ns = Toc.load({ only = { "Core/Settings.lua", "ForeverBiS_Tooltip.lua" } })
 end
 
 --- A frame is live while its parent chain still reaches UIParent (cleared content is detached).
@@ -231,23 +233,37 @@ function Stub.reset()
     _G.SLASH_FOREVERBIS1, _G.SLASH_FOREVERBIS2 = nil, nil
 end
 
---- Loads the bundled data and the model that derives the legacy globals from it (the .toc order).
---- An optional hook runs between the data file and the model, to reshape ForeverBiSData before the legacy globals exist.
-function Stub.loadData(hook)
-    assert(loadfile("ForeverBiS/ForeverBiS_Data.lua"))()
-    if hook then
-        hook(_G.ForeverBiSData)
-    end
-    assert(loadfile("ForeverBiS/ForeverBiS_Model.lua"))()
-end
-
---- Optional arguments: a data hook (see loadData) and a player ({ class, token, level }) in place of the default rogue.
+--- Loads every file listed in the .toc into a fresh namespace. An optional hook runs right after the data file,
+--- to reshape ForeverBiSData before the model derives the legacy globals from it.
 function Stub.load(db, dataHook, player)
     Stub.reset()
     Stub.player = player or Stub.player
     _G.ForeverBiSDB = db
-    Stub.loadData(dataHook)
-    assert(loadfile("ForeverBiS/ForeverBiS.lua"))()
+    Stub.ns = Toc.load({
+        after = {
+            ["ForeverBiS_Data.lua"] = dataHook and function()
+                dataHook(_G.ForeverBiSData)
+            end,
+        },
+    })
+end
+
+--- Loads only the listed .toc files (paths as written in the .toc), in .toc order, into a fresh namespace.
+function Stub.loadFiles(only)
+    Stub.ns = Toc.load({ only = only })
+    return Stub.ns
+end
+
+--- Loads only the data file and the model (the legacy globals), without building the UI.
+function Stub.loadData(hook)
+    Stub.ns = Toc.load({
+        only = { "ForeverBiS_Data.lua", "ForeverBiS_Model.lua" },
+        after = {
+            ["ForeverBiS_Data.lua"] = hook and function()
+                hook(_G.ForeverBiSData)
+            end,
+        },
+    })
 end
 
 _G.CreateFrame = function(kind, name, parent)
