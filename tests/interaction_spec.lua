@@ -211,20 +211,44 @@ describe("ForeverBiS interactions", function()
             assert.is_false(ForeverBiSDungeonFilter:IsShown())
         end)
 
-        it("hides maker-only profession items without touching tradeable ones", function()
+        it("cycles the maker button through all, only and hide", function()
+            local function isMaker(item)
+                return item[2]:lower():find("only its maker can wear it", 1, true) ~= nil
+            end
             local key, maker = findListWithItem(function(source)
                 return source:find("only its maker can wear it", 1, true) ~= nil
             end)
             assert(key, "no maker-only item in the data")
+            local other
+            for _, slot in ipairs(ForeverBiSLists[key].slots) do
+                for _, item in ipairs(slot[2]) do
+                    if not isMaker(item) then
+                        other = other or item
+                    end
+                end
+            end
+            assert(other, "no regular item next to the maker-only one")
             loadList(key)
+            assert.are.equal("Maker: all", ForeverBiSFilterMaker:GetText())
+            assert.is_false(ForeverBiSFilterMaker.filterActive)
             assert.is_true(WowStub.hasText(maker[1]))
+            assert.is_true(WowStub.hasText(other[1]))
 
             click(ForeverBiSFilterMaker)
+            assert.are.equal("Maker: only", ForeverBiSFilterMaker:GetText())
             assert.is_true(ForeverBiSFilterMaker.filterActive)
-            assert.is_false(WowStub.hasText(maker[1]))
+            assert.is_true(WowStub.hasText(maker[1]))
+            assert.is_false(WowStub.hasText(other[1]))
 
             click(ForeverBiSFilterMaker)
+            assert.are.equal("Maker: hide", ForeverBiSFilterMaker:GetText())
+            assert.is_false(WowStub.hasText(maker[1]))
+            assert.is_true(WowStub.hasText(other[1]))
+
+            click(ForeverBiSFilterMaker)
+            assert.are.equal("Maker: all", ForeverBiSFilterMaker:GetText())
             assert.is_true(WowStub.hasText(maker[1]))
+            assert.is_true(WowStub.hasText(other[1]))
         end)
 
         it("searches the source text as well as the name", function()
