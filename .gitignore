@@ -6,3 +6,7 @@ ForeverBiS-contexto.md
 
 # CurseForge assets
 CurseForge/
+luacov.stats.out
+luacov.report.out
+Forever-ci-*.zip
+__pycache__/

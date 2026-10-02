@@ -1,0 +1,7 @@
+return {
+  default = {
+    ROOT = { "tests" },
+    pattern = "_spec",
+    helper = "tests/stubs/wow_api.lua",
+  },
+}
