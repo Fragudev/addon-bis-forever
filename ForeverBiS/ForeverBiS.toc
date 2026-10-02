@@ -3,7 +3,7 @@
 ## Title: Forever BiS
 ## Notes: Gear lists and item sources from ForeverChanges
 ## Author: Fragudev (fragudev@gmail.com)
-## Version: beta-0.0.37
+## Version: beta-0.0.38
 ## SavedVariables: ForeverBiSDB
 ForeverBiS_Data.lua
 ForeverBiS_Model.lua
