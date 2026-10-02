@@ -163,13 +163,15 @@ end
 --- One slot icon. slot: listSlot (key in the view), markSlot (where ownership is checked), label (tooltip heading)
 --- and ownerSlot (what the tooltip's ownership line checks).
 local function addSlotButton(view, item, slot, x, y, anchor)
+    local missing = view.missing[slot.listSlot] == true
     local button = CreateFrame("Button", nil, gearContent)
     button:SetSize(32, 32)
     button:SetPoint("TOPLEFT", gearContent, "TOPLEFT", x, y)
     local texture = button:CreateTexture(nil, "ARTWORK")
     texture:SetAllPoints(button)
     texture:SetTexture(Items.icon(item[1]))
-    ItemWidgets.addQualityBorder(button, item[1])
+    texture:SetDesaturated(missing)
+    ItemWidgets.addQualityBorder(button, item[1], missing)
     ItemWidgets.addOwnershipMark(button, item[1], slot.markSlot)
     button:SetScript("OnEnter", function(self)
         ItemWidgets.showItemTooltip(self, anchor, item[1])
@@ -222,8 +224,20 @@ local function addWeaponSlots(view)
     return drawn
 end
 
+--- The slot keys whose BiS is not equipped yet, by the same rule as the progress line.
+local function missingSlots(progress)
+    local missing = {}
+    for _, slot in ipairs(progress and progress.slots or {}) do
+        if not slot.done then
+            missing[slot.slot] = true
+        end
+    end
+    return missing
+end
+
 --- Redraws the player labels and the slot icons for the view (see Lists.view).
 function PaperDoll.refresh(view)
+    view.missing = missingSlots(view.progress)
     clearContent()
     addPlayerLabels()
     if not view.data then

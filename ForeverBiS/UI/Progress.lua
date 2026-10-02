@@ -127,9 +127,11 @@ function Progress.refresh(view)
     current = view.data and ForeverBiSModel.progress(view.data, Inventory.buildOwned(Catalog.progressKeys()))
     if not current or current.total == 0 then
         current = nil
+        view.progress = nil
         progressFrame:Hide()
         return
     end
+    view.progress = current -- the paper doll reads the same evaluation to mark the slots still missing
     local route, phaseId = view.route, view.phaseId
     local routeLabel = route and ForeverBiSModel.label(route)
     local phaseLabel = route and phaseId and phaseLabelFor(route, phaseId)
