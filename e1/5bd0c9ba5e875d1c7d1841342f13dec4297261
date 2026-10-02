@@ -1,0 +1,23 @@
+.github/workflows/ci.yml
+  s_90bcc6f3b691bd::t_757dc831bfbac3 8-12,30-31,65-66,76-77,91-92
+.github/workflows/release.yml
+  s_90bcc6f3b691bd::t_0846afffd4b592 7-12,17-20,24-25,35-36,40,46-47,49-86
+.github/workflows/update-lists.yml
+  s_90bcc6f3b691bd::t_5f592cf911a7f8 1-60
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "e15bd0c9ba5e875d1c7d1841342f13dec4297261",
+  "prompts": {},
+  "sessions": {
+    "s_90bcc6f3b691bd": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "b0cdf6e3-d3e9-4ce3-8db9-5125df9d4344",
+        "model": "unknown"
+      },
+      "human_author": "Francis Gutiérrez <francisge@ext.inditex.com>"
+    }
+  }
+}
