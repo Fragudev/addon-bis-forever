@@ -44,6 +44,18 @@ function Inventory.isEquippedInSlot(itemID, slotName)
     return false
 end
 
+--- The ids of what is worn in the slot ("Finger" covers both rings), in slot order; empty slots are skipped.
+function Inventory.equippedIds(slotName)
+    local ids = {}
+    for _, inventorySlotID in ipairs(equippedSlotIDs[string.lower(slotName or "")] or {}) do
+        local itemID = GetInventoryItemID and GetInventoryItemID("player", inventorySlotID)
+        if itemID then
+            ids[#ids + 1] = itemID
+        end
+    end
+    return ids
+end
+
 --- Copies of the item in the bags (the equipped one is not counted).
 function Inventory.bagCount(itemID)
     if not itemID or not GetItemCount then
@@ -56,14 +68,7 @@ end
 function Inventory.buildOwned(slotKeys)
     local equipped = {}
     for _, key in ipairs(slotKeys) do
-        local ids = {}
-        for _, inventorySlotID in ipairs(equippedSlotIDs[string.lower(key)] or {}) do
-            local itemID = GetInventoryItemID and GetInventoryItemID("player", inventorySlotID)
-            if itemID then
-                ids[#ids + 1] = itemID
-            end
-        end
-        equipped[key] = ids
+        equipped[key] = Inventory.equippedIds(key)
     end
     return { equipped = equipped, bags = Inventory.bagCount, itemId = ns.Items.id }
 end

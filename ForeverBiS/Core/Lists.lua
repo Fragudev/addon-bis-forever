@@ -25,3 +25,14 @@ function Lists.view(route, phaseId)
     end
     return view
 end
+
+--- The rank (1 = best) of an item id in a slot's { name, source } items, or nil when the slot does not list it.
+--- idOf maps an item name to its id.
+function Lists.rankOf(items, itemId, idOf)
+    for rank, item in ipairs(items) do
+        if idOf(item[1]) == itemId then
+            return rank
+        end
+    end
+    return nil
+end

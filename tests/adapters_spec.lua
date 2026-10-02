@@ -138,6 +138,47 @@ describe("Adapters", function()
         end)
     end)
 
+    describe("Items by id", function()
+        it("reads the name from the client, or nil while it is not loaded", function()
+            local ns = load()
+            assert.is_nil(ns.Items.nameById(5193))
+            _G.GetItemInfo = function()
+                return "Cape of the Brotherhood"
+            end
+            assert.are.equal("Cape of the Brotherhood", ns.Items.nameById(5193))
+            assert.is_nil(ns.Items.nameById(nil))
+        end)
+
+        it("tracks an id so its arrival redraws, and requests it once", function()
+            local ns = load()
+            local requests = 0
+            _G.C_Item.RequestLoadItemDataByID = function()
+                requests = requests + 1
+            end
+            ns.Items.track(42)
+            ns.Items.track(42)
+            assert.is_true(ns.Items.isTracked(42))
+            assert.are.equal(1, requests)
+        end)
+
+        it("gives the icon and rarity color for an id", function()
+            local ns = load()
+            assert.are.equal("Interface\\Icons\\INV_Misc_QuestionMark", ns.Items.iconById(42))
+            assert.are.same({ 1, 1, 1 }, { ns.Items.qualityColorById(42) })
+        end)
+    end)
+
+    describe("Inventory equipped ids", function()
+        it("lists what is worn in a slot in slot order, skipping empty slots", function()
+            local ns = load()
+            WowStub.equipped[12] = 21
+            assert.are.same({ 21 }, ns.Inventory.equippedIds("Finger"))
+            WowStub.equipped[11] = 20
+            assert.are.same({ 20, 21 }, ns.Inventory.equippedIds("Finger"))
+            assert.are.same({}, ns.Inventory.equippedIds("Relic"))
+        end)
+    end)
+
     describe("Player", function()
         it("reads level, faction and class token", function()
             local ns = load()

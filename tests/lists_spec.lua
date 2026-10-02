@@ -43,4 +43,24 @@ describe("Lists", function()
         assert.is_nil(view.data)
         assert.are.same({}, view.ranked)
     end)
+
+    describe("rankOf", function()
+        local ids = { ["A"] = 1, ["B"] = 2, ["C"] = 3 }
+        local function idOf(name)
+            return ids[name]
+        end
+        local items = { { "A", "x" }, { "B", "y" }, { "C", "z" } }
+
+        it("returns the position of the item in the slot's list", function()
+            local Lists = loadLists()
+            assert.are.equal(1, Lists.rankOf(items, 1, idOf))
+            assert.are.equal(3, Lists.rankOf(items, 3, idOf))
+        end)
+
+        it("returns nil when the slot does not list the item", function()
+            local Lists = loadLists()
+            assert.is_nil(Lists.rankOf(items, 99, idOf))
+            assert.is_nil(Lists.rankOf({}, 1, idOf))
+        end)
+    end)
 end)
