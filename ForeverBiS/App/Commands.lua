@@ -87,6 +87,12 @@ Commands.handlers = {
         return false
     end,
     link = postLinks,
+    -- /bis dungeon toggles the notice offered when you enter a dungeon with listed items (on by default).
+    dungeon = function()
+        local on = Settings.toggleDungeonNotice()
+        print(L["Forever BiS dungeon notice: "] .. (on and L["on"] or L["off"]))
+        return true
+    end,
     -- /bis alerts toggles the BiS loot alerts (on by default).
     alerts = function()
         local on = Settings.toggleAlerts()

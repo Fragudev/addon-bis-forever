@@ -92,6 +92,14 @@ function MainFrame.toggle()
     end
 end
 
+--- Shows the window if it is closed (and draws it); does nothing when it is already open.
+function MainFrame.open()
+    if not frame:IsShown() then
+        frame:Show()
+        ns.requestRender()
+    end
+end
+
 --- Sets the title and fits the width to the screen unless the player resized it. Returns the width.
 function MainFrame.refresh()
     title:SetText(L["BiS Forever"])

@@ -20,6 +20,7 @@ Adapters\Items.lua
 Adapters\Inventory.lua
 Adapters\Player.lua
 Adapters\Chat.lua
+Adapters\Zone.lua
 UI\MainFrame.lua
 UI\ItemWidgets.lua
 UI\Selectors.lua
@@ -30,8 +31,10 @@ UI\ItemList.lua
 UI\PaperDoll.lua
 UI\Progress.lua
 UI\Minimap.lua
+UI\DungeonNotice.lua
 App\Events.lua
 App\Alerts.lua
+App\Zone.lua
 App\Commands.lua
 ForeverBiS.lua
 ForeverBiS_Tooltip.lua

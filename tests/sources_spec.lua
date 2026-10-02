@@ -122,6 +122,44 @@ describe("Sources", function()
         end)
     end)
 
+    describe("matchDungeon", function()
+        it("matches the filter's dungeons by name", function()
+            assert.are.equal("the deadmines", Sources.matchDungeon("The Deadmines")[1])
+            assert.are.equal("Wailing Caverns", Sources.matchDungeon("Wailing Caverns")[2])
+        end)
+
+        it("accepts name variants: case, punctuation and a missing leading The", function()
+            assert.are.equal("the deadmines", Sources.matchDungeon("Deadmines")[1])
+            assert.are.equal("the deadmines", Sources.matchDungeon("the DEADMINES")[1])
+            assert.are.equal("shadowfang keep", Sources.matchDungeon("Shadowfang  Keep ")[1])
+            assert.are.equal("ragefire chasm", Sources.matchDungeon("Ragefire-Chasm")[1])
+        end)
+
+        it("returns nil for any other name", function()
+            assert.is_nil(Sources.matchDungeon("Eastern Kingdoms"))
+            assert.is_nil(Sources.matchDungeon("Deadmines Annex"))
+            assert.is_nil(Sources.matchDungeon(""))
+            assert.is_nil(Sources.matchDungeon(nil))
+        end)
+    end)
+
+    describe("countForDungeon", function()
+        local slots = {
+            { "Head", { { "A", "Boss, The Deadmines" }, { "B", "World drop" } } },
+            { "Neck", { { "C", "Other, The Deadmines" }, { "D", "Boss, Wailing Caverns" } } },
+        }
+
+        it("counts the listed items that come from the dungeon", function()
+            assert.are.equal(2, Sources.countForDungeon(slots, "the deadmines"))
+            assert.are.equal(1, Sources.countForDungeon(slots, "wailing caverns"))
+        end)
+
+        it("is zero for a dungeon with no listed items", function()
+            assert.are.equal(0, Sources.countForDungeon(slots, "ragefire chasm"))
+            assert.are.equal(0, Sources.countForDungeon({}, "the deadmines"))
+        end)
+    end)
+
     it("has an icon for every category", function()
         for _, category in ipairs(Sources.categories) do
             assert.is_string(Sources.categoryIcons[category])

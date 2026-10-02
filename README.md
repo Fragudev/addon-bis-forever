@@ -39,6 +39,10 @@ Faction-exclusive items show a faction emblem and a red Horde or blue Alliance l
 
 When you or anyone in your group receives an item that is BiS for your selected build and phase, a highlighted chat message (worded like the tooltip: rank, slot, build and phase) is printed and a short sound plays. Each drop alerts once, and items that are not on your build stay silent. `/bis alerts` turns the alerts on or off (on by default; the choice is account-wide).
 
+## Dungeon notice
+
+Entering a dungeon or raid whose items your selected build lists shows a small notice with the count (`5 BiS items in The Deadmines`). Click it to open the window with the dungeon filter applied. Nothing shows outside instances or in dungeons without listed items. `/bis dungeon` turns the notice on or off (on by default; the choice is account-wide).
+
 ## Tooltips
 
 Any item tooltip in the game (bags, equipped gear, links, vendors, the auction house, comparison tooltips) gets a gold `Forever BiS` block listing where the item is BiS for your class, such as `BiS #2 Head - Feral PvE (Level 30)`. Each build shows the phase that matches your character's level, independent of the phase picked in the window; an item that is BiS only in another phase still appears, with that phase named. At most four lines are shown, followed by `+N more`. The addon's own window keeps its source and ownership tooltips without this block.

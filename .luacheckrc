@@ -65,6 +65,7 @@ files["ForeverBiS/Adapters/Chat.lua"] = {
     "SendChatMessage",
   }),
 }
+files["ForeverBiS/Adapters/Zone.lua"] = { read_globals = with({ "GetInstanceInfo" }) }
 files["ForeverBiS/Adapters/Player.lua"] = {
   read_globals = with({ "GetRealmName", "UnitClass", "UnitFactionGroup", "UnitFullName", "UnitLevel", "UnitName" }),
 }
@@ -72,6 +73,7 @@ files["ForeverBiS/Adapters/Player.lua"] = {
 files["ForeverBiS/UI/"] = { read_globals = with(widget_api, { "Minimap", "GetCursorPosition", "RAID_CLASS_COLORS" }) }
 
 files["ForeverBiS/App/Events.lua"] = { read_globals = with(widget_api, { "C_Timer" }) }
+files["ForeverBiS/App/Zone.lua"] = { read_globals = with(widget_api, { "C_Timer", "GetTime" }) }
 files["ForeverBiS/App/Alerts.lua"] = { read_globals = with(widget_api, { "GetTime" }) }
 files["ForeverBiS/App/Commands.lua"] = {
   read_globals = with(),
@@ -102,6 +104,7 @@ files["tests/"] = {
     "ItemRefTooltip",
     "SlashCmdList",
     "ForeverBiSFrame",
+    "ForeverBiSDungeonNotice",
     "ForeverBiSClassDropDown",
     "ForeverBiSBuildDropDown",
     "ForeverBiSDungeonFilter",
