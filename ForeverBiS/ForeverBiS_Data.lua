@@ -12,7 +12,7 @@ ForeverBiSData = {
           slots = {
             { slot = "Head",
               items = {
-                { id = 252512, name = "Brawler's Leather Helm", source = { kind = "profession", text = "Leatherworking Only its maker can wear it Pattern: nobody has found it in the beta yet", skill = "Leatherworking", bindsToMaker = true } },
+                { id = 252512, name = "Brawler's Leather Helm", source = { kind = "profession", text = "Overlord Ramtusk, Razorfen Kraul Leatherworking Only its maker can wear it Pattern: nobody has found it in the beta yet Also drops in the Stockade, says a reader Reported, not checked", skill = "Leatherworking", bindsToMaker = true, reported = true } },
                 { id = 252504, name = "Brawler's Leather Hood", source = { kind = "profession", text = "Leatherworking (100) Only its maker can wear it", skill = "Leatherworking", skillLevel = 100, bindsToMaker = true } },
                 { id = 277219, name = "Solomon's Comfortable Hat", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 277042, name = "Cloudy Gustwoven Hood", source = { kind = "profession", text = "Leatherworking (175)", skill = "Leatherworking", skillLevel = 175 } },
@@ -24,7 +24,7 @@ ForeverBiSData = {
                 { id = 13084, name = "Kaleidoscope Chain", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 274068, name = "Thermaplugg Medal of Honor", source = { kind = "world", text = "Crowd Pummeler 9-60, Gnomeregan", zone = "Gnomeregan", boss = "Crowd Pummeler 9-60" } },
                 { id = 13087, name = "River Pride Choker", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
-                { id = 281290, name = "Replica Crescent Necklace", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 281290, name = "Replica Crescent Necklace", source = { kind = "quest", text = "Alliance quest Gleaming Crescent Necklace, Ashenvale, level 29 Started by a necklace nobody has placed yet", faction = "Alliance" } },
                 { id = 277204, name = "Erudite's Amulet", source = { kind = "quest", text = "Quest: Friend of the Library Ten books, any class and no level asked for", quest = "Friend of the Library Ten books" } },
               },
               enchants = {
@@ -44,7 +44,7 @@ ForeverBiSData = {
               items = {
                 { id = 14593, name = "Hawkeye's Cloak", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 13108, name = "Tigerstrike Mantle", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
-                { id = 271720, name = "Crocolisk Skin Gaiter", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 271720, name = "Crocolisk Skin Gaiter", source = { kind = "quest", text = "A Titan Relic quest of the Excavation Site, says a reader Reported, not checked", reported = true } },
                 { id = 2805, name = "Yeti Fur Cloak", source = { kind = "quest", text = "Quest: Bartolo's Yeti Fur Cloak Alliance, level 34 in Classic, from level 29", faction = "Alliance", quest = "Bartolo's Yeti Fur Cloak" } },
                 { id = 271716, name = "Explorer's League Dustcover", source = { kind = "quest", text = "Quest: Lost Relic Carry Excavation Site: Wetlands, Alliance, from level 24", faction = "Alliance", quest = "Lost Relic Carry Excavation Site: Wetlands" } },
               },
@@ -99,6 +99,7 @@ ForeverBiSData = {
             },
             { slot = "Legs",
               items = {
+                { id = 9624, name = "Triprunner Dungarees", source = { kind = "quest", text = "Quest: Rig Wars Horde, level 35 in Classic, from level 25 Quest: The Grand Betrayal Alliance, level 35 in Classic, from level 25 The last quest of Gnomeregan, for either faction Take a group for Mekgineer Thermaplugg (level 34)", quest = "Rig Wars" } },
                 { id = 252516, name = "Brawler's Leather Legguards", source = { kind = "profession", text = "Leatherworking (125) Only its maker can wear it", skill = "Leatherworking", skillLevel = 125, bindsToMaker = true } },
                 { id = 9509, name = "Petrolspill Leggings", source = { kind = "world", text = "Trash mobs, Gnomeregan 0.04% in Classic A world drop, not bound: the auction house is quickest Reported, not checked", zone = "Gnomeregan", boss = "Trash mobs", dropRate = 0.04, reported = true } },
                 { id = 13114, name = "Troll's Bane Leggings", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
@@ -111,7 +112,8 @@ ForeverBiSData = {
             },
             { slot = "Feet",
               items = {
-                { id = 284403, name = "Shapeshifting Sentinel's Strides", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 284403, name = "Shapeshifting Sentinel's Strides", source = { kind = "world", text = "A rare of northern Stonetalon Mountains, near the night elves Reported, not checked", reported = true } },
+                { id = 7751, name = "Vorrel's Boots", source = { kind = "quest", text = "Quest: Vorrel's Revenge Horde, level 33 in Classic, from level 25", faction = "Horde", quest = "Vorrel's Revenge" } },
                 { id = 1121, name = "Feet of the Lynx", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 252439, name = "Brawler's Leather Boots", source = { kind = "profession", text = "Leatherworking (85) Only its maker can wear it", skill = "Leatherworking", skillLevel = 85, bindsToMaker = true } },
                 { id = 16977, name = "Warsong Boots", source = { kind = "quest", text = "Quest: Warsong Supplies Horde, level 27 in Classic, from level 22", faction = "Horde", quest = "Warsong Supplies" } },
@@ -125,7 +127,7 @@ ForeverBiSData = {
               items = {
                 { id = 285190, name = "Wyvern Heart Band", source = { kind = "world", text = "Heartrazor, the rare wyvern of Thousand Needles Reported, not checked", reported = true } },
                 { id = 13097, name = "Thunderbrow Ring", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
-                { id = 270053, name = "Ring of Ruin", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 270053, name = "Ring of Ruin", source = { kind = "quest", text = "Quest: The Legend of Stalvan Alliance, from level 22, reported, not checked", faction = "Alliance", quest = "The Legend of Stalvan", reported = true } },
                 { id = 270052, name = "Swamp Ring", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 17694, name = "Band of the Fist", source = { kind = "quest", text = "Quest: Allegiance to the Old Gods Horde, level 26 in Classic, from level 17", faction = "Horde", quest = "Allegiance to the Old Gods" } },
               },
@@ -153,7 +155,7 @@ ForeverBiSData = {
               items = {
                 { id = 7683, name = "Bloody Brass Knuckles", source = { kind = "world", text = "Interrogator Vishas, Scarlet Monastery Graveyard 52.35% in Classic", zone = "Scarlet Monastery", boss = "Interrogator Vishas", dropRate = 52.35 } },
                 { id = 7682, name = "Torturing Poker", source = { kind = "world", text = "Interrogator Vishas, Scarlet Monastery Graveyard 6.08% in Classic", zone = "Scarlet Monastery", boss = "Interrogator Vishas", dropRate = 6.08 } },
-                { id = 281314, name = "Subdued Dragon's Fang", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 281314, name = "Subdued Dragon's Fang", source = { kind = "quest", text = "Alliance quest Stopping the Cycle, Wetlands, level 34 Elite, from level 24: take a group", faction = "Alliance" } },
                 { id = 6681, name = "Thornspike", source = { kind = "world", text = "Aggem Thorncurse, Razorfen Kraul 47.88% in Classic Trash mobs, Razorfen Kraul 53.29% in Classic", zone = "Razorfen Kraul", boss = "Aggem Thorncurse", dropRate = 47.88 } },
                 { id = 13048, name = "Looming Gavel", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
               },
@@ -206,16 +208,18 @@ ForeverBiSData = {
             },
             { slot = "Shoulder",
               items = {
+                { id = 7684, name = "Bloodmage Mantle", source = { kind = "world", text = "Bloodmage Thalnos, Scarlet Monastery Graveyard 47.84% in Classic", zone = "Scarlet Monastery", boss = "Bloodmage Thalnos", dropRate = 47.84 } },
+                { id = 4197, name = "Berylline Pads", source = { kind = "quest", text = "Quest: A Vengeful Fate Horde, level 34 in Classic, from level 29 Quest: The Crone of the Kraul Alliance, level 34 in Classic, from level 29", quest = "A Vengeful Fate" } },
                 { id = 6685, name = "Death Speaker Mantle", source = { kind = "world", text = "Death Speaker Jargba, Razorfen Kraul 43.63% in Classic", zone = "Razorfen Kraul", boss = "Death Speaker Jargba", dropRate = 43.63 } },
                 { id = 9536, name = "Fairywing Mantle", source = { kind = "quest", text = "Quest: A Fine Mess level 30 in Classic, from level 24", quest = "A Fine Mess" } },
                 { id = 12998, name = "Magician's Mantle", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 17695, name = "Chestnut Mantle", source = { kind = "quest", text = "Quest: Allegiance to the Old Gods Horde, level 26 in Classic, from level 17", faction = "Horde", quest = "Allegiance to the Old Gods" } },
-                { id = 270039, name = "Raptorclaw Shoulders", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 270039, name = "Raptorclaw Shoulders", source = { kind = "quest", text = "Quest: Ormer's Revenge Alliance, from level 22, reported, not checked", faction = "Alliance", quest = "Ormer's Revenge", reported = true } },
               },
             },
             { slot = "Back",
               items = {
-                { id = 274149, name = "Thornweaver Drape", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 274149, name = "Thornweaver Drape", source = { kind = "world", text = "Roogug, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Roogug" } },
                 { id = 3719, name = "Hillman's Cloak", source = { kind = "profession", text = "Leatherworking", skill = "Leatherworking" } },
                 { id = 15468, name = "Windsong Drape", source = { kind = "quest", text = "Quest: Free at Last Horde, level 29 in Classic, from level 25", faction = "Horde", quest = "Free at Last" } },
                 { id = 273825, name = "Red Wool Cloak", source = { kind = "world", text = "Bazil Thredd, The Stockade", zone = "The Stockade", boss = "Bazil Thredd" } },
@@ -228,6 +232,7 @@ ForeverBiSData = {
             { slot = "Chest",
               items = {
                 { id = 253969, name = "Pearly Gown", source = { kind = "profession", text = "Tailoring (110) Only its maker can wear it", skill = "Tailoring", skillLevel = 110, bindsToMaker = true } },
+                { id = 17043, name = "Zealot's Robe", source = { kind = "quest", text = "Quest: An Unholy Alliance Horde, level 36 in Classic, from level 28 A Horde quest from Varimathras in Undercity Take a group for Ambassador Malcin (level 36 elite)", quest = "An Unholy" } },
                 { id = 284697, name = "Arcane Charged Robes", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 277213, name = "Dro'zem's Tunic", source = { kind = "world", text = "Dro'zem the Blasphemous, a rare elite of the Redridge Mountains Reported, not checked", reported = true } },
                 { id = 7065, name = "Green Silk Armor", source = { kind = "profession", text = "Tailoring (130)", skill = "Tailoring", skillLevel = 130 } },
@@ -313,7 +318,7 @@ ForeverBiSData = {
             },
             { slot = "Two-hand weapon",
               items = {
-                { id = 281312, name = "Fallen Dragon's Scepter", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 281312, name = "Fallen Dragon's Scepter", source = { kind = "quest", text = "Alliance quest Stopping the Cycle, Wetlands, level 34 Elite, from level 24: take a group", faction = "Alliance" } },
                 { id = 249392, name = "Glimmering Staff", source = { kind = "profession", text = "Enchanting (140) Only its maker can wear it", skill = "Enchanting", skillLevel = 140, bindsToMaker = true } },
                 { id = 274158, name = "Death Prophet Spine", source = { kind = "world", text = "Aggem Thorncurse, Razorfen Kraul Agathelos the Raging, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Aggem Thorncurse" } },
                 { id = 9452, name = "Hydrocane", source = { kind = "world", text = "Viscous Fallout, Gnomeregan 18.78% in Classic", zone = "Gnomeregan", boss = "Viscous Fallout", dropRate = 18.78 } },
@@ -325,6 +330,7 @@ ForeverBiSData = {
             },
             { slot = "Main hand",
               items = {
+                { id = 17039, name = "Skullbreaker", source = { kind = "quest", text = "Quest: An Unholy Alliance Horde, level 36 in Classic, from level 28 A Horde quest from Varimathras in Undercity Take a group for Ambassador Malcin (level 36 elite)", quest = "An Unholy" } },
                 { id = 6691, name = "Swinetusk Shank", source = { kind = "world", text = "Agathelos the Raging, Razorfen Kraul 33.54% in Classic", zone = "Razorfen Kraul", boss = "Agathelos the Raging", dropRate = 33.54 } },
                 { id = 3414, name = "Crested Scepter", source = { kind = "dungeon", text = "Trash mobs, Blackfathom Deeps 0.03% in Classic", zone = "Blackfathom Deeps", boss = "Trash mobs", dropRate = 0.03 } },
                 { id = 2567, name = "Evocator's Blade", source = { kind = "dungeon", text = "Trash mobs, Blackfathom Deeps 0.05% in Classic", zone = "Blackfathom Deeps", boss = "Trash mobs", dropRate = 0.05 } },
@@ -385,7 +391,9 @@ ForeverBiSData = {
             },
             { slot = "Shoulder",
               items = {
+                { id = 4197, name = "Berylline Pads", source = { kind = "quest", text = "Quest: A Vengeful Fate Horde, level 34 in Classic, from level 29 Quest: The Crone of the Kraul Alliance, level 34 in Classic, from level 29", quest = "A Vengeful Fate" } },
                 { id = 11884, name = "Moonlit Amice", source = { kind = "quest", text = "Quest: Return to Vahlarriel Alliance, level 33 in Classic, from level 30", faction = "Alliance", quest = "Return to Vahlarriel" } },
+                { id = 7684, name = "Bloodmage Mantle", source = { kind = "world", text = "Bloodmage Thalnos, Scarlet Monastery Graveyard 47.84% in Classic", zone = "Scarlet Monastery", boss = "Bloodmage Thalnos", dropRate = 47.84 } },
                 { id = 270023, name = "Tanned Shoulderpads", source = { kind = "quest", text = "Quest: Deathstalkers in Shadowfang Horde, from level 18, reported, not checked", faction = "Horde", quest = "Deathstalkers in Shadowfang", reported = true } },
                 { id = 9536, name = "Fairywing Mantle", source = { kind = "quest", text = "Quest: A Fine Mess level 30 in Classic, from level 24", quest = "A Fine Mess" } },
                 { id = 284399, name = "Seared Grove Shoulderpads", source = { kind = "world", text = "Sister Riven, the rare harpy of the Charred Vale Reported, not checked", reported = true } },
@@ -408,6 +416,7 @@ ForeverBiSData = {
               items = {
                 { id = 253969, name = "Pearly Gown", source = { kind = "profession", text = "Tailoring (110) Only its maker can wear it", skill = "Tailoring", skillLevel = 110, bindsToMaker = true } },
                 { id = 252510, name = "Stormrider's Leather Tunic", source = { kind = "profession", text = "Leatherworking (110) Only its maker can wear it", skill = "Leatherworking", skillLevel = 110, bindsToMaker = true } },
+                { id = 17043, name = "Zealot's Robe", source = { kind = "quest", text = "Quest: An Unholy Alliance Horde, level 36 in Classic, from level 28 A Horde quest from Varimathras in Undercity Take a group for Ambassador Malcin (level 36 elite)", quest = "An Unholy" } },
                 { id = 253961, name = "Pristine Gown", source = { kind = "profession", text = "Tailoring (110) Only its maker can wear it", skill = "Tailoring", skillLevel = 110, bindsToMaker = true } },
                 { id = 6682, name = "Death Speaker Robes", source = { kind = "world", text = "Death Speaker Jargba, Razorfen Kraul 42.77% in Classic", zone = "Razorfen Kraul", boss = "Death Speaker Jargba", dropRate = 42.77 } },
                 { id = 284697, name = "Arcane Charged Robes", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
@@ -496,7 +505,7 @@ ForeverBiSData = {
                 { id = 249392, name = "Glimmering Staff", source = { kind = "profession", text = "Enchanting (140) Only its maker can wear it", skill = "Enchanting", skillLevel = 140, bindsToMaker = true } },
                 { id = 274158, name = "Death Prophet Spine", source = { kind = "world", text = "Aggem Thorncurse, Razorfen Kraul Agathelos the Raging, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Aggem Thorncurse" } },
                 { id = 249393, name = "Soulstaff", source = { kind = "profession", text = "Enchanting (140) Only its maker can wear it", skill = "Enchanting", skillLevel = 140, bindsToMaker = true } },
-                { id = 281312, name = "Fallen Dragon's Scepter", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 281312, name = "Fallen Dragon's Scepter", source = { kind = "quest", text = "Alliance quest Stopping the Cycle, Wetlands, level 34 Elite, from level 24: take a group", faction = "Alliance" } },
               },
               enchants = {
                 { effect = "Intellect +5", spell = "Enchant 2H Weapon - Lesser Intellect", source = "Enchanting 100: Formula sold by Tilli Thistlefuzz in Dun Morogh, Kithas in Orgrimmar and Leo Sarn in Silverpine Forest.", formulaId = 6349 },
@@ -504,6 +513,7 @@ ForeverBiSData = {
             },
             { slot = "Main hand",
               items = {
+                { id = 17039, name = "Skullbreaker", source = { kind = "quest", text = "Quest: An Unholy Alliance Horde, level 36 in Classic, from level 28 A Horde quest from Varimathras in Undercity Take a group for Ambassador Malcin (level 36 elite)", quest = "An Unholy" } },
                 { id = 6691, name = "Swinetusk Shank", source = { kind = "world", text = "Agathelos the Raging, Razorfen Kraul 33.54% in Classic", zone = "Razorfen Kraul", boss = "Agathelos the Raging", dropRate = 33.54 } },
                 { id = 3414, name = "Crested Scepter", source = { kind = "dungeon", text = "Trash mobs, Blackfathom Deeps 0.03% in Classic", zone = "Blackfathom Deeps", boss = "Trash mobs", dropRate = 0.03 } },
                 { id = 2567, name = "Evocator's Blade", source = { kind = "dungeon", text = "Trash mobs, Blackfathom Deeps 0.05% in Classic", zone = "Blackfathom Deeps", boss = "Trash mobs", dropRate = 0.05 } },
@@ -539,7 +549,7 @@ ForeverBiSData = {
           slots = {
             { slot = "Head",
               items = {
-                { id = 252512, name = "Brawler's Leather Helm", source = { kind = "profession", text = "Leatherworking Only its maker can wear it Pattern: nobody has found it in the beta yet", skill = "Leatherworking", bindsToMaker = true } },
+                { id = 252512, name = "Brawler's Leather Helm", source = { kind = "profession", text = "Overlord Ramtusk, Razorfen Kraul Leatherworking Only its maker can wear it Pattern: nobody has found it in the beta yet Also drops in the Stockade, says a reader Reported, not checked", skill = "Leatherworking", bindsToMaker = true, reported = true } },
                 { id = 252504, name = "Brawler's Leather Hood", source = { kind = "profession", text = "Leatherworking (100) Only its maker can wear it", skill = "Leatherworking", skillLevel = 100, bindsToMaker = true } },
                 { id = 252447, name = "Defender's Leather Hood", source = { kind = "profession", text = "Leatherworking (100) Only its maker can wear it", skill = "Leatherworking", skillLevel = 100, bindsToMaker = true } },
                 { id = 277042, name = "Cloudy Gustwoven Hood", source = { kind = "profession", text = "Leatherworking (175)", skill = "Leatherworking", skillLevel = 175 } },
@@ -570,7 +580,7 @@ ForeverBiSData = {
             { slot = "Back",
               items = {
                 { id = 13108, name = "Tigerstrike Mantle", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
-                { id = 271720, name = "Crocolisk Skin Gaiter", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 271720, name = "Crocolisk Skin Gaiter", source = { kind = "quest", text = "A Titan Relic quest of the Excavation Site, says a reader Reported, not checked", reported = true } },
                 { id = 14763, name = "Enduring Cape", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 14593, name = "Hawkeye's Cloak", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 279865, name = "Grave Shroud", source = { kind = "quest", text = "Quest: Unending Torment Ruins of Lordaeron, Horde, from level 16 Quest: Abominable Creatures Ruins of Lordaeron, Alliance, from level 16", quest = "Unending Torment Ruins of Lordaeron" } },
@@ -627,6 +637,7 @@ ForeverBiSData = {
             },
             { slot = "Legs",
               items = {
+                { id = 9624, name = "Triprunner Dungarees", source = { kind = "quest", text = "Quest: Rig Wars Horde, level 35 in Classic, from level 25 Quest: The Grand Betrayal Alliance, level 35 in Classic, from level 25 The last quest of Gnomeregan, for either faction Take a group for Mekgineer Thermaplugg (level 34)", quest = "Rig Wars" } },
                 { id = 252457, name = "Defender's Leather Kilt", source = { kind = "profession", text = "Leatherworking (125) Only its maker can wear it", skill = "Leatherworking", skillLevel = 125, bindsToMaker = true } },
                 { id = 252516, name = "Brawler's Leather Legguards", source = { kind = "profession", text = "Leatherworking (125) Only its maker can wear it", skill = "Leatherworking", skillLevel = 125, bindsToMaker = true } },
                 { id = 9509, name = "Petrolspill Leggings", source = { kind = "world", text = "Trash mobs, Gnomeregan 0.04% in Classic A world drop, not bound: the auction house is quickest Reported, not checked", zone = "Gnomeregan", boss = "Trash mobs", dropRate = 0.04, reported = true } },
@@ -639,7 +650,9 @@ ForeverBiSData = {
             },
             { slot = "Feet",
               items = {
-                { id = 284403, name = "Shapeshifting Sentinel's Strides", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 284403, name = "Shapeshifting Sentinel's Strides", source = { kind = "world", text = "A rare of northern Stonetalon Mountains, near the night elves Reported, not checked", reported = true } },
+                { id = 6752, name = "Lancer Boots", source = { kind = "quest", text = "Quest: Mortality Wanes Alliance, level 30 in Classic, from level 25", faction = "Alliance", quest = "Mortality Wanes" } },
+                { id = 7751, name = "Vorrel's Boots", source = { kind = "quest", text = "Quest: Vorrel's Revenge Horde, level 33 in Classic, from level 25", faction = "Horde", quest = "Vorrel's Revenge" } },
                 { id = 16977, name = "Warsong Boots", source = { kind = "quest", text = "Quest: Warsong Supplies Horde, level 27 in Classic, from level 22", faction = "Horde", quest = "Warsong Supplies" } },
                 { id = 6335, name = "Grizzled Boots", source = { kind = "quest", text = "Quest: The Book of Ur Horde, level 26 in Classic, from level 16", faction = "Horde", quest = "The Book of Ur" } },
                 { id = 252439, name = "Brawler's Leather Boots", source = { kind = "profession", text = "Leatherworking (85) Only its maker can wear it", skill = "Leatherworking", skillLevel = 85, bindsToMaker = true } },
@@ -681,7 +694,7 @@ ForeverBiSData = {
             { slot = "Main hand",
               items = {
                 { id = 7683, name = "Bloody Brass Knuckles", source = { kind = "world", text = "Interrogator Vishas, Scarlet Monastery Graveyard 52.35% in Classic", zone = "Scarlet Monastery", boss = "Interrogator Vishas", dropRate = 52.35 } },
-                { id = 281314, name = "Subdued Dragon's Fang", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 281314, name = "Subdued Dragon's Fang", source = { kind = "quest", text = "Alliance quest Stopping the Cycle, Wetlands, level 34 Elite, from level 24: take a group", faction = "Alliance" } },
                 { id = 7682, name = "Torturing Poker", source = { kind = "world", text = "Interrogator Vishas, Scarlet Monastery Graveyard 6.08% in Classic", zone = "Scarlet Monastery", boss = "Interrogator Vishas", dropRate = 6.08 } },
                 { id = 13048, name = "Looming Gavel", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 6681, name = "Thornspike", source = { kind = "world", text = "Aggem Thorncurse, Razorfen Kraul 47.88% in Classic Trash mobs, Razorfen Kraul 53.29% in Classic", zone = "Razorfen Kraul", boss = "Aggem Thorncurse", dropRate = 47.88 } },
@@ -722,11 +735,11 @@ ForeverBiSData = {
             { slot = "Neck",
               items = {
                 { id = 23169, name = "Scorn's Icy Choker", source = { kind = "world", text = "Scorn, a rare elite of the Scarlet Monastery Graveyard About 1 kill in 4 in the beta", zone = "Scarlet Monastery" } },
-                { id = 281321, name = "Giantstone Medallion", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 281321, name = "Giantstone Medallion", source = { kind = "quest", text = "Alliance quest Gleaning Our Future, Wetlands, level 32 Elite, from level 24: take a group", faction = "Alliance" } },
                 { id = 13084, name = "Kaleidoscope Chain", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 5003, name = "Crystal Starfire Medallion", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 274068, name = "Thermaplugg Medal of Honor", source = { kind = "world", text = "Crowd Pummeler 9-60, Gnomeregan", zone = "Gnomeregan", boss = "Crowd Pummeler 9-60" } },
-                { id = 281258, name = "Essene's Hope", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 281258, name = "Essene's Hope", source = { kind = "quest", text = "Alliance quest Sentiments of the Lost, level 33 Elite, from level 28: where it starts is not known yet", faction = "Alliance" } },
               },
               enchants = {
                 { effect = "Healing Spells +11, Damage Spells +4", spell = "Enchant Necklace - Healing Power", source = "Enchanting 210: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 120 Merchant’s Favor.", formulaId = 249503 },
@@ -734,7 +747,9 @@ ForeverBiSData = {
             },
             { slot = "Shoulder",
               items = {
+                { id = 7684, name = "Bloodmage Mantle", source = { kind = "world", text = "Bloodmage Thalnos, Scarlet Monastery Graveyard 47.84% in Classic", zone = "Scarlet Monastery", boss = "Bloodmage Thalnos", dropRate = 47.84 } },
                 { id = 3324, name = "Ghostly Mantle", source = { kind = "quest", text = "Quest: Deathstalkers in Shadowfang Horde, level 25 in Classic, from level 18", faction = "Horde", quest = "Deathstalkers in Shadowfang" } },
+                { id = 4197, name = "Berylline Pads", source = { kind = "quest", text = "Quest: A Vengeful Fate Horde, level 34 in Classic, from level 29 Quest: The Crone of the Kraul Alliance, level 34 in Classic, from level 29", quest = "A Vengeful Fate" } },
                 { id = 6685, name = "Death Speaker Mantle", source = { kind = "world", text = "Death Speaker Jargba, Razorfen Kraul 43.63% in Classic", zone = "Razorfen Kraul", boss = "Death Speaker Jargba", dropRate = 43.63 } },
                 { id = 9536, name = "Fairywing Mantle", source = { kind = "quest", text = "Quest: A Fine Mess level 30 in Classic, from level 24", quest = "A Fine Mess" } },
                 { id = 270023, name = "Tanned Shoulderpads", source = { kind = "quest", text = "Quest: Deathstalkers in Shadowfang Horde, from level 18, reported, not checked", faction = "Horde", quest = "Deathstalkers in Shadowfang", reported = true } },
@@ -746,7 +761,7 @@ ForeverBiSData = {
                 { id = 7004, name = "Prelacy Cape", source = { kind = "quest", text = "Quest: Researching the Corruption Alliance, level 24 in Classic, from level 18", faction = "Alliance", quest = "Researching the Corruption" } },
                 { id = 273825, name = "Red Wool Cloak", source = { kind = "world", text = "Bazil Thredd, The Stockade", zone = "The Stockade", boss = "Bazil Thredd" } },
                 { id = 6901, name = "Glowing Thresher Cape", source = { kind = "dungeon", text = "Old Serra'kis, Blackfathom Deeps 39.27% in Classic", zone = "Blackfathom Deeps", boss = "Old Serra'kis", dropRate = 39.27 } },
-                { id = 274149, name = "Thornweaver Drape", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 274149, name = "Thornweaver Drape", source = { kind = "world", text = "Roogug, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Roogug" } },
                 { id = 15468, name = "Windsong Drape", source = { kind = "quest", text = "Quest: Free at Last Horde, level 29 in Classic, from level 25", faction = "Horde", quest = "Free at Last" } },
               },
               enchants = {
@@ -803,7 +818,7 @@ ForeverBiSData = {
                 { id = 253987, name = "Pristine Leggings", source = { kind = "profession", text = "Tailoring (125) Only its maker can wear it", skill = "Tailoring", skillLevel = 125, bindsToMaker = true } },
                 { id = 252519, name = "Wisdom's Leather Leggings", source = { kind = "profession", text = "Leatherworking (125) Only its maker can wear it", skill = "Leatherworking", skillLevel = 125, bindsToMaker = true } },
                 { id = 252503, name = "Wisdom's Leather Pants", source = { kind = "profession", text = "Leatherworking Only its maker can wear it Pattern: nobody has found it in the beta yet", skill = "Leatherworking", bindsToMaker = true } },
-                { id = 253937, name = "Filigreed Pristine Leggings", source = { kind = "profession", text = "Tailoring (100) Only its maker can wear it Pattern drops from Verdan the Everliving, Wailing Caverns", skill = "Tailoring", skillLevel = 100, bindsToMaker = true } },
+                { id = 253937, name = "Filigreed Pristine Leggings", source = { kind = "profession", text = "Tailoring (100) Only its maker can wear it Pattern drops from Verdan the Everliving, Wailing Caverns; Lord Pythas, Wailing Caverns", skill = "Tailoring", skillLevel = 100, bindsToMaker = true } },
                 { id = 253999, name = "Earthen Leggings", source = { kind = "profession", text = "Tailoring (140) Pattern: nobody has found it in the beta yet", skill = "Tailoring", skillLevel = 140 } },
                 { id = 273289, name = "Ogre Loincloth", source = { kind = "dungeon", text = "Rhahk'Zor, The Deadmines", zone = "The Deadmines", boss = "Rhahk'Zor" } },
               },
@@ -854,6 +869,7 @@ ForeverBiSData = {
             { slot = "Main hand",
               items = {
                 { id = 2816, name = "Death Speaker Scepter", source = { kind = "world", text = "Death Speaker Jargba, Razorfen Kraul 10.02% in Classic", zone = "Razorfen Kraul", boss = "Death Speaker Jargba", dropRate = 10.02 } },
+                { id = 17039, name = "Skullbreaker", source = { kind = "quest", text = "Quest: An Unholy Alliance Horde, level 36 in Classic, from level 28 A Horde quest from Varimathras in Undercity Take a group for Ambassador Malcin (level 36 elite)", quest = "An Unholy" } },
                 { id = 6691, name = "Swinetusk Shank", source = { kind = "world", text = "Agathelos the Raging, Razorfen Kraul 33.54% in Classic", zone = "Razorfen Kraul", boss = "Agathelos the Raging", dropRate = 33.54 } },
                 { id = 272996, name = "Trogg Scepter", source = { kind = "dungeon", text = "Oggleflint, Ragefire Chasm", zone = "Ragefire Chasm", boss = "Oggleflint" } },
                 { id = 15443, name = "Kris of Orgrimmar", source = { kind = "quest", text = "Quest: Hidden Enemies Horde, level 16 in Classic, from level 9", faction = "Horde", quest = "Hidden Enemies" } },
@@ -889,7 +905,7 @@ ForeverBiSData = {
           slots = {
             { slot = "Head",
               items = {
-                { id = 252512, name = "Brawler's Leather Helm", source = { kind = "profession", text = "Leatherworking Only its maker can wear it Pattern: nobody has found it in the beta yet", skill = "Leatherworking", bindsToMaker = true } },
+                { id = 252512, name = "Brawler's Leather Helm", source = { kind = "profession", text = "Overlord Ramtusk, Razorfen Kraul Leatherworking Only its maker can wear it Pattern: nobody has found it in the beta yet Also drops in the Stockade, says a reader Reported, not checked", skill = "Leatherworking", bindsToMaker = true, reported = true } },
                 { id = 252504, name = "Brawler's Leather Hood", source = { kind = "profession", text = "Leatherworking (100) Only its maker can wear it", skill = "Leatherworking", skillLevel = 100, bindsToMaker = true } },
                 { id = 19972, name = "Lucky Fishing Hat", source = { kind = "quest", text = "Quest: Rare Fish - Keefer's Angelfish level 0 in Classic, from level 1 A fishing quest in Booty Bay, for a Keefer's Angelfish Fishing only, no level needed", quest = "Rare Fish - Keefer's Angelfish" } },
                 { id = 252447, name = "Defender's Leather Hood", source = { kind = "profession", text = "Leatherworking (100) Only its maker can wear it", skill = "Leatherworking", skillLevel = 100, bindsToMaker = true } },
@@ -920,7 +936,7 @@ ForeverBiSData = {
             { slot = "Back",
               items = {
                 { id = 13108, name = "Tigerstrike Mantle", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
-                { id = 271720, name = "Crocolisk Skin Gaiter", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 271720, name = "Crocolisk Skin Gaiter", source = { kind = "quest", text = "A Titan Relic quest of the Excavation Site, says a reader Reported, not checked", reported = true } },
                 { id = 14763, name = "Enduring Cape", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 9699, name = "Garrison Cloak", source = { kind = "quest", text = "Quest: Return to Vahlarriel Alliance, level 33 in Classic, from level 30", faction = "Alliance", quest = "Return to Vahlarriel" } },
                 { id = 2059, name = "Sentry Cloak", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
@@ -978,6 +994,7 @@ ForeverBiSData = {
             { slot = "Legs",
               items = {
                 { id = 252457, name = "Defender's Leather Kilt", source = { kind = "profession", text = "Leatherworking (125) Only its maker can wear it", skill = "Leatherworking", skillLevel = 125, bindsToMaker = true } },
+                { id = 9624, name = "Triprunner Dungarees", source = { kind = "quest", text = "Quest: Rig Wars Horde, level 35 in Classic, from level 25 Quest: The Grand Betrayal Alliance, level 35 in Classic, from level 25 The last quest of Gnomeregan, for either faction Take a group for Mekgineer Thermaplugg (level 34)", quest = "Rig Wars" } },
                 { id = 252516, name = "Brawler's Leather Legguards", source = { kind = "profession", text = "Leatherworking (125) Only its maker can wear it", skill = "Leatherworking", skillLevel = 125, bindsToMaker = true } },
                 { id = 9509, name = "Petrolspill Leggings", source = { kind = "world", text = "Trash mobs, Gnomeregan 0.04% in Classic A world drop, not bound: the auction house is quickest Reported, not checked", zone = "Gnomeregan", boss = "Trash mobs", dropRate = 0.04, reported = true } },
                 { id = 5963, name = "Barbaric Leggings", source = { kind = "profession", text = "Leatherworking (145)", skill = "Leatherworking", skillLevel = 145 } },
@@ -1028,7 +1045,7 @@ ForeverBiSData = {
             },
             { slot = "Main hand",
               items = {
-                { id = 281314, name = "Subdued Dragon's Fang", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 281314, name = "Subdued Dragon's Fang", source = { kind = "quest", text = "Alliance quest Stopping the Cycle, Wetlands, level 34 Elite, from level 24: take a group", faction = "Alliance" } },
                 { id = 13048, name = "Looming Gavel", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 7683, name = "Bloody Brass Knuckles", source = { kind = "world", text = "Interrogator Vishas, Scarlet Monastery Graveyard 52.35% in Classic", zone = "Scarlet Monastery", boss = "Interrogator Vishas", dropRate = 52.35 } },
                 { id = 7682, name = "Torturing Poker", source = { kind = "world", text = "Interrogator Vishas, Scarlet Monastery Graveyard 6.08% in Classic", zone = "Scarlet Monastery", boss = "Interrogator Vishas", dropRate = 6.08 } },
@@ -1061,20 +1078,18 @@ ForeverBiSData = {
             { slot = "Head",
               items = {
                 { id = 6204, name = "Tribal Worg Helm", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
-                { id = 252512, name = "Brawler's Leather Helm", source = { kind = "profession", text = "Leatherworking Only its maker can wear it Pattern: nobody has found it in the beta yet", skill = "Leatherworking", bindsToMaker = true } },
-                { id = 277219, name = "Solomon's Comfortable Hat", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
-                { id = 252504, name = "Brawler's Leather Hood", source = { kind = "profession", text = "Leatherworking (100) Only its maker can wear it", skill = "Leatherworking", skillLevel = 100, bindsToMaker = true } },
+                { id = 252512, name = "Brawler's Leather Helm", source = { kind = "profession", text = "Overlord Ramtusk, Razorfen Kraul Leatherworking Only its maker can wear it Pattern: nobody has found it in the beta yet Also drops in the Stockade, says a reader Reported, not checked", skill = "Leatherworking", bindsToMaker = true, reported = true } },
                 { id = 6688, name = "Whisperwind Headdress", source = { kind = "world", text = "Earthcaller Halmgar, Razorfen Kraul 45.16% in Classic", zone = "Razorfen Kraul", boss = "Earthcaller Halmgar", dropRate = 45.16 } },
+                { id = 252504, name = "Brawler's Leather Hood", source = { kind = "profession", text = "Leatherworking (100) Only its maker can wear it", skill = "Leatherworking", skillLevel = 100, bindsToMaker = true } },
                 { id = 277044, name = "Cloudy Windraveled Cover", source = { kind = "profession", text = "Leatherworking (175)", skill = "Leatherworking", skillLevel = 175 } },
+                { id = 277219, name = "Solomon's Comfortable Hat", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
               },
             },
             { slot = "Neck",
               items = {
-                { id = 282653, name = "Dissolved Locket", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 13084, name = "Kaleidoscope Chain", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
-                { id = 281290, name = "Replica Crescent Necklace", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
-                { id = 277204, name = "Erudite's Amulet", source = { kind = "quest", text = "Quest: Friend of the Library Ten books, any class and no level asked for", quest = "Friend of the Library Ten books" } },
                 { id = 285331, name = "Mark of the Pack Leader", source = { kind = "world", text = "Humar the Pridelord, the rare black lion of the Barrens Reported, not checked", reported = true } },
+                { id = 277204, name = "Erudite's Amulet", source = { kind = "quest", text = "Quest: Friend of the Library Ten books, any class and no level asked for", quest = "Friend of the Library Ten books" } },
                 { id = 273088, name = "Snake Eye Kaleidoscope", source = { kind = "dungeon", text = "Lady Anacondra, Wailing Caverns", zone = "Wailing Caverns", boss = "Lady Anacondra" } },
               },
               enchants = {
@@ -1085,20 +1100,19 @@ ForeverBiSData = {
               items = {
                 { id = 2278, name = "Forest Tracker Epaulets", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 2264, name = "Mantle of Thieves", source = { kind = "world", text = "Trash mobs, Razorfen Kraul 0.04% in Classic A world drop, not bound: the auction house is quickest Reported, not checked", zone = "Razorfen Kraul", boss = "Trash mobs", dropRate = 0.04, reported = true } },
-                { id = 277043, name = "Cloudy Gustwoven Spaulders", source = { kind = "profession", text = "Leatherworking (175)", skill = "Leatherworking", skillLevel = 175 } },
-                { id = 4721, name = "Insignia Mantle", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 284399, name = "Seared Grove Shoulderpads", source = { kind = "world", text = "Sister Riven, the rare harpy of the Charred Vale Reported, not checked", reported = true } },
+                { id = 277043, name = "Cloudy Gustwoven Spaulders", source = { kind = "profession", text = "Leatherworking (175)", skill = "Leatherworking", skillLevel = 175 } },
                 { id = 3748, name = "Feline Mantle", source = { kind = "dungeon", text = "Wolf Master Nandos, Shadowfang Keep 56.7% in Classic", zone = "Shadowfang Keep", boss = "Wolf Master Nandos", dropRate = 56.7 } },
               },
             },
             { slot = "Back",
               items = {
+                { id = 271716, name = "Explorer's League Dustcover", source = { kind = "quest", text = "Quest: Lost Relic Carry Excavation Site: Wetlands, Alliance, from level 24", faction = "Alliance", quest = "Lost Relic Carry Excavation Site: Wetlands" } },
                 { id = 13108, name = "Tigerstrike Mantle", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
-                { id = 10518, name = "Parachute Cloak", source = { kind = "profession", text = "Engineering (225)", skill = "Engineering", skillLevel = 225 } },
                 { id = 14593, name = "Hawkeye's Cloak", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
+                { id = 10518, name = "Parachute Cloak", source = { kind = "profession", text = "Engineering (225)", skill = "Engineering", skillLevel = 225 } },
                 { id = 6340, name = "Fenrus' Hide", source = { kind = "dungeon", text = "Fenrus the Devourer, Shadowfang Keep 74.16% in Classic", zone = "Shadowfang Keep", boss = "Fenrus the Devourer", dropRate = 74.16 } },
                 { id = 6745, name = "Swiftrunner Cape", source = { kind = "quest", text = "Quest: Alliance Relations Horde, level 33 in Classic, from level 30", quest = "Alliance Relations" } },
-                { id = 271716, name = "Explorer's League Dustcover", source = { kind = "quest", text = "Quest: Lost Relic Carry Excavation Site: Wetlands, Alliance, from level 24", faction = "Alliance", quest = "Lost Relic Carry Excavation Site: Wetlands" } },
               },
               enchants = {
                 { effect = "Agility +3", spell = "Enchant Cloak - Minor Agility", source = "Enchanting 110: Formula sold by Dalria in Ashenvale and Kulwia in Stonetalon Mountains.", formulaId = 11039 },
@@ -1106,10 +1120,11 @@ ForeverBiSData = {
             },
             { slot = "Chest",
               items = {
-                { id = 7374, name = "Dusky Leather Armor", source = { kind = "profession", text = "Leatherworking", skill = "Leatherworking" } },
-                { id = 2041, name = "Tunic of Westfall", source = { kind = "quest", text = "Quest: The Defias Brotherhood Alliance, level 22 in Classic, from level 14", faction = "Alliance", quest = "The Defias Brotherhood" } },
-                { id = 252509, name = "Trapper's Leather Tunic", source = { kind = "profession", text = "Leatherworking (110) Only its maker can wear it", skill = "Leatherworking", skillLevel = 110, bindsToMaker = true } },
+                { id = 273026, name = "Garb of Florid Feathers", source = { kind = "world", text = "Shadetooth, Excavation Site: Wetlands" } },
                 { id = 4255, name = "Green Leather Armor", source = { kind = "profession", text = "Leatherworking (130)", skill = "Leatherworking", skillLevel = 130 } },
+                { id = 7374, name = "Dusky Leather Armor", source = { kind = "profession", text = "Leatherworking", skill = "Leatherworking" } },
+                { id = 252509, name = "Trapper's Leather Tunic", source = { kind = "profession", text = "Leatherworking (110) Only its maker can wear it", skill = "Leatherworking", skillLevel = 110, bindsToMaker = true } },
+                { id = 2041, name = "Tunic of Westfall", source = { kind = "quest", text = "Quest: The Defias Brotherhood Alliance, level 22 in Classic, from level 14", faction = "Alliance", quest = "The Defias Brotherhood" } },
                 { id = 6670, name = "Panther Armor", source = { kind = "quest", text = "Quest: The Den Horde, level 29 in Classic, from level 20", faction = "Horde", quest = "The Den" } },
                 { id = 271212, name = "Bloodied Chestwraps", source = { kind = "dungeon", text = "Viktor the Vile, Ruins of Lordaeron", zone = "Ruins of Lordaeron", boss = "Viktor the Vile" } },
               },
@@ -1119,12 +1134,11 @@ ForeverBiSData = {
             },
             { slot = "Wrist",
               items = {
-                { id = 6410, name = "Insignia Bracers", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 14590, name = "Hawkeye's Bracers", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 6198, name = "Jurassic Wristguards", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 270021, name = "Staghide Armguards", source = { kind = "quest", text = "Quest: Researching the Corruption Alliance, from level 18, reported, not checked", faction = "Alliance", quest = "Researching the Corruption", reported = true } },
-                { id = 271202, name = "Witherbite Bracers", source = { kind = "dungeon", text = "Witherfang, Ruins of Lordaeron", zone = "Ruins of Lordaeron", boss = "Witherfang" } },
                 { id = 270042, name = "Technician's Bracers", source = { kind = "quest", text = "Quest: A Fine Mess from level 20, reported, not checked", quest = "A Fine Mess", reported = true } },
+                { id = 271202, name = "Witherbite Bracers", source = { kind = "dungeon", text = "Witherfang, Ruins of Lordaeron", zone = "Ruins of Lordaeron", boss = "Witherfang" } },
               },
               enchants = {
                 { effect = "Agility +3", spell = "Enchant Bracer - Minor Agility", source = "Enchanting 80: Taught by the trainer." },
@@ -1136,7 +1150,6 @@ ForeverBiSData = {
                 { id = 7358, name = "Pilferer's Gloves", source = { kind = "profession", text = "Leatherworking (115)", skill = "Leatherworking", skillLevel = 115 } },
                 { id = 6784, name = "Braced Handguards", source = { kind = "quest", text = "Quest: Centaur Bounty Horde, level 31 in Classic, from level 30", faction = "Horde", quest = "Centaur Bounty" } },
                 { id = 273824, name = "Defias Jailbreakers", source = { kind = "world", text = "Bazil Thredd, The Stockade", zone = "The Stockade", boss = "Bazil Thredd" } },
-                { id = 1978, name = "Wolfclaw Gloves", source = { kind = "world", text = "Trash mobs, Razorfen Kraul 0.05% in Classic A world drop, not bound: the auction house is quickest Reported, not checked", zone = "Razorfen Kraul", boss = "Trash mobs", dropRate = 0.05, reported = true } },
                 { id = 10413, name = "Gloves of the Fang", source = { kind = "dungeon", text = "Trash mobs, Wailing Caverns 2.36% in Classic", zone = "Wailing Caverns", boss = "Trash mobs", dropRate = 2.36 } },
                 { id = 252495, name = "Trapper's Leather Gloves", source = { kind = "profession", text = "Leatherworking (75) Only its maker can wear it", skill = "Leatherworking", skillLevel = 75, bindsToMaker = true } },
               },
@@ -1147,20 +1160,19 @@ ForeverBiSData = {
             { slot = "Waist",
               items = {
                 { id = 252521, name = "Stalker's Leather Belt", source = { kind = "profession", text = "Leatherworking (150) Only its maker can wear it", skill = "Leatherworking", skillLevel = 150, bindsToMaker = true } },
-                { id = 252520, name = "Skulker's Leather Belt", source = { kind = "profession", text = "Leatherworking (150) Only its maker can wear it", skill = "Leatherworking", skillLevel = 150, bindsToMaker = true } },
                 { id = 4257, name = "Green Leather Belt", source = { kind = "profession", text = "Leatherworking", skill = "Leatherworking" } },
                 { id = 6468, name = "Deviate Scale Belt", source = { kind = "profession", text = "Leatherworking (90)", skill = "Leatherworking", skillLevel = 90 } },
-                { id = 5355, name = "Beastmaster's Girdle", source = { kind = "quest", text = "Quest: Isha Awak Horde, level 27 in Classic, from level 10", faction = "Horde", quest = "Isha Awak" } },
                 { id = 10403, name = "Blackened Defias Belt", source = { kind = "dungeon", text = "Captain Greenskin, The Deadmines 26.64% in Classic", zone = "The Deadmines", boss = "Captain Greenskin", dropRate = 26.64 } },
+                { id = 5355, name = "Beastmaster's Girdle", source = { kind = "quest", text = "Quest: Isha Awak Horde, level 27 in Classic, from level 10", faction = "Horde", quest = "Isha Awak" } },
               },
             },
             { slot = "Legs",
               items = {
+                { id = 9624, name = "Triprunner Dungarees", source = { kind = "quest", text = "Quest: Rig Wars Horde, level 35 in Classic, from level 25 Quest: The Grand Betrayal Alliance, level 35 in Classic, from level 25 The last quest of Gnomeregan, for either faction Take a group for Mekgineer Thermaplugg (level 34)", quest = "Rig Wars" } },
                 { id = 9509, name = "Petrolspill Leggings", source = { kind = "world", text = "Trash mobs, Gnomeregan 0.04% in Classic A world drop, not bound: the auction house is quickest Reported, not checked", zone = "Gnomeregan", boss = "Trash mobs", dropRate = 0.04, reported = true } },
                 { id = 13114, name = "Troll's Bane Leggings", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
-                { id = 7373, name = "Dusky Leather Leggings", source = { kind = "profession", text = "Leatherworking (140)", skill = "Leatherworking", skillLevel = 140 } },
                 { id = 252517, name = "Trapper's Leather Legguards", source = { kind = "profession", text = "Leatherworking (125) Only its maker can wear it", skill = "Leatherworking", skillLevel = 125, bindsToMaker = true } },
-                { id = 273647, name = "Worgpelt Leggings", source = { kind = "dungeon", text = "Wolf Master Nandos, Shadowfang Keep", zone = "Shadowfang Keep", boss = "Wolf Master Nandos" } },
+                { id = 7373, name = "Dusky Leather Leggings", source = { kind = "profession", text = "Leatherworking (140)", skill = "Leatherworking", skillLevel = 140 } },
                 { id = 279868, name = "Duty Bound Leggings", source = { kind = "quest", text = "Quest: Bloodied Insignia Ruins of Lordaeron, Alliance, from level 16", faction = "Alliance", quest = "Bloodied Insignia Ruins of Lordaeron" } },
               },
               enchants = {
@@ -1169,12 +1181,12 @@ ForeverBiSData = {
             },
             { slot = "Feet",
               items = {
+                { id = 7751, name = "Vorrel's Boots", source = { kind = "quest", text = "Quest: Vorrel's Revenge Horde, level 33 in Classic, from level 25", faction = "Horde", quest = "Vorrel's Revenge" } },
                 { id = 16977, name = "Warsong Boots", source = { kind = "quest", text = "Quest: Warsong Supplies Horde, level 27 in Classic, from level 22", faction = "Horde", quest = "Warsong Supplies" } },
                 { id = 4055, name = "Insignia Boots", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 1121, name = "Feet of the Lynx", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
-                { id = 10653, name = "Trailblazer Boots", source = { kind = "quest", text = "Quest: Horde Presence Horde, level 29 in Classic, from level 15", faction = "Horde", quest = "Horde Presence" } },
-                { id = 10411, name = "Footpads of the Fang", source = { kind = "dungeon", text = "Lord Serpentis, Wailing Caverns 21.1% in Classic", zone = "Wailing Caverns", boss = "Lord Serpentis", dropRate = 21.1 } },
                 { id = 252440, name = "Trapper's Leather Boots", source = { kind = "profession", text = "Leatherworking (85) Only its maker can wear it", skill = "Leatherworking", skillLevel = 85, bindsToMaker = true } },
+                { id = 10411, name = "Footpads of the Fang", source = { kind = "dungeon", text = "Lord Serpentis, Wailing Caverns 21.1% in Classic", zone = "Wailing Caverns", boss = "Lord Serpentis", dropRate = 21.1 } },
               },
               enchants = {
                 { effect = "Agility +4", spell = "Enchant Boots - Lesser Agility", source = "Enchanting 160: Taught by the trainer." },
@@ -1183,13 +1195,11 @@ ForeverBiSData = {
             { slot = "Finger",
               items = {
                 { id = 7686, name = "Ironspine's Eye", source = { kind = "world", text = "Ironspine, Scarlet Monastery Graveyard 41.99% in Classic", zone = "Scarlet Monastery", boss = "Ironspine", dropRate = 41.99 } },
-                { id = 281634, name = "Field Researcher's Loop", source = { kind = "quest", text = "Quest: Greater Friend of the Library Twenty books, the necklace’s ten counted", quest = "Greater Friend of the Library Twenty books" } },
                 { id = 1491, name = "Ring of Precision", source = { kind = "dungeon", text = "Trash mobs, Blackfathom Deeps 0.03% in Classic A world drop, not bound: the auction house is quickest Reported, not checked", zone = "Blackfathom Deeps", boss = "Trash mobs", dropRate = 0.03, reported = true } },
+                { id = 1156, name = "Lavishly Jeweled Ring", source = { kind = "dungeon", text = "Gilnid, The Deadmines 36.85% in Classic", zone = "The Deadmines", boss = "Gilnid", dropRate = 36.85 } },
                 { id = 285330, name = "Signet of the Zhevra", source = { kind = "world", text = "Swiftmane, the rare zhevra of the Barrens Reported, not checked", reported = true } },
-                { id = 270053, name = "Ring of Ruin", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 2933, name = "Seal of Wrynn", source = { kind = "quest", text = "Quest: An Audience with the King Alliance, level 31 in Classic, from level 16", faction = "Alliance", quest = "An Audience with the King" } },
                 { id = 17694, name = "Band of the Fist", source = { kind = "quest", text = "Quest: Allegiance to the Old Gods Horde, level 26 in Classic, from level 17", faction = "Horde", quest = "Allegiance to the Old Gods" } },
-                { id = 1156, name = "Lavishly Jeweled Ring", source = { kind = "dungeon", text = "Gilnid, The Deadmines 36.85% in Classic", zone = "The Deadmines", boss = "Gilnid", dropRate = 36.85 } },
                 { id = 282283, name = "Malignant Root", source = { kind = "world", text = "Nightveiled Rotheap, a patrol of the Wetlands Alliance only, and not checked in the beta", faction = "Alliance" } },
               },
             },
@@ -1203,9 +1213,8 @@ ForeverBiSData = {
             { slot = "Two-hand weapon",
               items = {
                 { id = 6679, name = "Armor Piercer", source = { kind = "world", text = "Razorfen Spearhide, Razorfen Kraul 59.58% in Classic Trash mobs, Razorfen Kraul 60.83% in Classic", zone = "Razorfen Kraul", boss = "Razorfen Spearhide", dropRate = 59.58 } },
-                { id = 2280, name = "Kam's Walking Stick", source = { kind = "world", text = "Kam Deepfury, The Stockade 0.9% in Classic", zone = "The Stockade", boss = "Kam Deepfury", dropRate = 0.9 } },
                 { id = 5200, name = "Impaling Harpoon", source = { kind = "dungeon", text = "Captain Greenskin, The Deadmines 27.8% in Classic", zone = "The Deadmines", boss = "Captain Greenskin", dropRate = 27.8 } },
-                { id = 271203, name = "Segmented Spider Leg", source = { kind = "dungeon", text = "Witherfang, Ruins of Lordaeron", zone = "Ruins of Lordaeron", boss = "Witherfang" } },
+                { id = 2280, name = "Kam's Walking Stick", source = { kind = "world", text = "Kam Deepfury, The Stockade 0.9% in Classic", zone = "The Stockade", boss = "Kam Deepfury", dropRate = 0.9 } },
                 { id = 281296, name = "Knight's Lance", source = { kind = "quest", text = "Quest: A Friend of the Family Alliance, from level 20, reported, not checked", faction = "Alliance", quest = "A Friend of the Family", reported = true } },
               },
               enchants = {
@@ -1237,7 +1246,7 @@ ForeverBiSData = {
           slots = {
             { slot = "Head",
               items = {
-                { id = 252512, name = "Brawler's Leather Helm", source = { kind = "profession", text = "Leatherworking Only its maker can wear it Pattern: nobody has found it in the beta yet", skill = "Leatherworking", bindsToMaker = true } },
+                { id = 252512, name = "Brawler's Leather Helm", source = { kind = "profession", text = "Overlord Ramtusk, Razorfen Kraul Leatherworking Only its maker can wear it Pattern: nobody has found it in the beta yet Also drops in the Stockade, says a reader Reported, not checked", skill = "Leatherworking", bindsToMaker = true, reported = true } },
                 { id = 252504, name = "Brawler's Leather Hood", source = { kind = "profession", text = "Leatherworking (100) Only its maker can wear it", skill = "Leatherworking", skillLevel = 100, bindsToMaker = true } },
                 { id = 19972, name = "Lucky Fishing Hat", source = { kind = "quest", text = "Quest: Rare Fish - Keefer's Angelfish level 0 in Classic, from level 1 A fishing quest in Booty Bay, for a Keefer's Angelfish Fishing only, no level needed", quest = "Rare Fish - Keefer's Angelfish" } },
                 { id = 277044, name = "Cloudy Windraveled Cover", source = { kind = "profession", text = "Leatherworking (175)", skill = "Leatherworking", skillLevel = 175 } },
@@ -1321,6 +1330,7 @@ ForeverBiSData = {
             },
             { slot = "Legs",
               items = {
+                { id = 9624, name = "Triprunner Dungarees", source = { kind = "quest", text = "Quest: Rig Wars Horde, level 35 in Classic, from level 25 Quest: The Grand Betrayal Alliance, level 35 in Classic, from level 25 The last quest of Gnomeregan, for either faction Take a group for Mekgineer Thermaplugg (level 34)", quest = "Rig Wars" } },
                 { id = 9509, name = "Petrolspill Leggings", source = { kind = "world", text = "Trash mobs, Gnomeregan 0.04% in Classic A world drop, not bound: the auction house is quickest Reported, not checked", zone = "Gnomeregan", boss = "Trash mobs", dropRate = 0.04, reported = true } },
                 { id = 13114, name = "Troll's Bane Leggings", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 252517, name = "Trapper's Leather Legguards", source = { kind = "profession", text = "Leatherworking (125) Only its maker can wear it", skill = "Leatherworking", skillLevel = 125, bindsToMaker = true } },
@@ -1333,7 +1343,10 @@ ForeverBiSData = {
             },
             { slot = "Feet",
               items = {
+                { id = 6752, name = "Lancer Boots", source = { kind = "quest", text = "Quest: Mortality Wanes Alliance, level 30 in Classic, from level 25", faction = "Alliance", quest = "Mortality Wanes" } },
+                { id = 7751, name = "Vorrel's Boots", source = { kind = "quest", text = "Quest: Vorrel's Revenge Horde, level 33 in Classic, from level 25", faction = "Horde", quest = "Vorrel's Revenge" } },
                 { id = 16977, name = "Warsong Boots", source = { kind = "quest", text = "Quest: Warsong Supplies Horde, level 27 in Classic, from level 22", faction = "Horde", quest = "Warsong Supplies" } },
+                { id = 2033, name = "Ambassador's Boots", source = { kind = "quest", text = "Quest: Crime and Punishment Alliance, level 26 in Classic, from level 22", faction = "Alliance", quest = "Crime and Punishment" } },
                 { id = 4055, name = "Insignia Boots", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 10411, name = "Footpads of the Fang", source = { kind = "dungeon", text = "Lord Serpentis, Wailing Caverns 21.1% in Classic", zone = "Wailing Caverns", boss = "Lord Serpentis", dropRate = 21.1 } },
                 { id = 252440, name = "Trapper's Leather Boots", source = { kind = "profession", text = "Leatherworking (85) Only its maker can wear it", skill = "Leatherworking", skillLevel = 85, bindsToMaker = true } },
@@ -1364,11 +1377,11 @@ ForeverBiSData = {
             },
             { slot = "Two-hand weapon",
               items = {
-                { id = 2549, name = "Staff of the Shade", source = { kind = "world", text = "Trash mobs, Razorfen Kraul 0.05% in Classic A world drop, not bound: the auction house is quickest Reported, not checked", zone = "Razorfen Kraul", boss = "Trash mobs", dropRate = 0.05, reported = true } },
-                { id = 281313, name = "Trusty Sword", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
-                { id = 6679, name = "Armor Piercer", source = { kind = "world", text = "Razorfen Spearhide, Razorfen Kraul 59.58% in Classic Trash mobs, Razorfen Kraul 60.83% in Classic", zone = "Razorfen Kraul", boss = "Razorfen Spearhide", dropRate = 59.58 } },
-                { id = 281296, name = "Knight's Lance", source = { kind = "quest", text = "Quest: A Friend of the Family Alliance, from level 20, reported, not checked", faction = "Alliance", quest = "A Friend of the Family", reported = true } },
-                { id = 5200, name = "Impaling Harpoon", source = { kind = "dungeon", text = "Captain Greenskin, The Deadmines 27.8% in Classic", zone = "The Deadmines", boss = "Captain Greenskin", dropRate = 27.8 } },
+                { id = 6687, name = "Corpsemaker", source = { kind = "world", text = "Overlord Ramtusk, Razorfen Kraul 33.83% in Classic", zone = "Razorfen Kraul", boss = "Overlord Ramtusk", dropRate = 33.83 } },
+                { id = 7689, name = "Morbid Dawn", source = { kind = "world", text = "Fallen Champion, Scarlet Monastery Graveyard 17.73% in Classic", zone = "Scarlet Monastery", boss = "Fallen Champion", dropRate = 17.73 } },
+                { id = 281313, name = "Trusty Sword", source = { kind = "quest", text = "Alliance quest Stopping the Cycle, Wetlands, level 34 Elite, from level 24: take a group", faction = "Alliance" } },
+                { id = 2299, name = "Burning War Axe", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
+                { id = 2877, name = "Combatant Claymore", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
               },
               enchants = {
                 { effect = "Intellect +5", spell = "Enchant 2H Weapon - Lesser Intellect", source = "Enchanting 100: Formula sold by Tilli Thistlefuzz in Dun Morogh, Kithas in Orgrimmar and Leo Sarn in Silverpine Forest.", formulaId = 6349 },
@@ -1421,6 +1434,8 @@ ForeverBiSData = {
             },
             { slot = "Shoulder",
               items = {
+                { id = 7684, name = "Bloodmage Mantle", source = { kind = "world", text = "Bloodmage Thalnos, Scarlet Monastery Graveyard 47.84% in Classic", zone = "Scarlet Monastery", boss = "Bloodmage Thalnos", dropRate = 47.84 } },
+                { id = 4197, name = "Berylline Pads", source = { kind = "quest", text = "Quest: A Vengeful Fate Horde, level 34 in Classic, from level 29 Quest: The Crone of the Kraul Alliance, level 34 in Classic, from level 29", quest = "A Vengeful Fate" } },
                 { id = 6685, name = "Death Speaker Mantle", source = { kind = "world", text = "Death Speaker Jargba, Razorfen Kraul 43.63% in Classic", zone = "Razorfen Kraul", boss = "Death Speaker Jargba", dropRate = 43.63 } },
                 { id = 9536, name = "Fairywing Mantle", source = { kind = "quest", text = "Quest: A Fine Mess level 30 in Classic, from level 24", quest = "A Fine Mess" } },
                 { id = 12998, name = "Magician's Mantle", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
@@ -1431,7 +1446,7 @@ ForeverBiSData = {
             { slot = "Back",
               items = {
                 { id = 7053, name = "Azure Silk Cloak", source = { kind = "profession", text = "Tailoring (140)", skill = "Tailoring", skillLevel = 140 } },
-                { id = 274149, name = "Thornweaver Drape", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 274149, name = "Thornweaver Drape", source = { kind = "world", text = "Roogug, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Roogug" } },
                 { id = 15468, name = "Windsong Drape", source = { kind = "quest", text = "Quest: Free at Last Horde, level 29 in Classic, from level 25", faction = "Horde", quest = "Free at Last" } },
                 { id = 3719, name = "Hillman's Cloak", source = { kind = "profession", text = "Leatherworking", skill = "Leatherworking" } },
                 { id = 4311, name = "Heavy Woolen Cloak", source = { kind = "profession", text = "Tailoring (80)", skill = "Tailoring", skillLevel = 80 } },
@@ -1442,6 +1457,7 @@ ForeverBiSData = {
             },
             { slot = "Chest",
               items = {
+                { id = 17043, name = "Zealot's Robe", source = { kind = "quest", text = "Quest: An Unholy Alliance Horde, level 36 in Classic, from level 28 A Horde quest from Varimathras in Undercity Take a group for Ambassador Malcin (level 36 elite)", quest = "An Unholy" } },
                 { id = 253963, name = "Silky Gown", source = { kind = "profession", text = "Tailoring (110) Only its maker can wear it", skill = "Tailoring", skillLevel = 110, bindsToMaker = true } },
                 { id = 277213, name = "Dro'zem's Tunic", source = { kind = "world", text = "Dro'zem the Blasphemous, a rare elite of the Redridge Mountains Reported, not checked", reported = true } },
                 { id = 7065, name = "Green Silk Armor", source = { kind = "profession", text = "Tailoring (130)", skill = "Tailoring", skillLevel = 130 } },
@@ -1530,7 +1546,7 @@ ForeverBiSData = {
             },
             { slot = "Two-hand weapon",
               items = {
-                { id = 281312, name = "Fallen Dragon's Scepter", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 281312, name = "Fallen Dragon's Scepter", source = { kind = "quest", text = "Alliance quest Stopping the Cycle, Wetlands, level 34 Elite, from level 24: take a group", faction = "Alliance" } },
                 { id = 249392, name = "Glimmering Staff", source = { kind = "profession", text = "Enchanting (140) Only its maker can wear it", skill = "Enchanting", skillLevel = 140, bindsToMaker = true } },
                 { id = 274158, name = "Death Prophet Spine", source = { kind = "world", text = "Aggem Thorncurse, Razorfen Kraul Agathelos the Raging, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Aggem Thorncurse" } },
                 { id = 9452, name = "Hydrocane", source = { kind = "world", text = "Viscous Fallout, Gnomeregan 18.78% in Classic", zone = "Gnomeregan", boss = "Viscous Fallout", dropRate = 18.78 } },
@@ -1603,6 +1619,8 @@ ForeverBiSData = {
             },
             { slot = "Shoulder",
               items = {
+                { id = 7684, name = "Bloodmage Mantle", source = { kind = "world", text = "Bloodmage Thalnos, Scarlet Monastery Graveyard 47.84% in Classic", zone = "Scarlet Monastery", boss = "Bloodmage Thalnos", dropRate = 47.84 } },
+                { id = 4197, name = "Berylline Pads", source = { kind = "quest", text = "Quest: A Vengeful Fate Horde, level 34 in Classic, from level 29 Quest: The Crone of the Kraul Alliance, level 34 in Classic, from level 29", quest = "A Vengeful Fate" } },
                 { id = 6685, name = "Death Speaker Mantle", source = { kind = "world", text = "Death Speaker Jargba, Razorfen Kraul 43.63% in Classic", zone = "Razorfen Kraul", boss = "Death Speaker Jargba", dropRate = 43.63 } },
                 { id = 9536, name = "Fairywing Mantle", source = { kind = "quest", text = "Quest: A Fine Mess level 30 in Classic, from level 24", quest = "A Fine Mess" } },
                 { id = 12998, name = "Magician's Mantle", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
@@ -1612,7 +1630,7 @@ ForeverBiSData = {
             },
             { slot = "Back",
               items = {
-                { id = 274149, name = "Thornweaver Drape", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 274149, name = "Thornweaver Drape", source = { kind = "world", text = "Roogug, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Roogug" } },
                 { id = 15468, name = "Windsong Drape", source = { kind = "quest", text = "Quest: Free at Last Horde, level 29 in Classic, from level 25", faction = "Horde", quest = "Free at Last" } },
                 { id = 3719, name = "Hillman's Cloak", source = { kind = "profession", text = "Leatherworking", skill = "Leatherworking" } },
                 { id = 4311, name = "Heavy Woolen Cloak", source = { kind = "profession", text = "Tailoring (80)", skill = "Tailoring", skillLevel = 80 } },
@@ -1623,6 +1641,7 @@ ForeverBiSData = {
             },
             { slot = "Chest",
               items = {
+                { id = 17043, name = "Zealot's Robe", source = { kind = "quest", text = "Quest: An Unholy Alliance Horde, level 36 in Classic, from level 28 A Horde quest from Varimathras in Undercity Take a group for Ambassador Malcin (level 36 elite)", quest = "An Unholy" } },
                 { id = 253969, name = "Pearly Gown", source = { kind = "profession", text = "Tailoring (110) Only its maker can wear it", skill = "Tailoring", skillLevel = 110, bindsToMaker = true } },
                 { id = 284697, name = "Arcane Charged Robes", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 277213, name = "Dro'zem's Tunic", source = { kind = "world", text = "Dro'zem the Blasphemous, a rare elite of the Redridge Mountains Reported, not checked", reported = true } },
@@ -1648,7 +1667,7 @@ ForeverBiSData = {
             },
             { slot = "Hands",
               items = {
-                { id = 270029, name = "Town Clerk's Mittens", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 270029, name = "Town Clerk's Mittens", source = { kind = "quest", text = "Quest: Crime and Punishment Alliance, from level 22, reported, not checked", faction = "Alliance", quest = "Crime and Punishment", reported = true } },
                 { id = 253921, name = "Pearly Gloves", source = { kind = "profession", text = "Tailoring (75) Only its maker can wear it", skill = "Tailoring", skillLevel = 75, bindsToMaker = true } },
                 { id = 10654, name = "Jutebraid Gloves", source = { kind = "quest", text = "Quest: Horde Presence Horde, level 29 in Classic, from level 15", faction = "Horde", quest = "Horde Presence" } },
                 { id = 9609, name = "Shilly Mitts", source = { kind = "quest", text = "Quest: Gyrodrillmatic Excavationators Alliance, level 30 in Classic, from level 20", faction = "Alliance", quest = "Gyrodrillmatic Excavationators" } },
@@ -1712,7 +1731,7 @@ ForeverBiSData = {
             },
             { slot = "Two-hand weapon",
               items = {
-                { id = 281312, name = "Fallen Dragon's Scepter", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 281312, name = "Fallen Dragon's Scepter", source = { kind = "quest", text = "Alliance quest Stopping the Cycle, Wetlands, level 34 Elite, from level 24: take a group", faction = "Alliance" } },
                 { id = 249392, name = "Glimmering Staff", source = { kind = "profession", text = "Enchanting (140) Only its maker can wear it", skill = "Enchanting", skillLevel = 140, bindsToMaker = true } },
                 { id = 274158, name = "Death Prophet Spine", source = { kind = "world", text = "Aggem Thorncurse, Razorfen Kraul Agathelos the Raging, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Aggem Thorncurse" } },
                 { id = 9452, name = "Hydrocane", source = { kind = "world", text = "Viscous Fallout, Gnomeregan 18.78% in Classic", zone = "Gnomeregan", boss = "Viscous Fallout", dropRate = 18.78 } },
@@ -1786,6 +1805,8 @@ ForeverBiSData = {
             },
             { slot = "Shoulder",
               items = {
+                { id = 7684, name = "Bloodmage Mantle", source = { kind = "world", text = "Bloodmage Thalnos, Scarlet Monastery Graveyard 47.84% in Classic", zone = "Scarlet Monastery", boss = "Bloodmage Thalnos", dropRate = 47.84 } },
+                { id = 4197, name = "Berylline Pads", source = { kind = "quest", text = "Quest: A Vengeful Fate Horde, level 34 in Classic, from level 29 Quest: The Crone of the Kraul Alliance, level 34 in Classic, from level 29", quest = "A Vengeful Fate" } },
                 { id = 6685, name = "Death Speaker Mantle", source = { kind = "world", text = "Death Speaker Jargba, Razorfen Kraul 43.63% in Classic", zone = "Razorfen Kraul", boss = "Death Speaker Jargba", dropRate = 43.63 } },
                 { id = 9536, name = "Fairywing Mantle", source = { kind = "quest", text = "Quest: A Fine Mess level 30 in Classic, from level 24", quest = "A Fine Mess" } },
                 { id = 12998, name = "Magician's Mantle", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
@@ -1795,7 +1816,7 @@ ForeverBiSData = {
             },
             { slot = "Back",
               items = {
-                { id = 274149, name = "Thornweaver Drape", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 274149, name = "Thornweaver Drape", source = { kind = "world", text = "Roogug, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Roogug" } },
                 { id = 15468, name = "Windsong Drape", source = { kind = "quest", text = "Quest: Free at Last Horde, level 29 in Classic, from level 25", faction = "Horde", quest = "Free at Last" } },
                 { id = 3719, name = "Hillman's Cloak", source = { kind = "profession", text = "Leatherworking", skill = "Leatherworking" } },
                 { id = 284187, name = "Crazed Firecaller's Cloak", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
@@ -1807,6 +1828,7 @@ ForeverBiSData = {
             },
             { slot = "Chest",
               items = {
+                { id = 17043, name = "Zealot's Robe", source = { kind = "quest", text = "Quest: An Unholy Alliance Horde, level 36 in Classic, from level 28 A Horde quest from Varimathras in Undercity Take a group for Ambassador Malcin (level 36 elite)", quest = "An Unholy" } },
                 { id = 253965, name = "Flame Gown", source = { kind = "profession", text = "Tailoring (110) Only its maker can wear it", skill = "Tailoring", skillLevel = 110, bindsToMaker = true } },
                 { id = 277213, name = "Dro'zem's Tunic", source = { kind = "world", text = "Dro'zem the Blasphemous, a rare elite of the Redridge Mountains Reported, not checked", reported = true } },
                 { id = 7065, name = "Green Silk Armor", source = { kind = "profession", text = "Tailoring (130)", skill = "Tailoring", skillLevel = 130 } },
@@ -1833,7 +1855,7 @@ ForeverBiSData = {
               items = {
                 { id = 4331, name = "Phoenix Gloves", source = { kind = "profession", text = "Tailoring (100)", skill = "Tailoring", skillLevel = 100 } },
                 { id = 253917, name = "Flame Gloves", source = { kind = "profession", text = "Tailoring (75) Only its maker can wear it", skill = "Tailoring", skillLevel = 75, bindsToMaker = true } },
-                { id = 270029, name = "Town Clerk's Mittens", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 270029, name = "Town Clerk's Mittens", source = { kind = "quest", text = "Quest: Crime and Punishment Alliance, from level 22, reported, not checked", faction = "Alliance", quest = "Crime and Punishment", reported = true } },
                 { id = 10654, name = "Jutebraid Gloves", source = { kind = "quest", text = "Quest: Horde Presence Horde, level 29 in Classic, from level 15", faction = "Horde", quest = "Horde Presence" } },
                 { id = 9609, name = "Shilly Mitts", source = { kind = "quest", text = "Quest: Gyrodrillmatic Excavationators Alliance, level 30 in Classic, from level 20", faction = "Alliance", quest = "Gyrodrillmatic Excavationators" } },
                 { id = 5970, name = "Serpent Gloves", source = { kind = "dungeon", text = "Lord Serpentis, Wailing Caverns 19.38% in Classic", zone = "Wailing Caverns", boss = "Lord Serpentis", dropRate = 19.38 } },
@@ -1896,7 +1918,7 @@ ForeverBiSData = {
             },
             { slot = "Two-hand weapon",
               items = {
-                { id = 281312, name = "Fallen Dragon's Scepter", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 281312, name = "Fallen Dragon's Scepter", source = { kind = "quest", text = "Alliance quest Stopping the Cycle, Wetlands, level 34 Elite, from level 24: take a group", faction = "Alliance" } },
                 { id = 249392, name = "Glimmering Staff", source = { kind = "profession", text = "Enchanting (140) Only its maker can wear it", skill = "Enchanting", skillLevel = 140, bindsToMaker = true } },
                 { id = 274158, name = "Death Prophet Spine", source = { kind = "world", text = "Aggem Thorncurse, Razorfen Kraul Agathelos the Raging, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Aggem Thorncurse" } },
                 { id = 9452, name = "Hydrocane", source = { kind = "world", text = "Viscous Fallout, Gnomeregan 18.78% in Classic", zone = "Gnomeregan", boss = "Viscous Fallout", dropRate = 18.78 } },
@@ -1969,7 +1991,9 @@ ForeverBiSData = {
             },
             { slot = "Shoulder",
               items = {
+                { id = 4197, name = "Berylline Pads", source = { kind = "quest", text = "Quest: A Vengeful Fate Horde, level 34 in Classic, from level 29 Quest: The Crone of the Kraul Alliance, level 34 in Classic, from level 29", quest = "A Vengeful Fate" } },
                 { id = 11884, name = "Moonlit Amice", source = { kind = "quest", text = "Quest: Return to Vahlarriel Alliance, level 33 in Classic, from level 30", faction = "Alliance", quest = "Return to Vahlarriel" } },
+                { id = 7684, name = "Bloodmage Mantle", source = { kind = "world", text = "Bloodmage Thalnos, Scarlet Monastery Graveyard 47.84% in Classic", zone = "Scarlet Monastery", boss = "Bloodmage Thalnos", dropRate = 47.84 } },
                 { id = 9536, name = "Fairywing Mantle", source = { kind = "quest", text = "Quest: A Fine Mess level 30 in Classic, from level 24", quest = "A Fine Mess" } },
                 { id = 284399, name = "Seared Grove Shoulderpads", source = { kind = "world", text = "Sister Riven, the rare harpy of the Charred Vale Reported, not checked", reported = true } },
                 { id = 17695, name = "Chestnut Mantle", source = { kind = "quest", text = "Quest: Allegiance to the Old Gods Horde, level 26 in Classic, from level 17", faction = "Horde", quest = "Allegiance to the Old Gods" } },
@@ -1981,7 +2005,7 @@ ForeverBiSData = {
                 { id = 3719, name = "Hillman's Cloak", source = { kind = "profession", text = "Leatherworking", skill = "Leatherworking" } },
                 { id = 6632, name = "Feyscale Cloak", source = { kind = "dungeon", text = "Deviate Faerie Dragon, Wailing Caverns 44.63% in Classic", zone = "Wailing Caverns", boss = "Deviate Faerie Dragon", dropRate = 44.63 } },
                 { id = 2953, name = "Watch Master's Cloak", source = { kind = "quest", text = "Quest: Morbent Fel Alliance, level 32 in Classic, from level 20", faction = "Alliance", quest = "Morbent Fel" } },
-                { id = 274149, name = "Thornweaver Drape", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 274149, name = "Thornweaver Drape", source = { kind = "world", text = "Roogug, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Roogug" } },
                 { id = 284187, name = "Crazed Firecaller's Cloak", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
               },
               enchants = {
@@ -1991,6 +2015,7 @@ ForeverBiSData = {
             { slot = "Chest",
               items = {
                 { id = 253965, name = "Flame Gown", source = { kind = "profession", text = "Tailoring (110) Only its maker can wear it", skill = "Tailoring", skillLevel = 110, bindsToMaker = true } },
+                { id = 17043, name = "Zealot's Robe", source = { kind = "quest", text = "Quest: An Unholy Alliance Horde, level 36 in Classic, from level 28 A Horde quest from Varimathras in Undercity Take a group for Ambassador Malcin (level 36 elite)", quest = "An Unholy" } },
                 { id = 6682, name = "Death Speaker Robes", source = { kind = "world", text = "Death Speaker Jargba, Razorfen Kraul 42.77% in Classic", zone = "Razorfen Kraul", boss = "Death Speaker Jargba", dropRate = 42.77 } },
                 { id = 7065, name = "Green Silk Armor", source = { kind = "profession", text = "Tailoring (130)", skill = "Tailoring", skillLevel = 130 } },
                 { id = 6226, name = "Bloody Apron", source = { kind = "dungeon", text = "Razorclaw the Butcher, Shadowfang Keep 43.55% in Classic", zone = "Shadowfang Keep", boss = "Razorclaw the Butcher", dropRate = 43.55 } },
@@ -2080,7 +2105,7 @@ ForeverBiSData = {
                 { id = 249392, name = "Glimmering Staff", source = { kind = "profession", text = "Enchanting (140) Only its maker can wear it", skill = "Enchanting", skillLevel = 140, bindsToMaker = true } },
                 { id = 274158, name = "Death Prophet Spine", source = { kind = "world", text = "Aggem Thorncurse, Razorfen Kraul Agathelos the Raging, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Aggem Thorncurse" } },
                 { id = 249393, name = "Soulstaff", source = { kind = "profession", text = "Enchanting (140) Only its maker can wear it", skill = "Enchanting", skillLevel = 140, bindsToMaker = true } },
-                { id = 281312, name = "Fallen Dragon's Scepter", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 281312, name = "Fallen Dragon's Scepter", source = { kind = "quest", text = "Alliance quest Stopping the Cycle, Wetlands, level 34 Elite, from level 24: take a group", faction = "Alliance" } },
                 { id = 9452, name = "Hydrocane", source = { kind = "world", text = "Viscous Fallout, Gnomeregan 18.78% in Classic", zone = "Gnomeregan", boss = "Viscous Fallout", dropRate = 18.78 } },
               },
               enchants = {
@@ -2149,7 +2174,9 @@ ForeverBiSData = {
             },
             { slot = "Shoulder",
               items = {
+                { id = 4197, name = "Berylline Pads", source = { kind = "quest", text = "Quest: A Vengeful Fate Horde, level 34 in Classic, from level 29 Quest: The Crone of the Kraul Alliance, level 34 in Classic, from level 29", quest = "A Vengeful Fate" } },
                 { id = 11884, name = "Moonlit Amice", source = { kind = "quest", text = "Quest: Return to Vahlarriel Alliance, level 33 in Classic, from level 30", faction = "Alliance", quest = "Return to Vahlarriel" } },
+                { id = 7684, name = "Bloodmage Mantle", source = { kind = "world", text = "Bloodmage Thalnos, Scarlet Monastery Graveyard 47.84% in Classic", zone = "Scarlet Monastery", boss = "Bloodmage Thalnos", dropRate = 47.84 } },
                 { id = 9536, name = "Fairywing Mantle", source = { kind = "quest", text = "Quest: A Fine Mess level 30 in Classic, from level 24", quest = "A Fine Mess" } },
                 { id = 284399, name = "Seared Grove Shoulderpads", source = { kind = "world", text = "Sister Riven, the rare harpy of the Charred Vale Reported, not checked", reported = true } },
                 { id = 17695, name = "Chestnut Mantle", source = { kind = "quest", text = "Quest: Allegiance to the Old Gods Horde, level 26 in Classic, from level 17", faction = "Horde", quest = "Allegiance to the Old Gods" } },
@@ -2162,7 +2189,7 @@ ForeverBiSData = {
                 { id = 3719, name = "Hillman's Cloak", source = { kind = "profession", text = "Leatherworking", skill = "Leatherworking" } },
                 { id = 6632, name = "Feyscale Cloak", source = { kind = "dungeon", text = "Deviate Faerie Dragon, Wailing Caverns 44.63% in Classic", zone = "Wailing Caverns", boss = "Deviate Faerie Dragon", dropRate = 44.63 } },
                 { id = 2953, name = "Watch Master's Cloak", source = { kind = "quest", text = "Quest: Morbent Fel Alliance, level 32 in Classic, from level 20", faction = "Alliance", quest = "Morbent Fel" } },
-                { id = 274149, name = "Thornweaver Drape", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 274149, name = "Thornweaver Drape", source = { kind = "world", text = "Roogug, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Roogug" } },
               },
               enchants = {
                 { effect = "Armor +60", spell = "Enchant Cloak - Greater Defense", source = "Enchanting 205: Taught by the trainer." },
@@ -2171,6 +2198,7 @@ ForeverBiSData = {
             { slot = "Chest",
               items = {
                 { id = 253963, name = "Silky Gown", source = { kind = "profession", text = "Tailoring (110) Only its maker can wear it", skill = "Tailoring", skillLevel = 110, bindsToMaker = true } },
+                { id = 17043, name = "Zealot's Robe", source = { kind = "quest", text = "Quest: An Unholy Alliance Horde, level 36 in Classic, from level 28 A Horde quest from Varimathras in Undercity Take a group for Ambassador Malcin (level 36 elite)", quest = "An Unholy" } },
                 { id = 6682, name = "Death Speaker Robes", source = { kind = "world", text = "Death Speaker Jargba, Razorfen Kraul 42.77% in Classic", zone = "Razorfen Kraul", boss = "Death Speaker Jargba", dropRate = 42.77 } },
                 { id = 7065, name = "Green Silk Armor", source = { kind = "profession", text = "Tailoring (130)", skill = "Tailoring", skillLevel = 130 } },
                 { id = 6226, name = "Bloody Apron", source = { kind = "dungeon", text = "Razorclaw the Butcher, Shadowfang Keep 43.55% in Classic", zone = "Shadowfang Keep", boss = "Razorclaw the Butcher", dropRate = 43.55 } },
@@ -2260,7 +2288,7 @@ ForeverBiSData = {
                 { id = 249392, name = "Glimmering Staff", source = { kind = "profession", text = "Enchanting (140) Only its maker can wear it", skill = "Enchanting", skillLevel = 140, bindsToMaker = true } },
                 { id = 274158, name = "Death Prophet Spine", source = { kind = "world", text = "Aggem Thorncurse, Razorfen Kraul Agathelos the Raging, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Aggem Thorncurse" } },
                 { id = 249393, name = "Soulstaff", source = { kind = "profession", text = "Enchanting (140) Only its maker can wear it", skill = "Enchanting", skillLevel = 140, bindsToMaker = true } },
-                { id = 281312, name = "Fallen Dragon's Scepter", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 281312, name = "Fallen Dragon's Scepter", source = { kind = "quest", text = "Alliance quest Stopping the Cycle, Wetlands, level 34 Elite, from level 24: take a group", faction = "Alliance" } },
                 { id = 9452, name = "Hydrocane", source = { kind = "world", text = "Viscous Fallout, Gnomeregan 18.78% in Classic", zone = "Gnomeregan", boss = "Viscous Fallout", dropRate = 18.78 } },
               },
               enchants = {
@@ -2308,7 +2336,7 @@ ForeverBiSData = {
           slots = {
             { slot = "Head",
               items = {
-                { id = 252455, name = "Defender's Leather Helm", source = { kind = "profession", text = "Leatherworking Only its maker can wear it Pattern: nobody has found it in the beta yet", skill = "Leatherworking", bindsToMaker = true } },
+                { id = 252455, name = "Defender's Leather Helm", source = { kind = "profession", text = "Old Serra'kis, Blackfathom Deeps Aku'mai, Blackfathom Deeps Agathelos the Raging, Razorfen Kraul Leatherworking Only its maker can wear it Pattern: nobody has found it in the beta yet", skill = "Leatherworking", bindsToMaker = true } },
                 { id = 250528, name = "Veteran's Silvered Chain Helm", source = { kind = "profession", text = "Blacksmithing (95) Only its maker can wear it", skill = "Blacksmithing", skillLevel = 95, bindsToMaker = true } },
                 { id = 6686, name = "Tusken Helm", source = { kind = "world", text = "Overlord Ramtusk, Razorfen Kraul 62.39% in Classic", zone = "Razorfen Kraul", boss = "Overlord Ramtusk", dropRate = 62.39 } },
                 { id = 7915, name = "Barbaric Iron Helm", source = { kind = "profession", text = "Blacksmithing (150)", skill = "Blacksmithing", skillLevel = 150 } },
@@ -2339,7 +2367,7 @@ ForeverBiSData = {
             },
             { slot = "Back",
               items = {
-                { id = 271720, name = "Crocolisk Skin Gaiter", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 271720, name = "Crocolisk Skin Gaiter", source = { kind = "quest", text = "A Titan Relic quest of the Excavation Site, says a reader Reported, not checked", reported = true } },
                 { id = 277205, name = "Cloak of the Divine Storm", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 282658, name = "Dragonmaw Battle Shroud", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 13108, name = "Tigerstrike Mantle", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
@@ -2398,6 +2426,7 @@ ForeverBiSData = {
               items = {
                 { id = 250523, name = "Veteran's Silvered Chain Leggings", source = { kind = "profession", text = "Blacksmithing (125) Only its maker can wear it", skill = "Blacksmithing", skillLevel = 125, bindsToMaker = true } },
                 { id = 250493, name = "Veteran's Chain Leggings", source = { kind = "profession", text = "Blacksmithing Only its maker can wear it Plans: nobody has found it in the beta yet", skill = "Blacksmithing", bindsToMaker = true } },
+                { id = 9624, name = "Triprunner Dungarees", source = { kind = "quest", text = "Quest: Rig Wars Horde, level 35 in Classic, from level 25 Quest: The Grand Betrayal Alliance, level 35 in Classic, from level 25 The last quest of Gnomeregan, for either faction Take a group for Mekgineer Thermaplugg (level 34)", quest = "Rig Wars" } },
                 { id = 252457, name = "Defender's Leather Kilt", source = { kind = "profession", text = "Leatherworking (125) Only its maker can wear it", skill = "Leatherworking", skillLevel = 125, bindsToMaker = true } },
                 { id = 252516, name = "Brawler's Leather Legguards", source = { kind = "profession", text = "Leatherworking (125) Only its maker can wear it", skill = "Leatherworking", skillLevel = 125, bindsToMaker = true } },
                 { id = 252458, name = "Totemic Leather Leggings", source = { kind = "profession", text = "Leatherworking (125) Only its maker can wear it", skill = "Leatherworking", skillLevel = 125, bindsToMaker = true } },
@@ -2409,14 +2438,14 @@ ForeverBiSData = {
             },
             { slot = "Feet",
               items = {
-                { id = 284403, name = "Shapeshifting Sentinel's Strides", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 284403, name = "Shapeshifting Sentinel's Strides", source = { kind = "world", text = "A rare of northern Stonetalon Mountains, near the night elves Reported, not checked", reported = true } },
                 { id = 4464, name = "Trouncing Boots", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 250503, name = "Veteran's Boots", source = { kind = "profession", text = "Blacksmithing (85) Only its maker can wear it", skill = "Blacksmithing", skillLevel = 85, bindsToMaker = true } },
                 { id = 271211, name = "Vilewalkers", source = { kind = "dungeon", text = "Viktor the Vile, Ruins of Lordaeron", zone = "Ruins of Lordaeron", boss = "Viktor the Vile" } },
                 { id = 252439, name = "Brawler's Leather Boots", source = { kind = "profession", text = "Leatherworking (85) Only its maker can wear it", skill = "Leatherworking", skillLevel = 85, bindsToMaker = true } },
               },
               enchants = {
-                { effect = "Minor Speed Increase", spell = "Enchant Boots - Minor Speed", source = "Enchanting 225: Taught by the trainer." },
+                { effect = "Agility +4", spell = "Enchant Boots - Lesser Agility", source = "Enchanting 160: Taught by the trainer." },
               },
             },
             { slot = "Finger",
@@ -2425,7 +2454,7 @@ ForeverBiSData = {
                 { id = 13097, name = "Thunderbrow Ring", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 270052, name = "Swamp Ring", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 282283, name = "Malignant Root", source = { kind = "world", text = "Nightveiled Rotheap, a patrol of the Wetlands Alliance only, and not checked in the beta", faction = "Alliance" } },
-                { id = 270053, name = "Ring of Ruin", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 270053, name = "Ring of Ruin", source = { kind = "quest", text = "Quest: The Legend of Stalvan Alliance, from level 22, reported, not checked", faction = "Alliance", quest = "The Legend of Stalvan", reported = true } },
               },
             },
             { slot = "Trinket",
@@ -2487,6 +2516,8 @@ ForeverBiSData = {
             },
             { slot = "Shoulder",
               items = {
+                { id = 4197, name = "Berylline Pads", source = { kind = "quest", text = "Quest: A Vengeful Fate Horde, level 34 in Classic, from level 29 Quest: The Crone of the Kraul Alliance, level 34 in Classic, from level 29", quest = "A Vengeful Fate" } },
+                { id = 7684, name = "Bloodmage Mantle", source = { kind = "world", text = "Bloodmage Thalnos, Scarlet Monastery Graveyard 47.84% in Classic", zone = "Scarlet Monastery", boss = "Bloodmage Thalnos", dropRate = 47.84 } },
                 { id = 6685, name = "Death Speaker Mantle", source = { kind = "world", text = "Death Speaker Jargba, Razorfen Kraul 43.63% in Classic", zone = "Razorfen Kraul", boss = "Death Speaker Jargba", dropRate = 43.63 } },
                 { id = 270023, name = "Tanned Shoulderpads", source = { kind = "quest", text = "Quest: Deathstalkers in Shadowfang Horde, from level 18, reported, not checked", faction = "Horde", quest = "Deathstalkers in Shadowfang", reported = true } },
                 { id = 9536, name = "Fairywing Mantle", source = { kind = "quest", text = "Quest: A Fine Mess level 30 in Classic, from level 24", quest = "A Fine Mess" } },
@@ -2499,7 +2530,7 @@ ForeverBiSData = {
                 { id = 7004, name = "Prelacy Cape", source = { kind = "quest", text = "Quest: Researching the Corruption Alliance, level 24 in Classic, from level 18", faction = "Alliance", quest = "Researching the Corruption" } },
                 { id = 273825, name = "Red Wool Cloak", source = { kind = "world", text = "Bazil Thredd, The Stockade", zone = "The Stockade", boss = "Bazil Thredd" } },
                 { id = 6901, name = "Glowing Thresher Cape", source = { kind = "dungeon", text = "Old Serra'kis, Blackfathom Deeps 39.27% in Classic", zone = "Blackfathom Deeps", boss = "Old Serra'kis", dropRate = 39.27 } },
-                { id = 274149, name = "Thornweaver Drape", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 274149, name = "Thornweaver Drape", source = { kind = "world", text = "Roogug, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Roogug" } },
                 { id = 3719, name = "Hillman's Cloak", source = { kind = "profession", text = "Leatherworking", skill = "Leatherworking" } },
               },
               enchants = {
@@ -2557,7 +2588,7 @@ ForeverBiSData = {
                 { id = 250526, name = "Acolyte's Silvered Chain Leggings", source = { kind = "profession", text = "Blacksmithing (125) Only its maker can wear it", skill = "Blacksmithing", skillLevel = 125, bindsToMaker = true } },
                 { id = 253987, name = "Pristine Leggings", source = { kind = "profession", text = "Tailoring (125) Only its maker can wear it", skill = "Tailoring", skillLevel = 125, bindsToMaker = true } },
                 { id = 252519, name = "Wisdom's Leather Leggings", source = { kind = "profession", text = "Leatherworking (125) Only its maker can wear it", skill = "Leatherworking", skillLevel = 125, bindsToMaker = true } },
-                { id = 253937, name = "Filigreed Pristine Leggings", source = { kind = "profession", text = "Tailoring (100) Only its maker can wear it Pattern drops from Verdan the Everliving, Wailing Caverns", skill = "Tailoring", skillLevel = 100, bindsToMaker = true } },
+                { id = 253937, name = "Filigreed Pristine Leggings", source = { kind = "profession", text = "Tailoring (100) Only its maker can wear it Pattern drops from Verdan the Everliving, Wailing Caverns; Lord Pythas, Wailing Caverns", skill = "Tailoring", skillLevel = 100, bindsToMaker = true } },
                 { id = 273289, name = "Ogre Loincloth", source = { kind = "dungeon", text = "Rhahk'Zor, The Deadmines", zone = "The Deadmines", boss = "Rhahk'Zor" } },
               },
               enchants = {
@@ -2607,6 +2638,7 @@ ForeverBiSData = {
             { slot = "Main hand",
               items = {
                 { id = 2816, name = "Death Speaker Scepter", source = { kind = "world", text = "Death Speaker Jargba, Razorfen Kraul 10.02% in Classic", zone = "Razorfen Kraul", boss = "Death Speaker Jargba", dropRate = 10.02 } },
+                { id = 17039, name = "Skullbreaker", source = { kind = "quest", text = "Quest: An Unholy Alliance Horde, level 36 in Classic, from level 28 A Horde quest from Varimathras in Undercity Take a group for Ambassador Malcin (level 36 elite)", quest = "An Unholy" } },
                 { id = 272996, name = "Trogg Scepter", source = { kind = "dungeon", text = "Oggleflint, Ragefire Chasm", zone = "Ragefire Chasm", boss = "Oggleflint" } },
                 { id = 3414, name = "Crested Scepter", source = { kind = "dungeon", text = "Trash mobs, Blackfathom Deeps 0.03% in Classic", zone = "Blackfathom Deeps", boss = "Trash mobs", dropRate = 0.03 } },
                 { id = 273827, name = "Debt Collector", source = { kind = "world", text = "Bazil Thredd, The Stockade", zone = "The Stockade", boss = "Bazil Thredd" } },
@@ -2669,6 +2701,7 @@ ForeverBiSData = {
             { slot = "Shoulder",
               items = {
                 { id = 270023, name = "Tanned Shoulderpads", source = { kind = "quest", text = "Quest: Deathstalkers in Shadowfang Horde, from level 18, reported, not checked", faction = "Horde", quest = "Deathstalkers in Shadowfang", reported = true } },
+                { id = 4197, name = "Berylline Pads", source = { kind = "quest", text = "Quest: A Vengeful Fate Horde, level 34 in Classic, from level 29 Quest: The Crone of the Kraul Alliance, level 34 in Classic, from level 29", quest = "A Vengeful Fate" } },
                 { id = 11884, name = "Moonlit Amice", source = { kind = "quest", text = "Quest: Return to Vahlarriel Alliance, level 33 in Classic, from level 30", faction = "Alliance", quest = "Return to Vahlarriel" } },
                 { id = 9536, name = "Fairywing Mantle", source = { kind = "quest", text = "Quest: A Fine Mess level 30 in Classic, from level 24", quest = "A Fine Mess" } },
                 { id = 17695, name = "Chestnut Mantle", source = { kind = "quest", text = "Quest: Allegiance to the Old Gods Horde, level 26 in Classic, from level 17", faction = "Horde", quest = "Allegiance to the Old Gods" } },
@@ -2738,7 +2771,7 @@ ForeverBiSData = {
                 { id = 250526, name = "Acolyte's Silvered Chain Leggings", source = { kind = "profession", text = "Blacksmithing (125) Only its maker can wear it", skill = "Blacksmithing", skillLevel = 125, bindsToMaker = true } },
                 { id = 253987, name = "Pristine Leggings", source = { kind = "profession", text = "Tailoring (125) Only its maker can wear it", skill = "Tailoring", skillLevel = 125, bindsToMaker = true } },
                 { id = 252519, name = "Wisdom's Leather Leggings", source = { kind = "profession", text = "Leatherworking (125) Only its maker can wear it", skill = "Leatherworking", skillLevel = 125, bindsToMaker = true } },
-                { id = 253937, name = "Filigreed Pristine Leggings", source = { kind = "profession", text = "Tailoring (100) Only its maker can wear it Pattern drops from Verdan the Everliving, Wailing Caverns", skill = "Tailoring", skillLevel = 100, bindsToMaker = true } },
+                { id = 253937, name = "Filigreed Pristine Leggings", source = { kind = "profession", text = "Tailoring (100) Only its maker can wear it Pattern drops from Verdan the Everliving, Wailing Caverns; Lord Pythas, Wailing Caverns", skill = "Tailoring", skillLevel = 100, bindsToMaker = true } },
                 { id = 273289, name = "Ogre Loincloth", source = { kind = "dungeon", text = "Rhahk'Zor, The Deadmines", zone = "The Deadmines", boss = "Rhahk'Zor" } },
               },
               enchants = {
@@ -2789,6 +2822,7 @@ ForeverBiSData = {
             { slot = "Main hand",
               items = {
                 { id = 2816, name = "Death Speaker Scepter", source = { kind = "world", text = "Death Speaker Jargba, Razorfen Kraul 10.02% in Classic", zone = "Razorfen Kraul", boss = "Death Speaker Jargba", dropRate = 10.02 } },
+                { id = 17039, name = "Skullbreaker", source = { kind = "quest", text = "Quest: An Unholy Alliance Horde, level 36 in Classic, from level 28 A Horde quest from Varimathras in Undercity Take a group for Ambassador Malcin (level 36 elite)", quest = "An Unholy" } },
                 { id = 3414, name = "Crested Scepter", source = { kind = "dungeon", text = "Trash mobs, Blackfathom Deeps 0.03% in Classic", zone = "Blackfathom Deeps", boss = "Trash mobs", dropRate = 0.03 } },
                 { id = 273827, name = "Debt Collector", source = { kind = "world", text = "Bazil Thredd, The Stockade", zone = "The Stockade", boss = "Bazil Thredd" } },
                 { id = 272996, name = "Trogg Scepter", source = { kind = "dungeon", text = "Oggleflint, Ragefire Chasm", zone = "Ragefire Chasm", boss = "Oggleflint" } },
@@ -2827,7 +2861,7 @@ ForeverBiSData = {
           slots = {
             { slot = "Head",
               items = {
-                { id = 252455, name = "Defender's Leather Helm", source = { kind = "profession", text = "Leatherworking Only its maker can wear it Pattern: nobody has found it in the beta yet", skill = "Leatherworking", bindsToMaker = true } },
+                { id = 252455, name = "Defender's Leather Helm", source = { kind = "profession", text = "Old Serra'kis, Blackfathom Deeps Aku'mai, Blackfathom Deeps Agathelos the Raging, Razorfen Kraul Leatherworking Only its maker can wear it Pattern: nobody has found it in the beta yet", skill = "Leatherworking", bindsToMaker = true } },
                 { id = 13127, name = "Frostreaver Crown", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 250528, name = "Veteran's Silvered Chain Helm", source = { kind = "profession", text = "Blacksmithing (95) Only its maker can wear it", skill = "Blacksmithing", skillLevel = 95, bindsToMaker = true } },
                 { id = 277040, name = "Cloudy Skyforged Helm", source = { kind = "profession", text = "Blacksmithing (175)", skill = "Blacksmithing", skillLevel = 175 } },
@@ -2858,7 +2892,7 @@ ForeverBiSData = {
             },
             { slot = "Back",
               items = {
-                { id = 271720, name = "Crocolisk Skin Gaiter", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 271720, name = "Crocolisk Skin Gaiter", source = { kind = "quest", text = "A Titan Relic quest of the Excavation Site, says a reader Reported, not checked", reported = true } },
                 { id = 277205, name = "Cloak of the Divine Storm", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 13108, name = "Tigerstrike Mantle", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 14763, name = "Enduring Cape", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
@@ -2937,7 +2971,7 @@ ForeverBiSData = {
                 { id = 250503, name = "Veteran's Boots", source = { kind = "profession", text = "Blacksmithing (85) Only its maker can wear it", skill = "Blacksmithing", skillLevel = 85, bindsToMaker = true } },
               },
               enchants = {
-                { effect = "Minor Speed Increase", spell = "Enchant Boots - Minor Speed", source = "Enchanting 225: Taught by the trainer." },
+                { effect = "Stamina +5", spell = "Enchant Boots - Stamina", source = "Enchanting 215: Taught by the trainer." },
               },
             },
             { slot = "Finger",
@@ -3009,6 +3043,8 @@ ForeverBiSData = {
             },
             { slot = "Shoulder",
               items = {
+                { id = 4197, name = "Berylline Pads", source = { kind = "quest", text = "Quest: A Vengeful Fate Horde, level 34 in Classic, from level 29 Quest: The Crone of the Kraul Alliance, level 34 in Classic, from level 29", quest = "A Vengeful Fate" } },
+                { id = 7684, name = "Bloodmage Mantle", source = { kind = "world", text = "Bloodmage Thalnos, Scarlet Monastery Graveyard 47.84% in Classic", zone = "Scarlet Monastery", boss = "Bloodmage Thalnos", dropRate = 47.84 } },
                 { id = 11884, name = "Moonlit Amice", source = { kind = "quest", text = "Quest: Return to Vahlarriel Alliance, level 33 in Classic, from level 30", faction = "Alliance", quest = "Return to Vahlarriel" } },
                 { id = 9536, name = "Fairywing Mantle", source = { kind = "quest", text = "Quest: A Fine Mess level 30 in Classic, from level 24", quest = "A Fine Mess" } },
                 { id = 6685, name = "Death Speaker Mantle", source = { kind = "world", text = "Death Speaker Jargba, Razorfen Kraul 43.63% in Classic", zone = "Razorfen Kraul", boss = "Death Speaker Jargba", dropRate = 43.63 } },
@@ -3020,7 +3056,7 @@ ForeverBiSData = {
               items = {
                 { id = 277205, name = "Cloak of the Divine Storm", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 3719, name = "Hillman's Cloak", source = { kind = "profession", text = "Leatherworking", skill = "Leatherworking" } },
-                { id = 274149, name = "Thornweaver Drape", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 274149, name = "Thornweaver Drape", source = { kind = "world", text = "Roogug, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Roogug" } },
                 { id = 6632, name = "Feyscale Cloak", source = { kind = "dungeon", text = "Deviate Faerie Dragon, Wailing Caverns 44.63% in Classic", zone = "Wailing Caverns", boss = "Deviate Faerie Dragon", dropRate = 44.63 } },
                 { id = 13108, name = "Tigerstrike Mantle", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
               },
@@ -3031,6 +3067,7 @@ ForeverBiSData = {
             { slot = "Chest",
               items = {
                 { id = 253971, name = "Shining Gown", source = { kind = "profession", text = "Tailoring (110) Only its maker can wear it", skill = "Tailoring", skillLevel = 110, bindsToMaker = true } },
+                { id = 17043, name = "Zealot's Robe", source = { kind = "quest", text = "Quest: An Unholy Alliance Horde, level 36 in Classic, from level 28 A Horde quest from Varimathras in Undercity Take a group for Ambassador Malcin (level 36 elite)", quest = "An Unholy" } },
                 { id = 250522, name = "Crusader's Silvered Chain Shirt", source = { kind = "profession", text = "Blacksmithing (110) Only its maker can wear it", skill = "Blacksmithing", skillLevel = 110, bindsToMaker = true } },
                 { id = 252510, name = "Stormrider's Leather Tunic", source = { kind = "profession", text = "Leatherworking (110) Only its maker can wear it", skill = "Leatherworking", skillLevel = 110, bindsToMaker = true } },
                 { id = 250521, name = "Acolyte's Silvered Chain Shirt", source = { kind = "profession", text = "Blacksmithing (110) Only its maker can wear it", skill = "Blacksmithing", skillLevel = 110, bindsToMaker = true } },
@@ -3117,6 +3154,7 @@ ForeverBiSData = {
             },
             { slot = "Main hand",
               items = {
+                { id = 17039, name = "Skullbreaker", source = { kind = "quest", text = "Quest: An Unholy Alliance Horde, level 36 in Classic, from level 28 A Horde quest from Varimathras in Undercity Take a group for Ambassador Malcin (level 36 elite)", quest = "An Unholy" } },
                 { id = 3414, name = "Crested Scepter", source = { kind = "dungeon", text = "Trash mobs, Blackfathom Deeps 0.03% in Classic", zone = "Blackfathom Deeps", boss = "Trash mobs", dropRate = 0.03 } },
                 { id = 273827, name = "Debt Collector", source = { kind = "world", text = "Bazil Thredd, The Stockade", zone = "The Stockade", boss = "Bazil Thredd" } },
                 { id = 273637, name = "Blade of Silverlaine", source = { kind = "dungeon", text = "Baron Silverlaine, Shadowfang Keep", zone = "Shadowfang Keep", boss = "Baron Silverlaine" } },
@@ -3287,6 +3325,7 @@ ForeverBiSData = {
             },
             { slot = "Main hand",
               items = {
+                { id = 17039, name = "Skullbreaker", source = { kind = "quest", text = "Quest: An Unholy Alliance Horde, level 36 in Classic, from level 28 A Horde quest from Varimathras in Undercity Take a group for Ambassador Malcin (level 36 elite)", quest = "An Unholy" } },
                 { id = 3414, name = "Crested Scepter", source = { kind = "dungeon", text = "Trash mobs, Blackfathom Deeps 0.03% in Classic", zone = "Blackfathom Deeps", boss = "Trash mobs", dropRate = 0.03 } },
                 { id = 273827, name = "Debt Collector", source = { kind = "world", text = "Bazil Thredd, The Stockade", zone = "The Stockade", boss = "Bazil Thredd" } },
                 { id = 273637, name = "Blade of Silverlaine", source = { kind = "dungeon", text = "Baron Silverlaine, Shadowfang Keep", zone = "Shadowfang Keep", boss = "Baron Silverlaine" } },
@@ -3348,6 +3387,8 @@ ForeverBiSData = {
             },
             { slot = "Shoulder",
               items = {
+                { id = 4197, name = "Berylline Pads", source = { kind = "quest", text = "Quest: A Vengeful Fate Horde, level 34 in Classic, from level 29 Quest: The Crone of the Kraul Alliance, level 34 in Classic, from level 29", quest = "A Vengeful Fate" } },
+                { id = 7684, name = "Bloodmage Mantle", source = { kind = "world", text = "Bloodmage Thalnos, Scarlet Monastery Graveyard 47.84% in Classic", zone = "Scarlet Monastery", boss = "Bloodmage Thalnos", dropRate = 47.84 } },
                 { id = 9536, name = "Fairywing Mantle", source = { kind = "quest", text = "Quest: A Fine Mess level 30 in Classic, from level 24", quest = "A Fine Mess" } },
                 { id = 11884, name = "Moonlit Amice", source = { kind = "quest", text = "Quest: Return to Vahlarriel Alliance, level 33 in Classic, from level 30", faction = "Alliance", quest = "Return to Vahlarriel" } },
                 { id = 6685, name = "Death Speaker Mantle", source = { kind = "world", text = "Death Speaker Jargba, Razorfen Kraul 43.63% in Classic", zone = "Razorfen Kraul", boss = "Death Speaker Jargba", dropRate = 43.63 } },
@@ -3357,7 +3398,7 @@ ForeverBiSData = {
             },
             { slot = "Back",
               items = {
-                { id = 274149, name = "Thornweaver Drape", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 274149, name = "Thornweaver Drape", source = { kind = "world", text = "Roogug, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Roogug" } },
                 { id = 3719, name = "Hillman's Cloak", source = { kind = "profession", text = "Leatherworking", skill = "Leatherworking" } },
                 { id = 6632, name = "Feyscale Cloak", source = { kind = "dungeon", text = "Deviate Faerie Dragon, Wailing Caverns 44.63% in Classic", zone = "Wailing Caverns", boss = "Deviate Faerie Dragon", dropRate = 44.63 } },
                 { id = 15468, name = "Windsong Drape", source = { kind = "quest", text = "Quest: Free at Last Horde, level 29 in Classic, from level 25", faction = "Horde", quest = "Free at Last" } },
@@ -3370,6 +3411,7 @@ ForeverBiSData = {
             { slot = "Chest",
               items = {
                 { id = 253967, name = "Shadow Gown", source = { kind = "profession", text = "Tailoring (110) Only its maker can wear it", skill = "Tailoring", skillLevel = 110, bindsToMaker = true } },
+                { id = 17043, name = "Zealot's Robe", source = { kind = "quest", text = "Quest: An Unholy Alliance Horde, level 36 in Classic, from level 28 A Horde quest from Varimathras in Undercity Take a group for Ambassador Malcin (level 36 elite)", quest = "An Unholy" } },
                 { id = 2292, name = "Necrology Robes", source = { kind = "dungeon", text = "Trash mobs, Shadowfang Keep 0.02% in Classic", zone = "Shadowfang Keep", boss = "Trash mobs", dropRate = 0.02 } },
                 { id = 277213, name = "Dro'zem's Tunic", source = { kind = "world", text = "Dro'zem the Blasphemous, a rare elite of the Redridge Mountains Reported, not checked", reported = true } },
                 { id = 7065, name = "Green Silk Armor", source = { kind = "profession", text = "Tailoring (130)", skill = "Tailoring", skillLevel = 130 } },
@@ -3459,7 +3501,7 @@ ForeverBiSData = {
                 { id = 2549, name = "Staff of the Shade", source = { kind = "world", text = "Trash mobs, Razorfen Kraul 0.05% in Classic A world drop, not bound: the auction house is quickest Reported, not checked", zone = "Razorfen Kraul", boss = "Trash mobs", dropRate = 0.05, reported = true } },
                 { id = 249392, name = "Glimmering Staff", source = { kind = "profession", text = "Enchanting (140) Only its maker can wear it", skill = "Enchanting", skillLevel = 140, bindsToMaker = true } },
                 { id = 274158, name = "Death Prophet Spine", source = { kind = "world", text = "Aggem Thorncurse, Razorfen Kraul Agathelos the Raging, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Aggem Thorncurse" } },
-                { id = 281312, name = "Fallen Dragon's Scepter", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 281312, name = "Fallen Dragon's Scepter", source = { kind = "quest", text = "Alliance quest Stopping the Cycle, Wetlands, level 34 Elite, from level 24: take a group", faction = "Alliance" } },
                 { id = 249393, name = "Soulstaff", source = { kind = "profession", text = "Enchanting (140) Only its maker can wear it", skill = "Enchanting", skillLevel = 140, bindsToMaker = true } },
               },
               enchants = {
@@ -3468,6 +3510,7 @@ ForeverBiSData = {
             },
             { slot = "Main hand",
               items = {
+                { id = 17039, name = "Skullbreaker", source = { kind = "quest", text = "Quest: An Unholy Alliance Horde, level 36 in Classic, from level 28 A Horde quest from Varimathras in Undercity Take a group for Ambassador Malcin (level 36 elite)", quest = "An Unholy" } },
                 { id = 6691, name = "Swinetusk Shank", source = { kind = "world", text = "Agathelos the Raging, Razorfen Kraul 33.54% in Classic", zone = "Razorfen Kraul", boss = "Agathelos the Raging", dropRate = 33.54 } },
                 { id = 3414, name = "Crested Scepter", source = { kind = "dungeon", text = "Trash mobs, Blackfathom Deeps 0.03% in Classic", zone = "Blackfathom Deeps", boss = "Trash mobs", dropRate = 0.03 } },
                 { id = 2567, name = "Evocator's Blade", source = { kind = "dungeon", text = "Trash mobs, Blackfathom Deeps 0.05% in Classic", zone = "Blackfathom Deeps", boss = "Trash mobs", dropRate = 0.05 } },
@@ -3528,7 +3571,9 @@ ForeverBiSData = {
             },
             { slot = "Shoulder",
               items = {
+                { id = 4197, name = "Berylline Pads", source = { kind = "quest", text = "Quest: A Vengeful Fate Horde, level 34 in Classic, from level 29 Quest: The Crone of the Kraul Alliance, level 34 in Classic, from level 29", quest = "A Vengeful Fate" } },
                 { id = 11884, name = "Moonlit Amice", source = { kind = "quest", text = "Quest: Return to Vahlarriel Alliance, level 33 in Classic, from level 30", faction = "Alliance", quest = "Return to Vahlarriel" } },
+                { id = 7684, name = "Bloodmage Mantle", source = { kind = "world", text = "Bloodmage Thalnos, Scarlet Monastery Graveyard 47.84% in Classic", zone = "Scarlet Monastery", boss = "Bloodmage Thalnos", dropRate = 47.84 } },
                 { id = 3324, name = "Ghostly Mantle", source = { kind = "quest", text = "Quest: Deathstalkers in Shadowfang Horde, level 25 in Classic, from level 18", faction = "Horde", quest = "Deathstalkers in Shadowfang" } },
                 { id = 9536, name = "Fairywing Mantle", source = { kind = "quest", text = "Quest: A Fine Mess level 30 in Classic, from level 24", quest = "A Fine Mess" } },
                 { id = 17695, name = "Chestnut Mantle", source = { kind = "quest", text = "Quest: Allegiance to the Old Gods Horde, level 26 in Classic, from level 17", faction = "Horde", quest = "Allegiance to the Old Gods" } },
@@ -3540,7 +3585,7 @@ ForeverBiSData = {
                 { id = 7004, name = "Prelacy Cape", source = { kind = "quest", text = "Quest: Researching the Corruption Alliance, level 24 in Classic, from level 18", faction = "Alliance", quest = "Researching the Corruption" } },
                 { id = 273825, name = "Red Wool Cloak", source = { kind = "world", text = "Bazil Thredd, The Stockade", zone = "The Stockade", boss = "Bazil Thredd" } },
                 { id = 6901, name = "Glowing Thresher Cape", source = { kind = "dungeon", text = "Old Serra'kis, Blackfathom Deeps 39.27% in Classic", zone = "Blackfathom Deeps", boss = "Old Serra'kis", dropRate = 39.27 } },
-                { id = 274149, name = "Thornweaver Drape", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 274149, name = "Thornweaver Drape", source = { kind = "world", text = "Roogug, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Roogug" } },
                 { id = 3719, name = "Hillman's Cloak", source = { kind = "profession", text = "Leatherworking", skill = "Leatherworking" } },
               },
               enchants = {
@@ -3593,7 +3638,7 @@ ForeverBiSData = {
             { slot = "Legs",
               items = {
                 { id = 253987, name = "Pristine Leggings", source = { kind = "profession", text = "Tailoring (125) Only its maker can wear it", skill = "Tailoring", skillLevel = 125, bindsToMaker = true } },
-                { id = 253937, name = "Filigreed Pristine Leggings", source = { kind = "profession", text = "Tailoring (100) Only its maker can wear it Pattern drops from Verdan the Everliving, Wailing Caverns", skill = "Tailoring", skillLevel = 100, bindsToMaker = true } },
+                { id = 253937, name = "Filigreed Pristine Leggings", source = { kind = "profession", text = "Tailoring (100) Only its maker can wear it Pattern drops from Verdan the Everliving, Wailing Caverns; Lord Pythas, Wailing Caverns", skill = "Tailoring", skillLevel = 100, bindsToMaker = true } },
                 { id = 253999, name = "Earthen Leggings", source = { kind = "profession", text = "Tailoring (140) Pattern: nobody has found it in the beta yet", skill = "Tailoring", skillLevel = 140 } },
                 { id = 2277, name = "Necromancer Leggings", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 6903, name = "Gaze Dreamer Pants", source = { kind = "dungeon", text = "Twilight Lord Kelris, Blackfathom Deeps 33.5% in Classic", zone = "Blackfathom Deeps", boss = "Twilight Lord Kelris", dropRate = 33.5 } },
@@ -3646,6 +3691,7 @@ ForeverBiSData = {
             { slot = "Main hand",
               items = {
                 { id = 2816, name = "Death Speaker Scepter", source = { kind = "world", text = "Death Speaker Jargba, Razorfen Kraul 10.02% in Classic", zone = "Razorfen Kraul", boss = "Death Speaker Jargba", dropRate = 10.02 } },
+                { id = 17039, name = "Skullbreaker", source = { kind = "quest", text = "Quest: An Unholy Alliance Horde, level 36 in Classic, from level 28 A Horde quest from Varimathras in Undercity Take a group for Ambassador Malcin (level 36 elite)", quest = "An Unholy" } },
                 { id = 6691, name = "Swinetusk Shank", source = { kind = "world", text = "Agathelos the Raging, Razorfen Kraul 33.54% in Classic", zone = "Razorfen Kraul", boss = "Agathelos the Raging", dropRate = 33.54 } },
                 { id = 3414, name = "Crested Scepter", source = { kind = "dungeon", text = "Trash mobs, Blackfathom Deeps 0.03% in Classic", zone = "Blackfathom Deeps", boss = "Trash mobs", dropRate = 0.03 } },
                 { id = 279874, name = "The Stitcher", source = { kind = "quest", text = "Quest: Light's Justice Ruins of Lordaeron, Horde, from level 15", faction = "Horde", quest = "Light's Justice Ruins of Lordaeron" } },
@@ -3694,7 +3740,7 @@ ForeverBiSData = {
               items = {
                 { id = 23169, name = "Scorn's Icy Choker", source = { kind = "world", text = "Scorn, a rare elite of the Scarlet Monastery Graveyard About 1 kill in 4 in the beta", zone = "Scarlet Monastery" } },
                 { id = 13084, name = "Kaleidoscope Chain", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
-                { id = 281321, name = "Giantstone Medallion", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 281321, name = "Giantstone Medallion", source = { kind = "quest", text = "Alliance quest Gleaning Our Future, Wetlands, level 32 Elite, from level 24: take a group", faction = "Alliance" } },
                 { id = 5003, name = "Crystal Starfire Medallion", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 277203, name = "Scholarly Pendant", source = { kind = "quest", text = "Quest: Friend of the Library Ten books, any class and no level asked for", quest = "Friend of the Library Ten books" } },
               },
@@ -3704,7 +3750,9 @@ ForeverBiSData = {
             },
             { slot = "Shoulder",
               items = {
+                { id = 7684, name = "Bloodmage Mantle", source = { kind = "world", text = "Bloodmage Thalnos, Scarlet Monastery Graveyard 47.84% in Classic", zone = "Scarlet Monastery", boss = "Bloodmage Thalnos", dropRate = 47.84 } },
                 { id = 3324, name = "Ghostly Mantle", source = { kind = "quest", text = "Quest: Deathstalkers in Shadowfang Horde, level 25 in Classic, from level 18", faction = "Horde", quest = "Deathstalkers in Shadowfang" } },
+                { id = 4197, name = "Berylline Pads", source = { kind = "quest", text = "Quest: A Vengeful Fate Horde, level 34 in Classic, from level 29 Quest: The Crone of the Kraul Alliance, level 34 in Classic, from level 29", quest = "A Vengeful Fate" } },
                 { id = 6685, name = "Death Speaker Mantle", source = { kind = "world", text = "Death Speaker Jargba, Razorfen Kraul 43.63% in Classic", zone = "Razorfen Kraul", boss = "Death Speaker Jargba", dropRate = 43.63 } },
                 { id = 9536, name = "Fairywing Mantle", source = { kind = "quest", text = "Quest: A Fine Mess level 30 in Classic, from level 24", quest = "A Fine Mess" } },
                 { id = 12998, name = "Magician's Mantle", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
@@ -3716,7 +3764,7 @@ ForeverBiSData = {
                 { id = 7004, name = "Prelacy Cape", source = { kind = "quest", text = "Quest: Researching the Corruption Alliance, level 24 in Classic, from level 18", faction = "Alliance", quest = "Researching the Corruption" } },
                 { id = 273825, name = "Red Wool Cloak", source = { kind = "world", text = "Bazil Thredd, The Stockade", zone = "The Stockade", boss = "Bazil Thredd" } },
                 { id = 6901, name = "Glowing Thresher Cape", source = { kind = "dungeon", text = "Old Serra'kis, Blackfathom Deeps 39.27% in Classic", zone = "Blackfathom Deeps", boss = "Old Serra'kis", dropRate = 39.27 } },
-                { id = 274149, name = "Thornweaver Drape", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 274149, name = "Thornweaver Drape", source = { kind = "world", text = "Roogug, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Roogug" } },
                 { id = 15468, name = "Windsong Drape", source = { kind = "quest", text = "Quest: Free at Last Horde, level 29 in Classic, from level 25", faction = "Horde", quest = "Free at Last" } },
               },
               enchants = {
@@ -3727,6 +3775,7 @@ ForeverBiSData = {
               items = {
                 { id = 6682, name = "Death Speaker Robes", source = { kind = "world", text = "Death Speaker Jargba, Razorfen Kraul 42.77% in Classic", zone = "Razorfen Kraul", boss = "Death Speaker Jargba", dropRate = 42.77 } },
                 { id = 253961, name = "Pristine Gown", source = { kind = "profession", text = "Tailoring (110) Only its maker can wear it", skill = "Tailoring", skillLevel = 110, bindsToMaker = true } },
+                { id = 17043, name = "Zealot's Robe", source = { kind = "quest", text = "Quest: An Unholy Alliance Horde, level 36 in Classic, from level 28 A Horde quest from Varimathras in Undercity Take a group for Ambassador Malcin (level 36 elite)", quest = "An Unholy" } },
                 { id = 6324, name = "Robes of Arugal", source = { kind = "dungeon", text = "Archmage Arugal, Shadowfang Keep 34.89% in Classic", zone = "Shadowfang Keep", boss = "Archmage Arugal", dropRate = 34.89 } },
                 { id = 6226, name = "Bloody Apron", source = { kind = "dungeon", text = "Razorclaw the Butcher, Shadowfang Keep 43.55% in Classic", zone = "Shadowfang Keep", boss = "Razorclaw the Butcher", dropRate = 43.55 } },
                 { id = 7065, name = "Green Silk Armor", source = { kind = "profession", text = "Tailoring (130)", skill = "Tailoring", skillLevel = 130 } },
@@ -3771,7 +3820,7 @@ ForeverBiSData = {
             { slot = "Legs",
               items = {
                 { id = 253987, name = "Pristine Leggings", source = { kind = "profession", text = "Tailoring (125) Only its maker can wear it", skill = "Tailoring", skillLevel = 125, bindsToMaker = true } },
-                { id = 253937, name = "Filigreed Pristine Leggings", source = { kind = "profession", text = "Tailoring (100) Only its maker can wear it Pattern drops from Verdan the Everliving, Wailing Caverns", skill = "Tailoring", skillLevel = 100, bindsToMaker = true } },
+                { id = 253937, name = "Filigreed Pristine Leggings", source = { kind = "profession", text = "Tailoring (100) Only its maker can wear it Pattern drops from Verdan the Everliving, Wailing Caverns; Lord Pythas, Wailing Caverns", skill = "Tailoring", skillLevel = 100, bindsToMaker = true } },
                 { id = 253999, name = "Earthen Leggings", source = { kind = "profession", text = "Tailoring (140) Pattern: nobody has found it in the beta yet", skill = "Tailoring", skillLevel = 140 } },
                 { id = 273289, name = "Ogre Loincloth", source = { kind = "dungeon", text = "Rhahk'Zor, The Deadmines", zone = "The Deadmines", boss = "Rhahk'Zor" } },
                 { id = 6903, name = "Gaze Dreamer Pants", source = { kind = "dungeon", text = "Twilight Lord Kelris, Blackfathom Deeps 33.5% in Classic", zone = "Blackfathom Deeps", boss = "Twilight Lord Kelris", dropRate = 33.5 } },
@@ -3823,6 +3872,7 @@ ForeverBiSData = {
             { slot = "Main hand",
               items = {
                 { id = 2816, name = "Death Speaker Scepter", source = { kind = "world", text = "Death Speaker Jargba, Razorfen Kraul 10.02% in Classic", zone = "Razorfen Kraul", boss = "Death Speaker Jargba", dropRate = 10.02 } },
+                { id = 17039, name = "Skullbreaker", source = { kind = "quest", text = "Quest: An Unholy Alliance Horde, level 36 in Classic, from level 28 A Horde quest from Varimathras in Undercity Take a group for Ambassador Malcin (level 36 elite)", quest = "An Unholy" } },
                 { id = 6691, name = "Swinetusk Shank", source = { kind = "world", text = "Agathelos the Raging, Razorfen Kraul 33.54% in Classic", zone = "Razorfen Kraul", boss = "Agathelos the Raging", dropRate = 33.54 } },
                 { id = 272996, name = "Trogg Scepter", source = { kind = "dungeon", text = "Oggleflint, Ragefire Chasm", zone = "Ragefire Chasm", boss = "Oggleflint" } },
                 { id = 279874, name = "The Stitcher", source = { kind = "quest", text = "Quest: Light's Justice Ruins of Lordaeron, Horde, from level 15", faction = "Horde", quest = "Light's Justice Ruins of Lordaeron" } },
@@ -3880,7 +3930,9 @@ ForeverBiSData = {
             },
             { slot = "Shoulder",
               items = {
+                { id = 4197, name = "Berylline Pads", source = { kind = "quest", text = "Quest: A Vengeful Fate Horde, level 34 in Classic, from level 29 Quest: The Crone of the Kraul Alliance, level 34 in Classic, from level 29", quest = "A Vengeful Fate" } },
                 { id = 11884, name = "Moonlit Amice", source = { kind = "quest", text = "Quest: Return to Vahlarriel Alliance, level 33 in Classic, from level 30", faction = "Alliance", quest = "Return to Vahlarriel" } },
+                { id = 7684, name = "Bloodmage Mantle", source = { kind = "world", text = "Bloodmage Thalnos, Scarlet Monastery Graveyard 47.84% in Classic", zone = "Scarlet Monastery", boss = "Bloodmage Thalnos", dropRate = 47.84 } },
                 { id = 9536, name = "Fairywing Mantle", source = { kind = "quest", text = "Quest: A Fine Mess level 30 in Classic, from level 24", quest = "A Fine Mess" } },
                 { id = 284399, name = "Seared Grove Shoulderpads", source = { kind = "world", text = "Sister Riven, the rare harpy of the Charred Vale Reported, not checked", reported = true } },
                 { id = 17695, name = "Chestnut Mantle", source = { kind = "quest", text = "Quest: Allegiance to the Old Gods Horde, level 26 in Classic, from level 17", faction = "Horde", quest = "Allegiance to the Old Gods" } },
@@ -3892,7 +3944,7 @@ ForeverBiSData = {
                 { id = 3719, name = "Hillman's Cloak", source = { kind = "profession", text = "Leatherworking", skill = "Leatherworking" } },
                 { id = 6632, name = "Feyscale Cloak", source = { kind = "dungeon", text = "Deviate Faerie Dragon, Wailing Caverns 44.63% in Classic", zone = "Wailing Caverns", boss = "Deviate Faerie Dragon", dropRate = 44.63 } },
                 { id = 2953, name = "Watch Master's Cloak", source = { kind = "quest", text = "Quest: Morbent Fel Alliance, level 32 in Classic, from level 20", faction = "Alliance", quest = "Morbent Fel" } },
-                { id = 274149, name = "Thornweaver Drape", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 274149, name = "Thornweaver Drape", source = { kind = "world", text = "Roogug, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Roogug" } },
               },
               enchants = {
                 { effect = "Armor +60", spell = "Enchant Cloak - Greater Defense", source = "Enchanting 205: Taught by the trainer." },
@@ -3902,6 +3954,7 @@ ForeverBiSData = {
               items = {
                 { id = 253967, name = "Shadow Gown", source = { kind = "profession", text = "Tailoring (110) Only its maker can wear it", skill = "Tailoring", skillLevel = 110, bindsToMaker = true } },
                 { id = 2292, name = "Necrology Robes", source = { kind = "dungeon", text = "Trash mobs, Shadowfang Keep 0.02% in Classic", zone = "Shadowfang Keep", boss = "Trash mobs", dropRate = 0.02 } },
+                { id = 17043, name = "Zealot's Robe", source = { kind = "quest", text = "Quest: An Unholy Alliance Horde, level 36 in Classic, from level 28 A Horde quest from Varimathras in Undercity Take a group for Ambassador Malcin (level 36 elite)", quest = "An Unholy" } },
                 { id = 6682, name = "Death Speaker Robes", source = { kind = "world", text = "Death Speaker Jargba, Razorfen Kraul 42.77% in Classic", zone = "Razorfen Kraul", boss = "Death Speaker Jargba", dropRate = 42.77 } },
                 { id = 7065, name = "Green Silk Armor", source = { kind = "profession", text = "Tailoring (130)", skill = "Tailoring", skillLevel = 130 } },
                 { id = 6226, name = "Bloody Apron", source = { kind = "dungeon", text = "Razorclaw the Butcher, Shadowfang Keep 43.55% in Classic", zone = "Shadowfang Keep", boss = "Razorclaw the Butcher", dropRate = 43.55 } },
@@ -3991,7 +4044,7 @@ ForeverBiSData = {
                 { id = 249392, name = "Glimmering Staff", source = { kind = "profession", text = "Enchanting (140) Only its maker can wear it", skill = "Enchanting", skillLevel = 140, bindsToMaker = true } },
                 { id = 274158, name = "Death Prophet Spine", source = { kind = "world", text = "Aggem Thorncurse, Razorfen Kraul Agathelos the Raging, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Aggem Thorncurse" } },
                 { id = 249393, name = "Soulstaff", source = { kind = "profession", text = "Enchanting (140) Only its maker can wear it", skill = "Enchanting", skillLevel = 140, bindsToMaker = true } },
-                { id = 281312, name = "Fallen Dragon's Scepter", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 281312, name = "Fallen Dragon's Scepter", source = { kind = "quest", text = "Alliance quest Stopping the Cycle, Wetlands, level 34 Elite, from level 24: take a group", faction = "Alliance" } },
               },
               enchants = {
                 { effect = "Intellect +5", spell = "Enchant 2H Weapon - Lesser Intellect", source = "Enchanting 100: Formula sold by Tilli Thistlefuzz in Dun Morogh, Kithas in Orgrimmar and Leo Sarn in Silverpine Forest.", formulaId = 6349 },
@@ -3999,6 +4052,7 @@ ForeverBiSData = {
             },
             { slot = "Main hand",
               items = {
+                { id = 17039, name = "Skullbreaker", source = { kind = "quest", text = "Quest: An Unholy Alliance Horde, level 36 in Classic, from level 28 A Horde quest from Varimathras in Undercity Take a group for Ambassador Malcin (level 36 elite)", quest = "An Unholy" } },
                 { id = 6691, name = "Swinetusk Shank", source = { kind = "world", text = "Agathelos the Raging, Razorfen Kraul 33.54% in Classic", zone = "Razorfen Kraul", boss = "Agathelos the Raging", dropRate = 33.54 } },
                 { id = 3414, name = "Crested Scepter", source = { kind = "dungeon", text = "Trash mobs, Blackfathom Deeps 0.03% in Classic", zone = "Blackfathom Deeps", boss = "Trash mobs", dropRate = 0.03 } },
                 { id = 2567, name = "Evocator's Blade", source = { kind = "dungeon", text = "Trash mobs, Blackfathom Deeps 0.05% in Classic", zone = "Blackfathom Deeps", boss = "Trash mobs", dropRate = 0.05 } },
@@ -4038,7 +4092,7 @@ ForeverBiSData = {
           slots = {
             { slot = "Head",
               items = {
-                { id = 252512, name = "Brawler's Leather Helm", source = { kind = "profession", text = "Leatherworking Only its maker can wear it Pattern: nobody has found it in the beta yet", skill = "Leatherworking", bindsToMaker = true } },
+                { id = 252512, name = "Brawler's Leather Helm", source = { kind = "profession", text = "Overlord Ramtusk, Razorfen Kraul Leatherworking Only its maker can wear it Pattern: nobody has found it in the beta yet Also drops in the Stockade, says a reader Reported, not checked", skill = "Leatherworking", bindsToMaker = true, reported = true } },
                 { id = 252504, name = "Brawler's Leather Hood", source = { kind = "profession", text = "Leatherworking (100) Only its maker can wear it", skill = "Leatherworking", skillLevel = 100, bindsToMaker = true } },
                 { id = 6204, name = "Tribal Worg Helm", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 277042, name = "Cloudy Gustwoven Hood", source = { kind = "profession", text = "Leatherworking (175)", skill = "Leatherworking", skillLevel = 175 } },
@@ -4124,6 +4178,7 @@ ForeverBiSData = {
             },
             { slot = "Legs",
               items = {
+                { id = 9624, name = "Triprunner Dungarees", source = { kind = "quest", text = "Quest: Rig Wars Horde, level 35 in Classic, from level 25 Quest: The Grand Betrayal Alliance, level 35 in Classic, from level 25 The last quest of Gnomeregan, for either faction Take a group for Mekgineer Thermaplugg (level 34)", quest = "Rig Wars" } },
                 { id = 9509, name = "Petrolspill Leggings", source = { kind = "world", text = "Trash mobs, Gnomeregan 0.04% in Classic A world drop, not bound: the auction house is quickest Reported, not checked", zone = "Gnomeregan", boss = "Trash mobs", dropRate = 0.04, reported = true } },
                 { id = 13114, name = "Troll's Bane Leggings", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 252516, name = "Brawler's Leather Legguards", source = { kind = "profession", text = "Leatherworking (125) Only its maker can wear it", skill = "Leatherworking", skillLevel = 125, bindsToMaker = true } },
@@ -4136,7 +4191,8 @@ ForeverBiSData = {
             },
             { slot = "Feet",
               items = {
-                { id = 284403, name = "Shapeshifting Sentinel's Strides", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 284403, name = "Shapeshifting Sentinel's Strides", source = { kind = "world", text = "A rare of northern Stonetalon Mountains, near the night elves Reported, not checked", reported = true } },
+                { id = 7751, name = "Vorrel's Boots", source = { kind = "quest", text = "Quest: Vorrel's Revenge Horde, level 33 in Classic, from level 25", faction = "Horde", quest = "Vorrel's Revenge" } },
                 { id = 1121, name = "Feet of the Lynx", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 16977, name = "Warsong Boots", source = { kind = "quest", text = "Quest: Warsong Supplies Horde, level 27 in Classic, from level 22", faction = "Horde", quest = "Warsong Supplies" } },
                 { id = 4055, name = "Insignia Boots", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
@@ -4178,6 +4234,7 @@ ForeverBiSData = {
             },
             { slot = "Off hand",
               items = {
+                { id = 280805, name = "Serrated Raptor Claw", source = { kind = "quest", text = "Quest: Changing Tastes Excavation Site: Wetlands, Horde, from level 24", faction = "Horde", quest = "Changing Tastes Excavation Site: Wetlands" } },
                 { id = 776, name = "Vendetta", source = { kind = "world", text = "Trash mobs, Razorfen Kraul 0.03% in Classic A world drop, not bound: the auction house is quickest Reported, not checked", zone = "Razorfen Kraul", boss = "Trash mobs", dropRate = 0.03, reported = true } },
                 { id = 7682, name = "Torturing Poker", source = { kind = "world", text = "Interrogator Vishas, Scarlet Monastery Graveyard 6.08% in Classic", zone = "Scarlet Monastery", boss = "Interrogator Vishas", dropRate = 6.08 } },
                 { id = 9453, name = "Toxic Revenger", source = { kind = "world", text = "Viscous Fallout, Gnomeregan 17.53% in Classic", zone = "Gnomeregan", boss = "Viscous Fallout", dropRate = 17.53 } },
@@ -4193,6 +4250,7 @@ ForeverBiSData = {
                 { id = 274748, name = "Booty Bay Bruiser's Buckshot", source = { kind = "world", text = "Sold by Gezzy Gunkgear in Booty Bay At Honored with Booty Bay" } },
                 { id = 2098, name = "Double-barreled Shotgun", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 13037, name = "Crystalpine Stinger", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
+                { id = 285347, name = "Alliance Outrunner Bow", source = { kind = "world", text = "Aean Swiftriver, of the Alliance Outrunners in the Barrens Horde only: the Outrunners are Alliance scouts" } },
                 { id = 13136, name = "Lil Timmy's Peashooter", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 273843, name = "Fallenroot Longbow", source = { kind = "dungeon", text = "Lorgus Jett, Blackfathom Deeps", zone = "Blackfathom Deeps", boss = "Lorgus Jett" } },
               },
@@ -4209,7 +4267,7 @@ ForeverBiSData = {
           slots = {
             { slot = "Head",
               items = {
-                { id = 252512, name = "Brawler's Leather Helm", source = { kind = "profession", text = "Leatherworking Only its maker can wear it Pattern: nobody has found it in the beta yet", skill = "Leatherworking", bindsToMaker = true } },
+                { id = 252512, name = "Brawler's Leather Helm", source = { kind = "profession", text = "Overlord Ramtusk, Razorfen Kraul Leatherworking Only its maker can wear it Pattern: nobody has found it in the beta yet Also drops in the Stockade, says a reader Reported, not checked", skill = "Leatherworking", bindsToMaker = true, reported = true } },
                 { id = 252504, name = "Brawler's Leather Hood", source = { kind = "profession", text = "Leatherworking (100) Only its maker can wear it", skill = "Leatherworking", skillLevel = 100, bindsToMaker = true } },
                 { id = 6204, name = "Tribal Worg Helm", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 277042, name = "Cloudy Gustwoven Hood", source = { kind = "profession", text = "Leatherworking (175)", skill = "Leatherworking", skillLevel = 175 } },
@@ -4295,6 +4353,7 @@ ForeverBiSData = {
             },
             { slot = "Legs",
               items = {
+                { id = 9624, name = "Triprunner Dungarees", source = { kind = "quest", text = "Quest: Rig Wars Horde, level 35 in Classic, from level 25 Quest: The Grand Betrayal Alliance, level 35 in Classic, from level 25 The last quest of Gnomeregan, for either faction Take a group for Mekgineer Thermaplugg (level 34)", quest = "Rig Wars" } },
                 { id = 9509, name = "Petrolspill Leggings", source = { kind = "world", text = "Trash mobs, Gnomeregan 0.04% in Classic A world drop, not bound: the auction house is quickest Reported, not checked", zone = "Gnomeregan", boss = "Trash mobs", dropRate = 0.04, reported = true } },
                 { id = 13114, name = "Troll's Bane Leggings", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 252516, name = "Brawler's Leather Legguards", source = { kind = "profession", text = "Leatherworking (125) Only its maker can wear it", skill = "Leatherworking", skillLevel = 125, bindsToMaker = true } },
@@ -4307,7 +4366,8 @@ ForeverBiSData = {
             },
             { slot = "Feet",
               items = {
-                { id = 284403, name = "Shapeshifting Sentinel's Strides", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 284403, name = "Shapeshifting Sentinel's Strides", source = { kind = "world", text = "A rare of northern Stonetalon Mountains, near the night elves Reported, not checked", reported = true } },
+                { id = 7751, name = "Vorrel's Boots", source = { kind = "quest", text = "Quest: Vorrel's Revenge Horde, level 33 in Classic, from level 25", faction = "Horde", quest = "Vorrel's Revenge" } },
                 { id = 1121, name = "Feet of the Lynx", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 16977, name = "Warsong Boots", source = { kind = "quest", text = "Quest: Warsong Supplies Horde, level 27 in Classic, from level 22", faction = "Horde", quest = "Warsong Supplies" } },
                 { id = 4055, name = "Insignia Boots", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
@@ -4338,6 +4398,7 @@ ForeverBiSData = {
             { slot = "Main hand",
               items = {
                 { id = 9520, name = "Silent Hunter", source = { kind = "quest", text = "Quest: Call to Arms Horde, level 40 in Classic, from level 30", faction = "Horde", quest = "Call to Arms" } },
+                { id = 280805, name = "Serrated Raptor Claw", source = { kind = "quest", text = "Quest: Changing Tastes Excavation Site: Wetlands, Horde, from level 24", faction = "Horde", quest = "Changing Tastes Excavation Site: Wetlands" } },
                 { id = 9453, name = "Toxic Revenger", source = { kind = "world", text = "Viscous Fallout, Gnomeregan 17.53% in Classic", zone = "Gnomeregan", boss = "Viscous Fallout", dropRate = 17.53 } },
                 { id = 6681, name = "Thornspike", source = { kind = "world", text = "Aggem Thorncurse, Razorfen Kraul 47.88% in Classic Trash mobs, Razorfen Kraul 53.29% in Classic", zone = "Razorfen Kraul", boss = "Aggem Thorncurse", dropRate = 47.88 } },
                 { id = 7682, name = "Torturing Poker", source = { kind = "world", text = "Interrogator Vishas, Scarlet Monastery Graveyard 6.08% in Classic", zone = "Scarlet Monastery", boss = "Interrogator Vishas", dropRate = 6.08 } },
@@ -4349,6 +4410,7 @@ ForeverBiSData = {
             },
             { slot = "Off hand",
               items = {
+                { id = 280805, name = "Serrated Raptor Claw", source = { kind = "quest", text = "Quest: Changing Tastes Excavation Site: Wetlands, Horde, from level 24", faction = "Horde", quest = "Changing Tastes Excavation Site: Wetlands" } },
                 { id = 9453, name = "Toxic Revenger", source = { kind = "world", text = "Viscous Fallout, Gnomeregan 17.53% in Classic", zone = "Gnomeregan", boss = "Viscous Fallout", dropRate = 17.53 } },
                 { id = 6681, name = "Thornspike", source = { kind = "world", text = "Aggem Thorncurse, Razorfen Kraul 47.88% in Classic Trash mobs, Razorfen Kraul 53.29% in Classic", zone = "Razorfen Kraul", boss = "Aggem Thorncurse", dropRate = 47.88 } },
                 { id = 7682, name = "Torturing Poker", source = { kind = "world", text = "Interrogator Vishas, Scarlet Monastery Graveyard 6.08% in Classic", zone = "Scarlet Monastery", boss = "Interrogator Vishas", dropRate = 6.08 } },
@@ -4364,6 +4426,7 @@ ForeverBiSData = {
                 { id = 274748, name = "Booty Bay Bruiser's Buckshot", source = { kind = "world", text = "Sold by Gezzy Gunkgear in Booty Bay At Honored with Booty Bay" } },
                 { id = 2098, name = "Double-barreled Shotgun", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 13037, name = "Crystalpine Stinger", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
+                { id = 285347, name = "Alliance Outrunner Bow", source = { kind = "world", text = "Aean Swiftriver, of the Alliance Outrunners in the Barrens Horde only: the Outrunners are Alliance scouts" } },
                 { id = 13136, name = "Lil Timmy's Peashooter", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 273843, name = "Fallenroot Longbow", source = { kind = "dungeon", text = "Lorgus Jett, Blackfathom Deeps", zone = "Blackfathom Deeps", boss = "Lorgus Jett" } },
               },
@@ -4380,7 +4443,7 @@ ForeverBiSData = {
           slots = {
             { slot = "Head",
               items = {
-                { id = 252512, name = "Brawler's Leather Helm", source = { kind = "profession", text = "Leatherworking Only its maker can wear it Pattern: nobody has found it in the beta yet", skill = "Leatherworking", bindsToMaker = true } },
+                { id = 252512, name = "Brawler's Leather Helm", source = { kind = "profession", text = "Overlord Ramtusk, Razorfen Kraul Leatherworking Only its maker can wear it Pattern: nobody has found it in the beta yet Also drops in the Stockade, says a reader Reported, not checked", skill = "Leatherworking", bindsToMaker = true, reported = true } },
                 { id = 252504, name = "Brawler's Leather Hood", source = { kind = "profession", text = "Leatherworking (100) Only its maker can wear it", skill = "Leatherworking", skillLevel = 100, bindsToMaker = true } },
                 { id = 19972, name = "Lucky Fishing Hat", source = { kind = "quest", text = "Quest: Rare Fish - Keefer's Angelfish level 0 in Classic, from level 1 A fishing quest in Booty Bay, for a Keefer's Angelfish Fishing only, no level needed", quest = "Rare Fish - Keefer's Angelfish" } },
                 { id = 252447, name = "Defender's Leather Hood", source = { kind = "profession", text = "Leatherworking (100) Only its maker can wear it", skill = "Leatherworking", skillLevel = 100, bindsToMaker = true } },
@@ -4410,7 +4473,7 @@ ForeverBiSData = {
             { slot = "Back",
               items = {
                 { id = 13108, name = "Tigerstrike Mantle", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
-                { id = 271720, name = "Crocolisk Skin Gaiter", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 271720, name = "Crocolisk Skin Gaiter", source = { kind = "quest", text = "A Titan Relic quest of the Excavation Site, says a reader Reported, not checked", reported = true } },
                 { id = 14763, name = "Enduring Cape", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 2059, name = "Sentry Cloak", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 6340, name = "Fenrus' Hide", source = { kind = "dungeon", text = "Fenrus the Devourer, Shadowfang Keep 74.16% in Classic", zone = "Shadowfang Keep", boss = "Fenrus the Devourer", dropRate = 74.16 } },
@@ -4469,6 +4532,7 @@ ForeverBiSData = {
             },
             { slot = "Legs",
               items = {
+                { id = 9624, name = "Triprunner Dungarees", source = { kind = "quest", text = "Quest: Rig Wars Horde, level 35 in Classic, from level 25 Quest: The Grand Betrayal Alliance, level 35 in Classic, from level 25 The last quest of Gnomeregan, for either faction Take a group for Mekgineer Thermaplugg (level 34)", quest = "Rig Wars" } },
                 { id = 9509, name = "Petrolspill Leggings", source = { kind = "world", text = "Trash mobs, Gnomeregan 0.04% in Classic A world drop, not bound: the auction house is quickest Reported, not checked", zone = "Gnomeregan", boss = "Trash mobs", dropRate = 0.04, reported = true } },
                 { id = 252457, name = "Defender's Leather Kilt", source = { kind = "profession", text = "Leatherworking (125) Only its maker can wear it", skill = "Leatherworking", skillLevel = 125, bindsToMaker = true } },
                 { id = 13114, name = "Troll's Bane Leggings", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
@@ -4481,7 +4545,9 @@ ForeverBiSData = {
             },
             { slot = "Feet",
               items = {
-                { id = 284403, name = "Shapeshifting Sentinel's Strides", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 284403, name = "Shapeshifting Sentinel's Strides", source = { kind = "world", text = "A rare of northern Stonetalon Mountains, near the night elves Reported, not checked", reported = true } },
+                { id = 6752, name = "Lancer Boots", source = { kind = "quest", text = "Quest: Mortality Wanes Alliance, level 30 in Classic, from level 25", faction = "Alliance", quest = "Mortality Wanes" } },
+                { id = 7751, name = "Vorrel's Boots", source = { kind = "quest", text = "Quest: Vorrel's Revenge Horde, level 33 in Classic, from level 25", faction = "Horde", quest = "Vorrel's Revenge" } },
                 { id = 16977, name = "Warsong Boots", source = { kind = "quest", text = "Quest: Warsong Supplies Horde, level 27 in Classic, from level 22", faction = "Horde", quest = "Warsong Supplies" } },
                 { id = 6335, name = "Grizzled Boots", source = { kind = "quest", text = "Quest: The Book of Ur Horde, level 26 in Classic, from level 16", faction = "Horde", quest = "The Book of Ur" } },
                 { id = 9450, name = "Gnomebot Operating Boots", source = { kind = "world", text = "Crowd Pummeler 9-60, Gnomeregan 65.28% in Classic", zone = "Gnomeregan", boss = "Crowd Pummeler 9-60", dropRate = 65.28 } },
@@ -4513,6 +4579,7 @@ ForeverBiSData = {
             { slot = "Main hand",
               items = {
                 { id = 9520, name = "Silent Hunter", source = { kind = "quest", text = "Quest: Call to Arms Horde, level 40 in Classic, from level 30", faction = "Horde", quest = "Call to Arms" } },
+                { id = 280805, name = "Serrated Raptor Claw", source = { kind = "quest", text = "Quest: Changing Tastes Excavation Site: Wetlands, Horde, from level 24", faction = "Horde", quest = "Changing Tastes Excavation Site: Wetlands" } },
                 { id = 9453, name = "Toxic Revenger", source = { kind = "world", text = "Viscous Fallout, Gnomeregan 17.53% in Classic", zone = "Gnomeregan", boss = "Viscous Fallout", dropRate = 17.53 } },
                 { id = 6681, name = "Thornspike", source = { kind = "world", text = "Aggem Thorncurse, Razorfen Kraul 47.88% in Classic Trash mobs, Razorfen Kraul 53.29% in Classic", zone = "Razorfen Kraul", boss = "Aggem Thorncurse", dropRate = 47.88 } },
                 { id = 7682, name = "Torturing Poker", source = { kind = "world", text = "Interrogator Vishas, Scarlet Monastery Graveyard 6.08% in Classic", zone = "Scarlet Monastery", boss = "Interrogator Vishas", dropRate = 6.08 } },
@@ -4524,6 +4591,7 @@ ForeverBiSData = {
             },
             { slot = "Off hand",
               items = {
+                { id = 280805, name = "Serrated Raptor Claw", source = { kind = "quest", text = "Quest: Changing Tastes Excavation Site: Wetlands, Horde, from level 24", faction = "Horde", quest = "Changing Tastes Excavation Site: Wetlands" } },
                 { id = 7683, name = "Bloody Brass Knuckles", source = { kind = "world", text = "Interrogator Vishas, Scarlet Monastery Graveyard 52.35% in Classic", zone = "Scarlet Monastery", boss = "Interrogator Vishas", dropRate = 52.35 } },
                 { id = 776, name = "Vendetta", source = { kind = "world", text = "Trash mobs, Razorfen Kraul 0.03% in Classic A world drop, not bound: the auction house is quickest Reported, not checked", zone = "Razorfen Kraul", boss = "Trash mobs", dropRate = 0.03, reported = true } },
                 { id = 6681, name = "Thornspike", source = { kind = "world", text = "Aggem Thorncurse, Razorfen Kraul 47.88% in Classic Trash mobs, Razorfen Kraul 53.29% in Classic", zone = "Razorfen Kraul", boss = "Aggem Thorncurse", dropRate = 47.88 } },
@@ -4539,6 +4607,7 @@ ForeverBiSData = {
                 { id = 274748, name = "Booty Bay Bruiser's Buckshot", source = { kind = "world", text = "Sold by Gezzy Gunkgear in Booty Bay At Honored with Booty Bay" } },
                 { id = 273843, name = "Fallenroot Longbow", source = { kind = "dungeon", text = "Lorgus Jett, Blackfathom Deeps", zone = "Blackfathom Deeps", boss = "Lorgus Jett" } },
                 { id = 285292, name = "Dull Sawblade", source = { kind = "dungeon", text = "Sneed's Shredder, The Deadmines", zone = "The Deadmines", boss = "Sneed's Shredder" } },
+                { id = 285347, name = "Alliance Outrunner Bow", source = { kind = "world", text = "Aean Swiftriver, of the Alliance Outrunners in the Barrens Horde only: the Outrunners are Alliance scouts" } },
                 { id = 13136, name = "Lil Timmy's Peashooter", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 3493, name = "Raptor's End", source = { kind = "quest", text = "Quest: Ormer's Revenge Alliance, level 29 in Classic, from level 22", faction = "Alliance", quest = "Ormer's Revenge" } },
                 { id = 3742, name = "Bow of Plunder", source = { kind = "quest", text = "Quest: Dangerous! Horde, level 28 in Classic, from level 19", faction = "Horde", quest = "Dangerous!" } },
@@ -4579,17 +4648,19 @@ ForeverBiSData = {
             },
             { slot = "Shoulder",
               items = {
+                { id = 7684, name = "Bloodmage Mantle", source = { kind = "world", text = "Bloodmage Thalnos, Scarlet Monastery Graveyard 47.84% in Classic", zone = "Scarlet Monastery", boss = "Bloodmage Thalnos", dropRate = 47.84 } },
+                { id = 4197, name = "Berylline Pads", source = { kind = "quest", text = "Quest: A Vengeful Fate Horde, level 34 in Classic, from level 29 Quest: The Crone of the Kraul Alliance, level 34 in Classic, from level 29", quest = "A Vengeful Fate" } },
                 { id = 6685, name = "Death Speaker Mantle", source = { kind = "world", text = "Death Speaker Jargba, Razorfen Kraul 43.63% in Classic", zone = "Razorfen Kraul", boss = "Death Speaker Jargba", dropRate = 43.63 } },
                 { id = 9536, name = "Fairywing Mantle", source = { kind = "quest", text = "Quest: A Fine Mess level 30 in Classic, from level 24", quest = "A Fine Mess" } },
                 { id = 12998, name = "Magician's Mantle", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 17695, name = "Chestnut Mantle", source = { kind = "quest", text = "Quest: Allegiance to the Old Gods Horde, level 26 in Classic, from level 17", faction = "Horde", quest = "Allegiance to the Old Gods" } },
-                { id = 270039, name = "Raptorclaw Shoulders", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 270039, name = "Raptorclaw Shoulders", source = { kind = "quest", text = "Quest: Ormer's Revenge Alliance, from level 22, reported, not checked", faction = "Alliance", quest = "Ormer's Revenge", reported = true } },
               },
             },
             { slot = "Back",
               items = {
                 { id = 284383, name = "Faerie Dragon's Skin", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
-                { id = 274149, name = "Thornweaver Drape", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 274149, name = "Thornweaver Drape", source = { kind = "world", text = "Roogug, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Roogug" } },
                 { id = 3719, name = "Hillman's Cloak", source = { kind = "profession", text = "Leatherworking", skill = "Leatherworking" } },
                 { id = 15468, name = "Windsong Drape", source = { kind = "quest", text = "Quest: Free at Last Horde, level 29 in Classic, from level 25", faction = "Horde", quest = "Free at Last" } },
                 { id = 273825, name = "Red Wool Cloak", source = { kind = "world", text = "Bazil Thredd, The Stockade", zone = "The Stockade", boss = "Bazil Thredd" } },
@@ -4601,6 +4672,7 @@ ForeverBiSData = {
             { slot = "Chest",
               items = {
                 { id = 277213, name = "Dro'zem's Tunic", source = { kind = "world", text = "Dro'zem the Blasphemous, a rare elite of the Redridge Mountains Reported, not checked", reported = true } },
+                { id = 17043, name = "Zealot's Robe", source = { kind = "quest", text = "Quest: An Unholy Alliance Horde, level 36 in Classic, from level 28 A Horde quest from Varimathras in Undercity Take a group for Ambassador Malcin (level 36 elite)", quest = "An Unholy" } },
                 { id = 7065, name = "Green Silk Armor", source = { kind = "profession", text = "Tailoring (130)", skill = "Tailoring", skillLevel = 130 } },
                 { id = 252510, name = "Stormrider's Leather Tunic", source = { kind = "profession", text = "Leatherworking (110) Only its maker can wear it", skill = "Leatherworking", skillLevel = 110, bindsToMaker = true } },
                 { id = 4256, name = "Guardian Armor", source = { kind = "profession", text = "Leatherworking (150)", skill = "Leatherworking", skillLevel = 150 } },
@@ -4686,7 +4758,7 @@ ForeverBiSData = {
             },
             { slot = "Two-hand weapon",
               items = {
-                { id = 281312, name = "Fallen Dragon's Scepter", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 281312, name = "Fallen Dragon's Scepter", source = { kind = "quest", text = "Alliance quest Stopping the Cycle, Wetlands, level 34 Elite, from level 24: take a group", faction = "Alliance" } },
                 { id = 249392, name = "Glimmering Staff", source = { kind = "profession", text = "Enchanting (140) Only its maker can wear it", skill = "Enchanting", skillLevel = 140, bindsToMaker = true } },
                 { id = 274158, name = "Death Prophet Spine", source = { kind = "world", text = "Aggem Thorncurse, Razorfen Kraul Agathelos the Raging, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Aggem Thorncurse" } },
                 { id = 9452, name = "Hydrocane", source = { kind = "world", text = "Viscous Fallout, Gnomeregan 18.78% in Classic", zone = "Gnomeregan", boss = "Viscous Fallout", dropRate = 18.78 } },
@@ -4698,6 +4770,7 @@ ForeverBiSData = {
             },
             { slot = "Main hand",
               items = {
+                { id = 17039, name = "Skullbreaker", source = { kind = "quest", text = "Quest: An Unholy Alliance Horde, level 36 in Classic, from level 28 A Horde quest from Varimathras in Undercity Take a group for Ambassador Malcin (level 36 elite)", quest = "An Unholy" } },
                 { id = 6691, name = "Swinetusk Shank", source = { kind = "world", text = "Agathelos the Raging, Razorfen Kraul 33.54% in Classic", zone = "Razorfen Kraul", boss = "Agathelos the Raging", dropRate = 33.54 } },
                 { id = 3414, name = "Crested Scepter", source = { kind = "dungeon", text = "Trash mobs, Blackfathom Deeps 0.03% in Classic", zone = "Blackfathom Deeps", boss = "Trash mobs", dropRate = 0.03 } },
                 { id = 2567, name = "Evocator's Blade", source = { kind = "dungeon", text = "Trash mobs, Blackfathom Deeps 0.05% in Classic", zone = "Blackfathom Deeps", boss = "Trash mobs", dropRate = 0.05 } },
@@ -4761,7 +4834,9 @@ ForeverBiSData = {
             },
             { slot = "Shoulder",
               items = {
+                { id = 4197, name = "Berylline Pads", source = { kind = "quest", text = "Quest: A Vengeful Fate Horde, level 34 in Classic, from level 29 Quest: The Crone of the Kraul Alliance, level 34 in Classic, from level 29", quest = "A Vengeful Fate" } },
                 { id = 11884, name = "Moonlit Amice", source = { kind = "quest", text = "Quest: Return to Vahlarriel Alliance, level 33 in Classic, from level 30", faction = "Alliance", quest = "Return to Vahlarriel" } },
+                { id = 7684, name = "Bloodmage Mantle", source = { kind = "world", text = "Bloodmage Thalnos, Scarlet Monastery Graveyard 47.84% in Classic", zone = "Scarlet Monastery", boss = "Bloodmage Thalnos", dropRate = 47.84 } },
                 { id = 270023, name = "Tanned Shoulderpads", source = { kind = "quest", text = "Quest: Deathstalkers in Shadowfang Horde, from level 18, reported, not checked", faction = "Horde", quest = "Deathstalkers in Shadowfang", reported = true } },
                 { id = 9536, name = "Fairywing Mantle", source = { kind = "quest", text = "Quest: A Fine Mess level 30 in Classic, from level 24", quest = "A Fine Mess" } },
                 { id = 284399, name = "Seared Grove Shoulderpads", source = { kind = "world", text = "Sister Riven, the rare harpy of the Charred Vale Reported, not checked", reported = true } },
@@ -4783,6 +4858,7 @@ ForeverBiSData = {
             { slot = "Chest",
               items = {
                 { id = 252510, name = "Stormrider's Leather Tunic", source = { kind = "profession", text = "Leatherworking (110) Only its maker can wear it", skill = "Leatherworking", skillLevel = 110, bindsToMaker = true } },
+                { id = 17043, name = "Zealot's Robe", source = { kind = "quest", text = "Quest: An Unholy Alliance Horde, level 36 in Classic, from level 28 A Horde quest from Varimathras in Undercity Take a group for Ambassador Malcin (level 36 elite)", quest = "An Unholy" } },
                 { id = 253961, name = "Pristine Gown", source = { kind = "profession", text = "Tailoring (110) Only its maker can wear it", skill = "Tailoring", skillLevel = 110, bindsToMaker = true } },
                 { id = 6682, name = "Death Speaker Robes", source = { kind = "world", text = "Death Speaker Jargba, Razorfen Kraul 42.77% in Classic", zone = "Razorfen Kraul", boss = "Death Speaker Jargba", dropRate = 42.77 } },
                 { id = 252451, name = "Totemic Leather Tunic", source = { kind = "profession", text = "Leatherworking (110) Only its maker can wear it", skill = "Leatherworking", skillLevel = 110, bindsToMaker = true } },
@@ -4872,7 +4948,7 @@ ForeverBiSData = {
                 { id = 249392, name = "Glimmering Staff", source = { kind = "profession", text = "Enchanting (140) Only its maker can wear it", skill = "Enchanting", skillLevel = 140, bindsToMaker = true } },
                 { id = 274158, name = "Death Prophet Spine", source = { kind = "world", text = "Aggem Thorncurse, Razorfen Kraul Agathelos the Raging, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Aggem Thorncurse" } },
                 { id = 249393, name = "Soulstaff", source = { kind = "profession", text = "Enchanting (140) Only its maker can wear it", skill = "Enchanting", skillLevel = 140, bindsToMaker = true } },
-                { id = 281312, name = "Fallen Dragon's Scepter", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 281312, name = "Fallen Dragon's Scepter", source = { kind = "quest", text = "Alliance quest Stopping the Cycle, Wetlands, level 34 Elite, from level 24: take a group", faction = "Alliance" } },
               },
               enchants = {
                 { effect = "Intellect +5", spell = "Enchant 2H Weapon - Lesser Intellect", source = "Enchanting 100: Formula sold by Tilli Thistlefuzz in Dun Morogh, Kithas in Orgrimmar and Leo Sarn in Silverpine Forest.", formulaId = 6349 },
@@ -4880,6 +4956,7 @@ ForeverBiSData = {
             },
             { slot = "Main hand",
               items = {
+                { id = 17039, name = "Skullbreaker", source = { kind = "quest", text = "Quest: An Unholy Alliance Horde, level 36 in Classic, from level 28 A Horde quest from Varimathras in Undercity Take a group for Ambassador Malcin (level 36 elite)", quest = "An Unholy" } },
                 { id = 6691, name = "Swinetusk Shank", source = { kind = "world", text = "Agathelos the Raging, Razorfen Kraul 33.54% in Classic", zone = "Razorfen Kraul", boss = "Agathelos the Raging", dropRate = 33.54 } },
                 { id = 3414, name = "Crested Scepter", source = { kind = "dungeon", text = "Trash mobs, Blackfathom Deeps 0.03% in Classic", zone = "Blackfathom Deeps", boss = "Trash mobs", dropRate = 0.03 } },
                 { id = 277288, name = "Pathfinder's Clearway", source = { kind = "quest", text = "Quest: Wrongly Blamed, Justly Corrected Horde, from level 18, reported, not checked", faction = "Horde", quest = "Wrongly Blamed", reported = true } },
@@ -4920,7 +4997,7 @@ ForeverBiSData = {
           slots = {
             { slot = "Head",
               items = {
-                { id = 252455, name = "Defender's Leather Helm", source = { kind = "profession", text = "Leatherworking Only its maker can wear it Pattern: nobody has found it in the beta yet", skill = "Leatherworking", bindsToMaker = true } },
+                { id = 252455, name = "Defender's Leather Helm", source = { kind = "profession", text = "Old Serra'kis, Blackfathom Deeps Aku'mai, Blackfathom Deeps Agathelos the Raging, Razorfen Kraul Leatherworking Only its maker can wear it Pattern: nobody has found it in the beta yet", skill = "Leatherworking", bindsToMaker = true } },
                 { id = 277042, name = "Cloudy Gustwoven Hood", source = { kind = "profession", text = "Leatherworking (175)", skill = "Leatherworking", skillLevel = 175 } },
                 { id = 277050, name = "Azure Gustwoven Hood", source = { kind = "profession", text = "Leatherworking (175)", skill = "Leatherworking", skillLevel = 175 } },
                 { id = 252447, name = "Defender's Leather Hood", source = { kind = "profession", text = "Leatherworking (100) Only its maker can wear it", skill = "Leatherworking", skillLevel = 100, bindsToMaker = true } },
@@ -4952,10 +5029,10 @@ ForeverBiSData = {
             { slot = "Back",
               items = {
                 { id = 271716, name = "Explorer's League Dustcover", source = { kind = "quest", text = "Quest: Lost Relic Carry Excavation Site: Wetlands, Alliance, from level 24", faction = "Alliance", quest = "Lost Relic Carry Excavation Site: Wetlands" } },
-                { id = 271720, name = "Crocolisk Skin Gaiter", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 271720, name = "Crocolisk Skin Gaiter", source = { kind = "quest", text = "A Titan Relic quest of the Excavation Site, says a reader Reported, not checked", reported = true } },
                 { id = 282658, name = "Dragonmaw Battle Shroud", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 271719, name = "Furs of the Earthen Ring", source = { kind = "quest", text = "Quest: Elder Knowledge Excavation Site: Wetlands, Horde, from level 24", faction = "Horde", quest = "Elder Knowledge Excavation Site: Wetlands" } },
-                { id = 281319, name = "Golem War Cloak", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 281319, name = "Golem War Cloak", source = { kind = "quest", text = "Alliance quest Gleaning Our Future, Wetlands, level 32 Elite, from level 24: take a group", faction = "Alliance" } },
                 { id = 14593, name = "Hawkeye's Cloak", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
               },
               enchants = {
@@ -5022,7 +5099,7 @@ ForeverBiSData = {
             },
             { slot = "Feet",
               items = {
-                { id = 284403, name = "Shapeshifting Sentinel's Strides", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 284403, name = "Shapeshifting Sentinel's Strides", source = { kind = "world", text = "A rare of northern Stonetalon Mountains, near the night elves Reported, not checked", reported = true } },
                 { id = 252439, name = "Brawler's Leather Boots", source = { kind = "profession", text = "Leatherworking (85) Only its maker can wear it", skill = "Leatherworking", skillLevel = 85, bindsToMaker = true } },
                 { id = 1121, name = "Feet of the Lynx", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 277226, name = "Disjointed Shoes", source = { kind = "quest", text = "Quest: WANTED: Incinerator Gar'im Alliance, from level 16, reported, not checked", faction = "Alliance", quest = "WANTED: Incinerator Gar'im", reported = true } },
@@ -5038,7 +5115,7 @@ ForeverBiSData = {
                 { id = 13097, name = "Thunderbrow Ring", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 270052, name = "Swamp Ring", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 2933, name = "Seal of Wrynn", source = { kind = "quest", text = "Quest: An Audience with the King Alliance, level 31 in Classic, from level 16", faction = "Alliance", quest = "An Audience with the King" } },
-                { id = 270053, name = "Ring of Ruin", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 270053, name = "Ring of Ruin", source = { kind = "quest", text = "Quest: The Legend of Stalvan Alliance, from level 22, reported, not checked", faction = "Alliance", quest = "The Legend of Stalvan", reported = true } },
               },
             },
             { slot = "Trinket",
@@ -5066,7 +5143,7 @@ ForeverBiSData = {
                 { id = 7683, name = "Bloody Brass Knuckles", source = { kind = "world", text = "Interrogator Vishas, Scarlet Monastery Graveyard 52.35% in Classic", zone = "Scarlet Monastery", boss = "Interrogator Vishas", dropRate = 52.35 } },
                 { id = 7682, name = "Torturing Poker", source = { kind = "world", text = "Interrogator Vishas, Scarlet Monastery Graveyard 6.08% in Classic", zone = "Scarlet Monastery", boss = "Interrogator Vishas", dropRate = 6.08 } },
                 { id = 271664, name = "Hornbeam Heft", source = { kind = "quest", text = "Quest: Horrors in the Highland Excavation Site: Wetlands, Alliance, from level 24", faction = "Alliance", quest = "Horrors in the Highland Excavation Site: Wetlands" } },
-                { id = 281314, name = "Subdued Dragon's Fang", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 281314, name = "Subdued Dragon's Fang", source = { kind = "quest", text = "Alliance quest Stopping the Cycle, Wetlands, level 34 Elite, from level 24: take a group", faction = "Alliance" } },
                 { id = 2912, name = "Claw of the Shadowmancer", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
               },
               enchants = {
@@ -5103,7 +5180,7 @@ ForeverBiSData = {
           slots = {
             { slot = "Head",
               items = {
-                { id = 252455, name = "Defender's Leather Helm", source = { kind = "profession", text = "Leatherworking Only its maker can wear it Pattern: nobody has found it in the beta yet", skill = "Leatherworking", bindsToMaker = true } },
+                { id = 252455, name = "Defender's Leather Helm", source = { kind = "profession", text = "Old Serra'kis, Blackfathom Deeps Aku'mai, Blackfathom Deeps Agathelos the Raging, Razorfen Kraul Leatherworking Only its maker can wear it Pattern: nobody has found it in the beta yet", skill = "Leatherworking", bindsToMaker = true } },
                 { id = 252447, name = "Defender's Leather Hood", source = { kind = "profession", text = "Leatherworking (100) Only its maker can wear it", skill = "Leatherworking", skillLevel = 100, bindsToMaker = true } },
                 { id = 277042, name = "Cloudy Gustwoven Hood", source = { kind = "profession", text = "Leatherworking (175)", skill = "Leatherworking", skillLevel = 175 } },
                 { id = 277050, name = "Azure Gustwoven Hood", source = { kind = "profession", text = "Leatherworking (175)", skill = "Leatherworking", skillLevel = 175 } },
@@ -5134,7 +5211,7 @@ ForeverBiSData = {
             },
             { slot = "Back",
               items = {
-                { id = 271720, name = "Crocolisk Skin Gaiter", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 271720, name = "Crocolisk Skin Gaiter", source = { kind = "quest", text = "A Titan Relic quest of the Excavation Site, says a reader Reported, not checked", reported = true } },
                 { id = 13108, name = "Tigerstrike Mantle", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 277205, name = "Cloak of the Divine Storm", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 14763, name = "Enduring Cape", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
@@ -5208,7 +5285,7 @@ ForeverBiSData = {
                 { id = 9450, name = "Gnomebot Operating Boots", source = { kind = "world", text = "Crowd Pummeler 9-60, Gnomeregan 65.28% in Classic", zone = "Gnomeregan", boss = "Crowd Pummeler 9-60", dropRate = 65.28 } },
                 { id = 19969, name = "Nat Pagle's Extreme Anglin' Boots", source = { kind = "quest", text = "Quest: Rare Fish - Brownell's Blue Striped Racer level 0 in Classic, from level 1", quest = "Rare Fish - Brownell's Blue Striped Racer" } },
                 { id = 252439, name = "Brawler's Leather Boots", source = { kind = "profession", text = "Leatherworking (85) Only its maker can wear it", skill = "Leatherworking", skillLevel = 85, bindsToMaker = true } },
-                { id = 284403, name = "Shapeshifting Sentinel's Strides", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 284403, name = "Shapeshifting Sentinel's Strides", source = { kind = "world", text = "A rare of northern Stonetalon Mountains, near the night elves Reported, not checked", reported = true } },
               },
               enchants = {
                 { effect = "Minor Speed Increase", spell = "Enchant Boots - Minor Speed", source = "Enchanting 225: Taught by the trainer." },
@@ -5249,7 +5326,7 @@ ForeverBiSData = {
                 { id = 271664, name = "Hornbeam Heft", source = { kind = "quest", text = "Quest: Horrors in the Highland Excavation Site: Wetlands, Alliance, from level 24", faction = "Alliance", quest = "Horrors in the Highland Excavation Site: Wetlands" } },
                 { id = 7683, name = "Bloody Brass Knuckles", source = { kind = "world", text = "Interrogator Vishas, Scarlet Monastery Graveyard 52.35% in Classic", zone = "Scarlet Monastery", boss = "Interrogator Vishas", dropRate = 52.35 } },
                 { id = 7682, name = "Torturing Poker", source = { kind = "world", text = "Interrogator Vishas, Scarlet Monastery Graveyard 6.08% in Classic", zone = "Scarlet Monastery", boss = "Interrogator Vishas", dropRate = 6.08 } },
-                { id = 281314, name = "Subdued Dragon's Fang", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 281314, name = "Subdued Dragon's Fang", source = { kind = "quest", text = "Alliance quest Stopping the Cycle, Wetlands, level 34 Elite, from level 24: take a group", faction = "Alliance" } },
                 { id = 13048, name = "Looming Gavel", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
               },
               enchants = {
@@ -5297,10 +5374,10 @@ ForeverBiSData = {
               items = {
                 { id = 23169, name = "Scorn's Icy Choker", source = { kind = "world", text = "Scorn, a rare elite of the Scarlet Monastery Graveyard About 1 kill in 4 in the beta", zone = "Scarlet Monastery" } },
                 { id = 13084, name = "Kaleidoscope Chain", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
-                { id = 281321, name = "Giantstone Medallion", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 281321, name = "Giantstone Medallion", source = { kind = "quest", text = "Alliance quest Gleaning Our Future, Wetlands, level 32 Elite, from level 24: take a group", faction = "Alliance" } },
                 { id = 5003, name = "Crystal Starfire Medallion", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 274068, name = "Thermaplugg Medal of Honor", source = { kind = "world", text = "Crowd Pummeler 9-60, Gnomeregan", zone = "Gnomeregan", boss = "Crowd Pummeler 9-60" } },
-                { id = 281258, name = "Essene's Hope", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 281258, name = "Essene's Hope", source = { kind = "quest", text = "Alliance quest Sentiments of the Lost, level 33 Elite, from level 28: where it starts is not known yet", faction = "Alliance" } },
               },
               enchants = {
                 { effect = "Healing Spells +11, Damage Spells +4", spell = "Enchant Necklace - Healing Power", source = "Enchanting 210: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 120 Merchant’s Favor.", formulaId = 249503 },
@@ -5308,7 +5385,9 @@ ForeverBiSData = {
             },
             { slot = "Shoulder",
               items = {
+                { id = 7684, name = "Bloodmage Mantle", source = { kind = "world", text = "Bloodmage Thalnos, Scarlet Monastery Graveyard 47.84% in Classic", zone = "Scarlet Monastery", boss = "Bloodmage Thalnos", dropRate = 47.84 } },
                 { id = 3324, name = "Ghostly Mantle", source = { kind = "quest", text = "Quest: Deathstalkers in Shadowfang Horde, level 25 in Classic, from level 18", faction = "Horde", quest = "Deathstalkers in Shadowfang" } },
+                { id = 4197, name = "Berylline Pads", source = { kind = "quest", text = "Quest: A Vengeful Fate Horde, level 34 in Classic, from level 29 Quest: The Crone of the Kraul Alliance, level 34 in Classic, from level 29", quest = "A Vengeful Fate" } },
                 { id = 6685, name = "Death Speaker Mantle", source = { kind = "world", text = "Death Speaker Jargba, Razorfen Kraul 43.63% in Classic", zone = "Razorfen Kraul", boss = "Death Speaker Jargba", dropRate = 43.63 } },
                 { id = 9536, name = "Fairywing Mantle", source = { kind = "quest", text = "Quest: A Fine Mess level 30 in Classic, from level 24", quest = "A Fine Mess" } },
                 { id = 270023, name = "Tanned Shoulderpads", source = { kind = "quest", text = "Quest: Deathstalkers in Shadowfang Horde, from level 18, reported, not checked", faction = "Horde", quest = "Deathstalkers in Shadowfang", reported = true } },
@@ -5320,7 +5399,7 @@ ForeverBiSData = {
                 { id = 7004, name = "Prelacy Cape", source = { kind = "quest", text = "Quest: Researching the Corruption Alliance, level 24 in Classic, from level 18", faction = "Alliance", quest = "Researching the Corruption" } },
                 { id = 273825, name = "Red Wool Cloak", source = { kind = "world", text = "Bazil Thredd, The Stockade", zone = "The Stockade", boss = "Bazil Thredd" } },
                 { id = 6901, name = "Glowing Thresher Cape", source = { kind = "dungeon", text = "Old Serra'kis, Blackfathom Deeps 39.27% in Classic", zone = "Blackfathom Deeps", boss = "Old Serra'kis", dropRate = 39.27 } },
-                { id = 274149, name = "Thornweaver Drape", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 274149, name = "Thornweaver Drape", source = { kind = "world", text = "Roogug, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Roogug" } },
                 { id = 15468, name = "Windsong Drape", source = { kind = "quest", text = "Quest: Free at Last Horde, level 29 in Classic, from level 25", faction = "Horde", quest = "Free at Last" } },
               },
               enchants = {
@@ -5377,7 +5456,7 @@ ForeverBiSData = {
                 { id = 253987, name = "Pristine Leggings", source = { kind = "profession", text = "Tailoring (125) Only its maker can wear it", skill = "Tailoring", skillLevel = 125, bindsToMaker = true } },
                 { id = 252519, name = "Wisdom's Leather Leggings", source = { kind = "profession", text = "Leatherworking (125) Only its maker can wear it", skill = "Leatherworking", skillLevel = 125, bindsToMaker = true } },
                 { id = 252503, name = "Wisdom's Leather Pants", source = { kind = "profession", text = "Leatherworking Only its maker can wear it Pattern: nobody has found it in the beta yet", skill = "Leatherworking", bindsToMaker = true } },
-                { id = 253937, name = "Filigreed Pristine Leggings", source = { kind = "profession", text = "Tailoring (100) Only its maker can wear it Pattern drops from Verdan the Everliving, Wailing Caverns", skill = "Tailoring", skillLevel = 100, bindsToMaker = true } },
+                { id = 253937, name = "Filigreed Pristine Leggings", source = { kind = "profession", text = "Tailoring (100) Only its maker can wear it Pattern drops from Verdan the Everliving, Wailing Caverns; Lord Pythas, Wailing Caverns", skill = "Tailoring", skillLevel = 100, bindsToMaker = true } },
                 { id = 253999, name = "Earthen Leggings", source = { kind = "profession", text = "Tailoring (140) Pattern: nobody has found it in the beta yet", skill = "Tailoring", skillLevel = 140 } },
                 { id = 273289, name = "Ogre Loincloth", source = { kind = "dungeon", text = "Rhahk'Zor, The Deadmines", zone = "The Deadmines", boss = "Rhahk'Zor" } },
               },
@@ -5428,6 +5507,7 @@ ForeverBiSData = {
             { slot = "Main hand",
               items = {
                 { id = 2816, name = "Death Speaker Scepter", source = { kind = "world", text = "Death Speaker Jargba, Razorfen Kraul 10.02% in Classic", zone = "Razorfen Kraul", boss = "Death Speaker Jargba", dropRate = 10.02 } },
+                { id = 17039, name = "Skullbreaker", source = { kind = "quest", text = "Quest: An Unholy Alliance Horde, level 36 in Classic, from level 28 A Horde quest from Varimathras in Undercity Take a group for Ambassador Malcin (level 36 elite)", quest = "An Unholy" } },
                 { id = 6691, name = "Swinetusk Shank", source = { kind = "world", text = "Agathelos the Raging, Razorfen Kraul 33.54% in Classic", zone = "Razorfen Kraul", boss = "Agathelos the Raging", dropRate = 33.54 } },
                 { id = 272996, name = "Trogg Scepter", source = { kind = "dungeon", text = "Oggleflint, Ragefire Chasm", zone = "Ragefire Chasm", boss = "Oggleflint" } },
                 { id = 15443, name = "Kris of Orgrimmar", source = { kind = "quest", text = "Quest: Hidden Enemies Horde, level 16 in Classic, from level 9", faction = "Horde", quest = "Hidden Enemies" } },
@@ -5489,6 +5569,8 @@ ForeverBiSData = {
             },
             { slot = "Shoulder",
               items = {
+                { id = 7684, name = "Bloodmage Mantle", source = { kind = "world", text = "Bloodmage Thalnos, Scarlet Monastery Graveyard 47.84% in Classic", zone = "Scarlet Monastery", boss = "Bloodmage Thalnos", dropRate = 47.84 } },
+                { id = 4197, name = "Berylline Pads", source = { kind = "quest", text = "Quest: A Vengeful Fate Horde, level 34 in Classic, from level 29 Quest: The Crone of the Kraul Alliance, level 34 in Classic, from level 29", quest = "A Vengeful Fate" } },
                 { id = 6685, name = "Death Speaker Mantle", source = { kind = "world", text = "Death Speaker Jargba, Razorfen Kraul 43.63% in Classic", zone = "Razorfen Kraul", boss = "Death Speaker Jargba", dropRate = 43.63 } },
                 { id = 9536, name = "Fairywing Mantle", source = { kind = "quest", text = "Quest: A Fine Mess level 30 in Classic, from level 24", quest = "A Fine Mess" } },
                 { id = 12998, name = "Magician's Mantle", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
@@ -5498,7 +5580,7 @@ ForeverBiSData = {
             },
             { slot = "Back",
               items = {
-                { id = 274149, name = "Thornweaver Drape", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 274149, name = "Thornweaver Drape", source = { kind = "world", text = "Roogug, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Roogug" } },
                 { id = 3719, name = "Hillman's Cloak", source = { kind = "profession", text = "Leatherworking", skill = "Leatherworking" } },
                 { id = 15468, name = "Windsong Drape", source = { kind = "quest", text = "Quest: Free at Last Horde, level 29 in Classic, from level 25", faction = "Horde", quest = "Free at Last" } },
                 { id = 6632, name = "Feyscale Cloak", source = { kind = "dungeon", text = "Deviate Faerie Dragon, Wailing Caverns 44.63% in Classic", zone = "Wailing Caverns", boss = "Deviate Faerie Dragon", dropRate = 44.63 } },
@@ -5510,6 +5592,7 @@ ForeverBiSData = {
             },
             { slot = "Chest",
               items = {
+                { id = 17043, name = "Zealot's Robe", source = { kind = "quest", text = "Quest: An Unholy Alliance Horde, level 36 in Classic, from level 28 A Horde quest from Varimathras in Undercity Take a group for Ambassador Malcin (level 36 elite)", quest = "An Unholy" } },
                 { id = 253967, name = "Shadow Gown", source = { kind = "profession", text = "Tailoring (110) Only its maker can wear it", skill = "Tailoring", skillLevel = 110, bindsToMaker = true } },
                 { id = 2292, name = "Necrology Robes", source = { kind = "dungeon", text = "Trash mobs, Shadowfang Keep 0.02% in Classic", zone = "Shadowfang Keep", boss = "Trash mobs", dropRate = 0.02 } },
                 { id = 277213, name = "Dro'zem's Tunic", source = { kind = "world", text = "Dro'zem the Blasphemous, a rare elite of the Redridge Mountains Reported, not checked", reported = true } },
@@ -5599,7 +5682,7 @@ ForeverBiSData = {
             { slot = "Two-hand weapon",
               items = {
                 { id = 15109, name = "Staff of Soran'ruk", source = { kind = "quest", text = "Quest: The Orb of Soran'ruk level 25 in Classic, from level 20", quest = "The Orb of Soran'ruk" } },
-                { id = 281312, name = "Fallen Dragon's Scepter", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 281312, name = "Fallen Dragon's Scepter", source = { kind = "quest", text = "Alliance quest Stopping the Cycle, Wetlands, level 34 Elite, from level 24: take a group", faction = "Alliance" } },
                 { id = 249392, name = "Glimmering Staff", source = { kind = "profession", text = "Enchanting (140) Only its maker can wear it", skill = "Enchanting", skillLevel = 140, bindsToMaker = true } },
                 { id = 274158, name = "Death Prophet Spine", source = { kind = "world", text = "Aggem Thorncurse, Razorfen Kraul Agathelos the Raging, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Aggem Thorncurse" } },
                 { id = 2549, name = "Staff of the Shade", source = { kind = "world", text = "Trash mobs, Razorfen Kraul 0.05% in Classic A world drop, not bound: the auction house is quickest Reported, not checked", zone = "Razorfen Kraul", boss = "Trash mobs", dropRate = 0.05, reported = true } },
@@ -5670,7 +5753,9 @@ ForeverBiSData = {
             },
             { slot = "Shoulder",
               items = {
+                { id = 4197, name = "Berylline Pads", source = { kind = "quest", text = "Quest: A Vengeful Fate Horde, level 34 in Classic, from level 29 Quest: The Crone of the Kraul Alliance, level 34 in Classic, from level 29", quest = "A Vengeful Fate" } },
                 { id = 11884, name = "Moonlit Amice", source = { kind = "quest", text = "Quest: Return to Vahlarriel Alliance, level 33 in Classic, from level 30", faction = "Alliance", quest = "Return to Vahlarriel" } },
+                { id = 7684, name = "Bloodmage Mantle", source = { kind = "world", text = "Bloodmage Thalnos, Scarlet Monastery Graveyard 47.84% in Classic", zone = "Scarlet Monastery", boss = "Bloodmage Thalnos", dropRate = 47.84 } },
                 { id = 9536, name = "Fairywing Mantle", source = { kind = "quest", text = "Quest: A Fine Mess level 30 in Classic, from level 24", quest = "A Fine Mess" } },
                 { id = 284399, name = "Seared Grove Shoulderpads", source = { kind = "world", text = "Sister Riven, the rare harpy of the Charred Vale Reported, not checked", reported = true } },
                 { id = 17695, name = "Chestnut Mantle", source = { kind = "quest", text = "Quest: Allegiance to the Old Gods Horde, level 26 in Classic, from level 17", faction = "Horde", quest = "Allegiance to the Old Gods" } },
@@ -5682,7 +5767,7 @@ ForeverBiSData = {
                 { id = 3719, name = "Hillman's Cloak", source = { kind = "profession", text = "Leatherworking", skill = "Leatherworking" } },
                 { id = 6632, name = "Feyscale Cloak", source = { kind = "dungeon", text = "Deviate Faerie Dragon, Wailing Caverns 44.63% in Classic", zone = "Wailing Caverns", boss = "Deviate Faerie Dragon", dropRate = 44.63 } },
                 { id = 2953, name = "Watch Master's Cloak", source = { kind = "quest", text = "Quest: Morbent Fel Alliance, level 32 in Classic, from level 20", faction = "Alliance", quest = "Morbent Fel" } },
-                { id = 274149, name = "Thornweaver Drape", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 274149, name = "Thornweaver Drape", source = { kind = "world", text = "Roogug, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Roogug" } },
               },
               enchants = {
                 { effect = "Armor +60", spell = "Enchant Cloak - Greater Defense", source = "Enchanting 205: Taught by the trainer." },
@@ -5692,6 +5777,7 @@ ForeverBiSData = {
               items = {
                 { id = 253967, name = "Shadow Gown", source = { kind = "profession", text = "Tailoring (110) Only its maker can wear it", skill = "Tailoring", skillLevel = 110, bindsToMaker = true } },
                 { id = 2292, name = "Necrology Robes", source = { kind = "dungeon", text = "Trash mobs, Shadowfang Keep 0.02% in Classic", zone = "Shadowfang Keep", boss = "Trash mobs", dropRate = 0.02 } },
+                { id = 17043, name = "Zealot's Robe", source = { kind = "quest", text = "Quest: An Unholy Alliance Horde, level 36 in Classic, from level 28 A Horde quest from Varimathras in Undercity Take a group for Ambassador Malcin (level 36 elite)", quest = "An Unholy" } },
                 { id = 6682, name = "Death Speaker Robes", source = { kind = "world", text = "Death Speaker Jargba, Razorfen Kraul 42.77% in Classic", zone = "Razorfen Kraul", boss = "Death Speaker Jargba", dropRate = 42.77 } },
                 { id = 7065, name = "Green Silk Armor", source = { kind = "profession", text = "Tailoring (130)", skill = "Tailoring", skillLevel = 130 } },
                 { id = 6226, name = "Bloody Apron", source = { kind = "dungeon", text = "Razorclaw the Butcher, Shadowfang Keep 43.55% in Classic", zone = "Shadowfang Keep", boss = "Razorclaw the Butcher", dropRate = 43.55 } },
@@ -5858,7 +5944,7 @@ ForeverBiSData = {
             },
             { slot = "Back",
               items = {
-                { id = 271720, name = "Crocolisk Skin Gaiter", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 271720, name = "Crocolisk Skin Gaiter", source = { kind = "quest", text = "A Titan Relic quest of the Excavation Site, says a reader Reported, not checked", reported = true } },
                 { id = 14593, name = "Hawkeye's Cloak", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 282658, name = "Dragonmaw Battle Shroud", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 2805, name = "Yeti Fur Cloak", source = { kind = "quest", text = "Quest: Bartolo's Yeti Fur Cloak Alliance, level 34 in Classic, from level 29", faction = "Alliance", quest = "Bartolo's Yeti Fur Cloak" } },
@@ -5921,6 +6007,7 @@ ForeverBiSData = {
             { slot = "Legs",
               items = {
                 { id = 250523, name = "Veteran's Silvered Chain Leggings", source = { kind = "profession", text = "Blacksmithing (125) Only its maker can wear it", skill = "Blacksmithing", skillLevel = 125, bindsToMaker = true } },
+                { id = 9624, name = "Triprunner Dungarees", source = { kind = "quest", text = "Quest: Rig Wars Horde, level 35 in Classic, from level 25 Quest: The Grand Betrayal Alliance, level 35 in Classic, from level 25 The last quest of Gnomeregan, for either faction Take a group for Mekgineer Thermaplugg (level 34)", quest = "Rig Wars" } },
                 { id = 252516, name = "Brawler's Leather Legguards", source = { kind = "profession", text = "Leatherworking (125) Only its maker can wear it", skill = "Leatherworking", skillLevel = 125, bindsToMaker = true } },
                 { id = 250493, name = "Veteran's Chain Leggings", source = { kind = "profession", text = "Blacksmithing Only its maker can wear it Plans: nobody has found it in the beta yet", skill = "Blacksmithing", bindsToMaker = true } },
                 { id = 281295, name = "Pelt Pants", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
@@ -5934,7 +6021,7 @@ ForeverBiSData = {
             },
             { slot = "Feet",
               items = {
-                { id = 284403, name = "Shapeshifting Sentinel's Strides", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 284403, name = "Shapeshifting Sentinel's Strides", source = { kind = "world", text = "A rare of northern Stonetalon Mountains, near the night elves Reported, not checked", reported = true } },
                 { id = 4464, name = "Trouncing Boots", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 252439, name = "Brawler's Leather Boots", source = { kind = "profession", text = "Leatherworking (85) Only its maker can wear it", skill = "Leatherworking", skillLevel = 85, bindsToMaker = true } },
                 { id = 250503, name = "Veteran's Boots", source = { kind = "profession", text = "Blacksmithing (85) Only its maker can wear it", skill = "Blacksmithing", skillLevel = 85, bindsToMaker = true } },
@@ -5996,7 +6083,7 @@ ForeverBiSData = {
           slots = {
             { slot = "Head",
               items = {
-                { id = 252455, name = "Defender's Leather Helm", source = { kind = "profession", text = "Leatherworking Only its maker can wear it Pattern: nobody has found it in the beta yet", skill = "Leatherworking", bindsToMaker = true } },
+                { id = 252455, name = "Defender's Leather Helm", source = { kind = "profession", text = "Old Serra'kis, Blackfathom Deeps Aku'mai, Blackfathom Deeps Agathelos the Raging, Razorfen Kraul Leatherworking Only its maker can wear it Pattern: nobody has found it in the beta yet", skill = "Leatherworking", bindsToMaker = true } },
                 { id = 13127, name = "Frostreaver Crown", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 250528, name = "Veteran's Silvered Chain Helm", source = { kind = "profession", text = "Blacksmithing (95) Only its maker can wear it", skill = "Blacksmithing", skillLevel = 95, bindsToMaker = true } },
                 { id = 277040, name = "Cloudy Skyforged Helm", source = { kind = "profession", text = "Blacksmithing (175)", skill = "Blacksmithing", skillLevel = 175 } },
@@ -6028,7 +6115,7 @@ ForeverBiSData = {
             },
             { slot = "Back",
               items = {
-                { id = 271720, name = "Crocolisk Skin Gaiter", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 271720, name = "Crocolisk Skin Gaiter", source = { kind = "quest", text = "A Titan Relic quest of the Excavation Site, says a reader Reported, not checked", reported = true } },
                 { id = 13108, name = "Tigerstrike Mantle", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 14763, name = "Enduring Cape", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 6314, name = "Wolfmaster Cape", source = { kind = "dungeon", text = "Wolf Master Nandos, Shadowfang Keep 38.56% in Classic", zone = "Shadowfang Keep", boss = "Wolf Master Nandos", dropRate = 38.56 } },
@@ -6197,7 +6284,7 @@ ForeverBiSData = {
             { slot = "Back",
               items = {
                 { id = 13108, name = "Tigerstrike Mantle", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
-                { id = 271720, name = "Crocolisk Skin Gaiter", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 271720, name = "Crocolisk Skin Gaiter", source = { kind = "quest", text = "A Titan Relic quest of the Excavation Site, says a reader Reported, not checked", reported = true } },
                 { id = 14763, name = "Enduring Cape", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 9699, name = "Garrison Cloak", source = { kind = "quest", text = "Quest: Return to Vahlarriel Alliance, level 33 in Classic, from level 30", faction = "Alliance", quest = "Return to Vahlarriel" } },
                 { id = 2953, name = "Watch Master's Cloak", source = { kind = "quest", text = "Quest: Morbent Fel Alliance, level 32 in Classic, from level 20", faction = "Alliance", quest = "Morbent Fel" } },
