@@ -12,7 +12,8 @@ ForeverBiSData = {
           slots = {
             { slot = "Head",
               items = {
-                { id = 252512, name = "Brawler's Leather Helm", source = { kind = "profession", text = "Overlord Ramtusk, Razorfen Kraul Leatherworking Only its maker can wear it Pattern: nobody has found it in the beta yet Also drops in the Stockade, says a reader Reported, not checked", skill = "Leatherworking", bindsToMaker = true, reported = true } },
+                { id = 252512, name = "Brawler's Leather Helm", source = { kind = "profession", text = "Gelihast, Blackfathom Deeps Aku'mai, Blackfathom Deeps Dextren Ward, The Stockade Aggem Thorncurse, Razorfen Kraul Overlord Ramtusk, Razorfen Kraul Leatherworking Only its maker can wear it Pattern: nobody has found it in the beta yet", skill = "Leatherworking", bindsToMaker = true } },
+                { id = 6720, name = "Spirit Hunter Headdress", source = { kind = "quest", text = "Quest: Frostmaw Horde, level 37 in Classic, from level 26", faction = "Horde", quest = "Frostmaw" } },
                 { id = 252504, name = "Brawler's Leather Hood", source = { kind = "profession", text = "Leatherworking (100) Only its maker can wear it", skill = "Leatherworking", skillLevel = 100, bindsToMaker = true } },
                 { id = 277219, name = "Solomon's Comfortable Hat", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 277042, name = "Cloudy Gustwoven Hood", source = { kind = "profession", text = "Leatherworking (175)", skill = "Leatherworking", skillLevel = 175 } },
@@ -104,7 +105,7 @@ ForeverBiSData = {
                 { id = 9509, name = "Petrolspill Leggings", source = { kind = "world", text = "Trash mobs, Gnomeregan 0.04% in Classic A world drop, not bound: the auction house is quickest Reported, not checked", zone = "Gnomeregan", boss = "Trash mobs", dropRate = 0.04, reported = true } },
                 { id = 13114, name = "Troll's Bane Leggings", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 252457, name = "Defender's Leather Kilt", source = { kind = "profession", text = "Leatherworking (125) Only its maker can wear it", skill = "Leatherworking", skillLevel = 125, bindsToMaker = true } },
-                { id = 281295, name = "Pelt Pants", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 281295, name = "Pelt Pants", source = { kind = "quest", text = "Alliance quest Packaged Pristine Pelts, level 31 Kristy Grant, Thalanaar, from level 27", faction = "Alliance" } },
               },
               enchants = {
                 { effect = "Attack Power +6 and Armor +24", spell = "Forceful Heavy Armor Kit", source = "Leatherworking 135: Pattern sold by Saenorion in Darnassus and Mahu in Thunder Bluff.", formulaId = 252812 },
@@ -129,6 +130,7 @@ ForeverBiSData = {
                 { id = 13097, name = "Thunderbrow Ring", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 270053, name = "Ring of Ruin", source = { kind = "quest", text = "Quest: The Legend of Stalvan Alliance, from level 22, reported, not checked", faction = "Alliance", quest = "The Legend of Stalvan", reported = true } },
                 { id = 270052, name = "Swamp Ring", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 281634, name = "Field Researcher's Loop", source = { kind = "quest", text = "Quest: Greater Friend of the Library Twenty books, the necklace’s ten counted", quest = "Greater Friend of the Library Twenty books" } },
                 { id = 17694, name = "Band of the Fist", source = { kind = "quest", text = "Quest: Allegiance to the Old Gods Horde, level 26 in Classic, from level 17", faction = "Horde", quest = "Allegiance to the Old Gods" } },
               },
             },
@@ -136,6 +138,8 @@ ForeverBiSData = {
               items = {
                 { id = 4381, name = "Minor Recombobulator", source = { kind = "profession", text = "Engineering (140)", skill = "Engineering", skillLevel = 140 } },
                 { id = 4396, name = "Mechanical Dragonling", source = { kind = "profession", text = "Engineering (200)", skill = "Engineering", skillLevel = 200 } },
+                { id = 280766, name = "Satchel of Potions", source = { kind = "quest", text = "Quest: Changing Tastes Excavation Site: Wetlands, Horde, from level 24", faction = "Horde", quest = "Changing Tastes Excavation Site: Wetlands" } },
+                { id = 274152, name = "Roogug's Severed Head", source = { kind = "world", text = "Roogug, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Roogug" } },
                 { id = 273298, name = "Lookie's Spyglass", source = { kind = "dungeon", text = "Cookie, The Deadmines", zone = "The Deadmines", boss = "Cookie" } },
               },
             },
@@ -311,6 +315,7 @@ ForeverBiSData = {
             { slot = "Trinket",
               items = {
                 { id = 4381, name = "Minor Recombobulator", source = { kind = "profession", text = "Engineering (140)", skill = "Engineering", skillLevel = 140 } },
+                { id = 280766, name = "Satchel of Potions", source = { kind = "quest", text = "Quest: Changing Tastes Excavation Site: Wetlands, Horde, from level 24", faction = "Horde", quest = "Changing Tastes Excavation Site: Wetlands" } },
                 { id = 4396, name = "Mechanical Dragonling", source = { kind = "profession", text = "Engineering (200)", skill = "Engineering", skillLevel = 200 } },
                 { id = 273643, name = "Worgenbane Talisman", source = { kind = "dungeon", text = "Commander Springvale, Shadowfang Keep", zone = "Shadowfang Keep", boss = "Commander Springvale" } },
                 { id = 274152, name = "Roogug's Severed Head", source = { kind = "world", text = "Roogug, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Roogug" } },
@@ -488,7 +493,7 @@ ForeverBiSData = {
                 { id = 271670, name = "Curl of Life", source = { kind = "quest", text = "Quest: Horrors in the Highland Excavation Site: Wetlands, Alliance, from level 24", faction = "Alliance", quest = "Horrors in the Highland Excavation Site: Wetlands" } },
                 { id = 273806, name = "Dark Horde Band", source = { kind = "world", text = "Targorr the Dread, The Stockade", zone = "The Stockade", boss = "Targorr the Dread" } },
                 { id = 282283, name = "Malignant Root", source = { kind = "world", text = "Nightveiled Rotheap, a patrol of the Wetlands Alliance only, and not checked in the beta", faction = "Alliance" } },
-                { id = 281320, name = "Rune-Etched Ring", source = { kind = "quest", text = "Alliance quest Gleaning Our Future, Wetlands, level 32 Reported, not checked", faction = "Alliance", reported = true } },
+                { id = 281320, name = "Rune-Etched Ring", source = { kind = "quest", text = "Alliance quest Gleaning Our Future, Wetlands, level 32 Elite, from level 24: take a group", faction = "Alliance" } },
                 { id = 274746, name = "Sea Giant's Toe Ring", source = { kind = "world", text = "Sold by Gezzy Gunkgear in Booty Bay At Friendly with Booty Bay" } },
               },
             },
@@ -497,7 +502,9 @@ ForeverBiSData = {
                 { id = 4381, name = "Minor Recombobulator", source = { kind = "profession", text = "Engineering (140)", skill = "Engineering", skillLevel = 140 } },
                 { id = 10720, name = "Gnomish Net-o-Matic Projector", source = { kind = "profession", text = "Engineering (210)", skill = "Engineering", skillLevel = 210 } },
                 { id = 260802, name = "EZ-Thro Bronze Mortar", source = { kind = "profession", text = "Engineering (190) Schematic: nobody has found it in the beta yet", skill = "Engineering", skillLevel = 190 } },
+                { id = 280766, name = "Satchel of Potions", source = { kind = "quest", text = "Quest: Changing Tastes Excavation Site: Wetlands, Horde, from level 24", faction = "Horde", quest = "Changing Tastes Excavation Site: Wetlands" } },
                 { id = 273643, name = "Worgenbane Talisman", source = { kind = "dungeon", text = "Commander Springvale, Shadowfang Keep", zone = "Shadowfang Keep", boss = "Commander Springvale" } },
+                { id = 274152, name = "Roogug's Severed Head", source = { kind = "world", text = "Roogug, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Roogug" } },
               },
             },
             { slot = "Two-hand weapon",
@@ -549,7 +556,7 @@ ForeverBiSData = {
           slots = {
             { slot = "Head",
               items = {
-                { id = 252512, name = "Brawler's Leather Helm", source = { kind = "profession", text = "Overlord Ramtusk, Razorfen Kraul Leatherworking Only its maker can wear it Pattern: nobody has found it in the beta yet Also drops in the Stockade, says a reader Reported, not checked", skill = "Leatherworking", bindsToMaker = true, reported = true } },
+                { id = 252512, name = "Brawler's Leather Helm", source = { kind = "profession", text = "Gelihast, Blackfathom Deeps Aku'mai, Blackfathom Deeps Dextren Ward, The Stockade Aggem Thorncurse, Razorfen Kraul Overlord Ramtusk, Razorfen Kraul Leatherworking Only its maker can wear it Pattern: nobody has found it in the beta yet", skill = "Leatherworking", bindsToMaker = true } },
                 { id = 252504, name = "Brawler's Leather Hood", source = { kind = "profession", text = "Leatherworking (100) Only its maker can wear it", skill = "Leatherworking", skillLevel = 100, bindsToMaker = true } },
                 { id = 252447, name = "Defender's Leather Hood", source = { kind = "profession", text = "Leatherworking (100) Only its maker can wear it", skill = "Leatherworking", skillLevel = 100, bindsToMaker = true } },
                 { id = 277042, name = "Cloudy Gustwoven Hood", source = { kind = "profession", text = "Leatherworking (175)", skill = "Leatherworking", skillLevel = 175 } },
@@ -665,9 +672,10 @@ ForeverBiSData = {
             { slot = "Finger",
               items = {
                 { id = 285190, name = "Wyvern Heart Band", source = { kind = "world", text = "Heartrazor, the rare wyvern of Thousand Needles Reported, not checked", reported = true } },
+                { id = 281634, name = "Field Researcher's Loop", source = { kind = "quest", text = "Quest: Greater Friend of the Library Twenty books, the necklace’s ten counted", quest = "Greater Friend of the Library Twenty books" } },
                 { id = 6414, name = "Seal of Sylvanas", source = { kind = "quest", text = "Quest: Arugal Must Die Horde, level 27 in Classic, from level 18", faction = "Horde", quest = "Arugal Must Die" } },
                 { id = 282283, name = "Malignant Root", source = { kind = "world", text = "Nightveiled Rotheap, a patrol of the Wetlands Alliance only, and not checked in the beta", faction = "Alliance" } },
-                { id = 281320, name = "Rune-Etched Ring", source = { kind = "quest", text = "Alliance quest Gleaning Our Future, Wetlands, level 32 Reported, not checked", faction = "Alliance", reported = true } },
+                { id = 281320, name = "Rune-Etched Ring", source = { kind = "quest", text = "Alliance quest Gleaning Our Future, Wetlands, level 32 Elite, from level 24: take a group", faction = "Alliance" } },
                 { id = 1076, name = "Defias Renegade Ring", source = { kind = "world", text = "Trash mobs, The Stockade", zone = "The Stockade", boss = "Trash mobs" } },
               },
             },
@@ -676,6 +684,8 @@ ForeverBiSData = {
                 { id = 4381, name = "Minor Recombobulator", source = { kind = "profession", text = "Engineering (140)", skill = "Engineering", skillLevel = 140 } },
                 { id = 10720, name = "Gnomish Net-o-Matic Projector", source = { kind = "profession", text = "Engineering (210)", skill = "Engineering", skillLevel = 210 } },
                 { id = 260802, name = "EZ-Thro Bronze Mortar", source = { kind = "profession", text = "Engineering (190) Schematic: nobody has found it in the beta yet", skill = "Engineering", skillLevel = 190 } },
+                { id = 280766, name = "Satchel of Potions", source = { kind = "quest", text = "Quest: Changing Tastes Excavation Site: Wetlands, Horde, from level 24", faction = "Horde", quest = "Changing Tastes Excavation Site: Wetlands" } },
+                { id = 274152, name = "Roogug's Severed Head", source = { kind = "world", text = "Roogug, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Roogug" } },
                 { id = 273298, name = "Lookie's Spyglass", source = { kind = "dungeon", text = "Cookie, The Deadmines", zone = "The Deadmines", boss = "Cookie" } },
               },
             },
@@ -850,6 +860,7 @@ ForeverBiSData = {
             { slot = "Trinket",
               items = {
                 { id = 4381, name = "Minor Recombobulator", source = { kind = "profession", text = "Engineering (140)", skill = "Engineering", skillLevel = 140 } },
+                { id = 280766, name = "Satchel of Potions", source = { kind = "quest", text = "Quest: Changing Tastes Excavation Site: Wetlands, Horde, from level 24", faction = "Horde", quest = "Changing Tastes Excavation Site: Wetlands" } },
                 { id = 274152, name = "Roogug's Severed Head", source = { kind = "world", text = "Roogug, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Roogug" } },
                 { id = 273643, name = "Worgenbane Talisman", source = { kind = "dungeon", text = "Commander Springvale, Shadowfang Keep", zone = "Shadowfang Keep", boss = "Commander Springvale" } },
               },
@@ -905,7 +916,7 @@ ForeverBiSData = {
           slots = {
             { slot = "Head",
               items = {
-                { id = 252512, name = "Brawler's Leather Helm", source = { kind = "profession", text = "Overlord Ramtusk, Razorfen Kraul Leatherworking Only its maker can wear it Pattern: nobody has found it in the beta yet Also drops in the Stockade, says a reader Reported, not checked", skill = "Leatherworking", bindsToMaker = true, reported = true } },
+                { id = 252512, name = "Brawler's Leather Helm", source = { kind = "profession", text = "Gelihast, Blackfathom Deeps Aku'mai, Blackfathom Deeps Dextren Ward, The Stockade Aggem Thorncurse, Razorfen Kraul Overlord Ramtusk, Razorfen Kraul Leatherworking Only its maker can wear it Pattern: nobody has found it in the beta yet", skill = "Leatherworking", bindsToMaker = true } },
                 { id = 252504, name = "Brawler's Leather Hood", source = { kind = "profession", text = "Leatherworking (100) Only its maker can wear it", skill = "Leatherworking", skillLevel = 100, bindsToMaker = true } },
                 { id = 19972, name = "Lucky Fishing Hat", source = { kind = "quest", text = "Quest: Rare Fish - Keefer's Angelfish level 0 in Classic, from level 1 A fishing quest in Booty Bay, for a Keefer's Angelfish Fishing only, no level needed", quest = "Rare Fish - Keefer's Angelfish" } },
                 { id = 252447, name = "Defender's Leather Hood", source = { kind = "profession", text = "Leatherworking (100) Only its maker can wear it", skill = "Leatherworking", skillLevel = 100, bindsToMaker = true } },
@@ -1018,7 +1029,8 @@ ForeverBiSData = {
             },
             { slot = "Finger",
               items = {
-                { id = 281320, name = "Rune-Etched Ring", source = { kind = "quest", text = "Alliance quest Gleaning Our Future, Wetlands, level 32 Reported, not checked", faction = "Alliance", reported = true } },
+                { id = 281634, name = "Field Researcher's Loop", source = { kind = "quest", text = "Quest: Greater Friend of the Library Twenty books, the necklace’s ten counted", quest = "Greater Friend of the Library Twenty books" } },
+                { id = 281320, name = "Rune-Etched Ring", source = { kind = "quest", text = "Alliance quest Gleaning Our Future, Wetlands, level 32 Elite, from level 24: take a group", faction = "Alliance" } },
                 { id = 285190, name = "Wyvern Heart Band", source = { kind = "world", text = "Heartrazor, the rare wyvern of Thousand Needles Reported, not checked", reported = true } },
                 { id = 6414, name = "Seal of Sylvanas", source = { kind = "quest", text = "Quest: Arugal Must Die Horde, level 27 in Classic, from level 18", faction = "Horde", quest = "Arugal Must Die" } },
                 { id = 2039, name = "Plains Ring", source = { kind = "world", text = "Trash mobs, Razorfen Kraul 0.07% in Classic A world drop, not bound: the auction house is quickest Reported, not checked", zone = "Razorfen Kraul", boss = "Trash mobs", dropRate = 0.07, reported = true } },
@@ -1028,6 +1040,8 @@ ForeverBiSData = {
             { slot = "Trinket",
               items = {
                 { id = 4381, name = "Minor Recombobulator", source = { kind = "profession", text = "Engineering (140)", skill = "Engineering", skillLevel = 140 } },
+                { id = 280766, name = "Satchel of Potions", source = { kind = "quest", text = "Quest: Changing Tastes Excavation Site: Wetlands, Horde, from level 24", faction = "Horde", quest = "Changing Tastes Excavation Site: Wetlands" } },
+                { id = 274152, name = "Roogug's Severed Head", source = { kind = "world", text = "Roogug, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Roogug" } },
                 { id = 273298, name = "Lookie's Spyglass", source = { kind = "dungeon", text = "Cookie, The Deadmines", zone = "The Deadmines", boss = "Cookie" } },
               },
             },
@@ -1078,7 +1092,8 @@ ForeverBiSData = {
             { slot = "Head",
               items = {
                 { id = 6204, name = "Tribal Worg Helm", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
-                { id = 252512, name = "Brawler's Leather Helm", source = { kind = "profession", text = "Overlord Ramtusk, Razorfen Kraul Leatherworking Only its maker can wear it Pattern: nobody has found it in the beta yet Also drops in the Stockade, says a reader Reported, not checked", skill = "Leatherworking", bindsToMaker = true, reported = true } },
+                { id = 252512, name = "Brawler's Leather Helm", source = { kind = "profession", text = "Gelihast, Blackfathom Deeps Aku'mai, Blackfathom Deeps Dextren Ward, The Stockade Aggem Thorncurse, Razorfen Kraul Overlord Ramtusk, Razorfen Kraul Leatherworking Only its maker can wear it Pattern: nobody has found it in the beta yet", skill = "Leatherworking", bindsToMaker = true } },
+                { id = 6720, name = "Spirit Hunter Headdress", source = { kind = "quest", text = "Quest: Frostmaw Horde, level 37 in Classic, from level 26", faction = "Horde", quest = "Frostmaw" } },
                 { id = 6688, name = "Whisperwind Headdress", source = { kind = "world", text = "Earthcaller Halmgar, Razorfen Kraul 45.16% in Classic", zone = "Razorfen Kraul", boss = "Earthcaller Halmgar", dropRate = 45.16 } },
                 { id = 252504, name = "Brawler's Leather Hood", source = { kind = "profession", text = "Leatherworking (100) Only its maker can wear it", skill = "Leatherworking", skillLevel = 100, bindsToMaker = true } },
                 { id = 277044, name = "Cloudy Windraveled Cover", source = { kind = "profession", text = "Leatherworking (175)", skill = "Leatherworking", skillLevel = 175 } },
@@ -1088,6 +1103,8 @@ ForeverBiSData = {
             { slot = "Neck",
               items = {
                 { id = 13084, name = "Kaleidoscope Chain", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
+                { id = 7731, name = "Ghostshard Talisman", source = { kind = "world", text = "Azshir the Sleepless, Scarlet Monastery Graveyard 33.93% in Classic", zone = "Scarlet Monastery", boss = "Azshir the Sleepless", dropRate = 33.93 } },
+                { id = 274068, name = "Thermaplugg Medal of Honor", source = { kind = "world", text = "Crowd Pummeler 9-60, Gnomeregan", zone = "Gnomeregan", boss = "Crowd Pummeler 9-60" } },
                 { id = 285331, name = "Mark of the Pack Leader", source = { kind = "world", text = "Humar the Pridelord, the rare black lion of the Barrens Reported, not checked", reported = true } },
                 { id = 277204, name = "Erudite's Amulet", source = { kind = "quest", text = "Quest: Friend of the Library Ten books, any class and no level asked for", quest = "Friend of the Library Ten books" } },
                 { id = 273088, name = "Snake Eye Kaleidoscope", source = { kind = "dungeon", text = "Lady Anacondra, Wailing Caverns", zone = "Wailing Caverns", boss = "Lady Anacondra" } },
@@ -1136,6 +1153,7 @@ ForeverBiSData = {
               items = {
                 { id = 14590, name = "Hawkeye's Bracers", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 6198, name = "Jurassic Wristguards", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
+                { id = 270032, name = "Cultist's Armguards", source = { kind = "quest", text = "Quest: Blackfathom Villainy Alliance, from level 18, reported, not checked Quest: Blackfathom Villainy Horde, from level 18, reported, not checked", quest = "Blackfathom Villainy", reported = true } },
                 { id = 270021, name = "Staghide Armguards", source = { kind = "quest", text = "Quest: Researching the Corruption Alliance, from level 18, reported, not checked", faction = "Alliance", quest = "Researching the Corruption", reported = true } },
                 { id = 270042, name = "Technician's Bracers", source = { kind = "quest", text = "Quest: A Fine Mess from level 20, reported, not checked", quest = "A Fine Mess", reported = true } },
                 { id = 271202, name = "Witherbite Bracers", source = { kind = "dungeon", text = "Witherfang, Ruins of Lordaeron", zone = "Ruins of Lordaeron", boss = "Witherfang" } },
@@ -1161,6 +1179,7 @@ ForeverBiSData = {
               items = {
                 { id = 252521, name = "Stalker's Leather Belt", source = { kind = "profession", text = "Leatherworking (150) Only its maker can wear it", skill = "Leatherworking", skillLevel = 150, bindsToMaker = true } },
                 { id = 4257, name = "Green Leather Belt", source = { kind = "profession", text = "Leatherworking", skill = "Leatherworking" } },
+                { id = 16987, name = "Screecher Belt", source = { kind = "quest", text = "Quest: Bloodfury Bloodline Horde, level 26 in Classic, from level 18", faction = "Horde", quest = "Bloodfury Bloodline" } },
                 { id = 6468, name = "Deviate Scale Belt", source = { kind = "profession", text = "Leatherworking (90)", skill = "Leatherworking", skillLevel = 90 } },
                 { id = 10403, name = "Blackened Defias Belt", source = { kind = "dungeon", text = "Captain Greenskin, The Deadmines 26.64% in Classic", zone = "The Deadmines", boss = "Captain Greenskin", dropRate = 26.64 } },
                 { id = 5355, name = "Beastmaster's Girdle", source = { kind = "quest", text = "Quest: Isha Awak Horde, level 27 in Classic, from level 10", faction = "Horde", quest = "Isha Awak" } },
@@ -1168,6 +1187,7 @@ ForeverBiSData = {
             },
             { slot = "Legs",
               items = {
+                { id = 6690, name = "Ferine Leggings", source = { kind = "world", text = "Agathelos the Raging, Razorfen Kraul 61.93% in Classic", zone = "Razorfen Kraul", boss = "Agathelos the Raging", dropRate = 61.93 } },
                 { id = 9624, name = "Triprunner Dungarees", source = { kind = "quest", text = "Quest: Rig Wars Horde, level 35 in Classic, from level 25 Quest: The Grand Betrayal Alliance, level 35 in Classic, from level 25 The last quest of Gnomeregan, for either faction Take a group for Mekgineer Thermaplugg (level 34)", quest = "Rig Wars" } },
                 { id = 9509, name = "Petrolspill Leggings", source = { kind = "world", text = "Trash mobs, Gnomeregan 0.04% in Classic A world drop, not bound: the auction house is quickest Reported, not checked", zone = "Gnomeregan", boss = "Trash mobs", dropRate = 0.04, reported = true } },
                 { id = 13114, name = "Troll's Bane Leggings", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
@@ -1181,6 +1201,7 @@ ForeverBiSData = {
             },
             { slot = "Feet",
               items = {
+                { id = 284403, name = "Shapeshifting Sentinel's Strides", source = { kind = "world", text = "A rare of northern Stonetalon Mountains, near the night elves Reported, not checked", reported = true } },
                 { id = 7751, name = "Vorrel's Boots", source = { kind = "quest", text = "Quest: Vorrel's Revenge Horde, level 33 in Classic, from level 25", faction = "Horde", quest = "Vorrel's Revenge" } },
                 { id = 16977, name = "Warsong Boots", source = { kind = "quest", text = "Quest: Warsong Supplies Horde, level 27 in Classic, from level 22", faction = "Horde", quest = "Warsong Supplies" } },
                 { id = 4055, name = "Insignia Boots", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
@@ -1194,7 +1215,9 @@ ForeverBiSData = {
             },
             { slot = "Finger",
               items = {
+                { id = 285190, name = "Wyvern Heart Band", source = { kind = "world", text = "Heartrazor, the rare wyvern of Thousand Needles Reported, not checked", reported = true } },
                 { id = 7686, name = "Ironspine's Eye", source = { kind = "world", text = "Ironspine, Scarlet Monastery Graveyard 41.99% in Classic", zone = "Scarlet Monastery", boss = "Ironspine", dropRate = 41.99 } },
+                { id = 281634, name = "Field Researcher's Loop", source = { kind = "quest", text = "Quest: Greater Friend of the Library Twenty books, the necklace’s ten counted", quest = "Greater Friend of the Library Twenty books" } },
                 { id = 1491, name = "Ring of Precision", source = { kind = "dungeon", text = "Trash mobs, Blackfathom Deeps 0.03% in Classic A world drop, not bound: the auction house is quickest Reported, not checked", zone = "Blackfathom Deeps", boss = "Trash mobs", dropRate = 0.03, reported = true } },
                 { id = 1156, name = "Lavishly Jeweled Ring", source = { kind = "dungeon", text = "Gilnid, The Deadmines 36.85% in Classic", zone = "The Deadmines", boss = "Gilnid", dropRate = 36.85 } },
                 { id = 285330, name = "Signet of the Zhevra", source = { kind = "world", text = "Swiftmane, the rare zhevra of the Barrens Reported, not checked", reported = true } },
@@ -1207,6 +1230,8 @@ ForeverBiSData = {
               items = {
                 { id = 4381, name = "Minor Recombobulator", source = { kind = "profession", text = "Engineering (140)", skill = "Engineering", skillLevel = 140 } },
                 { id = 4396, name = "Mechanical Dragonling", source = { kind = "profession", text = "Engineering (200)", skill = "Engineering", skillLevel = 200 } },
+                { id = 280766, name = "Satchel of Potions", source = { kind = "quest", text = "Quest: Changing Tastes Excavation Site: Wetlands, Horde, from level 24", faction = "Horde", quest = "Changing Tastes Excavation Site: Wetlands" } },
+                { id = 274152, name = "Roogug's Severed Head", source = { kind = "world", text = "Roogug, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Roogug" } },
                 { id = 273298, name = "Lookie's Spyglass", source = { kind = "dungeon", text = "Cookie, The Deadmines", zone = "The Deadmines", boss = "Cookie" } },
               },
             },
@@ -1223,8 +1248,12 @@ ForeverBiSData = {
             },
             { slot = "Ranged",
               items = {
+                { id = 277254, name = "Truthseeker's Bow", source = { kind = "quest", text = "Quest: Greater Friend of the Library, from level 30 Its books stand in zones of level 45 and above", quest = "Greater Friend of the Library" } },
+                { id = 274084, name = "Quilboar Blaster", source = { kind = "quest", text = "Quest: A Vengeful Fate Horde, from level 29, reported, not checked", faction = "Horde", quest = "A Vengeful Fate", reported = true } },
+                { id = 9456, name = "Glass Shooter", source = { kind = "world", text = "Dark Iron Ambassador, Gnomeregan 32.46% in Classic", zone = "Gnomeregan", boss = "Dark Iron Ambassador", dropRate = 32.46 } },
                 { id = 274748, name = "Booty Bay Bruiser's Buckshot", source = { kind = "world", text = "Sold by Gezzy Gunkgear in Booty Bay At Honored with Booty Bay" } },
                 { id = 13137, name = "Ironweaver", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
+                { id = 273029, name = "Golemsight Long Gun", source = { kind = "world", text = "Relic Guardian, Excavation Site: Wetlands" } },
                 { id = 13037, name = "Crystalpine Stinger", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 13019, name = "Harpyclaw Short Bow", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 273829, name = "Concealed Hand Crossbow", source = { kind = "world", text = "Bazil Thredd, The Stockade", zone = "The Stockade", boss = "Bazil Thredd" } },
@@ -1246,7 +1275,7 @@ ForeverBiSData = {
           slots = {
             { slot = "Head",
               items = {
-                { id = 252512, name = "Brawler's Leather Helm", source = { kind = "profession", text = "Overlord Ramtusk, Razorfen Kraul Leatherworking Only its maker can wear it Pattern: nobody has found it in the beta yet Also drops in the Stockade, says a reader Reported, not checked", skill = "Leatherworking", bindsToMaker = true, reported = true } },
+                { id = 252512, name = "Brawler's Leather Helm", source = { kind = "profession", text = "Gelihast, Blackfathom Deeps Aku'mai, Blackfathom Deeps Dextren Ward, The Stockade Aggem Thorncurse, Razorfen Kraul Overlord Ramtusk, Razorfen Kraul Leatherworking Only its maker can wear it Pattern: nobody has found it in the beta yet", skill = "Leatherworking", bindsToMaker = true } },
                 { id = 252504, name = "Brawler's Leather Hood", source = { kind = "profession", text = "Leatherworking (100) Only its maker can wear it", skill = "Leatherworking", skillLevel = 100, bindsToMaker = true } },
                 { id = 19972, name = "Lucky Fishing Hat", source = { kind = "quest", text = "Quest: Rare Fish - Keefer's Angelfish level 0 in Classic, from level 1 A fishing quest in Booty Bay, for a Keefer's Angelfish Fishing only, no level needed", quest = "Rare Fish - Keefer's Angelfish" } },
                 { id = 277044, name = "Cloudy Windraveled Cover", source = { kind = "profession", text = "Leatherworking (175)", skill = "Leatherworking", skillLevel = 175 } },
@@ -1255,7 +1284,9 @@ ForeverBiSData = {
             },
             { slot = "Neck",
               items = {
+                { id = 7731, name = "Ghostshard Talisman", source = { kind = "world", text = "Azshir the Sleepless, Scarlet Monastery Graveyard 33.93% in Classic", zone = "Scarlet Monastery", boss = "Azshir the Sleepless", dropRate = 33.93 } },
                 { id = 274749, name = "Souvenir Sea Shell", source = { kind = "world", text = "Sold by Gezzy Gunkgear in Booty Bay At Honored with Booty Bay" } },
+                { id = 274068, name = "Thermaplugg Medal of Honor", source = { kind = "world", text = "Crowd Pummeler 9-60, Gnomeregan", zone = "Gnomeregan", boss = "Crowd Pummeler 9-60" } },
                 { id = 13084, name = "Kaleidoscope Chain", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 13087, name = "River Pride Choker", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 277204, name = "Erudite's Amulet", source = { kind = "quest", text = "Quest: Friend of the Library Ten books, any class and no level asked for", quest = "Friend of the Library Ten books" } },
@@ -1266,8 +1297,8 @@ ForeverBiSData = {
             },
             { slot = "Shoulder",
               items = {
-                { id = 284399, name = "Seared Grove Shoulderpads", source = { kind = "world", text = "Sister Riven, the rare harpy of the Charred Vale Reported, not checked", reported = true } },
                 { id = 2264, name = "Mantle of Thieves", source = { kind = "world", text = "Trash mobs, Razorfen Kraul 0.04% in Classic A world drop, not bound: the auction house is quickest Reported, not checked", zone = "Razorfen Kraul", boss = "Trash mobs", dropRate = 0.04, reported = true } },
+                { id = 284399, name = "Seared Grove Shoulderpads", source = { kind = "world", text = "Sister Riven, the rare harpy of the Charred Vale Reported, not checked", reported = true } },
                 { id = 277043, name = "Cloudy Gustwoven Spaulders", source = { kind = "profession", text = "Leatherworking (175)", skill = "Leatherworking", skillLevel = 175 } },
                 { id = 7727, name = "Watchman Pauldrons", source = { kind = "world", text = "Trash mobs, Scarlet Monastery Graveyard 0.02% in Classic Trash mobs, Scarlet Monastery Library 0.02% in Classic Trash mobs, Scarlet Monastery Armory 0.02% in Classic Trash mobs, Scarlet Monastery Cathedral 0.02% in Classic A world drop, not bound: the auction house is quickest Reported, not checked", zone = "Scarlet Monastery", boss = "Trash mobs", dropRate = 0.02, reported = true } },
               },
@@ -1288,6 +1319,7 @@ ForeverBiSData = {
               items = {
                 { id = 252509, name = "Trapper's Leather Tunic", source = { kind = "profession", text = "Leatherworking (110) Only its maker can wear it", skill = "Leatherworking", skillLevel = 110, bindsToMaker = true } },
                 { id = 2041, name = "Tunic of Westfall", source = { kind = "quest", text = "Quest: The Defias Brotherhood Alliance, level 22 in Classic, from level 14", faction = "Alliance", quest = "The Defias Brotherhood" } },
+                { id = 273805, name = "Blackrock Harness", source = { kind = "world", text = "Targorr the Dread, The Stockade", zone = "The Stockade", boss = "Targorr the Dread" } },
                 { id = 6670, name = "Panther Armor", source = { kind = "quest", text = "Quest: The Den Horde, level 29 in Classic, from level 20", faction = "Horde", quest = "The Den" } },
                 { id = 271212, name = "Bloodied Chestwraps", source = { kind = "dungeon", text = "Viktor the Vile, Ruins of Lordaeron", zone = "Ruins of Lordaeron", boss = "Viktor the Vile" } },
               },
@@ -1297,10 +1329,11 @@ ForeverBiSData = {
             },
             { slot = "Wrist",
               items = {
+                { id = 270032, name = "Cultist's Armguards", source = { kind = "quest", text = "Quest: Blackfathom Villainy Alliance, from level 18, reported, not checked Quest: Blackfathom Villainy Horde, from level 18, reported, not checked", quest = "Blackfathom Villainy", reported = true } },
                 { id = 270021, name = "Staghide Armguards", source = { kind = "quest", text = "Quest: Researching the Corruption Alliance, from level 18, reported, not checked", faction = "Alliance", quest = "Researching the Corruption", reported = true } },
                 { id = 18948, name = "Barbaric Bracers", source = { kind = "profession", text = "Leatherworking (130)", skill = "Leatherworking", skillLevel = 130 } },
-                { id = 6410, name = "Insignia Bracers", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 3230, name = "Black Wolf Bracers", source = { kind = "dungeon", text = "Fenrus the Devourer, Shadowfang Keep 17.21% in Classic", zone = "Shadowfang Keep", boss = "Fenrus the Devourer", dropRate = 17.21 } },
+                { id = 6410, name = "Insignia Bracers", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 279875, name = "Spare Part Bindings", source = { kind = "quest", text = "Quest: Light's Justice Ruins of Lordaeron, Horde, from level 15", faction = "Horde", quest = "Light's Justice Ruins of Lordaeron" } },
               },
               enchants = {
@@ -1324,6 +1357,7 @@ ForeverBiSData = {
               items = {
                 { id = 252521, name = "Stalker's Leather Belt", source = { kind = "profession", text = "Leatherworking (150) Only its maker can wear it", skill = "Leatherworking", skillLevel = 150, bindsToMaker = true } },
                 { id = 273089, name = "Slither Cord", source = { kind = "dungeon", text = "Lord Pythas, Wailing Caverns", zone = "Wailing Caverns", boss = "Lord Pythas" } },
+                { id = 16659, name = "Deftkin Belt", source = { kind = "quest", text = "Quest: Je'neu of the Earthen Ring Horde, level 27 in Classic, from level 23", faction = "Horde", quest = "Je'neu of the Earthen Ring" } },
                 { id = 6468, name = "Deviate Scale Belt", source = { kind = "profession", text = "Leatherworking (90)", skill = "Leatherworking", skillLevel = 90 } },
                 { id = 252460, name = "Warden's Leather Belt", source = { kind = "profession", text = "Leatherworking (150) Only its maker can wear it", skill = "Leatherworking", skillLevel = 150, bindsToMaker = true } },
               },
@@ -1332,6 +1366,7 @@ ForeverBiSData = {
               items = {
                 { id = 9624, name = "Triprunner Dungarees", source = { kind = "quest", text = "Quest: Rig Wars Horde, level 35 in Classic, from level 25 Quest: The Grand Betrayal Alliance, level 35 in Classic, from level 25 The last quest of Gnomeregan, for either faction Take a group for Mekgineer Thermaplugg (level 34)", quest = "Rig Wars" } },
                 { id = 9509, name = "Petrolspill Leggings", source = { kind = "world", text = "Trash mobs, Gnomeregan 0.04% in Classic A world drop, not bound: the auction house is quickest Reported, not checked", zone = "Gnomeregan", boss = "Trash mobs", dropRate = 0.04, reported = true } },
+                { id = 6690, name = "Ferine Leggings", source = { kind = "world", text = "Agathelos the Raging, Razorfen Kraul 61.93% in Classic", zone = "Razorfen Kraul", boss = "Agathelos the Raging", dropRate = 61.93 } },
                 { id = 13114, name = "Troll's Bane Leggings", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 252517, name = "Trapper's Leather Legguards", source = { kind = "profession", text = "Leatherworking (125) Only its maker can wear it", skill = "Leatherworking", skillLevel = 125, bindsToMaker = true } },
                 { id = 5963, name = "Barbaric Leggings", source = { kind = "profession", text = "Leatherworking (145)", skill = "Leatherworking", skillLevel = 145 } },
@@ -1343,6 +1378,7 @@ ForeverBiSData = {
             },
             { slot = "Feet",
               items = {
+                { id = 284403, name = "Shapeshifting Sentinel's Strides", source = { kind = "world", text = "A rare of northern Stonetalon Mountains, near the night elves Reported, not checked", reported = true } },
                 { id = 6752, name = "Lancer Boots", source = { kind = "quest", text = "Quest: Mortality Wanes Alliance, level 30 in Classic, from level 25", faction = "Alliance", quest = "Mortality Wanes" } },
                 { id = 7751, name = "Vorrel's Boots", source = { kind = "quest", text = "Quest: Vorrel's Revenge Horde, level 33 in Classic, from level 25", faction = "Horde", quest = "Vorrel's Revenge" } },
                 { id = 16977, name = "Warsong Boots", source = { kind = "quest", text = "Quest: Warsong Supplies Horde, level 27 in Classic, from level 22", faction = "Horde", quest = "Warsong Supplies" } },
@@ -1359,12 +1395,14 @@ ForeverBiSData = {
             { slot = "Finger",
               items = {
                 { id = 285190, name = "Wyvern Heart Band", source = { kind = "world", text = "Heartrazor, the rare wyvern of Thousand Needles Reported, not checked", reported = true } },
+                { id = 281634, name = "Field Researcher's Loop", source = { kind = "quest", text = "Quest: Greater Friend of the Library Twenty books, the necklace’s ten counted", quest = "Greater Friend of the Library Twenty books" } },
+                { id = 6414, name = "Seal of Sylvanas", source = { kind = "quest", text = "Quest: Arugal Must Die Horde, level 27 in Classic, from level 18", faction = "Horde", quest = "Arugal Must Die" } },
+                { id = 282283, name = "Malignant Root", source = { kind = "world", text = "Nightveiled Rotheap, a patrol of the Wetlands Alliance only, and not checked in the beta", faction = "Alliance" } },
                 { id = 1076, name = "Defias Renegade Ring", source = { kind = "world", text = "Trash mobs, The Stockade", zone = "The Stockade", boss = "Trash mobs" } },
-                { id = 281320, name = "Rune-Etched Ring", source = { kind = "quest", text = "Alliance quest Gleaning Our Future, Wetlands, level 32 Reported, not checked", faction = "Alliance", reported = true } },
+                { id = 281320, name = "Rune-Etched Ring", source = { kind = "quest", text = "Alliance quest Gleaning Our Future, Wetlands, level 32 Elite, from level 24: take a group", faction = "Alliance" } },
                 { id = 2039, name = "Plains Ring", source = { kind = "world", text = "Trash mobs, Razorfen Kraul 0.07% in Classic A world drop, not bound: the auction house is quickest Reported, not checked", zone = "Razorfen Kraul", boss = "Trash mobs", dropRate = 0.07, reported = true } },
                 { id = 7686, name = "Ironspine's Eye", source = { kind = "world", text = "Ironspine, Scarlet Monastery Graveyard 41.99% in Classic", zone = "Scarlet Monastery", boss = "Ironspine", dropRate = 41.99 } },
                 { id = 2933, name = "Seal of Wrynn", source = { kind = "quest", text = "Quest: An Audience with the King Alliance, level 31 in Classic, from level 16", faction = "Alliance", quest = "An Audience with the King" } },
-                { id = 6414, name = "Seal of Sylvanas", source = { kind = "quest", text = "Quest: Arugal Must Die Horde, level 27 in Classic, from level 18", faction = "Horde", quest = "Arugal Must Die" } },
               },
             },
             { slot = "Trinket",
@@ -1372,6 +1410,8 @@ ForeverBiSData = {
                 { id = 4381, name = "Minor Recombobulator", source = { kind = "profession", text = "Engineering (140)", skill = "Engineering", skillLevel = 140 } },
                 { id = 10720, name = "Gnomish Net-o-Matic Projector", source = { kind = "profession", text = "Engineering (210)", skill = "Engineering", skillLevel = 210 } },
                 { id = 260802, name = "EZ-Thro Bronze Mortar", source = { kind = "profession", text = "Engineering (190) Schematic: nobody has found it in the beta yet", skill = "Engineering", skillLevel = 190 } },
+                { id = 280766, name = "Satchel of Potions", source = { kind = "quest", text = "Quest: Changing Tastes Excavation Site: Wetlands, Horde, from level 24", faction = "Horde", quest = "Changing Tastes Excavation Site: Wetlands" } },
+                { id = 274152, name = "Roogug's Severed Head", source = { kind = "world", text = "Roogug, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Roogug" } },
                 { id = 273298, name = "Lookie's Spyglass", source = { kind = "dungeon", text = "Cookie, The Deadmines", zone = "The Deadmines", boss = "Cookie" } },
               },
             },
@@ -1389,8 +1429,12 @@ ForeverBiSData = {
             },
             { slot = "Ranged",
               items = {
+                { id = 277254, name = "Truthseeker's Bow", source = { kind = "quest", text = "Quest: Greater Friend of the Library, from level 30 Its books stand in zones of level 45 and above", quest = "Greater Friend of the Library" } },
+                { id = 274084, name = "Quilboar Blaster", source = { kind = "quest", text = "Quest: A Vengeful Fate Horde, from level 29, reported, not checked", faction = "Horde", quest = "A Vengeful Fate", reported = true } },
                 { id = 274748, name = "Booty Bay Bruiser's Buckshot", source = { kind = "world", text = "Sold by Gezzy Gunkgear in Booty Bay At Honored with Booty Bay" } },
+                { id = 9456, name = "Glass Shooter", source = { kind = "world", text = "Dark Iron Ambassador, Gnomeregan 32.46% in Classic", zone = "Gnomeregan", boss = "Dark Iron Ambassador", dropRate = 32.46 } },
                 { id = 13137, name = "Ironweaver", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
+                { id = 273029, name = "Golemsight Long Gun", source = { kind = "world", text = "Relic Guardian, Excavation Site: Wetlands" } },
                 { id = 13037, name = "Crystalpine Stinger", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 13019, name = "Harpyclaw Short Bow", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 273829, name = "Concealed Hand Crossbow", source = { kind = "world", text = "Bazil Thredd, The Stockade", zone = "The Stockade", boss = "Bazil Thredd" } },
@@ -1539,6 +1583,7 @@ ForeverBiSData = {
             { slot = "Trinket",
               items = {
                 { id = 4381, name = "Minor Recombobulator", source = { kind = "profession", text = "Engineering (140)", skill = "Engineering", skillLevel = 140 } },
+                { id = 280766, name = "Satchel of Potions", source = { kind = "quest", text = "Quest: Changing Tastes Excavation Site: Wetlands, Horde, from level 24", faction = "Horde", quest = "Changing Tastes Excavation Site: Wetlands" } },
                 { id = 4396, name = "Mechanical Dragonling", source = { kind = "profession", text = "Engineering (200)", skill = "Engineering", skillLevel = 200 } },
                 { id = 273643, name = "Worgenbane Talisman", source = { kind = "dungeon", text = "Commander Springvale, Shadowfang Keep", zone = "Shadowfang Keep", boss = "Commander Springvale" } },
                 { id = 274152, name = "Roogug's Severed Head", source = { kind = "world", text = "Roogug, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Roogug" } },
@@ -1578,6 +1623,7 @@ ForeverBiSData = {
             },
             { slot = "Ranged",
               items = {
+                { id = 6806, name = "Dancing Flame", source = { kind = "quest", text = "Quest: Final Passage Horde, level 36 in Classic, from level 25 A chain of ten quests from Dorn Plainstalker, Thousand Needles Two elite steps, and a book in the Scarlet Monastery Graveyard", faction = "Horde", quest = "Final Passage" } },
                 { id = 13062, name = "Thunderwood", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 13063, name = "Starfaller", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 5214, name = "Wand of Eventide", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
@@ -1724,6 +1770,7 @@ ForeverBiSData = {
             { slot = "Trinket",
               items = {
                 { id = 4381, name = "Minor Recombobulator", source = { kind = "profession", text = "Engineering (140)", skill = "Engineering", skillLevel = 140 } },
+                { id = 280766, name = "Satchel of Potions", source = { kind = "quest", text = "Quest: Changing Tastes Excavation Site: Wetlands, Horde, from level 24", faction = "Horde", quest = "Changing Tastes Excavation Site: Wetlands" } },
                 { id = 4396, name = "Mechanical Dragonling", source = { kind = "profession", text = "Engineering (200)", skill = "Engineering", skillLevel = 200 } },
                 { id = 273643, name = "Worgenbane Talisman", source = { kind = "dungeon", text = "Commander Springvale, Shadowfang Keep", zone = "Shadowfang Keep", boss = "Commander Springvale" } },
                 { id = 274152, name = "Roogug's Severed Head", source = { kind = "world", text = "Roogug, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Roogug" } },
@@ -1764,6 +1811,7 @@ ForeverBiSData = {
             },
             { slot = "Ranged",
               items = {
+                { id = 6806, name = "Dancing Flame", source = { kind = "quest", text = "Quest: Final Passage Horde, level 36 in Classic, from level 25 A chain of ten quests from Dorn Plainstalker, Thousand Needles Two elite steps, and a book in the Scarlet Monastery Graveyard", faction = "Horde", quest = "Final Passage" } },
                 { id = 13063, name = "Starfaller", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 13062, name = "Thunderwood", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 5214, name = "Wand of Eventide", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
@@ -1911,6 +1959,7 @@ ForeverBiSData = {
             { slot = "Trinket",
               items = {
                 { id = 4381, name = "Minor Recombobulator", source = { kind = "profession", text = "Engineering (140)", skill = "Engineering", skillLevel = 140 } },
+                { id = 280766, name = "Satchel of Potions", source = { kind = "quest", text = "Quest: Changing Tastes Excavation Site: Wetlands, Horde, from level 24", faction = "Horde", quest = "Changing Tastes Excavation Site: Wetlands" } },
                 { id = 4396, name = "Mechanical Dragonling", source = { kind = "profession", text = "Engineering (200)", skill = "Engineering", skillLevel = 200 } },
                 { id = 273643, name = "Worgenbane Talisman", source = { kind = "dungeon", text = "Commander Springvale, Shadowfang Keep", zone = "Shadowfang Keep", boss = "Commander Springvale" } },
                 { id = 274152, name = "Roogug's Severed Head", source = { kind = "world", text = "Roogug, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Roogug" } },
@@ -1952,6 +2001,7 @@ ForeverBiSData = {
             },
             { slot = "Ranged",
               items = {
+                { id = 6806, name = "Dancing Flame", source = { kind = "quest", text = "Quest: Final Passage Horde, level 36 in Classic, from level 25 A chain of ten quests from Dorn Plainstalker, Thousand Needles Two elite steps, and a book in the Scarlet Monastery Graveyard", faction = "Horde", quest = "Final Passage" } },
                 { id = 5213, name = "Scorching Wand", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 13062, name = "Thunderwood", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 13063, name = "Starfaller", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
@@ -2088,7 +2138,7 @@ ForeverBiSData = {
                 { id = 271670, name = "Curl of Life", source = { kind = "quest", text = "Quest: Horrors in the Highland Excavation Site: Wetlands, Alliance, from level 24", faction = "Alliance", quest = "Horrors in the Highland Excavation Site: Wetlands" } },
                 { id = 273806, name = "Dark Horde Band", source = { kind = "world", text = "Targorr the Dread, The Stockade", zone = "The Stockade", boss = "Targorr the Dread" } },
                 { id = 282283, name = "Malignant Root", source = { kind = "world", text = "Nightveiled Rotheap, a patrol of the Wetlands Alliance only, and not checked in the beta", faction = "Alliance" } },
-                { id = 281320, name = "Rune-Etched Ring", source = { kind = "quest", text = "Alliance quest Gleaning Our Future, Wetlands, level 32 Reported, not checked", faction = "Alliance", reported = true } },
+                { id = 281320, name = "Rune-Etched Ring", source = { kind = "quest", text = "Alliance quest Gleaning Our Future, Wetlands, level 32 Elite, from level 24: take a group", faction = "Alliance" } },
                 { id = 274746, name = "Sea Giant's Toe Ring", source = { kind = "world", text = "Sold by Gezzy Gunkgear in Booty Bay At Friendly with Booty Bay" } },
               },
             },
@@ -2097,7 +2147,9 @@ ForeverBiSData = {
                 { id = 4381, name = "Minor Recombobulator", source = { kind = "profession", text = "Engineering (140)", skill = "Engineering", skillLevel = 140 } },
                 { id = 10720, name = "Gnomish Net-o-Matic Projector", source = { kind = "profession", text = "Engineering (210)", skill = "Engineering", skillLevel = 210 } },
                 { id = 260802, name = "EZ-Thro Bronze Mortar", source = { kind = "profession", text = "Engineering (190) Schematic: nobody has found it in the beta yet", skill = "Engineering", skillLevel = 190 } },
+                { id = 280766, name = "Satchel of Potions", source = { kind = "quest", text = "Quest: Changing Tastes Excavation Site: Wetlands, Horde, from level 24", faction = "Horde", quest = "Changing Tastes Excavation Site: Wetlands" } },
                 { id = 273643, name = "Worgenbane Talisman", source = { kind = "dungeon", text = "Commander Springvale, Shadowfang Keep", zone = "Shadowfang Keep", boss = "Commander Springvale" } },
+                { id = 274152, name = "Roogug's Severed Head", source = { kind = "world", text = "Roogug, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Roogug" } },
               },
             },
             { slot = "Two-hand weapon",
@@ -2135,6 +2187,7 @@ ForeverBiSData = {
             },
             { slot = "Ranged",
               items = {
+                { id = 6806, name = "Dancing Flame", source = { kind = "quest", text = "Quest: Final Passage Horde, level 36 in Classic, from level 25 A chain of ten quests from Dorn Plainstalker, Thousand Needles Two elite steps, and a book in the Scarlet Monastery Graveyard", faction = "Horde", quest = "Final Passage" } },
                 { id = 5213, name = "Scorching Wand", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 13062, name = "Thunderwood", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 13063, name = "Starfaller", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
@@ -2271,7 +2324,7 @@ ForeverBiSData = {
                 { id = 271670, name = "Curl of Life", source = { kind = "quest", text = "Quest: Horrors in the Highland Excavation Site: Wetlands, Alliance, from level 24", faction = "Alliance", quest = "Horrors in the Highland Excavation Site: Wetlands" } },
                 { id = 273806, name = "Dark Horde Band", source = { kind = "world", text = "Targorr the Dread, The Stockade", zone = "The Stockade", boss = "Targorr the Dread" } },
                 { id = 282283, name = "Malignant Root", source = { kind = "world", text = "Nightveiled Rotheap, a patrol of the Wetlands Alliance only, and not checked in the beta", faction = "Alliance" } },
-                { id = 281320, name = "Rune-Etched Ring", source = { kind = "quest", text = "Alliance quest Gleaning Our Future, Wetlands, level 32 Reported, not checked", faction = "Alliance", reported = true } },
+                { id = 281320, name = "Rune-Etched Ring", source = { kind = "quest", text = "Alliance quest Gleaning Our Future, Wetlands, level 32 Elite, from level 24: take a group", faction = "Alliance" } },
                 { id = 274746, name = "Sea Giant's Toe Ring", source = { kind = "world", text = "Sold by Gezzy Gunkgear in Booty Bay At Friendly with Booty Bay" } },
               },
             },
@@ -2280,7 +2333,9 @@ ForeverBiSData = {
                 { id = 4381, name = "Minor Recombobulator", source = { kind = "profession", text = "Engineering (140)", skill = "Engineering", skillLevel = 140 } },
                 { id = 10720, name = "Gnomish Net-o-Matic Projector", source = { kind = "profession", text = "Engineering (210)", skill = "Engineering", skillLevel = 210 } },
                 { id = 260802, name = "EZ-Thro Bronze Mortar", source = { kind = "profession", text = "Engineering (190) Schematic: nobody has found it in the beta yet", skill = "Engineering", skillLevel = 190 } },
+                { id = 280766, name = "Satchel of Potions", source = { kind = "quest", text = "Quest: Changing Tastes Excavation Site: Wetlands, Horde, from level 24", faction = "Horde", quest = "Changing Tastes Excavation Site: Wetlands" } },
                 { id = 273643, name = "Worgenbane Talisman", source = { kind = "dungeon", text = "Commander Springvale, Shadowfang Keep", zone = "Shadowfang Keep", boss = "Commander Springvale" } },
+                { id = 274152, name = "Roogug's Severed Head", source = { kind = "world", text = "Roogug, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Roogug" } },
               },
             },
             { slot = "Two-hand weapon",
@@ -2317,6 +2372,7 @@ ForeverBiSData = {
             },
             { slot = "Ranged",
               items = {
+                { id = 6806, name = "Dancing Flame", source = { kind = "quest", text = "Quest: Final Passage Horde, level 36 in Classic, from level 25 A chain of ten quests from Dorn Plainstalker, Thousand Needles Two elite steps, and a book in the Scarlet Monastery Graveyard", faction = "Horde", quest = "Final Passage" } },
                 { id = 13062, name = "Thunderwood", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 13063, name = "Starfaller", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 5214, name = "Wand of Eventide", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
@@ -2336,7 +2392,7 @@ ForeverBiSData = {
           slots = {
             { slot = "Head",
               items = {
-                { id = 252455, name = "Defender's Leather Helm", source = { kind = "profession", text = "Old Serra'kis, Blackfathom Deeps Aku'mai, Blackfathom Deeps Agathelos the Raging, Razorfen Kraul Leatherworking Only its maker can wear it Pattern: nobody has found it in the beta yet", skill = "Leatherworking", bindsToMaker = true } },
+                { id = 252455, name = "Defender's Leather Helm", source = { kind = "profession", text = "Old Serra'kis, Blackfathom Deeps Aku'mai, Blackfathom Deeps Lorgus Jett, Blackfathom Deeps Agathelos the Raging, Razorfen Kraul Earthcaller Halmgar, Razorfen Kraul Bloodmage Thalnos, Scarlet Monastery Graveyard Leatherworking Only its maker can wear it Pattern: nobody has found it in the beta yet", skill = "Leatherworking", bindsToMaker = true } },
                 { id = 250528, name = "Veteran's Silvered Chain Helm", source = { kind = "profession", text = "Blacksmithing (95) Only its maker can wear it", skill = "Blacksmithing", skillLevel = 95, bindsToMaker = true } },
                 { id = 6686, name = "Tusken Helm", source = { kind = "world", text = "Overlord Ramtusk, Razorfen Kraul 62.39% in Classic", zone = "Razorfen Kraul", boss = "Overlord Ramtusk", dropRate = 62.39 } },
                 { id = 7915, name = "Barbaric Iron Helm", source = { kind = "profession", text = "Blacksmithing (150)", skill = "Blacksmithing", skillLevel = 150 } },
@@ -2414,7 +2470,7 @@ ForeverBiSData = {
             },
             { slot = "Waist",
               items = {
-                { id = 250556, name = "Officer's Belt", source = { kind = "profession", text = "Blacksmithing (150) Only its maker can wear it Plans: nobody has found it in the beta yet", skill = "Blacksmithing", skillLevel = 150, bindsToMaker = true } },
+                { id = 250556, name = "Officer's Belt", source = { kind = "profession", text = "Blacksmithing (150) Only its maker can wear it Plans: not needed, blacksmithing trainers teach the recipe at 150", skill = "Blacksmithing", skillLevel = 150, bindsToMaker = true } },
                 { id = 252459, name = "Prowler's Leather Belt", source = { kind = "profession", text = "Leatherworking (150) Only its maker can wear it", skill = "Leatherworking", skillLevel = 150, bindsToMaker = true } },
                 { id = 252461, name = "Skirmisher's Leather Belt", source = { kind = "profession", text = "Leatherworking (150) Only its maker can wear it", skill = "Leatherworking", skillLevel = 150, bindsToMaker = true } },
                 { id = 252520, name = "Skulker's Leather Belt", source = { kind = "profession", text = "Leatherworking (150) Only its maker can wear it", skill = "Leatherworking", skillLevel = 150, bindsToMaker = true } },
@@ -2440,6 +2496,7 @@ ForeverBiSData = {
               items = {
                 { id = 284403, name = "Shapeshifting Sentinel's Strides", source = { kind = "world", text = "A rare of northern Stonetalon Mountains, near the night elves Reported, not checked", reported = true } },
                 { id = 4464, name = "Trouncing Boots", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
+                { id = 273025, name = "Raptorclaw Greaves", source = { kind = "world", text = "Shadetooth, Excavation Site: Wetlands" } },
                 { id = 250503, name = "Veteran's Boots", source = { kind = "profession", text = "Blacksmithing (85) Only its maker can wear it", skill = "Blacksmithing", skillLevel = 85, bindsToMaker = true } },
                 { id = 271211, name = "Vilewalkers", source = { kind = "dungeon", text = "Viktor the Vile, Ruins of Lordaeron", zone = "Ruins of Lordaeron", boss = "Viktor the Vile" } },
                 { id = 252439, name = "Brawler's Leather Boots", source = { kind = "profession", text = "Leatherworking (85) Only its maker can wear it", skill = "Leatherworking", skillLevel = 85, bindsToMaker = true } },
@@ -2461,7 +2518,9 @@ ForeverBiSData = {
               items = {
                 { id = 4381, name = "Minor Recombobulator", source = { kind = "profession", text = "Engineering (140)", skill = "Engineering", skillLevel = 140 } },
                 { id = 4396, name = "Mechanical Dragonling", source = { kind = "profession", text = "Engineering (200)", skill = "Engineering", skillLevel = 200 } },
+                { id = 280766, name = "Satchel of Potions", source = { kind = "quest", text = "Quest: Changing Tastes Excavation Site: Wetlands, Horde, from level 24", faction = "Horde", quest = "Changing Tastes Excavation Site: Wetlands" } },
                 { id = 273643, name = "Worgenbane Talisman", source = { kind = "dungeon", text = "Commander Springvale, Shadowfang Keep", zone = "Shadowfang Keep", boss = "Commander Springvale" } },
+                { id = 274152, name = "Roogug's Severed Head", source = { kind = "world", text = "Roogug, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Roogug" } },
               },
             },
             { slot = "Two-hand weapon",
@@ -2575,7 +2634,7 @@ ForeverBiSData = {
             },
             { slot = "Waist",
               items = {
-                { id = 250559, name = "Prefect's Belt", source = { kind = "profession", text = "Blacksmithing (150) Only its maker can wear it Plans: nobody has found it in the beta yet", skill = "Blacksmithing", skillLevel = 150, bindsToMaker = true } },
+                { id = 250559, name = "Prefect's Belt", source = { kind = "profession", text = "Blacksmithing (150) Only its maker can wear it Plans: not needed, blacksmithing trainers teach the recipe at 150", skill = "Blacksmithing", skillLevel = 150, bindsToMaker = true } },
                 { id = 252523, name = "Mender's Leather Belt", source = { kind = "profession", text = "Leatherworking (150) Only its maker can wear it", skill = "Leatherworking", skillLevel = 150, bindsToMaker = true } },
                 { id = 252522, name = "Skycaller's Leather Belt", source = { kind = "profession", text = "Leatherworking (150) Only its maker can wear it", skill = "Leatherworking", skillLevel = 150, bindsToMaker = true } },
                 { id = 253925, name = "Pristine Sash", source = { kind = "profession", text = "Tailoring (85) Only its maker can wear it", skill = "Tailoring", skillLevel = 85, bindsToMaker = true } },
@@ -2619,6 +2678,7 @@ ForeverBiSData = {
             { slot = "Trinket",
               items = {
                 { id = 4381, name = "Minor Recombobulator", source = { kind = "profession", text = "Engineering (140)", skill = "Engineering", skillLevel = 140 } },
+                { id = 280766, name = "Satchel of Potions", source = { kind = "quest", text = "Quest: Changing Tastes Excavation Site: Wetlands, Horde, from level 24", faction = "Horde", quest = "Changing Tastes Excavation Site: Wetlands" } },
                 { id = 274152, name = "Roogug's Severed Head", source = { kind = "world", text = "Roogug, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Roogug" } },
                 { id = 273643, name = "Worgenbane Talisman", source = { kind = "dungeon", text = "Commander Springvale, Shadowfang Keep", zone = "Shadowfang Keep", boss = "Commander Springvale" } },
               },
@@ -2758,9 +2818,9 @@ ForeverBiSData = {
             },
             { slot = "Waist",
               items = {
-                { id = 250559, name = "Prefect's Belt", source = { kind = "profession", text = "Blacksmithing (150) Only its maker can wear it Plans: nobody has found it in the beta yet", skill = "Blacksmithing", skillLevel = 150, bindsToMaker = true } },
+                { id = 250559, name = "Prefect's Belt", source = { kind = "profession", text = "Blacksmithing (150) Only its maker can wear it Plans: not needed, blacksmithing trainers teach the recipe at 150", skill = "Blacksmithing", skillLevel = 150, bindsToMaker = true } },
                 { id = 252523, name = "Mender's Leather Belt", source = { kind = "profession", text = "Leatherworking (150) Only its maker can wear it", skill = "Leatherworking", skillLevel = 150, bindsToMaker = true } },
-                { id = 250560, name = "Justicar's Belt", source = { kind = "profession", text = "Blacksmithing (150) Only its maker can wear it Plans: nobody has found it in the beta yet", skill = "Blacksmithing", skillLevel = 150, bindsToMaker = true } },
+                { id = 250560, name = "Justicar's Belt", source = { kind = "profession", text = "Blacksmithing (150) Only its maker can wear it Plans: not needed, blacksmithing trainers teach the recipe at 150", skill = "Blacksmithing", skillLevel = 150, bindsToMaker = true } },
                 { id = 252522, name = "Skycaller's Leather Belt", source = { kind = "profession", text = "Leatherworking (150) Only its maker can wear it", skill = "Leatherworking", skillLevel = 150, bindsToMaker = true } },
                 { id = 284382, name = "Budding Leaf Belt", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 6908, name = "Ghamoo-ra's Bind", source = { kind = "dungeon", text = "Ghamoo-ra, Blackfathom Deeps 56.43% in Classic", zone = "Blackfathom Deeps", boss = "Ghamoo-ra", dropRate = 56.43 } },
@@ -2804,7 +2864,9 @@ ForeverBiSData = {
                 { id = 4381, name = "Minor Recombobulator", source = { kind = "profession", text = "Engineering (140)", skill = "Engineering", skillLevel = 140 } },
                 { id = 10720, name = "Gnomish Net-o-Matic Projector", source = { kind = "profession", text = "Engineering (210)", skill = "Engineering", skillLevel = 210 } },
                 { id = 260802, name = "EZ-Thro Bronze Mortar", source = { kind = "profession", text = "Engineering (190) Schematic: nobody has found it in the beta yet", skill = "Engineering", skillLevel = 190 } },
+                { id = 280766, name = "Satchel of Potions", source = { kind = "quest", text = "Quest: Changing Tastes Excavation Site: Wetlands, Horde, from level 24", faction = "Horde", quest = "Changing Tastes Excavation Site: Wetlands" } },
                 { id = 273643, name = "Worgenbane Talisman", source = { kind = "dungeon", text = "Commander Springvale, Shadowfang Keep", zone = "Shadowfang Keep", boss = "Commander Springvale" } },
+                { id = 274152, name = "Roogug's Severed Head", source = { kind = "world", text = "Roogug, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Roogug" } },
               },
             },
             { slot = "Two-hand weapon",
@@ -2861,7 +2923,7 @@ ForeverBiSData = {
           slots = {
             { slot = "Head",
               items = {
-                { id = 252455, name = "Defender's Leather Helm", source = { kind = "profession", text = "Old Serra'kis, Blackfathom Deeps Aku'mai, Blackfathom Deeps Agathelos the Raging, Razorfen Kraul Leatherworking Only its maker can wear it Pattern: nobody has found it in the beta yet", skill = "Leatherworking", bindsToMaker = true } },
+                { id = 252455, name = "Defender's Leather Helm", source = { kind = "profession", text = "Old Serra'kis, Blackfathom Deeps Aku'mai, Blackfathom Deeps Lorgus Jett, Blackfathom Deeps Agathelos the Raging, Razorfen Kraul Earthcaller Halmgar, Razorfen Kraul Bloodmage Thalnos, Scarlet Monastery Graveyard Leatherworking Only its maker can wear it Pattern: nobody has found it in the beta yet", skill = "Leatherworking", bindsToMaker = true } },
                 { id = 13127, name = "Frostreaver Crown", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 250528, name = "Veteran's Silvered Chain Helm", source = { kind = "profession", text = "Blacksmithing (95) Only its maker can wear it", skill = "Blacksmithing", skillLevel = 95, bindsToMaker = true } },
                 { id = 277040, name = "Cloudy Skyforged Helm", source = { kind = "profession", text = "Blacksmithing (175)", skill = "Blacksmithing", skillLevel = 175 } },
@@ -2940,10 +3002,10 @@ ForeverBiSData = {
             },
             { slot = "Waist",
               items = {
-                { id = 250556, name = "Officer's Belt", source = { kind = "profession", text = "Blacksmithing (150) Only its maker can wear it Plans: nobody has found it in the beta yet", skill = "Blacksmithing", skillLevel = 150, bindsToMaker = true } },
+                { id = 250556, name = "Officer's Belt", source = { kind = "profession", text = "Blacksmithing (150) Only its maker can wear it Plans: not needed, blacksmithing trainers teach the recipe at 150", skill = "Blacksmithing", skillLevel = 150, bindsToMaker = true } },
                 { id = 252460, name = "Warden's Leather Belt", source = { kind = "profession", text = "Leatherworking (150) Only its maker can wear it", skill = "Leatherworking", skillLevel = 150, bindsToMaker = true } },
                 { id = 252459, name = "Prowler's Leather Belt", source = { kind = "profession", text = "Leatherworking (150) Only its maker can wear it", skill = "Leatherworking", skillLevel = 150, bindsToMaker = true } },
-                { id = 250557, name = "Sentinel's Belt", source = { kind = "profession", text = "Blacksmithing (150) Only its maker can wear it Plans: nobody has found it in the beta yet", skill = "Blacksmithing", skillLevel = 150, bindsToMaker = true } },
+                { id = 250557, name = "Sentinel's Belt", source = { kind = "profession", text = "Blacksmithing (150) Only its maker can wear it Plans: not needed, blacksmithing trainers teach the recipe at 150", skill = "Blacksmithing", skillLevel = 150, bindsToMaker = true } },
                 { id = 252520, name = "Skulker's Leather Belt", source = { kind = "profession", text = "Leatherworking (150) Only its maker can wear it", skill = "Leatherworking", skillLevel = 150, bindsToMaker = true } },
                 { id = 4717, name = "Mail Combat Belt", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
               },
@@ -2965,6 +3027,7 @@ ForeverBiSData = {
             { slot = "Feet",
               items = {
                 { id = 13124, name = "Ravasaur Scale Boots", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
+                { id = 273025, name = "Raptorclaw Greaves", source = { kind = "world", text = "Shadetooth, Excavation Site: Wetlands" } },
                 { id = 6335, name = "Grizzled Boots", source = { kind = "quest", text = "Quest: The Book of Ur Horde, level 26 in Classic, from level 16", faction = "Horde", quest = "The Book of Ur" } },
                 { id = 4076, name = "Mail Combat Boots", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 273842, name = "Treacherous Treads", source = { kind = "dungeon", text = "Lorgus Jett, Blackfathom Deeps", zone = "Blackfathom Deeps", boss = "Lorgus Jett" } },
@@ -2979,7 +3042,8 @@ ForeverBiSData = {
                 { id = 285190, name = "Wyvern Heart Band", source = { kind = "world", text = "Heartrazor, the rare wyvern of Thousand Needles Reported, not checked", reported = true } },
                 { id = 282283, name = "Malignant Root", source = { kind = "world", text = "Nightveiled Rotheap, a patrol of the Wetlands Alliance only, and not checked in the beta", faction = "Alliance" } },
                 { id = 6414, name = "Seal of Sylvanas", source = { kind = "quest", text = "Quest: Arugal Must Die Horde, level 27 in Classic, from level 18", faction = "Horde", quest = "Arugal Must Die" } },
-                { id = 281320, name = "Rune-Etched Ring", source = { kind = "quest", text = "Alliance quest Gleaning Our Future, Wetlands, level 32 Reported, not checked", faction = "Alliance", reported = true } },
+                { id = 281634, name = "Field Researcher's Loop", source = { kind = "quest", text = "Quest: Greater Friend of the Library Twenty books, the necklace’s ten counted", quest = "Greater Friend of the Library Twenty books" } },
+                { id = 281320, name = "Rune-Etched Ring", source = { kind = "quest", text = "Alliance quest Gleaning Our Future, Wetlands, level 32 Elite, from level 24: take a group", faction = "Alliance" } },
                 { id = 278018, name = "Renegotiated Ring", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
               },
             },
@@ -2988,6 +3052,8 @@ ForeverBiSData = {
                 { id = 4381, name = "Minor Recombobulator", source = { kind = "profession", text = "Engineering (140)", skill = "Engineering", skillLevel = 140 } },
                 { id = 10720, name = "Gnomish Net-o-Matic Projector", source = { kind = "profession", text = "Engineering (210)", skill = "Engineering", skillLevel = 210 } },
                 { id = 260802, name = "EZ-Thro Bronze Mortar", source = { kind = "profession", text = "Engineering (190) Schematic: nobody has found it in the beta yet", skill = "Engineering", skillLevel = 190 } },
+                { id = 280766, name = "Satchel of Potions", source = { kind = "quest", text = "Quest: Changing Tastes Excavation Site: Wetlands, Horde, from level 24", faction = "Horde", quest = "Changing Tastes Excavation Site: Wetlands" } },
+                { id = 274152, name = "Roogug's Severed Head", source = { kind = "world", text = "Roogug, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Roogug" } },
                 { id = 273298, name = "Lookie's Spyglass", source = { kind = "dungeon", text = "Cookie, The Deadmines", zone = "The Deadmines", boss = "Cookie" } },
               },
             },
@@ -3104,11 +3170,11 @@ ForeverBiSData = {
             },
             { slot = "Waist",
               items = {
-                { id = 250560, name = "Justicar's Belt", source = { kind = "profession", text = "Blacksmithing (150) Only its maker can wear it Plans: nobody has found it in the beta yet", skill = "Blacksmithing", skillLevel = 150, bindsToMaker = true } },
+                { id = 250560, name = "Justicar's Belt", source = { kind = "profession", text = "Blacksmithing (150) Only its maker can wear it Plans: not needed, blacksmithing trainers teach the recipe at 150", skill = "Blacksmithing", skillLevel = 150, bindsToMaker = true } },
                 { id = 252522, name = "Skycaller's Leather Belt", source = { kind = "profession", text = "Leatherworking (150) Only its maker can wear it", skill = "Leatherworking", skillLevel = 150, bindsToMaker = true } },
                 { id = 6911, name = "Moss Cinch", source = { kind = "dungeon", text = "Aku'mai, Blackfathom Deeps 38.59% in Classic", zone = "Blackfathom Deeps", boss = "Aku'mai", dropRate = 38.59 } },
-                { id = 250559, name = "Prefect's Belt", source = { kind = "profession", text = "Blacksmithing (150) Only its maker can wear it Plans: nobody has found it in the beta yet", skill = "Blacksmithing", skillLevel = 150, bindsToMaker = true } },
-                { id = 250558, name = "Warder's Belt", source = { kind = "profession", text = "Blacksmithing (150) Only its maker can wear it Plans: nobody has found it in the beta yet", skill = "Blacksmithing", skillLevel = 150, bindsToMaker = true } },
+                { id = 250559, name = "Prefect's Belt", source = { kind = "profession", text = "Blacksmithing (150) Only its maker can wear it Plans: not needed, blacksmithing trainers teach the recipe at 150", skill = "Blacksmithing", skillLevel = 150, bindsToMaker = true } },
+                { id = 250558, name = "Warder's Belt", source = { kind = "profession", text = "Blacksmithing (150) Only its maker can wear it Plans: not needed, blacksmithing trainers teach the recipe at 150", skill = "Blacksmithing", skillLevel = 150, bindsToMaker = true } },
               },
             },
             { slot = "Legs",
@@ -3149,7 +3215,9 @@ ForeverBiSData = {
                 { id = 4381, name = "Minor Recombobulator", source = { kind = "profession", text = "Engineering (140)", skill = "Engineering", skillLevel = 140 } },
                 { id = 10720, name = "Gnomish Net-o-Matic Projector", source = { kind = "profession", text = "Engineering (210)", skill = "Engineering", skillLevel = 210 } },
                 { id = 260802, name = "EZ-Thro Bronze Mortar", source = { kind = "profession", text = "Engineering (190) Schematic: nobody has found it in the beta yet", skill = "Engineering", skillLevel = 190 } },
+                { id = 280766, name = "Satchel of Potions", source = { kind = "quest", text = "Quest: Changing Tastes Excavation Site: Wetlands, Horde, from level 24", faction = "Horde", quest = "Changing Tastes Excavation Site: Wetlands" } },
                 { id = 273643, name = "Worgenbane Talisman", source = { kind = "dungeon", text = "Commander Springvale, Shadowfang Keep", zone = "Shadowfang Keep", boss = "Commander Springvale" } },
+                { id = 274152, name = "Roogug's Severed Head", source = { kind = "world", text = "Roogug, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Roogug" } },
               },
             },
             { slot = "Main hand",
@@ -3194,7 +3262,7 @@ ForeverBiSData = {
           slots = {
             { slot = "Head",
               items = {
-                { id = 252456, name = "Totemic Leather Helm", source = { kind = "profession", text = "Leatherworking Only its maker can wear it Pattern: nobody has found it in the beta yet", skill = "Leatherworking", bindsToMaker = true } },
+                { id = 252456, name = "Totemic Leather Helm", source = { kind = "profession", text = "Twilight Lord Kelris, Blackfathom Deeps Leatherworking Only its maker can wear it Pattern: nobody has found it in the beta yet", skill = "Leatherworking", bindsToMaker = true } },
                 { id = 253985, name = "Filigreed Shining Circlet", source = { kind = "profession", text = "Tailoring (125) Only its maker can wear it Pattern: drops in low-level dungeons, nobody has found which one yet", skill = "Tailoring", skillLevel = 125, bindsToMaker = true } },
                 { id = 250532, name = "Crusader's Silvered Chain Helm", source = { kind = "profession", text = "Blacksmithing (95) Only its maker can wear it", skill = "Blacksmithing", skillLevel = 95, bindsToMaker = true } },
                 { id = 253959, name = "Shining Circlet", source = { kind = "profession", text = "Tailoring (100) Only its maker can wear it", skill = "Tailoring", skillLevel = 100, bindsToMaker = true } },
@@ -3275,9 +3343,9 @@ ForeverBiSData = {
             },
             { slot = "Waist",
               items = {
-                { id = 250558, name = "Warder's Belt", source = { kind = "profession", text = "Blacksmithing (150) Only its maker can wear it Plans: nobody has found it in the beta yet", skill = "Blacksmithing", skillLevel = 150, bindsToMaker = true } },
-                { id = 250560, name = "Justicar's Belt", source = { kind = "profession", text = "Blacksmithing (150) Only its maker can wear it Plans: nobody has found it in the beta yet", skill = "Blacksmithing", skillLevel = 150, bindsToMaker = true } },
-                { id = 250557, name = "Sentinel's Belt", source = { kind = "profession", text = "Blacksmithing (150) Only its maker can wear it Plans: nobody has found it in the beta yet", skill = "Blacksmithing", skillLevel = 150, bindsToMaker = true } },
+                { id = 250558, name = "Warder's Belt", source = { kind = "profession", text = "Blacksmithing (150) Only its maker can wear it Plans: not needed, blacksmithing trainers teach the recipe at 150", skill = "Blacksmithing", skillLevel = 150, bindsToMaker = true } },
+                { id = 250560, name = "Justicar's Belt", source = { kind = "profession", text = "Blacksmithing (150) Only its maker can wear it Plans: not needed, blacksmithing trainers teach the recipe at 150", skill = "Blacksmithing", skillLevel = 150, bindsToMaker = true } },
+                { id = 250557, name = "Sentinel's Belt", source = { kind = "profession", text = "Blacksmithing (150) Only its maker can wear it Plans: not needed, blacksmithing trainers teach the recipe at 150", skill = "Blacksmithing", skillLevel = 150, bindsToMaker = true } },
                 { id = 252522, name = "Skycaller's Leather Belt", source = { kind = "profession", text = "Leatherworking (150) Only its maker can wear it", skill = "Leatherworking", skillLevel = 150, bindsToMaker = true } },
                 { id = 6911, name = "Moss Cinch", source = { kind = "dungeon", text = "Aku'mai, Blackfathom Deeps 38.59% in Classic", zone = "Blackfathom Deeps", boss = "Aku'mai", dropRate = 38.59 } },
               },
@@ -3320,7 +3388,9 @@ ForeverBiSData = {
             { slot = "Trinket",
               items = {
                 { id = 4381, name = "Minor Recombobulator", source = { kind = "profession", text = "Engineering (140)", skill = "Engineering", skillLevel = 140 } },
+                { id = 280766, name = "Satchel of Potions", source = { kind = "quest", text = "Quest: Changing Tastes Excavation Site: Wetlands, Horde, from level 24", faction = "Horde", quest = "Changing Tastes Excavation Site: Wetlands" } },
                 { id = 273643, name = "Worgenbane Talisman", source = { kind = "dungeon", text = "Commander Springvale, Shadowfang Keep", zone = "Shadowfang Keep", boss = "Commander Springvale" } },
+                { id = 274152, name = "Roogug's Severed Head", source = { kind = "world", text = "Roogug, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Roogug" } },
               },
             },
             { slot = "Main hand",
@@ -3491,6 +3561,7 @@ ForeverBiSData = {
             { slot = "Trinket",
               items = {
                 { id = 4381, name = "Minor Recombobulator", source = { kind = "profession", text = "Engineering (140)", skill = "Engineering", skillLevel = 140 } },
+                { id = 280766, name = "Satchel of Potions", source = { kind = "quest", text = "Quest: Changing Tastes Excavation Site: Wetlands, Horde, from level 24", faction = "Horde", quest = "Changing Tastes Excavation Site: Wetlands" } },
                 { id = 4396, name = "Mechanical Dragonling", source = { kind = "profession", text = "Engineering (200)", skill = "Engineering", skillLevel = 200 } },
                 { id = 273643, name = "Worgenbane Talisman", source = { kind = "dungeon", text = "Commander Springvale, Shadowfang Keep", zone = "Shadowfang Keep", boss = "Commander Springvale" } },
                 { id = 274152, name = "Roogug's Severed Head", source = { kind = "world", text = "Roogug, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Roogug" } },
@@ -3531,8 +3602,9 @@ ForeverBiSData = {
             },
             { slot = "Ranged",
               items = {
-                { id = 13063, name = "Starfaller", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
+                { id = 6806, name = "Dancing Flame", source = { kind = "quest", text = "Quest: Final Passage Horde, level 36 in Classic, from level 25 A chain of ten quests from Dorn Plainstalker, Thousand Needles Two elite steps, and a book in the Scarlet Monastery Graveyard", faction = "Horde", quest = "Final Passage" } },
                 { id = 13062, name = "Thunderwood", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
+                { id = 13063, name = "Starfaller", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 5214, name = "Wand of Eventide", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 7001, name = "Gravestone Scepter", source = { kind = "quest", text = "Quest: Blackfathom Villainy Alliance, level 27 in Classic, from level 18 Quest: Blackfathom Villainy Horde, level 27 in Classic, from level 18", quest = "Blackfathom Villainy" } },
                 { id = 5213, name = "Scorching Wand", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
@@ -3673,7 +3745,9 @@ ForeverBiSData = {
                 { id = 4381, name = "Minor Recombobulator", source = { kind = "profession", text = "Engineering (140)", skill = "Engineering", skillLevel = 140 } },
                 { id = 10720, name = "Gnomish Net-o-Matic Projector", source = { kind = "profession", text = "Engineering (210)", skill = "Engineering", skillLevel = 210 } },
                 { id = 260802, name = "EZ-Thro Bronze Mortar", source = { kind = "profession", text = "Engineering (190) Schematic: nobody has found it in the beta yet", skill = "Engineering", skillLevel = 190 } },
+                { id = 280766, name = "Satchel of Potions", source = { kind = "quest", text = "Quest: Changing Tastes Excavation Site: Wetlands, Horde, from level 24", faction = "Horde", quest = "Changing Tastes Excavation Site: Wetlands" } },
                 { id = 273643, name = "Worgenbane Talisman", source = { kind = "dungeon", text = "Commander Springvale, Shadowfang Keep", zone = "Shadowfang Keep", boss = "Commander Springvale" } },
+                { id = 274152, name = "Roogug's Severed Head", source = { kind = "world", text = "Roogug, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Roogug" } },
               },
             },
             { slot = "Two-hand weapon",
@@ -3710,6 +3784,8 @@ ForeverBiSData = {
             },
             { slot = "Ranged",
               items = {
+                { id = 7708, name = "Necrotic Wand", source = { kind = "world", text = "Azshir the Sleepless, Scarlet Monastery Graveyard 32.21% in Classic", zone = "Scarlet Monastery", boss = "Azshir the Sleepless", dropRate = 32.21 } },
+                { id = 6806, name = "Dancing Flame", source = { kind = "quest", text = "Quest: Final Passage Horde, level 36 in Classic, from level 25 A chain of ten quests from Dorn Plainstalker, Thousand Needles Two elite steps, and a book in the Scarlet Monastery Graveyard", faction = "Horde", quest = "Final Passage" } },
                 { id = 13062, name = "Thunderwood", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 13063, name = "Starfaller", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 5214, name = "Wand of Eventide", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
@@ -3853,6 +3929,7 @@ ForeverBiSData = {
             { slot = "Trinket",
               items = {
                 { id = 4381, name = "Minor Recombobulator", source = { kind = "profession", text = "Engineering (140)", skill = "Engineering", skillLevel = 140 } },
+                { id = 280766, name = "Satchel of Potions", source = { kind = "quest", text = "Quest: Changing Tastes Excavation Site: Wetlands, Horde, from level 24", faction = "Horde", quest = "Changing Tastes Excavation Site: Wetlands" } },
                 { id = 274152, name = "Roogug's Severed Head", source = { kind = "world", text = "Roogug, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Roogug" } },
                 { id = 273643, name = "Worgenbane Talisman", source = { kind = "dungeon", text = "Commander Springvale, Shadowfang Keep", zone = "Shadowfang Keep", boss = "Commander Springvale" } },
               },
@@ -3891,6 +3968,8 @@ ForeverBiSData = {
             },
             { slot = "Ranged",
               items = {
+                { id = 7708, name = "Necrotic Wand", source = { kind = "world", text = "Azshir the Sleepless, Scarlet Monastery Graveyard 32.21% in Classic", zone = "Scarlet Monastery", boss = "Azshir the Sleepless", dropRate = 32.21 } },
+                { id = 6806, name = "Dancing Flame", source = { kind = "quest", text = "Quest: Final Passage Horde, level 36 in Classic, from level 25 A chain of ten quests from Dorn Plainstalker, Thousand Needles Two elite steps, and a book in the Scarlet Monastery Graveyard", faction = "Horde", quest = "Final Passage" } },
                 { id = 13062, name = "Thunderwood", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 5214, name = "Wand of Eventide", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 13063, name = "Starfaller", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
@@ -4026,7 +4105,7 @@ ForeverBiSData = {
                 { id = 271670, name = "Curl of Life", source = { kind = "quest", text = "Quest: Horrors in the Highland Excavation Site: Wetlands, Alliance, from level 24", faction = "Alliance", quest = "Horrors in the Highland Excavation Site: Wetlands" } },
                 { id = 273806, name = "Dark Horde Band", source = { kind = "world", text = "Targorr the Dread, The Stockade", zone = "The Stockade", boss = "Targorr the Dread" } },
                 { id = 282283, name = "Malignant Root", source = { kind = "world", text = "Nightveiled Rotheap, a patrol of the Wetlands Alliance only, and not checked in the beta", faction = "Alliance" } },
-                { id = 281320, name = "Rune-Etched Ring", source = { kind = "quest", text = "Alliance quest Gleaning Our Future, Wetlands, level 32 Reported, not checked", faction = "Alliance", reported = true } },
+                { id = 281320, name = "Rune-Etched Ring", source = { kind = "quest", text = "Alliance quest Gleaning Our Future, Wetlands, level 32 Elite, from level 24: take a group", faction = "Alliance" } },
                 { id = 274746, name = "Sea Giant's Toe Ring", source = { kind = "world", text = "Sold by Gezzy Gunkgear in Booty Bay At Friendly with Booty Bay" } },
               },
             },
@@ -4035,7 +4114,9 @@ ForeverBiSData = {
                 { id = 4381, name = "Minor Recombobulator", source = { kind = "profession", text = "Engineering (140)", skill = "Engineering", skillLevel = 140 } },
                 { id = 10720, name = "Gnomish Net-o-Matic Projector", source = { kind = "profession", text = "Engineering (210)", skill = "Engineering", skillLevel = 210 } },
                 { id = 260802, name = "EZ-Thro Bronze Mortar", source = { kind = "profession", text = "Engineering (190) Schematic: nobody has found it in the beta yet", skill = "Engineering", skillLevel = 190 } },
+                { id = 280766, name = "Satchel of Potions", source = { kind = "quest", text = "Quest: Changing Tastes Excavation Site: Wetlands, Horde, from level 24", faction = "Horde", quest = "Changing Tastes Excavation Site: Wetlands" } },
                 { id = 273643, name = "Worgenbane Talisman", source = { kind = "dungeon", text = "Commander Springvale, Shadowfang Keep", zone = "Shadowfang Keep", boss = "Commander Springvale" } },
+                { id = 274152, name = "Roogug's Severed Head", source = { kind = "world", text = "Roogug, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Roogug" } },
               },
             },
             { slot = "Two-hand weapon",
@@ -4073,8 +4154,9 @@ ForeverBiSData = {
             },
             { slot = "Ranged",
               items = {
-                { id = 13063, name = "Starfaller", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
+                { id = 6806, name = "Dancing Flame", source = { kind = "quest", text = "Quest: Final Passage Horde, level 36 in Classic, from level 25 A chain of ten quests from Dorn Plainstalker, Thousand Needles Two elite steps, and a book in the Scarlet Monastery Graveyard", faction = "Horde", quest = "Final Passage" } },
                 { id = 13062, name = "Thunderwood", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
+                { id = 13063, name = "Starfaller", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 5214, name = "Wand of Eventide", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 5246, name = "Excavation Rod", source = { kind = "quest", text = "Quest: Ormer's Revenge Alliance, level 29 in Classic, from level 22", faction = "Alliance", quest = "Ormer's Revenge" } },
                 { id = 7001, name = "Gravestone Scepter", source = { kind = "quest", text = "Quest: Blackfathom Villainy Alliance, level 27 in Classic, from level 18 Quest: Blackfathom Villainy Horde, level 27 in Classic, from level 18", quest = "Blackfathom Villainy" } },
@@ -4092,7 +4174,8 @@ ForeverBiSData = {
           slots = {
             { slot = "Head",
               items = {
-                { id = 252512, name = "Brawler's Leather Helm", source = { kind = "profession", text = "Overlord Ramtusk, Razorfen Kraul Leatherworking Only its maker can wear it Pattern: nobody has found it in the beta yet Also drops in the Stockade, says a reader Reported, not checked", skill = "Leatherworking", bindsToMaker = true, reported = true } },
+                { id = 252512, name = "Brawler's Leather Helm", source = { kind = "profession", text = "Gelihast, Blackfathom Deeps Aku'mai, Blackfathom Deeps Dextren Ward, The Stockade Aggem Thorncurse, Razorfen Kraul Overlord Ramtusk, Razorfen Kraul Leatherworking Only its maker can wear it Pattern: nobody has found it in the beta yet", skill = "Leatherworking", bindsToMaker = true } },
+                { id = 6720, name = "Spirit Hunter Headdress", source = { kind = "quest", text = "Quest: Frostmaw Horde, level 37 in Classic, from level 26", faction = "Horde", quest = "Frostmaw" } },
                 { id = 252504, name = "Brawler's Leather Hood", source = { kind = "profession", text = "Leatherworking (100) Only its maker can wear it", skill = "Leatherworking", skillLevel = 100, bindsToMaker = true } },
                 { id = 6204, name = "Tribal Worg Helm", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 277042, name = "Cloudy Gustwoven Hood", source = { kind = "profession", text = "Leatherworking (175)", skill = "Leatherworking", skillLevel = 175 } },
@@ -4217,6 +4300,8 @@ ForeverBiSData = {
               items = {
                 { id = 4381, name = "Minor Recombobulator", source = { kind = "profession", text = "Engineering (140)", skill = "Engineering", skillLevel = 140 } },
                 { id = 4396, name = "Mechanical Dragonling", source = { kind = "profession", text = "Engineering (200)", skill = "Engineering", skillLevel = 200 } },
+                { id = 280766, name = "Satchel of Potions", source = { kind = "quest", text = "Quest: Changing Tastes Excavation Site: Wetlands, Horde, from level 24", faction = "Horde", quest = "Changing Tastes Excavation Site: Wetlands" } },
+                { id = 274152, name = "Roogug's Severed Head", source = { kind = "world", text = "Roogug, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Roogug" } },
                 { id = 273298, name = "Lookie's Spyglass", source = { kind = "dungeon", text = "Cookie, The Deadmines", zone = "The Deadmines", boss = "Cookie" } },
               },
             },
@@ -4247,6 +4332,8 @@ ForeverBiSData = {
             },
             { slot = "Ranged",
               items = {
+                { id = 277254, name = "Truthseeker's Bow", source = { kind = "quest", text = "Quest: Greater Friend of the Library, from level 30 Its books stand in zones of level 45 and above", quest = "Greater Friend of the Library" } },
+                { id = 273029, name = "Golemsight Long Gun", source = { kind = "world", text = "Relic Guardian, Excavation Site: Wetlands" } },
                 { id = 274748, name = "Booty Bay Bruiser's Buckshot", source = { kind = "world", text = "Sold by Gezzy Gunkgear in Booty Bay At Honored with Booty Bay" } },
                 { id = 2098, name = "Double-barreled Shotgun", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 13037, name = "Crystalpine Stinger", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
@@ -4267,7 +4354,8 @@ ForeverBiSData = {
           slots = {
             { slot = "Head",
               items = {
-                { id = 252512, name = "Brawler's Leather Helm", source = { kind = "profession", text = "Overlord Ramtusk, Razorfen Kraul Leatherworking Only its maker can wear it Pattern: nobody has found it in the beta yet Also drops in the Stockade, says a reader Reported, not checked", skill = "Leatherworking", bindsToMaker = true, reported = true } },
+                { id = 252512, name = "Brawler's Leather Helm", source = { kind = "profession", text = "Gelihast, Blackfathom Deeps Aku'mai, Blackfathom Deeps Dextren Ward, The Stockade Aggem Thorncurse, Razorfen Kraul Overlord Ramtusk, Razorfen Kraul Leatherworking Only its maker can wear it Pattern: nobody has found it in the beta yet", skill = "Leatherworking", bindsToMaker = true } },
+                { id = 6720, name = "Spirit Hunter Headdress", source = { kind = "quest", text = "Quest: Frostmaw Horde, level 37 in Classic, from level 26", faction = "Horde", quest = "Frostmaw" } },
                 { id = 252504, name = "Brawler's Leather Hood", source = { kind = "profession", text = "Leatherworking (100) Only its maker can wear it", skill = "Leatherworking", skillLevel = 100, bindsToMaker = true } },
                 { id = 6204, name = "Tribal Worg Helm", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 277042, name = "Cloudy Gustwoven Hood", source = { kind = "profession", text = "Leatherworking (175)", skill = "Leatherworking", skillLevel = 175 } },
@@ -4392,6 +4480,8 @@ ForeverBiSData = {
               items = {
                 { id = 4381, name = "Minor Recombobulator", source = { kind = "profession", text = "Engineering (140)", skill = "Engineering", skillLevel = 140 } },
                 { id = 4396, name = "Mechanical Dragonling", source = { kind = "profession", text = "Engineering (200)", skill = "Engineering", skillLevel = 200 } },
+                { id = 280766, name = "Satchel of Potions", source = { kind = "quest", text = "Quest: Changing Tastes Excavation Site: Wetlands, Horde, from level 24", faction = "Horde", quest = "Changing Tastes Excavation Site: Wetlands" } },
+                { id = 274152, name = "Roogug's Severed Head", source = { kind = "world", text = "Roogug, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Roogug" } },
                 { id = 273298, name = "Lookie's Spyglass", source = { kind = "dungeon", text = "Cookie, The Deadmines", zone = "The Deadmines", boss = "Cookie" } },
               },
             },
@@ -4423,6 +4513,8 @@ ForeverBiSData = {
             },
             { slot = "Ranged",
               items = {
+                { id = 277254, name = "Truthseeker's Bow", source = { kind = "quest", text = "Quest: Greater Friend of the Library, from level 30 Its books stand in zones of level 45 and above", quest = "Greater Friend of the Library" } },
+                { id = 273029, name = "Golemsight Long Gun", source = { kind = "world", text = "Relic Guardian, Excavation Site: Wetlands" } },
                 { id = 274748, name = "Booty Bay Bruiser's Buckshot", source = { kind = "world", text = "Sold by Gezzy Gunkgear in Booty Bay At Honored with Booty Bay" } },
                 { id = 2098, name = "Double-barreled Shotgun", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 13037, name = "Crystalpine Stinger", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
@@ -4443,7 +4535,7 @@ ForeverBiSData = {
           slots = {
             { slot = "Head",
               items = {
-                { id = 252512, name = "Brawler's Leather Helm", source = { kind = "profession", text = "Overlord Ramtusk, Razorfen Kraul Leatherworking Only its maker can wear it Pattern: nobody has found it in the beta yet Also drops in the Stockade, says a reader Reported, not checked", skill = "Leatherworking", bindsToMaker = true, reported = true } },
+                { id = 252512, name = "Brawler's Leather Helm", source = { kind = "profession", text = "Gelihast, Blackfathom Deeps Aku'mai, Blackfathom Deeps Dextren Ward, The Stockade Aggem Thorncurse, Razorfen Kraul Overlord Ramtusk, Razorfen Kraul Leatherworking Only its maker can wear it Pattern: nobody has found it in the beta yet", skill = "Leatherworking", bindsToMaker = true } },
                 { id = 252504, name = "Brawler's Leather Hood", source = { kind = "profession", text = "Leatherworking (100) Only its maker can wear it", skill = "Leatherworking", skillLevel = 100, bindsToMaker = true } },
                 { id = 19972, name = "Lucky Fishing Hat", source = { kind = "quest", text = "Quest: Rare Fish - Keefer's Angelfish level 0 in Classic, from level 1 A fishing quest in Booty Bay, for a Keefer's Angelfish Fishing only, no level needed", quest = "Rare Fish - Keefer's Angelfish" } },
                 { id = 252447, name = "Defender's Leather Hood", source = { kind = "profession", text = "Leatherworking (100) Only its maker can wear it", skill = "Leatherworking", skillLevel = 100, bindsToMaker = true } },
@@ -4573,6 +4665,8 @@ ForeverBiSData = {
                 { id = 10720, name = "Gnomish Net-o-Matic Projector", source = { kind = "profession", text = "Engineering (210)", skill = "Engineering", skillLevel = 210 } },
                 { id = 4381, name = "Minor Recombobulator", source = { kind = "profession", text = "Engineering (140)", skill = "Engineering", skillLevel = 140 } },
                 { id = 260802, name = "EZ-Thro Bronze Mortar", source = { kind = "profession", text = "Engineering (190) Schematic: nobody has found it in the beta yet", skill = "Engineering", skillLevel = 190 } },
+                { id = 280766, name = "Satchel of Potions", source = { kind = "quest", text = "Quest: Changing Tastes Excavation Site: Wetlands, Horde, from level 24", faction = "Horde", quest = "Changing Tastes Excavation Site: Wetlands" } },
+                { id = 274152, name = "Roogug's Severed Head", source = { kind = "world", text = "Roogug, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Roogug" } },
                 { id = 273298, name = "Lookie's Spyglass", source = { kind = "dungeon", text = "Cookie, The Deadmines", zone = "The Deadmines", boss = "Cookie" } },
               },
             },
@@ -4604,7 +4698,9 @@ ForeverBiSData = {
             },
             { slot = "Ranged",
               items = {
+                { id = 277254, name = "Truthseeker's Bow", source = { kind = "quest", text = "Quest: Greater Friend of the Library, from level 30 Its books stand in zones of level 45 and above", quest = "Greater Friend of the Library" } },
                 { id = 274748, name = "Booty Bay Bruiser's Buckshot", source = { kind = "world", text = "Sold by Gezzy Gunkgear in Booty Bay At Honored with Booty Bay" } },
+                { id = 273029, name = "Golemsight Long Gun", source = { kind = "world", text = "Relic Guardian, Excavation Site: Wetlands" } },
                 { id = 273843, name = "Fallenroot Longbow", source = { kind = "dungeon", text = "Lorgus Jett, Blackfathom Deeps", zone = "Blackfathom Deeps", boss = "Lorgus Jett" } },
                 { id = 285292, name = "Dull Sawblade", source = { kind = "dungeon", text = "Sneed's Shredder, The Deadmines", zone = "The Deadmines", boss = "Sneed's Shredder" } },
                 { id = 285347, name = "Alliance Outrunner Bow", source = { kind = "world", text = "Aean Swiftriver, of the Alliance Outrunners in the Barrens Horde only: the Outrunners are Alliance scouts" } },
@@ -4625,7 +4721,7 @@ ForeverBiSData = {
           slots = {
             { slot = "Head",
               items = {
-                { id = 252456, name = "Totemic Leather Helm", source = { kind = "profession", text = "Leatherworking Only its maker can wear it Pattern: nobody has found it in the beta yet", skill = "Leatherworking", bindsToMaker = true } },
+                { id = 252456, name = "Totemic Leather Helm", source = { kind = "profession", text = "Twilight Lord Kelris, Blackfathom Deeps Leatherworking Only its maker can wear it Pattern: nobody has found it in the beta yet", skill = "Leatherworking", bindsToMaker = true } },
                 { id = 2721, name = "Holy Shroud", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 252448, name = "Totemic Leather Hood", source = { kind = "profession", text = "Leatherworking (100) Only its maker can wear it", skill = "Leatherworking", skillLevel = 100, bindsToMaker = true } },
                 { id = 4322, name = "Enchanter's Cowl", source = { kind = "profession", text = "Tailoring (130)", skill = "Tailoring", skillLevel = 130 } },
@@ -4751,6 +4847,7 @@ ForeverBiSData = {
             { slot = "Trinket",
               items = {
                 { id = 4381, name = "Minor Recombobulator", source = { kind = "profession", text = "Engineering (140)", skill = "Engineering", skillLevel = 140 } },
+                { id = 280766, name = "Satchel of Potions", source = { kind = "quest", text = "Quest: Changing Tastes Excavation Site: Wetlands, Horde, from level 24", faction = "Horde", quest = "Changing Tastes Excavation Site: Wetlands" } },
                 { id = 4396, name = "Mechanical Dragonling", source = { kind = "profession", text = "Engineering (200)", skill = "Engineering", skillLevel = 200 } },
                 { id = 273643, name = "Worgenbane Talisman", source = { kind = "dungeon", text = "Commander Springvale, Shadowfang Keep", zone = "Shadowfang Keep", boss = "Commander Springvale" } },
                 { id = 274152, name = "Roogug's Severed Head", source = { kind = "world", text = "Roogug, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Roogug" } },
@@ -4811,7 +4908,7 @@ ForeverBiSData = {
           slots = {
             { slot = "Head",
               items = {
-                { id = 252456, name = "Totemic Leather Helm", source = { kind = "profession", text = "Leatherworking Only its maker can wear it Pattern: nobody has found it in the beta yet", skill = "Leatherworking", bindsToMaker = true } },
+                { id = 252456, name = "Totemic Leather Helm", source = { kind = "profession", text = "Twilight Lord Kelris, Blackfathom Deeps Leatherworking Only its maker can wear it Pattern: nobody has found it in the beta yet", skill = "Leatherworking", bindsToMaker = true } },
                 { id = 253975, name = "Filigreed Pristine Circlet", source = { kind = "profession", text = "Tailoring (125) Only its maker can wear it Pattern: drops in low-level dungeons, nobody has found which one yet", skill = "Tailoring", skillLevel = 125, bindsToMaker = true } },
                 { id = 252448, name = "Totemic Leather Hood", source = { kind = "profession", text = "Leatherworking (100) Only its maker can wear it", skill = "Leatherworking", skillLevel = 100, bindsToMaker = true } },
                 { id = 284401, name = "Sorrow's Shroud", source = { kind = "world", text = "Sorrow Wing, the rare of Stonetalon Mountains Reported, not checked", reported = true } },
@@ -4931,7 +5028,7 @@ ForeverBiSData = {
                 { id = 271670, name = "Curl of Life", source = { kind = "quest", text = "Quest: Horrors in the Highland Excavation Site: Wetlands, Alliance, from level 24", faction = "Alliance", quest = "Horrors in the Highland Excavation Site: Wetlands" } },
                 { id = 273806, name = "Dark Horde Band", source = { kind = "world", text = "Targorr the Dread, The Stockade", zone = "The Stockade", boss = "Targorr the Dread" } },
                 { id = 282283, name = "Malignant Root", source = { kind = "world", text = "Nightveiled Rotheap, a patrol of the Wetlands Alliance only, and not checked in the beta", faction = "Alliance" } },
-                { id = 281320, name = "Rune-Etched Ring", source = { kind = "quest", text = "Alliance quest Gleaning Our Future, Wetlands, level 32 Reported, not checked", faction = "Alliance", reported = true } },
+                { id = 281320, name = "Rune-Etched Ring", source = { kind = "quest", text = "Alliance quest Gleaning Our Future, Wetlands, level 32 Elite, from level 24: take a group", faction = "Alliance" } },
                 { id = 274746, name = "Sea Giant's Toe Ring", source = { kind = "world", text = "Sold by Gezzy Gunkgear in Booty Bay At Friendly with Booty Bay" } },
               },
             },
@@ -4940,7 +5037,9 @@ ForeverBiSData = {
                 { id = 4381, name = "Minor Recombobulator", source = { kind = "profession", text = "Engineering (140)", skill = "Engineering", skillLevel = 140 } },
                 { id = 10720, name = "Gnomish Net-o-Matic Projector", source = { kind = "profession", text = "Engineering (210)", skill = "Engineering", skillLevel = 210 } },
                 { id = 260802, name = "EZ-Thro Bronze Mortar", source = { kind = "profession", text = "Engineering (190) Schematic: nobody has found it in the beta yet", skill = "Engineering", skillLevel = 190 } },
+                { id = 280766, name = "Satchel of Potions", source = { kind = "quest", text = "Quest: Changing Tastes Excavation Site: Wetlands, Horde, from level 24", faction = "Horde", quest = "Changing Tastes Excavation Site: Wetlands" } },
                 { id = 273643, name = "Worgenbane Talisman", source = { kind = "dungeon", text = "Commander Springvale, Shadowfang Keep", zone = "Shadowfang Keep", boss = "Commander Springvale" } },
+                { id = 274152, name = "Roogug's Severed Head", source = { kind = "world", text = "Roogug, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Roogug" } },
               },
             },
             { slot = "Two-hand weapon",
@@ -4997,7 +5096,7 @@ ForeverBiSData = {
           slots = {
             { slot = "Head",
               items = {
-                { id = 252455, name = "Defender's Leather Helm", source = { kind = "profession", text = "Old Serra'kis, Blackfathom Deeps Aku'mai, Blackfathom Deeps Agathelos the Raging, Razorfen Kraul Leatherworking Only its maker can wear it Pattern: nobody has found it in the beta yet", skill = "Leatherworking", bindsToMaker = true } },
+                { id = 252455, name = "Defender's Leather Helm", source = { kind = "profession", text = "Old Serra'kis, Blackfathom Deeps Aku'mai, Blackfathom Deeps Lorgus Jett, Blackfathom Deeps Agathelos the Raging, Razorfen Kraul Earthcaller Halmgar, Razorfen Kraul Bloodmage Thalnos, Scarlet Monastery Graveyard Leatherworking Only its maker can wear it Pattern: nobody has found it in the beta yet", skill = "Leatherworking", bindsToMaker = true } },
                 { id = 277042, name = "Cloudy Gustwoven Hood", source = { kind = "profession", text = "Leatherworking (175)", skill = "Leatherworking", skillLevel = 175 } },
                 { id = 277050, name = "Azure Gustwoven Hood", source = { kind = "profession", text = "Leatherworking (175)", skill = "Leatherworking", skillLevel = 175 } },
                 { id = 252447, name = "Defender's Leather Hood", source = { kind = "profession", text = "Leatherworking (100) Only its maker can wear it", skill = "Leatherworking", skillLevel = 100, bindsToMaker = true } },
@@ -5087,7 +5186,7 @@ ForeverBiSData = {
             { slot = "Legs",
               items = {
                 { id = 252458, name = "Totemic Leather Leggings", source = { kind = "profession", text = "Leatherworking (125) Only its maker can wear it", skill = "Leatherworking", skillLevel = 125, bindsToMaker = true } },
-                { id = 281295, name = "Pelt Pants", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 281295, name = "Pelt Pants", source = { kind = "quest", text = "Alliance quest Packaged Pristine Pelts, level 31 Kristy Grant, Thalanaar, from level 27", faction = "Alliance" } },
                 { id = 252516, name = "Brawler's Leather Legguards", source = { kind = "profession", text = "Leatherworking (125) Only its maker can wear it", skill = "Leatherworking", skillLevel = 125, bindsToMaker = true } },
                 { id = 252518, name = "Stormrider's Leather Kilt", source = { kind = "profession", text = "Leatherworking (125) Only its maker can wear it", skill = "Leatherworking", skillLevel = 125, bindsToMaker = true } },
                 { id = 252457, name = "Defender's Leather Kilt", source = { kind = "profession", text = "Leatherworking (125) Only its maker can wear it", skill = "Leatherworking", skillLevel = 125, bindsToMaker = true } },
@@ -5122,7 +5221,9 @@ ForeverBiSData = {
               items = {
                 { id = 4381, name = "Minor Recombobulator", source = { kind = "profession", text = "Engineering (140)", skill = "Engineering", skillLevel = 140 } },
                 { id = 4396, name = "Mechanical Dragonling", source = { kind = "profession", text = "Engineering (200)", skill = "Engineering", skillLevel = 200 } },
+                { id = 280766, name = "Satchel of Potions", source = { kind = "quest", text = "Quest: Changing Tastes Excavation Site: Wetlands, Horde, from level 24", faction = "Horde", quest = "Changing Tastes Excavation Site: Wetlands" } },
                 { id = 273643, name = "Worgenbane Talisman", source = { kind = "dungeon", text = "Commander Springvale, Shadowfang Keep", zone = "Shadowfang Keep", boss = "Commander Springvale" } },
+                { id = 274152, name = "Roogug's Severed Head", source = { kind = "world", text = "Roogug, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Roogug" } },
               },
             },
             { slot = "Two-hand weapon",
@@ -5180,7 +5281,7 @@ ForeverBiSData = {
           slots = {
             { slot = "Head",
               items = {
-                { id = 252455, name = "Defender's Leather Helm", source = { kind = "profession", text = "Old Serra'kis, Blackfathom Deeps Aku'mai, Blackfathom Deeps Agathelos the Raging, Razorfen Kraul Leatherworking Only its maker can wear it Pattern: nobody has found it in the beta yet", skill = "Leatherworking", bindsToMaker = true } },
+                { id = 252455, name = "Defender's Leather Helm", source = { kind = "profession", text = "Old Serra'kis, Blackfathom Deeps Aku'mai, Blackfathom Deeps Lorgus Jett, Blackfathom Deeps Agathelos the Raging, Razorfen Kraul Earthcaller Halmgar, Razorfen Kraul Bloodmage Thalnos, Scarlet Monastery Graveyard Leatherworking Only its maker can wear it Pattern: nobody has found it in the beta yet", skill = "Leatherworking", bindsToMaker = true } },
                 { id = 252447, name = "Defender's Leather Hood", source = { kind = "profession", text = "Leatherworking (100) Only its maker can wear it", skill = "Leatherworking", skillLevel = 100, bindsToMaker = true } },
                 { id = 277042, name = "Cloudy Gustwoven Hood", source = { kind = "profession", text = "Leatherworking (175)", skill = "Leatherworking", skillLevel = 175 } },
                 { id = 277050, name = "Azure Gustwoven Hood", source = { kind = "profession", text = "Leatherworking (175)", skill = "Leatherworking", skillLevel = 175 } },
@@ -5296,7 +5397,8 @@ ForeverBiSData = {
                 { id = 285190, name = "Wyvern Heart Band", source = { kind = "world", text = "Heartrazor, the rare wyvern of Thousand Needles Reported, not checked", reported = true } },
                 { id = 6414, name = "Seal of Sylvanas", source = { kind = "quest", text = "Quest: Arugal Must Die Horde, level 27 in Classic, from level 18", faction = "Horde", quest = "Arugal Must Die" } },
                 { id = 282283, name = "Malignant Root", source = { kind = "world", text = "Nightveiled Rotheap, a patrol of the Wetlands Alliance only, and not checked in the beta", faction = "Alliance" } },
-                { id = 281320, name = "Rune-Etched Ring", source = { kind = "quest", text = "Alliance quest Gleaning Our Future, Wetlands, level 32 Reported, not checked", faction = "Alliance", reported = true } },
+                { id = 281320, name = "Rune-Etched Ring", source = { kind = "quest", text = "Alliance quest Gleaning Our Future, Wetlands, level 32 Elite, from level 24: take a group", faction = "Alliance" } },
+                { id = 281634, name = "Field Researcher's Loop", source = { kind = "quest", text = "Quest: Greater Friend of the Library Twenty books, the necklace’s ten counted", quest = "Greater Friend of the Library Twenty books" } },
                 { id = 2933, name = "Seal of Wrynn", source = { kind = "quest", text = "Quest: An Audience with the King Alliance, level 31 in Classic, from level 16", faction = "Alliance", quest = "An Audience with the King" } },
               },
             },
@@ -5305,6 +5407,8 @@ ForeverBiSData = {
                 { id = 4381, name = "Minor Recombobulator", source = { kind = "profession", text = "Engineering (140)", skill = "Engineering", skillLevel = 140 } },
                 { id = 10720, name = "Gnomish Net-o-Matic Projector", source = { kind = "profession", text = "Engineering (210)", skill = "Engineering", skillLevel = 210 } },
                 { id = 260802, name = "EZ-Thro Bronze Mortar", source = { kind = "profession", text = "Engineering (190) Schematic: nobody has found it in the beta yet", skill = "Engineering", skillLevel = 190 } },
+                { id = 280766, name = "Satchel of Potions", source = { kind = "quest", text = "Quest: Changing Tastes Excavation Site: Wetlands, Horde, from level 24", faction = "Horde", quest = "Changing Tastes Excavation Site: Wetlands" } },
+                { id = 274152, name = "Roogug's Severed Head", source = { kind = "world", text = "Roogug, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Roogug" } },
                 { id = 273298, name = "Lookie's Spyglass", source = { kind = "dungeon", text = "Cookie, The Deadmines", zone = "The Deadmines", boss = "Cookie" } },
               },
             },
@@ -5488,6 +5592,7 @@ ForeverBiSData = {
             { slot = "Trinket",
               items = {
                 { id = 4381, name = "Minor Recombobulator", source = { kind = "profession", text = "Engineering (140)", skill = "Engineering", skillLevel = 140 } },
+                { id = 280766, name = "Satchel of Potions", source = { kind = "quest", text = "Quest: Changing Tastes Excavation Site: Wetlands, Horde, from level 24", faction = "Horde", quest = "Changing Tastes Excavation Site: Wetlands" } },
                 { id = 274152, name = "Roogug's Severed Head", source = { kind = "world", text = "Roogug, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Roogug" } },
                 { id = 273643, name = "Worgenbane Talisman", source = { kind = "dungeon", text = "Commander Springvale, Shadowfang Keep", zone = "Shadowfang Keep", boss = "Commander Springvale" } },
               },
@@ -5674,6 +5779,7 @@ ForeverBiSData = {
             { slot = "Trinket",
               items = {
                 { id = 4381, name = "Minor Recombobulator", source = { kind = "profession", text = "Engineering (140)", skill = "Engineering", skillLevel = 140 } },
+                { id = 280766, name = "Satchel of Potions", source = { kind = "quest", text = "Quest: Changing Tastes Excavation Site: Wetlands, Horde, from level 24", faction = "Horde", quest = "Changing Tastes Excavation Site: Wetlands" } },
                 { id = 4396, name = "Mechanical Dragonling", source = { kind = "profession", text = "Engineering (200)", skill = "Engineering", skillLevel = 200 } },
                 { id = 273643, name = "Worgenbane Talisman", source = { kind = "dungeon", text = "Commander Springvale, Shadowfang Keep", zone = "Shadowfang Keep", boss = "Commander Springvale" } },
                 { id = 274152, name = "Roogug's Severed Head", source = { kind = "world", text = "Roogug, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Roogug" } },
@@ -5714,8 +5820,9 @@ ForeverBiSData = {
             },
             { slot = "Ranged",
               items = {
-                { id = 13063, name = "Starfaller", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
+                { id = 6806, name = "Dancing Flame", source = { kind = "quest", text = "Quest: Final Passage Horde, level 36 in Classic, from level 25 A chain of ten quests from Dorn Plainstalker, Thousand Needles Two elite steps, and a book in the Scarlet Monastery Graveyard", faction = "Horde", quest = "Final Passage" } },
                 { id = 13062, name = "Thunderwood", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
+                { id = 13063, name = "Starfaller", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 5213, name = "Scorching Wand", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 5214, name = "Wand of Eventide", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 7001, name = "Gravestone Scepter", source = { kind = "quest", text = "Quest: Blackfathom Villainy Alliance, level 27 in Classic, from level 18 Quest: Blackfathom Villainy Horde, level 27 in Classic, from level 18", quest = "Blackfathom Villainy" } },
@@ -5849,7 +5956,7 @@ ForeverBiSData = {
                 { id = 271670, name = "Curl of Life", source = { kind = "quest", text = "Quest: Horrors in the Highland Excavation Site: Wetlands, Alliance, from level 24", faction = "Alliance", quest = "Horrors in the Highland Excavation Site: Wetlands" } },
                 { id = 273806, name = "Dark Horde Band", source = { kind = "world", text = "Targorr the Dread, The Stockade", zone = "The Stockade", boss = "Targorr the Dread" } },
                 { id = 282283, name = "Malignant Root", source = { kind = "world", text = "Nightveiled Rotheap, a patrol of the Wetlands Alliance only, and not checked in the beta", faction = "Alliance" } },
-                { id = 281320, name = "Rune-Etched Ring", source = { kind = "quest", text = "Alliance quest Gleaning Our Future, Wetlands, level 32 Reported, not checked", faction = "Alliance", reported = true } },
+                { id = 281320, name = "Rune-Etched Ring", source = { kind = "quest", text = "Alliance quest Gleaning Our Future, Wetlands, level 32 Elite, from level 24: take a group", faction = "Alliance" } },
                 { id = 274746, name = "Sea Giant's Toe Ring", source = { kind = "world", text = "Sold by Gezzy Gunkgear in Booty Bay At Friendly with Booty Bay" } },
               },
             },
@@ -5858,7 +5965,9 @@ ForeverBiSData = {
                 { id = 4381, name = "Minor Recombobulator", source = { kind = "profession", text = "Engineering (140)", skill = "Engineering", skillLevel = 140 } },
                 { id = 10720, name = "Gnomish Net-o-Matic Projector", source = { kind = "profession", text = "Engineering (210)", skill = "Engineering", skillLevel = 210 } },
                 { id = 260802, name = "EZ-Thro Bronze Mortar", source = { kind = "profession", text = "Engineering (190) Schematic: nobody has found it in the beta yet", skill = "Engineering", skillLevel = 190 } },
+                { id = 280766, name = "Satchel of Potions", source = { kind = "quest", text = "Quest: Changing Tastes Excavation Site: Wetlands, Horde, from level 24", faction = "Horde", quest = "Changing Tastes Excavation Site: Wetlands" } },
                 { id = 273643, name = "Worgenbane Talisman", source = { kind = "dungeon", text = "Commander Springvale, Shadowfang Keep", zone = "Shadowfang Keep", boss = "Commander Springvale" } },
+                { id = 274152, name = "Roogug's Severed Head", source = { kind = "world", text = "Roogug, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Roogug" } },
               },
             },
             { slot = "Two-hand weapon",
@@ -5895,8 +6004,9 @@ ForeverBiSData = {
             },
             { slot = "Ranged",
               items = {
-                { id = 13063, name = "Starfaller", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
+                { id = 6806, name = "Dancing Flame", source = { kind = "quest", text = "Quest: Final Passage Horde, level 36 in Classic, from level 25 A chain of ten quests from Dorn Plainstalker, Thousand Needles Two elite steps, and a book in the Scarlet Monastery Graveyard", faction = "Horde", quest = "Final Passage" } },
                 { id = 13062, name = "Thunderwood", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
+                { id = 13063, name = "Starfaller", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 5214, name = "Wand of Eventide", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 5213, name = "Scorching Wand", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 7001, name = "Gravestone Scepter", source = { kind = "quest", text = "Quest: Blackfathom Villainy Alliance, level 27 in Classic, from level 18 Quest: Blackfathom Villainy Horde, level 27 in Classic, from level 18", quest = "Blackfathom Villainy" } },
@@ -5996,7 +6106,7 @@ ForeverBiSData = {
             },
             { slot = "Waist",
               items = {
-                { id = 250556, name = "Officer's Belt", source = { kind = "profession", text = "Blacksmithing (150) Only its maker can wear it Plans: nobody has found it in the beta yet", skill = "Blacksmithing", skillLevel = 150, bindsToMaker = true } },
+                { id = 250556, name = "Officer's Belt", source = { kind = "profession", text = "Blacksmithing (150) Only its maker can wear it Plans: not needed, blacksmithing trainers teach the recipe at 150", skill = "Blacksmithing", skillLevel = 150, bindsToMaker = true } },
                 { id = 252459, name = "Prowler's Leather Belt", source = { kind = "profession", text = "Leatherworking (150) Only its maker can wear it", skill = "Leatherworking", skillLevel = 150, bindsToMaker = true } },
                 { id = 9405, name = "Girdle of Golem Strength", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 10403, name = "Blackened Defias Belt", source = { kind = "dungeon", text = "Captain Greenskin, The Deadmines 26.64% in Classic", zone = "The Deadmines", boss = "Captain Greenskin", dropRate = 26.64 } },
@@ -6010,7 +6120,7 @@ ForeverBiSData = {
                 { id = 9624, name = "Triprunner Dungarees", source = { kind = "quest", text = "Quest: Rig Wars Horde, level 35 in Classic, from level 25 Quest: The Grand Betrayal Alliance, level 35 in Classic, from level 25 The last quest of Gnomeregan, for either faction Take a group for Mekgineer Thermaplugg (level 34)", quest = "Rig Wars" } },
                 { id = 252516, name = "Brawler's Leather Legguards", source = { kind = "profession", text = "Leatherworking (125) Only its maker can wear it", skill = "Leatherworking", skillLevel = 125, bindsToMaker = true } },
                 { id = 250493, name = "Veteran's Chain Leggings", source = { kind = "profession", text = "Blacksmithing Only its maker can wear it Plans: nobody has found it in the beta yet", skill = "Blacksmithing", bindsToMaker = true } },
-                { id = 281295, name = "Pelt Pants", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 281295, name = "Pelt Pants", source = { kind = "quest", text = "Alliance quest Packaged Pristine Pelts, level 31 Kristy Grant, Thalanaar, from level 27", faction = "Alliance" } },
                 { id = 6386, name = "Glimmering Mail Legguards", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 5963, name = "Barbaric Leggings", source = { kind = "profession", text = "Leatherworking (145)", skill = "Leatherworking", skillLevel = 145 } },
                 { id = 6087, name = "Chausses of Westfall", source = { kind = "quest", text = "Quest: The Defias Brotherhood Alliance, level 22 in Classic, from level 14", faction = "Alliance", quest = "The Defias Brotherhood" } },
@@ -6046,6 +6156,8 @@ ForeverBiSData = {
               items = {
                 { id = 4381, name = "Minor Recombobulator", source = { kind = "profession", text = "Engineering (140)", skill = "Engineering", skillLevel = 140 } },
                 { id = 4396, name = "Mechanical Dragonling", source = { kind = "profession", text = "Engineering (200)", skill = "Engineering", skillLevel = 200 } },
+                { id = 280766, name = "Satchel of Potions", source = { kind = "quest", text = "Quest: Changing Tastes Excavation Site: Wetlands, Horde, from level 24", faction = "Horde", quest = "Changing Tastes Excavation Site: Wetlands" } },
+                { id = 274152, name = "Roogug's Severed Head", source = { kind = "world", text = "Roogug, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Roogug" } },
                 { id = 273298, name = "Lookie's Spyglass", source = { kind = "dungeon", text = "Cookie, The Deadmines", zone = "The Deadmines", boss = "Cookie" } },
               },
             },
@@ -6064,8 +6176,10 @@ ForeverBiSData = {
             },
             { slot = "Ranged",
               items = {
+                { id = 277254, name = "Truthseeker's Bow", source = { kind = "quest", text = "Quest: Greater Friend of the Library, from level 30 Its books stand in zones of level 45 and above", quest = "Greater Friend of the Library" } },
                 { id = 274748, name = "Booty Bay Bruiser's Buckshot", source = { kind = "world", text = "Sold by Gezzy Gunkgear in Booty Bay At Honored with Booty Bay" } },
                 { id = 2098, name = "Double-barreled Shotgun", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
+                { id = 273029, name = "Golemsight Long Gun", source = { kind = "world", text = "Relic Guardian, Excavation Site: Wetlands" } },
                 { id = 284696, name = "Carved Furbolg Tooth", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 285292, name = "Dull Sawblade", source = { kind = "dungeon", text = "Sneed's Shredder, The Deadmines", zone = "The Deadmines", boss = "Sneed's Shredder" } },
                 { id = 13136, name = "Lil Timmy's Peashooter", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
@@ -6083,7 +6197,7 @@ ForeverBiSData = {
           slots = {
             { slot = "Head",
               items = {
-                { id = 252455, name = "Defender's Leather Helm", source = { kind = "profession", text = "Old Serra'kis, Blackfathom Deeps Aku'mai, Blackfathom Deeps Agathelos the Raging, Razorfen Kraul Leatherworking Only its maker can wear it Pattern: nobody has found it in the beta yet", skill = "Leatherworking", bindsToMaker = true } },
+                { id = 252455, name = "Defender's Leather Helm", source = { kind = "profession", text = "Old Serra'kis, Blackfathom Deeps Aku'mai, Blackfathom Deeps Lorgus Jett, Blackfathom Deeps Agathelos the Raging, Razorfen Kraul Earthcaller Halmgar, Razorfen Kraul Bloodmage Thalnos, Scarlet Monastery Graveyard Leatherworking Only its maker can wear it Pattern: nobody has found it in the beta yet", skill = "Leatherworking", bindsToMaker = true } },
                 { id = 13127, name = "Frostreaver Crown", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 250528, name = "Veteran's Silvered Chain Helm", source = { kind = "profession", text = "Blacksmithing (95) Only its maker can wear it", skill = "Blacksmithing", skillLevel = 95, bindsToMaker = true } },
                 { id = 277040, name = "Cloudy Skyforged Helm", source = { kind = "profession", text = "Blacksmithing (175)", skill = "Blacksmithing", skillLevel = 175 } },
@@ -6166,7 +6280,7 @@ ForeverBiSData = {
             },
             { slot = "Waist",
               items = {
-                { id = 250556, name = "Officer's Belt", source = { kind = "profession", text = "Blacksmithing (150) Only its maker can wear it Plans: nobody has found it in the beta yet", skill = "Blacksmithing", skillLevel = 150, bindsToMaker = true } },
+                { id = 250556, name = "Officer's Belt", source = { kind = "profession", text = "Blacksmithing (150) Only its maker can wear it Plans: not needed, blacksmithing trainers teach the recipe at 150", skill = "Blacksmithing", skillLevel = 150, bindsToMaker = true } },
                 { id = 252460, name = "Warden's Leather Belt", source = { kind = "profession", text = "Leatherworking (150) Only its maker can wear it", skill = "Leatherworking", skillLevel = 150, bindsToMaker = true } },
                 { id = 252459, name = "Prowler's Leather Belt", source = { kind = "profession", text = "Leatherworking (150) Only its maker can wear it", skill = "Leatherworking", skillLevel = 150, bindsToMaker = true } },
                 { id = 3758, name = "Crusader Belt", source = { kind = "quest", text = "Quest: Syndicate Assassins Alliance, level 33 in Classic, from level 26", faction = "Alliance", quest = "Syndicate Assassins" } },
@@ -6192,6 +6306,7 @@ ForeverBiSData = {
             { slot = "Feet",
               items = {
                 { id = 13124, name = "Ravasaur Scale Boots", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
+                { id = 273025, name = "Raptorclaw Greaves", source = { kind = "world", text = "Shadetooth, Excavation Site: Wetlands" } },
                 { id = 6335, name = "Grizzled Boots", source = { kind = "quest", text = "Quest: The Book of Ur Horde, level 26 in Classic, from level 16", faction = "Horde", quest = "The Book of Ur" } },
                 { id = 250503, name = "Veteran's Boots", source = { kind = "profession", text = "Blacksmithing (85) Only its maker can wear it", skill = "Blacksmithing", skillLevel = 85, bindsToMaker = true } },
                 { id = 4076, name = "Mail Combat Boots", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
@@ -6204,9 +6319,10 @@ ForeverBiSData = {
             { slot = "Finger",
               items = {
                 { id = 285190, name = "Wyvern Heart Band", source = { kind = "world", text = "Heartrazor, the rare wyvern of Thousand Needles Reported, not checked", reported = true } },
+                { id = 281634, name = "Field Researcher's Loop", source = { kind = "quest", text = "Quest: Greater Friend of the Library Twenty books, the necklace’s ten counted", quest = "Greater Friend of the Library Twenty books" } },
                 { id = 282283, name = "Malignant Root", source = { kind = "world", text = "Nightveiled Rotheap, a patrol of the Wetlands Alliance only, and not checked in the beta", faction = "Alliance" } },
                 { id = 6414, name = "Seal of Sylvanas", source = { kind = "quest", text = "Quest: Arugal Must Die Horde, level 27 in Classic, from level 18", faction = "Horde", quest = "Arugal Must Die" } },
-                { id = 281320, name = "Rune-Etched Ring", source = { kind = "quest", text = "Alliance quest Gleaning Our Future, Wetlands, level 32 Reported, not checked", faction = "Alliance", reported = true } },
+                { id = 281320, name = "Rune-Etched Ring", source = { kind = "quest", text = "Alliance quest Gleaning Our Future, Wetlands, level 32 Elite, from level 24: take a group", faction = "Alliance" } },
                 { id = 13097, name = "Thunderbrow Ring", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 2933, name = "Seal of Wrynn", source = { kind = "quest", text = "Quest: An Audience with the King Alliance, level 31 in Classic, from level 16", faction = "Alliance", quest = "An Audience with the King" } },
               },
@@ -6216,6 +6332,8 @@ ForeverBiSData = {
                 { id = 4381, name = "Minor Recombobulator", source = { kind = "profession", text = "Engineering (140)", skill = "Engineering", skillLevel = 140 } },
                 { id = 10720, name = "Gnomish Net-o-Matic Projector", source = { kind = "profession", text = "Engineering (210)", skill = "Engineering", skillLevel = 210 } },
                 { id = 260802, name = "EZ-Thro Bronze Mortar", source = { kind = "profession", text = "Engineering (190) Schematic: nobody has found it in the beta yet", skill = "Engineering", skillLevel = 190 } },
+                { id = 280766, name = "Satchel of Potions", source = { kind = "quest", text = "Quest: Changing Tastes Excavation Site: Wetlands, Horde, from level 24", faction = "Horde", quest = "Changing Tastes Excavation Site: Wetlands" } },
+                { id = 274152, name = "Roogug's Severed Head", source = { kind = "world", text = "Roogug, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Roogug" } },
                 { id = 273298, name = "Lookie's Spyglass", source = { kind = "dungeon", text = "Cookie, The Deadmines", zone = "The Deadmines", boss = "Cookie" } },
               },
             },
@@ -6233,6 +6351,7 @@ ForeverBiSData = {
             },
             { slot = "Ranged",
               items = {
+                { id = 277254, name = "Truthseeker's Bow", source = { kind = "quest", text = "Quest: Greater Friend of the Library, from level 30 Its books stand in zones of level 45 and above", quest = "Greater Friend of the Library" } },
                 { id = 274748, name = "Booty Bay Bruiser's Buckshot", source = { kind = "world", text = "Sold by Gezzy Gunkgear in Booty Bay At Honored with Booty Bay" } },
                 { id = 13019, name = "Harpyclaw Short Bow", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 13137, name = "Ironweaver", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
@@ -6333,7 +6452,7 @@ ForeverBiSData = {
             },
             { slot = "Waist",
               items = {
-                { id = 250557, name = "Sentinel's Belt", source = { kind = "profession", text = "Blacksmithing (150) Only its maker can wear it Plans: nobody has found it in the beta yet", skill = "Blacksmithing", skillLevel = 150, bindsToMaker = true } },
+                { id = 250557, name = "Sentinel's Belt", source = { kind = "profession", text = "Blacksmithing (150) Only its maker can wear it Plans: not needed, blacksmithing trainers teach the recipe at 150", skill = "Blacksmithing", skillLevel = 150, bindsToMaker = true } },
                 { id = 252460, name = "Warden's Leather Belt", source = { kind = "profession", text = "Leatherworking (150) Only its maker can wear it", skill = "Leatherworking", skillLevel = 150, bindsToMaker = true } },
                 { id = 277232, name = "Jailer's Discarded Chain", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 9405, name = "Girdle of Golem Strength", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
@@ -6369,7 +6488,8 @@ ForeverBiSData = {
             },
             { slot = "Finger",
               items = {
-                { id = 281320, name = "Rune-Etched Ring", source = { kind = "quest", text = "Alliance quest Gleaning Our Future, Wetlands, level 32 Reported, not checked", faction = "Alliance", reported = true } },
+                { id = 281320, name = "Rune-Etched Ring", source = { kind = "quest", text = "Alliance quest Gleaning Our Future, Wetlands, level 32 Elite, from level 24: take a group", faction = "Alliance" } },
+                { id = 281634, name = "Field Researcher's Loop", source = { kind = "quest", text = "Quest: Greater Friend of the Library Twenty books, the necklace’s ten counted", quest = "Greater Friend of the Library Twenty books" } },
                 { id = 6414, name = "Seal of Sylvanas", source = { kind = "quest", text = "Quest: Arugal Must Die Horde, level 27 in Classic, from level 18", faction = "Horde", quest = "Arugal Must Die" } },
                 { id = 282283, name = "Malignant Root", source = { kind = "world", text = "Nightveiled Rotheap, a patrol of the Wetlands Alliance only, and not checked in the beta", faction = "Alliance" } },
                 { id = 285190, name = "Wyvern Heart Band", source = { kind = "world", text = "Heartrazor, the rare wyvern of Thousand Needles Reported, not checked", reported = true } },
@@ -6380,6 +6500,8 @@ ForeverBiSData = {
             { slot = "Trinket",
               items = {
                 { id = 4381, name = "Minor Recombobulator", source = { kind = "profession", text = "Engineering (140)", skill = "Engineering", skillLevel = 140 } },
+                { id = 280766, name = "Satchel of Potions", source = { kind = "quest", text = "Quest: Changing Tastes Excavation Site: Wetlands, Horde, from level 24", faction = "Horde", quest = "Changing Tastes Excavation Site: Wetlands" } },
+                { id = 274152, name = "Roogug's Severed Head", source = { kind = "world", text = "Roogug, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Roogug" } },
                 { id = 273298, name = "Lookie's Spyglass", source = { kind = "dungeon", text = "Cookie, The Deadmines", zone = "The Deadmines", boss = "Cookie" } },
               },
             },
@@ -6409,6 +6531,7 @@ ForeverBiSData = {
             },
             { slot = "Ranged",
               items = {
+                { id = 277254, name = "Truthseeker's Bow", source = { kind = "quest", text = "Quest: Greater Friend of the Library, from level 30 Its books stand in zones of level 45 and above", quest = "Greater Friend of the Library" } },
                 { id = 274748, name = "Booty Bay Bruiser's Buckshot", source = { kind = "world", text = "Sold by Gezzy Gunkgear in Booty Bay At Honored with Booty Bay" } },
                 { id = 13137, name = "Ironweaver", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 273843, name = "Fallenroot Longbow", source = { kind = "dungeon", text = "Lorgus Jett, Blackfathom Deeps", zone = "Blackfathom Deeps", boss = "Lorgus Jett" } },
