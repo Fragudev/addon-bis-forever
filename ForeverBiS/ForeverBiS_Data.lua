@@ -1248,7 +1248,7 @@ ForeverBiSData = {
             },
             { slot = "Ranged",
               items = {
-                { id = 277254, name = "Truthseeker's Bow", source = { kind = "quest", text = "Quest: Greater Friend of the Library, from level 30 Its books stand in zones of level 45 and above", quest = "Greater Friend of the Library" } },
+                { id = 277254, name = "Truthseeker's Bow", source = { kind = "quest", text = "Quest: Greater Friend of the Library, from level 30 Thirty library books in total, from level 30", quest = "Greater Friend of the Library" } },
                 { id = 274084, name = "Quilboar Blaster", source = { kind = "quest", text = "Quest: A Vengeful Fate Horde, from level 29, reported, not checked", faction = "Horde", quest = "A Vengeful Fate", reported = true } },
                 { id = 9456, name = "Glass Shooter", source = { kind = "world", text = "Dark Iron Ambassador, Gnomeregan 32.46% in Classic", zone = "Gnomeregan", boss = "Dark Iron Ambassador", dropRate = 32.46 } },
                 { id = 274748, name = "Booty Bay Bruiser's Buckshot", source = { kind = "world", text = "Sold by Gezzy Gunkgear in Booty Bay At Honored with Booty Bay" } },
@@ -1429,7 +1429,7 @@ ForeverBiSData = {
             },
             { slot = "Ranged",
               items = {
-                { id = 277254, name = "Truthseeker's Bow", source = { kind = "quest", text = "Quest: Greater Friend of the Library, from level 30 Its books stand in zones of level 45 and above", quest = "Greater Friend of the Library" } },
+                { id = 277254, name = "Truthseeker's Bow", source = { kind = "quest", text = "Quest: Greater Friend of the Library, from level 30 Thirty library books in total, from level 30", quest = "Greater Friend of the Library" } },
                 { id = 274084, name = "Quilboar Blaster", source = { kind = "quest", text = "Quest: A Vengeful Fate Horde, from level 29, reported, not checked", faction = "Horde", quest = "A Vengeful Fate", reported = true } },
                 { id = 274748, name = "Booty Bay Bruiser's Buckshot", source = { kind = "world", text = "Sold by Gezzy Gunkgear in Booty Bay At Honored with Booty Bay" } },
                 { id = 9456, name = "Glass Shooter", source = { kind = "world", text = "Dark Iron Ambassador, Gnomeregan 32.46% in Classic", zone = "Gnomeregan", boss = "Dark Iron Ambassador", dropRate = 32.46 } },
@@ -4308,10 +4308,11 @@ ForeverBiSData = {
             { slot = "Main hand",
               items = {
                 { id = 13033, name = "Zealot Blade", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
-                { id = 9446, name = "Electrocutioner Leg", source = { kind = "world", text = "Electrocutioner 6000, Gnomeregan 16.19% in Classic", zone = "Gnomeregan", boss = "Electrocutioner 6000", dropRate = 16.19 } },
-                { id = 7683, name = "Bloody Brass Knuckles", source = { kind = "world", text = "Interrogator Vishas, Scarlet Monastery Graveyard 52.35% in Classic", zone = "Scarlet Monastery", boss = "Interrogator Vishas", dropRate = 52.35 } },
-                { id = 1454, name = "Axe of the Enforcer", source = { kind = "dungeon", text = "Trash mobs, Blackfathom Deeps 0.04% in Classic A world drop, not bound: the auction house is quickest Reported, not checked", zone = "Blackfathom Deeps", boss = "Trash mobs", dropRate = 0.04, reported = true } },
                 { id = 7682, name = "Torturing Poker", source = { kind = "world", text = "Interrogator Vishas, Scarlet Monastery Graveyard 6.08% in Classic", zone = "Scarlet Monastery", boss = "Interrogator Vishas", dropRate = 6.08 } },
+                { id = 271664, name = "Hornbeam Heft", source = { kind = "quest", text = "Quest: Horrors in the Highland Excavation Site: Wetlands, Alliance, from level 24", faction = "Alliance", quest = "Horrors in the Highland Excavation Site: Wetlands" } },
+                { id = 3850, name = "Jade Serpentblade", source = { kind = "profession", text = "Blacksmithing (150)", skill = "Blacksmithing", skillLevel = 150 } },
+                { id = 13048, name = "Looming Gavel", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
+                { id = 1454, name = "Axe of the Enforcer", source = { kind = "dungeon", text = "Trash mobs, Blackfathom Deeps 0.04% in Classic A world drop, not bound: the auction house is quickest Reported, not checked", zone = "Blackfathom Deeps", boss = "Trash mobs", dropRate = 0.04, reported = true } },
               },
               enchants = {
                 { effect = "Weapon Damage +3", spell = "Enchant Weapon - Striking", source = "Enchanting 195: Taught by the trainer." },
@@ -4332,7 +4333,7 @@ ForeverBiSData = {
             },
             { slot = "Ranged",
               items = {
-                { id = 277254, name = "Truthseeker's Bow", source = { kind = "quest", text = "Quest: Greater Friend of the Library, from level 30 Its books stand in zones of level 45 and above", quest = "Greater Friend of the Library" } },
+                { id = 277254, name = "Truthseeker's Bow", source = { kind = "quest", text = "Quest: Greater Friend of the Library, from level 30 Thirty library books in total, from level 30", quest = "Greater Friend of the Library" } },
                 { id = 273029, name = "Golemsight Long Gun", source = { kind = "world", text = "Relic Guardian, Excavation Site: Wetlands" } },
                 { id = 274748, name = "Booty Bay Bruiser's Buckshot", source = { kind = "world", text = "Sold by Gezzy Gunkgear in Booty Bay At Honored with Booty Bay" } },
                 { id = 2098, name = "Double-barreled Shotgun", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
@@ -4513,7 +4514,7 @@ ForeverBiSData = {
             },
             { slot = "Ranged",
               items = {
-                { id = 277254, name = "Truthseeker's Bow", source = { kind = "quest", text = "Quest: Greater Friend of the Library, from level 30 Its books stand in zones of level 45 and above", quest = "Greater Friend of the Library" } },
+                { id = 277254, name = "Truthseeker's Bow", source = { kind = "quest", text = "Quest: Greater Friend of the Library, from level 30 Thirty library books in total, from level 30", quest = "Greater Friend of the Library" } },
                 { id = 273029, name = "Golemsight Long Gun", source = { kind = "world", text = "Relic Guardian, Excavation Site: Wetlands" } },
                 { id = 274748, name = "Booty Bay Bruiser's Buckshot", source = { kind = "world", text = "Sold by Gezzy Gunkgear in Booty Bay At Honored with Booty Bay" } },
                 { id = 2098, name = "Double-barreled Shotgun", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
@@ -4698,7 +4699,7 @@ ForeverBiSData = {
             },
             { slot = "Ranged",
               items = {
-                { id = 277254, name = "Truthseeker's Bow", source = { kind = "quest", text = "Quest: Greater Friend of the Library, from level 30 Its books stand in zones of level 45 and above", quest = "Greater Friend of the Library" } },
+                { id = 277254, name = "Truthseeker's Bow", source = { kind = "quest", text = "Quest: Greater Friend of the Library, from level 30 Thirty library books in total, from level 30", quest = "Greater Friend of the Library" } },
                 { id = 274748, name = "Booty Bay Bruiser's Buckshot", source = { kind = "world", text = "Sold by Gezzy Gunkgear in Booty Bay At Honored with Booty Bay" } },
                 { id = 273029, name = "Golemsight Long Gun", source = { kind = "world", text = "Relic Guardian, Excavation Site: Wetlands" } },
                 { id = 273843, name = "Fallenroot Longbow", source = { kind = "dungeon", text = "Lorgus Jett, Blackfathom Deeps", zone = "Blackfathom Deeps", boss = "Lorgus Jett" } },
@@ -5167,7 +5168,7 @@ ForeverBiSData = {
                 { id = 6744, name = "Gloves of Kapelan", source = { kind = "quest", text = "Quest: Alliance Relations Horde, level 33 in Classic, from level 30", quest = "Alliance Relations" } },
                 { id = 3754, name = "Shepherd's Gloves", source = { kind = "quest", text = "Quest: Costly Menace Alliance, level 34 in Classic, from level 30", faction = "Alliance", quest = "Costly Menace" } },
                 { id = 6408, name = "Insignia Gloves", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
-                { id = 274159, name = "Thorncursed Grips", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 274159, name = "Thorncursed Grips", source = { kind = "world", text = "Drops in Razorfen Kraul, says a reader The boss is not known yet", zone = "Razorfen Kraul" } },
               },
               enchants = {
                 { effect = "Strength +7", spell = "Enchant Gloves - Strength", source = "Enchanting 225: Taught by the trainer." },
@@ -6176,7 +6177,7 @@ ForeverBiSData = {
             },
             { slot = "Ranged",
               items = {
-                { id = 277254, name = "Truthseeker's Bow", source = { kind = "quest", text = "Quest: Greater Friend of the Library, from level 30 Its books stand in zones of level 45 and above", quest = "Greater Friend of the Library" } },
+                { id = 277254, name = "Truthseeker's Bow", source = { kind = "quest", text = "Quest: Greater Friend of the Library, from level 30 Thirty library books in total, from level 30", quest = "Greater Friend of the Library" } },
                 { id = 274748, name = "Booty Bay Bruiser's Buckshot", source = { kind = "world", text = "Sold by Gezzy Gunkgear in Booty Bay At Honored with Booty Bay" } },
                 { id = 2098, name = "Double-barreled Shotgun", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 273029, name = "Golemsight Long Gun", source = { kind = "world", text = "Relic Guardian, Excavation Site: Wetlands" } },
@@ -6351,7 +6352,7 @@ ForeverBiSData = {
             },
             { slot = "Ranged",
               items = {
-                { id = 277254, name = "Truthseeker's Bow", source = { kind = "quest", text = "Quest: Greater Friend of the Library, from level 30 Its books stand in zones of level 45 and above", quest = "Greater Friend of the Library" } },
+                { id = 277254, name = "Truthseeker's Bow", source = { kind = "quest", text = "Quest: Greater Friend of the Library, from level 30 Thirty library books in total, from level 30", quest = "Greater Friend of the Library" } },
                 { id = 274748, name = "Booty Bay Bruiser's Buckshot", source = { kind = "world", text = "Sold by Gezzy Gunkgear in Booty Bay At Honored with Booty Bay" } },
                 { id = 13019, name = "Harpyclaw Short Bow", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 13137, name = "Ironweaver", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
@@ -6531,7 +6532,7 @@ ForeverBiSData = {
             },
             { slot = "Ranged",
               items = {
-                { id = 277254, name = "Truthseeker's Bow", source = { kind = "quest", text = "Quest: Greater Friend of the Library, from level 30 Its books stand in zones of level 45 and above", quest = "Greater Friend of the Library" } },
+                { id = 277254, name = "Truthseeker's Bow", source = { kind = "quest", text = "Quest: Greater Friend of the Library, from level 30 Thirty library books in total, from level 30", quest = "Greater Friend of the Library" } },
                 { id = 274748, name = "Booty Bay Bruiser's Buckshot", source = { kind = "world", text = "Sold by Gezzy Gunkgear in Booty Bay At Honored with Booty Bay" } },
                 { id = 13137, name = "Ironweaver", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 273843, name = "Fallenroot Longbow", source = { kind = "dungeon", text = "Lorgus Jett, Blackfathom Deeps", zone = "Blackfathom Deeps", boss = "Lorgus Jett" } },
