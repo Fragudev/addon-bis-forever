@@ -348,6 +348,7 @@ ForeverBiSData = {
             },
             { slot = "Off hand: held item",
               items = {
+                { id = 7749, name = "Omega Orb", source = { kind = "quest", text = "Quest: Compendium of the Fallen Horde, level 38 in Classic, from level 28", faction = "Horde", quest = "Compendium of the Fallen" } },
                 { id = 249394, name = "Orb of Mystic Insight", source = { kind = "profession", text = "Enchanting (140) Only its maker can wear it", skill = "Enchanting", skillLevel = 140, bindsToMaker = true } },
                 { id = 249395, name = "Orb of Souls", source = { kind = "profession", text = "Enchanting (140) Only its maker can wear it", skill = "Enchanting", skillLevel = 140, bindsToMaker = true } },
                 { id = 2943, name = "Eye of Paleth", source = { kind = "quest", text = "Quest: Cleansing the Eye Alliance, level 30 in Classic, from level 22", faction = "Alliance", quest = "Cleansing the Eye" } },
@@ -895,6 +896,7 @@ ForeverBiSData = {
               items = {
                 { id = 249395, name = "Orb of Souls", source = { kind = "profession", text = "Enchanting (140) Only its maker can wear it", skill = "Enchanting", skillLevel = 140, bindsToMaker = true } },
                 { id = 2943, name = "Eye of Paleth", source = { kind = "quest", text = "Quest: Cleansing the Eye Alliance, level 30 in Classic, from level 22", faction = "Alliance", quest = "Cleansing the Eye" } },
+                { id = 7749, name = "Omega Orb", source = { kind = "quest", text = "Quest: Compendium of the Fallen Horde, level 38 in Classic, from level 28", faction = "Horde", quest = "Compendium of the Fallen" } },
                 { id = 13031, name = "Orb of Mistmantle", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
                 { id = 273137, name = "Skum's Bucket", source = { kind = "dungeon", text = "Skum, Wailing Caverns", zone = "Wailing Caverns", boss = "Skum" } },
               },
@@ -2715,6 +2717,7 @@ ForeverBiSData = {
             },
             { slot = "Off hand: shield",
               items = {
+                { id = 6694, name = "Heart of Agamaggan", source = { kind = "world", text = "Charlga Razorflank, Razorfen Kraul 33.37% in Classic", zone = "Razorfen Kraul", boss = "Charlga Razorflank", dropRate = 33.37 } },
                 { id = 274290, name = "Painwalker Buckler", source = { kind = "world", text = "Interrogator Vishas, first boss of the Scarlet Monastery Graveyard A reader saw it drop", zone = "Scarlet Monastery" } },
                 { id = 273811, name = "Repurposed Rack", source = { kind = "world", text = "Hamhock, The Stockade", zone = "The Stockade", boss = "Hamhock" } },
                 { id = 6630, name = "Seedcloud Buckler", source = { kind = "dungeon", text = "Verdan the Everliving, Wailing Caverns 39.22% in Classic", zone = "Wailing Caverns", boss = "Verdan the Everliving", dropRate = 39.22 } },
@@ -2901,6 +2904,7 @@ ForeverBiSData = {
             },
             { slot = "Off hand: shield",
               items = {
+                { id = 6694, name = "Heart of Agamaggan", source = { kind = "world", text = "Charlga Razorflank, Razorfen Kraul 33.37% in Classic", zone = "Razorfen Kraul", boss = "Charlga Razorflank", dropRate = 33.37 } },
                 { id = 274290, name = "Painwalker Buckler", source = { kind = "world", text = "Interrogator Vishas, first boss of the Scarlet Monastery Graveyard A reader saw it drop", zone = "Scarlet Monastery" } },
                 { id = 7002, name = "Arctic Buckler", source = { kind = "quest", text = "Quest: Blackfathom Villainy Alliance, level 27 in Classic, from level 18 Quest: Blackfathom Villainy Horde, level 27 in Classic, from level 18", quest = "Blackfathom Villainy" } },
                 { id = 273811, name = "Repurposed Rack", source = { kind = "world", text = "Hamhock, The Stockade", zone = "The Stockade", boss = "Hamhock" } },
@@ -2983,6 +2987,7 @@ ForeverBiSData = {
             },
             { slot = "Wrist",
               items = {
+                { id = 10358, name = "Duracin Bracers", source = { kind = "quest", text = "Quest: Power Stones level 36 in Classic, from level 30", quest = "Power Stones" } },
                 { id = 18948, name = "Barbaric Bracers", source = { kind = "profession", text = "Leatherworking (130)", skill = "Leatherworking", skillLevel = 130 } },
                 { id = 270032, name = "Cultist's Armguards", source = { kind = "quest", text = "Quest: Blackfathom Villainy Alliance, from level 18, reported, not checked Quest: Blackfathom Villainy Horde, from level 18, reported, not checked", quest = "Blackfathom Villainy", reported = true } },
                 { id = 3228, name = "Jimmied Handcuffs", source = { kind = "world", text = "Bruegal Ironknuckle, The Stockade 56.16% in Classic", zone = "The Stockade", boss = "Bruegal Ironknuckle", dropRate = 56.16 } },
@@ -3240,6 +3245,7 @@ ForeverBiSData = {
             },
             { slot = "Off hand: shield",
               items = {
+                { id = 6694, name = "Heart of Agamaggan", source = { kind = "world", text = "Charlga Razorflank, Razorfen Kraul 33.37% in Classic", zone = "Razorfen Kraul", boss = "Charlga Razorflank", dropRate = 33.37 } },
                 { id = 274290, name = "Painwalker Buckler", source = { kind = "world", text = "Interrogator Vishas, first boss of the Scarlet Monastery Graveyard A reader saw it drop", zone = "Scarlet Monastery" } },
                 { id = 273811, name = "Repurposed Rack", source = { kind = "world", text = "Hamhock, The Stockade", zone = "The Stockade", boss = "Hamhock" } },
                 { id = 7002, name = "Arctic Buckler", source = { kind = "quest", text = "Quest: Blackfathom Villainy Alliance, level 27 in Classic, from level 18 Quest: Blackfathom Villainy Horde, level 27 in Classic, from level 18", quest = "Blackfathom Villainy" } },
@@ -3323,6 +3329,7 @@ ForeverBiSData = {
             },
             { slot = "Wrist",
               items = {
+                { id = 10358, name = "Duracin Bracers", source = { kind = "quest", text = "Quest: Power Stones level 36 in Classic, from level 30", quest = "Power Stones" } },
                 { id = 3228, name = "Jimmied Handcuffs", source = { kind = "world", text = "Bruegal Ironknuckle, The Stockade 56.16% in Classic", zone = "The Stockade", boss = "Bruegal Ironknuckle", dropRate = 56.16 } },
                 { id = 7003, name = "Beetle Clasps", source = { kind = "quest", text = "Quest: Researching the Corruption Alliance, level 24 in Classic, from level 18", faction = "Alliance", quest = "Researching the Corruption" } },
                 { id = 18948, name = "Barbaric Bracers", source = { kind = "profession", text = "Leatherworking (130)", skill = "Leatherworking", skillLevel = 130 } },
@@ -3413,6 +3420,7 @@ ForeverBiSData = {
             },
             { slot = "Off hand: shield",
               items = {
+                { id = 6694, name = "Heart of Agamaggan", source = { kind = "world", text = "Charlga Razorflank, Razorfen Kraul 33.37% in Classic", zone = "Razorfen Kraul", boss = "Charlga Razorflank", dropRate = 33.37 } },
                 { id = 274290, name = "Painwalker Buckler", source = { kind = "world", text = "Interrogator Vishas, first boss of the Scarlet Monastery Graveyard A reader saw it drop", zone = "Scarlet Monastery" } },
                 { id = 273811, name = "Repurposed Rack", source = { kind = "world", text = "Hamhock, The Stockade", zone = "The Stockade", boss = "Hamhock" } },
                 { id = 6223, name = "Crest of Darkshire", source = { kind = "quest", text = "Quest: Bride of the Embalmer Alliance, level 30 in Classic, from level 20", faction = "Alliance", quest = "Bride of the Embalmer" } },
@@ -4313,6 +4321,7 @@ ForeverBiSData = {
             { slot = "Main hand",
               items = {
                 { id = 13033, name = "Zealot Blade", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
+                { id = 277246, name = "Ruby-Adorned Blade", source = { kind = "quest", text = "Rogue quest The Eye of Bhossca, Silverpine Forest, level 35 From level 25, done alone in the Scarlet Monastery" } },
                 { id = 7682, name = "Torturing Poker", source = { kind = "world", text = "Interrogator Vishas, Scarlet Monastery Graveyard 6.08% in Classic", zone = "Scarlet Monastery", boss = "Interrogator Vishas", dropRate = 6.08 } },
                 { id = 271664, name = "Hornbeam Heft", source = { kind = "quest", text = "Quest: Horrors in the Highland Excavation Site: Wetlands, Alliance, from level 24", faction = "Alliance", quest = "Horrors in the Highland Excavation Site: Wetlands" } },
                 { id = 3850, name = "Jade Serpentblade", source = { kind = "profession", text = "Blacksmithing (150)", skill = "Blacksmithing", skillLevel = 150 } },
@@ -4325,8 +4334,8 @@ ForeverBiSData = {
             },
             { slot = "Off hand",
               items = {
-                { id = 7682, name = "Torturing Poker", source = { kind = "world", text = "Interrogator Vishas, Scarlet Monastery Graveyard 6.08% in Classic", zone = "Scarlet Monastery", boss = "Interrogator Vishas", dropRate = 6.08 } },
                 { id = 280805, name = "Serrated Raptor Claw", source = { kind = "quest", text = "Quest: Changing Tastes Excavation Site: Wetlands, Horde, from level 24", faction = "Horde", quest = "Changing Tastes Excavation Site: Wetlands" } },
+                { id = 7682, name = "Torturing Poker", source = { kind = "world", text = "Interrogator Vishas, Scarlet Monastery Graveyard 6.08% in Classic", zone = "Scarlet Monastery", boss = "Interrogator Vishas", dropRate = 6.08 } },
                 { id = 7683, name = "Bloody Brass Knuckles", source = { kind = "world", text = "Interrogator Vishas, Scarlet Monastery Graveyard 52.35% in Classic", zone = "Scarlet Monastery", boss = "Interrogator Vishas", dropRate = 52.35 } },
                 { id = 776, name = "Vendetta", source = { kind = "world", text = "Trash mobs, Razorfen Kraul 0.03% in Classic A world drop, not bound: the auction house is quickest Reported, not checked", zone = "Razorfen Kraul", boss = "Trash mobs", dropRate = 0.03, reported = true } },
                 { id = 9453, name = "Toxic Revenger", source = { kind = "world", text = "Viscous Fallout, Gnomeregan 17.53% in Classic", zone = "Gnomeregan", boss = "Viscous Fallout", dropRate = 17.53 } },
@@ -4506,8 +4515,8 @@ ForeverBiSData = {
             },
             { slot = "Off hand",
               items = {
-                { id = 7682, name = "Torturing Poker", source = { kind = "world", text = "Interrogator Vishas, Scarlet Monastery Graveyard 6.08% in Classic", zone = "Scarlet Monastery", boss = "Interrogator Vishas", dropRate = 6.08 } },
                 { id = 280805, name = "Serrated Raptor Claw", source = { kind = "quest", text = "Quest: Changing Tastes Excavation Site: Wetlands, Horde, from level 24", faction = "Horde", quest = "Changing Tastes Excavation Site: Wetlands" } },
+                { id = 7682, name = "Torturing Poker", source = { kind = "world", text = "Interrogator Vishas, Scarlet Monastery Graveyard 6.08% in Classic", zone = "Scarlet Monastery", boss = "Interrogator Vishas", dropRate = 6.08 } },
                 { id = 9453, name = "Toxic Revenger", source = { kind = "world", text = "Viscous Fallout, Gnomeregan 17.53% in Classic", zone = "Gnomeregan", boss = "Viscous Fallout", dropRate = 17.53 } },
                 { id = 6681, name = "Thornspike", source = { kind = "world", text = "Aggem Thorncurse, Razorfen Kraul 47.88% in Classic Trash mobs, Razorfen Kraul 53.29% in Classic", zone = "Razorfen Kraul", boss = "Aggem Thorncurse", dropRate = 47.88 } },
                 { id = 4454, name = "Talon of Vultros", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
@@ -4888,6 +4897,8 @@ ForeverBiSData = {
             { slot = "Off hand: shield",
               items = {
                 { id = 273811, name = "Repurposed Rack", source = { kind = "world", text = "Hamhock, The Stockade", zone = "The Stockade", boss = "Hamhock" } },
+                { id = 17508, name = "Forcestone Buckler", source = { kind = "quest", text = "Quest: Compendium of the Fallen Horde, level 38 in Classic, from level 28", faction = "Horde", quest = "Compendium of the Fallen" } },
+                { id = 6694, name = "Heart of Agamaggan", source = { kind = "world", text = "Charlga Razorflank, Razorfen Kraul 33.37% in Classic", zone = "Razorfen Kraul", boss = "Charlga Razorflank", dropRate = 33.37 } },
                 { id = 274290, name = "Painwalker Buckler", source = { kind = "world", text = "Interrogator Vishas, first boss of the Scarlet Monastery Graveyard A reader saw it drop", zone = "Scarlet Monastery" } },
                 { id = 6630, name = "Seedcloud Buckler", source = { kind = "dungeon", text = "Verdan the Everliving, Wailing Caverns 39.22% in Classic", zone = "Wailing Caverns", boss = "Verdan the Everliving", dropRate = 39.22 } },
                 { id = 14608, name = "Dokebi Buckler", source = { kind = "world", text = "A world drop, not bound: the auction house is quickest Reported, not checked", reported = true } },
@@ -5075,7 +5086,9 @@ ForeverBiSData = {
             },
             { slot = "Off hand: shield",
               items = {
+                { id = 6694, name = "Heart of Agamaggan", source = { kind = "world", text = "Charlga Razorflank, Razorfen Kraul 33.37% in Classic", zone = "Razorfen Kraul", boss = "Charlga Razorflank", dropRate = 33.37 } },
                 { id = 274290, name = "Painwalker Buckler", source = { kind = "world", text = "Interrogator Vishas, first boss of the Scarlet Monastery Graveyard A reader saw it drop", zone = "Scarlet Monastery" } },
+                { id = 17508, name = "Forcestone Buckler", source = { kind = "quest", text = "Quest: Compendium of the Fallen Horde, level 38 in Classic, from level 28", faction = "Horde", quest = "Compendium of the Fallen" } },
                 { id = 7002, name = "Arctic Buckler", source = { kind = "quest", text = "Quest: Blackfathom Villainy Alliance, level 27 in Classic, from level 18 Quest: Blackfathom Villainy Horde, level 27 in Classic, from level 18", quest = "Blackfathom Villainy" } },
                 { id = 6223, name = "Crest of Darkshire", source = { kind = "quest", text = "Quest: Bride of the Embalmer Alliance, level 30 in Classic, from level 20", faction = "Alliance", quest = "Bride of the Embalmer" } },
                 { id = 3761, name = "Deadskull Shield", source = { kind = "quest", text = "Quest: Battle of Hillsbrad Horde, level 32 in Classic, from level 19", faction = "Horde", quest = "Battle of Hillsbrad" } },
@@ -5631,6 +5644,8 @@ ForeverBiSData = {
             },
             { slot = "Off hand: shield",
               items = {
+                { id = 17508, name = "Forcestone Buckler", source = { kind = "quest", text = "Quest: Compendium of the Fallen Horde, level 38 in Classic, from level 28", faction = "Horde", quest = "Compendium of the Fallen" } },
+                { id = 6694, name = "Heart of Agamaggan", source = { kind = "world", text = "Charlga Razorflank, Razorfen Kraul 33.37% in Classic", zone = "Razorfen Kraul", boss = "Charlga Razorflank", dropRate = 33.37 } },
                 { id = 274290, name = "Painwalker Buckler", source = { kind = "world", text = "Interrogator Vishas, first boss of the Scarlet Monastery Graveyard A reader saw it drop", zone = "Scarlet Monastery" } },
                 { id = 273811, name = "Repurposed Rack", source = { kind = "world", text = "Hamhock, The Stockade", zone = "The Stockade", boss = "Hamhock" } },
                 { id = 6630, name = "Seedcloud Buckler", source = { kind = "dungeon", text = "Verdan the Everliving, Wailing Caverns 39.22% in Classic", zone = "Wailing Caverns", boss = "Verdan the Everliving", dropRate = 39.22 } },
@@ -6261,6 +6276,7 @@ ForeverBiSData = {
             },
             { slot = "Wrist",
               items = {
+                { id = 10358, name = "Duracin Bracers", source = { kind = "quest", text = "Quest: Power Stones level 36 in Classic, from level 30", quest = "Power Stones" } },
                 { id = 18948, name = "Barbaric Bracers", source = { kind = "profession", text = "Leatherworking (130)", skill = "Leatherworking", skillLevel = 130 } },
                 { id = 270032, name = "Cultist's Armguards", source = { kind = "quest", text = "Quest: Blackfathom Villainy Alliance, from level 18, reported, not checked Quest: Blackfathom Villainy Horde, from level 18, reported, not checked", quest = "Blackfathom Villainy", reported = true } },
                 { id = 3228, name = "Jimmied Handcuffs", source = { kind = "world", text = "Bruegal Ironknuckle, The Stockade 56.16% in Classic", zone = "The Stockade", boss = "Bruegal Ironknuckle", dropRate = 56.16 } },
@@ -6434,6 +6450,7 @@ ForeverBiSData = {
             },
             { slot = "Wrist",
               items = {
+                { id = 10358, name = "Duracin Bracers", source = { kind = "quest", text = "Quest: Power Stones level 36 in Classic, from level 30", quest = "Power Stones" } },
                 { id = 3228, name = "Jimmied Handcuffs", source = { kind = "world", text = "Bruegal Ironknuckle, The Stockade 56.16% in Classic", zone = "The Stockade", boss = "Bruegal Ironknuckle", dropRate = 56.16 } },
                 { id = 7003, name = "Beetle Clasps", source = { kind = "quest", text = "Quest: Researching the Corruption Alliance, level 24 in Classic, from level 18", faction = "Alliance", quest = "Researching the Corruption" } },
                 { id = 18948, name = "Barbaric Bracers", source = { kind = "profession", text = "Leatherworking (130)", skill = "Leatherworking", skillLevel = 130 } },
