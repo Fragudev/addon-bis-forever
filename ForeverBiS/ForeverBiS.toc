@@ -3,7 +3,7 @@
 ## Title: Forever BiS
 ## Notes: Gear lists and item sources from ForeverChanges
 ## Author: Fragudev (fragudev@gmail.com)
-## Version: beta-0.0.52
+## Version: beta-0.0.53
 ## SavedVariables: ForeverBiSDB
 ## SavedVariablesPerCharacter: ForeverBiSCharDB
 ForeverBiS_Locale.lua
