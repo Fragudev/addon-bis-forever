@@ -49,7 +49,7 @@ ForeverBiSData = {
               items = {
                 { id = 14593, name = "Hawkeye's Cloak", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 13108, name = "Tigerstrike Mantle", source = { kind = "world", text = "World drop, sold at the auction house" } },
-                { id = 271720, name = "Crocolisk Skin Gaiter", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 271720, name = "Crocolisk Skin Gaiter", source = { kind = "quest", text = "A quest of the Excavation Site, in the Wetlands Which quest is not known yet" } },
                 { id = 2805, name = "Yeti Fur Cloak", source = { kind = "quest", text = "Quest: Bartolo's Yeti Fur Cloak Alliance, level 34 in Classic, from level 29", faction = "Alliance", quest = "Bartolo's Yeti Fur Cloak" } },
                 { id = 271716, name = "Explorer's League Dustcover", source = { kind = "quest", text = "Quest: Lost Relic Carry Excavation Site: Wetlands, Alliance, from level 24", faction = "Alliance", quest = "Lost Relic Carry Excavation Site: Wetlands" } },
               },
@@ -639,7 +639,7 @@ ForeverBiSData = {
             { slot = "Back",
               items = {
                 { id = 13108, name = "Tigerstrike Mantle", source = { kind = "world", text = "World drop, sold at the auction house" } },
-                { id = 271720, name = "Crocolisk Skin Gaiter", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 271720, name = "Crocolisk Skin Gaiter", source = { kind = "quest", text = "A quest of the Excavation Site, in the Wetlands Which quest is not known yet" } },
                 { id = 7436, name = "Twilight Cape of the Bandit", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 41 random suffixes, each with its own stats: search for the full name" } },
                 { id = 14763, name = "Enduring Cape", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 14593, name = "Hawkeye's Cloak", source = { kind = "world", text = "World drop, sold at the auction house" } },
@@ -680,6 +680,7 @@ ForeverBiSData = {
             { slot = "Hands",
               items = {
                 { id = 6727, name = "Razzeric's Racing Grips", source = { kind = "quest", text = "Quest: Safety First level 41 in Classic, from level 29 A chain of ten quests from Pozzik, Shimmering Flats Take a group for Foreman Cozzle (level 38)", quest = "Safety First" } },
+                { id = 279849, name = "Runebound Gloves", source = { kind = "quest", text = "Quest: Power Overwhelming City of Dalaran, Alliance, from level 24", faction = "Alliance", quest = "Power Overwhelming City of Dalaran" } },
                 { id = 7690, name = "Ebon Vise", source = { kind = "world", text = "Fallen Champion, Scarlet Monastery Graveyard 38.9% in Classic", zone = "Scarlet Monastery", boss = "Fallen Champion", dropRate = 38.9 } },
                 { id = 1978, name = "Wolfclaw Gloves", source = { kind = "world", text = "Trash mobs, Razorfen Kraul 0.05% in Classic World drop, sold at the auction house", zone = "Razorfen Kraul", boss = "Trash mobs", dropRate = 0.05 } },
                 { id = 6784, name = "Braced Handguards", source = { kind = "quest", text = "Quest: Centaur Bounty Horde, level 31 in Classic, from level 30", faction = "Horde", quest = "Centaur Bounty" } },
@@ -736,6 +737,7 @@ ForeverBiSData = {
                 { id = 282283, name = "Malignant Root", source = { kind = "world", text = "Nightveiled Rotheap, a patrol of the Wetlands Alliance only, and not checked in the beta", faction = "Alliance" } },
                 { id = 281320, name = "Rune-Etched Ring", source = { kind = "quest", text = "Alliance quest Gleaning Our Future, Wetlands, level 32 Elite, from level 24: take a group", faction = "Alliance" } },
                 { id = 1076, name = "Defias Renegade Ring", source = { kind = "world", text = "Trash mobs, The Stockade", zone = "The Stockade", boss = "Trash mobs" } },
+                { id = 9538, name = "Talvash's Gold Ring", source = { kind = "quest", text = "Quest: Gnome Improvement Alliance, level 35 in Classic, from level 28", faction = "Alliance", quest = "Gnome Improvement" } },
               },
             },
             { slot = "Trinket",
@@ -1039,7 +1041,7 @@ ForeverBiSData = {
                 { id = 6751, name = "Mourning Shawl", source = { kind = "quest", text = "Quest: Mortality Wanes Alliance, level 30 in Classic, from level 25 Same quest as the Lancer Boots You choose one or the other", faction = "Alliance", quest = "Mortality Wanes" } },
                 { id = 13108, name = "Tigerstrike Mantle", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 4643, name = "Grimsteel Cape", source = { kind = "quest", text = "Quest: Vorrel's Revenge Horde, level 33 in Classic, from level 25", faction = "Horde", quest = "Vorrel's Revenge" } },
-                { id = 271720, name = "Crocolisk Skin Gaiter", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 271720, name = "Crocolisk Skin Gaiter", source = { kind = "quest", text = "A quest of the Excavation Site, in the Wetlands Which quest is not known yet" } },
                 { id = 14763, name = "Enduring Cape", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 9699, name = "Garrison Cloak", source = { kind = "quest", text = "Quest: Return to Vahlarriel Alliance, level 33 in Classic, from level 30", faction = "Alliance", quest = "Return to Vahlarriel" } },
                 { id = 2059, name = "Sentry Cloak", source = { kind = "world", text = "World drop, sold at the auction house" } },
@@ -1124,6 +1126,7 @@ ForeverBiSData = {
             },
             { slot = "Finger",
               items = {
+                { id = 276899, name = "Knucklebound Thimble", source = { kind = "quest", text = "Quest: Past Due Scarlet Monastery Library, Alliance, from level 30", faction = "Alliance", quest = "Past Due Scarlet Monastery Library" } },
                 { id = 281634, name = "Field Researcher's Loop", source = { kind = "quest", text = "Quest: Greater Friend of the Library Twenty books, the necklace’s ten counted", quest = "Greater Friend of the Library Twenty books" } },
                 { id = 281320, name = "Rune-Etched Ring", source = { kind = "quest", text = "Alliance quest Gleaning Our Future, Wetlands, level 32 Elite, from level 24: take a group", faction = "Alliance" } },
                 { id = 285190, name = "Wyvern Heart Band", source = { kind = "world", text = "Heartrazor, the rare wyvern of Thousand Needles Reported, not checked", reported = true } },
@@ -1471,12 +1474,13 @@ ForeverBiSData = {
                 { id = 279875, name = "Spare Part Bindings", source = { kind = "quest", text = "Quest: Light's Justice Ruins of Lordaeron, Horde, from level 15", faction = "Horde", quest = "Light's Justice Ruins of Lordaeron" } },
               },
               enchants = {
-                { effect = "Agility +3", spell = "Enchant Bracer - Minor Agility", source = "Enchanting 80: Taught by the trainer." },
+                { effect = "Stamina +5", spell = "Enchant Bracer - Stamina", source = "Enchanting 170: Taught by the trainer." },
               },
             },
             { slot = "Hands",
               items = {
                 { id = 6727, name = "Razzeric's Racing Grips", source = { kind = "quest", text = "Quest: Safety First level 41 in Classic, from level 29 A chain of ten quests from Pozzik, Shimmering Flats Take a group for Foreman Cozzle (level 38)", quest = "Safety First" } },
+                { id = 279849, name = "Runebound Gloves", source = { kind = "quest", text = "Quest: Power Overwhelming City of Dalaran, Alliance, from level 24", faction = "Alliance", quest = "Power Overwhelming City of Dalaran" } },
                 { id = 7690, name = "Ebon Vise", source = { kind = "world", text = "Fallen Champion, Scarlet Monastery Graveyard 38.9% in Classic", zone = "Scarlet Monastery", boss = "Fallen Champion", dropRate = 38.9 } },
                 { id = 6784, name = "Braced Handguards", source = { kind = "quest", text = "Quest: Centaur Bounty Horde, level 31 in Classic, from level 30", faction = "Horde", quest = "Centaur Bounty" } },
                 { id = 273824, name = "Defias Jailbreakers", source = { kind = "world", text = "Bazil Thredd, The Stockade", zone = "The Stockade", boss = "Bazil Thredd" } },
@@ -2655,7 +2659,7 @@ ForeverBiSData = {
             },
             { slot = "Back",
               items = {
-                { id = 271720, name = "Crocolisk Skin Gaiter", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 271720, name = "Crocolisk Skin Gaiter", source = { kind = "quest", text = "A quest of the Excavation Site, in the Wetlands Which quest is not known yet" } },
                 { id = 277205, name = "Cloak of the Divine Storm", source = { kind = "quest", text = "Paladin quest Return to Delgren, Alliance, from level 22 Three quests that start with an orb in the Tower of Althalaxx", faction = "Alliance" } },
                 { id = 7436, name = "Twilight Cape of Strength", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 41 random suffixes, each with its own stats: search for the full name" } },
                 { id = 282658, name = "Dragonmaw Battle Shroud", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
@@ -3237,7 +3241,7 @@ ForeverBiSData = {
             { slot = "Back",
               items = {
                 { id = 6751, name = "Mourning Shawl", source = { kind = "quest", text = "Quest: Mortality Wanes Alliance, level 30 in Classic, from level 25 Same quest as the Lancer Boots You choose one or the other", faction = "Alliance", quest = "Mortality Wanes" } },
-                { id = 271720, name = "Crocolisk Skin Gaiter", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 271720, name = "Crocolisk Skin Gaiter", source = { kind = "quest", text = "A quest of the Excavation Site, in the Wetlands Which quest is not known yet" } },
                 { id = 277205, name = "Cloak of the Divine Storm", source = { kind = "quest", text = "Paladin quest Return to Delgren, Alliance, from level 22 Three quests that start with an orb in the Tower of Althalaxx", faction = "Alliance" } },
                 { id = 13108, name = "Tigerstrike Mantle", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 14763, name = "Enduring Cape", source = { kind = "world", text = "World drop, sold at the auction house" } },
@@ -5021,7 +5025,7 @@ ForeverBiSData = {
               items = {
                 { id = 13108, name = "Tigerstrike Mantle", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 4643, name = "Grimsteel Cape", source = { kind = "quest", text = "Quest: Vorrel's Revenge Horde, level 33 in Classic, from level 25", faction = "Horde", quest = "Vorrel's Revenge" } },
-                { id = 271720, name = "Crocolisk Skin Gaiter", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 271720, name = "Crocolisk Skin Gaiter", source = { kind = "quest", text = "A quest of the Excavation Site, in the Wetlands Which quest is not known yet" } },
                 { id = 14763, name = "Enduring Cape", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 2059, name = "Sentry Cloak", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 6340, name = "Fenrus' Hide", source = { kind = "dungeon", text = "Fenrus the Devourer, Shadowfang Keep 74.16% in Classic", zone = "Shadowfang Keep", boss = "Fenrus the Devourer", dropRate = 74.16 } },
@@ -5057,12 +5061,13 @@ ForeverBiSData = {
                 { id = 279875, name = "Spare Part Bindings", source = { kind = "quest", text = "Quest: Light's Justice Ruins of Lordaeron, Horde, from level 15", faction = "Horde", quest = "Light's Justice Ruins of Lordaeron" } },
               },
               enchants = {
-                { effect = "Agility +3", spell = "Enchant Bracer - Minor Agility", source = "Enchanting 80: Taught by the trainer." },
+                { effect = "Stamina +5", spell = "Enchant Bracer - Stamina", source = "Enchanting 170: Taught by the trainer." },
               },
             },
             { slot = "Hands",
               items = {
                 { id = 6727, name = "Razzeric's Racing Grips", source = { kind = "quest", text = "Quest: Safety First level 41 in Classic, from level 29 A chain of ten quests from Pozzik, Shimmering Flats Take a group for Foreman Cozzle (level 38)", quest = "Safety First" } },
+                { id = 279849, name = "Runebound Gloves", source = { kind = "quest", text = "Quest: Power Overwhelming City of Dalaran, Alliance, from level 24", faction = "Alliance", quest = "Power Overwhelming City of Dalaran" } },
                 { id = 7690, name = "Ebon Vise", source = { kind = "world", text = "Fallen Champion, Scarlet Monastery Graveyard 38.9% in Classic", zone = "Scarlet Monastery", boss = "Fallen Champion", dropRate = 38.9 } },
                 { id = 1978, name = "Wolfclaw Gloves", source = { kind = "world", text = "Trash mobs, Razorfen Kraul 0.05% in Classic World drop, sold at the auction house", zone = "Razorfen Kraul", boss = "Trash mobs", dropRate = 0.05 } },
                 { id = 6784, name = "Braced Handguards", source = { kind = "quest", text = "Quest: Centaur Bounty Horde, level 31 in Classic, from level 30", faction = "Horde", quest = "Centaur Bounty" } },
@@ -5632,7 +5637,7 @@ ForeverBiSData = {
             { slot = "Back",
               items = {
                 { id = 271716, name = "Explorer's League Dustcover", source = { kind = "quest", text = "Quest: Lost Relic Carry Excavation Site: Wetlands, Alliance, from level 24", faction = "Alliance", quest = "Lost Relic Carry Excavation Site: Wetlands" } },
-                { id = 271720, name = "Crocolisk Skin Gaiter", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 271720, name = "Crocolisk Skin Gaiter", source = { kind = "quest", text = "A quest of the Excavation Site, in the Wetlands Which quest is not known yet" } },
                 { id = 7436, name = "Twilight Cape of Strength", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 41 random suffixes, each with its own stats: search for the full name" } },
                 { id = 282658, name = "Dragonmaw Battle Shroud", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 271719, name = "Furs of the Earthen Ring", source = { kind = "quest", text = "Quest: Elder Knowledge Excavation Site: Wetlands, Horde, from level 24", faction = "Horde", quest = "Elder Knowledge Excavation Site: Wetlands" } },
@@ -5837,7 +5842,7 @@ ForeverBiSData = {
             { slot = "Back",
               items = {
                 { id = 6751, name = "Mourning Shawl", source = { kind = "quest", text = "Quest: Mortality Wanes Alliance, level 30 in Classic, from level 25 Same quest as the Lancer Boots You choose one or the other", faction = "Alliance", quest = "Mortality Wanes" } },
-                { id = 271720, name = "Crocolisk Skin Gaiter", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 271720, name = "Crocolisk Skin Gaiter", source = { kind = "quest", text = "A quest of the Excavation Site, in the Wetlands Which quest is not known yet" } },
                 { id = 4643, name = "Grimsteel Cape", source = { kind = "quest", text = "Quest: Vorrel's Revenge Horde, level 33 in Classic, from level 25", faction = "Horde", quest = "Vorrel's Revenge" } },
                 { id = 13108, name = "Tigerstrike Mantle", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 14763, name = "Enduring Cape", source = { kind = "world", text = "World drop, sold at the auction house" } },
@@ -5876,6 +5881,7 @@ ForeverBiSData = {
             },
             { slot = "Hands",
               items = {
+                { id = 7690, name = "Ebon Vise", source = { kind = "world", text = "Fallen Champion, Scarlet Monastery Graveyard 38.9% in Classic", zone = "Scarlet Monastery", boss = "Fallen Champion", dropRate = 38.9 } },
                 { id = 720, name = "Brawler Gloves", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 270045, name = "Operator's Gloves", source = { kind = "quest", text = "Quest: Gyrodrillmatic Excavationators Alliance, from level 20, reported, not checked", faction = "Alliance", quest = "Gyrodrillmatic Excavationators", reported = true } },
                 { id = 1978, name = "Wolfclaw Gloves", source = { kind = "world", text = "Trash mobs, Razorfen Kraul 0.05% in Classic World drop, sold at the auction house", zone = "Razorfen Kraul", boss = "Trash mobs", dropRate = 0.05 } },
@@ -6655,7 +6661,7 @@ ForeverBiSData = {
             },
             { slot = "Back",
               items = {
-                { id = 271720, name = "Crocolisk Skin Gaiter", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 271720, name = "Crocolisk Skin Gaiter", source = { kind = "quest", text = "A quest of the Excavation Site, in the Wetlands Which quest is not known yet" } },
                 { id = 14210, name = "Vital Cape of the Tiger", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 41 random suffixes, each with its own stats: search for the full name" } },
                 { id = 14593, name = "Hawkeye's Cloak", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 282658, name = "Dragonmaw Battle Shroud", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
@@ -6847,7 +6853,7 @@ ForeverBiSData = {
             },
             { slot = "Back",
               items = {
-                { id = 271720, name = "Crocolisk Skin Gaiter", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 271720, name = "Crocolisk Skin Gaiter", source = { kind = "quest", text = "A quest of the Excavation Site, in the Wetlands Which quest is not known yet" } },
                 { id = 6751, name = "Mourning Shawl", source = { kind = "quest", text = "Quest: Mortality Wanes Alliance, level 30 in Classic, from level 25 Same quest as the Lancer Boots You choose one or the other", faction = "Alliance", quest = "Mortality Wanes" } },
                 { id = 13108, name = "Tigerstrike Mantle", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 14763, name = "Enduring Cape", source = { kind = "world", text = "World drop, sold at the auction house" } },
@@ -7040,7 +7046,7 @@ ForeverBiSData = {
                 { id = 6751, name = "Mourning Shawl", source = { kind = "quest", text = "Quest: Mortality Wanes Alliance, level 30 in Classic, from level 25 Same quest as the Lancer Boots You choose one or the other", faction = "Alliance", quest = "Mortality Wanes" } },
                 { id = 4643, name = "Grimsteel Cape", source = { kind = "quest", text = "Quest: Vorrel's Revenge Horde, level 33 in Classic, from level 25", faction = "Horde", quest = "Vorrel's Revenge" } },
                 { id = 13108, name = "Tigerstrike Mantle", source = { kind = "world", text = "World drop, sold at the auction house" } },
-                { id = 271720, name = "Crocolisk Skin Gaiter", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 271720, name = "Crocolisk Skin Gaiter", source = { kind = "quest", text = "A quest of the Excavation Site, in the Wetlands Which quest is not known yet" } },
                 { id = 14763, name = "Enduring Cape", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 9699, name = "Garrison Cloak", source = { kind = "quest", text = "Quest: Return to Vahlarriel Alliance, level 33 in Classic, from level 30", faction = "Alliance", quest = "Return to Vahlarriel" } },
                 { id = 2953, name = "Watch Master's Cloak", source = { kind = "quest", text = "Quest: Morbent Fel Alliance, level 32 in Classic, from level 20", faction = "Alliance", quest = "Morbent Fel" } },
@@ -7131,6 +7137,7 @@ ForeverBiSData = {
             },
             { slot = "Finger",
               items = {
+                { id = 276899, name = "Knucklebound Thimble", source = { kind = "quest", text = "Quest: Past Due Scarlet Monastery Library, Alliance, from level 30", faction = "Alliance", quest = "Past Due Scarlet Monastery Library" } },
                 { id = 281320, name = "Rune-Etched Ring", source = { kind = "quest", text = "Alliance quest Gleaning Our Future, Wetlands, level 32 Elite, from level 24: take a group", faction = "Alliance" } },
                 { id = 9538, name = "Talvash's Gold Ring", source = { kind = "quest", text = "Quest: Gnome Improvement Alliance, level 35 in Classic, from level 28", faction = "Alliance", quest = "Gnome Improvement" } },
                 { id = 281634, name = "Field Researcher's Loop", source = { kind = "quest", text = "Quest: Greater Friend of the Library Twenty books, the necklace’s ten counted", quest = "Greater Friend of the Library Twenty books" } },
@@ -7167,6 +7174,7 @@ ForeverBiSData = {
             },
             { slot = "Off hand: shield",
               items = {
+                { id = 4129, name = "Collection Plate", source = { kind = "quest", text = "Quest: Cracking Maury's Foot level 44 in Classic, from level 30 A chain of four quests from \"Sea Wolf\" MacKinley, Booty Bay Elite ogres of level 41 to 45: take a group", quest = "Cracking Maury's Foot" } },
                 { id = 17508, name = "Forcestone Buckler", source = { kind = "quest", text = "Quest: Compendium of the Fallen Horde, level 38 in Classic, from level 28", faction = "Horde", quest = "Compendium of the Fallen" } },
                 { id = 7747, name = "Vile Protector", source = { kind = "quest", text = "Quest: Compendium of the Fallen Horde, level 38 in Classic, from level 28", faction = "Horde", quest = "Compendium of the Fallen" } },
                 { id = 9522, name = "Energized Stone Circle", source = { kind = "quest", text = "Quest: Power Stones level 36 in Classic, from level 30", quest = "Power Stones" } },
