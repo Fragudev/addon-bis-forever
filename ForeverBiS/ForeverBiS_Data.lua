@@ -157,6 +157,7 @@ ForeverBiSData = {
             },
             { slot = "Two-hand weapon",
               items = {
+                { id = 271800, name = "Scavenged Magram Armament", source = { kind = "quest", text = "Khan Jehn, a Magram quest in Desolace At Honored with the Magram" } },
                 { id = 13045, name = "Viscous Hammer", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 9449, name = "Manual Crowd Pummeler", source = { kind = "world", text = "Crowd Pummeler 9-60, Gnomeregan 32.62% in Classic", zone = "Gnomeregan", boss = "Crowd Pummeler 9-60", dropRate = 32.62 } },
                 { id = 271766, name = "Heavehammer", source = { kind = "quest", text = "Quest: Lost Relic Carry Excavation Site: Wetlands, Alliance, from level 24 Quest: Elder Knowledge Excavation Site: Wetlands, Horde, from level 24", quest = "Lost Relic Carry Excavation Site: Wetlands" } },
@@ -257,8 +258,8 @@ ForeverBiSData = {
             { slot = "Chest",
               items = {
                 { id = 7407, name = "Infiltrator Armor of Arcane Wrath", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 36 random suffixes, each with its own stats: search for the full name" } },
-                { id = 253969, name = "Pearly Gown", source = { kind = "profession", text = "Tailoring (110) Only its maker can wear it", skill = "Tailoring", skillLevel = 110, bindsToMaker = true } },
                 { id = 17043, name = "Zealot's Robe", source = { kind = "quest", text = "Quest: An Unholy Alliance Horde, level 36 in Classic, from level 28 A Horde quest from Varimathras in Undercity Take a group for Ambassador Malcin (level 36 elite)", quest = "An Unholy" } },
+                { id = 253969, name = "Pearly Gown", source = { kind = "profession", text = "Tailoring (110) Only its maker can wear it", skill = "Tailoring", skillLevel = 110, bindsToMaker = true } },
                 { id = 284697, name = "Arcane Charged Robes", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 277213, name = "Dro'zem's Tunic", source = { kind = "world", text = "Dro'zem the Blasphemous, a rare elite of the Redridge Mountains Reported, not checked", reported = true } },
                 { id = 7065, name = "Green Silk Armor", source = { kind = "profession", text = "Tailoring (130)", skill = "Tailoring", skillLevel = 130 } },
@@ -750,6 +751,7 @@ ForeverBiSData = {
             },
             { slot = "Two-hand weapon",
               items = {
+                { id = 271800, name = "Scavenged Magram Armament", source = { kind = "quest", text = "Khan Jehn, a Magram quest in Desolace At Honored with the Magram" } },
                 { id = 13045, name = "Viscous Hammer", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 9449, name = "Manual Crowd Pummeler", source = { kind = "world", text = "Crowd Pummeler 9-60, Gnomeregan 32.62% in Classic", zone = "Gnomeregan", boss = "Crowd Pummeler 9-60", dropRate = 32.62 } },
                 { id = 271667, name = "Ironwood Destroyer", source = { kind = "quest", text = "Quest: Horrors in the Highland Excavation Site: Wetlands, Alliance, from level 24", faction = "Alliance", quest = "Horrors in the Highland Excavation Site: Wetlands" } },
@@ -1140,6 +1142,7 @@ ForeverBiSData = {
             },
             { slot = "Two-hand weapon",
               items = {
+                { id = 271800, name = "Scavenged Magram Armament", source = { kind = "quest", text = "Khan Jehn, a Magram quest in Desolace At Honored with the Magram" } },
                 { id = 13045, name = "Viscous Hammer", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 271667, name = "Ironwood Destroyer", source = { kind = "quest", text = "Quest: Horrors in the Highland Excavation Site: Wetlands, Alliance, from level 24", faction = "Alliance", quest = "Horrors in the Highland Excavation Site: Wetlands" } },
                 { id = 271766, name = "Heavehammer", source = { kind = "quest", text = "Quest: Lost Relic Carry Excavation Site: Wetlands, Alliance, from level 24 Quest: Elder Knowledge Excavation Site: Wetlands, Horde, from level 24", quest = "Lost Relic Carry Excavation Site: Wetlands" } },
@@ -1419,6 +1422,7 @@ ForeverBiSData = {
             { slot = "Shoulder",
               items = {
                 { id = 2264, name = "Mantle of Thieves", source = { kind = "world", text = "Trash mobs, Razorfen Kraul 0.04% in Classic World drop, sold at the auction house", zone = "Razorfen Kraul", boss = "Trash mobs", dropRate = 0.04 } },
+                { id = 5964, name = "Barbaric Shoulders", source = { kind = "profession", text = "Leatherworking", skill = "Leatherworking" } },
                 { id = 284399, name = "Seared Grove Shoulderpads", source = { kind = "world", text = "Sister Riven, the rare harpy of the Charred Vale Reported, not checked", reported = true } },
                 { id = 277043, name = "Cloudy Gustwoven Spaulders", source = { kind = "profession", text = "Leatherworking (175) Pattern sold by Sutara Plainstalker, Mulgore (Horde). Requires Earthen Ring - Friendly", faction = "Horde", skill = "Leatherworking", skillLevel = 175 } },
                 { id = 7727, name = "Watchman Pauldrons", source = { kind = "world", text = "Trash mobs, Scarlet Monastery Graveyard 0.02% in Classic Trash mobs, Scarlet Monastery Library 0.02% in Classic Trash mobs, Scarlet Monastery Armory 0.02% in Classic Trash mobs, Scarlet Monastery Cathedral 0.02% in Classic World drop, sold at the auction house", zone = "Scarlet Monastery", boss = "Trash mobs", dropRate = 0.02 } },
@@ -1442,6 +1446,7 @@ ForeverBiSData = {
             { slot = "Chest",
               items = {
                 { id = 4119, name = "Raptor Hunter Tunic", source = { kind = "quest", text = "Quest: Raptor Mastery level 43 in Classic, from level 28 Four Raptor Mastery quests, Stranglethorn Vale Tethis is a level 43 elite: very hard at level 30", quest = "Raptor Mastery" } },
+                { id = 7375, name = "Green Whelp Armor", source = { kind = "profession", text = "Leatherworking (150)", skill = "Leatherworking", skillLevel = 150 } },
                 { id = 7407, name = "Infiltrator Armor of the Bandit", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 36 random suffixes, each with its own stats: search for the full name" } },
                 { id = 270054, name = "Cultist's Chestguard", source = { kind = "quest", text = "A Horde quest from Varimathras in Undercity Take a group for Ambassador Malcin (level 36 elite)", faction = "Horde" } },
                 { id = 252509, name = "Trapper's Leather Tunic", source = { kind = "profession", text = "Leatherworking (110) Only its maker can wear it", skill = "Leatherworking", skillLevel = 110, bindsToMaker = true } },
@@ -1451,7 +1456,7 @@ ForeverBiSData = {
                 { id = 271212, name = "Bloodied Chestwraps", source = { kind = "dungeon", text = "Viktor the Vile, Ruins of Lordaeron", zone = "Ruins of Lordaeron", boss = "Viktor the Vile" } },
               },
               enchants = {
-                { effect = "All Stats +2", spell = "Enchant Chest - Lesser Stats", source = "Enchanting 200: Taught by the trainer." },
+                { effect = "Stamina +8", spell = "Enchant Chest - Superior Stamina", source = "Enchanting 220: Taught by the trainer." },
               },
             },
             { slot = "Wrist",
@@ -1472,8 +1477,8 @@ ForeverBiSData = {
             { slot = "Hands",
               items = {
                 { id = 6727, name = "Razzeric's Racing Grips", source = { kind = "quest", text = "Quest: Safety First level 41 in Classic, from level 29 A chain of ten quests from Pozzik, Shimmering Flats Take a group for Foreman Cozzle (level 38)", quest = "Safety First" } },
-                { id = 6784, name = "Braced Handguards", source = { kind = "quest", text = "Quest: Centaur Bounty Horde, level 31 in Classic, from level 30", faction = "Horde", quest = "Centaur Bounty" } },
                 { id = 7690, name = "Ebon Vise", source = { kind = "world", text = "Fallen Champion, Scarlet Monastery Graveyard 38.9% in Classic", zone = "Scarlet Monastery", boss = "Fallen Champion", dropRate = 38.9 } },
+                { id = 6784, name = "Braced Handguards", source = { kind = "quest", text = "Quest: Centaur Bounty Horde, level 31 in Classic, from level 30", faction = "Horde", quest = "Centaur Bounty" } },
                 { id = 273824, name = "Defias Jailbreakers", source = { kind = "world", text = "Bazil Thredd, The Stockade", zone = "The Stockade", boss = "Bazil Thredd" } },
                 { id = 1978, name = "Wolfclaw Gloves", source = { kind = "world", text = "Trash mobs, Razorfen Kraul 0.05% in Classic World drop, sold at the auction house", zone = "Razorfen Kraul", boss = "Trash mobs", dropRate = 0.05 } },
                 { id = 10413, name = "Gloves of the Fang", source = { kind = "dungeon", text = "Trash mobs, Wailing Caverns 2.36% in Classic", zone = "Wailing Caverns", boss = "Trash mobs", dropRate = 2.36 } },
@@ -3275,6 +3280,7 @@ ForeverBiSData = {
             { slot = "Hands",
               items = {
                 { id = 273810, name = "Ogre Grips", source = { kind = "world", text = "Hamhock, The Stockade", zone = "The Stockade", boss = "Hamhock" } },
+                { id = 7690, name = "Ebon Vise", source = { kind = "world", text = "Fallen Champion, Scarlet Monastery Graveyard 38.9% in Classic", zone = "Scarlet Monastery", boss = "Fallen Champion", dropRate = 38.9 } },
                 { id = 720, name = "Brawler Gloves", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 14764, name = "Enduring Gauntlets", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 1978, name = "Wolfclaw Gloves", source = { kind = "world", text = "Trash mobs, Razorfen Kraul 0.05% in Classic World drop, sold at the auction house", zone = "Razorfen Kraul", boss = "Trash mobs", dropRate = 0.05 } },
@@ -5037,7 +5043,7 @@ ForeverBiSData = {
                 { id = 6670, name = "Panther Armor", source = { kind = "quest", text = "Quest: The Den Horde, level 29 in Classic, from level 20", faction = "Horde", quest = "The Den" } },
               },
               enchants = {
-                { effect = "All Stats +2", spell = "Enchant Chest - Lesser Stats", source = "Enchanting 200: Taught by the trainer." },
+                { effect = "Stamina +8", spell = "Enchant Chest - Superior Stamina", source = "Enchanting 220: Taught by the trainer." },
               },
             },
             { slot = "Wrist",
@@ -5231,8 +5237,8 @@ ForeverBiSData = {
             { slot = "Chest",
               items = {
                 { id = 7407, name = "Infiltrator Armor of Nature's Wrath", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 36 random suffixes, each with its own stats: search for the full name" } },
-                { id = 277213, name = "Dro'zem's Tunic", source = { kind = "world", text = "Dro'zem the Blasphemous, a rare elite of the Redridge Mountains Reported, not checked", reported = true } },
                 { id = 17043, name = "Zealot's Robe", source = { kind = "quest", text = "Quest: An Unholy Alliance Horde, level 36 in Classic, from level 28 A Horde quest from Varimathras in Undercity Take a group for Ambassador Malcin (level 36 elite)", quest = "An Unholy" } },
+                { id = 277213, name = "Dro'zem's Tunic", source = { kind = "world", text = "Dro'zem the Blasphemous, a rare elite of the Redridge Mountains Reported, not checked", reported = true } },
                 { id = 7065, name = "Green Silk Armor", source = { kind = "profession", text = "Tailoring (130)", skill = "Tailoring", skillLevel = 130 } },
                 { id = 252510, name = "Stormrider's Leather Tunic", source = { kind = "profession", text = "Leatherworking (110) Only its maker can wear it", skill = "Leatherworking", skillLevel = 110, bindsToMaker = true } },
                 { id = 4256, name = "Guardian Armor", source = { kind = "profession", text = "Leatherworking (150)", skill = "Leatherworking", skillLevel = 150 } },
@@ -6866,7 +6872,7 @@ ForeverBiSData = {
                 { id = 6642, name = "Phantom Armor", source = { kind = "dungeon", text = "Lordaeron Captain, Ruins of Lordaeron Deathsworn Captain, Shadowfang Keep 35.31% in Classic", zone = "Ruins of Lordaeron", boss = "Lordaeron Captain", dropRate = 35.31 } },
               },
               enchants = {
-                { effect = "All Stats +2", spell = "Enchant Chest - Lesser Stats", source = "Enchanting 200: Taught by the trainer." },
+                { effect = "Stamina +8", spell = "Enchant Chest - Superior Stamina", source = "Enchanting 220: Taught by the trainer." },
               },
             },
             { slot = "Wrist",
@@ -6888,6 +6894,7 @@ ForeverBiSData = {
                 { id = 14764, name = "Enduring Gauntlets", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 720, name = "Brawler Gloves", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 273810, name = "Ogre Grips", source = { kind = "world", text = "Hamhock, The Stockade", zone = "The Stockade", boss = "Hamhock" } },
+                { id = 7690, name = "Ebon Vise", source = { kind = "world", text = "Fallen Champion, Scarlet Monastery Graveyard 38.9% in Classic", zone = "Scarlet Monastery", boss = "Fallen Champion", dropRate = 38.9 } },
                 { id = 1978, name = "Wolfclaw Gloves", source = { kind = "world", text = "Trash mobs, Razorfen Kraul 0.05% in Classic World drop, sold at the auction house", zone = "Razorfen Kraul", boss = "Trash mobs", dropRate = 0.05 } },
                 { id = 16978, name = "Warsong Gauntlets", source = { kind = "quest", text = "Quest: Warsong Supplies Horde, level 27 in Classic, from level 22", faction = "Horde", quest = "Warsong Supplies" } },
                 { id = 6974, name = "Fire Hardened Gauntlets", source = { kind = "quest", text = "Quest: Klockmort's Creation Alliance, level 30 in Classic, from level 20", faction = "Alliance", quest = "Klockmort's Creation" } },
