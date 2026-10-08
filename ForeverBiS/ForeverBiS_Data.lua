@@ -122,7 +122,7 @@ ForeverBiSData = {
             },
             { slot = "Feet",
               items = {
-                { id = 284403, name = "Shapeshifting Sentinel's Strides", source = { kind = "world", text = "A rare of northern Stonetalon Mountains, near the night elves Reported, not checked", reported = true } },
+                { id = 284403, name = "Shapeshifting Sentinel's Strides", source = { kind = "world", text = "A rare of northern Stonetalon Mountains, near the night elves Horde only: both rares serve Darnassus", faction = "Horde" } },
                 { id = 15350, name = "Headhunter's Slippers of the Tiger", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 36 random suffixes, each with its own stats: search for the full name" } },
                 { id = 7751, name = "Vorrel's Boots", source = { kind = "quest", text = "Quest: Vorrel's Revenge Horde, level 33 in Classic, from level 25", faction = "Horde", quest = "Vorrel's Revenge" } },
                 { id = 1121, name = "Feet of the Lynx", source = { kind = "world", text = "World drop, sold at the auction house" } },
@@ -665,7 +665,7 @@ ForeverBiSData = {
             },
             { slot = "Wrist",
               items = {
-                { id = 9428, name = "Unearthed Bands of the Bandit", source = { kind = "world", text = "Trash mobs, Uldaman Random suffix, one of 35 Search the auction house for the full name" } },
+                { id = 9428, name = "Unearthed Bands of the Monkey", source = { kind = "world", text = "Trash mobs, Uldaman Random suffix, one of 35 Search the auction house for the full name" } },
                 { id = 18948, name = "Barbaric Bracers", source = { kind = "profession", text = "Leatherworking (130) Requires Tanning Rack. Its blueprint drops rarely from Razorclaw the Butcher, Shadowfang Keep", skill = "Leatherworking", skillLevel = 130 } },
                 { id = 270055, name = "Charged Leather Bracers", source = { kind = "quest", text = "Quest: Power Stones from level 30, reported, not checked", quest = "Power Stones", reported = true } },
                 { id = 270032, name = "Cultist's Armguards", source = { kind = "quest", text = "Quest: Blackfathom Villainy Alliance, from level 18, reported, not checked Quest: Blackfathom Villainy Horde, from level 18, reported, not checked", quest = "Blackfathom Villainy", reported = true } },
@@ -716,7 +716,7 @@ ForeverBiSData = {
             },
             { slot = "Feet",
               items = {
-                { id = 284403, name = "Shapeshifting Sentinel's Strides", source = { kind = "world", text = "A rare of northern Stonetalon Mountains, near the night elves Reported, not checked", reported = true } },
+                { id = 284403, name = "Shapeshifting Sentinel's Strides", source = { kind = "world", text = "A rare of northern Stonetalon Mountains, near the night elves Horde only: both rares serve Darnassus", faction = "Horde" } },
                 { id = 6752, name = "Lancer Boots", source = { kind = "quest", text = "Quest: Mortality Wanes Alliance, level 30 in Classic, from level 25", faction = "Alliance", quest = "Mortality Wanes" } },
                 { id = 7751, name = "Vorrel's Boots", source = { kind = "quest", text = "Quest: Vorrel's Revenge Horde, level 33 in Classic, from level 25", faction = "Horde", quest = "Vorrel's Revenge" } },
                 { id = 16977, name = "Warsong Boots", source = { kind = "quest", text = "Quest: Warsong Supplies Horde, level 27 in Classic, from level 22", faction = "Horde", quest = "Warsong Supplies" } },
@@ -1318,7 +1318,7 @@ ForeverBiSData = {
             },
             { slot = "Feet",
               items = {
-                { id = 284403, name = "Shapeshifting Sentinel's Strides", source = { kind = "world", text = "A rare of northern Stonetalon Mountains, near the night elves Reported, not checked", reported = true } },
+                { id = 284403, name = "Shapeshifting Sentinel's Strides", source = { kind = "world", text = "A rare of northern Stonetalon Mountains, near the night elves Horde only: both rares serve Darnassus", faction = "Horde" } },
                 { id = 7751, name = "Vorrel's Boots", source = { kind = "quest", text = "Quest: Vorrel's Revenge Horde, level 33 in Classic, from level 25", faction = "Horde", quest = "Vorrel's Revenge" } },
                 { id = 15350, name = "Headhunter's Slippers of Agility", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 36 random suffixes, each with its own stats: search for the full name" } },
                 { id = 16977, name = "Warsong Boots", source = { kind = "quest", text = "Quest: Warsong Supplies Horde, level 27 in Classic, from level 22", faction = "Horde", quest = "Warsong Supplies" } },
@@ -1464,7 +1464,7 @@ ForeverBiSData = {
             },
             { slot = "Wrist",
               items = {
-                { id = 9428, name = "Unearthed Bands of the Bandit", source = { kind = "world", text = "Trash mobs, Uldaman Random suffix, one of 35 Search the auction house for the full name" } },
+                { id = 9428, name = "Unearthed Bands of the Monkey", source = { kind = "world", text = "Trash mobs, Uldaman Random suffix, one of 35 Search the auction house for the full name" } },
                 { id = 270055, name = "Charged Leather Bracers", source = { kind = "quest", text = "Quest: Power Stones from level 30, reported, not checked", quest = "Power Stones", reported = true } },
                 { id = 270032, name = "Cultist's Armguards", source = { kind = "quest", text = "Quest: Blackfathom Villainy Alliance, from level 18, reported, not checked Quest: Blackfathom Villainy Horde, from level 18, reported, not checked", quest = "Blackfathom Villainy", reported = true } },
                 { id = 270021, name = "Staghide Armguards", source = { kind = "quest", text = "Quest: Researching the Corruption Alliance, from level 18, reported, not checked", faction = "Alliance", quest = "Researching the Corruption", reported = true } },
@@ -1519,7 +1519,7 @@ ForeverBiSData = {
             },
             { slot = "Feet",
               items = {
-                { id = 284403, name = "Shapeshifting Sentinel's Strides", source = { kind = "world", text = "A rare of northern Stonetalon Mountains, near the night elves Reported, not checked", reported = true } },
+                { id = 284403, name = "Shapeshifting Sentinel's Strides", source = { kind = "world", text = "A rare of northern Stonetalon Mountains, near the night elves Horde only: both rares serve Darnassus", faction = "Horde" } },
                 { id = 6752, name = "Lancer Boots", source = { kind = "quest", text = "Quest: Mortality Wanes Alliance, level 30 in Classic, from level 25", faction = "Alliance", quest = "Mortality Wanes" } },
                 { id = 7751, name = "Vorrel's Boots", source = { kind = "quest", text = "Quest: Vorrel's Revenge Horde, level 33 in Classic, from level 25", faction = "Horde", quest = "Vorrel's Revenge" } },
                 { id = 16977, name = "Warsong Boots", source = { kind = "quest", text = "Quest: Warsong Supplies Horde, level 27 in Classic, from level 22", faction = "Horde", quest = "Warsong Supplies" } },
@@ -2738,7 +2738,7 @@ ForeverBiSData = {
             },
             { slot = "Feet",
               items = {
-                { id = 284403, name = "Shapeshifting Sentinel's Strides", source = { kind = "world", text = "A rare of northern Stonetalon Mountains, near the night elves Reported, not checked", reported = true } },
+                { id = 284403, name = "Shapeshifting Sentinel's Strides", source = { kind = "world", text = "A rare of northern Stonetalon Mountains, near the night elves Horde only: both rares serve Darnassus", faction = "Horde" } },
                 { id = 4464, name = "Trouncing Boots", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 273025, name = "Raptorclaw Greaves", source = { kind = "world", text = "Shadetooth, Excavation Site: Wetlands" } },
                 { id = 250503, name = "Veteran's Boots", source = { kind = "profession", text = "Blacksmithing (85) Only its maker can wear it", skill = "Blacksmithing", skillLevel = 85, bindsToMaker = true } },
@@ -4704,7 +4704,7 @@ ForeverBiSData = {
             },
             { slot = "Feet",
               items = {
-                { id = 284403, name = "Shapeshifting Sentinel's Strides", source = { kind = "world", text = "A rare of northern Stonetalon Mountains, near the night elves Reported, not checked", reported = true } },
+                { id = 284403, name = "Shapeshifting Sentinel's Strides", source = { kind = "world", text = "A rare of northern Stonetalon Mountains, near the night elves Horde only: both rares serve Darnassus", faction = "Horde" } },
                 { id = 7751, name = "Vorrel's Boots", source = { kind = "quest", text = "Quest: Vorrel's Revenge Horde, level 33 in Classic, from level 25", faction = "Horde", quest = "Vorrel's Revenge" } },
                 { id = 15350, name = "Headhunter's Slippers of the Tiger", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 36 random suffixes, each with its own stats: search for the full name" } },
                 { id = 1121, name = "Feet of the Lynx", source = { kind = "world", text = "World drop, sold at the auction house" } },
@@ -4907,7 +4907,7 @@ ForeverBiSData = {
             },
             { slot = "Feet",
               items = {
-                { id = 284403, name = "Shapeshifting Sentinel's Strides", source = { kind = "world", text = "A rare of northern Stonetalon Mountains, near the night elves Reported, not checked", reported = true } },
+                { id = 284403, name = "Shapeshifting Sentinel's Strides", source = { kind = "world", text = "A rare of northern Stonetalon Mountains, near the night elves Horde only: both rares serve Darnassus", faction = "Horde" } },
                 { id = 7751, name = "Vorrel's Boots", source = { kind = "quest", text = "Quest: Vorrel's Revenge Horde, level 33 in Classic, from level 25", faction = "Horde", quest = "Vorrel's Revenge" } },
                 { id = 15350, name = "Headhunter's Slippers of the Tiger", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 36 random suffixes, each with its own stats: search for the full name" } },
                 { id = 1121, name = "Feet of the Lynx", source = { kind = "world", text = "World drop, sold at the auction house" } },
@@ -5052,7 +5052,7 @@ ForeverBiSData = {
             },
             { slot = "Wrist",
               items = {
-                { id = 9428, name = "Unearthed Bands of the Bandit", source = { kind = "world", text = "Trash mobs, Uldaman Random suffix, one of 35 Search the auction house for the full name" } },
+                { id = 9428, name = "Unearthed Bands of the Monkey", source = { kind = "world", text = "Trash mobs, Uldaman Random suffix, one of 35 Search the auction house for the full name" } },
                 { id = 270032, name = "Cultist's Armguards", source = { kind = "quest", text = "Quest: Blackfathom Villainy Alliance, from level 18, reported, not checked Quest: Blackfathom Villainy Horde, from level 18, reported, not checked", quest = "Blackfathom Villainy", reported = true } },
                 { id = 270055, name = "Charged Leather Bracers", source = { kind = "quest", text = "Quest: Power Stones from level 30, reported, not checked", quest = "Power Stones", reported = true } },
                 { id = 18948, name = "Barbaric Bracers", source = { kind = "profession", text = "Leatherworking (130) Requires Tanning Rack. Its blueprint drops rarely from Razorclaw the Butcher, Shadowfang Keep", skill = "Leatherworking", skillLevel = 130 } },
@@ -5104,7 +5104,7 @@ ForeverBiSData = {
             },
             { slot = "Feet",
               items = {
-                { id = 284403, name = "Shapeshifting Sentinel's Strides", source = { kind = "world", text = "A rare of northern Stonetalon Mountains, near the night elves Reported, not checked", reported = true } },
+                { id = 284403, name = "Shapeshifting Sentinel's Strides", source = { kind = "world", text = "A rare of northern Stonetalon Mountains, near the night elves Horde only: both rares serve Darnassus", faction = "Horde" } },
                 { id = 6752, name = "Lancer Boots", source = { kind = "quest", text = "Quest: Mortality Wanes Alliance, level 30 in Classic, from level 25", faction = "Alliance", quest = "Mortality Wanes" } },
                 { id = 7751, name = "Vorrel's Boots", source = { kind = "quest", text = "Quest: Vorrel's Revenge Horde, level 33 in Classic, from level 25", faction = "Horde", quest = "Vorrel's Revenge" } },
                 { id = 16977, name = "Warsong Boots", source = { kind = "quest", text = "Quest: Warsong Supplies Horde, level 27 in Classic, from level 22", faction = "Horde", quest = "Warsong Supplies" } },
@@ -5717,7 +5717,7 @@ ForeverBiSData = {
             },
             { slot = "Feet",
               items = {
-                { id = 284403, name = "Shapeshifting Sentinel's Strides", source = { kind = "world", text = "A rare of northern Stonetalon Mountains, near the night elves Reported, not checked", reported = true } },
+                { id = 284403, name = "Shapeshifting Sentinel's Strides", source = { kind = "world", text = "A rare of northern Stonetalon Mountains, near the night elves Horde only: both rares serve Darnassus", faction = "Horde" } },
                 { id = 15350, name = "Headhunter's Slippers of the Gorilla", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 36 random suffixes, each with its own stats: search for the full name" } },
                 { id = 252439, name = "Brawler's Leather Boots", source = { kind = "profession", text = "Leatherworking (85) Only its maker can wear it", skill = "Leatherworking", skillLevel = 85, bindsToMaker = true } },
                 { id = 1121, name = "Feet of the Lynx", source = { kind = "world", text = "World drop, sold at the auction house" } },
@@ -5921,7 +5921,7 @@ ForeverBiSData = {
                 { id = 15350, name = "Headhunter's Slippers of the Bear", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 36 random suffixes, each with its own stats: search for the full name" } },
                 { id = 19969, name = "Nat Pagle's Extreme Anglin' Boots", source = { kind = "quest", text = "Quest: Rare Fish - Brownell's Blue Striped Racer level 0 in Classic, from level 1", quest = "Rare Fish - Brownell's Blue Striped Racer" } },
                 { id = 252439, name = "Brawler's Leather Boots", source = { kind = "profession", text = "Leatherworking (85) Only its maker can wear it", skill = "Leatherworking", skillLevel = 85, bindsToMaker = true } },
-                { id = 284403, name = "Shapeshifting Sentinel's Strides", source = { kind = "world", text = "A rare of northern Stonetalon Mountains, near the night elves Reported, not checked", reported = true } },
+                { id = 284403, name = "Shapeshifting Sentinel's Strides", source = { kind = "world", text = "A rare of northern Stonetalon Mountains, near the night elves Horde only: both rares serve Darnassus", faction = "Horde" } },
               },
               enchants = {
                 { effect = "Minor Speed Increase", spell = "Enchant Boots - Minor Speed", source = "Enchanting 225: Taught by the trainer." },
@@ -6747,7 +6747,7 @@ ForeverBiSData = {
             },
             { slot = "Feet",
               items = {
-                { id = 284403, name = "Shapeshifting Sentinel's Strides", source = { kind = "world", text = "A rare of northern Stonetalon Mountains, near the night elves Reported, not checked", reported = true } },
+                { id = 284403, name = "Shapeshifting Sentinel's Strides", source = { kind = "world", text = "A rare of northern Stonetalon Mountains, near the night elves Horde only: both rares serve Darnassus", faction = "Horde" } },
                 { id = 4464, name = "Trouncing Boots", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 7417, name = "Phalanx Boots of the Tiger", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 32 random suffixes, each with its own stats: search for the full name" } },
                 { id = 252439, name = "Brawler's Leather Boots", source = { kind = "profession", text = "Leatherworking (85) Only its maker can wear it", skill = "Leatherworking", skillLevel = 85, bindsToMaker = true } },
