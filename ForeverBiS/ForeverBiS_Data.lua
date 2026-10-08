@@ -157,11 +157,9 @@ ForeverBiSData = {
             },
             { slot = "Two-hand weapon",
               items = {
-                { id = 271800, name = "Scavenged Magram Armament", source = { kind = "quest", text = "Khan Jehn, a Magram quest in Desolace At Honored with the Magram" } },
                 { id = 13045, name = "Viscous Hammer", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 9449, name = "Manual Crowd Pummeler", source = { kind = "world", text = "Crowd Pummeler 9-60, Gnomeregan 32.62% in Classic", zone = "Gnomeregan", boss = "Crowd Pummeler 9-60", dropRate = 32.62 } },
                 { id = 271766, name = "Heavehammer", source = { kind = "quest", text = "Quest: Lost Relic Carry Excavation Site: Wetlands, Alliance, from level 24 Quest: Elder Knowledge Excavation Site: Wetlands, Horde, from level 24", quest = "Lost Relic Carry Excavation Site: Wetlands" } },
-                { id = 271667, name = "Ironwood Destroyer", source = { kind = "quest", text = "Quest: Horrors in the Highland Excavation Site: Wetlands, Alliance, from level 24", faction = "Alliance", quest = "Horrors in the Highland Excavation Site: Wetlands" } },
                 { id = 7730, name = "Cobalt Crusher", source = { kind = "world", text = "Trash mobs, Scarlet Monastery Graveyard 0.02% in Classic Trash mobs, Scarlet Monastery Library 0.02% in Classic Trash mobs, Scarlet Monastery Armory 0.02% in Classic Trash mobs, Scarlet Monastery Cathedral 0.02% in Classic World drop, sold at the auction house", zone = "Scarlet Monastery", boss = "Trash mobs", dropRate = 0.02 } },
               },
               enchants = {
@@ -170,7 +168,6 @@ ForeverBiSData = {
             },
             { slot = "Main hand",
               items = {
-                { id = 271802, name = "Bludgeon of Betrayed Virtues", source = { kind = "quest", text = "Khan Jehn, a Gelkis quest in Desolace At Honored with the Gelkis" } },
                 { id = 6804, name = "Windstorm Hammer", source = { kind = "quest", text = "Quest: Final Passage Horde, level 36 in Classic, from level 25 A chain of ten quests from Dorn Plainstalker, Thousand Needles Two elite steps, and a book in the Scarlet Monastery Library", faction = "Horde", quest = "Final Passage" } },
                 { id = 7687, name = "Ironspine's Fist", source = { kind = "world", text = "Ironspine, Scarlet Monastery Graveyard 21.2% in Classic", zone = "Scarlet Monastery", boss = "Ironspine", dropRate = 21.2 } },
                 { id = 7683, name = "Bloody Brass Knuckles", source = { kind = "world", text = "Interrogator Vishas, Scarlet Monastery Graveyard 52.35% in Classic", zone = "Scarlet Monastery", boss = "Interrogator Vishas", dropRate = 52.35 } },
@@ -356,7 +353,6 @@ ForeverBiSData = {
             },
             { slot = "Two-hand weapon",
               items = {
-                { id = 271803, name = "Greatstaff of the Necrokhans", source = { kind = "quest", text = "Khan Jehn, a Magram quest in Desolace At Honored with the Magram" } },
                 { id = 281312, name = "Fallen Dragon's Scepter", source = { kind = "quest", text = "Alliance quest Stopping the Cycle, Wetlands, level 34 Elite, from level 24: take a group", faction = "Alliance" } },
                 { id = 249392, name = "Glimmering Staff", source = { kind = "profession", text = "Enchanting (140) Only its maker can wear it", skill = "Enchanting", skillLevel = 140, bindsToMaker = true } },
                 { id = 274158, name = "Death Prophet Spine", source = { kind = "world", text = "Aggem Thorncurse, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Aggem Thorncurse" } },
@@ -369,7 +365,6 @@ ForeverBiSData = {
             },
             { slot = "Main hand",
               items = {
-                { id = 271804, name = "Soulsplatter Mace", source = { kind = "quest", text = "Khan Jehn, a Magram quest in Desolace At Honored with the Magram" } },
                 { id = 17039, name = "Skullbreaker", source = { kind = "quest", text = "Quest: An Unholy Alliance Horde, level 36 in Classic, from level 28 A Horde quest from Varimathras in Undercity Take a group for Ambassador Malcin (level 36 elite)", quest = "An Unholy" } },
                 { id = 6691, name = "Swinetusk Shank", source = { kind = "world", text = "Agathelos the Raging, Razorfen Kraul 33.54% in Classic", zone = "Razorfen Kraul", boss = "Agathelos the Raging", dropRate = 33.54 } },
                 { id = 3414, name = "Crested Scepter", source = { kind = "dungeon", text = "Trash mobs, Blackfathom Deeps 0.03% in Classic", zone = "Blackfathom Deeps", boss = "Trash mobs", dropRate = 0.03 } },
@@ -538,6 +533,8 @@ ForeverBiSData = {
                 { id = 271670, name = "Curl of Life", source = { kind = "quest", text = "Quest: Horrors in the Highland Excavation Site: Wetlands, Alliance, from level 24", faction = "Alliance", quest = "Horrors in the Highland Excavation Site: Wetlands" } },
                 { id = 273806, name = "Dark Horde Band", source = { kind = "world", text = "Targorr the Dread, The Stockade", zone = "The Stockade", boss = "Targorr the Dread" } },
                 { id = 282283, name = "Malignant Root", source = { kind = "world", text = "Nightveiled Rotheap, a patrol of the Wetlands Alliance only, and not checked in the beta", faction = "Alliance" } },
+                { id = 9538, name = "Talvash's Gold Ring", source = { kind = "quest", text = "Quest: Gnome Improvement Alliance, level 35 in Classic, from level 28", faction = "Alliance", quest = "Gnome Improvement" } },
+                { id = 9588, name = "Nogg's Gold Ring", source = { kind = "quest", text = "Quest: Nogg's Ring Redo Horde, level 35 in Classic, from level 28", faction = "Horde", quest = "Nogg's Ring Redo" } },
                 { id = 281320, name = "Rune-Etched Ring", source = { kind = "quest", text = "Alliance quest Gleaning Our Future, Wetlands, level 32 Elite, from level 24: take a group", faction = "Alliance" } },
                 { id = 9622, name = "Reedknot Ring", source = { kind = "quest", text = "Quest: Jarl Needs a Blade level 35 in Classic, from level 30", quest = "Jarl Needs a Blade" } },
                 { id = 274746, name = "Sea Giant's Toe Ring", source = { kind = "world", text = "Sold by Gezzy Gunkgear in Booty Bay At Friendly with Booty Bay" } },
@@ -556,7 +553,6 @@ ForeverBiSData = {
             },
             { slot = "Two-hand weapon",
               items = {
-                { id = 271803, name = "Greatstaff of the Necrokhans", source = { kind = "quest", text = "Khan Jehn, a Magram quest in Desolace At Honored with the Magram" } },
                 { id = 249392, name = "Glimmering Staff", source = { kind = "profession", text = "Enchanting (140) Only its maker can wear it", skill = "Enchanting", skillLevel = 140, bindsToMaker = true } },
                 { id = 274158, name = "Death Prophet Spine", source = { kind = "world", text = "Aggem Thorncurse, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Aggem Thorncurse" } },
                 { id = 249393, name = "Soulstaff", source = { kind = "profession", text = "Enchanting (140) Only its maker can wear it", skill = "Enchanting", skillLevel = 140, bindsToMaker = true } },
@@ -568,7 +564,6 @@ ForeverBiSData = {
             },
             { slot = "Main hand",
               items = {
-                { id = 271804, name = "Soulsplatter Mace", source = { kind = "quest", text = "Khan Jehn, a Magram quest in Desolace At Honored with the Magram" } },
                 { id = 17039, name = "Skullbreaker", source = { kind = "quest", text = "Quest: An Unholy Alliance Horde, level 36 in Classic, from level 28 A Horde quest from Varimathras in Undercity Take a group for Ambassador Malcin (level 36 elite)", quest = "An Unholy" } },
                 { id = 6691, name = "Swinetusk Shank", source = { kind = "world", text = "Agathelos the Raging, Razorfen Kraul 33.54% in Classic", zone = "Razorfen Kraul", boss = "Agathelos the Raging", dropRate = 33.54 } },
                 { id = 3414, name = "Crested Scepter", source = { kind = "dungeon", text = "Trash mobs, Blackfathom Deeps 0.03% in Classic", zone = "Blackfathom Deeps", boss = "Trash mobs", dropRate = 0.03 } },
@@ -735,9 +730,10 @@ ForeverBiSData = {
                 { id = 7686, name = "Ironspine's Eye", source = { kind = "world", text = "Ironspine, Scarlet Monastery Graveyard 41.99% in Classic", zone = "Scarlet Monastery", boss = "Ironspine", dropRate = 41.99 } },
                 { id = 6414, name = "Seal of Sylvanas", source = { kind = "quest", text = "Quest: Arugal Must Die Horde, level 27 in Classic, from level 18", faction = "Horde", quest = "Arugal Must Die" } },
                 { id = 282283, name = "Malignant Root", source = { kind = "world", text = "Nightveiled Rotheap, a patrol of the Wetlands Alliance only, and not checked in the beta", faction = "Alliance" } },
+                { id = 9538, name = "Talvash's Gold Ring", source = { kind = "quest", text = "Quest: Gnome Improvement Alliance, level 35 in Classic, from level 28", faction = "Alliance", quest = "Gnome Improvement" } },
+                { id = 9588, name = "Nogg's Gold Ring", source = { kind = "quest", text = "Quest: Nogg's Ring Redo Horde, level 35 in Classic, from level 28", faction = "Horde", quest = "Nogg's Ring Redo" } },
                 { id = 281320, name = "Rune-Etched Ring", source = { kind = "quest", text = "Alliance quest Gleaning Our Future, Wetlands, level 32 Elite, from level 24: take a group", faction = "Alliance" } },
                 { id = 1076, name = "Defias Renegade Ring", source = { kind = "world", text = "Trash mobs, The Stockade", zone = "The Stockade", boss = "Trash mobs" } },
-                { id = 9538, name = "Talvash's Gold Ring", source = { kind = "quest", text = "Quest: Gnome Improvement Alliance, level 35 in Classic, from level 28", faction = "Alliance", quest = "Gnome Improvement" } },
               },
             },
             { slot = "Trinket",
@@ -753,10 +749,8 @@ ForeverBiSData = {
             },
             { slot = "Two-hand weapon",
               items = {
-                { id = 271800, name = "Scavenged Magram Armament", source = { kind = "quest", text = "Khan Jehn, a Magram quest in Desolace At Honored with the Magram" } },
                 { id = 13045, name = "Viscous Hammer", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 9449, name = "Manual Crowd Pummeler", source = { kind = "world", text = "Crowd Pummeler 9-60, Gnomeregan 32.62% in Classic", zone = "Gnomeregan", boss = "Crowd Pummeler 9-60", dropRate = 32.62 } },
-                { id = 271667, name = "Ironwood Destroyer", source = { kind = "quest", text = "Quest: Horrors in the Highland Excavation Site: Wetlands, Alliance, from level 24", faction = "Alliance", quest = "Horrors in the Highland Excavation Site: Wetlands" } },
                 { id = 271766, name = "Heavehammer", source = { kind = "quest", text = "Quest: Lost Relic Carry Excavation Site: Wetlands, Alliance, from level 24 Quest: Elder Knowledge Excavation Site: Wetlands, Horde, from level 24", quest = "Lost Relic Carry Excavation Site: Wetlands" } },
                 { id = 7730, name = "Cobalt Crusher", source = { kind = "world", text = "Trash mobs, Scarlet Monastery Graveyard 0.02% in Classic Trash mobs, Scarlet Monastery Library 0.02% in Classic Trash mobs, Scarlet Monastery Armory 0.02% in Classic Trash mobs, Scarlet Monastery Cathedral 0.02% in Classic World drop, sold at the auction house", zone = "Scarlet Monastery", boss = "Trash mobs", dropRate = 0.02 } },
               },
@@ -766,7 +760,6 @@ ForeverBiSData = {
             },
             { slot = "Main hand",
               items = {
-                { id = 271802, name = "Bludgeon of Betrayed Virtues", source = { kind = "quest", text = "Khan Jehn, a Gelkis quest in Desolace At Honored with the Gelkis" } },
                 { id = 6804, name = "Windstorm Hammer", source = { kind = "quest", text = "Quest: Final Passage Horde, level 36 in Classic, from level 25 A chain of ten quests from Dorn Plainstalker, Thousand Needles Two elite steps, and a book in the Scarlet Monastery Library", faction = "Horde", quest = "Final Passage" } },
                 { id = 7687, name = "Ironspine's Fist", source = { kind = "world", text = "Ironspine, Scarlet Monastery Graveyard 21.2% in Classic", zone = "Scarlet Monastery", boss = "Ironspine", dropRate = 21.2 } },
                 { id = 7683, name = "Bloody Brass Knuckles", source = { kind = "world", text = "Interrogator Vishas, Scarlet Monastery Graveyard 52.35% in Classic", zone = "Scarlet Monastery", boss = "Interrogator Vishas", dropRate = 52.35 } },
@@ -1128,6 +1121,8 @@ ForeverBiSData = {
               items = {
                 { id = 276899, name = "Knucklebound Thimble", source = { kind = "quest", text = "Quest: Past Due Scarlet Monastery Library, Alliance, from level 30", faction = "Alliance", quest = "Past Due Scarlet Monastery Library" } },
                 { id = 281634, name = "Field Researcher's Loop", source = { kind = "quest", text = "Quest: Greater Friend of the Library Twenty books, the necklace’s ten counted", quest = "Greater Friend of the Library Twenty books" } },
+                { id = 9538, name = "Talvash's Gold Ring", source = { kind = "quest", text = "Quest: Gnome Improvement Alliance, level 35 in Classic, from level 28", faction = "Alliance", quest = "Gnome Improvement" } },
+                { id = 9588, name = "Nogg's Gold Ring", source = { kind = "quest", text = "Quest: Nogg's Ring Redo Horde, level 35 in Classic, from level 28", faction = "Horde", quest = "Nogg's Ring Redo" } },
                 { id = 281320, name = "Rune-Etched Ring", source = { kind = "quest", text = "Alliance quest Gleaning Our Future, Wetlands, level 32 Elite, from level 24: take a group", faction = "Alliance" } },
                 { id = 285190, name = "Wyvern Heart Band", source = { kind = "world", text = "Heartrazor, the rare wyvern of Thousand Needles Reported, not checked", reported = true } },
                 { id = 6414, name = "Seal of Sylvanas", source = { kind = "quest", text = "Quest: Arugal Must Die Horde, level 27 in Classic, from level 18", faction = "Horde", quest = "Arugal Must Die" } },
@@ -1145,9 +1140,7 @@ ForeverBiSData = {
             },
             { slot = "Two-hand weapon",
               items = {
-                { id = 271800, name = "Scavenged Magram Armament", source = { kind = "quest", text = "Khan Jehn, a Magram quest in Desolace At Honored with the Magram" } },
                 { id = 13045, name = "Viscous Hammer", source = { kind = "world", text = "World drop, sold at the auction house" } },
-                { id = 271667, name = "Ironwood Destroyer", source = { kind = "quest", text = "Quest: Horrors in the Highland Excavation Site: Wetlands, Alliance, from level 24", faction = "Alliance", quest = "Horrors in the Highland Excavation Site: Wetlands" } },
                 { id = 271766, name = "Heavehammer", source = { kind = "quest", text = "Quest: Lost Relic Carry Excavation Site: Wetlands, Alliance, from level 24 Quest: Elder Knowledge Excavation Site: Wetlands, Horde, from level 24", quest = "Lost Relic Carry Excavation Site: Wetlands" } },
                 { id = 9449, name = "Manual Crowd Pummeler", source = { kind = "world", text = "Crowd Pummeler 9-60, Gnomeregan 32.62% in Classic", zone = "Gnomeregan", boss = "Crowd Pummeler 9-60", dropRate = 32.62 } },
                 { id = 1976, name = "Slaghammer", source = { kind = "world", text = "Trash mobs, Razorfen Kraul 0.07% in Classic World drop, sold at the auction house", zone = "Razorfen Kraul", boss = "Trash mobs", dropRate = 0.07 } },
@@ -1158,7 +1151,6 @@ ForeverBiSData = {
             },
             { slot = "Main hand",
               items = {
-                { id = 271802, name = "Bludgeon of Betrayed Virtues", source = { kind = "quest", text = "Khan Jehn, a Gelkis quest in Desolace At Honored with the Gelkis" } },
                 { id = 6804, name = "Windstorm Hammer", source = { kind = "quest", text = "Quest: Final Passage Horde, level 36 in Classic, from level 25 A chain of ten quests from Dorn Plainstalker, Thousand Needles Two elite steps, and a book in the Scarlet Monastery Library", faction = "Horde", quest = "Final Passage" } },
                 { id = 7687, name = "Ironspine's Fist", source = { kind = "world", text = "Ironspine, Scarlet Monastery Graveyard 21.2% in Classic", zone = "Scarlet Monastery", boss = "Ironspine", dropRate = 21.2 } },
                 { id = 281314, name = "Subdued Dragon's Fang", source = { kind = "quest", text = "Alliance quest Stopping the Cycle, Wetlands, level 34 Elite, from level 24: take a group", faction = "Alliance" } },
@@ -1371,7 +1363,6 @@ ForeverBiSData = {
             },
             { slot = "Ranged",
               items = {
-                { id = 277254, name = "Truthseeker's Bow", source = { kind = "quest", text = "Quest: Greater Friend of the Library, from level 30 25 library books in total, from level 30", quest = "Greater Friend of the Library" } },
                 { id = 17042, name = "Nail Spitter", source = { kind = "quest", text = "Quest: An Unholy Alliance Horde, level 36 in Classic, from level 28 A Horde quest from Varimathras in Undercity Take a group for Ambassador Malcin (level 36 elite)", quest = "An Unholy" } },
                 { id = 274084, name = "Quilboar Blaster", source = { kind = "quest", text = "Quest: A Vengeful Fate Horde, from level 29, reported, not checked", faction = "Horde", quest = "A Vengeful Fate", reported = true } },
                 { id = 9456, name = "Glass Shooter", source = { kind = "world", text = "Dark Iron Ambassador, Gnomeregan 32.46% in Classic", zone = "Gnomeregan", boss = "Dark Iron Ambassador", dropRate = 32.46 } },
@@ -1541,6 +1532,8 @@ ForeverBiSData = {
                 { id = 6414, name = "Seal of Sylvanas", source = { kind = "quest", text = "Quest: Arugal Must Die Horde, level 27 in Classic, from level 18", faction = "Horde", quest = "Arugal Must Die" } },
                 { id = 282283, name = "Malignant Root", source = { kind = "world", text = "Nightveiled Rotheap, a patrol of the Wetlands Alliance only, and not checked in the beta", faction = "Alliance" } },
                 { id = 1076, name = "Defias Renegade Ring", source = { kind = "world", text = "Trash mobs, The Stockade", zone = "The Stockade", boss = "Trash mobs" } },
+                { id = 9538, name = "Talvash's Gold Ring", source = { kind = "quest", text = "Quest: Gnome Improvement Alliance, level 35 in Classic, from level 28", faction = "Alliance", quest = "Gnome Improvement" } },
+                { id = 9588, name = "Nogg's Gold Ring", source = { kind = "quest", text = "Quest: Nogg's Ring Redo Horde, level 35 in Classic, from level 28", faction = "Horde", quest = "Nogg's Ring Redo" } },
                 { id = 281320, name = "Rune-Etched Ring", source = { kind = "quest", text = "Alliance quest Gleaning Our Future, Wetlands, level 32 Elite, from level 24: take a group", faction = "Alliance" } },
                 { id = 2039, name = "Plains Ring", source = { kind = "world", text = "Trash mobs, Razorfen Kraul 0.07% in Classic World drop, sold at the auction house", zone = "Razorfen Kraul", boss = "Trash mobs", dropRate = 0.07 } },
                 { id = 7686, name = "Ironspine's Eye", source = { kind = "world", text = "Ironspine, Scarlet Monastery Graveyard 41.99% in Classic", zone = "Scarlet Monastery", boss = "Ironspine", dropRate = 41.99 } },
@@ -1560,9 +1553,7 @@ ForeverBiSData = {
             },
             { slot = "Two-hand weapon",
               items = {
-                { id = 271800, name = "Scavenged Magram Armament", source = { kind = "quest", text = "Khan Jehn, a Magram quest in Desolace At Honored with the Magram" } },
                 { id = 6687, name = "Corpsemaker", source = { kind = "world", text = "Overlord Ramtusk, Razorfen Kraul 33.83% in Classic", zone = "Razorfen Kraul", boss = "Overlord Ramtusk", dropRate = 33.83 } },
-                { id = 271801, name = "Abandoned Ferocity", source = { kind = "quest", text = "Khan Jehn, a Gelkis quest in Desolace At Honored with the Gelkis" } },
                 { id = 7689, name = "Morbid Dawn", source = { kind = "world", text = "Fallen Champion, Scarlet Monastery Graveyard 17.73% in Classic", zone = "Scarlet Monastery", boss = "Fallen Champion", dropRate = 17.73 } },
                 { id = 281313, name = "Trusty Sword", source = { kind = "quest", text = "Alliance quest Stopping the Cycle, Wetlands, level 34 Elite, from level 24: take a group", faction = "Alliance" } },
                 { id = 2299, name = "Burning War Axe", source = { kind = "world", text = "World drop, sold at the auction house" } },
@@ -1574,7 +1565,6 @@ ForeverBiSData = {
             },
             { slot = "Ranged",
               items = {
-                { id = 277254, name = "Truthseeker's Bow", source = { kind = "quest", text = "Quest: Greater Friend of the Library, from level 30 25 library books in total, from level 30", quest = "Greater Friend of the Library" } },
                 { id = 17042, name = "Nail Spitter", source = { kind = "quest", text = "Quest: An Unholy Alliance Horde, level 36 in Classic, from level 28 A Horde quest from Varimathras in Undercity Take a group for Ambassador Malcin (level 36 elite)", quest = "An Unholy" } },
                 { id = 274084, name = "Quilboar Blaster", source = { kind = "quest", text = "Quest: A Vengeful Fate Horde, from level 29, reported, not checked", faction = "Horde", quest = "A Vengeful Fate", reported = true } },
                 { id = 274748, name = "Booty Bay Bruiser's Buckshot", source = { kind = "world", text = "Sold by Gezzy Gunkgear in Booty Bay At Honored with Booty Bay" } },
@@ -1752,7 +1742,6 @@ ForeverBiSData = {
             },
             { slot = "Two-hand weapon",
               items = {
-                { id = 271803, name = "Greatstaff of the Necrokhans", source = { kind = "quest", text = "Khan Jehn, a Magram quest in Desolace At Honored with the Magram" } },
                 { id = 281312, name = "Fallen Dragon's Scepter", source = { kind = "quest", text = "Alliance quest Stopping the Cycle, Wetlands, level 34 Elite, from level 24: take a group", faction = "Alliance" } },
                 { id = 249392, name = "Glimmering Staff", source = { kind = "profession", text = "Enchanting (140) Only its maker can wear it", skill = "Enchanting", skillLevel = 140, bindsToMaker = true } },
                 { id = 274158, name = "Death Prophet Spine", source = { kind = "world", text = "Aggem Thorncurse, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Aggem Thorncurse" } },
@@ -1959,7 +1948,6 @@ ForeverBiSData = {
             },
             { slot = "Two-hand weapon",
               items = {
-                { id = 271803, name = "Greatstaff of the Necrokhans", source = { kind = "quest", text = "Khan Jehn, a Magram quest in Desolace At Honored with the Magram" } },
                 { id = 281312, name = "Fallen Dragon's Scepter", source = { kind = "quest", text = "Alliance quest Stopping the Cycle, Wetlands, level 34 Elite, from level 24: take a group", faction = "Alliance" } },
                 { id = 249392, name = "Glimmering Staff", source = { kind = "profession", text = "Enchanting (140) Only its maker can wear it", skill = "Enchanting", skillLevel = 140, bindsToMaker = true } },
                 { id = 274158, name = "Death Prophet Spine", source = { kind = "world", text = "Aggem Thorncurse, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Aggem Thorncurse" } },
@@ -2167,7 +2155,6 @@ ForeverBiSData = {
             },
             { slot = "Two-hand weapon",
               items = {
-                { id = 271803, name = "Greatstaff of the Necrokhans", source = { kind = "quest", text = "Khan Jehn, a Magram quest in Desolace At Honored with the Magram" } },
                 { id = 281312, name = "Fallen Dragon's Scepter", source = { kind = "quest", text = "Alliance quest Stopping the Cycle, Wetlands, level 34 Elite, from level 24: take a group", faction = "Alliance" } },
                 { id = 249392, name = "Glimmering Staff", source = { kind = "profession", text = "Enchanting (140) Only its maker can wear it", skill = "Enchanting", skillLevel = 140, bindsToMaker = true } },
                 { id = 274158, name = "Death Prophet Spine", source = { kind = "world", text = "Aggem Thorncurse, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Aggem Thorncurse" } },
@@ -2352,6 +2339,8 @@ ForeverBiSData = {
                 { id = 271670, name = "Curl of Life", source = { kind = "quest", text = "Quest: Horrors in the Highland Excavation Site: Wetlands, Alliance, from level 24", faction = "Alliance", quest = "Horrors in the Highland Excavation Site: Wetlands" } },
                 { id = 273806, name = "Dark Horde Band", source = { kind = "world", text = "Targorr the Dread, The Stockade", zone = "The Stockade", boss = "Targorr the Dread" } },
                 { id = 282283, name = "Malignant Root", source = { kind = "world", text = "Nightveiled Rotheap, a patrol of the Wetlands Alliance only, and not checked in the beta", faction = "Alliance" } },
+                { id = 9538, name = "Talvash's Gold Ring", source = { kind = "quest", text = "Quest: Gnome Improvement Alliance, level 35 in Classic, from level 28", faction = "Alliance", quest = "Gnome Improvement" } },
+                { id = 9588, name = "Nogg's Gold Ring", source = { kind = "quest", text = "Quest: Nogg's Ring Redo Horde, level 35 in Classic, from level 28", faction = "Horde", quest = "Nogg's Ring Redo" } },
                 { id = 281320, name = "Rune-Etched Ring", source = { kind = "quest", text = "Alliance quest Gleaning Our Future, Wetlands, level 32 Elite, from level 24: take a group", faction = "Alliance" } },
                 { id = 9622, name = "Reedknot Ring", source = { kind = "quest", text = "Quest: Jarl Needs a Blade level 35 in Classic, from level 30", quest = "Jarl Needs a Blade" } },
                 { id = 274746, name = "Sea Giant's Toe Ring", source = { kind = "world", text = "Sold by Gezzy Gunkgear in Booty Bay At Friendly with Booty Bay" } },
@@ -2370,7 +2359,6 @@ ForeverBiSData = {
             },
             { slot = "Two-hand weapon",
               items = {
-                { id = 271803, name = "Greatstaff of the Necrokhans", source = { kind = "quest", text = "Khan Jehn, a Magram quest in Desolace At Honored with the Magram" } },
                 { id = 249392, name = "Glimmering Staff", source = { kind = "profession", text = "Enchanting (140) Only its maker can wear it", skill = "Enchanting", skillLevel = 140, bindsToMaker = true } },
                 { id = 274158, name = "Death Prophet Spine", source = { kind = "world", text = "Aggem Thorncurse, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Aggem Thorncurse" } },
                 { id = 249393, name = "Soulstaff", source = { kind = "profession", text = "Enchanting (140) Only its maker can wear it", skill = "Enchanting", skillLevel = 140, bindsToMaker = true } },
@@ -2552,6 +2540,8 @@ ForeverBiSData = {
                 { id = 271670, name = "Curl of Life", source = { kind = "quest", text = "Quest: Horrors in the Highland Excavation Site: Wetlands, Alliance, from level 24", faction = "Alliance", quest = "Horrors in the Highland Excavation Site: Wetlands" } },
                 { id = 273806, name = "Dark Horde Band", source = { kind = "world", text = "Targorr the Dread, The Stockade", zone = "The Stockade", boss = "Targorr the Dread" } },
                 { id = 282283, name = "Malignant Root", source = { kind = "world", text = "Nightveiled Rotheap, a patrol of the Wetlands Alliance only, and not checked in the beta", faction = "Alliance" } },
+                { id = 9538, name = "Talvash's Gold Ring", source = { kind = "quest", text = "Quest: Gnome Improvement Alliance, level 35 in Classic, from level 28", faction = "Alliance", quest = "Gnome Improvement" } },
+                { id = 9588, name = "Nogg's Gold Ring", source = { kind = "quest", text = "Quest: Nogg's Ring Redo Horde, level 35 in Classic, from level 28", faction = "Horde", quest = "Nogg's Ring Redo" } },
                 { id = 281320, name = "Rune-Etched Ring", source = { kind = "quest", text = "Alliance quest Gleaning Our Future, Wetlands, level 32 Elite, from level 24: take a group", faction = "Alliance" } },
                 { id = 9622, name = "Reedknot Ring", source = { kind = "quest", text = "Quest: Jarl Needs a Blade level 35 in Classic, from level 30", quest = "Jarl Needs a Blade" } },
                 { id = 274746, name = "Sea Giant's Toe Ring", source = { kind = "world", text = "Sold by Gezzy Gunkgear in Booty Bay At Friendly with Booty Bay" } },
@@ -2570,7 +2560,6 @@ ForeverBiSData = {
             },
             { slot = "Two-hand weapon",
               items = {
-                { id = 271803, name = "Greatstaff of the Necrokhans", source = { kind = "quest", text = "Khan Jehn, a Magram quest in Desolace At Honored with the Magram" } },
                 { id = 249392, name = "Glimmering Staff", source = { kind = "profession", text = "Enchanting (140) Only its maker can wear it", skill = "Enchanting", skillLevel = 140, bindsToMaker = true } },
                 { id = 274158, name = "Death Prophet Spine", source = { kind = "world", text = "Aggem Thorncurse, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Aggem Thorncurse" } },
                 { id = 249393, name = "Soulstaff", source = { kind = "profession", text = "Enchanting (140) Only its maker can wear it", skill = "Enchanting", skillLevel = 140, bindsToMaker = true } },
@@ -2673,7 +2662,6 @@ ForeverBiSData = {
             { slot = "Chest",
               items = {
                 { id = 1488, name = "Avenger's Armor", source = { kind = "world", text = "Trash mobs, Razorfen Kraul 0.03% in Classic", zone = "Razorfen Kraul", boss = "Trash mobs", dropRate = 0.03 } },
-                { id = 6773, name = "Kolkar Marauder Chain", source = { kind = "quest", text = "Quest: Khan Hratha level 42 in Classic, from level 30 Khan Hratha, the end of the Gelkis chain in Desolace Khan Hratha is a level 42 elite: very hard at level 30", quest = "Khan Hratha" } },
                 { id = 2870, name = "Shining Silver Breastplate", source = { kind = "profession", text = "Blacksmithing", skill = "Blacksmithing" } },
                 { id = 250518, name = "Veteran's Silvered Chain Shirt", source = { kind = "profession", text = "Blacksmithing (110) Only its maker can wear it", skill = "Blacksmithing", skillLevel = 110, bindsToMaker = true } },
                 { id = 14751, name = "Slayer's Surcoat", source = { kind = "world", text = "World drop, sold at the auction house" } },
@@ -2771,14 +2759,11 @@ ForeverBiSData = {
             },
             { slot = "Two-hand weapon",
               items = {
-                { id = 271801, name = "Abandoned Ferocity", source = { kind = "quest", text = "Khan Jehn, a Gelkis quest in Desolace At Honored with the Gelkis" } },
-                { id = 271800, name = "Scavenged Magram Armament", source = { kind = "quest", text = "Khan Jehn, a Magram quest in Desolace At Honored with the Magram" } },
                 { id = 4983, name = "Rock Pulverizer", source = { kind = "quest", text = "Quest: Murdaloc Alliance, level 42 in Classic, from level 30 Three quests from Ironforge to the Badlands Take a group: Murdaloc is level 42", faction = "Alliance", quest = "Murdaloc" } },
                 { id = 13045, name = "Viscous Hammer", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 9449, name = "Manual Crowd Pummeler", source = { kind = "world", text = "Crowd Pummeler 9-60, Gnomeregan 32.62% in Classic", zone = "Gnomeregan", boss = "Crowd Pummeler 9-60", dropRate = 32.62 } },
                 { id = 6687, name = "Corpsemaker", source = { kind = "world", text = "Overlord Ramtusk, Razorfen Kraul 33.83% in Classic", zone = "Razorfen Kraul", boss = "Overlord Ramtusk", dropRate = 33.83 } },
                 { id = 271766, name = "Heavehammer", source = { kind = "quest", text = "Quest: Lost Relic Carry Excavation Site: Wetlands, Alliance, from level 24 Quest: Elder Knowledge Excavation Site: Wetlands, Horde, from level 24", quest = "Lost Relic Carry Excavation Site: Wetlands" } },
-                { id = 271667, name = "Ironwood Destroyer", source = { kind = "quest", text = "Quest: Horrors in the Highland Excavation Site: Wetlands, Alliance, from level 24", faction = "Alliance", quest = "Horrors in the Highland Excavation Site: Wetlands" } },
               },
               enchants = {
                 { effect = "Weapon Damage +6", spell = "Enchant 2H Weapon - Impact", source = "Enchanting 200: Taught by the trainer." },
@@ -2869,8 +2854,8 @@ ForeverBiSData = {
                 { id = 9448, name = "Spidertank Oilrag", source = { kind = "world", text = "Electrocutioner 6000, Gnomeregan 41.22% in Classic", zone = "Gnomeregan", boss = "Electrocutioner 6000", dropRate = 41.22 } },
                 { id = 273808, name = "Bridgebreaker Bindings", source = { kind = "world", text = "Kam Deepfury, The Stockade", zone = "The Stockade", boss = "Kam Deepfury" } },
                 { id = 4744, name = "Arcane Runed Bracers", source = { kind = "quest", text = "Quest: Wanted! Marez Cowl Alliance, level 39 in Classic, from level 30 Wanted! Marez Cowl, Refuge Pointe, Arathi Highlands Marez Cowl is a level 40 elite: take a strong group", faction = "Alliance", quest = "Wanted! Marez Cowl" } },
-                { id = 271740, name = "Knife-Polishing Rag", source = { kind = "quest", text = "Quest: Open the Maw Excavation Site: Wetlands, Horde, from level 24", faction = "Horde", quest = "Open the Maw Excavation Site: Wetlands" } },
                 { id = 1974, name = "Mindthrust Bracers", source = { kind = "dungeon", text = "Trash mobs, Shadowfang Keep 0.03% in Classic", zone = "Shadowfang Keep", boss = "Trash mobs", dropRate = 0.03 } },
+                { id = 271740, name = "Knife-Polishing Rag", source = { kind = "quest", text = "Quest: Open the Maw Excavation Site: Wetlands, Horde, from level 24", faction = "Horde", quest = "Open the Maw Excavation Site: Wetlands" } },
                 { id = 270042, name = "Technician's Bracers", source = { kind = "quest", text = "Quest: A Fine Mess from level 20, reported, not checked", quest = "A Fine Mess", reported = true } },
                 { id = 270003, name = "Garrison Cuffs", source = { kind = "quest", text = "Quest: Returning the Lost Satchel Horde, from level 9, reported, not checked", faction = "Horde", quest = "Returning the Lost Satchel", reported = true } },
               },
@@ -3340,6 +3325,8 @@ ForeverBiSData = {
                 { id = 282283, name = "Malignant Root", source = { kind = "world", text = "Nightveiled Rotheap, a patrol of the Wetlands Alliance only, and not checked in the beta", faction = "Alliance" } },
                 { id = 6414, name = "Seal of Sylvanas", source = { kind = "quest", text = "Quest: Arugal Must Die Horde, level 27 in Classic, from level 18", faction = "Horde", quest = "Arugal Must Die" } },
                 { id = 281634, name = "Field Researcher's Loop", source = { kind = "quest", text = "Quest: Greater Friend of the Library Twenty books, the necklace’s ten counted", quest = "Greater Friend of the Library Twenty books" } },
+                { id = 9538, name = "Talvash's Gold Ring", source = { kind = "quest", text = "Quest: Gnome Improvement Alliance, level 35 in Classic, from level 28", faction = "Alliance", quest = "Gnome Improvement" } },
+                { id = 9588, name = "Nogg's Gold Ring", source = { kind = "quest", text = "Quest: Nogg's Ring Redo Horde, level 35 in Classic, from level 28", faction = "Horde", quest = "Nogg's Ring Redo" } },
                 { id = 281320, name = "Rune-Etched Ring", source = { kind = "quest", text = "Alliance quest Gleaning Our Future, Wetlands, level 32 Elite, from level 24: take a group", faction = "Alliance" } },
                 { id = 278018, name = "Renegotiated Ring", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
               },
@@ -3357,13 +3344,10 @@ ForeverBiSData = {
             },
             { slot = "Two-hand weapon",
               items = {
-                { id = 271800, name = "Scavenged Magram Armament", source = { kind = "quest", text = "Khan Jehn, a Magram quest in Desolace At Honored with the Magram" } },
-                { id = 271801, name = "Abandoned Ferocity", source = { kind = "quest", text = "Khan Jehn, a Gelkis quest in Desolace At Honored with the Gelkis" } },
                 { id = 4983, name = "Rock Pulverizer", source = { kind = "quest", text = "Quest: Murdaloc Alliance, level 42 in Classic, from level 30 Three quests from Ironforge to the Badlands Take a group: Murdaloc is level 42", faction = "Alliance", quest = "Murdaloc" } },
                 { id = 13045, name = "Viscous Hammer", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 6687, name = "Corpsemaker", source = { kind = "world", text = "Overlord Ramtusk, Razorfen Kraul 33.83% in Classic", zone = "Razorfen Kraul", boss = "Overlord Ramtusk", dropRate = 33.83 } },
                 { id = 9449, name = "Manual Crowd Pummeler", source = { kind = "world", text = "Crowd Pummeler 9-60, Gnomeregan 32.62% in Classic", zone = "Gnomeregan", boss = "Crowd Pummeler 9-60", dropRate = 32.62 } },
-                { id = 271667, name = "Ironwood Destroyer", source = { kind = "quest", text = "Quest: Horrors in the Highland Excavation Site: Wetlands, Alliance, from level 24", faction = "Alliance", quest = "Horrors in the Highland Excavation Site: Wetlands" } },
                 { id = 271766, name = "Heavehammer", source = { kind = "quest", text = "Quest: Lost Relic Carry Excavation Site: Wetlands, Alliance, from level 24 Quest: Elder Knowledge Excavation Site: Wetlands, Horde, from level 24", quest = "Lost Relic Carry Excavation Site: Wetlands" } },
               },
               enchants = {
@@ -3535,7 +3519,6 @@ ForeverBiSData = {
             },
             { slot = "Main hand",
               items = {
-                { id = 271804, name = "Soulsplatter Mace", source = { kind = "quest", text = "Khan Jehn, a Magram quest in Desolace At Honored with the Magram" } },
                 { id = 17039, name = "Skullbreaker", source = { kind = "quest", text = "Quest: An Unholy Alliance Horde, level 36 in Classic, from level 28 A Horde quest from Varimathras in Undercity Take a group for Ambassador Malcin (level 36 elite)", quest = "An Unholy" } },
                 { id = 3414, name = "Crested Scepter", source = { kind = "dungeon", text = "Trash mobs, Blackfathom Deeps 0.03% in Classic", zone = "Blackfathom Deeps", boss = "Trash mobs", dropRate = 0.03 } },
                 { id = 273827, name = "Debt Collector", source = { kind = "world", text = "Bazil Thredd, The Stockade", zone = "The Stockade", boss = "Bazil Thredd" } },
@@ -3723,7 +3706,6 @@ ForeverBiSData = {
             },
             { slot = "Main hand",
               items = {
-                { id = 271804, name = "Soulsplatter Mace", source = { kind = "quest", text = "Khan Jehn, a Magram quest in Desolace At Honored with the Magram" } },
                 { id = 17039, name = "Skullbreaker", source = { kind = "quest", text = "Quest: An Unholy Alliance Horde, level 36 in Classic, from level 28 A Horde quest from Varimathras in Undercity Take a group for Ambassador Malcin (level 36 elite)", quest = "An Unholy" } },
                 { id = 3414, name = "Crested Scepter", source = { kind = "dungeon", text = "Trash mobs, Blackfathom Deeps 0.03% in Classic", zone = "Blackfathom Deeps", boss = "Trash mobs", dropRate = 0.03 } },
                 { id = 273827, name = "Debt Collector", source = { kind = "world", text = "Bazil Thredd, The Stockade", zone = "The Stockade", boss = "Bazil Thredd" } },
@@ -3917,7 +3899,6 @@ ForeverBiSData = {
             },
             { slot = "Two-hand weapon",
               items = {
-                { id = 271803, name = "Greatstaff of the Necrokhans", source = { kind = "quest", text = "Khan Jehn, a Magram quest in Desolace At Honored with the Magram" } },
                 { id = 2549, name = "Staff of the Shade", source = { kind = "world", text = "Trash mobs, Razorfen Kraul 0.05% in Classic World drop, sold at the auction house", zone = "Razorfen Kraul", boss = "Trash mobs", dropRate = 0.05 } },
                 { id = 249392, name = "Glimmering Staff", source = { kind = "profession", text = "Enchanting (140) Only its maker can wear it", skill = "Enchanting", skillLevel = 140, bindsToMaker = true } },
                 { id = 274158, name = "Death Prophet Spine", source = { kind = "world", text = "Aggem Thorncurse, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Aggem Thorncurse" } },
@@ -3930,7 +3911,6 @@ ForeverBiSData = {
             },
             { slot = "Main hand",
               items = {
-                { id = 271804, name = "Soulsplatter Mace", source = { kind = "quest", text = "Khan Jehn, a Magram quest in Desolace At Honored with the Magram" } },
                 { id = 17039, name = "Skullbreaker", source = { kind = "quest", text = "Quest: An Unholy Alliance Horde, level 36 in Classic, from level 28 A Horde quest from Varimathras in Undercity Take a group for Ambassador Malcin (level 36 elite)", quest = "An Unholy" } },
                 { id = 6691, name = "Swinetusk Shank", source = { kind = "world", text = "Agathelos the Raging, Razorfen Kraul 33.54% in Classic", zone = "Razorfen Kraul", boss = "Agathelos the Raging", dropRate = 33.54 } },
                 { id = 3414, name = "Crested Scepter", source = { kind = "dungeon", text = "Trash mobs, Blackfathom Deeps 0.03% in Classic", zone = "Blackfathom Deeps", boss = "Trash mobs", dropRate = 0.03 } },
@@ -4104,6 +4084,8 @@ ForeverBiSData = {
             { slot = "Finger",
               items = {
                 { id = 9447, name = "Electrocutioner Lagnut", source = { kind = "world", text = "Electrocutioner 6000, Gnomeregan 31.06% in Classic", zone = "Gnomeregan", boss = "Electrocutioner 6000", dropRate = 31.06 } },
+                { id = 9538, name = "Talvash's Gold Ring", source = { kind = "quest", text = "Quest: Gnome Improvement Alliance, level 35 in Classic, from level 28", faction = "Alliance", quest = "Gnome Improvement" } },
+                { id = 9588, name = "Nogg's Gold Ring", source = { kind = "quest", text = "Quest: Nogg's Ring Redo Horde, level 35 in Classic, from level 28", faction = "Horde", quest = "Nogg's Ring Redo" } },
                 { id = 281320, name = "Rune-Etched Ring", source = { kind = "quest", text = "Alliance quest Gleaning Our Future, Wetlands, level 32 Elite, from level 24: take a group", faction = "Alliance" } },
                 { id = 271670, name = "Curl of Life", source = { kind = "quest", text = "Quest: Horrors in the Highland Excavation Site: Wetlands, Alliance, from level 24", faction = "Alliance", quest = "Horrors in the Highland Excavation Site: Wetlands" } },
                 { id = 11985, name = "Cerulean Ring of the Hierophant", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 35 random suffixes, each with its own stats: search for the full name" } },
@@ -4125,7 +4107,6 @@ ForeverBiSData = {
             },
             { slot = "Two-hand weapon",
               items = {
-                { id = 271803, name = "Greatstaff of the Necrokhans", source = { kind = "quest", text = "Khan Jehn, a Magram quest in Desolace At Honored with the Magram" } },
                 { id = 6689, name = "Wind Spirit Staff", source = { kind = "world", text = "Earthcaller Halmgar, Razorfen Kraul 48.83% in Classic", zone = "Razorfen Kraul", boss = "Earthcaller Halmgar", dropRate = 48.83 } },
                 { id = 271767, name = "Healer's Staff", source = { kind = "quest", text = "Quest: Lost Relic Carry Excavation Site: Wetlands, Alliance, from level 24 Quest: Elder Knowledge Excavation Site: Wetlands, Horde, from level 24", quest = "Lost Relic Carry Excavation Site: Wetlands" } },
                 { id = 3415, name = "Staff of the Friar", source = { kind = "dungeon", text = "Trash mobs, Blackfathom Deeps 0.04% in Classic", zone = "Blackfathom Deeps", boss = "Trash mobs", dropRate = 0.04 } },
@@ -4251,8 +4232,8 @@ ForeverBiSData = {
               items = {
                 { id = 9846, name = "Conjurer's Bracers of Healing", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 24 random suffixes, each with its own stats: search for the full name" } },
                 { id = 9448, name = "Spidertank Oilrag", source = { kind = "world", text = "Electrocutioner 6000, Gnomeregan 41.22% in Classic", zone = "Gnomeregan", boss = "Electrocutioner 6000", dropRate = 41.22 } },
-                { id = 271740, name = "Knife-Polishing Rag", source = { kind = "quest", text = "Quest: Open the Maw Excavation Site: Wetlands, Horde, from level 24", faction = "Horde", quest = "Open the Maw Excavation Site: Wetlands" } },
                 { id = 273808, name = "Bridgebreaker Bindings", source = { kind = "world", text = "Kam Deepfury, The Stockade", zone = "The Stockade", boss = "Kam Deepfury" } },
+                { id = 271740, name = "Knife-Polishing Rag", source = { kind = "quest", text = "Quest: Open the Maw Excavation Site: Wetlands, Horde, from level 24", faction = "Horde", quest = "Open the Maw Excavation Site: Wetlands" } },
                 { id = 1974, name = "Mindthrust Bracers", source = { kind = "dungeon", text = "Trash mobs, Shadowfang Keep 0.03% in Classic", zone = "Shadowfang Keep", boss = "Trash mobs", dropRate = 0.03 } },
                 { id = 6407, name = "Nightsky Wristbands", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 13106, name = "Glowing Magical Bracelets", source = { kind = "world", text = "World drop, sold at the auction house" } },
@@ -4514,6 +4495,8 @@ ForeverBiSData = {
                 { id = 271670, name = "Curl of Life", source = { kind = "quest", text = "Quest: Horrors in the Highland Excavation Site: Wetlands, Alliance, from level 24", faction = "Alliance", quest = "Horrors in the Highland Excavation Site: Wetlands" } },
                 { id = 273806, name = "Dark Horde Band", source = { kind = "world", text = "Targorr the Dread, The Stockade", zone = "The Stockade", boss = "Targorr the Dread" } },
                 { id = 282283, name = "Malignant Root", source = { kind = "world", text = "Nightveiled Rotheap, a patrol of the Wetlands Alliance only, and not checked in the beta", faction = "Alliance" } },
+                { id = 9538, name = "Talvash's Gold Ring", source = { kind = "quest", text = "Quest: Gnome Improvement Alliance, level 35 in Classic, from level 28", faction = "Alliance", quest = "Gnome Improvement" } },
+                { id = 9588, name = "Nogg's Gold Ring", source = { kind = "quest", text = "Quest: Nogg's Ring Redo Horde, level 35 in Classic, from level 28", faction = "Horde", quest = "Nogg's Ring Redo" } },
                 { id = 281320, name = "Rune-Etched Ring", source = { kind = "quest", text = "Alliance quest Gleaning Our Future, Wetlands, level 32 Elite, from level 24: take a group", faction = "Alliance" } },
                 { id = 9622, name = "Reedknot Ring", source = { kind = "quest", text = "Quest: Jarl Needs a Blade level 35 in Classic, from level 30", quest = "Jarl Needs a Blade" } },
                 { id = 274746, name = "Sea Giant's Toe Ring", source = { kind = "world", text = "Sold by Gezzy Gunkgear in Booty Bay At Friendly with Booty Bay" } },
@@ -4532,7 +4515,6 @@ ForeverBiSData = {
             },
             { slot = "Two-hand weapon",
               items = {
-                { id = 271803, name = "Greatstaff of the Necrokhans", source = { kind = "quest", text = "Khan Jehn, a Magram quest in Desolace At Honored with the Magram" } },
                 { id = 2549, name = "Staff of the Shade", source = { kind = "world", text = "Trash mobs, Razorfen Kraul 0.05% in Classic World drop, sold at the auction house", zone = "Razorfen Kraul", boss = "Trash mobs", dropRate = 0.05 } },
                 { id = 249392, name = "Glimmering Staff", source = { kind = "profession", text = "Enchanting (140) Only its maker can wear it", skill = "Enchanting", skillLevel = 140, bindsToMaker = true } },
                 { id = 274158, name = "Death Prophet Spine", source = { kind = "world", text = "Aggem Thorncurse, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Aggem Thorncurse" } },
@@ -4545,7 +4527,6 @@ ForeverBiSData = {
             },
             { slot = "Main hand",
               items = {
-                { id = 271804, name = "Soulsplatter Mace", source = { kind = "quest", text = "Khan Jehn, a Magram quest in Desolace At Honored with the Magram" } },
                 { id = 17039, name = "Skullbreaker", source = { kind = "quest", text = "Quest: An Unholy Alliance Horde, level 36 in Classic, from level 28 A Horde quest from Varimathras in Undercity Take a group for Ambassador Malcin (level 36 elite)", quest = "An Unholy" } },
                 { id = 6691, name = "Swinetusk Shank", source = { kind = "world", text = "Agathelos the Raging, Razorfen Kraul 33.54% in Classic", zone = "Razorfen Kraul", boss = "Agathelos the Raging", dropRate = 33.54 } },
                 { id = 3414, name = "Crested Scepter", source = { kind = "dungeon", text = "Trash mobs, Blackfathom Deeps 0.03% in Classic", zone = "Blackfathom Deeps", boss = "Trash mobs", dropRate = 0.03 } },
@@ -4745,7 +4726,6 @@ ForeverBiSData = {
                 { id = 7687, name = "Ironspine's Fist", source = { kind = "world", text = "Ironspine, Scarlet Monastery Graveyard 21.2% in Classic", zone = "Scarlet Monastery", boss = "Ironspine", dropRate = 21.2 } },
                 { id = 7682, name = "Torturing Poker", source = { kind = "world", text = "Interrogator Vishas, Scarlet Monastery Graveyard 6.08% in Classic", zone = "Scarlet Monastery", boss = "Interrogator Vishas", dropRate = 6.08 } },
                 { id = 16886, name = "Outlaw Sabre", source = { kind = "quest", text = "Quest: Baron Aquanis Horde, level 30 in Classic, from level 21", faction = "Horde", quest = "Baron Aquanis" } },
-                { id = 271664, name = "Hornbeam Heft", source = { kind = "quest", text = "Quest: Horrors in the Highland Excavation Site: Wetlands, Alliance, from level 24", faction = "Alliance", quest = "Horrors in the Highland Excavation Site: Wetlands" } },
                 { id = 3850, name = "Jade Serpentblade", source = { kind = "profession", text = "Blacksmithing (150)", skill = "Blacksmithing", skillLevel = 150 } },
                 { id = 13048, name = "Looming Gavel", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 1454, name = "Axe of the Enforcer", source = { kind = "dungeon", text = "Trash mobs, Blackfathom Deeps 0.04% in Classic World drop, sold at the auction house", zone = "Blackfathom Deeps", boss = "Trash mobs", dropRate = 0.04 } },
@@ -4756,7 +4736,6 @@ ForeverBiSData = {
             },
             { slot = "Off hand",
               items = {
-                { id = 271802, name = "Bludgeon of Betrayed Virtues", source = { kind = "quest", text = "Khan Jehn, a Gelkis quest in Desolace At Honored with the Gelkis" } },
                 { id = 280805, name = "Serrated Raptor Claw", source = { kind = "quest", text = "Quest: Changing Tastes Excavation Site: Wetlands, Horde, from level 24", faction = "Horde", quest = "Changing Tastes Excavation Site: Wetlands" } },
                 { id = 7682, name = "Torturing Poker", source = { kind = "world", text = "Interrogator Vishas, Scarlet Monastery Graveyard 6.08% in Classic", zone = "Scarlet Monastery", boss = "Interrogator Vishas", dropRate = 6.08 } },
                 { id = 7683, name = "Bloody Brass Knuckles", source = { kind = "world", text = "Interrogator Vishas, Scarlet Monastery Graveyard 52.35% in Classic", zone = "Scarlet Monastery", boss = "Interrogator Vishas", dropRate = 52.35 } },
@@ -4770,7 +4749,6 @@ ForeverBiSData = {
             },
             { slot = "Ranged",
               items = {
-                { id = 277254, name = "Truthseeker's Bow", source = { kind = "quest", text = "Quest: Greater Friend of the Library, from level 30 25 library books in total, from level 30", quest = "Greater Friend of the Library" } },
                 { id = 9456, name = "Glass Shooter", source = { kind = "world", text = "Dark Iron Ambassador, Gnomeregan 32.46% in Classic", zone = "Gnomeregan", boss = "Dark Iron Ambassador", dropRate = 32.46 } },
                 { id = 273029, name = "Golemsight Long Gun", source = { kind = "world", text = "Relic Guardian, Excavation Site: Wetlands" } },
                 { id = 274748, name = "Booty Bay Bruiser's Buckshot", source = { kind = "world", text = "Sold by Gezzy Gunkgear in Booty Bay At Honored with Booty Bay" } },
@@ -4968,7 +4946,6 @@ ForeverBiSData = {
             },
             { slot = "Ranged",
               items = {
-                { id = 277254, name = "Truthseeker's Bow", source = { kind = "quest", text = "Quest: Greater Friend of the Library, from level 30 25 library books in total, from level 30", quest = "Greater Friend of the Library" } },
                 { id = 9456, name = "Glass Shooter", source = { kind = "world", text = "Dark Iron Ambassador, Gnomeregan 32.46% in Classic", zone = "Gnomeregan", boss = "Dark Iron Ambassador", dropRate = 32.46 } },
                 { id = 273029, name = "Golemsight Long Gun", source = { kind = "world", text = "Relic Guardian, Excavation Site: Wetlands" } },
                 { id = 274748, name = "Booty Bay Bruiser's Buckshot", source = { kind = "world", text = "Sold by Gezzy Gunkgear in Booty Bay At Honored with Booty Bay" } },
@@ -5167,7 +5144,6 @@ ForeverBiSData = {
             },
             { slot = "Ranged",
               items = {
-                { id = 277254, name = "Truthseeker's Bow", source = { kind = "quest", text = "Quest: Greater Friend of the Library, from level 30 25 library books in total, from level 30", quest = "Greater Friend of the Library" } },
                 { id = 274748, name = "Booty Bay Bruiser's Buckshot", source = { kind = "world", text = "Sold by Gezzy Gunkgear in Booty Bay At Honored with Booty Bay" } },
                 { id = 273029, name = "Golemsight Long Gun", source = { kind = "world", text = "Relic Guardian, Excavation Site: Wetlands" } },
                 { id = 273843, name = "Fallenroot Longbow", source = { kind = "dungeon", text = "Lorgus Jett, Blackfathom Deeps", zone = "Blackfathom Deeps", boss = "Lorgus Jett" } },
@@ -5340,7 +5316,6 @@ ForeverBiSData = {
             },
             { slot = "Two-hand weapon",
               items = {
-                { id = 271803, name = "Greatstaff of the Necrokhans", source = { kind = "quest", text = "Khan Jehn, a Magram quest in Desolace At Honored with the Magram" } },
                 { id = 281312, name = "Fallen Dragon's Scepter", source = { kind = "quest", text = "Alliance quest Stopping the Cycle, Wetlands, level 34 Elite, from level 24: take a group", faction = "Alliance" } },
                 { id = 249392, name = "Glimmering Staff", source = { kind = "profession", text = "Enchanting (140) Only its maker can wear it", skill = "Enchanting", skillLevel = 140, bindsToMaker = true } },
                 { id = 274158, name = "Death Prophet Spine", source = { kind = "world", text = "Aggem Thorncurse, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Aggem Thorncurse" } },
@@ -5354,7 +5329,6 @@ ForeverBiSData = {
             { slot = "Main hand",
               items = {
                 { id = 280607, name = "Lightning's Grasp", source = { kind = "quest", text = "Shaman quest The Tempest's Weapons, from level 30 A choice of three weapons, at the end of a shaman chain" } },
-                { id = 271804, name = "Soulsplatter Mace", source = { kind = "quest", text = "Khan Jehn, a Magram quest in Desolace At Honored with the Magram" } },
                 { id = 17039, name = "Skullbreaker", source = { kind = "quest", text = "Quest: An Unholy Alliance Horde, level 36 in Classic, from level 28 A Horde quest from Varimathras in Undercity Take a group for Ambassador Malcin (level 36 elite)", quest = "An Unholy" } },
                 { id = 6691, name = "Swinetusk Shank", source = { kind = "world", text = "Agathelos the Raging, Razorfen Kraul 33.54% in Classic", zone = "Razorfen Kraul", boss = "Agathelos the Raging", dropRate = 33.54 } },
                 { id = 3414, name = "Crested Scepter", source = { kind = "dungeon", text = "Trash mobs, Blackfathom Deeps 0.03% in Classic", zone = "Blackfathom Deeps", boss = "Trash mobs", dropRate = 0.03 } },
@@ -5528,6 +5502,8 @@ ForeverBiSData = {
                 { id = 271670, name = "Curl of Life", source = { kind = "quest", text = "Quest: Horrors in the Highland Excavation Site: Wetlands, Alliance, from level 24", faction = "Alliance", quest = "Horrors in the Highland Excavation Site: Wetlands" } },
                 { id = 273806, name = "Dark Horde Band", source = { kind = "world", text = "Targorr the Dread, The Stockade", zone = "The Stockade", boss = "Targorr the Dread" } },
                 { id = 282283, name = "Malignant Root", source = { kind = "world", text = "Nightveiled Rotheap, a patrol of the Wetlands Alliance only, and not checked in the beta", faction = "Alliance" } },
+                { id = 9538, name = "Talvash's Gold Ring", source = { kind = "quest", text = "Quest: Gnome Improvement Alliance, level 35 in Classic, from level 28", faction = "Alliance", quest = "Gnome Improvement" } },
+                { id = 9588, name = "Nogg's Gold Ring", source = { kind = "quest", text = "Quest: Nogg's Ring Redo Horde, level 35 in Classic, from level 28", faction = "Horde", quest = "Nogg's Ring Redo" } },
                 { id = 281320, name = "Rune-Etched Ring", source = { kind = "quest", text = "Alliance quest Gleaning Our Future, Wetlands, level 32 Elite, from level 24: take a group", faction = "Alliance" } },
                 { id = 9622, name = "Reedknot Ring", source = { kind = "quest", text = "Quest: Jarl Needs a Blade level 35 in Classic, from level 30", quest = "Jarl Needs a Blade" } },
                 { id = 274746, name = "Sea Giant's Toe Ring", source = { kind = "world", text = "Sold by Gezzy Gunkgear in Booty Bay At Friendly with Booty Bay" } },
@@ -5546,7 +5522,6 @@ ForeverBiSData = {
             },
             { slot = "Two-hand weapon",
               items = {
-                { id = 271803, name = "Greatstaff of the Necrokhans", source = { kind = "quest", text = "Khan Jehn, a Magram quest in Desolace At Honored with the Magram" } },
                 { id = 249392, name = "Glimmering Staff", source = { kind = "profession", text = "Enchanting (140) Only its maker can wear it", skill = "Enchanting", skillLevel = 140, bindsToMaker = true } },
                 { id = 274158, name = "Death Prophet Spine", source = { kind = "world", text = "Aggem Thorncurse, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Aggem Thorncurse" } },
                 { id = 249393, name = "Soulstaff", source = { kind = "profession", text = "Enchanting (140) Only its maker can wear it", skill = "Enchanting", skillLevel = 140, bindsToMaker = true } },
@@ -5558,7 +5533,6 @@ ForeverBiSData = {
             },
             { slot = "Main hand",
               items = {
-                { id = 271804, name = "Soulsplatter Mace", source = { kind = "quest", text = "Khan Jehn, a Magram quest in Desolace At Honored with the Magram" } },
                 { id = 17039, name = "Skullbreaker", source = { kind = "quest", text = "Quest: An Unholy Alliance Horde, level 36 in Classic, from level 28 A Horde quest from Varimathras in Undercity Take a group for Ambassador Malcin (level 36 elite)", quest = "An Unholy" } },
                 { id = 6691, name = "Swinetusk Shank", source = { kind = "world", text = "Agathelos the Raging, Razorfen Kraul 33.54% in Classic", zone = "Razorfen Kraul", boss = "Agathelos the Raging", dropRate = 33.54 } },
                 { id = 3414, name = "Crested Scepter", source = { kind = "dungeon", text = "Trash mobs, Blackfathom Deeps 0.03% in Classic", zone = "Blackfathom Deeps", boss = "Trash mobs", dropRate = 0.03 } },
@@ -5636,8 +5610,8 @@ ForeverBiSData = {
             },
             { slot = "Back",
               items = {
-                { id = 271716, name = "Explorer's League Dustcover", source = { kind = "quest", text = "Quest: Lost Relic Carry Excavation Site: Wetlands, Alliance, from level 24", faction = "Alliance", quest = "Lost Relic Carry Excavation Site: Wetlands" } },
                 { id = 271720, name = "Crocolisk Skin Gaiter", source = { kind = "quest", text = "A quest of the Excavation Site, in the Wetlands Which quest is not known yet" } },
+                { id = 271716, name = "Explorer's League Dustcover", source = { kind = "quest", text = "Quest: Lost Relic Carry Excavation Site: Wetlands, Alliance, from level 24", faction = "Alliance", quest = "Lost Relic Carry Excavation Site: Wetlands" } },
                 { id = 7436, name = "Twilight Cape of Strength", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 41 random suffixes, each with its own stats: search for the full name" } },
                 { id = 282658, name = "Dragonmaw Battle Shroud", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 271719, name = "Furs of the Earthen Ring", source = { kind = "quest", text = "Quest: Elder Knowledge Excavation Site: Wetlands, Horde, from level 24", faction = "Horde", quest = "Elder Knowledge Excavation Site: Wetlands" } },
@@ -5750,13 +5724,11 @@ ForeverBiSData = {
             },
             { slot = "Two-hand weapon",
               items = {
-                { id = 271801, name = "Abandoned Ferocity", source = { kind = "quest", text = "Khan Jehn, a Gelkis quest in Desolace At Honored with the Gelkis" } },
                 { id = 280604, name = "Rage of the Storm", source = { kind = "quest", text = "Shaman quest The Tempest's Weapons, from level 30 A choice of three weapons, at the end of a shaman chain" } },
                 { id = 13045, name = "Viscous Hammer", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 9449, name = "Manual Crowd Pummeler", source = { kind = "world", text = "Crowd Pummeler 9-60, Gnomeregan 32.62% in Classic", zone = "Gnomeregan", boss = "Crowd Pummeler 9-60", dropRate = 32.62 } },
                 { id = 6687, name = "Corpsemaker", source = { kind = "world", text = "Overlord Ramtusk, Razorfen Kraul 33.83% in Classic", zone = "Razorfen Kraul", boss = "Overlord Ramtusk", dropRate = 33.83 } },
                 { id = 271766, name = "Heavehammer", source = { kind = "quest", text = "Quest: Lost Relic Carry Excavation Site: Wetlands, Alliance, from level 24 Quest: Elder Knowledge Excavation Site: Wetlands, Horde, from level 24", quest = "Lost Relic Carry Excavation Site: Wetlands" } },
-                { id = 271667, name = "Ironwood Destroyer", source = { kind = "quest", text = "Quest: Horrors in the Highland Excavation Site: Wetlands, Alliance, from level 24", faction = "Alliance", quest = "Horrors in the Highland Excavation Site: Wetlands" } },
               },
               enchants = {
                 { effect = "Weapon Damage +6", spell = "Enchant 2H Weapon - Impact", source = "Enchanting 200: Taught by the trainer." },
@@ -5764,12 +5736,10 @@ ForeverBiSData = {
             },
             { slot = "Main hand",
               items = {
-                { id = 271802, name = "Bludgeon of Betrayed Virtues", source = { kind = "quest", text = "Khan Jehn, a Gelkis quest in Desolace At Honored with the Gelkis" } },
                 { id = 6804, name = "Windstorm Hammer", source = { kind = "quest", text = "Quest: Final Passage Horde, level 36 in Classic, from level 25 A chain of ten quests from Dorn Plainstalker, Thousand Needles Two elite steps, and a book in the Scarlet Monastery Library", faction = "Horde", quest = "Final Passage" } },
                 { id = 7687, name = "Ironspine's Fist", source = { kind = "world", text = "Ironspine, Scarlet Monastery Graveyard 21.2% in Classic", zone = "Scarlet Monastery", boss = "Ironspine", dropRate = 21.2 } },
                 { id = 7683, name = "Bloody Brass Knuckles", source = { kind = "world", text = "Interrogator Vishas, Scarlet Monastery Graveyard 52.35% in Classic", zone = "Scarlet Monastery", boss = "Interrogator Vishas", dropRate = 52.35 } },
                 { id = 7682, name = "Torturing Poker", source = { kind = "world", text = "Interrogator Vishas, Scarlet Monastery Graveyard 6.08% in Classic", zone = "Scarlet Monastery", boss = "Interrogator Vishas", dropRate = 6.08 } },
-                { id = 271664, name = "Hornbeam Heft", source = { kind = "quest", text = "Quest: Horrors in the Highland Excavation Site: Wetlands, Alliance, from level 24", faction = "Alliance", quest = "Horrors in the Highland Excavation Site: Wetlands" } },
                 { id = 281314, name = "Subdued Dragon's Fang", source = { kind = "quest", text = "Alliance quest Stopping the Cycle, Wetlands, level 34 Elite, from level 24: take a group", faction = "Alliance" } },
                 { id = 2912, name = "Claw of the Shadowmancer", source = { kind = "world", text = "World drop, sold at the auction house" } },
               },
@@ -5933,6 +5903,8 @@ ForeverBiSData = {
                 { id = 18585, name = "Band of Allegiance", source = { kind = "quest", text = "Quest: Service to the Horde Horde, level 45 in Classic, from level 30 A chain of six Horde quests from Swamplight Manor, Dustwallow Marsh Take a group for the Muckshells (level 39 to 44)", faction = "Horde", quest = "Service to the" } },
                 { id = 6414, name = "Seal of Sylvanas", source = { kind = "quest", text = "Quest: Arugal Must Die Horde, level 27 in Classic, from level 18", faction = "Horde", quest = "Arugal Must Die" } },
                 { id = 282283, name = "Malignant Root", source = { kind = "world", text = "Nightveiled Rotheap, a patrol of the Wetlands Alliance only, and not checked in the beta", faction = "Alliance" } },
+                { id = 9538, name = "Talvash's Gold Ring", source = { kind = "quest", text = "Quest: Gnome Improvement Alliance, level 35 in Classic, from level 28", faction = "Alliance", quest = "Gnome Improvement" } },
+                { id = 9588, name = "Nogg's Gold Ring", source = { kind = "quest", text = "Quest: Nogg's Ring Redo Horde, level 35 in Classic, from level 28", faction = "Horde", quest = "Nogg's Ring Redo" } },
                 { id = 281320, name = "Rune-Etched Ring", source = { kind = "quest", text = "Alliance quest Gleaning Our Future, Wetlands, level 32 Elite, from level 24: take a group", faction = "Alliance" } },
                 { id = 281634, name = "Field Researcher's Loop", source = { kind = "quest", text = "Quest: Greater Friend of the Library Twenty books, the necklace’s ten counted", quest = "Greater Friend of the Library Twenty books" } },
                 { id = 2933, name = "Seal of Wrynn", source = { kind = "quest", text = "Quest: An Audience with the King Alliance, level 31 in Classic, from level 16", faction = "Alliance", quest = "An Audience with the King" } },
@@ -5952,11 +5924,9 @@ ForeverBiSData = {
             { slot = "Two-hand weapon",
               items = {
                 { id = 280604, name = "Rage of the Storm", source = { kind = "quest", text = "Shaman quest The Tempest's Weapons, from level 30 A choice of three weapons, at the end of a shaman chain" } },
-                { id = 271801, name = "Abandoned Ferocity", source = { kind = "quest", text = "Khan Jehn, a Gelkis quest in Desolace At Honored with the Gelkis" } },
                 { id = 13045, name = "Viscous Hammer", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 6687, name = "Corpsemaker", source = { kind = "world", text = "Overlord Ramtusk, Razorfen Kraul 33.83% in Classic", zone = "Razorfen Kraul", boss = "Overlord Ramtusk", dropRate = 33.83 } },
                 { id = 9449, name = "Manual Crowd Pummeler", source = { kind = "world", text = "Crowd Pummeler 9-60, Gnomeregan 32.62% in Classic", zone = "Gnomeregan", boss = "Crowd Pummeler 9-60", dropRate = 32.62 } },
-                { id = 271667, name = "Ironwood Destroyer", source = { kind = "quest", text = "Quest: Horrors in the Highland Excavation Site: Wetlands, Alliance, from level 24", faction = "Alliance", quest = "Horrors in the Highland Excavation Site: Wetlands" } },
                 { id = 271766, name = "Heavehammer", source = { kind = "quest", text = "Quest: Lost Relic Carry Excavation Site: Wetlands, Alliance, from level 24 Quest: Elder Knowledge Excavation Site: Wetlands, Horde, from level 24", quest = "Lost Relic Carry Excavation Site: Wetlands" } },
               },
               enchants = {
@@ -5965,10 +5935,8 @@ ForeverBiSData = {
             },
             { slot = "Main hand",
               items = {
-                { id = 271802, name = "Bludgeon of Betrayed Virtues", source = { kind = "quest", text = "Khan Jehn, a Gelkis quest in Desolace At Honored with the Gelkis" } },
                 { id = 6804, name = "Windstorm Hammer", source = { kind = "quest", text = "Quest: Final Passage Horde, level 36 in Classic, from level 25 A chain of ten quests from Dorn Plainstalker, Thousand Needles Two elite steps, and a book in the Scarlet Monastery Library", faction = "Horde", quest = "Final Passage" } },
                 { id = 7687, name = "Ironspine's Fist", source = { kind = "world", text = "Ironspine, Scarlet Monastery Graveyard 21.2% in Classic", zone = "Scarlet Monastery", boss = "Ironspine", dropRate = 21.2 } },
-                { id = 271664, name = "Hornbeam Heft", source = { kind = "quest", text = "Quest: Horrors in the Highland Excavation Site: Wetlands, Alliance, from level 24", faction = "Alliance", quest = "Horrors in the Highland Excavation Site: Wetlands" } },
                 { id = 7683, name = "Bloody Brass Knuckles", source = { kind = "world", text = "Interrogator Vishas, Scarlet Monastery Graveyard 52.35% in Classic", zone = "Scarlet Monastery", boss = "Interrogator Vishas", dropRate = 52.35 } },
                 { id = 7682, name = "Torturing Poker", source = { kind = "world", text = "Interrogator Vishas, Scarlet Monastery Graveyard 6.08% in Classic", zone = "Scarlet Monastery", boss = "Interrogator Vishas", dropRate = 6.08 } },
                 { id = 281314, name = "Subdued Dragon's Fang", source = { kind = "quest", text = "Alliance quest Stopping the Cycle, Wetlands, level 34 Elite, from level 24: take a group", faction = "Alliance" } },
@@ -6371,7 +6339,6 @@ ForeverBiSData = {
             { slot = "Two-hand weapon",
               items = {
                 { id = 15109, name = "Staff of Soran'ruk", source = { kind = "quest", text = "Quest: The Orb of Soran'ruk level 25 in Classic, from level 20", quest = "The Orb of Soran'ruk" } },
-                { id = 271803, name = "Greatstaff of the Necrokhans", source = { kind = "quest", text = "Khan Jehn, a Magram quest in Desolace At Honored with the Magram" } },
                 { id = 281312, name = "Fallen Dragon's Scepter", source = { kind = "quest", text = "Alliance quest Stopping the Cycle, Wetlands, level 34 Elite, from level 24: take a group", faction = "Alliance" } },
                 { id = 249392, name = "Glimmering Staff", source = { kind = "profession", text = "Enchanting (140) Only its maker can wear it", skill = "Enchanting", skillLevel = 140, bindsToMaker = true } },
                 { id = 274158, name = "Death Prophet Spine", source = { kind = "world", text = "Aggem Thorncurse, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Aggem Thorncurse" } },
@@ -6553,6 +6520,8 @@ ForeverBiSData = {
                 { id = 271670, name = "Curl of Life", source = { kind = "quest", text = "Quest: Horrors in the Highland Excavation Site: Wetlands, Alliance, from level 24", faction = "Alliance", quest = "Horrors in the Highland Excavation Site: Wetlands" } },
                 { id = 273806, name = "Dark Horde Band", source = { kind = "world", text = "Targorr the Dread, The Stockade", zone = "The Stockade", boss = "Targorr the Dread" } },
                 { id = 282283, name = "Malignant Root", source = { kind = "world", text = "Nightveiled Rotheap, a patrol of the Wetlands Alliance only, and not checked in the beta", faction = "Alliance" } },
+                { id = 9538, name = "Talvash's Gold Ring", source = { kind = "quest", text = "Quest: Gnome Improvement Alliance, level 35 in Classic, from level 28", faction = "Alliance", quest = "Gnome Improvement" } },
+                { id = 9588, name = "Nogg's Gold Ring", source = { kind = "quest", text = "Quest: Nogg's Ring Redo Horde, level 35 in Classic, from level 28", faction = "Horde", quest = "Nogg's Ring Redo" } },
                 { id = 281320, name = "Rune-Etched Ring", source = { kind = "quest", text = "Alliance quest Gleaning Our Future, Wetlands, level 32 Elite, from level 24: take a group", faction = "Alliance" } },
                 { id = 9622, name = "Reedknot Ring", source = { kind = "quest", text = "Quest: Jarl Needs a Blade level 35 in Classic, from level 30", quest = "Jarl Needs a Blade" } },
                 { id = 274746, name = "Sea Giant's Toe Ring", source = { kind = "world", text = "Sold by Gezzy Gunkgear in Booty Bay At Friendly with Booty Bay" } },
@@ -6572,7 +6541,6 @@ ForeverBiSData = {
             },
             { slot = "Two-hand weapon",
               items = {
-                { id = 271803, name = "Greatstaff of the Necrokhans", source = { kind = "quest", text = "Khan Jehn, a Magram quest in Desolace At Honored with the Magram" } },
                 { id = 15109, name = "Staff of Soran'ruk", source = { kind = "quest", text = "Quest: The Orb of Soran'ruk level 25 in Classic, from level 20", quest = "The Orb of Soran'ruk" } },
                 { id = 2549, name = "Staff of the Shade", source = { kind = "world", text = "Trash mobs, Razorfen Kraul 0.05% in Classic World drop, sold at the auction house", zone = "Razorfen Kraul", boss = "Trash mobs", dropRate = 0.05 } },
                 { id = 249392, name = "Glimmering Staff", source = { kind = "profession", text = "Enchanting (140) Only its maker can wear it", skill = "Enchanting", skillLevel = 140, bindsToMaker = true } },
@@ -6675,7 +6643,6 @@ ForeverBiSData = {
             },
             { slot = "Chest",
               items = {
-                { id = 6773, name = "Kolkar Marauder Chain", source = { kind = "quest", text = "Quest: Khan Hratha level 42 in Classic, from level 30 Khan Hratha, the end of the Gelkis chain in Desolace Khan Hratha is a level 42 elite: very hard at level 30", quest = "Khan Hratha" } },
                 { id = 1488, name = "Avenger's Armor", source = { kind = "world", text = "Trash mobs, Razorfen Kraul 0.03% in Classic", zone = "Razorfen Kraul", boss = "Trash mobs", dropRate = 0.03 } },
                 { id = 250518, name = "Veteran's Silvered Chain Shirt", source = { kind = "profession", text = "Blacksmithing (110) Only its maker can wear it", skill = "Blacksmithing", skillLevel = 110, bindsToMaker = true } },
                 { id = 2870, name = "Shining Silver Breastplate", source = { kind = "profession", text = "Blacksmithing", skill = "Blacksmithing" } },
@@ -6782,8 +6749,6 @@ ForeverBiSData = {
             },
             { slot = "Two-hand weapon",
               items = {
-                { id = 271801, name = "Abandoned Ferocity", source = { kind = "quest", text = "Khan Jehn, a Gelkis quest in Desolace At Honored with the Gelkis" } },
-                { id = 271800, name = "Scavenged Magram Armament", source = { kind = "quest", text = "Khan Jehn, a Magram quest in Desolace At Honored with the Magram" } },
                 { id = 6975, name = "Whirlwind Axe", source = { kind = "quest", text = "Quest: Whirlwind Weapon level 40 in Classic, from level 30", quest = "Whirlwind Weapon" } },
                 { id = 13045, name = "Viscous Hammer", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 6687, name = "Corpsemaker", source = { kind = "world", text = "Overlord Ramtusk, Razorfen Kraul 33.83% in Classic", zone = "Razorfen Kraul", boss = "Overlord Ramtusk", dropRate = 33.83 } },
@@ -6797,7 +6762,6 @@ ForeverBiSData = {
             },
             { slot = "Ranged",
               items = {
-                { id = 277254, name = "Truthseeker's Bow", source = { kind = "quest", text = "Quest: Greater Friend of the Library, from level 30 25 library books in total, from level 30", quest = "Greater Friend of the Library" } },
                 { id = 9456, name = "Glass Shooter", source = { kind = "world", text = "Dark Iron Ambassador, Gnomeregan 32.46% in Classic", zone = "Gnomeregan", boss = "Dark Iron Ambassador", dropRate = 32.46 } },
                 { id = 17042, name = "Nail Spitter", source = { kind = "quest", text = "Quest: An Unholy Alliance Horde, level 36 in Classic, from level 28 A Horde quest from Varimathras in Undercity Take a group for Ambassador Malcin (level 36 elite)", quest = "An Unholy" } },
                 { id = 274748, name = "Booty Bay Bruiser's Buckshot", source = { kind = "world", text = "Sold by Gezzy Gunkgear in Booty Bay At Honored with Booty Bay" } },
@@ -6957,6 +6921,8 @@ ForeverBiSData = {
                 { id = 281634, name = "Field Researcher's Loop", source = { kind = "quest", text = "Quest: Greater Friend of the Library Twenty books, the necklace’s ten counted", quest = "Greater Friend of the Library Twenty books" } },
                 { id = 282283, name = "Malignant Root", source = { kind = "world", text = "Nightveiled Rotheap, a patrol of the Wetlands Alliance only, and not checked in the beta", faction = "Alliance" } },
                 { id = 6414, name = "Seal of Sylvanas", source = { kind = "quest", text = "Quest: Arugal Must Die Horde, level 27 in Classic, from level 18", faction = "Horde", quest = "Arugal Must Die" } },
+                { id = 9538, name = "Talvash's Gold Ring", source = { kind = "quest", text = "Quest: Gnome Improvement Alliance, level 35 in Classic, from level 28", faction = "Alliance", quest = "Gnome Improvement" } },
+                { id = 9588, name = "Nogg's Gold Ring", source = { kind = "quest", text = "Quest: Nogg's Ring Redo Horde, level 35 in Classic, from level 28", faction = "Horde", quest = "Nogg's Ring Redo" } },
                 { id = 281320, name = "Rune-Etched Ring", source = { kind = "quest", text = "Alliance quest Gleaning Our Future, Wetlands, level 32 Elite, from level 24: take a group", faction = "Alliance" } },
                 { id = 13097, name = "Thunderbrow Ring", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 2933, name = "Seal of Wrynn", source = { kind = "quest", text = "Quest: An Audience with the King Alliance, level 31 in Classic, from level 16", faction = "Alliance", quest = "An Audience with the King" } },
@@ -6975,8 +6941,6 @@ ForeverBiSData = {
             },
             { slot = "Two-hand weapon",
               items = {
-                { id = 271800, name = "Scavenged Magram Armament", source = { kind = "quest", text = "Khan Jehn, a Magram quest in Desolace At Honored with the Magram" } },
-                { id = 271801, name = "Abandoned Ferocity", source = { kind = "quest", text = "Khan Jehn, a Gelkis quest in Desolace At Honored with the Gelkis" } },
                 { id = 6975, name = "Whirlwind Axe", source = { kind = "quest", text = "Quest: Whirlwind Weapon level 40 in Classic, from level 30", quest = "Whirlwind Weapon" } },
                 { id = 13045, name = "Viscous Hammer", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 6687, name = "Corpsemaker", source = { kind = "world", text = "Overlord Ramtusk, Razorfen Kraul 33.83% in Classic", zone = "Razorfen Kraul", boss = "Overlord Ramtusk", dropRate = 33.83 } },
@@ -6990,7 +6954,6 @@ ForeverBiSData = {
             { slot = "Ranged",
               items = {
                 { id = 17042, name = "Nail Spitter", source = { kind = "quest", text = "Quest: An Unholy Alliance Horde, level 36 in Classic, from level 28 A Horde quest from Varimathras in Undercity Take a group for Ambassador Malcin (level 36 elite)", quest = "An Unholy" } },
-                { id = 277254, name = "Truthseeker's Bow", source = { kind = "quest", text = "Quest: Greater Friend of the Library, from level 30 25 library books in total, from level 30", quest = "Greater Friend of the Library" } },
                 { id = 274748, name = "Booty Bay Bruiser's Buckshot", source = { kind = "world", text = "Sold by Gezzy Gunkgear in Booty Bay At Honored with Booty Bay" } },
                 { id = 13019, name = "Harpyclaw Short Bow", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 13137, name = "Ironweaver", source = { kind = "world", text = "World drop, sold at the auction house" } },
@@ -7138,8 +7101,9 @@ ForeverBiSData = {
             { slot = "Finger",
               items = {
                 { id = 276899, name = "Knucklebound Thimble", source = { kind = "quest", text = "Quest: Past Due Scarlet Monastery Library, Alliance, from level 30", faction = "Alliance", quest = "Past Due Scarlet Monastery Library" } },
-                { id = 281320, name = "Rune-Etched Ring", source = { kind = "quest", text = "Alliance quest Gleaning Our Future, Wetlands, level 32 Elite, from level 24: take a group", faction = "Alliance" } },
                 { id = 9538, name = "Talvash's Gold Ring", source = { kind = "quest", text = "Quest: Gnome Improvement Alliance, level 35 in Classic, from level 28", faction = "Alliance", quest = "Gnome Improvement" } },
+                { id = 9588, name = "Nogg's Gold Ring", source = { kind = "quest", text = "Quest: Nogg's Ring Redo Horde, level 35 in Classic, from level 28", faction = "Horde", quest = "Nogg's Ring Redo" } },
+                { id = 281320, name = "Rune-Etched Ring", source = { kind = "quest", text = "Alliance quest Gleaning Our Future, Wetlands, level 32 Elite, from level 24: take a group", faction = "Alliance" } },
                 { id = 281634, name = "Field Researcher's Loop", source = { kind = "quest", text = "Quest: Greater Friend of the Library Twenty books, the necklace’s ten counted", quest = "Greater Friend of the Library Twenty books" } },
                 { id = 6414, name = "Seal of Sylvanas", source = { kind = "quest", text = "Quest: Arugal Must Die Horde, level 27 in Classic, from level 18", faction = "Horde", quest = "Arugal Must Die" } },
                 { id = 282283, name = "Malignant Root", source = { kind = "world", text = "Nightveiled Rotheap, a patrol of the Wetlands Alliance only, and not checked in the beta", faction = "Alliance" } },
@@ -7158,9 +7122,7 @@ ForeverBiSData = {
             },
             { slot = "Main hand",
               items = {
-                { id = 271802, name = "Bludgeon of Betrayed Virtues", source = { kind = "quest", text = "Khan Jehn, a Gelkis quest in Desolace At Honored with the Gelkis" } },
                 { id = 6804, name = "Windstorm Hammer", source = { kind = "quest", text = "Quest: Final Passage Horde, level 36 in Classic, from level 25 A chain of ten quests from Dorn Plainstalker, Thousand Needles Two elite steps, and a book in the Scarlet Monastery Library", faction = "Horde", quest = "Final Passage" } },
-                { id = 271664, name = "Hornbeam Heft", source = { kind = "quest", text = "Quest: Horrors in the Highland Excavation Site: Wetlands, Alliance, from level 24", faction = "Alliance", quest = "Horrors in the Highland Excavation Site: Wetlands" } },
                 { id = 7687, name = "Ironspine's Fist", source = { kind = "world", text = "Ironspine, Scarlet Monastery Graveyard 21.2% in Classic", zone = "Scarlet Monastery", boss = "Ironspine", dropRate = 21.2 } },
                 { id = 6692, name = "Pronged Reaver", source = { kind = "world", text = "Charlga Razorflank, Razorfen Kraul 17.81% in Classic", zone = "Razorfen Kraul", boss = "Charlga Razorflank", dropRate = 17.81 } },
                 { id = 13048, name = "Looming Gavel", source = { kind = "world", text = "World drop, sold at the auction house" } },
@@ -7194,7 +7156,6 @@ ForeverBiSData = {
             },
             { slot = "Ranged",
               items = {
-                { id = 277254, name = "Truthseeker's Bow", source = { kind = "quest", text = "Quest: Greater Friend of the Library, from level 30 25 library books in total, from level 30", quest = "Greater Friend of the Library" } },
                 { id = 274748, name = "Booty Bay Bruiser's Buckshot", source = { kind = "world", text = "Sold by Gezzy Gunkgear in Booty Bay At Honored with Booty Bay" } },
                 { id = 13137, name = "Ironweaver", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 273843, name = "Fallenroot Longbow", source = { kind = "dungeon", text = "Lorgus Jett, Blackfathom Deeps", zone = "Blackfathom Deeps", boss = "Lorgus Jett" } },
