@@ -144,6 +144,7 @@ ForeverBiSData = {
             },
             { slot = "Trinket",
               items = {
+                { id = 273840, name = "Cursed Murloc Eye", source = { kind = "dungeon", text = "Gelihast, Blackfathom Deeps", zone = "Blackfathom Deeps", boss = "Gelihast" } },
                 { id = 4381, name = "Minor Recombobulator", source = { kind = "profession", text = "Engineering (140)", skill = "Engineering", skillLevel = 140 } },
                 { id = 3456, name = "Dog Whistle", source = { kind = "world", text = "Houndmaster Loksey, Scarlet Monastery Library 25.25% in Classic", zone = "Scarlet Monastery", boss = "Houndmaster Loksey", dropRate = 25.25 } },
                 { id = 4396, name = "Mechanical Dragonling", source = { kind = "profession", text = "Engineering (200)", skill = "Engineering", skillLevel = 200 } },
@@ -2350,7 +2351,7 @@ ForeverBiSData = {
                 { id = 253965, name = "Flame Gown", source = { kind = "profession", text = "Tailoring (110) Only its maker can wear it", skill = "Tailoring", skillLevel = 110, bindsToMaker = true } },
                 { id = 9508, name = "Mechbuilder's Overalls", source = { kind = "world", text = "Trash mobs, Gnomeregan 0.03% in Classic", zone = "Gnomeregan", boss = "Trash mobs", dropRate = 0.03 } },
                 { id = 7353, name = "Elder's Padded Armor of the Physician", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 24 random suffixes, each with its own stats: search for the full name" } },
-                { id = 282711, name = "Naga Maiden's Gown", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 282711, name = "Naga Maiden's Gown", source = { kind = "world", text = "Lady Zephris, the rare of Hillsbrad Foothills Reported, not checked", reported = true } },
                 { id = 6682, name = "Death Speaker Robes", source = { kind = "world", text = "Death Speaker Jargba, Razorfen Kraul 42.77% in Classic", zone = "Razorfen Kraul", boss = "Death Speaker Jargba", dropRate = 42.77 } },
                 { id = 273044, name = "Violet Sorcerer's Robes", source = { kind = "world", text = "Arcanic Enigma, City of Dalaran" } },
               },
@@ -2548,7 +2549,7 @@ ForeverBiSData = {
                 { id = 253963, name = "Silky Gown", source = { kind = "profession", text = "Tailoring (110) Only its maker can wear it", skill = "Tailoring", skillLevel = 110, bindsToMaker = true } },
                 { id = 9508, name = "Mechbuilder's Overalls", source = { kind = "world", text = "Trash mobs, Gnomeregan 0.03% in Classic", zone = "Gnomeregan", boss = "Trash mobs", dropRate = 0.03 } },
                 { id = 7353, name = "Elder's Padded Armor of the Physician", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 24 random suffixes, each with its own stats: search for the full name" } },
-                { id = 282711, name = "Naga Maiden's Gown", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 282711, name = "Naga Maiden's Gown", source = { kind = "world", text = "Lady Zephris, the rare of Hillsbrad Foothills Reported, not checked", reported = true } },
                 { id = 6682, name = "Death Speaker Robes", source = { kind = "world", text = "Death Speaker Jargba, Razorfen Kraul 42.77% in Classic", zone = "Razorfen Kraul", boss = "Death Speaker Jargba", dropRate = 42.77 } },
                 { id = 15455, name = "Dustfall Robes", source = { kind = "quest", text = "Quest: Hints of a New Plague? Alliance, level 37 in Classic, from level 30", faction = "Alliance", quest = "Hints of a New Plague?" } },
               },
@@ -2828,6 +2829,7 @@ ForeverBiSData = {
             },
             { slot = "Trinket",
               items = {
+                { id = 273840, name = "Cursed Murloc Eye", source = { kind = "dungeon", text = "Gelihast, Blackfathom Deeps", zone = "Blackfathom Deeps", boss = "Gelihast" } },
                 { id = 4381, name = "Minor Recombobulator", source = { kind = "profession", text = "Engineering (140)", skill = "Engineering", skillLevel = 140 } },
                 { id = 3456, name = "Dog Whistle", source = { kind = "world", text = "Houndmaster Loksey, Scarlet Monastery Library 25.25% in Classic", zone = "Scarlet Monastery", boss = "Houndmaster Loksey", dropRate = 25.25 } },
                 { id = 4396, name = "Mechanical Dragonling", source = { kind = "profession", text = "Engineering (200)", skill = "Engineering", skillLevel = 200 } },
@@ -3279,10 +3281,10 @@ ForeverBiSData = {
             },
             { slot = "Shoulder",
               items = {
-                { id = 279839, name = "Spellguard Pauldrons", source = { kind = "quest", text = "Quest: Heart of Disruption City of Dalaran, Alliance, from level 24", faction = "Alliance", quest = "Heart of Disruption City of Dalaran" } },
                 { id = 3765, name = "Brigand's Pauldrons", source = { kind = "quest", text = "Quest: Taretha's Gift Horde, level 40 in Classic, from level 29", faction = "Horde", quest = "Taretha's Gift" } },
                 { id = 6747, name = "Enforcer Pauldrons", source = { kind = "quest", text = "Quest: The Corrupter Horde, level 40 in Classic, from level 25", faction = "Horde", quest = "The Corrupter" } },
                 { id = 273028, name = "Reliquary Mantle", source = { kind = "world", text = "Relic Guardian, Excavation Site: Wetlands" } },
+                { id = 279839, name = "Spellguard Pauldrons", source = { kind = "quest", text = "Quest: Heart of Disruption City of Dalaran, Alliance, from level 24", faction = "Alliance", quest = "Heart of Disruption City of Dalaran" } },
                 { id = 279842, name = "Battle Spaulders", source = { kind = "quest", text = "Quest: Heart of Disruption City of Dalaran, Horde, from level 24", faction = "Horde", quest = "Heart of Disruption City of Dalaran" } },
                 { id = 15698, name = "Wrangling Spaulders", source = { kind = "quest", text = "Quest: Kodo Roundup level 34 in Classic, from level 30", quest = "Kodo Roundup" } },
               },
@@ -4429,7 +4431,7 @@ ForeverBiSData = {
                 { id = 253967, name = "Shadow Gown", source = { kind = "profession", text = "Tailoring (110) Only its maker can wear it", skill = "Tailoring", skillLevel = 110, bindsToMaker = true } },
                 { id = 9508, name = "Mechbuilder's Overalls", source = { kind = "world", text = "Trash mobs, Gnomeregan 0.03% in Classic", zone = "Gnomeregan", boss = "Trash mobs", dropRate = 0.03 } },
                 { id = 7353, name = "Elder's Padded Armor of the Physician", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 24 random suffixes, each with its own stats: search for the full name" } },
-                { id = 282711, name = "Naga Maiden's Gown", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 282711, name = "Naga Maiden's Gown", source = { kind = "world", text = "Lady Zephris, the rare of Hillsbrad Foothills Reported, not checked", reported = true } },
                 { id = 15455, name = "Dustfall Robes", source = { kind = "quest", text = "Quest: Hints of a New Plague? Alliance, level 37 in Classic, from level 30", faction = "Alliance", quest = "Hints of a New Plague?" } },
                 { id = 6682, name = "Death Speaker Robes", source = { kind = "world", text = "Death Speaker Jargba, Razorfen Kraul 42.77% in Classic", zone = "Razorfen Kraul", boss = "Death Speaker Jargba", dropRate = 42.77 } },
               },
@@ -4709,6 +4711,7 @@ ForeverBiSData = {
             },
             { slot = "Trinket",
               items = {
+                { id = 273840, name = "Cursed Murloc Eye", source = { kind = "dungeon", text = "Gelihast, Blackfathom Deeps", zone = "Blackfathom Deeps", boss = "Gelihast" } },
                 { id = 4381, name = "Minor Recombobulator", source = { kind = "profession", text = "Engineering (140)", skill = "Engineering", skillLevel = 140 } },
                 { id = 3456, name = "Dog Whistle", source = { kind = "world", text = "Houndmaster Loksey, Scarlet Monastery Library 25.25% in Classic", zone = "Scarlet Monastery", boss = "Houndmaster Loksey", dropRate = 25.25 } },
                 { id = 4396, name = "Mechanical Dragonling", source = { kind = "profession", text = "Engineering (200)", skill = "Engineering", skillLevel = 200 } },
@@ -4896,6 +4899,7 @@ ForeverBiSData = {
             },
             { slot = "Trinket",
               items = {
+                { id = 273840, name = "Cursed Murloc Eye", source = { kind = "dungeon", text = "Gelihast, Blackfathom Deeps", zone = "Blackfathom Deeps", boss = "Gelihast" } },
                 { id = 4381, name = "Minor Recombobulator", source = { kind = "profession", text = "Engineering (140)", skill = "Engineering", skillLevel = 140 } },
                 { id = 3456, name = "Dog Whistle", source = { kind = "world", text = "Houndmaster Loksey, Scarlet Monastery Library 25.25% in Classic", zone = "Scarlet Monastery", boss = "Houndmaster Loksey", dropRate = 25.25 } },
                 { id = 4396, name = "Mechanical Dragonling", source = { kind = "profession", text = "Engineering (200)", skill = "Engineering", skillLevel = 200 } },
@@ -5854,6 +5858,7 @@ ForeverBiSData = {
             },
             { slot = "Trinket",
               items = {
+                { id = 273840, name = "Cursed Murloc Eye", source = { kind = "dungeon", text = "Gelihast, Blackfathom Deeps", zone = "Blackfathom Deeps", boss = "Gelihast" } },
                 { id = 4381, name = "Minor Recombobulator", source = { kind = "profession", text = "Engineering (140)", skill = "Engineering", skillLevel = 140 } },
                 { id = 3456, name = "Dog Whistle", source = { kind = "world", text = "Houndmaster Loksey, Scarlet Monastery Library 25.25% in Classic", zone = "Scarlet Monastery", boss = "Houndmaster Loksey", dropRate = 25.25 } },
                 { id = 4396, name = "Mechanical Dragonling", source = { kind = "profession", text = "Engineering (200)", skill = "Engineering", skillLevel = 200 } },
@@ -6837,6 +6842,7 @@ ForeverBiSData = {
             },
             { slot = "Trinket",
               items = {
+                { id = 273840, name = "Cursed Murloc Eye", source = { kind = "dungeon", text = "Gelihast, Blackfathom Deeps", zone = "Blackfathom Deeps", boss = "Gelihast" } },
                 { id = 4381, name = "Minor Recombobulator", source = { kind = "profession", text = "Engineering (140)", skill = "Engineering", skillLevel = 140 } },
                 { id = 3456, name = "Dog Whistle", source = { kind = "world", text = "Houndmaster Loksey, Scarlet Monastery Library 25.25% in Classic", zone = "Scarlet Monastery", boss = "Houndmaster Loksey", dropRate = 25.25 } },
                 { id = 4396, name = "Mechanical Dragonling", source = { kind = "profession", text = "Engineering (200)", skill = "Engineering", skillLevel = 200 } },
