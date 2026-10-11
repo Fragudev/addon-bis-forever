@@ -301,7 +301,7 @@ ForeverBiSData = {
               items = {
                 { id = 15358, name = "Headhunter's Woolies of Nature's Wrath", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 36 random suffixes, each with its own stats: search for the full name" } },
                 { id = 270031, name = "Dark Ritual Leggings", source = { kind = "quest", text = "Quest: Blackfathom Villainy Alliance, from level 18, reported, not checked Quest: Blackfathom Villainy Horde, from level 18, reported, not checked", quest = "Blackfathom Villainy", reported = true } },
-                { id = 286988, name = "Violet Sorcerer's Leggings", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 286988, name = "Violet Sorcerer's Leggings", source = { kind = "world", text = "A drop of the City of Dalaran dungeon Which creature drops it is not known yet" } },
                 { id = 6903, name = "Gaze Dreamer Pants", source = { kind = "dungeon", text = "Twilight Lord Kelris, Blackfathom Deeps 33.5% in Classic", zone = "Blackfathom Deeps", boss = "Twilight Lord Kelris", dropRate = 33.5 } },
                 { id = 285338, name = "Kodohide Legguards", source = { kind = "world", text = "Brontus, a rare kodo of the Barrens Reported, not checked", reported = true } },
                 { id = 270056, name = "Stromgarde Librarian Leggings", source = { kind = "quest", text = "Quest: Stromgarde Badges Alliance, from level 30, reported, not checked", faction = "Alliance", quest = "Stromgarde Badges", reported = true } },
@@ -493,7 +493,7 @@ ForeverBiSData = {
             { slot = "Legs",
               items = {
                 { id = 270056, name = "Stromgarde Librarian Leggings", source = { kind = "quest", text = "Quest: Stromgarde Badges Alliance, from level 30, reported, not checked", faction = "Alliance", quest = "Stromgarde Badges", reported = true } },
-                { id = 286988, name = "Violet Sorcerer's Leggings", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 286988, name = "Violet Sorcerer's Leggings", source = { kind = "world", text = "A drop of the City of Dalaran dungeon Which creature drops it is not known yet" } },
                 { id = 2277, name = "Necromancer Leggings", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 14203, name = "Thistlefur Pants of the Sorcerer", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 24 random suffixes, each with its own stats: search for the full name" } },
                 { id = 253987, name = "Pristine Leggings", source = { kind = "profession", text = "Tailoring (125) Only its maker can wear it Requires Spinning Wheel. Its blueprint drops from Unstable Sentinel, City of Dalaran", skill = "Tailoring", skillLevel = 125, bindsToMaker = true } },
@@ -878,7 +878,7 @@ ForeverBiSData = {
             },
             { slot = "Legs",
               items = {
-                { id = 286988, name = "Violet Sorcerer's Leggings", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 286988, name = "Violet Sorcerer's Leggings", source = { kind = "world", text = "A drop of the City of Dalaran dungeon Which creature drops it is not known yet" } },
                 { id = 252519, name = "Wisdom's Leather Leggings", source = { kind = "profession", text = "Leatherworking (125) Only its maker can wear it Requires Tanning Rack. Its blueprint drops rarely from Razorclaw the Butcher, Shadowfang Keep", skill = "Leatherworking", skillLevel = 125, bindsToMaker = true } },
                 { id = 253987, name = "Pristine Leggings", source = { kind = "profession", text = "Tailoring (125) Only its maker can wear it Requires Spinning Wheel. Its blueprint drops from Unstable Sentinel, City of Dalaran", skill = "Tailoring", skillLevel = 125, bindsToMaker = true } },
                 { id = 14203, name = "Thistlefur Pants of the Physician", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 24 random suffixes, each with its own stats: search for the full name" } },
@@ -1071,7 +1071,7 @@ ForeverBiSData = {
               items = {
                 { id = 253987, name = "Pristine Leggings", source = { kind = "profession", text = "Tailoring (125) Only its maker can wear it Requires Spinning Wheel. Its blueprint drops from Unstable Sentinel, City of Dalaran", skill = "Tailoring", skillLevel = 125, bindsToMaker = true } },
                 { id = 252519, name = "Wisdom's Leather Leggings", source = { kind = "profession", text = "Leatherworking (125) Only its maker can wear it Requires Tanning Rack. Its blueprint drops rarely from Razorclaw the Butcher, Shadowfang Keep", skill = "Leatherworking", skillLevel = 125, bindsToMaker = true } },
-                { id = 286988, name = "Violet Sorcerer's Leggings", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 286988, name = "Violet Sorcerer's Leggings", source = { kind = "world", text = "A drop of the City of Dalaran dungeon Which creature drops it is not known yet" } },
                 { id = 2277, name = "Necromancer Leggings", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 253937, name = "Filigreed Pristine Leggings", source = { kind = "profession", text = "Tailoring (100) Only its maker can wear it Pattern drops in Blackfathom Deeps, The Deadmines, Wailing Caverns", skill = "Tailoring", skillLevel = 100, bindsToMaker = true } },
                 { id = 270056, name = "Stromgarde Librarian Leggings", source = { kind = "quest", text = "Quest: Stromgarde Badges Alliance, from level 30, reported, not checked", faction = "Alliance", quest = "Stromgarde Badges", reported = true } },
@@ -1809,7 +1809,7 @@ ForeverBiSData = {
               items = {
                 { id = 14203, name = "Thistlefur Pants of Frozen Wrath", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 24 random suffixes, each with its own stats: search for the full name" } },
                 { id = 253989, name = "Silky Leggings", source = { kind = "profession", text = "Tailoring (125) Only its maker can wear it Requires Spinning Wheel. Its blueprint drops from Unstable Sentinel, City of Dalaran", skill = "Tailoring", skillLevel = 125, bindsToMaker = true } },
-                { id = 286988, name = "Violet Sorcerer's Leggings", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 286988, name = "Violet Sorcerer's Leggings", source = { kind = "world", text = "A drop of the City of Dalaran dungeon Which creature drops it is not known yet" } },
                 { id = 6903, name = "Gaze Dreamer Pants", source = { kind = "dungeon", text = "Twilight Lord Kelris, Blackfathom Deeps 33.5% in Classic", zone = "Blackfathom Deeps", boss = "Twilight Lord Kelris", dropRate = 33.5 } },
                 { id = 253939, name = "Filigreed Silky Leggings", source = { kind = "profession", text = "Tailoring (100) Only its maker can wear it Pattern drops in Blackfathom Deeps, Shadowfang Keep, The Deadmines", skill = "Tailoring", skillLevel = 100, bindsToMaker = true } },
                 { id = 7046, name = "Azure Silk Pants", source = { kind = "profession", text = "Tailoring", skill = "Tailoring" } },
@@ -2006,7 +2006,7 @@ ForeverBiSData = {
               items = {
                 { id = 14203, name = "Thistlefur Pants of Arcane Wrath", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 24 random suffixes, each with its own stats: search for the full name" } },
                 { id = 253995, name = "Pearly Leggings", source = { kind = "profession", text = "Tailoring (125) Only its maker can wear it Requires Spinning Wheel. Its blueprint drops from Unstable Sentinel, City of Dalaran", skill = "Tailoring", skillLevel = 125, bindsToMaker = true } },
-                { id = 286988, name = "Violet Sorcerer's Leggings", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 286988, name = "Violet Sorcerer's Leggings", source = { kind = "world", text = "A drop of the City of Dalaran dungeon Which creature drops it is not known yet" } },
                 { id = 253945, name = "Filigreed Pearly Leggings", source = { kind = "profession", text = "Tailoring (100) Only its maker can wear it Pattern drops from Shadow Charger, Shadowfang Keep; Ghamoo-ra, Blackfathom Deeps", skill = "Tailoring", skillLevel = 100, bindsToMaker = true } },
                 { id = 6903, name = "Gaze Dreamer Pants", source = { kind = "dungeon", text = "Twilight Lord Kelris, Blackfathom Deeps 33.5% in Classic", zone = "Blackfathom Deeps", boss = "Twilight Lord Kelris", dropRate = 33.5 } },
                 { id = 270056, name = "Stromgarde Librarian Leggings", source = { kind = "quest", text = "Quest: Stromgarde Badges Alliance, from level 30, reported, not checked", faction = "Alliance", quest = "Stromgarde Badges", reported = true } },
@@ -2203,7 +2203,7 @@ ForeverBiSData = {
               items = {
                 { id = 14203, name = "Thistlefur Pants of Fiery Wrath", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 24 random suffixes, each with its own stats: search for the full name" } },
                 { id = 253991, name = "Flame Leggings", source = { kind = "profession", text = "Tailoring (125) Only its maker can wear it Requires Spinning Wheel. Its blueprint drops from Unstable Sentinel, City of Dalaran", skill = "Tailoring", skillLevel = 125, bindsToMaker = true } },
-                { id = 286988, name = "Violet Sorcerer's Leggings", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 286988, name = "Violet Sorcerer's Leggings", source = { kind = "world", text = "A drop of the City of Dalaran dungeon Which creature drops it is not known yet" } },
                 { id = 253941, name = "Filigreed Flame Leggings", source = { kind = "profession", text = "Tailoring (100) Only its maker can wear it Pattern drops in Blackfathom Deeps, The Stockade", skill = "Tailoring", skillLevel = 100, bindsToMaker = true } },
                 { id = 6903, name = "Gaze Dreamer Pants", source = { kind = "dungeon", text = "Twilight Lord Kelris, Blackfathom Deeps 33.5% in Classic", zone = "Blackfathom Deeps", boss = "Twilight Lord Kelris", dropRate = 33.5 } },
                 { id = 4317, name = "Phoenix Pants", source = { kind = "profession", text = "Tailoring (100)", skill = "Tailoring", skillLevel = 100 } },
@@ -2403,7 +2403,7 @@ ForeverBiSData = {
                 { id = 270056, name = "Stromgarde Librarian Leggings", source = { kind = "quest", text = "Quest: Stromgarde Badges Alliance, from level 30, reported, not checked", faction = "Alliance", quest = "Stromgarde Badges", reported = true } },
                 { id = 14203, name = "Thistlefur Pants of the Physician", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 24 random suffixes, each with its own stats: search for the full name" } },
                 { id = 253987, name = "Pristine Leggings", source = { kind = "profession", text = "Tailoring (125) Only its maker can wear it Requires Spinning Wheel. Its blueprint drops from Unstable Sentinel, City of Dalaran", skill = "Tailoring", skillLevel = 125, bindsToMaker = true } },
-                { id = 286988, name = "Violet Sorcerer's Leggings", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 286988, name = "Violet Sorcerer's Leggings", source = { kind = "world", text = "A drop of the City of Dalaran dungeon Which creature drops it is not known yet" } },
               },
               enchants = {
                 { effect = "Stamina +4 and Armor +32", spell = "Thick Armor Kit", source = "Leatherworking 200: Taught by the trainer." },
@@ -2601,7 +2601,7 @@ ForeverBiSData = {
                 { id = 270056, name = "Stromgarde Librarian Leggings", source = { kind = "quest", text = "Quest: Stromgarde Badges Alliance, from level 30, reported, not checked", faction = "Alliance", quest = "Stromgarde Badges", reported = true } },
                 { id = 14203, name = "Thistlefur Pants of the Physician", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 24 random suffixes, each with its own stats: search for the full name" } },
                 { id = 253987, name = "Pristine Leggings", source = { kind = "profession", text = "Tailoring (125) Only its maker can wear it Requires Spinning Wheel. Its blueprint drops from Unstable Sentinel, City of Dalaran", skill = "Tailoring", skillLevel = 125, bindsToMaker = true } },
-                { id = 286988, name = "Violet Sorcerer's Leggings", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 286988, name = "Violet Sorcerer's Leggings", source = { kind = "world", text = "A drop of the City of Dalaran dungeon Which creature drops it is not known yet" } },
               },
               enchants = {
                 { effect = "Stamina +4 and Armor +32", spell = "Thick Armor Kit", source = "Leatherworking 200: Taught by the trainer." },
@@ -2807,7 +2807,7 @@ ForeverBiSData = {
             },
             { slot = "Feet",
               items = {
-                { id = 250534, name = "Hard Gold Boots", source = { kind = "profession", text = "Blacksmithing (150) Plans: nobody has found it in the beta yet", skill = "Blacksmithing", skillLevel = 150 } },
+                { id = 250534, name = "Hard Gold Boots", source = { kind = "profession", text = "Blacksmithing (150) Plans drops from Syndicate Highwayman, Arathi Highlands", skill = "Blacksmithing", skillLevel = 150 } },
                 { id = 252442, name = "Totemic Leather Boots", source = { kind = "profession", text = "Leatherworking (85) Only its maker can wear it", skill = "Leatherworking", skillLevel = 85, bindsToMaker = true } },
                 { id = 277226, name = "Disjointed Shoes", source = { kind = "quest", text = "Quest: WANTED: Incinerator Gar'im Alliance, from level 16, reported, not checked", faction = "Alliance", quest = "WANTED: Incinerator Gar'im", reported = true } },
                 { id = 284403, name = "Shapeshifting Sentinel's Strides", source = { kind = "world", text = "A rare of northern Stonetalon Mountains, near the night elves Horde only: both rares serve Darnassus", faction = "Horde" } },
@@ -2964,7 +2964,7 @@ ForeverBiSData = {
             },
             { slot = "Legs",
               items = {
-                { id = 286988, name = "Violet Sorcerer's Leggings", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 286988, name = "Violet Sorcerer's Leggings", source = { kind = "world", text = "A drop of the City of Dalaran dungeon Which creature drops it is not known yet" } },
                 { id = 252519, name = "Wisdom's Leather Leggings", source = { kind = "profession", text = "Leatherworking (125) Only its maker can wear it Requires Tanning Rack. Its blueprint drops rarely from Razorclaw the Butcher, Shadowfang Keep", skill = "Leatherworking", skillLevel = 125, bindsToMaker = true } },
                 { id = 250526, name = "Acolyte's Silvered Chain Leggings", source = { kind = "profession", text = "Blacksmithing (125) Only its maker can wear it", skill = "Blacksmithing", skillLevel = 125, bindsToMaker = true } },
                 { id = 253987, name = "Pristine Leggings", source = { kind = "profession", text = "Tailoring (125) Only its maker can wear it Requires Spinning Wheel. Its blueprint drops from Unstable Sentinel, City of Dalaran", skill = "Tailoring", skillLevel = 125, bindsToMaker = true } },
@@ -3891,7 +3891,7 @@ ForeverBiSData = {
                 { id = 7709, name = "Blighted Leggings", source = { kind = "world", text = "Azshir the Sleepless, Scarlet Monastery Graveyard 30.61% in Classic", zone = "Scarlet Monastery", boss = "Azshir the Sleepless", dropRate = 30.61 } },
                 { id = 14203, name = "Thistlefur Pants of Shadow Wrath", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 24 random suffixes, each with its own stats: search for the full name" } },
                 { id = 253993, name = "Shadow Leggings", source = { kind = "profession", text = "Tailoring (125) Only its maker can wear it Requires Spinning Wheel. Its blueprint drops from Unstable Sentinel, City of Dalaran", skill = "Tailoring", skillLevel = 125, bindsToMaker = true } },
-                { id = 286988, name = "Violet Sorcerer's Leggings", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 286988, name = "Violet Sorcerer's Leggings", source = { kind = "world", text = "A drop of the City of Dalaran dungeon Which creature drops it is not known yet" } },
                 { id = 6903, name = "Gaze Dreamer Pants", source = { kind = "dungeon", text = "Twilight Lord Kelris, Blackfathom Deeps 33.5% in Classic", zone = "Blackfathom Deeps", boss = "Twilight Lord Kelris", dropRate = 33.5 } },
                 { id = 253943, name = "Filigreed Shadow Leggings", source = { kind = "profession", text = "Tailoring (100) Only its maker can wear it Pattern drops in Blackfathom Deeps, The Stockade, Wailing Caverns", skill = "Tailoring", skillLevel = 100, bindsToMaker = true } },
               },
@@ -4089,7 +4089,7 @@ ForeverBiSData = {
                 { id = 2277, name = "Necromancer Leggings", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 253937, name = "Filigreed Pristine Leggings", source = { kind = "profession", text = "Tailoring (100) Only its maker can wear it Pattern drops in Blackfathom Deeps, The Deadmines, Wailing Caverns", skill = "Tailoring", skillLevel = 100, bindsToMaker = true } },
                 { id = 14203, name = "Thistlefur Pants of the Physician", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 24 random suffixes, each with its own stats: search for the full name" } },
-                { id = 286988, name = "Violet Sorcerer's Leggings", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 286988, name = "Violet Sorcerer's Leggings", source = { kind = "world", text = "A drop of the City of Dalaran dungeon Which creature drops it is not known yet" } },
                 { id = 270056, name = "Stromgarde Librarian Leggings", source = { kind = "quest", text = "Quest: Stromgarde Badges Alliance, from level 30, reported, not checked", faction = "Alliance", quest = "Stromgarde Badges", reported = true } },
               },
               enchants = {
@@ -4284,7 +4284,7 @@ ForeverBiSData = {
             { slot = "Legs",
               items = {
                 { id = 253987, name = "Pristine Leggings", source = { kind = "profession", text = "Tailoring (125) Only its maker can wear it Requires Spinning Wheel. Its blueprint drops from Unstable Sentinel, City of Dalaran", skill = "Tailoring", skillLevel = 125, bindsToMaker = true } },
-                { id = 286988, name = "Violet Sorcerer's Leggings", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 286988, name = "Violet Sorcerer's Leggings", source = { kind = "world", text = "A drop of the City of Dalaran dungeon Which creature drops it is not known yet" } },
                 { id = 14203, name = "Thistlefur Pants of Healing", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 24 random suffixes, each with its own stats: search for the full name" } },
                 { id = 253937, name = "Filigreed Pristine Leggings", source = { kind = "profession", text = "Tailoring (100) Only its maker can wear it Pattern drops in Blackfathom Deeps, The Deadmines, Wailing Caverns", skill = "Tailoring", skillLevel = 100, bindsToMaker = true } },
                 { id = 270036, name = "Magistrate's Pantaloons", source = { kind = "quest", text = "Alliance quest The Fury Runs Deep, The Stockade Alliance, from level 22: bring back Kam Deepfury's head", faction = "Alliance" } },
@@ -5432,7 +5432,7 @@ ForeverBiSData = {
               items = {
                 { id = 15358, name = "Headhunter's Woolies of Nature's Wrath", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 36 random suffixes, each with its own stats: search for the full name" } },
                 { id = 270031, name = "Dark Ritual Leggings", source = { kind = "quest", text = "Quest: Blackfathom Villainy Alliance, from level 18, reported, not checked Quest: Blackfathom Villainy Horde, from level 18, reported, not checked", quest = "Blackfathom Villainy", reported = true } },
-                { id = 286988, name = "Violet Sorcerer's Leggings", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 286988, name = "Violet Sorcerer's Leggings", source = { kind = "world", text = "A drop of the City of Dalaran dungeon Which creature drops it is not known yet" } },
                 { id = 6903, name = "Gaze Dreamer Pants", source = { kind = "dungeon", text = "Twilight Lord Kelris, Blackfathom Deeps 33.5% in Classic", zone = "Blackfathom Deeps", boss = "Twilight Lord Kelris", dropRate = 33.5 } },
                 { id = 285338, name = "Kodohide Legguards", source = { kind = "world", text = "Brontus, a rare kodo of the Barrens Reported, not checked", reported = true } },
                 { id = 270056, name = "Stromgarde Librarian Leggings", source = { kind = "quest", text = "Quest: Stromgarde Badges Alliance, from level 30, reported, not checked", faction = "Alliance", quest = "Stromgarde Badges", reported = true } },
@@ -6024,7 +6024,7 @@ ForeverBiSData = {
                 { id = 252458, name = "Totemic Leather Leggings", source = { kind = "profession", text = "Leatherworking (125) Only its maker can wear it Requires Tanning Rack. Its blueprint drops rarely from Razorclaw the Butcher, Shadowfang Keep", skill = "Leatherworking", skillLevel = 125, bindsToMaker = true } },
                 { id = 2277, name = "Necromancer Leggings", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 252518, name = "Stormrider's Leather Kilt", source = { kind = "profession", text = "Leatherworking (125) Only its maker can wear it Requires Tanning Rack. Its blueprint drops rarely from Razorclaw the Butcher, Shadowfang Keep", skill = "Leatherworking", skillLevel = 125, bindsToMaker = true } },
-                { id = 286988, name = "Violet Sorcerer's Leggings", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 286988, name = "Violet Sorcerer's Leggings", source = { kind = "world", text = "A drop of the City of Dalaran dungeon Which creature drops it is not known yet" } },
                 { id = 270074, name = "Doomcaller's Pants", source = { kind = "quest", text = "Quest: Solution to Doom from level 30, reported, not checked", quest = "Solution to Doom", reported = true } },
               },
               enchants = {
@@ -6218,7 +6218,7 @@ ForeverBiSData = {
             { slot = "Legs",
               items = {
                 { id = 252519, name = "Wisdom's Leather Leggings", source = { kind = "profession", text = "Leatherworking (125) Only its maker can wear it Requires Tanning Rack. Its blueprint drops rarely from Razorclaw the Butcher, Shadowfang Keep", skill = "Leatherworking", skillLevel = 125, bindsToMaker = true } },
-                { id = 286988, name = "Violet Sorcerer's Leggings", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 286988, name = "Violet Sorcerer's Leggings", source = { kind = "world", text = "A drop of the City of Dalaran dungeon Which creature drops it is not known yet" } },
                 { id = 253987, name = "Pristine Leggings", source = { kind = "profession", text = "Tailoring (125) Only its maker can wear it Requires Spinning Wheel. Its blueprint drops from Unstable Sentinel, City of Dalaran", skill = "Tailoring", skillLevel = 125, bindsToMaker = true } },
                 { id = 14203, name = "Thistlefur Pants of the Physician", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 24 random suffixes, each with its own stats: search for the full name" } },
                 { id = 253937, name = "Filigreed Pristine Leggings", source = { kind = "profession", text = "Tailoring (100) Only its maker can wear it Pattern drops in Blackfathom Deeps, The Deadmines, Wailing Caverns", skill = "Tailoring", skillLevel = 100, bindsToMaker = true } },
@@ -6413,7 +6413,7 @@ ForeverBiSData = {
               items = {
                 { id = 7709, name = "Blighted Leggings", source = { kind = "world", text = "Azshir the Sleepless, Scarlet Monastery Graveyard 30.61% in Classic", zone = "Scarlet Monastery", boss = "Azshir the Sleepless", dropRate = 30.61 } },
                 { id = 14203, name = "Thistlefur Pants of Shadow Wrath", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 24 random suffixes, each with its own stats: search for the full name" } },
-                { id = 286988, name = "Violet Sorcerer's Leggings", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 286988, name = "Violet Sorcerer's Leggings", source = { kind = "world", text = "A drop of the City of Dalaran dungeon Which creature drops it is not known yet" } },
                 { id = 6903, name = "Gaze Dreamer Pants", source = { kind = "dungeon", text = "Twilight Lord Kelris, Blackfathom Deeps 33.5% in Classic", zone = "Blackfathom Deeps", boss = "Twilight Lord Kelris", dropRate = 33.5 } },
                 { id = 253993, name = "Shadow Leggings", source = { kind = "profession", text = "Tailoring (125) Only its maker can wear it Requires Spinning Wheel. Its blueprint drops from Unstable Sentinel, City of Dalaran", skill = "Tailoring", skillLevel = 125, bindsToMaker = true } },
                 { id = 270056, name = "Stromgarde Librarian Leggings", source = { kind = "quest", text = "Quest: Stromgarde Badges Alliance, from level 30, reported, not checked", faction = "Alliance", quest = "Stromgarde Badges", reported = true } },
