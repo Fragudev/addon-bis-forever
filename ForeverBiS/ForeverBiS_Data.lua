@@ -314,7 +314,7 @@ ForeverBiSData = {
               items = {
                 { id = 9845, name = "Conjurer's Shoes of Magic", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 24 random suffixes, each with its own stats: search for the full name" } },
                 { id = 279843, name = "Enchanted Sandals", source = { kind = "quest", text = "Quest: Heart of Disruption City of Dalaran, Horde, from level 24", faction = "Horde", quest = "Heart of Disruption City of Dalaran" } },
-                { id = 254001, name = "Gilded Slippers", source = { kind = "profession", text = "Tailoring (140) Only its maker can wear it Pattern: not needed, tailoring trainers teach the recipe at 140 Requires Spinning Wheel. Its blueprint drops from Unstable Sentinel, City of Dalaran", skill = "Tailoring", skillLevel = 140, bindsToMaker = true } },
+                { id = 254001, name = "Gilded Slippers", source = { kind = "profession", text = "Tailoring (150) Only its maker can wear it Pattern: not needed, tailoring trainers teach the recipe at 150 Requires Spinning Wheel. Its blueprint drops from Unstable Sentinel, City of Dalaran", skill = "Tailoring", skillLevel = 150, bindsToMaker = true } },
                 { id = 4320, name = "Spidersilk Boots", source = { kind = "profession", text = "Tailoring", skill = "Tailoring" } },
                 { id = 273024, name = "Glinteye Slippers", source = { kind = "world", text = "Saltspine, Excavation Site: Wetlands" } },
                 { id = 252443, name = "Stormrider's Leather Boots", source = { kind = "profession", text = "Leatherworking (85) Only its maker can wear it", skill = "Leatherworking", skillLevel = 85, bindsToMaker = true } },
@@ -507,7 +507,7 @@ ForeverBiSData = {
               items = {
                 { id = 279840, name = "Renewing Footpads", source = { kind = "quest", text = "Quest: Heart of Disruption City of Dalaran, Alliance, from level 24", faction = "Alliance", quest = "Heart of Disruption City of Dalaran" } },
                 { id = 286987, name = "Violet Sorcerer's Sandals", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
-                { id = 254001, name = "Gilded Slippers", source = { kind = "profession", text = "Tailoring (140) Only its maker can wear it Pattern: not needed, tailoring trainers teach the recipe at 140 Requires Spinning Wheel. Its blueprint drops from Unstable Sentinel, City of Dalaran", skill = "Tailoring", skillLevel = 140, bindsToMaker = true } },
+                { id = 254001, name = "Gilded Slippers", source = { kind = "profession", text = "Tailoring (150) Only its maker can wear it Pattern: not needed, tailoring trainers teach the recipe at 150 Requires Spinning Wheel. Its blueprint drops from Unstable Sentinel, City of Dalaran", skill = "Tailoring", skillLevel = 150, bindsToMaker = true } },
                 { id = 279843, name = "Enchanted Sandals", source = { kind = "quest", text = "Quest: Heart of Disruption City of Dalaran, Horde, from level 24", faction = "Horde", quest = "Heart of Disruption City of Dalaran" } },
                 { id = 9450, name = "Gnomebot Operating Boots", source = { kind = "world", text = "Crowd Pummeler 9-60, Gnomeregan 65.28% in Classic", zone = "Gnomeregan", boss = "Crowd Pummeler 9-60", dropRate = 65.28 } },
                 { id = 9845, name = "Conjurer's Shoes of the Eagle", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 24 random suffixes, each with its own stats: search for the full name" } },
@@ -891,7 +891,7 @@ ForeverBiSData = {
             },
             { slot = "Feet",
               items = {
-                { id = 254001, name = "Gilded Slippers", source = { kind = "profession", text = "Tailoring (140) Only its maker can wear it Pattern: not needed, tailoring trainers teach the recipe at 140 Requires Spinning Wheel. Its blueprint drops from Unstable Sentinel, City of Dalaran", skill = "Tailoring", skillLevel = 140, bindsToMaker = true } },
+                { id = 254001, name = "Gilded Slippers", source = { kind = "profession", text = "Tailoring (150) Only its maker can wear it Pattern: not needed, tailoring trainers teach the recipe at 150 Requires Spinning Wheel. Its blueprint drops from Unstable Sentinel, City of Dalaran", skill = "Tailoring", skillLevel = 150, bindsToMaker = true } },
                 { id = 279840, name = "Renewing Footpads", source = { kind = "quest", text = "Quest: Heart of Disruption City of Dalaran, Alliance, from level 24", faction = "Alliance", quest = "Heart of Disruption City of Dalaran" } },
                 { id = 9454, name = "Acidic Walkers", source = { kind = "world", text = "Viscous Fallout, Gnomeregan 60.81% in Classic", zone = "Gnomeregan", boss = "Viscous Fallout", dropRate = 60.81 } },
                 { id = 9845, name = "Conjurer's Shoes of the Physician", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 24 random suffixes, each with its own stats: search for the full name" } },
@@ -1082,7 +1082,7 @@ ForeverBiSData = {
             },
             { slot = "Feet",
               items = {
-                { id = 254001, name = "Gilded Slippers", source = { kind = "profession", text = "Tailoring (140) Only its maker can wear it Pattern: not needed, tailoring trainers teach the recipe at 140 Requires Spinning Wheel. Its blueprint drops from Unstable Sentinel, City of Dalaran", skill = "Tailoring", skillLevel = 140, bindsToMaker = true } },
+                { id = 254001, name = "Gilded Slippers", source = { kind = "profession", text = "Tailoring (150) Only its maker can wear it Pattern: not needed, tailoring trainers teach the recipe at 150 Requires Spinning Wheel. Its blueprint drops from Unstable Sentinel, City of Dalaran", skill = "Tailoring", skillLevel = 150, bindsToMaker = true } },
                 { id = 279840, name = "Renewing Footpads", source = { kind = "quest", text = "Quest: Heart of Disruption City of Dalaran, Alliance, from level 24", faction = "Alliance", quest = "Heart of Disruption City of Dalaran" } },
                 { id = 286987, name = "Violet Sorcerer's Sandals", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 15697, name = "Kodo Rustler Boots", source = { kind = "quest", text = "Quest: Kodo Roundup level 34 in Classic, from level 30", quest = "Kodo Roundup" } },
@@ -1820,7 +1820,7 @@ ForeverBiSData = {
             },
             { slot = "Feet",
               items = {
-                { id = 254003, name = "Frothing Slippers", source = { kind = "profession", text = "Tailoring (140) Only its maker can wear it Pattern: not needed, tailoring trainers teach the recipe at 140 Requires Spinning Wheel. Its blueprint drops from Unstable Sentinel, City of Dalaran", skill = "Tailoring", skillLevel = 140, bindsToMaker = true } },
+                { id = 254003, name = "Frothing Slippers", source = { kind = "profession", text = "Tailoring (150) Only its maker can wear it Pattern: not needed, tailoring trainers teach the recipe at 150 Requires Spinning Wheel. Its blueprint drops from Unstable Sentinel, City of Dalaran", skill = "Tailoring", skillLevel = 150, bindsToMaker = true } },
                 { id = 9845, name = "Conjurer's Shoes of Frozen Wrath", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 24 random suffixes, each with its own stats: search for the full name" } },
                 { id = 279843, name = "Enchanted Sandals", source = { kind = "quest", text = "Quest: Heart of Disruption City of Dalaran, Horde, from level 24", faction = "Horde", quest = "Heart of Disruption City of Dalaran" } },
                 { id = 4320, name = "Spidersilk Boots", source = { kind = "profession", text = "Tailoring", skill = "Tailoring" } },
@@ -2017,7 +2017,7 @@ ForeverBiSData = {
             },
             { slot = "Feet",
               items = {
-                { id = 254009, name = "Golden Slippers", source = { kind = "profession", text = "Tailoring (140) Only its maker can wear it Pattern: not needed, tailoring trainers teach the recipe at 140 Requires Spinning Wheel. Its blueprint drops from Unstable Sentinel, City of Dalaran", skill = "Tailoring", skillLevel = 140, bindsToMaker = true } },
+                { id = 254009, name = "Golden Slippers", source = { kind = "profession", text = "Tailoring (150) Only its maker can wear it Pattern: not needed, tailoring trainers teach the recipe at 150 Requires Spinning Wheel. Its blueprint drops from Unstable Sentinel, City of Dalaran", skill = "Tailoring", skillLevel = 150, bindsToMaker = true } },
                 { id = 9845, name = "Conjurer's Shoes of Arcane Wrath", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 24 random suffixes, each with its own stats: search for the full name" } },
                 { id = 279843, name = "Enchanted Sandals", source = { kind = "quest", text = "Quest: Heart of Disruption City of Dalaran, Horde, from level 24", faction = "Horde", quest = "Heart of Disruption City of Dalaran" } },
                 { id = 4320, name = "Spidersilk Boots", source = { kind = "profession", text = "Tailoring", skill = "Tailoring" } },
@@ -2214,7 +2214,7 @@ ForeverBiSData = {
             },
             { slot = "Feet",
               items = {
-                { id = 254005, name = "Fiery Slippers", source = { kind = "profession", text = "Tailoring (140) Only its maker can wear it Pattern: not needed, tailoring trainers teach the recipe at 140 Requires Spinning Wheel. Its blueprint drops from Unstable Sentinel, City of Dalaran", skill = "Tailoring", skillLevel = 140, bindsToMaker = true } },
+                { id = 254005, name = "Fiery Slippers", source = { kind = "profession", text = "Tailoring (150) Only its maker can wear it Pattern: not needed, tailoring trainers teach the recipe at 150 Requires Spinning Wheel. Its blueprint drops from Unstable Sentinel, City of Dalaran", skill = "Tailoring", skillLevel = 150, bindsToMaker = true } },
                 { id = 9845, name = "Conjurer's Shoes of Fiery Wrath", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 24 random suffixes, each with its own stats: search for the full name" } },
                 { id = 279843, name = "Enchanted Sandals", source = { kind = "quest", text = "Quest: Heart of Disruption City of Dalaran, Horde, from level 24", faction = "Horde", quest = "Heart of Disruption City of Dalaran" } },
                 { id = 4320, name = "Spidersilk Boots", source = { kind = "profession", text = "Tailoring", skill = "Tailoring" } },
@@ -2411,7 +2411,7 @@ ForeverBiSData = {
             },
             { slot = "Feet",
               items = {
-                { id = 254005, name = "Fiery Slippers", source = { kind = "profession", text = "Tailoring (140) Only its maker can wear it Pattern: not needed, tailoring trainers teach the recipe at 140 Requires Spinning Wheel. Its blueprint drops from Unstable Sentinel, City of Dalaran", skill = "Tailoring", skillLevel = 140, bindsToMaker = true } },
+                { id = 254005, name = "Fiery Slippers", source = { kind = "profession", text = "Tailoring (150) Only its maker can wear it Pattern: not needed, tailoring trainers teach the recipe at 150 Requires Spinning Wheel. Its blueprint drops from Unstable Sentinel, City of Dalaran", skill = "Tailoring", skillLevel = 150, bindsToMaker = true } },
                 { id = 286987, name = "Violet Sorcerer's Sandals", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 279843, name = "Enchanted Sandals", source = { kind = "quest", text = "Quest: Heart of Disruption City of Dalaran, Horde, from level 24", faction = "Horde", quest = "Heart of Disruption City of Dalaran" } },
                 { id = 273024, name = "Glinteye Slippers", source = { kind = "world", text = "Saltspine, Excavation Site: Wetlands" } },
@@ -2609,7 +2609,7 @@ ForeverBiSData = {
             },
             { slot = "Feet",
               items = {
-                { id = 254003, name = "Frothing Slippers", source = { kind = "profession", text = "Tailoring (140) Only its maker can wear it Pattern: not needed, tailoring trainers teach the recipe at 140 Requires Spinning Wheel. Its blueprint drops from Unstable Sentinel, City of Dalaran", skill = "Tailoring", skillLevel = 140, bindsToMaker = true } },
+                { id = 254003, name = "Frothing Slippers", source = { kind = "profession", text = "Tailoring (150) Only its maker can wear it Pattern: not needed, tailoring trainers teach the recipe at 150 Requires Spinning Wheel. Its blueprint drops from Unstable Sentinel, City of Dalaran", skill = "Tailoring", skillLevel = 150, bindsToMaker = true } },
                 { id = 279843, name = "Enchanted Sandals", source = { kind = "quest", text = "Quest: Heart of Disruption City of Dalaran, Horde, from level 24", faction = "Horde", quest = "Heart of Disruption City of Dalaran" } },
                 { id = 286987, name = "Violet Sorcerer's Sandals", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 273024, name = "Glinteye Slippers", source = { kind = "world", text = "Saltspine, Excavation Site: Wetlands" } },
@@ -2977,7 +2977,7 @@ ForeverBiSData = {
             },
             { slot = "Feet",
               items = {
-                { id = 254001, name = "Gilded Slippers", source = { kind = "profession", text = "Tailoring (140) Only its maker can wear it Pattern: not needed, tailoring trainers teach the recipe at 140 Requires Spinning Wheel. Its blueprint drops from Unstable Sentinel, City of Dalaran", skill = "Tailoring", skillLevel = 140, bindsToMaker = true } },
+                { id = 254001, name = "Gilded Slippers", source = { kind = "profession", text = "Tailoring (150) Only its maker can wear it Pattern: not needed, tailoring trainers teach the recipe at 150 Requires Spinning Wheel. Its blueprint drops from Unstable Sentinel, City of Dalaran", skill = "Tailoring", skillLevel = 150, bindsToMaker = true } },
                 { id = 279840, name = "Renewing Footpads", source = { kind = "quest", text = "Quest: Heart of Disruption City of Dalaran, Alliance, from level 24", faction = "Alliance", quest = "Heart of Disruption City of Dalaran" } },
                 { id = 9454, name = "Acidic Walkers", source = { kind = "world", text = "Viscous Fallout, Gnomeregan 60.81% in Classic", zone = "Gnomeregan", boss = "Viscous Fallout", dropRate = 60.81 } },
                 { id = 7417, name = "Phalanx Boots of the Physician", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 32 random suffixes, each with its own stats: search for the full name" } },
@@ -3171,7 +3171,7 @@ ForeverBiSData = {
             },
             { slot = "Feet",
               items = {
-                { id = 254001, name = "Gilded Slippers", source = { kind = "profession", text = "Tailoring (140) Only its maker can wear it Pattern: not needed, tailoring trainers teach the recipe at 140 Requires Spinning Wheel. Its blueprint drops from Unstable Sentinel, City of Dalaran", skill = "Tailoring", skillLevel = 140, bindsToMaker = true } },
+                { id = 254001, name = "Gilded Slippers", source = { kind = "profession", text = "Tailoring (150) Only its maker can wear it Pattern: not needed, tailoring trainers teach the recipe at 150 Requires Spinning Wheel. Its blueprint drops from Unstable Sentinel, City of Dalaran", skill = "Tailoring", skillLevel = 150, bindsToMaker = true } },
                 { id = 279840, name = "Renewing Footpads", source = { kind = "quest", text = "Quest: Heart of Disruption City of Dalaran, Alliance, from level 24", faction = "Alliance", quest = "Heart of Disruption City of Dalaran" } },
                 { id = 9450, name = "Gnomebot Operating Boots", source = { kind = "world", text = "Crowd Pummeler 9-60, Gnomeregan 65.28% in Classic", zone = "Gnomeregan", boss = "Crowd Pummeler 9-60", dropRate = 65.28 } },
                 { id = 286987, name = "Violet Sorcerer's Sandals", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
@@ -3538,7 +3538,7 @@ ForeverBiSData = {
             },
             { slot = "Feet",
               items = {
-                { id = 254011, name = "Radiant Slippers", source = { kind = "profession", text = "Tailoring (140) Only its maker can wear it Pattern: not needed, tailoring trainers teach the recipe at 140 Requires Spinning Wheel. Its blueprint drops from Unstable Sentinel, City of Dalaran", skill = "Tailoring", skillLevel = 140, bindsToMaker = true } },
+                { id = 254011, name = "Radiant Slippers", source = { kind = "profession", text = "Tailoring (150) Only its maker can wear it Pattern: not needed, tailoring trainers teach the recipe at 150 Requires Spinning Wheel. Its blueprint drops from Unstable Sentinel, City of Dalaran", skill = "Tailoring", skillLevel = 150, bindsToMaker = true } },
                 { id = 279843, name = "Enchanted Sandals", source = { kind = "quest", text = "Quest: Heart of Disruption City of Dalaran, Horde, from level 24", faction = "Horde", quest = "Heart of Disruption City of Dalaran" } },
                 { id = 273024, name = "Glinteye Slippers", source = { kind = "world", text = "Saltspine, Excavation Site: Wetlands" } },
                 { id = 9450, name = "Gnomebot Operating Boots", source = { kind = "world", text = "Crowd Pummeler 9-60, Gnomeregan 65.28% in Classic", zone = "Gnomeregan", boss = "Crowd Pummeler 9-60", dropRate = 65.28 } },
@@ -3901,7 +3901,7 @@ ForeverBiSData = {
             },
             { slot = "Feet",
               items = {
-                { id = 254007, name = "Black Slippers", source = { kind = "profession", text = "Tailoring (140) Only its maker can wear it Pattern: not needed, tailoring trainers teach the recipe at 140 Requires Spinning Wheel. Its blueprint drops from Unstable Sentinel, City of Dalaran", skill = "Tailoring", skillLevel = 140, bindsToMaker = true } },
+                { id = 254007, name = "Black Slippers", source = { kind = "profession", text = "Tailoring (150) Only its maker can wear it Pattern: not needed, tailoring trainers teach the recipe at 150 Requires Spinning Wheel. Its blueprint drops from Unstable Sentinel, City of Dalaran", skill = "Tailoring", skillLevel = 150, bindsToMaker = true } },
                 { id = 9845, name = "Conjurer's Shoes of Shadow Wrath", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 24 random suffixes, each with its own stats: search for the full name" } },
                 { id = 279843, name = "Enchanted Sandals", source = { kind = "quest", text = "Quest: Heart of Disruption City of Dalaran, Horde, from level 24", faction = "Horde", quest = "Heart of Disruption City of Dalaran" } },
                 { id = 4320, name = "Spidersilk Boots", source = { kind = "profession", text = "Tailoring", skill = "Tailoring" } },
@@ -4098,7 +4098,7 @@ ForeverBiSData = {
             },
             { slot = "Feet",
               items = {
-                { id = 254001, name = "Gilded Slippers", source = { kind = "profession", text = "Tailoring (140) Only its maker can wear it Pattern: not needed, tailoring trainers teach the recipe at 140 Requires Spinning Wheel. Its blueprint drops from Unstable Sentinel, City of Dalaran", skill = "Tailoring", skillLevel = 140, bindsToMaker = true } },
+                { id = 254001, name = "Gilded Slippers", source = { kind = "profession", text = "Tailoring (150) Only its maker can wear it Pattern: not needed, tailoring trainers teach the recipe at 150 Requires Spinning Wheel. Its blueprint drops from Unstable Sentinel, City of Dalaran", skill = "Tailoring", skillLevel = 150, bindsToMaker = true } },
                 { id = 286987, name = "Violet Sorcerer's Sandals", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 273024, name = "Glinteye Slippers", source = { kind = "world", text = "Saltspine, Excavation Site: Wetlands" } },
                 { id = 271214, name = "Rotmender's Treads", source = { kind = "dungeon", text = "Rath'mael, Ruins of Lordaeron", zone = "Ruins of Lordaeron", boss = "Rath'mael" } },
@@ -4296,7 +4296,7 @@ ForeverBiSData = {
             },
             { slot = "Feet",
               items = {
-                { id = 254001, name = "Gilded Slippers", source = { kind = "profession", text = "Tailoring (140) Only its maker can wear it Pattern: not needed, tailoring trainers teach the recipe at 140 Requires Spinning Wheel. Its blueprint drops from Unstable Sentinel, City of Dalaran", skill = "Tailoring", skillLevel = 140, bindsToMaker = true } },
+                { id = 254001, name = "Gilded Slippers", source = { kind = "profession", text = "Tailoring (150) Only its maker can wear it Pattern: not needed, tailoring trainers teach the recipe at 150 Requires Spinning Wheel. Its blueprint drops from Unstable Sentinel, City of Dalaran", skill = "Tailoring", skillLevel = 150, bindsToMaker = true } },
                 { id = 9845, name = "Conjurer's Shoes of Healing", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 24 random suffixes, each with its own stats: search for the full name" } },
                 { id = 9454, name = "Acidic Walkers", source = { kind = "world", text = "Viscous Fallout, Gnomeregan 60.81% in Classic", zone = "Gnomeregan", boss = "Viscous Fallout", dropRate = 60.81 } },
                 { id = 286987, name = "Violet Sorcerer's Sandals", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
@@ -4491,7 +4491,7 @@ ForeverBiSData = {
             },
             { slot = "Feet",
               items = {
-                { id = 254007, name = "Black Slippers", source = { kind = "profession", text = "Tailoring (140) Only its maker can wear it Pattern: not needed, tailoring trainers teach the recipe at 140 Requires Spinning Wheel. Its blueprint drops from Unstable Sentinel, City of Dalaran", skill = "Tailoring", skillLevel = 140, bindsToMaker = true } },
+                { id = 254007, name = "Black Slippers", source = { kind = "profession", text = "Tailoring (150) Only its maker can wear it Pattern: not needed, tailoring trainers teach the recipe at 150 Requires Spinning Wheel. Its blueprint drops from Unstable Sentinel, City of Dalaran", skill = "Tailoring", skillLevel = 150, bindsToMaker = true } },
                 { id = 279843, name = "Enchanted Sandals", source = { kind = "quest", text = "Quest: Heart of Disruption City of Dalaran, Horde, from level 24", faction = "Horde", quest = "Heart of Disruption City of Dalaran" } },
                 { id = 286987, name = "Violet Sorcerer's Sandals", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 273024, name = "Glinteye Slippers", source = { kind = "world", text = "Saltspine, Excavation Site: Wetlands" } },
@@ -5445,7 +5445,7 @@ ForeverBiSData = {
               items = {
                 { id = 15142, name = "Ghostwalker Boots of Nature's Wrath", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 36 random suffixes, each with its own stats: search for the full name" } },
                 { id = 279843, name = "Enchanted Sandals", source = { kind = "quest", text = "Quest: Heart of Disruption City of Dalaran, Horde, from level 24", faction = "Horde", quest = "Heart of Disruption City of Dalaran" } },
-                { id = 254001, name = "Gilded Slippers", source = { kind = "profession", text = "Tailoring (140) Only its maker can wear it Pattern: not needed, tailoring trainers teach the recipe at 140 Requires Spinning Wheel. Its blueprint drops from Unstable Sentinel, City of Dalaran", skill = "Tailoring", skillLevel = 140, bindsToMaker = true } },
+                { id = 254001, name = "Gilded Slippers", source = { kind = "profession", text = "Tailoring (150) Only its maker can wear it Pattern: not needed, tailoring trainers teach the recipe at 150 Requires Spinning Wheel. Its blueprint drops from Unstable Sentinel, City of Dalaran", skill = "Tailoring", skillLevel = 150, bindsToMaker = true } },
                 { id = 4320, name = "Spidersilk Boots", source = { kind = "profession", text = "Tailoring", skill = "Tailoring" } },
                 { id = 273024, name = "Glinteye Slippers", source = { kind = "world", text = "Saltspine, Excavation Site: Wetlands" } },
                 { id = 252443, name = "Stormrider's Leather Boots", source = { kind = "profession", text = "Leatherworking (85) Only its maker can wear it", skill = "Leatherworking", skillLevel = 85, bindsToMaker = true } },
@@ -6035,7 +6035,7 @@ ForeverBiSData = {
               items = {
                 { id = 286987, name = "Violet Sorcerer's Sandals", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 279840, name = "Renewing Footpads", source = { kind = "quest", text = "Quest: Heart of Disruption City of Dalaran, Alliance, from level 24", faction = "Alliance", quest = "Heart of Disruption City of Dalaran" } },
-                { id = 254001, name = "Gilded Slippers", source = { kind = "profession", text = "Tailoring (140) Only its maker can wear it Pattern: not needed, tailoring trainers teach the recipe at 140 Requires Spinning Wheel. Its blueprint drops from Unstable Sentinel, City of Dalaran", skill = "Tailoring", skillLevel = 140, bindsToMaker = true } },
+                { id = 254001, name = "Gilded Slippers", source = { kind = "profession", text = "Tailoring (150) Only its maker can wear it Pattern: not needed, tailoring trainers teach the recipe at 150 Requires Spinning Wheel. Its blueprint drops from Unstable Sentinel, City of Dalaran", skill = "Tailoring", skillLevel = 150, bindsToMaker = true } },
                 { id = 9845, name = "Conjurer's Shoes of the Eagle", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 24 random suffixes, each with its own stats: search for the full name" } },
                 { id = 15697, name = "Kodo Rustler Boots", source = { kind = "quest", text = "Quest: Kodo Roundup level 34 in Classic, from level 30", quest = "Kodo Roundup" } },
                 { id = 4139, name = "Junglewalker Sandals", source = { kind = "quest", text = "Quest: Report to Doren Alliance, level 37 in Classic, from level 30", faction = "Alliance", quest = "Report to Doren" } },
@@ -6230,7 +6230,7 @@ ForeverBiSData = {
             },
             { slot = "Feet",
               items = {
-                { id = 254001, name = "Gilded Slippers", source = { kind = "profession", text = "Tailoring (140) Only its maker can wear it Pattern: not needed, tailoring trainers teach the recipe at 140 Requires Spinning Wheel. Its blueprint drops from Unstable Sentinel, City of Dalaran", skill = "Tailoring", skillLevel = 140, bindsToMaker = true } },
+                { id = 254001, name = "Gilded Slippers", source = { kind = "profession", text = "Tailoring (150) Only its maker can wear it Pattern: not needed, tailoring trainers teach the recipe at 150 Requires Spinning Wheel. Its blueprint drops from Unstable Sentinel, City of Dalaran", skill = "Tailoring", skillLevel = 150, bindsToMaker = true } },
                 { id = 279840, name = "Renewing Footpads", source = { kind = "quest", text = "Quest: Heart of Disruption City of Dalaran, Alliance, from level 24", faction = "Alliance", quest = "Heart of Disruption City of Dalaran" } },
                 { id = 9845, name = "Conjurer's Shoes of the Physician", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 24 random suffixes, each with its own stats: search for the full name" } },
                 { id = 9454, name = "Acidic Walkers", source = { kind = "world", text = "Viscous Fallout, Gnomeregan 60.81% in Classic", zone = "Gnomeregan", boss = "Viscous Fallout", dropRate = 60.81 } },
@@ -6424,7 +6424,7 @@ ForeverBiSData = {
             },
             { slot = "Feet",
               items = {
-                { id = 254007, name = "Black Slippers", source = { kind = "profession", text = "Tailoring (140) Only its maker can wear it Pattern: not needed, tailoring trainers teach the recipe at 140 Requires Spinning Wheel. Its blueprint drops from Unstable Sentinel, City of Dalaran", skill = "Tailoring", skillLevel = 140, bindsToMaker = true } },
+                { id = 254007, name = "Black Slippers", source = { kind = "profession", text = "Tailoring (150) Only its maker can wear it Pattern: not needed, tailoring trainers teach the recipe at 150 Requires Spinning Wheel. Its blueprint drops from Unstable Sentinel, City of Dalaran", skill = "Tailoring", skillLevel = 150, bindsToMaker = true } },
                 { id = 9845, name = "Conjurer's Shoes of Magic", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 24 random suffixes, each with its own stats: search for the full name" } },
                 { id = 279843, name = "Enchanted Sandals", source = { kind = "quest", text = "Quest: Heart of Disruption City of Dalaran, Horde, from level 24", faction = "Horde", quest = "Heart of Disruption City of Dalaran" } },
                 { id = 4320, name = "Spidersilk Boots", source = { kind = "profession", text = "Tailoring", skill = "Tailoring" } },
@@ -6623,7 +6623,7 @@ ForeverBiSData = {
               items = {
                 { id = 279843, name = "Enchanted Sandals", source = { kind = "quest", text = "Quest: Heart of Disruption City of Dalaran, Horde, from level 24", faction = "Horde", quest = "Heart of Disruption City of Dalaran" } },
                 { id = 273024, name = "Glinteye Slippers", source = { kind = "world", text = "Saltspine, Excavation Site: Wetlands" } },
-                { id = 254007, name = "Black Slippers", source = { kind = "profession", text = "Tailoring (140) Only its maker can wear it Pattern: not needed, tailoring trainers teach the recipe at 140 Requires Spinning Wheel. Its blueprint drops from Unstable Sentinel, City of Dalaran", skill = "Tailoring", skillLevel = 140, bindsToMaker = true } },
+                { id = 254007, name = "Black Slippers", source = { kind = "profession", text = "Tailoring (150) Only its maker can wear it Pattern: not needed, tailoring trainers teach the recipe at 150 Requires Spinning Wheel. Its blueprint drops from Unstable Sentinel, City of Dalaran", skill = "Tailoring", skillLevel = 150, bindsToMaker = true } },
                 { id = 276274, name = "Surfer Shoes", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 9845, name = "Conjurer's Shoes of Stamina", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 24 random suffixes, each with its own stats: search for the full name" } },
                 { id = 271214, name = "Rotmender's Treads", source = { kind = "dungeon", text = "Rath'mael, Ruins of Lordaeron", zone = "Ruins of Lordaeron", boss = "Rath'mael" } },
