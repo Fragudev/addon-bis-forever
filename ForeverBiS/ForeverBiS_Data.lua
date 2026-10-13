@@ -76,7 +76,7 @@ ForeverBiSData = {
                 { id = 14590, name = "Hawkeye's Bracers", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 18948, name = "Barbaric Bracers", source = { kind = "profession", text = "Leatherworking (130) Requires Tanning Rack. Its blueprint drops rarely from Razorclaw the Butcher, Shadowfang Keep", skill = "Leatherworking", skillLevel = 130 } },
                 { id = 6198, name = "Jurassic Wristguards", source = { kind = "world", text = "World drop, sold at the auction house" } },
-                { id = 270033, name = "Demonhide Bracers", source = { kind = "quest", text = "Quest: Morganth Alliance, from level 20, reported, not checked", faction = "Alliance", quest = "Morganth", reported = true } },
+                { id = 270091, name = "Seadog's Battered Cuffs", source = { kind = "quest", text = "Four quests for \"Sea Wolf\" MacKinley, Booty Bay The Mosh'Ogg ogres are level 41 to 45 elites: very hard at level 30" } },
               },
               enchants = {
                 { effect = "Agility +3", spell = "Enchant Bracer - Minor Agility", source = "Enchanting 80: Taught by the trainer." },
@@ -301,10 +301,10 @@ ForeverBiSData = {
               items = {
                 { id = 15358, name = "Headhunter's Woolies of Nature's Wrath", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 36 random suffixes, each with its own stats: search for the full name" } },
                 { id = 270031, name = "Dark Ritual Leggings", source = { kind = "quest", text = "Quest: Blackfathom Villainy Alliance, from level 18, reported, not checked Quest: Blackfathom Villainy Horde, from level 18, reported, not checked", quest = "Blackfathom Villainy", reported = true } },
+                { id = 270090, name = "Beggar's Leggings", source = { kind = "quest", text = "Four quests for \"Sea Wolf\" MacKinley, Booty Bay The Mosh'Ogg ogres are level 41 to 45 elites: very hard at level 30" } },
                 { id = 286988, name = "Violet Sorcerer's Leggings", source = { kind = "world", text = "A drop of the City of Dalaran dungeon Which creature drops it is not known yet" } },
                 { id = 6903, name = "Gaze Dreamer Pants", source = { kind = "dungeon", text = "Twilight Lord Kelris, Blackfathom Deeps 33.5% in Classic", zone = "Blackfathom Deeps", boss = "Twilight Lord Kelris", dropRate = 33.5 } },
                 { id = 285338, name = "Kodohide Legguards", source = { kind = "world", text = "Brontus, a rare kodo of the Barrens Reported, not checked", reported = true } },
-                { id = 270056, name = "Stromgarde Librarian Leggings", source = { kind = "quest", text = "Quest: Stromgarde Badges Alliance, from level 30, reported, not checked", faction = "Alliance", quest = "Stromgarde Badges", reported = true } },
               },
               enchants = {
                 { effect = "Spell Power +4 and Armor +24", spell = "Mystic Heavy Armor Kit", source = "Leatherworking 135: Pattern sold by Saenorion in Darnassus and Mahu in Thunder Bluff.", formulaId = 252811 },
@@ -652,10 +652,10 @@ ForeverBiSData = {
               items = {
                 { id = 9428, name = "Unearthed Bands of the Bandit", source = { kind = "world", text = "Trash mobs, Uldaman Random suffix, one of 35 Search the auction house for the full name" } },
                 { id = 18948, name = "Barbaric Bracers", source = { kind = "profession", text = "Leatherworking (130) Requires Tanning Rack. Its blueprint drops rarely from Razorclaw the Butcher, Shadowfang Keep", skill = "Leatherworking", skillLevel = 130 } },
+                { id = 270091, name = "Seadog's Battered Cuffs", source = { kind = "quest", text = "Four quests for \"Sea Wolf\" MacKinley, Booty Bay The Mosh'Ogg ogres are level 41 to 45 elites: very hard at level 30" } },
                 { id = 270032, name = "Cultist's Armguards", source = { kind = "quest", text = "Quest: Blackfathom Villainy Alliance, from level 18, reported, not checked Quest: Blackfathom Villainy Horde, from level 18, reported, not checked", quest = "Blackfathom Villainy", reported = true } },
                 { id = 270080, name = "Arathi Armbands", source = { kind = "world", text = "Wanted! Otto and Falconcrest, Refuge Pointe, Arathi Highlands Two elites of level 38 and 40: take a strong group" } },
                 { id = 270042, name = "Technician's Bracers", source = { kind = "quest", text = "Quest: A Fine Mess from level 20, reported, not checked", quest = "A Fine Mess", reported = true } },
-                { id = 14590, name = "Hawkeye's Bracers", source = { kind = "world", text = "World drop, sold at the auction house" } },
               },
               enchants = {
                 { effect = "Stamina +5", spell = "Enchant Bracer - Stamina", source = "Enchanting 170: Taught by the trainer." },
@@ -1229,10 +1229,10 @@ ForeverBiSData = {
               items = {
                 { id = 3230, name = "Black Wolf Bracers", source = { kind = "dungeon", text = "Fenrus the Devourer, Shadowfang Keep 17.21% in Classic", zone = "Shadowfang Keep", boss = "Fenrus the Devourer", dropRate = 17.21 } },
                 { id = 9428, name = "Unearthed Bands of Stamina", source = { kind = "world", text = "Trash mobs, Uldaman Random suffix, one of 35 Search the auction house for the full name" } },
+                { id = 270091, name = "Seadog's Battered Cuffs", source = { kind = "quest", text = "Four quests for \"Sea Wolf\" MacKinley, Booty Bay The Mosh'Ogg ogres are level 41 to 45 elites: very hard at level 30" } },
                 { id = 18948, name = "Barbaric Bracers", source = { kind = "profession", text = "Leatherworking (130) Requires Tanning Rack. Its blueprint drops rarely from Razorclaw the Butcher, Shadowfang Keep", skill = "Leatherworking", skillLevel = 130 } },
                 { id = 270032, name = "Cultist's Armguards", source = { kind = "quest", text = "Quest: Blackfathom Villainy Alliance, from level 18, reported, not checked Quest: Blackfathom Villainy Horde, from level 18, reported, not checked", quest = "Blackfathom Villainy", reported = true } },
                 { id = 270055, name = "Charged Leather Bracers", source = { kind = "quest", text = "Quest: Power Stones from level 30, reported, not checked", quest = "Power Stones", reported = true } },
-                { id = 6410, name = "Insignia Bracers", source = { kind = "world", text = "World drop, sold at the auction house" } },
               },
               enchants = {
                 { effect = "Stamina +5", spell = "Enchant Bracer - Stamina", source = "Enchanting 170: Taught by the trainer." },
@@ -1417,11 +1417,11 @@ ForeverBiSData = {
             { slot = "Wrist",
               items = {
                 { id = 9428, name = "Unearthed Bands of Agility", source = { kind = "world", text = "Trash mobs, Uldaman Random suffix, one of 35 Search the auction house for the full name" } },
+                { id = 270091, name = "Seadog's Battered Cuffs", source = { kind = "quest", text = "Four quests for \"Sea Wolf\" MacKinley, Booty Bay The Mosh'Ogg ogres are level 41 to 45 elites: very hard at level 30" } },
                 { id = 6198, name = "Jurassic Wristguards", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 6410, name = "Insignia Bracers", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 14590, name = "Hawkeye's Bracers", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 270080, name = "Arathi Armbands", source = { kind = "world", text = "Wanted! Otto and Falconcrest, Refuge Pointe, Arathi Highlands Two elites of level 38 and 40: take a strong group" } },
-                { id = 3202, name = "Forest Leather Bracers", source = { kind = "world", text = "World drop, sold at the auction house" } },
               },
               enchants = {
                 { effect = "Agility +3", spell = "Enchant Bracer - Minor Agility", source = "Enchanting 80: Taught by the trainer." },
@@ -1594,11 +1594,11 @@ ForeverBiSData = {
             { slot = "Wrist",
               items = {
                 { id = 9428, name = "Unearthed Bands of the Bandit", source = { kind = "world", text = "Trash mobs, Uldaman Random suffix, one of 35 Search the auction house for the full name" } },
+                { id = 270091, name = "Seadog's Battered Cuffs", source = { kind = "quest", text = "Four quests for \"Sea Wolf\" MacKinley, Booty Bay The Mosh'Ogg ogres are level 41 to 45 elites: very hard at level 30" } },
                 { id = 270032, name = "Cultist's Armguards", source = { kind = "quest", text = "Quest: Blackfathom Villainy Alliance, from level 18, reported, not checked Quest: Blackfathom Villainy Horde, from level 18, reported, not checked", quest = "Blackfathom Villainy", reported = true } },
                 { id = 18948, name = "Barbaric Bracers", source = { kind = "profession", text = "Leatherworking (130) Requires Tanning Rack. Its blueprint drops rarely from Razorclaw the Butcher, Shadowfang Keep", skill = "Leatherworking", skillLevel = 130 } },
                 { id = 3230, name = "Black Wolf Bracers", source = { kind = "dungeon", text = "Fenrus the Devourer, Shadowfang Keep 17.21% in Classic", zone = "Shadowfang Keep", boss = "Fenrus the Devourer", dropRate = 17.21 } },
                 { id = 1974, name = "Mindthrust Bracers", source = { kind = "dungeon", text = "Trash mobs, Shadowfang Keep 0.03% in Classic", zone = "Shadowfang Keep", boss = "Trash mobs", dropRate = 0.03 } },
-                { id = 2032, name = "Gallan Cuffs", source = { kind = "quest", text = "Quest: To Steal From Thieves Horde, level 36 in Classic, from level 27", faction = "Horde", quest = "To Steal From Thieves" } },
               },
               enchants = {
                 { effect = "Stamina +5", spell = "Enchant Bracer - Stamina", source = "Enchanting 170: Taught by the trainer." },
@@ -1809,10 +1809,10 @@ ForeverBiSData = {
               items = {
                 { id = 14203, name = "Thistlefur Pants of Frozen Wrath", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 24 random suffixes, each with its own stats: search for the full name" } },
                 { id = 253989, name = "Silky Leggings", source = { kind = "profession", text = "Tailoring (125) Only its maker can wear it Requires Spinning Wheel. Its blueprint drops from Unstable Sentinel, City of Dalaran", skill = "Tailoring", skillLevel = 125, bindsToMaker = true } },
+                { id = 270090, name = "Beggar's Leggings", source = { kind = "quest", text = "Four quests for \"Sea Wolf\" MacKinley, Booty Bay The Mosh'Ogg ogres are level 41 to 45 elites: very hard at level 30" } },
                 { id = 286988, name = "Violet Sorcerer's Leggings", source = { kind = "world", text = "A drop of the City of Dalaran dungeon Which creature drops it is not known yet" } },
                 { id = 6903, name = "Gaze Dreamer Pants", source = { kind = "dungeon", text = "Twilight Lord Kelris, Blackfathom Deeps 33.5% in Classic", zone = "Blackfathom Deeps", boss = "Twilight Lord Kelris", dropRate = 33.5 } },
                 { id = 253939, name = "Filigreed Silky Leggings", source = { kind = "profession", text = "Tailoring (100) Only its maker can wear it Pattern drops in Blackfathom Deeps, Shadowfang Keep, The Deadmines", skill = "Tailoring", skillLevel = 100, bindsToMaker = true } },
-                { id = 7046, name = "Azure Silk Pants", source = { kind = "profession", text = "Tailoring", skill = "Tailoring" } },
               },
               enchants = {
                 { effect = "Spell Power +4 and Armor +24", spell = "Mystic Heavy Armor Kit", source = "Leatherworking 135: Pattern sold by Saenorion in Darnassus and Mahu in Thunder Bluff.", formulaId = 252811 },
@@ -2007,9 +2007,9 @@ ForeverBiSData = {
                 { id = 14203, name = "Thistlefur Pants of Arcane Wrath", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 24 random suffixes, each with its own stats: search for the full name" } },
                 { id = 253995, name = "Pearly Leggings", source = { kind = "profession", text = "Tailoring (125) Only its maker can wear it Requires Spinning Wheel. Its blueprint drops from Unstable Sentinel, City of Dalaran", skill = "Tailoring", skillLevel = 125, bindsToMaker = true } },
                 { id = 286988, name = "Violet Sorcerer's Leggings", source = { kind = "world", text = "A drop of the City of Dalaran dungeon Which creature drops it is not known yet" } },
+                { id = 270090, name = "Beggar's Leggings", source = { kind = "quest", text = "Four quests for \"Sea Wolf\" MacKinley, Booty Bay The Mosh'Ogg ogres are level 41 to 45 elites: very hard at level 30" } },
                 { id = 253945, name = "Filigreed Pearly Leggings", source = { kind = "profession", text = "Tailoring (100) Only its maker can wear it Pattern drops from Shadow Charger, Shadowfang Keep; Ghamoo-ra, Blackfathom Deeps", skill = "Tailoring", skillLevel = 100, bindsToMaker = true } },
                 { id = 6903, name = "Gaze Dreamer Pants", source = { kind = "dungeon", text = "Twilight Lord Kelris, Blackfathom Deeps 33.5% in Classic", zone = "Blackfathom Deeps", boss = "Twilight Lord Kelris", dropRate = 33.5 } },
-                { id = 270056, name = "Stromgarde Librarian Leggings", source = { kind = "quest", text = "Quest: Stromgarde Badges Alliance, from level 30, reported, not checked", faction = "Alliance", quest = "Stromgarde Badges", reported = true } },
               },
               enchants = {
                 { effect = "Spell Power +4 and Armor +24", spell = "Mystic Heavy Armor Kit", source = "Leatherworking 135: Pattern sold by Saenorion in Darnassus and Mahu in Thunder Bluff.", formulaId = 252811 },
@@ -2204,9 +2204,9 @@ ForeverBiSData = {
                 { id = 14203, name = "Thistlefur Pants of Fiery Wrath", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 24 random suffixes, each with its own stats: search for the full name" } },
                 { id = 253991, name = "Flame Leggings", source = { kind = "profession", text = "Tailoring (125) Only its maker can wear it Requires Spinning Wheel. Its blueprint drops from Unstable Sentinel, City of Dalaran", skill = "Tailoring", skillLevel = 125, bindsToMaker = true } },
                 { id = 286988, name = "Violet Sorcerer's Leggings", source = { kind = "world", text = "A drop of the City of Dalaran dungeon Which creature drops it is not known yet" } },
+                { id = 270090, name = "Beggar's Leggings", source = { kind = "quest", text = "Four quests for \"Sea Wolf\" MacKinley, Booty Bay The Mosh'Ogg ogres are level 41 to 45 elites: very hard at level 30" } },
                 { id = 253941, name = "Filigreed Flame Leggings", source = { kind = "profession", text = "Tailoring (100) Only its maker can wear it Pattern drops in Blackfathom Deeps, The Stockade", skill = "Tailoring", skillLevel = 100, bindsToMaker = true } },
                 { id = 6903, name = "Gaze Dreamer Pants", source = { kind = "dungeon", text = "Twilight Lord Kelris, Blackfathom Deeps 33.5% in Classic", zone = "Blackfathom Deeps", boss = "Twilight Lord Kelris", dropRate = 33.5 } },
-                { id = 4317, name = "Phoenix Pants", source = { kind = "profession", text = "Tailoring (100)", skill = "Tailoring", skillLevel = 100 } },
               },
               enchants = {
                 { effect = "Spell Power +4 and Armor +24", spell = "Mystic Heavy Armor Kit", source = "Leatherworking 135: Pattern sold by Saenorion in Darnassus and Mahu in Thunder Bluff.", formulaId = 252811 },
@@ -3892,9 +3892,9 @@ ForeverBiSData = {
                 { id = 7709, name = "Blighted Leggings", source = { kind = "world", text = "Azshir the Sleepless, Scarlet Monastery Graveyard 30.61% in Classic", zone = "Scarlet Monastery", boss = "Azshir the Sleepless", dropRate = 30.61 } },
                 { id = 14203, name = "Thistlefur Pants of Shadow Wrath", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 24 random suffixes, each with its own stats: search for the full name" } },
                 { id = 253993, name = "Shadow Leggings", source = { kind = "profession", text = "Tailoring (125) Only its maker can wear it Requires Spinning Wheel. Its blueprint drops from Unstable Sentinel, City of Dalaran", skill = "Tailoring", skillLevel = 125, bindsToMaker = true } },
+                { id = 270090, name = "Beggar's Leggings", source = { kind = "quest", text = "Four quests for \"Sea Wolf\" MacKinley, Booty Bay The Mosh'Ogg ogres are level 41 to 45 elites: very hard at level 30" } },
                 { id = 286988, name = "Violet Sorcerer's Leggings", source = { kind = "world", text = "A drop of the City of Dalaran dungeon Which creature drops it is not known yet" } },
                 { id = 6903, name = "Gaze Dreamer Pants", source = { kind = "dungeon", text = "Twilight Lord Kelris, Blackfathom Deeps 33.5% in Classic", zone = "Blackfathom Deeps", boss = "Twilight Lord Kelris", dropRate = 33.5 } },
-                { id = 253943, name = "Filigreed Shadow Leggings", source = { kind = "profession", text = "Tailoring (100) Only its maker can wear it Pattern drops in Blackfathom Deeps, The Stockade, Wailing Caverns", skill = "Tailoring", skillLevel = 100, bindsToMaker = true } },
               },
               enchants = {
                 { effect = "Spell Power +4 and Armor +24", spell = "Mystic Heavy Armor Kit", source = "Leatherworking 135: Pattern sold by Saenorion in Darnassus and Mahu in Thunder Bluff.", formulaId = 252811 },
@@ -4644,9 +4644,9 @@ ForeverBiSData = {
                 { id = 9428, name = "Unearthed Bands of Power", source = { kind = "world", text = "Trash mobs, Uldaman Random suffix, one of 35 Search the auction house for the full name" } },
                 { id = 270080, name = "Arathi Armbands", source = { kind = "world", text = "Wanted! Otto and Falconcrest, Refuge Pointe, Arathi Highlands Two elites of level 38 and 40: take a strong group" } },
                 { id = 14590, name = "Hawkeye's Bracers", source = { kind = "world", text = "World drop, sold at the auction house" } },
+                { id = 270091, name = "Seadog's Battered Cuffs", source = { kind = "quest", text = "Four quests for \"Sea Wolf\" MacKinley, Booty Bay The Mosh'Ogg ogres are level 41 to 45 elites: very hard at level 30" } },
                 { id = 6198, name = "Jurassic Wristguards", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 18948, name = "Barbaric Bracers", source = { kind = "profession", text = "Leatherworking (130) Requires Tanning Rack. Its blueprint drops rarely from Razorclaw the Butcher, Shadowfang Keep", skill = "Leatherworking", skillLevel = 130 } },
-                { id = 270032, name = "Cultist's Armguards", source = { kind = "quest", text = "Quest: Blackfathom Villainy Alliance, from level 18, reported, not checked Quest: Blackfathom Villainy Horde, from level 18, reported, not checked", quest = "Blackfathom Villainy", reported = true } },
               },
               enchants = {
                 { effect = "Agility +3", spell = "Enchant Bracer - Minor Agility", source = "Enchanting 80: Taught by the trainer." },
@@ -4832,9 +4832,9 @@ ForeverBiSData = {
                 { id = 9428, name = "Unearthed Bands of Power", source = { kind = "world", text = "Trash mobs, Uldaman Random suffix, one of 35 Search the auction house for the full name" } },
                 { id = 270080, name = "Arathi Armbands", source = { kind = "world", text = "Wanted! Otto and Falconcrest, Refuge Pointe, Arathi Highlands Two elites of level 38 and 40: take a strong group" } },
                 { id = 14590, name = "Hawkeye's Bracers", source = { kind = "world", text = "World drop, sold at the auction house" } },
+                { id = 270091, name = "Seadog's Battered Cuffs", source = { kind = "quest", text = "Four quests for \"Sea Wolf\" MacKinley, Booty Bay The Mosh'Ogg ogres are level 41 to 45 elites: very hard at level 30" } },
                 { id = 6198, name = "Jurassic Wristguards", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 18948, name = "Barbaric Bracers", source = { kind = "profession", text = "Leatherworking (130) Requires Tanning Rack. Its blueprint drops rarely from Razorclaw the Butcher, Shadowfang Keep", skill = "Leatherworking", skillLevel = 130 } },
-                { id = 270032, name = "Cultist's Armguards", source = { kind = "quest", text = "Quest: Blackfathom Villainy Alliance, from level 18, reported, not checked Quest: Blackfathom Villainy Horde, from level 18, reported, not checked", quest = "Blackfathom Villainy", reported = true } },
               },
               enchants = {
                 { effect = "Agility +3", spell = "Enchant Bracer - Minor Agility", source = "Enchanting 80: Taught by the trainer." },
@@ -5020,9 +5020,9 @@ ForeverBiSData = {
                 { id = 9428, name = "Unearthed Bands of the Bandit", source = { kind = "world", text = "Trash mobs, Uldaman Random suffix, one of 35 Search the auction house for the full name" } },
                 { id = 270032, name = "Cultist's Armguards", source = { kind = "quest", text = "Quest: Blackfathom Villainy Alliance, from level 18, reported, not checked Quest: Blackfathom Villainy Horde, from level 18, reported, not checked", quest = "Blackfathom Villainy", reported = true } },
                 { id = 18948, name = "Barbaric Bracers", source = { kind = "profession", text = "Leatherworking (130) Requires Tanning Rack. Its blueprint drops rarely from Razorclaw the Butcher, Shadowfang Keep", skill = "Leatherworking", skillLevel = 130 } },
+                { id = 270091, name = "Seadog's Battered Cuffs", source = { kind = "quest", text = "Four quests for \"Sea Wolf\" MacKinley, Booty Bay The Mosh'Ogg ogres are level 41 to 45 elites: very hard at level 30" } },
                 { id = 3230, name = "Black Wolf Bracers", source = { kind = "dungeon", text = "Fenrus the Devourer, Shadowfang Keep 17.21% in Classic", zone = "Shadowfang Keep", boss = "Fenrus the Devourer", dropRate = 17.21 } },
                 { id = 270080, name = "Arathi Armbands", source = { kind = "world", text = "Wanted! Otto and Falconcrest, Refuge Pointe, Arathi Highlands Two elites of level 38 and 40: take a strong group" } },
-                { id = 270055, name = "Charged Leather Bracers", source = { kind = "quest", text = "Quest: Power Stones from level 30, reported, not checked", quest = "Power Stones", reported = true } },
               },
               enchants = {
                 { effect = "Stamina +5", spell = "Enchant Bracer - Stamina", source = "Enchanting 170: Taught by the trainer." },
@@ -5209,9 +5209,9 @@ ForeverBiSData = {
                 { id = 9428, name = "Unearthed Bands of the Bandit", source = { kind = "world", text = "Trash mobs, Uldaman Random suffix, one of 35 Search the auction house for the full name" } },
                 { id = 270032, name = "Cultist's Armguards", source = { kind = "quest", text = "Quest: Blackfathom Villainy Alliance, from level 18, reported, not checked Quest: Blackfathom Villainy Horde, from level 18, reported, not checked", quest = "Blackfathom Villainy", reported = true } },
                 { id = 18948, name = "Barbaric Bracers", source = { kind = "profession", text = "Leatherworking (130) Requires Tanning Rack. Its blueprint drops rarely from Razorclaw the Butcher, Shadowfang Keep", skill = "Leatherworking", skillLevel = 130 } },
+                { id = 270091, name = "Seadog's Battered Cuffs", source = { kind = "quest", text = "Four quests for \"Sea Wolf\" MacKinley, Booty Bay The Mosh'Ogg ogres are level 41 to 45 elites: very hard at level 30" } },
                 { id = 3230, name = "Black Wolf Bracers", source = { kind = "dungeon", text = "Fenrus the Devourer, Shadowfang Keep 17.21% in Classic", zone = "Shadowfang Keep", boss = "Fenrus the Devourer", dropRate = 17.21 } },
                 { id = 270080, name = "Arathi Armbands", source = { kind = "world", text = "Wanted! Otto and Falconcrest, Refuge Pointe, Arathi Highlands Two elites of level 38 and 40: take a strong group" } },
-                { id = 270055, name = "Charged Leather Bracers", source = { kind = "quest", text = "Quest: Power Stones from level 30, reported, not checked", quest = "Power Stones", reported = true } },
               },
               enchants = {
                 { effect = "Stamina +5", spell = "Enchant Bracer - Stamina", source = "Enchanting 170: Taught by the trainer." },
@@ -5433,10 +5433,10 @@ ForeverBiSData = {
               items = {
                 { id = 15358, name = "Headhunter's Woolies of Nature's Wrath", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 36 random suffixes, each with its own stats: search for the full name" } },
                 { id = 270031, name = "Dark Ritual Leggings", source = { kind = "quest", text = "Quest: Blackfathom Villainy Alliance, from level 18, reported, not checked Quest: Blackfathom Villainy Horde, from level 18, reported, not checked", quest = "Blackfathom Villainy", reported = true } },
+                { id = 270090, name = "Beggar's Leggings", source = { kind = "quest", text = "Four quests for \"Sea Wolf\" MacKinley, Booty Bay The Mosh'Ogg ogres are level 41 to 45 elites: very hard at level 30" } },
                 { id = 286988, name = "Violet Sorcerer's Leggings", source = { kind = "world", text = "A drop of the City of Dalaran dungeon Which creature drops it is not known yet" } },
                 { id = 6903, name = "Gaze Dreamer Pants", source = { kind = "dungeon", text = "Twilight Lord Kelris, Blackfathom Deeps 33.5% in Classic", zone = "Blackfathom Deeps", boss = "Twilight Lord Kelris", dropRate = 33.5 } },
                 { id = 285338, name = "Kodohide Legguards", source = { kind = "world", text = "Brontus, a rare kodo of the Barrens Reported, not checked", reported = true } },
-                { id = 270056, name = "Stromgarde Librarian Leggings", source = { kind = "quest", text = "Quest: Stromgarde Badges Alliance, from level 30, reported, not checked", faction = "Alliance", quest = "Stromgarde Badges", reported = true } },
               },
               enchants = {
                 { effect = "Spell Power +4 and Armor +24", spell = "Mystic Heavy Armor Kit", source = "Leatherworking 135: Pattern sold by Saenorion in Darnassus and Mahu in Thunder Bluff.", formulaId = 252811 },
@@ -6414,10 +6414,10 @@ ForeverBiSData = {
               items = {
                 { id = 7709, name = "Blighted Leggings", source = { kind = "world", text = "Azshir the Sleepless, Scarlet Monastery Graveyard 30.61% in Classic", zone = "Scarlet Monastery", boss = "Azshir the Sleepless", dropRate = 30.61 } },
                 { id = 14203, name = "Thistlefur Pants of Shadow Wrath", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 24 random suffixes, each with its own stats: search for the full name" } },
+                { id = 270090, name = "Beggar's Leggings", source = { kind = "quest", text = "Four quests for \"Sea Wolf\" MacKinley, Booty Bay The Mosh'Ogg ogres are level 41 to 45 elites: very hard at level 30" } },
                 { id = 286988, name = "Violet Sorcerer's Leggings", source = { kind = "world", text = "A drop of the City of Dalaran dungeon Which creature drops it is not known yet" } },
                 { id = 6903, name = "Gaze Dreamer Pants", source = { kind = "dungeon", text = "Twilight Lord Kelris, Blackfathom Deeps 33.5% in Classic", zone = "Blackfathom Deeps", boss = "Twilight Lord Kelris", dropRate = 33.5 } },
                 { id = 253993, name = "Shadow Leggings", source = { kind = "profession", text = "Tailoring (125) Only its maker can wear it Requires Spinning Wheel. Its blueprint drops from Unstable Sentinel, City of Dalaran", skill = "Tailoring", skillLevel = 125, bindsToMaker = true } },
-                { id = 270056, name = "Stromgarde Librarian Leggings", source = { kind = "quest", text = "Quest: Stromgarde Badges Alliance, from level 30, reported, not checked", faction = "Alliance", quest = "Stromgarde Badges", reported = true } },
               },
               enchants = {
                 { effect = "Spell Power +4 and Armor +24", spell = "Mystic Heavy Armor Kit", source = "Leatherworking 135: Pattern sold by Saenorion in Darnassus and Mahu in Thunder Bluff.", formulaId = 252811 },
