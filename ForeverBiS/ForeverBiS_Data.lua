@@ -432,8 +432,8 @@ ForeverBiSData = {
               items = {
                 { id = 277206, name = "Brilliant Cloak", source = { kind = "quest", text = "Strahnbrad Mystery, a quest of Alterac Mountains Who gives it is not known yet" } },
                 { id = 7436, name = "Twilight Cape of the Sorcerer", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 41 random suffixes, each with its own stats: search for the full name" } },
-                { id = 284383, name = "Faerie Dragon's Skin", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 279835, name = "Vine Pruner's Cloak", source = { kind = "quest", text = "Quest: A Green Sample City of Dalaran, Alliance, from level 24", faction = "Alliance", quest = "A Green Sample City of Dalaran" } },
+                { id = 284383, name = "Faerie Dragon's Skin", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 6751, name = "Mourning Shawl", source = { kind = "quest", text = "Quest: Mortality Wanes Alliance, level 30 in Classic, from level 25 Same quest as the Lancer Boots You choose one or the other", faction = "Alliance", quest = "Mortality Wanes" } },
                 { id = 2953, name = "Watch Master's Cloak", source = { kind = "quest", text = "Quest: Morbent Fel Alliance, level 32 in Classic, from level 20", faction = "Alliance", quest = "Morbent Fel" } },
               },
@@ -469,10 +469,10 @@ ForeverBiSData = {
             },
             { slot = "Hands",
               items = {
-                { id = 3759, name = "Insulated Sage Gloves", source = { kind = "quest", text = "Quest: Syndicate Assassins Alliance, level 33 in Classic, from level 26", faction = "Alliance", quest = "Syndicate Assassins" } },
-                { id = 4040, name = "Nightsky Gloves", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 273034, name = "Ephemeral Grips", source = { kind = "world", text = "Arcane Anomaly, City of Dalaran" } },
                 { id = 9861, name = "Archer's Gloves of the Eagle", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 36 random suffixes, each with its own stats: search for the full name" } },
+                { id = 3759, name = "Insulated Sage Gloves", source = { kind = "quest", text = "Quest: Syndicate Assassins Alliance, level 33 in Classic, from level 26", faction = "Alliance", quest = "Syndicate Assassins" } },
+                { id = 4040, name = "Nightsky Gloves", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 9491, name = "Hotshot Pilot's Gloves", source = { kind = "world", text = "Trash mobs, Gnomeregan 0.03% in Classic", zone = "Gnomeregan", boss = "Trash mobs", dropRate = 0.03 } },
                 { id = 4980, name = "Prospector Gloves", source = { kind = "quest", text = "Quest: Agmond's Fate Alliance, level 38 in Classic, from level 30 Agmond's Fate, from Prospector Ironband in Loch Modan The urns lie among elites of level 35 to 37: take a group", faction = "Alliance", quest = "Agmond's Fate" } },
               },
