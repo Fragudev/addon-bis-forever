@@ -7031,12 +7031,12 @@ ForeverBiSData = {
             },
             { slot = "Two-hand weapon",
               items = {
-                { id = 6976, name = "Whirlwind Warhammer", source = { kind = "quest", text = "Quest: Whirlwind Weapon level 40 in Classic, from level 30", quest = "Whirlwind Weapon" } },
                 { id = 6975, name = "Whirlwind Axe", source = { kind = "quest", text = "Quest: Whirlwind Weapon level 40 in Classic, from level 30", quest = "Whirlwind Weapon" } },
+                { id = 6976, name = "Whirlwind Warhammer", source = { kind = "quest", text = "Quest: Whirlwind Weapon level 40 in Classic, from level 30", quest = "Whirlwind Weapon" } },
                 { id = 6977, name = "Whirlwind Sword", source = { kind = "quest", text = "Quest: Whirlwind Weapon level 40 in Classic, from level 30", quest = "Whirlwind Weapon" } },
+                { id = 4983, name = "Rock Pulverizer", source = { kind = "quest", text = "Quest: Murdaloc Alliance, level 42 in Classic, from level 30 Three quests from Ironforge to the Badlands Take a group: Murdaloc is level 42", faction = "Alliance", quest = "Murdaloc" } },
                 { id = 279841, name = "Defender of Dalaran", source = { kind = "quest", text = "Quest: Heart of Disruption City of Dalaran, Alliance, from level 24", faction = "Alliance", quest = "Heart of Disruption City of Dalaran" } },
-                { id = 270085, name = "Master Hunter's Spellsword", source = { kind = "world", text = "Big Game Hunter, after Nesingwary's three Mastery chains, Stranglethorn Vale King Bangalash is a level 43 elite: very hard at level 30" } },
-                { id = 13045, name = "Viscous Hammer", source = { kind = "world", text = "World drop, sold at the auction house" } },
+                { id = 6687, name = "Corpsemaker", source = { kind = "world", text = "Overlord Ramtusk, Razorfen Kraul 33.83% in Classic", zone = "Razorfen Kraul", boss = "Overlord Ramtusk", dropRate = 33.83 } },
               },
               enchants = {
                 { effect = "Weapon Damage +6", spell = "Enchant 2H Weapon - Impact", source = "Enchanting 200: Taught by the trainer." },
