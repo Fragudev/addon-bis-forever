@@ -17,17 +17,17 @@ ForeverBiSData = {
                 { id = 252512, name = "Brawler's Leather Helm", source = { kind = "dungeon", text = "Gelihast, Blackfathom Deeps Twilight Lord Kelris, Blackfathom Deeps Aku'mai, Blackfathom Deeps Lorgus Jett, Blackfathom Deeps Kam Deepfury, The Stockade Hamhock, The Stockade Bazil Thredd, The Stockade Dextren Ward, The Stockade Aggem Thorncurse, Razorfen Kraul Death Speaker Jargba, Razorfen Kraul Overlord Ramtusk, Razorfen Kraul Agathelos the Raging, Razorfen Kraul Charlga Razorflank, Razorfen Kraul Roogug, Razorfen Kraul Azshir the Sleepless, Scarlet Monastery Graveyard Ironspine, Scarlet Monastery Graveyard Houndmaster Loksey, Scarlet Monastery Library", zone = "Blackfathom Deeps", boss = "Gelihast" } },
                 { id = 6720, name = "Spirit Hunter Headdress", source = { kind = "quest", text = "Quest: Frostmaw Horde, level 37 in Classic, from level 26", faction = "Horde", quest = "Frostmaw" } },
                 { id = 277042, name = "Cloudy Gustwoven Hood", source = { kind = "profession", text = "Leatherworking (175) Pattern sold by Sutara Plainstalker, Mulgore (Horde). Requires Earthen Ring - Friendly", faction = "Horde", skill = "Leatherworking", skillLevel = 175 } },
-                { id = 277050, name = "Azure Gustwoven Hood", source = { kind = "profession", text = "Leatherworking (175) Pattern sold by Archmage Alvareaux, Alterac Mountains. Requires Kirin Tor - Friendly", skill = "Leatherworking", skillLevel = 175 } },
+                { id = 277050, name = "Azure Gustwoven Hood", source = { kind = "profession", text = "Leatherworking (175) Pattern sold by Archmage Alvareaux, Alterac Mountains (Alliance). Requires Kirin Tor - Friendly", faction = "Alliance", skill = "Leatherworking", skillLevel = 175 } },
               },
             },
             { slot = "Neck",
               items = {
                 { id = 12019, name = "Cerulean Talisman of the Tiger", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 35 random suffixes, each with its own stats: search for the full name" } },
+                { id = 286984, name = "Mark of the Marsh", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 7731, name = "Ghostshard Talisman", source = { kind = "world", text = "Azshir the Sleepless, Scarlet Monastery Graveyard 33.93% in Classic", zone = "Scarlet Monastery", boss = "Azshir the Sleepless", dropRate = 33.93 } },
                 { id = 13084, name = "Kaleidoscope Chain", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 273049, name = "Archmagister's Faceted Pendant", source = { kind = "world", text = "Shade of the Archmage, City of Dalaran" } },
                 { id = 282653, name = "Dissolved Locket", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
-                { id = 274068, name = "Thermaplugg Medal of Honor", source = { kind = "world", text = "Crowd Pummeler 9-60, Gnomeregan", zone = "Gnomeregan", boss = "Crowd Pummeler 9-60" } },
               },
               enchants = {
                 { effect = "Agility +5", spell = "Enchant Necklace - Agility", source = "Enchanting 210: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 120 Merchant’s Favor.", formulaId = 249504 },
@@ -215,11 +215,11 @@ ForeverBiSData = {
             { slot = "Neck",
               items = {
                 { id = 6695, name = "Stygian Bone Amulet", source = { kind = "world", text = "Blind Hunter, Razorfen Kraul 27.15% in Classic", zone = "Razorfen Kraul", boss = "Blind Hunter", dropRate = 27.15 } },
+                { id = 286995, name = "Guardian's Emblem", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 12029, name = "Greenstone Talisman of the Sorcerer", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 35 random suffixes, each with its own stats: search for the full name" } },
                 { id = 273049, name = "Archmagister's Faceted Pendant", source = { kind = "world", text = "Shade of the Archmage, City of Dalaran" } },
                 { id = 285331, name = "Mark of the Pack Leader", source = { kind = "world", text = "Humar the Pridelord, the rare black lion of the Barrens Reported, not checked", reported = true } },
                 { id = 5003, name = "Crystal Starfire Medallion", source = { kind = "world", text = "World drop, sold at the auction house" } },
-                { id = 13084, name = "Kaleidoscope Chain", source = { kind = "world", text = "World drop, sold at the auction house" } },
               },
               enchants = {
                 { effect = "+6 Spell Power", spell = "Enchant Necklace - Spell Power", source = "Enchanting 210: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 120 Merchant’s Favor.", formulaId = 249502 },
@@ -240,7 +240,7 @@ ForeverBiSData = {
                 { id = 7436, name = "Twilight Cape of Nature's Wrath", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 41 random suffixes, each with its own stats: search for the full name" } },
                 { id = 274149, name = "Thornweaver Drape", source = { kind = "world", text = "Roogug, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Roogug" } },
                 { id = 284383, name = "Faerie Dragon's Skin", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
-                { id = 277206, name = "Brilliant Cloak", source = { kind = "quest", text = "Strahnbrad Mystery, a quest of Alterac Mountains Who gives it is not known yet" } },
+                { id = 277206, name = "Brilliant Cloak", source = { kind = "quest", text = "Strahnbrad Mystery, a quest of Alterac Mountains From a Singed Note dropped in Alterac Mountains" } },
                 { id = 279835, name = "Vine Pruner's Cloak", source = { kind = "quest", text = "Quest: A Green Sample City of Dalaran, Alliance, from level 24", faction = "Alliance", quest = "A Green Sample City of Dalaran" } },
                 { id = 3719, name = "Hillman's Cloak", source = { kind = "profession", text = "Leatherworking", skill = "Leatherworking" } },
               },
@@ -408,11 +408,11 @@ ForeverBiSData = {
             { slot = "Neck",
               items = {
                 { id = 274749, name = "Souvenir Sea Shell", source = { kind = "world", text = "Sold by Gezzy Gunkgear in Booty Bay At Honored with Booty Bay" } },
+                { id = 286995, name = "Guardian's Emblem", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 12029, name = "Greenstone Talisman of the Sorcerer", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 35 random suffixes, each with its own stats: search for the full name" } },
                 { id = 7731, name = "Ghostshard Talisman", source = { kind = "world", text = "Azshir the Sleepless, Scarlet Monastery Graveyard 33.93% in Classic", zone = "Scarlet Monastery", boss = "Azshir the Sleepless", dropRate = 33.93 } },
                 { id = 7746, name = "Explorers' League Commendation", source = { kind = "quest", text = "Quest: Mythology of the Titans Alliance, level 38 in Classic, from level 28", faction = "Alliance", quest = "Mythology of the Titans" } },
                 { id = 13087, name = "River Pride Choker", source = { kind = "world", text = "World drop, sold at the auction house" } },
-                { id = 5003, name = "Crystal Starfire Medallion", source = { kind = "world", text = "World drop, sold at the auction house" } },
               },
               enchants = {
                 { effect = "+6 Spell Power", spell = "Enchant Necklace - Spell Power", source = "Enchanting 210: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 120 Merchant’s Favor.", formulaId = 249502 },
@@ -430,7 +430,7 @@ ForeverBiSData = {
             },
             { slot = "Back",
               items = {
-                { id = 277206, name = "Brilliant Cloak", source = { kind = "quest", text = "Strahnbrad Mystery, a quest of Alterac Mountains Who gives it is not known yet" } },
+                { id = 277206, name = "Brilliant Cloak", source = { kind = "quest", text = "Strahnbrad Mystery, a quest of Alterac Mountains From a Singed Note dropped in Alterac Mountains" } },
                 { id = 7436, name = "Twilight Cape of the Sorcerer", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 41 random suffixes, each with its own stats: search for the full name" } },
                 { id = 279835, name = "Vine Pruner's Cloak", source = { kind = "quest", text = "Quest: A Green Sample City of Dalaran, Alliance, from level 24", faction = "Alliance", quest = "A Green Sample City of Dalaran" } },
                 { id = 284383, name = "Faerie Dragon's Skin", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
@@ -506,7 +506,7 @@ ForeverBiSData = {
             { slot = "Feet",
               items = {
                 { id = 279840, name = "Renewing Footpads", source = { kind = "quest", text = "Quest: Heart of Disruption City of Dalaran, Alliance, from level 24", faction = "Alliance", quest = "Heart of Disruption City of Dalaran" } },
-                { id = 286987, name = "Violet Sorcerer's Sandals", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 286987, name = "Violet Sorcerer's Sandals", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
                 { id = 254001, name = "Gilded Slippers", source = { kind = "profession", text = "Tailoring (150) Only its maker can wear it Pattern: not needed, tailoring trainers teach the recipe at 150 Requires Spinning Wheel. Its blueprint drops from Unstable Sentinel, City of Dalaran", skill = "Tailoring", skillLevel = 150, bindsToMaker = true } },
                 { id = 279843, name = "Enchanted Sandals", source = { kind = "quest", text = "Quest: Heart of Disruption City of Dalaran, Horde, from level 24", faction = "Horde", quest = "Heart of Disruption City of Dalaran" } },
                 { id = 9450, name = "Gnomebot Operating Boots", source = { kind = "world", text = "Crowd Pummeler 9-60, Gnomeregan 65.28% in Classic", zone = "Gnomeregan", boss = "Crowd Pummeler 9-60", dropRate = 65.28 } },
@@ -596,7 +596,7 @@ ForeverBiSData = {
                 { id = 7413, name = "Infiltrator Cap of the Bandit", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 36 random suffixes, each with its own stats: search for the full name" } },
                 { id = 252447, name = "Defender's Leather Hood", source = { kind = "profession", text = "Leatherworking (100) Only its maker can wear it", skill = "Leatherworking", skillLevel = 100, bindsToMaker = true } },
                 { id = 277042, name = "Cloudy Gustwoven Hood", source = { kind = "profession", text = "Leatherworking (175) Pattern sold by Sutara Plainstalker, Mulgore (Horde). Requires Earthen Ring - Friendly", faction = "Horde", skill = "Leatherworking", skillLevel = 175 } },
-                { id = 277050, name = "Azure Gustwoven Hood", source = { kind = "profession", text = "Leatherworking (175) Pattern sold by Archmage Alvareaux, Alterac Mountains. Requires Kirin Tor - Friendly", skill = "Leatherworking", skillLevel = 175 } },
+                { id = 277050, name = "Azure Gustwoven Hood", source = { kind = "profession", text = "Leatherworking (175) Pattern sold by Archmage Alvareaux, Alterac Mountains (Alliance). Requires Kirin Tor - Friendly", faction = "Alliance", skill = "Leatherworking", skillLevel = 175 } },
               },
             },
             { slot = "Neck",
@@ -606,7 +606,7 @@ ForeverBiSData = {
                 { id = 274749, name = "Souvenir Sea Shell", source = { kind = "world", text = "Sold by Gezzy Gunkgear in Booty Bay At Honored with Booty Bay" } },
                 { id = 13087, name = "River Pride Choker", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 12029, name = "Greenstone Talisman of the Bandit", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 35 random suffixes, each with its own stats: search for the full name" } },
-                { id = 274068, name = "Thermaplugg Medal of Honor", source = { kind = "world", text = "Crowd Pummeler 9-60, Gnomeregan", zone = "Gnomeregan", boss = "Crowd Pummeler 9-60" } },
+                { id = 286984, name = "Mark of the Marsh", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
               },
               enchants = {
                 { effect = "Agility +5", spell = "Enchant Necklace - Agility", source = "Enchanting 210: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 120 Merchant’s Favor.", formulaId = 249504 },
@@ -655,7 +655,7 @@ ForeverBiSData = {
                 { id = 270091, name = "Seadog's Battered Cuffs", source = { kind = "quest", text = "Four quests for \"Sea Wolf\" MacKinley, Booty Bay The Mosh'Ogg ogres are level 41 to 45 elites: very hard at level 30" } },
                 { id = 270032, name = "Cultist's Armguards", source = { kind = "quest", text = "Quest: Blackfathom Villainy Alliance, from level 18, reported, not checked Quest: Blackfathom Villainy Horde, from level 18, reported, not checked", quest = "Blackfathom Villainy", reported = true } },
                 { id = 270080, name = "Arathi Armbands", source = { kind = "world", text = "Wanted! Otto and Falconcrest, Refuge Pointe, Arathi Highlands Two elites of level 38 and 40: take a strong group" } },
-                { id = 270042, name = "Technician's Bracers", source = { kind = "quest", text = "Quest: A Fine Mess from level 20, reported, not checked", quest = "A Fine Mess", reported = true } },
+                { id = 286985, name = "Thicket Bindings", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
               },
               enchants = {
                 { effect = "Stamina +5", spell = "Enchant Bracer - Stamina", source = "Enchanting 170: Taught by the trainer." },
@@ -705,7 +705,7 @@ ForeverBiSData = {
                 { id = 15142, name = "Ghostwalker Boots of the Bear", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 36 random suffixes, each with its own stats: search for the full name" } },
                 { id = 16977, name = "Warsong Boots", source = { kind = "quest", text = "Quest: Warsong Supplies Horde, level 27 in Classic, from level 22", faction = "Horde", quest = "Warsong Supplies" } },
                 { id = 7754, name = "Harbinger Boots", source = { kind = "world", text = "Trash mobs, Scarlet Monastery Graveyard 0.02% in Classic Trash mobs, Scarlet Monastery Library 0.02% in Classic Trash mobs, Scarlet Monastery Armory 0.02% in Classic Trash mobs, Scarlet Monastery Cathedral 0.02% in Classic", zone = "Scarlet Monastery", boss = "Trash mobs", dropRate = 0.02 } },
-                { id = 286987, name = "Violet Sorcerer's Sandals", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 286987, name = "Violet Sorcerer's Sandals", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
               },
               enchants = {
                 { effect = "Minor Speed Increase", spell = "Enchant Boots - Minor Speed", source = "Enchanting 225: Taught by the trainer." },
@@ -820,8 +820,8 @@ ForeverBiSData = {
                 { id = 271716, name = "Explorer's League Dustcover", source = { kind = "quest", text = "Quest: Lost Relic Carry Excavation Site: Wetlands, Alliance, from level 24", faction = "Alliance", quest = "Lost Relic Carry Excavation Site: Wetlands" } },
                 { id = 271719, name = "Furs of the Earthen Ring", source = { kind = "quest", text = "Quest: Elder Knowledge Excavation Site: Wetlands, Horde, from level 24", faction = "Horde", quest = "Elder Knowledge Excavation Site: Wetlands" } },
                 { id = 9605, name = "Repairman's Cape", source = { kind = "quest", text = "Quest: Data Rescue Alliance, level 30 in Classic, from level 25", faction = "Alliance", quest = "Data Rescue" } },
+                { id = 286994, name = "Tattered Kirin Tor Cloak", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 4462, name = "Cloak of Rot", source = { kind = "world", text = "World drop, sold at the auction house" } },
-                { id = 273825, name = "Red Wool Cloak", source = { kind = "world", text = "Bazil Thredd, The Stockade", zone = "The Stockade", boss = "Bazil Thredd" } },
               },
               enchants = {
                 { effect = "Armor +60", spell = "Enchant Cloak - Greater Defense", source = "Enchanting 205: Taught by the trainer." },
@@ -896,7 +896,7 @@ ForeverBiSData = {
                 { id = 9454, name = "Acidic Walkers", source = { kind = "world", text = "Viscous Fallout, Gnomeregan 60.81% in Classic", zone = "Gnomeregan", boss = "Viscous Fallout", dropRate = 60.81 } },
                 { id = 9845, name = "Conjurer's Shoes of the Prophet", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 24 random suffixes, each with its own stats: search for the full name" } },
                 { id = 15697, name = "Kodo Rustler Boots", source = { kind = "quest", text = "Quest: Kodo Roundup level 34 in Classic, from level 30", quest = "Kodo Roundup" } },
-                { id = 286987, name = "Violet Sorcerer's Sandals", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 286987, name = "Violet Sorcerer's Sandals", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
               },
               enchants = {
                 { effect = "Minor Speed Increase", spell = "Enchant Boots - Minor Speed", source = "Enchanting 225: Taught by the trainer." },
@@ -989,7 +989,7 @@ ForeverBiSData = {
                 { id = 13084, name = "Kaleidoscope Chain", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 274749, name = "Souvenir Sea Shell", source = { kind = "world", text = "Sold by Gezzy Gunkgear in Booty Bay At Honored with Booty Bay" } },
                 { id = 5003, name = "Crystal Starfire Medallion", source = { kind = "world", text = "World drop, sold at the auction house" } },
-                { id = 274068, name = "Thermaplugg Medal of Honor", source = { kind = "world", text = "Crowd Pummeler 9-60, Gnomeregan", zone = "Gnomeregan", boss = "Crowd Pummeler 9-60" } },
+                { id = 286995, name = "Guardian's Emblem", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
               },
               enchants = {
                 { effect = "Healing Spells +11, Damage Spells +4", spell = "Enchant Necklace - Healing Power", source = "Enchanting 210: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 120 Merchant’s Favor.", formulaId = 249503 },
@@ -1007,12 +1007,12 @@ ForeverBiSData = {
             },
             { slot = "Back",
               items = {
-                { id = 277206, name = "Brilliant Cloak", source = { kind = "quest", text = "Strahnbrad Mystery, a quest of Alterac Mountains Who gives it is not known yet" } },
+                { id = 277206, name = "Brilliant Cloak", source = { kind = "quest", text = "Strahnbrad Mystery, a quest of Alterac Mountains From a Singed Note dropped in Alterac Mountains" } },
                 { id = 7436, name = "Twilight Cape of the Prophet", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 41 random suffixes, each with its own stats: search for the full name" } },
+                { id = 286994, name = "Tattered Kirin Tor Cloak", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 4462, name = "Cloak of Rot", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 273825, name = "Red Wool Cloak", source = { kind = "world", text = "Bazil Thredd, The Stockade", zone = "The Stockade", boss = "Bazil Thredd" } },
                 { id = 271716, name = "Explorer's League Dustcover", source = { kind = "quest", text = "Quest: Lost Relic Carry Excavation Site: Wetlands, Alliance, from level 24", faction = "Alliance", quest = "Lost Relic Carry Excavation Site: Wetlands" } },
-                { id = 271719, name = "Furs of the Earthen Ring", source = { kind = "quest", text = "Quest: Elder Knowledge Excavation Site: Wetlands, Horde, from level 24", faction = "Horde", quest = "Elder Knowledge Excavation Site: Wetlands" } },
               },
               enchants = {
                 { effect = "Armor +60", spell = "Enchant Cloak - Greater Defense", source = "Enchanting 205: Taught by the trainer." },
@@ -1084,7 +1084,7 @@ ForeverBiSData = {
               items = {
                 { id = 254001, name = "Gilded Slippers", source = { kind = "profession", text = "Tailoring (150) Only its maker can wear it Pattern: not needed, tailoring trainers teach the recipe at 150 Requires Spinning Wheel. Its blueprint drops from Unstable Sentinel, City of Dalaran", skill = "Tailoring", skillLevel = 150, bindsToMaker = true } },
                 { id = 279840, name = "Renewing Footpads", source = { kind = "quest", text = "Quest: Heart of Disruption City of Dalaran, Alliance, from level 24", faction = "Alliance", quest = "Heart of Disruption City of Dalaran" } },
-                { id = 286987, name = "Violet Sorcerer's Sandals", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 286987, name = "Violet Sorcerer's Sandals", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
                 { id = 15697, name = "Kodo Rustler Boots", source = { kind = "quest", text = "Quest: Kodo Roundup level 34 in Classic, from level 30", quest = "Kodo Roundup" } },
                 { id = 9845, name = "Conjurer's Shoes of the Eagle", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 24 random suffixes, each with its own stats: search for the full name" } },
                 { id = 9454, name = "Acidic Walkers", source = { kind = "world", text = "Viscous Fallout, Gnomeregan 60.81% in Classic", zone = "Gnomeregan", boss = "Viscous Fallout", dropRate = 60.81 } },
@@ -1182,8 +1182,8 @@ ForeverBiSData = {
                 { id = 7731, name = "Ghostshard Talisman", source = { kind = "world", text = "Azshir the Sleepless, Scarlet Monastery Graveyard 33.93% in Classic", zone = "Scarlet Monastery", boss = "Azshir the Sleepless", dropRate = 33.93 } },
                 { id = 13087, name = "River Pride Choker", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 7746, name = "Explorers' League Commendation", source = { kind = "quest", text = "Quest: Mythology of the Titans Alliance, level 38 in Classic, from level 28", faction = "Alliance", quest = "Mythology of the Titans" } },
+                { id = 286995, name = "Guardian's Emblem", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 12029, name = "Greenstone Talisman of Stamina", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 35 random suffixes, each with its own stats: search for the full name" } },
-                { id = 5754, name = "Wolfpack Medallion", source = { kind = "world", text = "World drop, sold at the auction house" } },
               },
               enchants = {
                 { effect = "Defense +5", spell = "Enchant Necklace - Deflection", source = "Enchanting 210: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 120 Merchant’s Favor.", formulaId = 249505 },
@@ -1194,7 +1194,7 @@ ForeverBiSData = {
                 { id = 7727, name = "Watchman Pauldrons", source = { kind = "world", text = "Trash mobs, Scarlet Monastery Graveyard 0.02% in Classic Trash mobs, Scarlet Monastery Library 0.02% in Classic Trash mobs, Scarlet Monastery Armory 0.02% in Classic Trash mobs, Scarlet Monastery Cathedral 0.02% in Classic World drop, sold at the auction house", zone = "Scarlet Monastery", boss = "Trash mobs", dropRate = 0.02 } },
                 { id = 273047, name = "Unstable Crystalline Shoulderpads", source = { kind = "world", text = "Unstable Sentinel, City of Dalaran" } },
                 { id = 277043, name = "Cloudy Gustwoven Spaulders", source = { kind = "profession", text = "Leatherworking (175) Pattern sold by Sutara Plainstalker, Mulgore (Horde). Requires Earthen Ring - Friendly", faction = "Horde", skill = "Leatherworking", skillLevel = 175 } },
-                { id = 277051, name = "Azure Gustwoven Spaulders", source = { kind = "profession", text = "Leatherworking (175) Pattern sold by Archmage Alvareaux, Alterac Mountains. Requires Kirin Tor - Friendly", skill = "Leatherworking", skillLevel = 175 } },
+                { id = 277051, name = "Azure Gustwoven Spaulders", source = { kind = "profession", text = "Leatherworking (175) Pattern sold by Archmage Alvareaux, Alterac Mountains (Alliance). Requires Kirin Tor - Friendly", faction = "Alliance", skill = "Leatherworking", skillLevel = 175 } },
                 { id = 15357, name = "Headhunter's Spaulders of the Monkey", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 36 random suffixes, each with its own stats: search for the full name" } },
                 { id = 5964, name = "Barbaric Shoulders", source = { kind = "profession", text = "Leatherworking", skill = "Leatherworking" } },
               },
@@ -1230,9 +1230,9 @@ ForeverBiSData = {
                 { id = 3230, name = "Black Wolf Bracers", source = { kind = "dungeon", text = "Fenrus the Devourer, Shadowfang Keep 17.21% in Classic", zone = "Shadowfang Keep", boss = "Fenrus the Devourer", dropRate = 17.21 } },
                 { id = 9428, name = "Unearthed Bands of Stamina", source = { kind = "world", text = "Trash mobs, Uldaman Random suffix, one of 35 Search the auction house for the full name" } },
                 { id = 270091, name = "Seadog's Battered Cuffs", source = { kind = "quest", text = "Four quests for \"Sea Wolf\" MacKinley, Booty Bay The Mosh'Ogg ogres are level 41 to 45 elites: very hard at level 30" } },
+                { id = 286985, name = "Thicket Bindings", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 18948, name = "Barbaric Bracers", source = { kind = "profession", text = "Leatherworking (130) Requires Tanning Rack. Its blueprint drops rarely from Razorclaw the Butcher, Shadowfang Keep", skill = "Leatherworking", skillLevel = 130 } },
                 { id = 270032, name = "Cultist's Armguards", source = { kind = "quest", text = "Quest: Blackfathom Villainy Alliance, from level 18, reported, not checked Quest: Blackfathom Villainy Horde, from level 18, reported, not checked", quest = "Blackfathom Villainy", reported = true } },
-                { id = 270055, name = "Charged Leather Bracers", source = { kind = "quest", text = "Quest: Power Stones from level 30, reported, not checked", quest = "Power Stones", reported = true } },
               },
               enchants = {
                 { effect = "Stamina +5", spell = "Enchant Bracer - Stamina", source = "Enchanting 170: Taught by the trainer." },
@@ -1368,11 +1368,11 @@ ForeverBiSData = {
             { slot = "Neck",
               items = {
                 { id = 273049, name = "Archmagister's Faceted Pendant", source = { kind = "world", text = "Shade of the Archmage, City of Dalaran" } },
+                { id = 286984, name = "Mark of the Marsh", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 12029, name = "Greenstone Talisman of Agility", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 35 random suffixes, each with its own stats: search for the full name" } },
                 { id = 7731, name = "Ghostshard Talisman", source = { kind = "world", text = "Azshir the Sleepless, Scarlet Monastery Graveyard 33.93% in Classic", zone = "Scarlet Monastery", boss = "Azshir the Sleepless", dropRate = 33.93 } },
                 { id = 282653, name = "Dissolved Locket", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 13084, name = "Kaleidoscope Chain", source = { kind = "world", text = "World drop, sold at the auction house" } },
-                { id = 274068, name = "Thermaplugg Medal of Honor", source = { kind = "world", text = "Crowd Pummeler 9-60, Gnomeregan", zone = "Gnomeregan", boss = "Crowd Pummeler 9-60" } },
               },
               enchants = {
                 { effect = "Agility +5", spell = "Enchant Necklace - Agility", source = "Enchanting 210: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 120 Merchant’s Favor.", formulaId = 249504 },
@@ -1560,7 +1560,7 @@ ForeverBiSData = {
                 { id = 273047, name = "Unstable Crystalline Shoulderpads", source = { kind = "world", text = "Unstable Sentinel, City of Dalaran" } },
                 { id = 15140, name = "Cutthroat's Mantle of the Bandit", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 36 random suffixes, each with its own stats: search for the full name" } },
                 { id = 277043, name = "Cloudy Gustwoven Spaulders", source = { kind = "profession", text = "Leatherworking (175) Pattern sold by Sutara Plainstalker, Mulgore (Horde). Requires Earthen Ring - Friendly", faction = "Horde", skill = "Leatherworking", skillLevel = 175 } },
-                { id = 277051, name = "Azure Gustwoven Spaulders", source = { kind = "profession", text = "Leatherworking (175) Pattern sold by Archmage Alvareaux, Alterac Mountains. Requires Kirin Tor - Friendly", skill = "Leatherworking", skillLevel = 175 } },
+                { id = 277051, name = "Azure Gustwoven Spaulders", source = { kind = "profession", text = "Leatherworking (175) Pattern sold by Archmage Alvareaux, Alterac Mountains (Alliance). Requires Kirin Tor - Friendly", faction = "Alliance", skill = "Leatherworking", skillLevel = 175 } },
                 { id = 2264, name = "Mantle of Thieves", source = { kind = "world", text = "Trash mobs, Razorfen Kraul 0.04% in Classic World drop, sold at the auction house", zone = "Razorfen Kraul", boss = "Trash mobs", dropRate = 0.04 } },
                 { id = 4197, name = "Berylline Pads", source = { kind = "quest", text = "Quest: A Vengeful Fate Horde, level 34 in Classic, from level 29 Quest: The Crone of the Kraul Alliance, level 34 in Classic, from level 29", quest = "A Vengeful Fate" } },
               },
@@ -1572,7 +1572,7 @@ ForeverBiSData = {
                 { id = 6340, name = "Fenrus' Hide", source = { kind = "dungeon", text = "Fenrus the Devourer, Shadowfang Keep 74.16% in Classic", zone = "Shadowfang Keep", boss = "Fenrus the Devourer", dropRate = 74.16 } },
                 { id = 271720, name = "Crocolisk Skin Gaiter", source = { kind = "quest", text = "A quest of the Excavation Site, in the Wetlands Which quest is not known yet" } },
                 { id = 14763, name = "Enduring Cape", source = { kind = "world", text = "World drop, sold at the auction house" } },
-                { id = 277206, name = "Brilliant Cloak", source = { kind = "quest", text = "Strahnbrad Mystery, a quest of Alterac Mountains Who gives it is not known yet" } },
+                { id = 277206, name = "Brilliant Cloak", source = { kind = "quest", text = "Strahnbrad Mystery, a quest of Alterac Mountains From a Singed Note dropped in Alterac Mountains" } },
               },
               enchants = {
                 { effect = "Agility +3", spell = "Enchant Cloak - Minor Agility", source = "Enchanting 110: Formula sold by Dalria in Ashenvale and Kulwia in Stonetalon Mountains.", formulaId = 11039 },
@@ -1597,8 +1597,8 @@ ForeverBiSData = {
                 { id = 270091, name = "Seadog's Battered Cuffs", source = { kind = "quest", text = "Four quests for \"Sea Wolf\" MacKinley, Booty Bay The Mosh'Ogg ogres are level 41 to 45 elites: very hard at level 30" } },
                 { id = 270032, name = "Cultist's Armguards", source = { kind = "quest", text = "Quest: Blackfathom Villainy Alliance, from level 18, reported, not checked Quest: Blackfathom Villainy Horde, from level 18, reported, not checked", quest = "Blackfathom Villainy", reported = true } },
                 { id = 18948, name = "Barbaric Bracers", source = { kind = "profession", text = "Leatherworking (130) Requires Tanning Rack. Its blueprint drops rarely from Razorclaw the Butcher, Shadowfang Keep", skill = "Leatherworking", skillLevel = 130 } },
+                { id = 286985, name = "Thicket Bindings", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 3230, name = "Black Wolf Bracers", source = { kind = "dungeon", text = "Fenrus the Devourer, Shadowfang Keep 17.21% in Classic", zone = "Shadowfang Keep", boss = "Fenrus the Devourer", dropRate = 17.21 } },
-                { id = 1974, name = "Mindthrust Bracers", source = { kind = "dungeon", text = "Trash mobs, Shadowfang Keep 0.03% in Classic", zone = "Shadowfang Keep", boss = "Trash mobs", dropRate = 0.03 } },
               },
               enchants = {
                 { effect = "Stamina +5", spell = "Enchant Bracer - Stamina", source = "Enchanting 170: Taught by the trainer." },
@@ -1642,7 +1642,7 @@ ForeverBiSData = {
             },
             { slot = "Feet",
               items = {
-                { id = 286987, name = "Violet Sorcerer's Sandals", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 286987, name = "Violet Sorcerer's Sandals", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
                 { id = 284403, name = "Shapeshifting Sentinel's Strides", source = { kind = "world", text = "A rare of northern Stonetalon Mountains, near the night elves Horde only: both rares serve Darnassus", faction = "Horde" } },
                 { id = 279840, name = "Renewing Footpads", source = { kind = "quest", text = "Quest: Heart of Disruption City of Dalaran, Alliance, from level 24", faction = "Alliance", quest = "Heart of Disruption City of Dalaran" } },
                 { id = 15142, name = "Ghostwalker Boots of the Bandit", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 36 random suffixes, each with its own stats: search for the full name" } },
@@ -1723,11 +1723,11 @@ ForeverBiSData = {
             { slot = "Neck",
               items = {
                 { id = 6695, name = "Stygian Bone Amulet", source = { kind = "world", text = "Blind Hunter, Razorfen Kraul 27.15% in Classic", zone = "Razorfen Kraul", boss = "Blind Hunter", dropRate = 27.15 } },
+                { id = 286995, name = "Guardian's Emblem", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 12029, name = "Greenstone Talisman of the Sorcerer", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 35 random suffixes, each with its own stats: search for the full name" } },
                 { id = 273049, name = "Archmagister's Faceted Pendant", source = { kind = "world", text = "Shade of the Archmage, City of Dalaran" } },
                 { id = 285331, name = "Mark of the Pack Leader", source = { kind = "world", text = "Humar the Pridelord, the rare black lion of the Barrens Reported, not checked", reported = true } },
                 { id = 5003, name = "Crystal Starfire Medallion", source = { kind = "world", text = "World drop, sold at the auction house" } },
-                { id = 13084, name = "Kaleidoscope Chain", source = { kind = "world", text = "World drop, sold at the auction house" } },
               },
               enchants = {
                 { effect = "+6 Spell Power", spell = "Enchant Necklace - Spell Power", source = "Enchanting 210: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 120 Merchant’s Favor.", formulaId = 249502 },
@@ -1748,7 +1748,7 @@ ForeverBiSData = {
                 { id = 7053, name = "Azure Silk Cloak", source = { kind = "profession", text = "Tailoring (140)", skill = "Tailoring", skillLevel = 140 } },
                 { id = 7436, name = "Twilight Cape of Frozen Wrath", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 41 random suffixes, each with its own stats: search for the full name" } },
                 { id = 274149, name = "Thornweaver Drape", source = { kind = "world", text = "Roogug, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Roogug" } },
-                { id = 277206, name = "Brilliant Cloak", source = { kind = "quest", text = "Strahnbrad Mystery, a quest of Alterac Mountains Who gives it is not known yet" } },
+                { id = 277206, name = "Brilliant Cloak", source = { kind = "quest", text = "Strahnbrad Mystery, a quest of Alterac Mountains From a Singed Note dropped in Alterac Mountains" } },
                 { id = 279835, name = "Vine Pruner's Cloak", source = { kind = "quest", text = "Quest: A Green Sample City of Dalaran, Alliance, from level 24", faction = "Alliance", quest = "A Green Sample City of Dalaran" } },
                 { id = 3719, name = "Hillman's Cloak", source = { kind = "profession", text = "Leatherworking", skill = "Leatherworking" } },
               },
@@ -1920,11 +1920,11 @@ ForeverBiSData = {
             { slot = "Neck",
               items = {
                 { id = 6695, name = "Stygian Bone Amulet", source = { kind = "world", text = "Blind Hunter, Razorfen Kraul 27.15% in Classic", zone = "Razorfen Kraul", boss = "Blind Hunter", dropRate = 27.15 } },
+                { id = 286995, name = "Guardian's Emblem", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 12029, name = "Greenstone Talisman of the Sorcerer", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 35 random suffixes, each with its own stats: search for the full name" } },
                 { id = 273049, name = "Archmagister's Faceted Pendant", source = { kind = "world", text = "Shade of the Archmage, City of Dalaran" } },
                 { id = 285331, name = "Mark of the Pack Leader", source = { kind = "world", text = "Humar the Pridelord, the rare black lion of the Barrens Reported, not checked", reported = true } },
                 { id = 5003, name = "Crystal Starfire Medallion", source = { kind = "world", text = "World drop, sold at the auction house" } },
-                { id = 13084, name = "Kaleidoscope Chain", source = { kind = "world", text = "World drop, sold at the auction house" } },
               },
               enchants = {
                 { effect = "+6 Spell Power", spell = "Enchant Necklace - Spell Power", source = "Enchanting 210: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 120 Merchant’s Favor.", formulaId = 249502 },
@@ -1944,10 +1944,10 @@ ForeverBiSData = {
               items = {
                 { id = 7436, name = "Twilight Cape of Arcane Wrath", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 41 random suffixes, each with its own stats: search for the full name" } },
                 { id = 274149, name = "Thornweaver Drape", source = { kind = "world", text = "Roogug, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Roogug" } },
-                { id = 277206, name = "Brilliant Cloak", source = { kind = "quest", text = "Strahnbrad Mystery, a quest of Alterac Mountains Who gives it is not known yet" } },
+                { id = 277206, name = "Brilliant Cloak", source = { kind = "quest", text = "Strahnbrad Mystery, a quest of Alterac Mountains From a Singed Note dropped in Alterac Mountains" } },
+                { id = 286994, name = "Tattered Kirin Tor Cloak", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 279835, name = "Vine Pruner's Cloak", source = { kind = "quest", text = "Quest: A Green Sample City of Dalaran, Alliance, from level 24", faction = "Alliance", quest = "A Green Sample City of Dalaran" } },
                 { id = 3719, name = "Hillman's Cloak", source = { kind = "profession", text = "Leatherworking", skill = "Leatherworking" } },
-                { id = 15468, name = "Windsong Drape", source = { kind = "quest", text = "Quest: Free at Last Horde, level 29 in Classic, from level 25", faction = "Horde", quest = "Free at Last" } },
               },
               enchants = {
                 { effect = "Armor +60", spell = "Enchant Cloak - Greater Defense", source = "Enchanting 205: Taught by the trainer." },
@@ -2117,11 +2117,11 @@ ForeverBiSData = {
             { slot = "Neck",
               items = {
                 { id = 6695, name = "Stygian Bone Amulet", source = { kind = "world", text = "Blind Hunter, Razorfen Kraul 27.15% in Classic", zone = "Razorfen Kraul", boss = "Blind Hunter", dropRate = 27.15 } },
+                { id = 286995, name = "Guardian's Emblem", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 12029, name = "Greenstone Talisman of the Sorcerer", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 35 random suffixes, each with its own stats: search for the full name" } },
                 { id = 273049, name = "Archmagister's Faceted Pendant", source = { kind = "world", text = "Shade of the Archmage, City of Dalaran" } },
                 { id = 285331, name = "Mark of the Pack Leader", source = { kind = "world", text = "Humar the Pridelord, the rare black lion of the Barrens Reported, not checked", reported = true } },
                 { id = 5003, name = "Crystal Starfire Medallion", source = { kind = "world", text = "World drop, sold at the auction house" } },
-                { id = 13084, name = "Kaleidoscope Chain", source = { kind = "world", text = "World drop, sold at the auction house" } },
               },
               enchants = {
                 { effect = "+6 Spell Power", spell = "Enchant Necklace - Spell Power", source = "Enchanting 210: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 120 Merchant’s Favor.", formulaId = 249502 },
@@ -2141,10 +2141,10 @@ ForeverBiSData = {
               items = {
                 { id = 7436, name = "Twilight Cape of Fiery Wrath", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 41 random suffixes, each with its own stats: search for the full name" } },
                 { id = 274149, name = "Thornweaver Drape", source = { kind = "world", text = "Roogug, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Roogug" } },
-                { id = 277206, name = "Brilliant Cloak", source = { kind = "quest", text = "Strahnbrad Mystery, a quest of Alterac Mountains Who gives it is not known yet" } },
+                { id = 277206, name = "Brilliant Cloak", source = { kind = "quest", text = "Strahnbrad Mystery, a quest of Alterac Mountains From a Singed Note dropped in Alterac Mountains" } },
+                { id = 286994, name = "Tattered Kirin Tor Cloak", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 279835, name = "Vine Pruner's Cloak", source = { kind = "quest", text = "Quest: A Green Sample City of Dalaran, Alliance, from level 24", faction = "Alliance", quest = "A Green Sample City of Dalaran" } },
                 { id = 3719, name = "Hillman's Cloak", source = { kind = "profession", text = "Leatherworking", skill = "Leatherworking" } },
-                { id = 15468, name = "Windsong Drape", source = { kind = "quest", text = "Quest: Free at Last Horde, level 29 in Classic, from level 25", faction = "Horde", quest = "Free at Last" } },
               },
               enchants = {
                 { effect = "Armor +60", spell = "Enchant Cloak - Greater Defense", source = "Enchanting 205: Taught by the trainer." },
@@ -2314,11 +2314,11 @@ ForeverBiSData = {
             { slot = "Neck",
               items = {
                 { id = 274749, name = "Souvenir Sea Shell", source = { kind = "world", text = "Sold by Gezzy Gunkgear in Booty Bay At Honored with Booty Bay" } },
+                { id = 286995, name = "Guardian's Emblem", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 12029, name = "Greenstone Talisman of the Physician", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 35 random suffixes, each with its own stats: search for the full name" } },
                 { id = 7731, name = "Ghostshard Talisman", source = { kind = "world", text = "Azshir the Sleepless, Scarlet Monastery Graveyard 33.93% in Classic", zone = "Scarlet Monastery", boss = "Azshir the Sleepless", dropRate = 33.93 } },
                 { id = 7746, name = "Explorers' League Commendation", source = { kind = "quest", text = "Quest: Mythology of the Titans Alliance, level 38 in Classic, from level 28", faction = "Alliance", quest = "Mythology of the Titans" } },
                 { id = 13087, name = "River Pride Choker", source = { kind = "world", text = "World drop, sold at the auction house" } },
-                { id = 5003, name = "Crystal Starfire Medallion", source = { kind = "world", text = "World drop, sold at the auction house" } },
               },
               enchants = {
                 { effect = "+6 Spell Power", spell = "Enchant Necklace - Spell Power", source = "Enchanting 210: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 120 Merchant’s Favor.", formulaId = 249502 },
@@ -2336,7 +2336,7 @@ ForeverBiSData = {
             },
             { slot = "Back",
               items = {
-                { id = 277206, name = "Brilliant Cloak", source = { kind = "quest", text = "Strahnbrad Mystery, a quest of Alterac Mountains Who gives it is not known yet" } },
+                { id = 277206, name = "Brilliant Cloak", source = { kind = "quest", text = "Strahnbrad Mystery, a quest of Alterac Mountains From a Singed Note dropped in Alterac Mountains" } },
                 { id = 7436, name = "Twilight Cape of the Physician", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 41 random suffixes, each with its own stats: search for the full name" } },
                 { id = 279835, name = "Vine Pruner's Cloak", source = { kind = "quest", text = "Quest: A Green Sample City of Dalaran, Alliance, from level 24", faction = "Alliance", quest = "A Green Sample City of Dalaran" } },
                 { id = 6751, name = "Mourning Shawl", source = { kind = "quest", text = "Quest: Mortality Wanes Alliance, level 30 in Classic, from level 25 Same quest as the Lancer Boots You choose one or the other", faction = "Alliance", quest = "Mortality Wanes" } },
@@ -2412,7 +2412,7 @@ ForeverBiSData = {
             { slot = "Feet",
               items = {
                 { id = 254005, name = "Fiery Slippers", source = { kind = "profession", text = "Tailoring (150) Only its maker can wear it Pattern: not needed, tailoring trainers teach the recipe at 150 Requires Spinning Wheel. Its blueprint drops from Unstable Sentinel, City of Dalaran", skill = "Tailoring", skillLevel = 150, bindsToMaker = true } },
-                { id = 286987, name = "Violet Sorcerer's Sandals", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 286987, name = "Violet Sorcerer's Sandals", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
                 { id = 279843, name = "Enchanted Sandals", source = { kind = "quest", text = "Quest: Heart of Disruption City of Dalaran, Horde, from level 24", faction = "Horde", quest = "Heart of Disruption City of Dalaran" } },
                 { id = 273024, name = "Glinteye Slippers", source = { kind = "world", text = "Saltspine, Excavation Site: Wetlands" } },
                 { id = 9845, name = "Conjurer's Shoes of the Eagle", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 24 random suffixes, each with its own stats: search for the full name" } },
@@ -2512,11 +2512,11 @@ ForeverBiSData = {
             { slot = "Neck",
               items = {
                 { id = 274749, name = "Souvenir Sea Shell", source = { kind = "world", text = "Sold by Gezzy Gunkgear in Booty Bay At Honored with Booty Bay" } },
+                { id = 286995, name = "Guardian's Emblem", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 7731, name = "Ghostshard Talisman", source = { kind = "world", text = "Azshir the Sleepless, Scarlet Monastery Graveyard 33.93% in Classic", zone = "Scarlet Monastery", boss = "Azshir the Sleepless", dropRate = 33.93 } },
                 { id = 7746, name = "Explorers' League Commendation", source = { kind = "quest", text = "Quest: Mythology of the Titans Alliance, level 38 in Classic, from level 28", faction = "Alliance", quest = "Mythology of the Titans" } },
                 { id = 13087, name = "River Pride Choker", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 12029, name = "Greenstone Talisman of the Physician", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 35 random suffixes, each with its own stats: search for the full name" } },
-                { id = 5003, name = "Crystal Starfire Medallion", source = { kind = "world", text = "World drop, sold at the auction house" } },
               },
               enchants = {
                 { effect = "+6 Spell Power", spell = "Enchant Necklace - Spell Power", source = "Enchanting 210: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 120 Merchant’s Favor.", formulaId = 249502 },
@@ -2534,7 +2534,7 @@ ForeverBiSData = {
             },
             { slot = "Back",
               items = {
-                { id = 277206, name = "Brilliant Cloak", source = { kind = "quest", text = "Strahnbrad Mystery, a quest of Alterac Mountains Who gives it is not known yet" } },
+                { id = 277206, name = "Brilliant Cloak", source = { kind = "quest", text = "Strahnbrad Mystery, a quest of Alterac Mountains From a Singed Note dropped in Alterac Mountains" } },
                 { id = 7436, name = "Twilight Cape of the Physician", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 41 random suffixes, each with its own stats: search for the full name" } },
                 { id = 279835, name = "Vine Pruner's Cloak", source = { kind = "quest", text = "Quest: A Green Sample City of Dalaran, Alliance, from level 24", faction = "Alliance", quest = "A Green Sample City of Dalaran" } },
                 { id = 6751, name = "Mourning Shawl", source = { kind = "quest", text = "Quest: Mortality Wanes Alliance, level 30 in Classic, from level 25 Same quest as the Lancer Boots You choose one or the other", faction = "Alliance", quest = "Mortality Wanes" } },
@@ -2611,7 +2611,7 @@ ForeverBiSData = {
               items = {
                 { id = 254003, name = "Frothing Slippers", source = { kind = "profession", text = "Tailoring (150) Only its maker can wear it Pattern: not needed, tailoring trainers teach the recipe at 150 Requires Spinning Wheel. Its blueprint drops from Unstable Sentinel, City of Dalaran", skill = "Tailoring", skillLevel = 150, bindsToMaker = true } },
                 { id = 279843, name = "Enchanted Sandals", source = { kind = "quest", text = "Quest: Heart of Disruption City of Dalaran, Horde, from level 24", faction = "Horde", quest = "Heart of Disruption City of Dalaran" } },
-                { id = 286987, name = "Violet Sorcerer's Sandals", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 286987, name = "Violet Sorcerer's Sandals", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
                 { id = 273024, name = "Glinteye Slippers", source = { kind = "world", text = "Saltspine, Excavation Site: Wetlands" } },
                 { id = 9845, name = "Conjurer's Shoes of the Eagle", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 24 random suffixes, each with its own stats: search for the full name" } },
                 { id = 4139, name = "Junglewalker Sandals", source = { kind = "quest", text = "Quest: Report to Doren Alliance, level 37 in Classic, from level 30", faction = "Alliance", quest = "Report to Doren" } },
@@ -2710,11 +2710,11 @@ ForeverBiSData = {
             { slot = "Neck",
               items = {
                 { id = 7731, name = "Ghostshard Talisman", source = { kind = "world", text = "Azshir the Sleepless, Scarlet Monastery Graveyard 33.93% in Classic", zone = "Scarlet Monastery", boss = "Azshir the Sleepless", dropRate = 33.93 } },
+                { id = 286984, name = "Mark of the Marsh", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 12029, name = "Greenstone Talisman of Strength", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 35 random suffixes, each with its own stats: search for the full name" } },
                 { id = 273049, name = "Archmagister's Faceted Pendant", source = { kind = "world", text = "Shade of the Archmage, City of Dalaran" } },
                 { id = 13084, name = "Kaleidoscope Chain", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 285331, name = "Mark of the Pack Leader", source = { kind = "world", text = "Humar the Pridelord, the rare black lion of the Barrens Reported, not checked", reported = true } },
-                { id = 274068, name = "Thermaplugg Medal of Honor", source = { kind = "world", text = "Crowd Pummeler 9-60, Gnomeregan", zone = "Gnomeregan", boss = "Crowd Pummeler 9-60" } },
               },
               enchants = {
                 { effect = "Strength +5", spell = "Enchant Necklace - Strength", source = "Enchanting 210: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 120 Merchant’s Favor.", formulaId = 249496 },
@@ -2733,8 +2733,8 @@ ForeverBiSData = {
             { slot = "Back",
               items = {
                 { id = 277205, name = "Cloak of the Divine Storm", source = { kind = "quest", text = "Paladin quest Return to Delgren, Alliance, from level 22 Three quests that start with an orb in the Tower of Althalaxx", faction = "Alliance" } },
-                { id = 282658, name = "Dragonmaw Battle Shroud", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 271720, name = "Crocolisk Skin Gaiter", source = { kind = "quest", text = "A quest of the Excavation Site, in the Wetlands Which quest is not known yet" } },
+                { id = 282658, name = "Dragonmaw Battle Shroud", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 14593, name = "Hawkeye's Cloak", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 273045, name = "Drape of Shifting Energy", source = { kind = "world", text = "Arcanic Enigma, City of Dalaran" } },
                 { id = 281319, name = "Golem War Cloak", source = { kind = "quest", text = "Alliance quest Gleaning Our Future, Wetlands, level 32 Elite, from level 24: take a group", faction = "Alliance" } },
@@ -2772,11 +2772,11 @@ ForeverBiSData = {
             { slot = "Hands",
               items = {
                 { id = 277223, name = "Traveled Gloves", source = { kind = "quest", text = "Quest No Honor Among Thieves, Stranglethorn Vale Both factions, from level 30: one reward out of three" } },
+                { id = 286992, name = "Construct's Grips", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 5970, name = "Serpent Gloves", source = { kind = "dungeon", text = "Lord Serpentis, Wailing Caverns 19.38% in Classic", zone = "Wailing Caverns", boss = "Lord Serpentis", dropRate = 19.38 } },
                 { id = 3341, name = "Gauntlets of Ogre Strength", source = { kind = "world", text = "Boulderfist ogres, Arathi Highlands About once in eighty kills, or at the auction house" } },
                 { id = 4107, name = "Tiger Hunter Gloves", source = { kind = "quest", text = "Quest: Tiger Mastery level 37 in Classic, from level 28 Four Tiger Mastery quests, Stranglethorn Vale Sin'Dall is level 37: take a group", quest = "Tiger Mastery" } },
                 { id = 270075, name = "Fists of Impending Doom", source = { kind = "quest", text = "Quest: Solution to Doom from level 30, reported, not checked", quest = "Solution to Doom", reported = true } },
-                { id = 252497, name = "Totemic Leather Gloves", source = { kind = "profession", text = "Leatherworking (75) Only its maker can wear it", skill = "Leatherworking", skillLevel = 75, bindsToMaker = true } },
               },
               enchants = {
                 { effect = "Strength +7", spell = "Enchant Gloves - Strength", source = "Enchanting 225: Taught by the trainer." },
@@ -2903,11 +2903,11 @@ ForeverBiSData = {
             { slot = "Back",
               items = {
                 { id = 7436, name = "Twilight Cape of the Prophet", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 41 random suffixes, each with its own stats: search for the full name" } },
+                { id = 286994, name = "Tattered Kirin Tor Cloak", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 4462, name = "Cloak of Rot", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 273825, name = "Red Wool Cloak", source = { kind = "world", text = "Bazil Thredd, The Stockade", zone = "The Stockade", boss = "Bazil Thredd" } },
-                { id = 277206, name = "Brilliant Cloak", source = { kind = "quest", text = "Strahnbrad Mystery, a quest of Alterac Mountains Who gives it is not known yet" } },
+                { id = 277206, name = "Brilliant Cloak", source = { kind = "quest", text = "Strahnbrad Mystery, a quest of Alterac Mountains From a Singed Note dropped in Alterac Mountains" } },
                 { id = 9605, name = "Repairman's Cape", source = { kind = "quest", text = "Quest: Data Rescue Alliance, level 30 in Classic, from level 25", faction = "Alliance", quest = "Data Rescue" } },
-                { id = 271716, name = "Explorer's League Dustcover", source = { kind = "quest", text = "Quest: Lost Relic Carry Excavation Site: Wetlands, Alliance, from level 24", faction = "Alliance", quest = "Lost Relic Carry Excavation Site: Wetlands" } },
               },
               enchants = {
                 { effect = "Armor +60", spell = "Enchant Cloak - Greater Defense", source = "Enchanting 205: Taught by the trainer." },
@@ -2981,7 +2981,7 @@ ForeverBiSData = {
                 { id = 279840, name = "Renewing Footpads", source = { kind = "quest", text = "Quest: Heart of Disruption City of Dalaran, Alliance, from level 24", faction = "Alliance", quest = "Heart of Disruption City of Dalaran" } },
                 { id = 9454, name = "Acidic Walkers", source = { kind = "world", text = "Viscous Fallout, Gnomeregan 60.81% in Classic", zone = "Gnomeregan", boss = "Viscous Fallout", dropRate = 60.81 } },
                 { id = 7417, name = "Phalanx Boots of the Prophet", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 32 random suffixes, each with its own stats: search for the full name" } },
-                { id = 286987, name = "Violet Sorcerer's Sandals", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 286987, name = "Violet Sorcerer's Sandals", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
                 { id = 15697, name = "Kodo Rustler Boots", source = { kind = "quest", text = "Quest: Kodo Roundup level 34 in Classic, from level 30", quest = "Kodo Roundup" } },
               },
               enchants = {
@@ -3074,10 +3074,10 @@ ForeverBiSData = {
               items = {
                 { id = 274749, name = "Souvenir Sea Shell", source = { kind = "world", text = "Sold by Gezzy Gunkgear in Booty Bay At Honored with Booty Bay" } },
                 { id = 12029, name = "Greenstone Talisman of the Physician", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 35 random suffixes, each with its own stats: search for the full name" } },
+                { id = 286995, name = "Guardian's Emblem", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 7746, name = "Explorers' League Commendation", source = { kind = "quest", text = "Quest: Mythology of the Titans Alliance, level 38 in Classic, from level 28", faction = "Alliance", quest = "Mythology of the Titans" } },
                 { id = 7731, name = "Ghostshard Talisman", source = { kind = "world", text = "Azshir the Sleepless, Scarlet Monastery Graveyard 33.93% in Classic", zone = "Scarlet Monastery", boss = "Azshir the Sleepless", dropRate = 33.93 } },
                 { id = 13087, name = "River Pride Choker", source = { kind = "world", text = "World drop, sold at the auction house" } },
-                { id = 13084, name = "Kaleidoscope Chain", source = { kind = "world", text = "World drop, sold at the auction house" } },
               },
               enchants = {
                 { effect = "Healing Spells +11, Damage Spells +4", spell = "Enchant Necklace - Healing Power", source = "Enchanting 210: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 120 Merchant’s Favor.", formulaId = 249503 },
@@ -3095,12 +3095,12 @@ ForeverBiSData = {
             },
             { slot = "Back",
               items = {
-                { id = 277206, name = "Brilliant Cloak", source = { kind = "quest", text = "Strahnbrad Mystery, a quest of Alterac Mountains Who gives it is not known yet" } },
+                { id = 277206, name = "Brilliant Cloak", source = { kind = "quest", text = "Strahnbrad Mystery, a quest of Alterac Mountains From a Singed Note dropped in Alterac Mountains" } },
                 { id = 7436, name = "Twilight Cape of the Physician", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 41 random suffixes, each with its own stats: search for the full name" } },
                 { id = 279835, name = "Vine Pruner's Cloak", source = { kind = "quest", text = "Quest: A Green Sample City of Dalaran, Alliance, from level 24", faction = "Alliance", quest = "A Green Sample City of Dalaran" } },
                 { id = 273825, name = "Red Wool Cloak", source = { kind = "world", text = "Bazil Thredd, The Stockade", zone = "The Stockade", boss = "Bazil Thredd" } },
                 { id = 6751, name = "Mourning Shawl", source = { kind = "quest", text = "Quest: Mortality Wanes Alliance, level 30 in Classic, from level 25 Same quest as the Lancer Boots You choose one or the other", faction = "Alliance", quest = "Mortality Wanes" } },
-                { id = 4462, name = "Cloak of Rot", source = { kind = "world", text = "World drop, sold at the auction house" } },
+                { id = 286994, name = "Tattered Kirin Tor Cloak", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
               },
               enchants = {
                 { effect = "Armor +60", spell = "Enchant Cloak - Greater Defense", source = "Enchanting 205: Taught by the trainer." },
@@ -3150,10 +3150,9 @@ ForeverBiSData = {
                 { id = 250559, name = "Prefect's Belt", source = { kind = "profession", text = "Blacksmithing (150) Only its maker can wear it Plans: not needed, blacksmithing trainers teach the recipe at 150", skill = "Blacksmithing", skillLevel = 150, bindsToMaker = true } },
                 { id = 252523, name = "Mender's Leather Belt", source = { kind = "profession", text = "Leatherworking (150) Only its maker can wear it Pattern: not needed, leatherworking trainers teach the recipe at 150 Requires Tanning Rack. Its blueprint drops rarely from Razorclaw the Butcher, Shadowfang Keep", skill = "Leatherworking", skillLevel = 150, bindsToMaker = true } },
                 { id = 252522, name = "Skycaller's Leather Belt", source = { kind = "profession", text = "Leatherworking (150) Only its maker can wear it Pattern: not needed, leatherworking trainers teach the recipe at 150 Requires Tanning Rack. Its blueprint drops rarely from Razorclaw the Butcher, Shadowfang Keep", skill = "Leatherworking", skillLevel = 150, bindsToMaker = true } },
+                { id = 286993, name = "Suffused Bindings", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 253925, name = "Pristine Sash", source = { kind = "profession", text = "Tailoring (85) Only its maker can wear it", skill = "Tailoring", skillLevel = 85, bindsToMaker = true } },
                 { id = 280306, name = "Whimsical Waistwrap of the Physician", source = { kind = "profession", text = "Engineering (175) Only its maker can wear it Requires Anarchist's Workbench. Nobody has found its blueprint in the beta yet Random suffix, one of 24 The game picks it when the item drops", skill = "Engineering", skillLevel = 175, bindsToMaker = true } },
-                { id = 252461, name = "Skirmisher's Leather Belt", source = { kind = "profession", text = "Leatherworking (150) Only its maker can wear it Pattern: not needed, leatherworking trainers teach the recipe at 150 Requires Tanning Rack. Its blueprint drops rarely from Razorclaw the Butcher, Shadowfang Keep", skill = "Leatherworking", skillLevel = 150, bindsToMaker = true } },
-                { id = 9853, name = "Conjurer's Cinch of the Physician", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 24 random suffixes, each with its own stats: search for the full name" } },
               },
             },
             { slot = "Legs",
@@ -3174,7 +3173,7 @@ ForeverBiSData = {
                 { id = 254001, name = "Gilded Slippers", source = { kind = "profession", text = "Tailoring (150) Only its maker can wear it Pattern: not needed, tailoring trainers teach the recipe at 150 Requires Spinning Wheel. Its blueprint drops from Unstable Sentinel, City of Dalaran", skill = "Tailoring", skillLevel = 150, bindsToMaker = true } },
                 { id = 279840, name = "Renewing Footpads", source = { kind = "quest", text = "Quest: Heart of Disruption City of Dalaran, Alliance, from level 24", faction = "Alliance", quest = "Heart of Disruption City of Dalaran" } },
                 { id = 9450, name = "Gnomebot Operating Boots", source = { kind = "world", text = "Crowd Pummeler 9-60, Gnomeregan 65.28% in Classic", zone = "Gnomeregan", boss = "Crowd Pummeler 9-60", dropRate = 65.28 } },
-                { id = 286987, name = "Violet Sorcerer's Sandals", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 286987, name = "Violet Sorcerer's Sandals", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
                 { id = 271214, name = "Rotmender's Treads", source = { kind = "dungeon", text = "Rath'mael, Ruins of Lordaeron", zone = "Ruins of Lordaeron", boss = "Rath'mael" } },
                 { id = 279843, name = "Enchanted Sandals", source = { kind = "quest", text = "Quest: Heart of Disruption City of Dalaran, Horde, from level 24", faction = "Horde", quest = "Heart of Disruption City of Dalaran" } },
               },
@@ -3319,11 +3318,11 @@ ForeverBiSData = {
             { slot = "Wrist",
               items = {
                 { id = 9428, name = "Unearthed Bands of the Bear", source = { kind = "world", text = "Trash mobs, Uldaman Random suffix, one of 35 Search the auction house for the full name" } },
+                { id = 286985, name = "Thicket Bindings", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 270032, name = "Cultist's Armguards", source = { kind = "quest", text = "Quest: Blackfathom Villainy Alliance, from level 18, reported, not checked Quest: Blackfathom Villainy Horde, from level 18, reported, not checked", quest = "Blackfathom Villainy", reported = true } },
                 { id = 18948, name = "Barbaric Bracers", source = { kind = "profession", text = "Leatherworking (130) Requires Tanning Rack. Its blueprint drops rarely from Razorclaw the Butcher, Shadowfang Keep", skill = "Leatherworking", skillLevel = 130 } },
                 { id = 273036, name = "Graveweave Bindings", source = { kind = "world", text = "Atrexis the Grave Knight, City of Dalaran" } },
                 { id = 270068, name = "Stromgarde Bracers", source = { kind = "quest", text = "Quest: Wanted! Marez Cowl Alliance, from level 30, reported, not checked", faction = "Alliance", quest = "Wanted! Marez Cowl", reported = true } },
-                { id = 3228, name = "Jimmied Handcuffs", source = { kind = "world", text = "Bruegal Ironknuckle, The Stockade 56.16% in Classic", zone = "The Stockade", boss = "Bruegal Ironknuckle", dropRate = 56.16 } },
               },
               enchants = {
                 { effect = "Stamina +5", spell = "Enchant Bracer - Stamina", source = "Enchanting 170: Taught by the trainer." },
@@ -3332,11 +3331,11 @@ ForeverBiSData = {
             { slot = "Hands",
               items = {
                 { id = 277223, name = "Traveled Gloves", source = { kind = "quest", text = "Quest No Honor Among Thieves, Stranglethorn Vale Both factions, from level 30: one reward out of three" } },
+                { id = 286992, name = "Construct's Grips", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 720, name = "Brawler Gloves", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 7690, name = "Ebon Vise", source = { kind = "world", text = "Fallen Champion, Scarlet Monastery Graveyard 38.9% in Classic", zone = "Scarlet Monastery", boss = "Fallen Champion", dropRate = 38.9 } },
                 { id = 9861, name = "Archer's Gloves of the Knight", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 36 random suffixes, each with its own stats: search for the full name" } },
                 { id = 273810, name = "Ogre Grips", source = { kind = "world", text = "Hamhock, The Stockade", zone = "The Stockade", boss = "Hamhock" } },
-                { id = 1978, name = "Wolfclaw Gloves", source = { kind = "world", text = "Trash mobs, Razorfen Kraul 0.05% in Classic World drop, sold at the auction house", zone = "Razorfen Kraul", boss = "Trash mobs", dropRate = 0.05 } },
               },
               enchants = {
                 { effect = "Strength +7", spell = "Enchant Gloves - Strength", source = "Enchanting 225: Taught by the trainer." },
@@ -3441,11 +3440,11 @@ ForeverBiSData = {
             { slot = "Neck",
               items = {
                 { id = 274749, name = "Souvenir Sea Shell", source = { kind = "world", text = "Sold by Gezzy Gunkgear in Booty Bay At Honored with Booty Bay" } },
+                { id = 286995, name = "Guardian's Emblem", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 7731, name = "Ghostshard Talisman", source = { kind = "world", text = "Azshir the Sleepless, Scarlet Monastery Graveyard 33.93% in Classic", zone = "Scarlet Monastery", boss = "Azshir the Sleepless", dropRate = 33.93 } },
                 { id = 13087, name = "River Pride Choker", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 12029, name = "Greenstone Talisman of the Knight", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 35 random suffixes, each with its own stats: search for the full name" } },
                 { id = 6695, name = "Stygian Bone Amulet", source = { kind = "world", text = "Blind Hunter, Razorfen Kraul 27.15% in Classic", zone = "Razorfen Kraul", boss = "Blind Hunter", dropRate = 27.15 } },
-                { id = 7746, name = "Explorers' League Commendation", source = { kind = "quest", text = "Quest: Mythology of the Titans Alliance, level 38 in Classic, from level 28", faction = "Alliance", quest = "Mythology of the Titans" } },
               },
               enchants = {
                 { effect = "+6 Spell Power", spell = "Enchant Necklace - Spell Power", source = "Enchanting 210: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 120 Merchant’s Favor.", formulaId = 249502 },
@@ -3464,7 +3463,7 @@ ForeverBiSData = {
             { slot = "Back",
               items = {
                 { id = 277205, name = "Cloak of the Divine Storm", source = { kind = "quest", text = "Paladin quest Return to Delgren, Alliance, from level 22 Three quests that start with an orb in the Tower of Althalaxx", faction = "Alliance" } },
-                { id = 277206, name = "Brilliant Cloak", source = { kind = "quest", text = "Strahnbrad Mystery, a quest of Alterac Mountains Who gives it is not known yet" } },
+                { id = 277206, name = "Brilliant Cloak", source = { kind = "quest", text = "Strahnbrad Mystery, a quest of Alterac Mountains From a Singed Note dropped in Alterac Mountains" } },
                 { id = 279835, name = "Vine Pruner's Cloak", source = { kind = "quest", text = "Quest: A Green Sample City of Dalaran, Alliance, from level 24", faction = "Alliance", quest = "A Green Sample City of Dalaran" } },
                 { id = 7436, name = "Twilight Cape of Holy Wrath", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 41 random suffixes, each with its own stats: search for the full name" } },
                 { id = 3719, name = "Hillman's Cloak", source = { kind = "profession", text = "Leatherworking", skill = "Leatherworking" } },
@@ -3491,10 +3490,10 @@ ForeverBiSData = {
               items = {
                 { id = 9428, name = "Unearthed Bands of Magic", source = { kind = "world", text = "Trash mobs, Uldaman Random suffix, one of 35 Search the auction house for the full name" } },
                 { id = 4744, name = "Arcane Runed Bracers", source = { kind = "quest", text = "Quest: Wanted! Marez Cowl Alliance, level 39 in Classic, from level 30 Wanted! Marez Cowl, Refuge Pointe, Arathi Highlands Marez Cowl is a level 40 elite: take a strong group", faction = "Alliance", quest = "Wanted! Marez Cowl" } },
+                { id = 286985, name = "Thicket Bindings", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 9448, name = "Spidertank Oilrag", source = { kind = "world", text = "Electrocutioner 6000, Gnomeregan 41.22% in Classic", zone = "Gnomeregan", boss = "Electrocutioner 6000", dropRate = 41.22 } },
                 { id = 3228, name = "Jimmied Handcuffs", source = { kind = "world", text = "Bruegal Ironknuckle, The Stockade 56.16% in Classic", zone = "The Stockade", boss = "Bruegal Ironknuckle", dropRate = 56.16 } },
                 { id = 4745, name = "War Rider Bracers", source = { kind = "quest", text = "Quest: Wanted! Otto and Falconcrest Alliance, level 40 in Classic, from level 30", faction = "Alliance", quest = "Wanted! Otto and Falconcrest" } },
-                { id = 270032, name = "Cultist's Armguards", source = { kind = "quest", text = "Quest: Blackfathom Villainy Alliance, from level 18, reported, not checked Quest: Blackfathom Villainy Horde, from level 18, reported, not checked", quest = "Blackfathom Villainy", reported = true } },
               },
               enchants = {
                 { effect = "Healing Spells +16, Damage Spells +6", spell = "Enchant Bracer - Lesser Healing Power", source = "Enchanting 205: Formula sold by Gorhak in Desolace for 60 Carved Centaur Totem.", formulaId = 249489 },
@@ -3519,8 +3518,8 @@ ForeverBiSData = {
                 { id = 6911, name = "Moss Cinch", source = { kind = "dungeon", text = "Aku'mai, Blackfathom Deeps 38.59% in Classic", zone = "Blackfathom Deeps", boss = "Aku'mai", dropRate = 38.59 } },
                 { id = 252522, name = "Skycaller's Leather Belt", source = { kind = "profession", text = "Leatherworking (150) Only its maker can wear it Pattern: not needed, leatherworking trainers teach the recipe at 150 Requires Tanning Rack. Its blueprint drops rarely from Razorclaw the Butcher, Shadowfang Keep", skill = "Leatherworking", skillLevel = 150, bindsToMaker = true } },
                 { id = 252461, name = "Skirmisher's Leather Belt", source = { kind = "profession", text = "Leatherworking (150) Only its maker can wear it Pattern: not needed, leatherworking trainers teach the recipe at 150 Requires Tanning Rack. Its blueprint drops rarely from Razorclaw the Butcher, Shadowfang Keep", skill = "Leatherworking", skillLevel = 150, bindsToMaker = true } },
+                { id = 286993, name = "Suffused Bindings", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 6908, name = "Ghamoo-ra's Bind", source = { kind = "dungeon", text = "Ghamoo-ra, Blackfathom Deeps 56.43% in Classic", zone = "Blackfathom Deeps", boss = "Ghamoo-ra", dropRate = 56.43 } },
-                { id = 16975, name = "Warsong Sash", source = { kind = "quest", text = "Quest: Warsong Supplies Horde, level 27 in Classic, from level 22", faction = "Horde", quest = "Warsong Supplies" } },
               },
             },
             { slot = "Legs",
@@ -3577,7 +3576,7 @@ ForeverBiSData = {
                 { id = 273827, name = "Debt Collector", source = { kind = "world", text = "Bazil Thredd, The Stockade", zone = "The Stockade", boss = "Bazil Thredd" } },
                 { id = 9457, name = "Royal Diplomatic Scepter", source = { kind = "world", text = "Dark Iron Ambassador, Gnomeregan 20.94% in Classic", zone = "Gnomeregan", boss = "Dark Iron Ambassador", dropRate = 20.94 } },
                 { id = 4122, name = "Bookmaker's Scepter", source = { kind = "quest", text = "Quest: The Hidden Key Alliance, level 37 in Classic, from level 30", faction = "Alliance", quest = "The Hidden Key" } },
-                { id = 271664, name = "Hornbeam Heft", source = { kind = "quest", text = "Quest: Horrors in the Highland Excavation Site: Wetlands, Alliance, from level 24", faction = "Alliance", quest = "Horrors in the Highland Excavation Site: Wetlands" } },
+                { id = 286996, name = "City Guard's Tarnished Blade", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
               },
               enchants = {
                 { effect = "Revelation", spell = "Enchant Weapon - Revelation", source = "Enchanting 140: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 45 Merchant’s Favor.How often it triggers is in no game file and nobody has measured it yet. A one-handed weapon has nothing else at this skill, and on a staff players who use it rate it above the 5 Intellect it could take instead.", formulaId = 249481 },
@@ -3590,7 +3589,7 @@ ForeverBiSData = {
                 { id = 7330, name = "Infiltrator Buckler of Holy Wrath", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 34 random suffixes, each with its own stats: search for the full name" } },
                 { id = 4129, name = "Collection Plate", source = { kind = "quest", text = "Quest: Cracking Maury's Foot level 44 in Classic, from level 30 A chain of four quests from \"Sea Wolf\" MacKinley, Booty Bay Elite ogres of level 41 to 45: take a group", quest = "Cracking Maury's Foot" } },
                 { id = 273811, name = "Repurposed Rack", source = { kind = "world", text = "Hamhock, The Stockade", zone = "The Stockade", boss = "Hamhock" } },
-                { id = 7002, name = "Arctic Buckler", source = { kind = "quest", text = "Quest: Blackfathom Villainy Alliance, level 27 in Classic, from level 18 Quest: Blackfathom Villainy Horde, level 27 in Classic, from level 18", quest = "Blackfathom Villainy" } },
+                { id = 286982, name = "Unearthed Barrier", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
               },
               enchants = {
                 { effect = "Stamina +5", spell = "Enchant Shield - Lesser Stamina", source = "Enchanting 155: Taught by the trainer." },
@@ -3624,11 +3623,11 @@ ForeverBiSData = {
             { slot = "Neck",
               items = {
                 { id = 274749, name = "Souvenir Sea Shell", source = { kind = "world", text = "Sold by Gezzy Gunkgear in Booty Bay At Honored with Booty Bay" } },
+                { id = 286995, name = "Guardian's Emblem", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 7731, name = "Ghostshard Talisman", source = { kind = "world", text = "Azshir the Sleepless, Scarlet Monastery Graveyard 33.93% in Classic", zone = "Scarlet Monastery", boss = "Azshir the Sleepless", dropRate = 33.93 } },
                 { id = 13087, name = "River Pride Choker", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 7746, name = "Explorers' League Commendation", source = { kind = "quest", text = "Quest: Mythology of the Titans Alliance, level 38 in Classic, from level 28", faction = "Alliance", quest = "Mythology of the Titans" } },
                 { id = 13084, name = "Kaleidoscope Chain", source = { kind = "world", text = "World drop, sold at the auction house" } },
-                { id = 12029, name = "Greenstone Talisman of the Physician", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 35 random suffixes, each with its own stats: search for the full name" } },
               },
               enchants = {
                 { effect = "+6 Spell Power", spell = "Enchant Necklace - Spell Power", source = "Enchanting 210: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 120 Merchant’s Favor.", formulaId = 249502 },
@@ -3646,7 +3645,7 @@ ForeverBiSData = {
             },
             { slot = "Back",
               items = {
-                { id = 277206, name = "Brilliant Cloak", source = { kind = "quest", text = "Strahnbrad Mystery, a quest of Alterac Mountains Who gives it is not known yet" } },
+                { id = 277206, name = "Brilliant Cloak", source = { kind = "quest", text = "Strahnbrad Mystery, a quest of Alterac Mountains From a Singed Note dropped in Alterac Mountains" } },
                 { id = 277205, name = "Cloak of the Divine Storm", source = { kind = "quest", text = "Paladin quest Return to Delgren, Alliance, from level 22 Three quests that start with an orb in the Tower of Althalaxx", faction = "Alliance" } },
                 { id = 13108, name = "Tigerstrike Mantle", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 279835, name = "Vine Pruner's Cloak", source = { kind = "quest", text = "Quest: A Green Sample City of Dalaran, Alliance, from level 24", faction = "Alliance", quest = "A Green Sample City of Dalaran" } },
@@ -3699,12 +3698,11 @@ ForeverBiSData = {
             { slot = "Waist",
               items = {
                 { id = 250558, name = "Warder's Belt", source = { kind = "profession", text = "Blacksmithing (150) Only its maker can wear it Plans: not needed, blacksmithing trainers teach the recipe at 150", skill = "Blacksmithing", skillLevel = 150, bindsToMaker = true } },
+                { id = 286993, name = "Suffused Bindings", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 252522, name = "Skycaller's Leather Belt", source = { kind = "profession", text = "Leatherworking (150) Only its maker can wear it Pattern: not needed, leatherworking trainers teach the recipe at 150 Requires Tanning Rack. Its blueprint drops rarely from Razorclaw the Butcher, Shadowfang Keep", skill = "Leatherworking", skillLevel = 150, bindsToMaker = true } },
                 { id = 252461, name = "Skirmisher's Leather Belt", source = { kind = "profession", text = "Leatherworking (150) Only its maker can wear it Pattern: not needed, leatherworking trainers teach the recipe at 150 Requires Tanning Rack. Its blueprint drops rarely from Razorclaw the Butcher, Shadowfang Keep", skill = "Leatherworking", skillLevel = 150, bindsToMaker = true } },
                 { id = 252460, name = "Warden's Leather Belt", source = { kind = "profession", text = "Leatherworking (150) Only its maker can wear it Pattern: not needed, leatherworking trainers teach the recipe at 150 Requires Tanning Rack. Its blueprint drops rarely from Razorclaw the Butcher, Shadowfang Keep", skill = "Leatherworking", skillLevel = 150, bindsToMaker = true } },
                 { id = 252521, name = "Stalker's Leather Belt", source = { kind = "profession", text = "Leatherworking (150) Only its maker can wear it Pattern: not needed, leatherworking trainers teach the recipe at 150 Requires Tanning Rack. Its blueprint drops rarely from Razorclaw the Butcher, Shadowfang Keep", skill = "Leatherworking", skillLevel = 150, bindsToMaker = true } },
-                { id = 280308, name = "Clanking Cord of the Eagle", source = { kind = "profession", text = "Engineering (175) Only its maker can wear it Requires Anarchist's Workbench. Nobody has found its blueprint in the beta yet Random suffix, one of 32 The game picks it when the item drops", skill = "Engineering", skillLevel = 175, bindsToMaker = true } },
-                { id = 9869, name = "Renegade Belt of the Eagle", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 32 random suffixes, each with its own stats: search for the full name" } },
               },
             },
             { slot = "Legs",
@@ -3757,8 +3755,8 @@ ForeverBiSData = {
                 { id = 17039, name = "Skullbreaker", source = { kind = "quest", text = "Quest: An Unholy Alliance Horde, level 36 in Classic, from level 28 A Horde quest from Varimathras in Undercity Take a group for Ambassador Malcin (level 36 elite)", quest = "An Unholy" } },
                 { id = 4122, name = "Bookmaker's Scepter", source = { kind = "quest", text = "Quest: The Hidden Key Alliance, level 37 in Classic, from level 30", faction = "Alliance", quest = "The Hidden Key" } },
                 { id = 9457, name = "Royal Diplomatic Scepter", source = { kind = "world", text = "Dark Iron Ambassador, Gnomeregan 20.94% in Classic", zone = "Gnomeregan", boss = "Dark Iron Ambassador", dropRate = 20.94 } },
+                { id = 286996, name = "City Guard's Tarnished Blade", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 273827, name = "Debt Collector", source = { kind = "world", text = "Bazil Thredd, The Stockade", zone = "The Stockade", boss = "Bazil Thredd" } },
-                { id = 4977, name = "Sword of Hammerfall", source = { kind = "quest", text = "Quest: The Real Threat Horde, level 40 in Classic, from level 30", faction = "Horde", quest = "The Real Threat" } },
               },
               enchants = {
                 { effect = "Recovery", spell = "Enchant Weapon - Recovery", source = "Enchanting 140: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 45 Merchant’s Favor.", formulaId = 249480 },
@@ -3805,11 +3803,11 @@ ForeverBiSData = {
             { slot = "Neck",
               items = {
                 { id = 6695, name = "Stygian Bone Amulet", source = { kind = "world", text = "Blind Hunter, Razorfen Kraul 27.15% in Classic", zone = "Razorfen Kraul", boss = "Blind Hunter", dropRate = 27.15 } },
+                { id = 286995, name = "Guardian's Emblem", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 12029, name = "Greenstone Talisman of the Sorcerer", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 35 random suffixes, each with its own stats: search for the full name" } },
                 { id = 273049, name = "Archmagister's Faceted Pendant", source = { kind = "world", text = "Shade of the Archmage, City of Dalaran" } },
                 { id = 285331, name = "Mark of the Pack Leader", source = { kind = "world", text = "Humar the Pridelord, the rare black lion of the Barrens Reported, not checked", reported = true } },
                 { id = 5003, name = "Crystal Starfire Medallion", source = { kind = "world", text = "World drop, sold at the auction house" } },
-                { id = 13084, name = "Kaleidoscope Chain", source = { kind = "world", text = "World drop, sold at the auction house" } },
               },
               enchants = {
                 { effect = "+6 Spell Power", spell = "Enchant Necklace - Spell Power", source = "Enchanting 210: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 120 Merchant’s Favor.", formulaId = 249502 },
@@ -3829,7 +3827,7 @@ ForeverBiSData = {
               items = {
                 { id = 7436, name = "Twilight Cape of Shadow Wrath", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 41 random suffixes, each with its own stats: search for the full name" } },
                 { id = 274149, name = "Thornweaver Drape", source = { kind = "world", text = "Roogug, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Roogug" } },
-                { id = 277206, name = "Brilliant Cloak", source = { kind = "quest", text = "Strahnbrad Mystery, a quest of Alterac Mountains Who gives it is not known yet" } },
+                { id = 277206, name = "Brilliant Cloak", source = { kind = "quest", text = "Strahnbrad Mystery, a quest of Alterac Mountains From a Singed Note dropped in Alterac Mountains" } },
                 { id = 279835, name = "Vine Pruner's Cloak", source = { kind = "quest", text = "Quest: A Green Sample City of Dalaran, Alliance, from level 24", faction = "Alliance", quest = "A Green Sample City of Dalaran" } },
                 { id = 3719, name = "Hillman's Cloak", source = { kind = "profession", text = "Leatherworking", skill = "Leatherworking" } },
                 { id = 15468, name = "Windsong Drape", source = { kind = "quest", text = "Quest: Free at Last Horde, level 29 in Classic, from level 25", faction = "Horde", quest = "Free at Last" } },
@@ -4004,9 +4002,9 @@ ForeverBiSData = {
                 { id = 274749, name = "Souvenir Sea Shell", source = { kind = "world", text = "Sold by Gezzy Gunkgear in Booty Bay At Honored with Booty Bay" } },
                 { id = 7746, name = "Explorers' League Commendation", source = { kind = "quest", text = "Quest: Mythology of the Titans Alliance, level 38 in Classic, from level 28", faction = "Alliance", quest = "Mythology of the Titans" } },
                 { id = 12029, name = "Greenstone Talisman of the Physician", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 35 random suffixes, each with its own stats: search for the full name" } },
+                { id = 286995, name = "Guardian's Emblem", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 7731, name = "Ghostshard Talisman", source = { kind = "world", text = "Azshir the Sleepless, Scarlet Monastery Graveyard 33.93% in Classic", zone = "Scarlet Monastery", boss = "Azshir the Sleepless", dropRate = 33.93 } },
                 { id = 13087, name = "River Pride Choker", source = { kind = "world", text = "World drop, sold at the auction house" } },
-                { id = 13084, name = "Kaleidoscope Chain", source = { kind = "world", text = "World drop, sold at the auction house" } },
               },
               enchants = {
                 { effect = "Healing Spells +11, Damage Spells +4", spell = "Enchant Necklace - Healing Power", source = "Enchanting 210: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 120 Merchant’s Favor.", formulaId = 249503 },
@@ -4024,7 +4022,7 @@ ForeverBiSData = {
             },
             { slot = "Back",
               items = {
-                { id = 277206, name = "Brilliant Cloak", source = { kind = "quest", text = "Strahnbrad Mystery, a quest of Alterac Mountains Who gives it is not known yet" } },
+                { id = 277206, name = "Brilliant Cloak", source = { kind = "quest", text = "Strahnbrad Mystery, a quest of Alterac Mountains From a Singed Note dropped in Alterac Mountains" } },
                 { id = 7436, name = "Twilight Cape of the Physician", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 41 random suffixes, each with its own stats: search for the full name" } },
                 { id = 279835, name = "Vine Pruner's Cloak", source = { kind = "quest", text = "Quest: A Green Sample City of Dalaran, Alliance, from level 24", faction = "Alliance", quest = "A Green Sample City of Dalaran" } },
                 { id = 273825, name = "Red Wool Cloak", source = { kind = "world", text = "Bazil Thredd, The Stockade", zone = "The Stockade", boss = "Bazil Thredd" } },
@@ -4100,7 +4098,7 @@ ForeverBiSData = {
             { slot = "Feet",
               items = {
                 { id = 254001, name = "Gilded Slippers", source = { kind = "profession", text = "Tailoring (150) Only its maker can wear it Pattern: not needed, tailoring trainers teach the recipe at 150 Requires Spinning Wheel. Its blueprint drops from Unstable Sentinel, City of Dalaran", skill = "Tailoring", skillLevel = 150, bindsToMaker = true } },
-                { id = 286987, name = "Violet Sorcerer's Sandals", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 286987, name = "Violet Sorcerer's Sandals", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
                 { id = 273024, name = "Glinteye Slippers", source = { kind = "world", text = "Saltspine, Excavation Site: Wetlands" } },
                 { id = 271214, name = "Rotmender's Treads", source = { kind = "dungeon", text = "Rath'mael, Ruins of Lordaeron", zone = "Ruins of Lordaeron", boss = "Rath'mael" } },
                 { id = 279843, name = "Enchanted Sandals", source = { kind = "quest", text = "Quest: Heart of Disruption City of Dalaran, Horde, from level 24", faction = "Horde", quest = "Heart of Disruption City of Dalaran" } },
@@ -4204,7 +4202,7 @@ ForeverBiSData = {
                 { id = 13084, name = "Kaleidoscope Chain", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 5003, name = "Crystal Starfire Medallion", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 285331, name = "Mark of the Pack Leader", source = { kind = "world", text = "Humar the Pridelord, the rare black lion of the Barrens Reported, not checked", reported = true } },
-                { id = 281321, name = "Giantstone Medallion", source = { kind = "quest", text = "Alliance quest Gleaning Our Future, Wetlands, level 32 Elite, from level 24: take a group", faction = "Alliance" } },
+                { id = 286995, name = "Guardian's Emblem", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
               },
               enchants = {
                 { effect = "Healing Spells +11, Damage Spells +4", spell = "Enchant Necklace - Healing Power", source = "Enchanting 210: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 120 Merchant’s Favor.", formulaId = 249503 },
@@ -4224,10 +4222,10 @@ ForeverBiSData = {
               items = {
                 { id = 7436, name = "Twilight Cape of Healing", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 41 random suffixes, each with its own stats: search for the full name" } },
                 { id = 273825, name = "Red Wool Cloak", source = { kind = "world", text = "Bazil Thredd, The Stockade", zone = "The Stockade", boss = "Bazil Thredd" } },
-                { id = 277206, name = "Brilliant Cloak", source = { kind = "quest", text = "Strahnbrad Mystery, a quest of Alterac Mountains Who gives it is not known yet" } },
+                { id = 277206, name = "Brilliant Cloak", source = { kind = "quest", text = "Strahnbrad Mystery, a quest of Alterac Mountains From a Singed Note dropped in Alterac Mountains" } },
                 { id = 9605, name = "Repairman's Cape", source = { kind = "quest", text = "Quest: Data Rescue Alliance, level 30 in Classic, from level 25", faction = "Alliance", quest = "Data Rescue" } },
+                { id = 286994, name = "Tattered Kirin Tor Cloak", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 4462, name = "Cloak of Rot", source = { kind = "world", text = "World drop, sold at the auction house" } },
-                { id = 6901, name = "Glowing Thresher Cape", source = { kind = "dungeon", text = "Old Serra'kis, Blackfathom Deeps 39.27% in Classic", zone = "Blackfathom Deeps", boss = "Old Serra'kis", dropRate = 39.27 } },
               },
               enchants = {
                 { effect = "Armor +60", spell = "Enchant Cloak - Greater Defense", source = "Enchanting 205: Taught by the trainer." },
@@ -4300,7 +4298,7 @@ ForeverBiSData = {
                 { id = 254001, name = "Gilded Slippers", source = { kind = "profession", text = "Tailoring (150) Only its maker can wear it Pattern: not needed, tailoring trainers teach the recipe at 150 Requires Spinning Wheel. Its blueprint drops from Unstable Sentinel, City of Dalaran", skill = "Tailoring", skillLevel = 150, bindsToMaker = true } },
                 { id = 9845, name = "Conjurer's Shoes of Healing", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 24 random suffixes, each with its own stats: search for the full name" } },
                 { id = 9454, name = "Acidic Walkers", source = { kind = "world", text = "Viscous Fallout, Gnomeregan 60.81% in Classic", zone = "Gnomeregan", boss = "Viscous Fallout", dropRate = 60.81 } },
-                { id = 286987, name = "Violet Sorcerer's Sandals", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 286987, name = "Violet Sorcerer's Sandals", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
                 { id = 15697, name = "Kodo Rustler Boots", source = { kind = "quest", text = "Quest: Kodo Roundup level 34 in Classic, from level 30", quest = "Kodo Roundup" } },
                 { id = 271214, name = "Rotmender's Treads", source = { kind = "dungeon", text = "Rath'mael, Ruins of Lordaeron", zone = "Ruins of Lordaeron", boss = "Rath'mael" } },
               },
@@ -4395,11 +4393,11 @@ ForeverBiSData = {
             { slot = "Neck",
               items = {
                 { id = 274749, name = "Souvenir Sea Shell", source = { kind = "world", text = "Sold by Gezzy Gunkgear in Booty Bay At Honored with Booty Bay" } },
+                { id = 286995, name = "Guardian's Emblem", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 7731, name = "Ghostshard Talisman", source = { kind = "world", text = "Azshir the Sleepless, Scarlet Monastery Graveyard 33.93% in Classic", zone = "Scarlet Monastery", boss = "Azshir the Sleepless", dropRate = 33.93 } },
                 { id = 7746, name = "Explorers' League Commendation", source = { kind = "quest", text = "Quest: Mythology of the Titans Alliance, level 38 in Classic, from level 28", faction = "Alliance", quest = "Mythology of the Titans" } },
                 { id = 13087, name = "River Pride Choker", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 12029, name = "Greenstone Talisman of the Physician", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 35 random suffixes, each with its own stats: search for the full name" } },
-                { id = 6695, name = "Stygian Bone Amulet", source = { kind = "world", text = "Blind Hunter, Razorfen Kraul 27.15% in Classic", zone = "Razorfen Kraul", boss = "Blind Hunter", dropRate = 27.15 } },
               },
               enchants = {
                 { effect = "+6 Spell Power", spell = "Enchant Necklace - Spell Power", source = "Enchanting 210: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 120 Merchant’s Favor.", formulaId = 249502 },
@@ -4417,7 +4415,7 @@ ForeverBiSData = {
             },
             { slot = "Back",
               items = {
-                { id = 277206, name = "Brilliant Cloak", source = { kind = "quest", text = "Strahnbrad Mystery, a quest of Alterac Mountains Who gives it is not known yet" } },
+                { id = 277206, name = "Brilliant Cloak", source = { kind = "quest", text = "Strahnbrad Mystery, a quest of Alterac Mountains From a Singed Note dropped in Alterac Mountains" } },
                 { id = 7436, name = "Twilight Cape of the Physician", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 41 random suffixes, each with its own stats: search for the full name" } },
                 { id = 279835, name = "Vine Pruner's Cloak", source = { kind = "quest", text = "Quest: A Green Sample City of Dalaran, Alliance, from level 24", faction = "Alliance", quest = "A Green Sample City of Dalaran" } },
                 { id = 6751, name = "Mourning Shawl", source = { kind = "quest", text = "Quest: Mortality Wanes Alliance, level 30 in Classic, from level 25 Same quest as the Lancer Boots You choose one or the other", faction = "Alliance", quest = "Mortality Wanes" } },
@@ -4494,7 +4492,7 @@ ForeverBiSData = {
               items = {
                 { id = 254007, name = "Black Slippers", source = { kind = "profession", text = "Tailoring (150) Only its maker can wear it Pattern: not needed, tailoring trainers teach the recipe at 150 Requires Spinning Wheel. Its blueprint drops from Unstable Sentinel, City of Dalaran", skill = "Tailoring", skillLevel = 150, bindsToMaker = true } },
                 { id = 279843, name = "Enchanted Sandals", source = { kind = "quest", text = "Quest: Heart of Disruption City of Dalaran, Horde, from level 24", faction = "Horde", quest = "Heart of Disruption City of Dalaran" } },
-                { id = 286987, name = "Violet Sorcerer's Sandals", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 286987, name = "Violet Sorcerer's Sandals", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
                 { id = 273024, name = "Glinteye Slippers", source = { kind = "world", text = "Saltspine, Excavation Site: Wetlands" } },
                 { id = 9845, name = "Conjurer's Shoes of the Eagle", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 24 random suffixes, each with its own stats: search for the full name" } },
                 { id = 4139, name = "Junglewalker Sandals", source = { kind = "quest", text = "Quest: Report to Doren Alliance, level 37 in Classic, from level 30", faction = "Alliance", quest = "Report to Doren" } },
@@ -4593,11 +4591,11 @@ ForeverBiSData = {
             { slot = "Neck",
               items = {
                 { id = 7731, name = "Ghostshard Talisman", source = { kind = "world", text = "Azshir the Sleepless, Scarlet Monastery Graveyard 33.93% in Classic", zone = "Scarlet Monastery", boss = "Azshir the Sleepless", dropRate = 33.93 } },
+                { id = 286984, name = "Mark of the Marsh", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 12029, name = "Greenstone Talisman of Power", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 35 random suffixes, each with its own stats: search for the full name" } },
                 { id = 273049, name = "Archmagister's Faceted Pendant", source = { kind = "world", text = "Shade of the Archmage, City of Dalaran" } },
                 { id = 13084, name = "Kaleidoscope Chain", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 274068, name = "Thermaplugg Medal of Honor", source = { kind = "world", text = "Crowd Pummeler 9-60, Gnomeregan", zone = "Gnomeregan", boss = "Crowd Pummeler 9-60" } },
-                { id = 282653, name = "Dissolved Locket", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
               },
               enchants = {
                 { effect = "Agility +5", spell = "Enchant Necklace - Agility", source = "Enchanting 210: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 120 Merchant’s Favor.", formulaId = 249504 },
@@ -4729,7 +4727,7 @@ ForeverBiSData = {
                 { id = 6692, name = "Pronged Reaver", source = { kind = "world", text = "Charlga Razorflank, Razorfen Kraul 17.81% in Classic", zone = "Razorfen Kraul", boss = "Charlga Razorflank", dropRate = 17.81 } },
                 { id = 4977, name = "Sword of Hammerfall", source = { kind = "quest", text = "Quest: The Real Threat Horde, level 40 in Classic, from level 30", faction = "Horde", quest = "The Real Threat" } },
                 { id = 16886, name = "Outlaw Sabre", source = { kind = "quest", text = "Quest: Baron Aquanis Horde, level 30 in Classic, from level 21", faction = "Horde", quest = "Baron Aquanis" } },
-                { id = 7687, name = "Ironspine's Fist", source = { kind = "world", text = "Ironspine, Scarlet Monastery Graveyard 21.2% in Classic", zone = "Scarlet Monastery", boss = "Ironspine", dropRate = 21.2 } },
+                { id = 286996, name = "City Guard's Tarnished Blade", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
               },
               enchants = {
                 { effect = "Weapon Damage +3", spell = "Enchant Weapon - Striking", source = "Enchanting 195: Taught by the trainer." },
@@ -4752,10 +4750,10 @@ ForeverBiSData = {
               items = {
                 { id = 273033, name = "Gravespike Repeater", source = { kind = "world", text = "Atrexis the Grave Knight, City of Dalaran" } },
                 { id = 9456, name = "Glass Shooter", source = { kind = "world", text = "Dark Iron Ambassador, Gnomeregan 32.46% in Classic", zone = "Gnomeregan", boss = "Dark Iron Ambassador", dropRate = 32.46 } },
+                { id = 287068, name = "Excavated Dagger", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 17687, name = "Master Hunter's Rifle", source = { kind = "quest", text = "Quest: Big Game Hunter level 43 in Classic, from level 28 Big Game Hunter, after Nesingwary's three Mastery chains, Stranglethorn Vale King Bangalash is a level 43 elite: very hard at level 30", quest = "Big Game Hunter" } },
                 { id = 273029, name = "Golemsight Long Gun", source = { kind = "world", text = "Relic Guardian, Excavation Site: Wetlands" } },
                 { id = 17686, name = "Master Hunter's Bow", source = { kind = "quest", text = "Quest: Big Game Hunter level 43 in Classic, from level 28 Big Game Hunter, after Nesingwary's three Mastery chains, Stranglethorn Vale King Bangalash is a level 43 elite: very hard at level 30", quest = "Big Game Hunter" } },
-                { id = 274748, name = "Booty Bay Bruiser's Buckshot", source = { kind = "world", text = "Sold by Gezzy Gunkgear in Booty Bay At Honored with Booty Bay" } },
               },
             },
           },
@@ -4781,11 +4779,11 @@ ForeverBiSData = {
             { slot = "Neck",
               items = {
                 { id = 7731, name = "Ghostshard Talisman", source = { kind = "world", text = "Azshir the Sleepless, Scarlet Monastery Graveyard 33.93% in Classic", zone = "Scarlet Monastery", boss = "Azshir the Sleepless", dropRate = 33.93 } },
+                { id = 286984, name = "Mark of the Marsh", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 12029, name = "Greenstone Talisman of Power", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 35 random suffixes, each with its own stats: search for the full name" } },
                 { id = 273049, name = "Archmagister's Faceted Pendant", source = { kind = "world", text = "Shade of the Archmage, City of Dalaran" } },
                 { id = 13084, name = "Kaleidoscope Chain", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 274068, name = "Thermaplugg Medal of Honor", source = { kind = "world", text = "Crowd Pummeler 9-60, Gnomeregan", zone = "Gnomeregan", boss = "Crowd Pummeler 9-60" } },
-                { id = 282653, name = "Dissolved Locket", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
               },
               enchants = {
                 { effect = "Agility +5", spell = "Enchant Necklace - Agility", source = "Enchanting 210: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 120 Merchant’s Favor.", formulaId = 249504 },
@@ -4940,10 +4938,10 @@ ForeverBiSData = {
               items = {
                 { id = 273033, name = "Gravespike Repeater", source = { kind = "world", text = "Atrexis the Grave Knight, City of Dalaran" } },
                 { id = 9456, name = "Glass Shooter", source = { kind = "world", text = "Dark Iron Ambassador, Gnomeregan 32.46% in Classic", zone = "Gnomeregan", boss = "Dark Iron Ambassador", dropRate = 32.46 } },
+                { id = 287068, name = "Excavated Dagger", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 17687, name = "Master Hunter's Rifle", source = { kind = "quest", text = "Quest: Big Game Hunter level 43 in Classic, from level 28 Big Game Hunter, after Nesingwary's three Mastery chains, Stranglethorn Vale King Bangalash is a level 43 elite: very hard at level 30", quest = "Big Game Hunter" } },
                 { id = 273029, name = "Golemsight Long Gun", source = { kind = "world", text = "Relic Guardian, Excavation Site: Wetlands" } },
                 { id = 17686, name = "Master Hunter's Bow", source = { kind = "quest", text = "Quest: Big Game Hunter level 43 in Classic, from level 28 Big Game Hunter, after Nesingwary's three Mastery chains, Stranglethorn Vale King Bangalash is a level 43 elite: very hard at level 30", quest = "Big Game Hunter" } },
-                { id = 274748, name = "Booty Bay Bruiser's Buckshot", source = { kind = "world", text = "Sold by Gezzy Gunkgear in Booty Bay At Honored with Booty Bay" } },
               },
             },
           },
@@ -4986,7 +4984,7 @@ ForeverBiSData = {
                 { id = 273047, name = "Unstable Crystalline Shoulderpads", source = { kind = "world", text = "Unstable Sentinel, City of Dalaran" } },
                 { id = 5964, name = "Barbaric Shoulders", source = { kind = "profession", text = "Leatherworking", skill = "Leatherworking" } },
                 { id = 277043, name = "Cloudy Gustwoven Spaulders", source = { kind = "profession", text = "Leatherworking (175) Pattern sold by Sutara Plainstalker, Mulgore (Horde). Requires Earthen Ring - Friendly", faction = "Horde", skill = "Leatherworking", skillLevel = 175 } },
-                { id = 277051, name = "Azure Gustwoven Spaulders", source = { kind = "profession", text = "Leatherworking (175) Pattern sold by Archmage Alvareaux, Alterac Mountains. Requires Kirin Tor - Friendly", skill = "Leatherworking", skillLevel = 175 } },
+                { id = 277051, name = "Azure Gustwoven Spaulders", source = { kind = "profession", text = "Leatherworking (175) Pattern sold by Archmage Alvareaux, Alterac Mountains (Alliance). Requires Kirin Tor - Friendly", faction = "Alliance", skill = "Leatherworking", skillLevel = 175 } },
               },
             },
             { slot = "Back",
@@ -5021,8 +5019,8 @@ ForeverBiSData = {
                 { id = 270032, name = "Cultist's Armguards", source = { kind = "quest", text = "Quest: Blackfathom Villainy Alliance, from level 18, reported, not checked Quest: Blackfathom Villainy Horde, from level 18, reported, not checked", quest = "Blackfathom Villainy", reported = true } },
                 { id = 18948, name = "Barbaric Bracers", source = { kind = "profession", text = "Leatherworking (130) Requires Tanning Rack. Its blueprint drops rarely from Razorclaw the Butcher, Shadowfang Keep", skill = "Leatherworking", skillLevel = 130 } },
                 { id = 270091, name = "Seadog's Battered Cuffs", source = { kind = "quest", text = "Four quests for \"Sea Wolf\" MacKinley, Booty Bay The Mosh'Ogg ogres are level 41 to 45 elites: very hard at level 30" } },
+                { id = 286985, name = "Thicket Bindings", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 3230, name = "Black Wolf Bracers", source = { kind = "dungeon", text = "Fenrus the Devourer, Shadowfang Keep 17.21% in Classic", zone = "Shadowfang Keep", boss = "Fenrus the Devourer", dropRate = 17.21 } },
-                { id = 270080, name = "Arathi Armbands", source = { kind = "world", text = "Wanted! Otto and Falconcrest, Refuge Pointe, Arathi Highlands Two elites of level 38 and 40: take a strong group" } },
               },
               enchants = {
                 { effect = "Stamina +5", spell = "Enchant Bracer - Stamina", source = "Enchanting 170: Taught by the trainer." },
@@ -5116,10 +5114,10 @@ ForeverBiSData = {
               items = {
                 { id = 7683, name = "Bloody Brass Knuckles", source = { kind = "world", text = "Interrogator Vishas, Scarlet Monastery Graveyard 52.35% in Classic", zone = "Scarlet Monastery", boss = "Interrogator Vishas", dropRate = 52.35 } },
                 { id = 277246, name = "Ruby-Adorned Blade", source = { kind = "quest", text = "Rogue quest The Eye of Bhossca, Silverpine Forest, level 35 From level 25, done alone in the Scarlet Monastery" } },
+                { id = 286996, name = "City Guard's Tarnished Blade", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 9520, name = "Silent Hunter", source = { kind = "quest", text = "Quest: Call to Arms Horde, level 40 in Classic, from level 30 Call to Arms, a Horde chain at Hammerfall, Arathi Highlands Boulderfist elites of level 38 to 40: take a strong group", faction = "Horde", quest = "Call to Arms" } },
                 { id = 16886, name = "Outlaw Sabre", source = { kind = "quest", text = "Quest: Baron Aquanis Horde, level 30 in Classic, from level 21", faction = "Horde", quest = "Baron Aquanis" } },
                 { id = 281314, name = "Subdued Dragon's Fang", source = { kind = "quest", text = "Alliance quest Stopping the Cycle, Wetlands, level 34 Elite, from level 24: take a group", faction = "Alliance" } },
-                { id = 7687, name = "Ironspine's Fist", source = { kind = "world", text = "Ironspine, Scarlet Monastery Graveyard 21.2% in Classic", zone = "Scarlet Monastery", boss = "Ironspine", dropRate = 21.2 } },
               },
               enchants = {
                 { effect = "Weapon Damage +3", spell = "Enchant Weapon - Striking", source = "Enchanting 195: Taught by the trainer." },
@@ -5175,7 +5173,7 @@ ForeverBiSData = {
                 { id = 7727, name = "Watchman Pauldrons", source = { kind = "world", text = "Trash mobs, Scarlet Monastery Graveyard 0.02% in Classic Trash mobs, Scarlet Monastery Library 0.02% in Classic Trash mobs, Scarlet Monastery Armory 0.02% in Classic Trash mobs, Scarlet Monastery Cathedral 0.02% in Classic World drop, sold at the auction house", zone = "Scarlet Monastery", boss = "Trash mobs", dropRate = 0.02 } },
                 { id = 5964, name = "Barbaric Shoulders", source = { kind = "profession", text = "Leatherworking", skill = "Leatherworking" } },
                 { id = 277043, name = "Cloudy Gustwoven Spaulders", source = { kind = "profession", text = "Leatherworking (175) Pattern sold by Sutara Plainstalker, Mulgore (Horde). Requires Earthen Ring - Friendly", faction = "Horde", skill = "Leatherworking", skillLevel = 175 } },
-                { id = 277051, name = "Azure Gustwoven Spaulders", source = { kind = "profession", text = "Leatherworking (175) Pattern sold by Archmage Alvareaux, Alterac Mountains. Requires Kirin Tor - Friendly", skill = "Leatherworking", skillLevel = 175 } },
+                { id = 277051, name = "Azure Gustwoven Spaulders", source = { kind = "profession", text = "Leatherworking (175) Pattern sold by Archmage Alvareaux, Alterac Mountains (Alliance). Requires Kirin Tor - Friendly", faction = "Alliance", skill = "Leatherworking", skillLevel = 175 } },
               },
             },
             { slot = "Back",
@@ -5210,8 +5208,8 @@ ForeverBiSData = {
                 { id = 270032, name = "Cultist's Armguards", source = { kind = "quest", text = "Quest: Blackfathom Villainy Alliance, from level 18, reported, not checked Quest: Blackfathom Villainy Horde, from level 18, reported, not checked", quest = "Blackfathom Villainy", reported = true } },
                 { id = 18948, name = "Barbaric Bracers", source = { kind = "profession", text = "Leatherworking (130) Requires Tanning Rack. Its blueprint drops rarely from Razorclaw the Butcher, Shadowfang Keep", skill = "Leatherworking", skillLevel = 130 } },
                 { id = 270091, name = "Seadog's Battered Cuffs", source = { kind = "quest", text = "Four quests for \"Sea Wolf\" MacKinley, Booty Bay The Mosh'Ogg ogres are level 41 to 45 elites: very hard at level 30" } },
+                { id = 286985, name = "Thicket Bindings", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 3230, name = "Black Wolf Bracers", source = { kind = "dungeon", text = "Fenrus the Devourer, Shadowfang Keep 17.21% in Classic", zone = "Shadowfang Keep", boss = "Fenrus the Devourer", dropRate = 17.21 } },
-                { id = 270080, name = "Arathi Armbands", source = { kind = "world", text = "Wanted! Otto and Falconcrest, Refuge Pointe, Arathi Highlands Two elites of level 38 and 40: take a strong group" } },
               },
               enchants = {
                 { effect = "Stamina +5", spell = "Enchant Bracer - Stamina", source = "Enchanting 170: Taught by the trainer." },
@@ -5291,11 +5289,11 @@ ForeverBiSData = {
             { slot = "Main hand",
               items = {
                 { id = 277246, name = "Ruby-Adorned Blade", source = { kind = "quest", text = "Rogue quest The Eye of Bhossca, Silverpine Forest, level 35 From level 25, done alone in the Scarlet Monastery" } },
+                { id = 286996, name = "City Guard's Tarnished Blade", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 13033, name = "Zealot Blade", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 4977, name = "Sword of Hammerfall", source = { kind = "quest", text = "Quest: The Real Threat Horde, level 40 in Classic, from level 30", faction = "Horde", quest = "The Real Threat" } },
                 { id = 7687, name = "Ironspine's Fist", source = { kind = "world", text = "Ironspine, Scarlet Monastery Graveyard 21.2% in Classic", zone = "Scarlet Monastery", boss = "Ironspine", dropRate = 21.2 } },
                 { id = 16886, name = "Outlaw Sabre", source = { kind = "quest", text = "Quest: Baron Aquanis Horde, level 30 in Classic, from level 21", faction = "Horde", quest = "Baron Aquanis" } },
-                { id = 6692, name = "Pronged Reaver", source = { kind = "world", text = "Charlga Razorflank, Razorfen Kraul 17.81% in Classic", zone = "Razorfen Kraul", boss = "Charlga Razorflank", dropRate = 17.81 } },
               },
               enchants = {
                 { effect = "Weapon Damage +3", spell = "Enchant Weapon - Striking", source = "Enchanting 195: Taught by the trainer." },
@@ -5306,9 +5304,9 @@ ForeverBiSData = {
                 { id = 7683, name = "Bloody Brass Knuckles", source = { kind = "world", text = "Interrogator Vishas, Scarlet Monastery Graveyard 52.35% in Classic", zone = "Scarlet Monastery", boss = "Interrogator Vishas", dropRate = 52.35 } },
                 { id = 277246, name = "Ruby-Adorned Blade", source = { kind = "quest", text = "Rogue quest The Eye of Bhossca, Silverpine Forest, level 35 From level 25, done alone in the Scarlet Monastery" } },
                 { id = 9520, name = "Silent Hunter", source = { kind = "quest", text = "Quest: Call to Arms Horde, level 40 in Classic, from level 30 Call to Arms, a Horde chain at Hammerfall, Arathi Highlands Boulderfist elites of level 38 to 40: take a strong group", faction = "Horde", quest = "Call to Arms" } },
+                { id = 286996, name = "City Guard's Tarnished Blade", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 16886, name = "Outlaw Sabre", source = { kind = "quest", text = "Quest: Baron Aquanis Horde, level 30 in Classic, from level 21", faction = "Horde", quest = "Baron Aquanis" } },
                 { id = 281314, name = "Subdued Dragon's Fang", source = { kind = "quest", text = "Alliance quest Stopping the Cycle, Wetlands, level 34 Elite, from level 24: take a group", faction = "Alliance" } },
-                { id = 9453, name = "Toxic Revenger", source = { kind = "world", text = "Viscous Fallout, Gnomeregan 17.53% in Classic", zone = "Gnomeregan", boss = "Viscous Fallout", dropRate = 17.53 } },
               },
               enchants = {
                 { effect = "Weapon Damage +3", spell = "Enchant Weapon - Striking", source = "Enchanting 195: Taught by the trainer." },
@@ -5347,11 +5345,11 @@ ForeverBiSData = {
             { slot = "Neck",
               items = {
                 { id = 6695, name = "Stygian Bone Amulet", source = { kind = "world", text = "Blind Hunter, Razorfen Kraul 27.15% in Classic", zone = "Razorfen Kraul", boss = "Blind Hunter", dropRate = 27.15 } },
+                { id = 286995, name = "Guardian's Emblem", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 12029, name = "Greenstone Talisman of the Sorcerer", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 35 random suffixes, each with its own stats: search for the full name" } },
                 { id = 273049, name = "Archmagister's Faceted Pendant", source = { kind = "world", text = "Shade of the Archmage, City of Dalaran" } },
                 { id = 285331, name = "Mark of the Pack Leader", source = { kind = "world", text = "Humar the Pridelord, the rare black lion of the Barrens Reported, not checked", reported = true } },
                 { id = 5003, name = "Crystal Starfire Medallion", source = { kind = "world", text = "World drop, sold at the auction house" } },
-                { id = 13084, name = "Kaleidoscope Chain", source = { kind = "world", text = "World drop, sold at the auction house" } },
               },
               enchants = {
                 { effect = "+6 Spell Power", spell = "Enchant Necklace - Spell Power", source = "Enchanting 210: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 120 Merchant’s Favor.", formulaId = 249502 },
@@ -5372,7 +5370,7 @@ ForeverBiSData = {
                 { id = 7436, name = "Twilight Cape of Nature's Wrath", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 41 random suffixes, each with its own stats: search for the full name" } },
                 { id = 284383, name = "Faerie Dragon's Skin", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 274149, name = "Thornweaver Drape", source = { kind = "world", text = "Roogug, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Roogug" } },
-                { id = 277206, name = "Brilliant Cloak", source = { kind = "quest", text = "Strahnbrad Mystery, a quest of Alterac Mountains Who gives it is not known yet" } },
+                { id = 277206, name = "Brilliant Cloak", source = { kind = "quest", text = "Strahnbrad Mystery, a quest of Alterac Mountains From a Singed Note dropped in Alterac Mountains" } },
                 { id = 279835, name = "Vine Pruner's Cloak", source = { kind = "quest", text = "Quest: A Green Sample City of Dalaran, Alliance, from level 24", faction = "Alliance", quest = "A Green Sample City of Dalaran" } },
                 { id = 3719, name = "Hillman's Cloak", source = { kind = "profession", text = "Leatherworking", skill = "Leatherworking" } },
               },
@@ -5543,11 +5541,11 @@ ForeverBiSData = {
             { slot = "Neck",
               items = {
                 { id = 274749, name = "Souvenir Sea Shell", source = { kind = "world", text = "Sold by Gezzy Gunkgear in Booty Bay At Honored with Booty Bay" } },
+                { id = 286995, name = "Guardian's Emblem", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 7746, name = "Explorers' League Commendation", source = { kind = "quest", text = "Quest: Mythology of the Titans Alliance, level 38 in Classic, from level 28", faction = "Alliance", quest = "Mythology of the Titans" } },
                 { id = 7731, name = "Ghostshard Talisman", source = { kind = "world", text = "Azshir the Sleepless, Scarlet Monastery Graveyard 33.93% in Classic", zone = "Scarlet Monastery", boss = "Azshir the Sleepless", dropRate = 33.93 } },
                 { id = 13087, name = "River Pride Choker", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 12029, name = "Greenstone Talisman of the Physician", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 35 random suffixes, each with its own stats: search for the full name" } },
-                { id = 6695, name = "Stygian Bone Amulet", source = { kind = "world", text = "Blind Hunter, Razorfen Kraul 27.15% in Classic", zone = "Razorfen Kraul", boss = "Blind Hunter", dropRate = 27.15 } },
               },
               enchants = {
                 { effect = "+6 Spell Power", spell = "Enchant Necklace - Spell Power", source = "Enchanting 210: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 120 Merchant’s Favor.", formulaId = 249502 },
@@ -5565,7 +5563,7 @@ ForeverBiSData = {
             },
             { slot = "Back",
               items = {
-                { id = 277206, name = "Brilliant Cloak", source = { kind = "quest", text = "Strahnbrad Mystery, a quest of Alterac Mountains Who gives it is not known yet" } },
+                { id = 277206, name = "Brilliant Cloak", source = { kind = "quest", text = "Strahnbrad Mystery, a quest of Alterac Mountains From a Singed Note dropped in Alterac Mountains" } },
                 { id = 284383, name = "Faerie Dragon's Skin", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 279835, name = "Vine Pruner's Cloak", source = { kind = "quest", text = "Quest: A Green Sample City of Dalaran, Alliance, from level 24", faction = "Alliance", quest = "A Green Sample City of Dalaran" } },
                 { id = 7436, name = "Twilight Cape of the Physician", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 41 random suffixes, each with its own stats: search for the full name" } },
@@ -5592,11 +5590,11 @@ ForeverBiSData = {
             { slot = "Wrist",
               items = {
                 { id = 9428, name = "Unearthed Bands of Stamina", source = { kind = "world", text = "Trash mobs, Uldaman Random suffix, one of 35 Search the auction house for the full name" } },
+                { id = 286985, name = "Thicket Bindings", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 270032, name = "Cultist's Armguards", source = { kind = "quest", text = "Quest: Blackfathom Villainy Alliance, from level 18, reported, not checked Quest: Blackfathom Villainy Horde, from level 18, reported, not checked", quest = "Blackfathom Villainy", reported = true } },
                 { id = 3230, name = "Black Wolf Bracers", source = { kind = "dungeon", text = "Fenrus the Devourer, Shadowfang Keep 17.21% in Classic", zone = "Shadowfang Keep", boss = "Fenrus the Devourer", dropRate = 17.21 } },
                 { id = 9448, name = "Spidertank Oilrag", source = { kind = "world", text = "Electrocutioner 6000, Gnomeregan 41.22% in Classic", zone = "Gnomeregan", boss = "Electrocutioner 6000", dropRate = 41.22 } },
                 { id = 16791, name = "Silkstream Cuffs", source = { kind = "quest", text = "Quest: Book of the Ancients level 38 in Classic, from level 30", quest = "Book of the Ancients" } },
-                { id = 14416, name = "Stonecloth Bindings", source = { kind = "world", text = "World drop, sold at the auction house" } },
               },
               enchants = {
                 { effect = "Stamina +5", spell = "Enchant Bracer - Stamina", source = "Enchanting 170: Taught by the trainer." },
@@ -5644,7 +5642,7 @@ ForeverBiSData = {
                 { id = 9450, name = "Gnomebot Operating Boots", source = { kind = "world", text = "Crowd Pummeler 9-60, Gnomeregan 65.28% in Classic", zone = "Gnomeregan", boss = "Crowd Pummeler 9-60", dropRate = 65.28 } },
                 { id = 273024, name = "Glinteye Slippers", source = { kind = "world", text = "Saltspine, Excavation Site: Wetlands" } },
                 { id = 279840, name = "Renewing Footpads", source = { kind = "quest", text = "Quest: Heart of Disruption City of Dalaran, Alliance, from level 24", faction = "Alliance", quest = "Heart of Disruption City of Dalaran" } },
-                { id = 286987, name = "Violet Sorcerer's Sandals", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 286987, name = "Violet Sorcerer's Sandals", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
                 { id = 7754, name = "Harbinger Boots", source = { kind = "world", text = "Trash mobs, Scarlet Monastery Graveyard 0.02% in Classic Trash mobs, Scarlet Monastery Library 0.02% in Classic Trash mobs, Scarlet Monastery Armory 0.02% in Classic Trash mobs, Scarlet Monastery Cathedral 0.02% in Classic", zone = "Scarlet Monastery", boss = "Trash mobs", dropRate = 0.02 } },
               },
               enchants = {
@@ -5705,7 +5703,7 @@ ForeverBiSData = {
                 { id = 4129, name = "Collection Plate", source = { kind = "quest", text = "Quest: Cracking Maury's Foot level 44 in Classic, from level 30 A chain of four quests from \"Sea Wolf\" MacKinley, Booty Bay Elite ogres of level 41 to 45: take a group", quest = "Cracking Maury's Foot" } },
                 { id = 274290, name = "Painwalker Buckler", source = { kind = "world", text = "Interrogator Vishas, Scarlet Monastery Graveyard", zone = "Scarlet Monastery", boss = "Interrogator Vishas" } },
                 { id = 7002, name = "Arctic Buckler", source = { kind = "quest", text = "Quest: Blackfathom Villainy Alliance, level 27 in Classic, from level 18 Quest: Blackfathom Villainy Horde, level 27 in Classic, from level 18", quest = "Blackfathom Villainy" } },
-                { id = 16788, name = "Captain Rackmore's Wheel", source = { kind = "quest", text = "Quest: Claim Rackmore's Treasure! level 36 in Classic, from level 30", quest = "Claim Rackmore's Treasure!" } },
+                { id = 286982, name = "Unearthed Barrier", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
               },
               enchants = {
                 { effect = "Stamina +5", spell = "Enchant Shield - Lesser Stamina", source = "Enchanting 155: Taught by the trainer." },
@@ -5740,11 +5738,11 @@ ForeverBiSData = {
             { slot = "Neck",
               items = {
                 { id = 273049, name = "Archmagister's Faceted Pendant", source = { kind = "world", text = "Shade of the Archmage, City of Dalaran" } },
+                { id = 286984, name = "Mark of the Marsh", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 13084, name = "Kaleidoscope Chain", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 285331, name = "Mark of the Pack Leader", source = { kind = "world", text = "Humar the Pridelord, the rare black lion of the Barrens Reported, not checked", reported = true } },
                 { id = 12019, name = "Cerulean Talisman of the Gorilla", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 35 random suffixes, each with its own stats: search for the full name" } },
                 { id = 7731, name = "Ghostshard Talisman", source = { kind = "world", text = "Azshir the Sleepless, Scarlet Monastery Graveyard 33.93% in Classic", zone = "Scarlet Monastery", boss = "Azshir the Sleepless", dropRate = 33.93 } },
-                { id = 274068, name = "Thermaplugg Medal of Honor", source = { kind = "world", text = "Crowd Pummeler 9-60, Gnomeregan", zone = "Gnomeregan", boss = "Crowd Pummeler 9-60" } },
               },
               enchants = {
                 { effect = "Strength +5", spell = "Enchant Necklace - Strength", source = "Enchanting 210: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 120 Merchant’s Favor.", formulaId = 249496 },
@@ -5959,12 +5957,12 @@ ForeverBiSData = {
             },
             { slot = "Back",
               items = {
-                { id = 277206, name = "Brilliant Cloak", source = { kind = "quest", text = "Strahnbrad Mystery, a quest of Alterac Mountains Who gives it is not known yet" } },
+                { id = 277206, name = "Brilliant Cloak", source = { kind = "quest", text = "Strahnbrad Mystery, a quest of Alterac Mountains From a Singed Note dropped in Alterac Mountains" } },
+                { id = 286994, name = "Tattered Kirin Tor Cloak", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 271719, name = "Furs of the Earthen Ring", source = { kind = "quest", text = "Quest: Elder Knowledge Excavation Site: Wetlands, Horde, from level 24", faction = "Horde", quest = "Elder Knowledge Excavation Site: Wetlands" } },
                 { id = 7436, name = "Twilight Cape of the Sorcerer", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 41 random suffixes, each with its own stats: search for the full name" } },
                 { id = 271720, name = "Crocolisk Skin Gaiter", source = { kind = "quest", text = "A quest of the Excavation Site, in the Wetlands Which quest is not known yet" } },
                 { id = 271716, name = "Explorer's League Dustcover", source = { kind = "quest", text = "Quest: Lost Relic Carry Excavation Site: Wetlands, Alliance, from level 24", faction = "Alliance", quest = "Lost Relic Carry Excavation Site: Wetlands" } },
-                { id = 4462, name = "Cloak of Rot", source = { kind = "world", text = "World drop, sold at the auction house" } },
               },
               enchants = {
                 { effect = "Agility +3", spell = "Enchant Cloak - Minor Agility", source = "Enchanting 110: Formula sold by Dalria in Ashenvale and Kulwia in Stonetalon Mountains.", formulaId = 11039 },
@@ -5998,8 +5996,8 @@ ForeverBiSData = {
             },
             { slot = "Hands",
               items = {
-                { id = 286989, name = "Violet Sorcerer's Wraps", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 9491, name = "Hotshot Pilot's Gloves", source = { kind = "world", text = "Trash mobs, Gnomeregan 0.03% in Classic", zone = "Gnomeregan", boss = "Trash mobs", dropRate = 0.03 } },
+                { id = 286989, name = "Violet Sorcerer's Wraps", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 6732, name = "Gnomish Mechanic's Gloves", source = { kind = "quest", text = "Quest: News for Fizzle level 38 in Classic, from level 28", quest = "News for Fizzle" } },
                 { id = 273034, name = "Ephemeral Grips", source = { kind = "world", text = "Arcane Anomaly, City of Dalaran" } },
                 { id = 9861, name = "Archer's Gloves of the Eagle", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 36 random suffixes, each with its own stats: search for the full name" } },
@@ -6034,7 +6032,7 @@ ForeverBiSData = {
             },
             { slot = "Feet",
               items = {
-                { id = 286987, name = "Violet Sorcerer's Sandals", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 286987, name = "Violet Sorcerer's Sandals", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
                 { id = 279840, name = "Renewing Footpads", source = { kind = "quest", text = "Quest: Heart of Disruption City of Dalaran, Alliance, from level 24", faction = "Alliance", quest = "Heart of Disruption City of Dalaran" } },
                 { id = 254001, name = "Gilded Slippers", source = { kind = "profession", text = "Tailoring (150) Only its maker can wear it Pattern: not needed, tailoring trainers teach the recipe at 150 Requires Spinning Wheel. Its blueprint drops from Unstable Sentinel, City of Dalaran", skill = "Tailoring", skillLevel = 150, bindsToMaker = true } },
                 { id = 9845, name = "Conjurer's Shoes of the Eagle", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 24 random suffixes, each with its own stats: search for the full name" } },
@@ -6159,9 +6157,9 @@ ForeverBiSData = {
                 { id = 7436, name = "Twilight Cape of the Prophet", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 41 random suffixes, each with its own stats: search for the full name" } },
                 { id = 273825, name = "Red Wool Cloak", source = { kind = "world", text = "Bazil Thredd, The Stockade", zone = "The Stockade", boss = "Bazil Thredd" } },
                 { id = 9605, name = "Repairman's Cape", source = { kind = "quest", text = "Quest: Data Rescue Alliance, level 30 in Classic, from level 25", faction = "Alliance", quest = "Data Rescue" } },
-                { id = 277206, name = "Brilliant Cloak", source = { kind = "quest", text = "Strahnbrad Mystery, a quest of Alterac Mountains Who gives it is not known yet" } },
+                { id = 277206, name = "Brilliant Cloak", source = { kind = "quest", text = "Strahnbrad Mystery, a quest of Alterac Mountains From a Singed Note dropped in Alterac Mountains" } },
                 { id = 6901, name = "Glowing Thresher Cape", source = { kind = "dungeon", text = "Old Serra'kis, Blackfathom Deeps 39.27% in Classic", zone = "Blackfathom Deeps", boss = "Old Serra'kis", dropRate = 39.27 } },
-                { id = 4462, name = "Cloak of Rot", source = { kind = "world", text = "World drop, sold at the auction house" } },
+                { id = 286994, name = "Tattered Kirin Tor Cloak", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
               },
               enchants = {
                 { effect = "Armor +60", spell = "Enchant Cloak - Greater Defense", source = "Enchanting 205: Taught by the trainer." },
@@ -6236,7 +6234,7 @@ ForeverBiSData = {
                 { id = 9845, name = "Conjurer's Shoes of the Prophet", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 24 random suffixes, each with its own stats: search for the full name" } },
                 { id = 9454, name = "Acidic Walkers", source = { kind = "world", text = "Viscous Fallout, Gnomeregan 60.81% in Classic", zone = "Gnomeregan", boss = "Viscous Fallout", dropRate = 60.81 } },
                 { id = 252444, name = "Wisdom's Leather Boots", source = { kind = "profession", text = "Leatherworking (85) Only its maker can wear it", skill = "Leatherworking", skillLevel = 85, bindsToMaker = true } },
-                { id = 286987, name = "Violet Sorcerer's Sandals", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 286987, name = "Violet Sorcerer's Sandals", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
               },
               enchants = {
                 { effect = "Minor Speed Increase", spell = "Enchant Boots - Minor Speed", source = "Enchanting 225: Taught by the trainer." },
@@ -6328,11 +6326,11 @@ ForeverBiSData = {
             { slot = "Neck",
               items = {
                 { id = 6695, name = "Stygian Bone Amulet", source = { kind = "world", text = "Blind Hunter, Razorfen Kraul 27.15% in Classic", zone = "Razorfen Kraul", boss = "Blind Hunter", dropRate = 27.15 } },
+                { id = 286995, name = "Guardian's Emblem", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 12029, name = "Greenstone Talisman of the Sorcerer", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 35 random suffixes, each with its own stats: search for the full name" } },
                 { id = 273049, name = "Archmagister's Faceted Pendant", source = { kind = "world", text = "Shade of the Archmage, City of Dalaran" } },
                 { id = 285331, name = "Mark of the Pack Leader", source = { kind = "world", text = "Humar the Pridelord, the rare black lion of the Barrens Reported, not checked", reported = true } },
                 { id = 5003, name = "Crystal Starfire Medallion", source = { kind = "world", text = "World drop, sold at the auction house" } },
-                { id = 13084, name = "Kaleidoscope Chain", source = { kind = "world", text = "World drop, sold at the auction house" } },
               },
               enchants = {
                 { effect = "+6 Spell Power", spell = "Enchant Necklace - Spell Power", source = "Enchanting 210: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 120 Merchant’s Favor.", formulaId = 249502 },
@@ -6352,7 +6350,7 @@ ForeverBiSData = {
               items = {
                 { id = 7436, name = "Twilight Cape of Magic", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 41 random suffixes, each with its own stats: search for the full name" } },
                 { id = 274149, name = "Thornweaver Drape", source = { kind = "world", text = "Roogug, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Roogug" } },
-                { id = 277206, name = "Brilliant Cloak", source = { kind = "quest", text = "Strahnbrad Mystery, a quest of Alterac Mountains Who gives it is not known yet" } },
+                { id = 277206, name = "Brilliant Cloak", source = { kind = "quest", text = "Strahnbrad Mystery, a quest of Alterac Mountains From a Singed Note dropped in Alterac Mountains" } },
                 { id = 279835, name = "Vine Pruner's Cloak", source = { kind = "quest", text = "Quest: A Green Sample City of Dalaran, Alliance, from level 24", faction = "Alliance", quest = "A Green Sample City of Dalaran" } },
                 { id = 3719, name = "Hillman's Cloak", source = { kind = "profession", text = "Leatherworking", skill = "Leatherworking" } },
                 { id = 15468, name = "Windsong Drape", source = { kind = "quest", text = "Quest: Free at Last Horde, level 29 in Classic, from level 25", faction = "Horde", quest = "Free at Last" } },
@@ -6525,11 +6523,11 @@ ForeverBiSData = {
             { slot = "Neck",
               items = {
                 { id = 274749, name = "Souvenir Sea Shell", source = { kind = "world", text = "Sold by Gezzy Gunkgear in Booty Bay At Honored with Booty Bay" } },
+                { id = 286995, name = "Guardian's Emblem", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 7746, name = "Explorers' League Commendation", source = { kind = "quest", text = "Quest: Mythology of the Titans Alliance, level 38 in Classic, from level 28", faction = "Alliance", quest = "Mythology of the Titans" } },
                 { id = 7731, name = "Ghostshard Talisman", source = { kind = "world", text = "Azshir the Sleepless, Scarlet Monastery Graveyard 33.93% in Classic", zone = "Scarlet Monastery", boss = "Azshir the Sleepless", dropRate = 33.93 } },
                 { id = 13087, name = "River Pride Choker", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 12029, name = "Greenstone Talisman of Stamina", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 35 random suffixes, each with its own stats: search for the full name" } },
-                { id = 6695, name = "Stygian Bone Amulet", source = { kind = "world", text = "Blind Hunter, Razorfen Kraul 27.15% in Classic", zone = "Razorfen Kraul", boss = "Blind Hunter", dropRate = 27.15 } },
               },
               enchants = {
                 { effect = "+6 Spell Power", spell = "Enchant Necklace - Spell Power", source = "Enchanting 210: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 120 Merchant’s Favor.", formulaId = 249502 },
@@ -6547,7 +6545,7 @@ ForeverBiSData = {
             },
             { slot = "Back",
               items = {
-                { id = 277206, name = "Brilliant Cloak", source = { kind = "quest", text = "Strahnbrad Mystery, a quest of Alterac Mountains Who gives it is not known yet" } },
+                { id = 277206, name = "Brilliant Cloak", source = { kind = "quest", text = "Strahnbrad Mystery, a quest of Alterac Mountains From a Singed Note dropped in Alterac Mountains" } },
                 { id = 279835, name = "Vine Pruner's Cloak", source = { kind = "quest", text = "Quest: A Green Sample City of Dalaran, Alliance, from level 24", faction = "Alliance", quest = "A Green Sample City of Dalaran" } },
                 { id = 6751, name = "Mourning Shawl", source = { kind = "quest", text = "Quest: Mortality Wanes Alliance, level 30 in Classic, from level 25 Same quest as the Lancer Boots You choose one or the other", faction = "Alliance", quest = "Mortality Wanes" } },
                 { id = 7436, name = "Twilight Cape of Stamina", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 41 random suffixes, each with its own stats: search for the full name" } },
@@ -6724,11 +6722,11 @@ ForeverBiSData = {
             { slot = "Neck",
               items = {
                 { id = 7731, name = "Ghostshard Talisman", source = { kind = "world", text = "Azshir the Sleepless, Scarlet Monastery Graveyard 33.93% in Classic", zone = "Scarlet Monastery", boss = "Azshir the Sleepless", dropRate = 33.93 } },
+                { id = 286984, name = "Mark of the Marsh", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 12019, name = "Cerulean Talisman of the Tiger", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 35 random suffixes, each with its own stats: search for the full name" } },
                 { id = 13084, name = "Kaleidoscope Chain", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 273049, name = "Archmagister's Faceted Pendant", source = { kind = "world", text = "Shade of the Archmage, City of Dalaran" } },
                 { id = 274068, name = "Thermaplugg Medal of Honor", source = { kind = "world", text = "Crowd Pummeler 9-60, Gnomeregan", zone = "Gnomeregan", boss = "Crowd Pummeler 9-60" } },
-                { id = 285331, name = "Mark of the Pack Leader", source = { kind = "world", text = "Humar the Pridelord, the rare black lion of the Barrens Reported, not checked", reported = true } },
               },
               enchants = {
                 { effect = "Strength +5", spell = "Enchant Necklace - Strength", source = "Enchanting 210: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 120 Merchant’s Favor.", formulaId = 249496 },
@@ -6786,11 +6784,11 @@ ForeverBiSData = {
             { slot = "Hands",
               items = {
                 { id = 4107, name = "Tiger Hunter Gloves", source = { kind = "quest", text = "Quest: Tiger Mastery level 37 in Classic, from level 28 Four Tiger Mastery quests, Stranglethorn Vale Sin'Dall is level 37: take a group", quest = "Tiger Mastery" } },
+                { id = 286992, name = "Construct's Grips", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 9861, name = "Archer's Gloves of the Tiger", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 36 random suffixes, each with its own stats: search for the full name" } },
                 { id = 3754, name = "Shepherd's Gloves", source = { kind = "quest", text = "Quest: Costly Menace Alliance, level 34 in Classic, from level 30", faction = "Alliance", quest = "Costly Menace" } },
                 { id = 6408, name = "Insignia Gloves", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 3341, name = "Gauntlets of Ogre Strength", source = { kind = "world", text = "Boulderfist ogres, Arathi Highlands About once in eighty kills, or at the auction house" } },
-                { id = 4075, name = "Mail Combat Gauntlets", source = { kind = "world", text = "World drop, sold at the auction house" } },
               },
               enchants = {
                 { effect = "Strength +7", spell = "Enchant Gloves - Strength", source = "Enchanting 225: Taught by the trainer." },
@@ -6869,11 +6867,11 @@ ForeverBiSData = {
             { slot = "Ranged",
               items = {
                 { id = 17687, name = "Master Hunter's Rifle", source = { kind = "quest", text = "Quest: Big Game Hunter level 43 in Classic, from level 28 Big Game Hunter, after Nesingwary's three Mastery chains, Stranglethorn Vale King Bangalash is a level 43 elite: very hard at level 30", quest = "Big Game Hunter" } },
+                { id = 287068, name = "Excavated Dagger", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 273033, name = "Gravespike Repeater", source = { kind = "world", text = "Atrexis the Grave Knight, City of Dalaran" } },
                 { id = 9456, name = "Glass Shooter", source = { kind = "world", text = "Dark Iron Ambassador, Gnomeregan 32.46% in Classic", zone = "Gnomeregan", boss = "Dark Iron Ambassador", dropRate = 32.46 } },
                 { id = 2098, name = "Double-barreled Shotgun", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 274748, name = "Booty Bay Bruiser's Buckshot", source = { kind = "world", text = "Sold by Gezzy Gunkgear in Booty Bay At Honored with Booty Bay" } },
-                { id = 273029, name = "Golemsight Long Gun", source = { kind = "world", text = "Relic Guardian, Excavation Site: Wetlands" } },
               },
             },
           },
@@ -6950,9 +6948,9 @@ ForeverBiSData = {
                 { id = 9428, name = "Unearthed Bands of the Bear", source = { kind = "world", text = "Trash mobs, Uldaman Random suffix, one of 35 Search the auction house for the full name" } },
                 { id = 18948, name = "Barbaric Bracers", source = { kind = "profession", text = "Leatherworking (130) Requires Tanning Rack. Its blueprint drops rarely from Razorclaw the Butcher, Shadowfang Keep", skill = "Leatherworking", skillLevel = 130 } },
                 { id = 270032, name = "Cultist's Armguards", source = { kind = "quest", text = "Quest: Blackfathom Villainy Alliance, from level 18, reported, not checked Quest: Blackfathom Villainy Horde, from level 18, reported, not checked", quest = "Blackfathom Villainy", reported = true } },
+                { id = 286985, name = "Thicket Bindings", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 270068, name = "Stromgarde Bracers", source = { kind = "quest", text = "Quest: Wanted! Marez Cowl Alliance, from level 30, reported, not checked", faction = "Alliance", quest = "Wanted! Marez Cowl", reported = true } },
                 { id = 3228, name = "Jimmied Handcuffs", source = { kind = "world", text = "Bruegal Ironknuckle, The Stockade 56.16% in Classic", zone = "The Stockade", boss = "Bruegal Ironknuckle", dropRate = 56.16 } },
-                { id = 4438, name = "Pugilist Bracers", source = { kind = "world", text = "Trash mobs, Razorfen Kraul 0.04% in Classic", zone = "Razorfen Kraul", boss = "Trash mobs", dropRate = 0.04 } },
               },
               enchants = {
                 { effect = "Strength +5", spell = "Enchant Bracer - Strength", source = "Enchanting 180: Taught by the trainer." },
@@ -6961,11 +6959,11 @@ ForeverBiSData = {
             { slot = "Hands",
               items = {
                 { id = 7690, name = "Ebon Vise", source = { kind = "world", text = "Fallen Champion, Scarlet Monastery Graveyard 38.9% in Classic", zone = "Scarlet Monastery", boss = "Fallen Champion", dropRate = 38.9 } },
+                { id = 286992, name = "Construct's Grips", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 720, name = "Brawler Gloves", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 1978, name = "Wolfclaw Gloves", source = { kind = "world", text = "Trash mobs, Razorfen Kraul 0.05% in Classic World drop, sold at the auction house", zone = "Razorfen Kraul", boss = "Trash mobs", dropRate = 0.05 } },
                 { id = 273810, name = "Ogre Grips", source = { kind = "world", text = "Hamhock, The Stockade", zone = "The Stockade", boss = "Hamhock" } },
                 { id = 9861, name = "Archer's Gloves of the Bear", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 36 random suffixes, each with its own stats: search for the full name" } },
-                { id = 14764, name = "Enduring Gauntlets", source = { kind = "world", text = "World drop, sold at the auction house" } },
               },
               enchants = {
                 { effect = "Strength +7", spell = "Enchant Gloves - Strength", source = "Enchanting 225: Taught by the trainer." },
@@ -7048,8 +7046,8 @@ ForeverBiSData = {
                 { id = 274748, name = "Booty Bay Bruiser's Buckshot", source = { kind = "world", text = "Sold by Gezzy Gunkgear in Booty Bay At Honored with Booty Bay" } },
                 { id = 4086, name = "Flash Rifle", source = { kind = "quest", text = "Quest: Pearl Diving level 37 in Classic, from level 30", quest = "Pearl Diving" } },
                 { id = 17042, name = "Nail Spitter", source = { kind = "quest", text = "Quest: An Unholy Alliance Horde, level 36 in Classic, from level 28 A Horde quest from Varimathras in Undercity Take a group for Ambassador Malcin (level 36 elite)", quest = "An Unholy" } },
+                { id = 287068, name = "Excavated Dagger", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 17687, name = "Master Hunter's Rifle", source = { kind = "quest", text = "Quest: Big Game Hunter level 43 in Classic, from level 28 Big Game Hunter, after Nesingwary's three Mastery chains, Stranglethorn Vale King Bangalash is a level 43 elite: very hard at level 30", quest = "Big Game Hunter" } },
-                { id = 7729, name = "Chesterfall Musket", source = { kind = "world", text = "Trash mobs, Scarlet Monastery Graveyard 0.01% in Classic Trash mobs, Scarlet Monastery Library 0.01% in Classic Trash mobs, Scarlet Monastery Armory 0.01% in Classic Trash mobs, Scarlet Monastery Cathedral 0.01% in Classic", zone = "Scarlet Monastery", boss = "Trash mobs", dropRate = 0.01 } },
               },
             },
           },
@@ -7138,10 +7136,10 @@ ForeverBiSData = {
               items = {
                 { id = 273810, name = "Ogre Grips", source = { kind = "world", text = "Hamhock, The Stockade", zone = "The Stockade", boss = "Hamhock" } },
                 { id = 14764, name = "Enduring Gauntlets", source = { kind = "world", text = "World drop, sold at the auction house" } },
+                { id = 286992, name = "Construct's Grips", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 9868, name = "Renegade Gauntlets of the Bear", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 32 random suffixes, each with its own stats: search for the full name" } },
                 { id = 7690, name = "Ebon Vise", source = { kind = "world", text = "Fallen Champion, Scarlet Monastery Graveyard 38.9% in Classic", zone = "Scarlet Monastery", boss = "Fallen Champion", dropRate = 38.9 } },
                 { id = 6727, name = "Razzeric's Racing Grips", source = { kind = "quest", text = "Quest: Safety First level 41 in Classic, from level 29 A chain of ten quests from Pozzik, Shimmering Flats Take a group for Foreman Cozzle (level 38)", quest = "Safety First" } },
-                { id = 6906, name = "Algae Fists", source = { kind = "dungeon", text = "Gelihast, Blackfathom Deeps 44.28% in Classic", zone = "Blackfathom Deeps", boss = "Gelihast", dropRate = 44.28 } },
               },
               enchants = {
                 { effect = "Agility +7", spell = "Enchant Gloves - Agility", source = "Enchanting 210: Taught by the trainer." },
@@ -7205,10 +7203,10 @@ ForeverBiSData = {
               items = {
                 { id = 4977, name = "Sword of Hammerfall", source = { kind = "quest", text = "Quest: The Real Threat Horde, level 40 in Classic, from level 30", faction = "Horde", quest = "The Real Threat" } },
                 { id = 7687, name = "Ironspine's Fist", source = { kind = "world", text = "Ironspine, Scarlet Monastery Graveyard 21.2% in Classic", zone = "Scarlet Monastery", boss = "Ironspine", dropRate = 21.2 } },
+                { id = 286996, name = "City Guard's Tarnished Blade", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 9520, name = "Silent Hunter", source = { kind = "quest", text = "Quest: Call to Arms Horde, level 40 in Classic, from level 30 Call to Arms, a Horde chain at Hammerfall, Arathi Highlands Boulderfist elites of level 38 to 40: take a strong group", faction = "Horde", quest = "Call to Arms" } },
                 { id = 6692, name = "Pronged Reaver", source = { kind = "world", text = "Charlga Razorflank, Razorfen Kraul 17.81% in Classic", zone = "Razorfen Kraul", boss = "Charlga Razorflank", dropRate = 17.81 } },
                 { id = 13048, name = "Looming Gavel", source = { kind = "world", text = "World drop, sold at the auction house" } },
-                { id = 281314, name = "Subdued Dragon's Fang", source = { kind = "quest", text = "Alliance quest Stopping the Cycle, Wetlands, level 34 Elite, from level 24: take a group", faction = "Alliance" } },
               },
               enchants = {
                 { effect = "Recovery", spell = "Enchant Weapon - Recovery", source = "Enchanting 140: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 45 Merchant’s Favor.", formulaId = 249480 },
