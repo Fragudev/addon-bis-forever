@@ -859,7 +859,7 @@ ForeverBiSData = {
                 { id = 9861, name = "Archer's Gloves of the Prophet", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 36 random suffixes, each with its own stats: search for the full name" } },
                 { id = 9491, name = "Hotshot Pilot's Gloves", source = { kind = "world", text = "Trash mobs, Gnomeregan 0.03% in Classic", zone = "Gnomeregan", boss = "Trash mobs", dropRate = 0.03 } },
                 { id = 4980, name = "Prospector Gloves", source = { kind = "quest", text = "Quest: Agmond's Fate Alliance, level 38 in Classic, from level 30 Agmond's Fate, from Prospector Ironband in Loch Modan The urns lie among elites of level 35 to 37: take a group", faction = "Alliance", quest = "Agmond's Fate" } },
-                { id = 286989, name = "Violet Sorcerer's Wraps", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 286989, name = "Violet Sorcerer's Wraps", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
                 { id = 270059, name = "Restorer's Fine Gloves", source = { kind = "world", text = "Agmond's Fate, from Prospector Ironband in Loch Modan The urns lie among elites of level 35 to 37: take a group" } },
               },
               enchants = {
@@ -1432,7 +1432,7 @@ ForeverBiSData = {
                 { id = 270072, name = "Alterac Assassin's Gloves", source = { kind = "world", text = "Crushridge Warmongers, from Marshal Redpath in Southshore Ten elite ogres of level 39 to 40: very hard at level 30" } },
                 { id = 9861, name = "Archer's Gloves of Agility", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 36 random suffixes, each with its own stats: search for the full name" } },
                 { id = 273054, name = "Cartilage Shapers", source = { kind = "world", text = "Lyn the Ignored, City of Dalaran Summoned with the Tome of Dalaran" } },
-                { id = 286989, name = "Violet Sorcerer's Wraps", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 286989, name = "Violet Sorcerer's Wraps", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
                 { id = 4107, name = "Tiger Hunter Gloves", source = { kind = "quest", text = "Quest: Tiger Mastery level 37 in Classic, from level 28 Four Tiger Mastery quests, Stranglethorn Vale Sin'Dall is level 37: take a group", quest = "Tiger Mastery" } },
                 { id = 6727, name = "Razzeric's Racing Grips", source = { kind = "quest", text = "Quest: Safety First level 41 in Classic, from level 29 A chain of ten quests from Pozzik, Shimmering Flats Take a group for Foreman Cozzle (level 38)", quest = "Safety First" } },
               },
@@ -1789,7 +1789,7 @@ ForeverBiSData = {
                 { id = 253915, name = "Silky Gloves", source = { kind = "profession", text = "Tailoring (75) Only its maker can wear it", skill = "Tailoring", skillLevel = 75, bindsToMaker = true } },
                 { id = 5970, name = "Serpent Gloves", source = { kind = "dungeon", text = "Lord Serpentis, Wailing Caverns 19.38% in Classic", zone = "Wailing Caverns", boss = "Lord Serpentis", dropRate = 19.38 } },
                 { id = 10654, name = "Jutebraid Gloves", source = { kind = "quest", text = "Quest: Horde Presence Horde, level 29 in Classic, from level 15", faction = "Horde", quest = "Horde Presence" } },
-                { id = 286989, name = "Violet Sorcerer's Wraps", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 286989, name = "Violet Sorcerer's Wraps", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
               },
               enchants = {
                 { effect = "Spell Power +4 and Armor +24", spell = "Mystic Heavy Armor Kit", source = "Leatherworking 135: Pattern sold by Saenorion in Darnassus and Mahu in Thunder Bluff.", formulaId = 252811 },
@@ -1983,7 +1983,7 @@ ForeverBiSData = {
               items = {
                 { id = 14211, name = "Vital Handwraps of Arcane Wrath", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 24 random suffixes, each with its own stats: search for the full name" } },
                 { id = 273034, name = "Ephemeral Grips", source = { kind = "world", text = "Arcane Anomaly, City of Dalaran" } },
-                { id = 286989, name = "Violet Sorcerer's Wraps", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 286989, name = "Violet Sorcerer's Wraps", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
                 { id = 253921, name = "Pearly Gloves", source = { kind = "profession", text = "Tailoring (75) Only its maker can wear it", skill = "Tailoring", skillLevel = 75, bindsToMaker = true } },
                 { id = 5970, name = "Serpent Gloves", source = { kind = "dungeon", text = "Lord Serpentis, Wailing Caverns 19.38% in Classic", zone = "Wailing Caverns", boss = "Lord Serpentis", dropRate = 19.38 } },
                 { id = 10654, name = "Jutebraid Gloves", source = { kind = "quest", text = "Quest: Horde Presence Horde, level 29 in Classic, from level 15", faction = "Horde", quest = "Horde Presence" } },
@@ -2179,7 +2179,7 @@ ForeverBiSData = {
             { slot = "Hands",
               items = {
                 { id = 14211, name = "Vital Handwraps of Fiery Wrath", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 24 random suffixes, each with its own stats: search for the full name" } },
-                { id = 286989, name = "Violet Sorcerer's Wraps", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 286989, name = "Violet Sorcerer's Wraps", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
                 { id = 4331, name = "Phoenix Gloves", source = { kind = "profession", text = "Tailoring (100)", skill = "Tailoring", skillLevel = 100 } },
                 { id = 253917, name = "Flame Gloves", source = { kind = "profession", text = "Tailoring (75) Only its maker can wear it", skill = "Tailoring", skillLevel = 75, bindsToMaker = true } },
                 { id = 5970, name = "Serpent Gloves", source = { kind = "dungeon", text = "Lord Serpentis, Wailing Caverns 19.38% in Classic", zone = "Wailing Caverns", boss = "Lord Serpentis", dropRate = 19.38 } },
@@ -2945,7 +2945,7 @@ ForeverBiSData = {
                 { id = 9861, name = "Archer's Gloves of the Prophet", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 36 random suffixes, each with its own stats: search for the full name" } },
                 { id = 9491, name = "Hotshot Pilot's Gloves", source = { kind = "world", text = "Trash mobs, Gnomeregan 0.03% in Classic", zone = "Gnomeregan", boss = "Trash mobs", dropRate = 0.03 } },
                 { id = 9395, name = "Gloves of Old", source = { kind = "world", text = "World drop, sold at the auction house" } },
-                { id = 286989, name = "Violet Sorcerer's Wraps", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 286989, name = "Violet Sorcerer's Wraps", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
                 { id = 250511, name = "Acolyte's Gloves", source = { kind = "profession", text = "Blacksmithing (80) Only its maker can wear it", skill = "Blacksmithing", skillLevel = 80, bindsToMaker = true } },
               },
               enchants = {
@@ -5996,8 +5996,8 @@ ForeverBiSData = {
             },
             { slot = "Hands",
               items = {
+                { id = 286989, name = "Violet Sorcerer's Wraps", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
                 { id = 9491, name = "Hotshot Pilot's Gloves", source = { kind = "world", text = "Trash mobs, Gnomeregan 0.03% in Classic", zone = "Gnomeregan", boss = "Trash mobs", dropRate = 0.03 } },
-                { id = 286989, name = "Violet Sorcerer's Wraps", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 6732, name = "Gnomish Mechanic's Gloves", source = { kind = "quest", text = "Quest: News for Fizzle level 38 in Classic, from level 28", quest = "News for Fizzle" } },
                 { id = 273034, name = "Ephemeral Grips", source = { kind = "world", text = "Arcane Anomaly, City of Dalaran" } },
                 { id = 9861, name = "Archer's Gloves of the Eagle", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 36 random suffixes, each with its own stats: search for the full name" } },
