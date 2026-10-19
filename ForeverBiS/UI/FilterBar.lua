@@ -5,10 +5,11 @@ local _, ns = ...
 local FilterBar = {}
 ns.FilterBar = FilterBar
 
-local Filters, Player, Sources, Dropdown, L = ns.Filters, ns.Player, ns.Sources, ns.Dropdown, ns.L
+local Filters, Player, Sources, Dropdown, Theme, Skin, L =
+    ns.Filters, ns.Player, ns.Sources, ns.Dropdown, ns.Theme, ns.Skin, ns.L
 
-local FILTER_LEFT = 22
-local FILTER_ROW_SEARCH, FILTER_ROW_BUTTONS, FILTER_ROW_DUNGEON = -84, -110, -130
+local FILTER_LEFT = 20
+local FILTER_ROW_SEARCH, FILTER_ROW_BUTTONS, FILTER_ROW_DUNGEON = -98, -134, -170
 
 local sourceChips = {
     { "quest", "Quests", Sources.categoryIcons.quest },
@@ -27,21 +28,10 @@ local function changed()
     ns.requestRender({ scrollTop = true })
 end
 
+--- An active filter shows the selected wash with accent text and underline.
 local function setFilterActive(button, active)
     button.filterActive = active
-    if active then
-        button:LockHighlight()
-    else
-        button:UnlockHighlight()
-    end
-    local label = button:GetFontString()
-    if label then
-        if active then
-            label:SetTextColor(1, 0.89, 0.35)
-        else
-            label:SetTextColor(0.75, 0.75, 0.75)
-        end
-    end
+    Skin.setActive(button, active)
 end
 
 local function attachFilterTooltip(button, heading, description)
@@ -57,25 +47,27 @@ local function attachFilterTooltip(button, heading, description)
 end
 
 local function createFilterButton(parent, name, width)
-    local button = CreateFrame("Button", name, parent, "UIPanelButtonTemplate")
-    button:SetSize(width, 22)
+    local button = CreateFrame("Button", name, parent)
+    button:SetSize(width, Theme.metrics.button)
+    Skin.button(button, "secondary")
     return button
 end
 
 local function createSearch(parent)
-    searchBox = CreateFrame("EditBox", nil, parent, "InputBoxTemplate")
-    searchBox:SetSize(224, 20)
+    searchBox = CreateFrame("EditBox", nil, parent)
+    searchBox:SetSize(224, Theme.metrics.input)
     searchBox:SetPoint("TOPLEFT", parent, "TOPLEFT", FILTER_LEFT, FILTER_ROW_SEARCH)
     searchBox:SetAutoFocus(false)
     searchBox:SetMaxLetters(48)
-    searchBox:SetTextInsets(5, 22, 0, 0)
-    searchHint = parent:CreateFontString(nil, "OVERLAY", "GameFontDisableSmall")
-    searchHint:SetPoint("LEFT", searchBox, "LEFT", 6, 0)
+    Skin.editBox(searchBox, { icon = "search", right = 28 })
+    searchHint = Skin.label(searchBox, 13, "regular", "muted")
+    searchHint:SetPoint("LEFT", searchBox, "LEFT", 28, 0)
     searchHint:SetText(L["Search item, boss or zone"])
-    clearSearchButton = CreateFrame("Button", nil, parent, "UIPanelButtonTemplate")
-    clearSearchButton:SetSize(16, 16)
-    clearSearchButton:SetPoint("RIGHT", searchBox, "RIGHT", 0, 0)
-    clearSearchButton:SetText("x")
+    clearSearchButton = CreateFrame("Button", nil, searchBox)
+    clearSearchButton:SetSize(20, 20)
+    clearSearchButton:SetPoint("RIGHT", searchBox, "RIGHT", -4, 0)
+    Skin.button(clearSearchButton, "ghost")
+    Skin.buttonIcon(clearSearchButton, "close", 10)
     clearSearchButton:Hide()
 
     searchBox:SetScript("OnTextChanged", function(self)

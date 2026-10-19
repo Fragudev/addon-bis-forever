@@ -59,7 +59,7 @@ end
 
 local function iconButtons(size)
     return WowStub.find("Button", function(button)
-        return button.width == size and button.height == size and button.scripts.OnEnter
+        return button.width == size and button.height == size and button.scripts.OnEnter and not button.skin
     end)
 end
 
@@ -297,7 +297,7 @@ describe("ForeverBiS interactions", function()
             searchBox:SetText("abc")
             WowStub.fire(searchBox, "OnTextChanged")
             local clear = WowStub.find("Button", function(b)
-                return b.text == "x"
+                return b.parent == searchBox
             end)[1]
             assert.is_true(clear:IsShown())
             click(clear)
@@ -326,7 +326,7 @@ describe("ForeverBiS interactions", function()
             WowStub.equipped[slotID] = itemID
             _G.SlashCmdList["FOREVERBIS"]()
             local checks = WowStub.find("Texture", function(t)
-                return t.texture == "Interface\\RaidFrame\\ReadyCheck-Ready"
+                return t.texture == WowStub.ns.Theme.Icon("check")
             end)
             assert.is_true(#checks > 0)
         end)
@@ -675,7 +675,8 @@ describe("ForeverBiS phase selector", function()
 
         local function isRedBorder(button)
             for _, region in ipairs(button.regions) do
-                if region.vertexColor and region.vertexColor[2] < 0.5 then
+                local color = region.colorTexture
+                if color and color[1] > 0.8 and color[2] < 0.5 then
                     return true
                 end
             end
