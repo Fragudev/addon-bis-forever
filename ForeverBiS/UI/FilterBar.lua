@@ -5,7 +5,7 @@ local _, ns = ...
 local FilterBar = {}
 ns.FilterBar = FilterBar
 
-local Filters, Player, Sources, L = ns.Filters, ns.Player, ns.Sources, ns.L
+local Filters, Player, Sources, Dropdown, L = ns.Filters, ns.Player, ns.Sources, ns.Dropdown, ns.L
 
 local FILTER_LEFT = 22
 local FILTER_ROW_SEARCH, FILTER_ROW_BUTTONS, FILTER_ROW_DUNGEON = -84, -110, -130
@@ -147,29 +147,31 @@ end
 local function updateDungeonText()
     for _, option in ipairs(dungeonOptions) do
         if option[1] == Filters.state.dungeon then
-            UIDropDownMenu_SetText(dungeonDrop, option[2])
+            Dropdown.setText(dungeonDrop, option[2])
             break
         end
     end
 end
 
-local function createDungeonDropdown(parent)
-    dungeonDrop = CreateFrame("Frame", "ForeverBiSDungeonFilter", parent, "UIDropDownMenuTemplate")
-    dungeonDrop:SetPoint("TOPLEFT", parent, "TOPLEFT", FILTER_LEFT - 16, FILTER_ROW_DUNGEON)
-    UIDropDownMenu_SetWidth(dungeonDrop, 150)
-    UIDropDownMenu_Initialize(dungeonDrop, function(_, level)
-        for _, option in ipairs(dungeonOptions) do
-            local optionValue, optionLabel = option[1], option[2]
-            local info = UIDropDownMenu_CreateInfo()
-            info.text = optionLabel
-            info.checked = Filters.state.dungeon == optionValue
-            info.func = function()
+local function dungeonItems()
+    local items = {}
+    for _, option in ipairs(dungeonOptions) do
+        local optionValue = option[1]
+        items[#items + 1] = {
+            text = option[2],
+            checked = Filters.state.dungeon == optionValue,
+            func = function()
                 Filters.setDungeon(optionValue)
                 changed()
-            end
-            UIDropDownMenu_AddButton(info, level)
-        end
-    end)
+            end,
+        }
+    end
+    return items
+end
+
+local function createDungeonDropdown(parent)
+    dungeonDrop = Dropdown.create(parent, "ForeverBiSDungeonFilter", { width = 190, items = dungeonItems })
+    dungeonDrop:SetPoint("TOPLEFT", parent, "TOPLEFT", FILTER_LEFT, FILTER_ROW_DUNGEON)
 end
 
 function FilterBar.create(parent)

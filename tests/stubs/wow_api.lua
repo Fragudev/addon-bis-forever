@@ -92,10 +92,21 @@ function frameMethods.RegisterEvent(self, event)
     self.events[event] = true
 end
 function frameMethods.Show(self)
+    local wasShown = self.shown
     self.shown = true
+    if not wasShown and self.scripts.OnShow then
+        self.scripts.OnShow(self)
+    end
 end
 function frameMethods.Hide(self)
+    local wasShown = self.shown
     self.shown = false
+    if wasShown and self.scripts.OnHide then
+        self.scripts.OnHide(self)
+    end
+    for _, handler in ipairs(wasShown and self.hooks and self.hooks.OnHide or {}) do
+        handler(self)
+    end
 end
 function frameMethods.IsShown(self)
     return self.shown
@@ -234,7 +245,6 @@ end
 function Stub.reset()
     Stub.frames = {}
     Stub.fontStrings = {}
-    Stub.menus = {}
     Stub.equipped = {}
     Stub.bagCounts = {}
     Stub.player = { class = "Rogue", token = "ROGUE", level = 30 }
@@ -261,6 +271,7 @@ function Stub.reset()
     end
     _G.GameTooltip = tooltip
     _G.SlashCmdList = {}
+    _G.UISpecialFrames = {}
     _G.TooltipDataProcessor, _G.Enum, _G.ItemRefTooltip, _G.ForeverBiSTooltip = nil, nil, nil, nil
     _G.ForeverBiSDB, _G.ForeverBiSCharDB = nil, nil
     _G.SLASH_FOREVERBIS1, _G.SLASH_FOREVERBIS2 = nil, nil
@@ -439,21 +450,6 @@ _G.UnitFactionGroup = function()
 end
 _G.UnitLevel = function()
     return Stub.player.level
-end
-
--- Dropdown helpers record what a menu would show; specs drive them through Stub.menus.
-_G.UIDropDownMenu_SetWidth = function() end
-_G.UIDropDownMenu_SetText = function(dropdown, text)
-    dropdown.menuText = text
-end
-_G.UIDropDownMenu_Initialize = function(dropdown, initializer)
-    dropdown.initializer = initializer
-end
-_G.UIDropDownMenu_CreateInfo = function()
-    return {}
-end
-_G.UIDropDownMenu_AddButton = function(info)
-    table.insert(Stub.menus, info)
 end
 
 Stub.reset()

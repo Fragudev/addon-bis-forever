@@ -27,11 +27,7 @@ local widget_api = {
   "UIParent",
   "STANDARD_TEXT_FONT",
   "CreateFont",
-  "UIDropDownMenu_AddButton",
-  "UIDropDownMenu_CreateInfo",
-  "UIDropDownMenu_Initialize",
-  "UIDropDownMenu_SetText",
-  "UIDropDownMenu_SetWidth",
+  "UISpecialFrames",
 }
 
 read_globals = with(widget_api)

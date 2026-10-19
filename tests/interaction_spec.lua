@@ -41,9 +41,7 @@ local function findListWithItem(predicate)
 end
 
 local function chooseOption(dropdown, label)
-    WowStub.menus = {}
-    dropdown.initializer(dropdown, 1)
-    for _, info in ipairs(WowStub.menus) do
+    for _, info in ipairs(dropdown.getItems()) do
         if info.text == label then
             return info.func()
         end
@@ -512,14 +510,13 @@ describe("ForeverBiS phase selector", function()
 
     it("lists Auto first, then every phase of the route in order", function()
         WowStub.load({ class = "druid", build = "" }, withSecondPhase, playerAt(35))
-        WowStub.menus = {}
-        ForeverBiSPhaseDropDown.initializer(ForeverBiSPhaseDropDown, 1)
+        local menu = ForeverBiSPhaseDropDown.getItems()
         local labels = {}
-        for _, info in ipairs(WowStub.menus) do
+        for _, info in ipairs(menu) do
             labels[#labels + 1] = info.text
         end
         assert.are.same({ "Auto (Level 40)", "Level 30", "Level 40" }, labels)
-        assert.is_true(WowStub.menus[1].checked)
+        assert.is_true(menu[1].checked)
     end)
 
     it("renders the chosen phase and stores it, and Auto clears it", function()
