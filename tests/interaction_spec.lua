@@ -593,7 +593,7 @@ describe("ForeverBiS phase selector", function()
         --- The progress frame is the live frame with an OnEnter handler and the line's size, shown or not.
         local function progressFrame()
             for _, candidate in ipairs(WowStub.frames) do
-                if candidate.scripts.OnEnter and candidate.width == 78 and candidate.height == 20 then
+                if candidate.scripts.OnEnter and candidate.width == 110 and candidate.height == 26 then
                     return candidate
                 end
             end
@@ -625,7 +625,7 @@ describe("ForeverBiS phase selector", function()
             return ForeverBiSModel.progress(currentList(), { equipped = {} }).total
         end
 
-        it("shows BiS x/y with a gold fill that follows the owned items", function()
+        it("shows BiS x/y with an accent fill that follows the owned items", function()
             WowStub.load({ class = "druid", build = "" })
             local text = assert(progressText())
             assert.are.equal("BiS 0/" .. totalSlots(), text.text)
@@ -639,12 +639,13 @@ describe("ForeverBiS phase selector", function()
             assert.are.equal("BiS 1/" .. totalSlots(), refreshed.text)
             local fill
             for _, region in ipairs(refreshed.parent.regions) do
-                if region.shown and region.height == 4 and region.width ~= 78 then
+                if region.shown and region.height == 6 and region.width ~= 110 then
                     fill = region
                 end
             end
             assert.is_truthy(fill)
-            assert.are.equal(78 / totalSlots(), fill.width)
+            assert.are.equal(110 / totalSlots(), fill.width)
+            assert.is_near(0x3F / 255, fill.colorTexture[1], 0.001)
         end)
 
         it("updates after a bag change and flags upgrades in the bags", function()

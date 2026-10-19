@@ -1,12 +1,12 @@
--- The help icon and its tooltip. Clicking the icon pins the tooltip open.
+-- The help button and its popover. Hovering the button shows the popover; clicking it pins it open.
 local _, ns = ...
 
 local Help = {}
 ns.Help = Help
 
-local L = ns.L
+local Theme, Skin, L = ns.Theme, ns.Skin, ns.L
 
--- Sections of { heading, lines }; a line is plain text or { text, red, green, blue } for a colored one.
+-- Sections of { heading, lines }; a line is plain text or { text, color token } for a colored one.
 local SECTIONS = {
     {
         "CLASS & BUILD",
@@ -40,67 +40,78 @@ local SECTIONS = {
         "WINDOW & MINIMAP",
         {
             "Drag the title area to move the window; drag its bottom handle to resize vertically. Click the minimap icon to toggle the addon and drag it to reposition.",
-            { "Click this help icon to keep the help open or close it.", 1, 0.82, 0.2 },
+            { "Click this help icon to keep the help open or close it.", "warning" },
         },
     },
 }
 
-local button
+local WIDTH, PADDING = 460, 18
+
+local button, popover
 local pinned = false
 
-local function addHeader(text)
-    GameTooltip:AddLine("|cffffe35b" .. L[text] .. "|r", 1, 1, 1, true)
-    local line = _G["GameTooltipTextLeft" .. GameTooltip:NumLines()]
-    if line then
-        line:SetFont(STANDARD_TEXT_FONT, 12, "THICKOUTLINE")
-        line:SetTextColor(1, 0.89, 0.35)
-    end
-end
-
-local function addLine(line)
-    if type(line) == "table" then
-        GameTooltip:AddLine(L[line[1]], line[2], line[3], line[4], true)
-    else
-        GameTooltip:AddLine(L[line], 0.9, 0.9, 0.9, true)
-    end
-end
-
-local function showHelp()
-    GameTooltip:SetOwner(button, "ANCHOR_LEFT")
-    GameTooltip:ClearLines()
-    GameTooltip:SetText(L["BiS Forever Help"], 1, 0.89, 0.35)
-    for index, section in ipairs(SECTIONS) do
-        addHeader(section[1])
+--- Builds the popover once: a title, then each section's label and lines stacked top to bottom.
+local function createPopover(parent)
+    popover = CreateFrame("Frame", nil, parent)
+    popover:SetFrameStrata("FULLSCREEN_DIALOG")
+    popover:SetClampedToScreen(true)
+    popover:SetWidth(WIDTH)
+    popover:SetPoint("TOPRIGHT", button, "BOTTOMRIGHT", 0, -6)
+    Skin.card(popover, "panel")
+    local textWidth = WIDTH - PADDING * 2
+    local y = -PADDING
+    local title = Skin.label(popover, 15, "semibold", "text")
+    title:SetPoint("TOPLEFT", popover, "TOPLEFT", PADDING, y)
+    title:SetText(L["BiS Forever Help"])
+    y = y - title:GetStringHeight() - 14
+    for _, section in ipairs(SECTIONS) do
+        local header = Skin.sectionLabel(Skin.label(popover, 11, "semibold", "muted"), L[section[1]])
+        header:SetPoint("TOPLEFT", popover, "TOPLEFT", PADDING, y)
+        y = y - header:GetStringHeight() - 6
         for _, line in ipairs(section[2]) do
-            addLine(line)
+            local text, token = line, "dim"
+            if type(line) == "table" then
+                text, token = line[1], line[2]
+            end
+            local label = Skin.label(popover, 13, "regular", token)
+            label:SetPoint("TOPLEFT", popover, "TOPLEFT", PADDING, y)
+            label:SetWidth(textWidth)
+            label:SetJustifyH("LEFT")
+            label:SetWordWrap(true)
+            label:SetText(L[text])
+            y = y - label:GetStringHeight() - 6
         end
-        if index < #SECTIONS then
-            GameTooltip:AddLine(" ")
-        end
+        y = y - 8
     end
-    GameTooltip:Show()
+    popover:SetHeight(-y + PADDING - 8)
+    popover:SetScript("OnHide", function()
+        pinned = false
+    end)
+    popover:Hide()
 end
 
 function Help.create(parent)
     button = CreateFrame("Button", nil, parent)
-    button:SetSize(20, 20)
-    button:SetPoint("CENTER", parent, "TOPRIGHT", -32, -62)
-    local icon = button:CreateTexture(nil, "ARTWORK")
-    icon:SetAllPoints(button)
-    icon:SetTexture("Interface\\Common\\help-i")
-    button:SetHighlightTexture("Interface\\Buttons\\ButtonHilight-Square", "ADD")
-    button:SetScript("OnEnter", showHelp)
+    button:SetSize(Theme.metrics.button, Theme.metrics.button)
+    button:SetPoint("TOPRIGHT", parent, "TOPRIGHT", -20, -64)
+    Skin.button(button, "ghost")
+    Skin.text(button.skin.label, 15, "semibold", "dim")
+    button:SetText("?")
+    createPopover(parent)
+    button:SetScript("OnEnter", function()
+        popover:Show()
+    end)
     button:SetScript("OnLeave", function()
         if not pinned then
-            GameTooltip:Hide()
+            popover:Hide()
         end
     end)
     button:SetScript("OnClick", function()
         pinned = not pinned
         if pinned then
-            showHelp()
+            popover:Show()
         else
-            GameTooltip:Hide()
+            popover:Hide()
         end
     end)
 end

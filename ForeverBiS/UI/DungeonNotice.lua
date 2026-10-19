@@ -4,26 +4,41 @@ local _, ns = ...
 local DungeonNotice = {}
 ns.DungeonNotice = DungeonNotice
 
+local Theme, Skin, L = ns.Theme, ns.Skin, ns.L
+
 local notice, text
 local onClick
 
 function DungeonNotice.create()
-    notice = CreateFrame("Button", "ForeverBiSDungeonNotice", UIParent, "BackdropTemplate")
-    notice:SetSize(340, 30)
+    notice = CreateFrame("Button", "ForeverBiSDungeonNotice", UIParent)
+    notice:SetSize(380, 48)
     notice:SetPoint("TOP", UIParent, "TOP", 0, -140)
     notice:SetFrameStrata("DIALOG")
-    notice:SetBackdrop({
-        bgFile = "Interface\\Tooltips\\UI-Tooltip-Background",
-        edgeFile = "Interface\\DialogFrame\\UI-DialogBox-Border",
-        tile = true,
-        tileSize = 16,
-        edgeSize = 14,
-        insets = { left = 4, right = 4, top = 4, bottom = 4 },
-    })
-    notice:SetBackdropColor(0.18, 0.12, 0.07, 0.92)
-    notice:SetBackdropBorderColor(0.58, 0.39, 0.18, 1)
-    text = notice:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-    text:SetPoint("CENTER", notice, "CENTER", 0, 0)
+    local border = Skin.card(notice)
+    local bar = notice:CreateTexture(nil, "OVERLAY")
+    bar:SetWidth(3)
+    bar:SetPoint("TOPLEFT", notice, "TOPLEFT", 0, 0)
+    bar:SetPoint("BOTTOMLEFT", notice, "BOTTOMLEFT", 0, 0)
+    bar:SetColorTexture(Theme.Color("accent"))
+    local icon = notice:CreateTexture(nil, "ARTWORK")
+    icon:SetSize(18, 18)
+    icon:SetPoint("LEFT", notice, "LEFT", 16, 0)
+    Skin.icon(icon, "list", "accent")
+    local title = Skin.label(notice, 13, "semibold", "text")
+    title:SetPoint("TOPLEFT", notice, "TOPLEFT", 44, -9)
+    title:SetText(L["Forever BiS"])
+    text = Skin.label(notice, 12, "regular", "dim")
+    text:SetPoint("TOPLEFT", title, "BOTTOMLEFT", 0, -3)
+    text:SetPoint("RIGHT", notice, "RIGHT", -12, 0)
+    text:SetJustifyH("LEFT")
+    text:SetWordWrap(false)
+    -- The border turns accent under the mouse, since the whole notice is a button.
+    notice:HookScript("OnEnter", function()
+        border:SetColor("accent")
+    end)
+    notice:HookScript("OnLeave", function()
+        border:SetColor("border")
+    end)
     notice:SetScript("OnClick", function()
         notice:Hide()
         if onClick then
