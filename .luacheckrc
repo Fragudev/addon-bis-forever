@@ -112,5 +112,6 @@ files["tests/"] = {
     "ForeverBiSFilterFaction",
     "ForeverBiSFilterMaker",
     "ForeverBiSPhaseDropDown",
+    "ForeverBiSDropdownList",
   },
 }

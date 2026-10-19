@@ -665,7 +665,7 @@ describe("ForeverBiS phase selector", function()
 
         local function gearIcons()
             return WowStub.find("Button", function(button)
-                return button.width == 32 and button.height == 32 and button.scripts.OnClick
+                return button.width == 32 and button.height == 32 and button.scripts.OnClick and not button.skin
             end)
         end
 
