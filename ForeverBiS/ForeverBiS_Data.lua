@@ -214,8 +214,8 @@ ForeverBiSData = {
             },
             { slot = "Neck",
               items = {
+                { id = 286995, name = "Guardian's Emblem", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
                 { id = 6695, name = "Stygian Bone Amulet", source = { kind = "world", text = "Blind Hunter, Razorfen Kraul 27.15% in Classic", zone = "Razorfen Kraul", boss = "Blind Hunter", dropRate = 27.15 } },
-                { id = 286995, name = "Guardian's Emblem", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 12029, name = "Greenstone Talisman of the Sorcerer", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 35 random suffixes, each with its own stats: search for the full name" } },
                 { id = 273049, name = "Archmagister's Faceted Pendant", source = { kind = "world", text = "Shade of the Archmage, City of Dalaran" } },
                 { id = 285331, name = "Mark of the Pack Leader", source = { kind = "world", text = "Humar the Pridelord, the rare black lion of the Barrens Reported, not checked", reported = true } },
@@ -302,7 +302,7 @@ ForeverBiSData = {
                 { id = 15358, name = "Headhunter's Woolies of Nature's Wrath", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 36 random suffixes, each with its own stats: search for the full name" } },
                 { id = 270031, name = "Dark Ritual Leggings", source = { kind = "quest", text = "Quest: Blackfathom Villainy Alliance, from level 18, reported, not checked Quest: Blackfathom Villainy Horde, from level 18, reported, not checked", quest = "Blackfathom Villainy", reported = true } },
                 { id = 270090, name = "Beggar's Leggings", source = { kind = "quest", text = "Four quests for \"Sea Wolf\" MacKinley, Booty Bay The Mosh'Ogg ogres are level 41 to 45 elites: very hard at level 30" } },
-                { id = 286988, name = "Violet Sorcerer's Leggings", source = { kind = "world", text = "A drop of the City of Dalaran dungeon Which creature drops it is not known yet" } },
+                { id = 286988, name = "Violet Sorcerer's Leggings", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
                 { id = 6903, name = "Gaze Dreamer Pants", source = { kind = "dungeon", text = "Twilight Lord Kelris, Blackfathom Deeps 33.5% in Classic", zone = "Blackfathom Deeps", boss = "Twilight Lord Kelris", dropRate = 33.5 } },
                 { id = 285338, name = "Kodohide Legguards", source = { kind = "world", text = "Brontus, a rare kodo of the Barrens Reported, not checked", reported = true } },
               },
@@ -408,7 +408,7 @@ ForeverBiSData = {
             { slot = "Neck",
               items = {
                 { id = 274749, name = "Souvenir Sea Shell", source = { kind = "world", text = "Sold by Gezzy Gunkgear in Booty Bay At Honored with Booty Bay" } },
-                { id = 286995, name = "Guardian's Emblem", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 286995, name = "Guardian's Emblem", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
                 { id = 12029, name = "Greenstone Talisman of the Sorcerer", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 35 random suffixes, each with its own stats: search for the full name" } },
                 { id = 7731, name = "Ghostshard Talisman", source = { kind = "world", text = "Azshir the Sleepless, Scarlet Monastery Graveyard 33.93% in Classic", zone = "Scarlet Monastery", boss = "Azshir the Sleepless", dropRate = 33.93 } },
                 { id = 7746, name = "Explorers' League Commendation", source = { kind = "quest", text = "Quest: Mythology of the Titans Alliance, level 38 in Classic, from level 28", faction = "Alliance", quest = "Mythology of the Titans" } },
@@ -493,7 +493,7 @@ ForeverBiSData = {
             { slot = "Legs",
               items = {
                 { id = 270056, name = "Stromgarde Librarian Leggings", source = { kind = "quest", text = "Quest: Stromgarde Badges Alliance, from level 30, reported, not checked", faction = "Alliance", quest = "Stromgarde Badges", reported = true } },
-                { id = 286988, name = "Violet Sorcerer's Leggings", source = { kind = "world", text = "A drop of the City of Dalaran dungeon Which creature drops it is not known yet" } },
+                { id = 286988, name = "Violet Sorcerer's Leggings", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
                 { id = 2277, name = "Necromancer Leggings", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 14203, name = "Thistlefur Pants of the Sorcerer", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 24 random suffixes, each with its own stats: search for the full name" } },
                 { id = 253987, name = "Pristine Leggings", source = { kind = "profession", text = "Tailoring (125) Only its maker can wear it Requires Spinning Wheel. Happy Camper sells its blueprint for 15s, just outside Ironforge", skill = "Tailoring", skillLevel = 125, bindsToMaker = true } },
@@ -820,7 +820,7 @@ ForeverBiSData = {
                 { id = 271716, name = "Explorer's League Dustcover", source = { kind = "quest", text = "Quest: Lost Relic Carry Excavation Site: Wetlands, Alliance, from level 24", faction = "Alliance", quest = "Lost Relic Carry Excavation Site: Wetlands" } },
                 { id = 271719, name = "Furs of the Earthen Ring", source = { kind = "quest", text = "Quest: Elder Knowledge Excavation Site: Wetlands, Horde, from level 24", faction = "Horde", quest = "Elder Knowledge Excavation Site: Wetlands" } },
                 { id = 9605, name = "Repairman's Cape", source = { kind = "quest", text = "Quest: Data Rescue Alliance, level 30 in Classic, from level 25", faction = "Alliance", quest = "Data Rescue" } },
-                { id = 286994, name = "Tattered Kirin Tor Cloak", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 286994, name = "Tattered Kirin Tor Cloak", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
                 { id = 4462, name = "Cloak of Rot", source = { kind = "world", text = "World drop, sold at the auction house" } },
               },
               enchants = {
@@ -878,7 +878,7 @@ ForeverBiSData = {
             },
             { slot = "Legs",
               items = {
-                { id = 286988, name = "Violet Sorcerer's Leggings", source = { kind = "world", text = "A drop of the City of Dalaran dungeon Which creature drops it is not known yet" } },
+                { id = 286988, name = "Violet Sorcerer's Leggings", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
                 { id = 252519, name = "Wisdom's Leather Leggings", source = { kind = "profession", text = "Leatherworking (125) Only its maker can wear it Requires Tanning Rack. Happy Camper sells its blueprint for 15s, just outside Ironforge", skill = "Leatherworking", skillLevel = 125, bindsToMaker = true } },
                 { id = 253987, name = "Pristine Leggings", source = { kind = "profession", text = "Tailoring (125) Only its maker can wear it Requires Spinning Wheel. Happy Camper sells its blueprint for 15s, just outside Ironforge", skill = "Tailoring", skillLevel = 125, bindsToMaker = true } },
                 { id = 14203, name = "Thistlefur Pants of the Prophet", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 24 random suffixes, each with its own stats: search for the full name" } },
@@ -989,7 +989,7 @@ ForeverBiSData = {
                 { id = 13084, name = "Kaleidoscope Chain", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 274749, name = "Souvenir Sea Shell", source = { kind = "world", text = "Sold by Gezzy Gunkgear in Booty Bay At Honored with Booty Bay" } },
                 { id = 5003, name = "Crystal Starfire Medallion", source = { kind = "world", text = "World drop, sold at the auction house" } },
-                { id = 286995, name = "Guardian's Emblem", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 286995, name = "Guardian's Emblem", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
               },
               enchants = {
                 { effect = "Healing Spells +11, Damage Spells +4", spell = "Enchant Necklace - Healing Power", source = "Enchanting 210: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 120 Merchant’s Favor.", formulaId = 249503 },
@@ -1009,7 +1009,7 @@ ForeverBiSData = {
               items = {
                 { id = 277206, name = "Brilliant Cloak", source = { kind = "quest", text = "Strahnbrad Mystery, a quest of Alterac Mountains From a Singed Note dropped in Alterac Mountains" } },
                 { id = 7436, name = "Twilight Cape of the Prophet", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 41 random suffixes, each with its own stats: search for the full name" } },
-                { id = 286994, name = "Tattered Kirin Tor Cloak", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 286994, name = "Tattered Kirin Tor Cloak", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
                 { id = 4462, name = "Cloak of Rot", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 273825, name = "Red Wool Cloak", source = { kind = "world", text = "Bazil Thredd, The Stockade", zone = "The Stockade", boss = "Bazil Thredd" } },
                 { id = 271716, name = "Explorer's League Dustcover", source = { kind = "quest", text = "Quest: Lost Relic Carry Excavation Site: Wetlands, Alliance, from level 24", faction = "Alliance", quest = "Lost Relic Carry Excavation Site: Wetlands" } },
@@ -1071,7 +1071,7 @@ ForeverBiSData = {
               items = {
                 { id = 253987, name = "Pristine Leggings", source = { kind = "profession", text = "Tailoring (125) Only its maker can wear it Requires Spinning Wheel. Happy Camper sells its blueprint for 15s, just outside Ironforge", skill = "Tailoring", skillLevel = 125, bindsToMaker = true } },
                 { id = 252519, name = "Wisdom's Leather Leggings", source = { kind = "profession", text = "Leatherworking (125) Only its maker can wear it Requires Tanning Rack. Happy Camper sells its blueprint for 15s, just outside Ironforge", skill = "Leatherworking", skillLevel = 125, bindsToMaker = true } },
-                { id = 286988, name = "Violet Sorcerer's Leggings", source = { kind = "world", text = "A drop of the City of Dalaran dungeon Which creature drops it is not known yet" } },
+                { id = 286988, name = "Violet Sorcerer's Leggings", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
                 { id = 2277, name = "Necromancer Leggings", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 253937, name = "Filigreed Pristine Leggings", source = { kind = "profession", text = "Tailoring (100) Only its maker can wear it Pattern drops in Blackfathom Deeps, The Deadmines, Wailing Caverns", skill = "Tailoring", skillLevel = 100, bindsToMaker = true } },
                 { id = 270056, name = "Stromgarde Librarian Leggings", source = { kind = "quest", text = "Quest: Stromgarde Badges Alliance, from level 30, reported, not checked", faction = "Alliance", quest = "Stromgarde Badges", reported = true } },
@@ -1087,7 +1087,7 @@ ForeverBiSData = {
                 { id = 286987, name = "Violet Sorcerer's Sandals", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
                 { id = 15697, name = "Kodo Rustler Boots", source = { kind = "quest", text = "Quest: Kodo Roundup level 34 in Classic, from level 30", quest = "Kodo Roundup" } },
                 { id = 9845, name = "Conjurer's Shoes of the Eagle", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 24 random suffixes, each with its own stats: search for the full name" } },
-                { id = 9454, name = "Acidic Walkers", source = { kind = "world", text = "Viscous Fallout, Gnomeregan 60.81% in Classic", zone = "Gnomeregan", boss = "Viscous Fallout", dropRate = 60.81 } },
+                { id = 286991, name = "Roused Nature Footwraps", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
               },
               enchants = {
                 { effect = "Minor Speed Increase", spell = "Enchant Boots - Minor Speed", source = "Enchanting 225: Taught by the trainer." },
@@ -1182,7 +1182,7 @@ ForeverBiSData = {
                 { id = 7731, name = "Ghostshard Talisman", source = { kind = "world", text = "Azshir the Sleepless, Scarlet Monastery Graveyard 33.93% in Classic", zone = "Scarlet Monastery", boss = "Azshir the Sleepless", dropRate = 33.93 } },
                 { id = 13087, name = "River Pride Choker", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 7746, name = "Explorers' League Commendation", source = { kind = "quest", text = "Quest: Mythology of the Titans Alliance, level 38 in Classic, from level 28", faction = "Alliance", quest = "Mythology of the Titans" } },
-                { id = 286995, name = "Guardian's Emblem", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 286995, name = "Guardian's Emblem", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
                 { id = 12029, name = "Greenstone Talisman of Stamina", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 35 random suffixes, each with its own stats: search for the full name" } },
               },
               enchants = {
@@ -1722,8 +1722,8 @@ ForeverBiSData = {
             },
             { slot = "Neck",
               items = {
+                { id = 286995, name = "Guardian's Emblem", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
                 { id = 6695, name = "Stygian Bone Amulet", source = { kind = "world", text = "Blind Hunter, Razorfen Kraul 27.15% in Classic", zone = "Razorfen Kraul", boss = "Blind Hunter", dropRate = 27.15 } },
-                { id = 286995, name = "Guardian's Emblem", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 12029, name = "Greenstone Talisman of the Sorcerer", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 35 random suffixes, each with its own stats: search for the full name" } },
                 { id = 273049, name = "Archmagister's Faceted Pendant", source = { kind = "world", text = "Shade of the Archmage, City of Dalaran" } },
                 { id = 285331, name = "Mark of the Pack Leader", source = { kind = "world", text = "Humar the Pridelord, the rare black lion of the Barrens Reported, not checked", reported = true } },
@@ -1810,7 +1810,7 @@ ForeverBiSData = {
                 { id = 14203, name = "Thistlefur Pants of Frozen Wrath", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 24 random suffixes, each with its own stats: search for the full name" } },
                 { id = 253989, name = "Silky Leggings", source = { kind = "profession", text = "Tailoring (125) Only its maker can wear it Requires Spinning Wheel. Happy Camper sells its blueprint for 15s, just outside Ironforge", skill = "Tailoring", skillLevel = 125, bindsToMaker = true } },
                 { id = 270090, name = "Beggar's Leggings", source = { kind = "quest", text = "Four quests for \"Sea Wolf\" MacKinley, Booty Bay The Mosh'Ogg ogres are level 41 to 45 elites: very hard at level 30" } },
-                { id = 286988, name = "Violet Sorcerer's Leggings", source = { kind = "world", text = "A drop of the City of Dalaran dungeon Which creature drops it is not known yet" } },
+                { id = 286988, name = "Violet Sorcerer's Leggings", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
                 { id = 6903, name = "Gaze Dreamer Pants", source = { kind = "dungeon", text = "Twilight Lord Kelris, Blackfathom Deeps 33.5% in Classic", zone = "Blackfathom Deeps", boss = "Twilight Lord Kelris", dropRate = 33.5 } },
                 { id = 253939, name = "Filigreed Silky Leggings", source = { kind = "profession", text = "Tailoring (100) Only its maker can wear it Pattern drops in Blackfathom Deeps, Shadowfang Keep, The Deadmines", skill = "Tailoring", skillLevel = 100, bindsToMaker = true } },
               },
@@ -1919,8 +1919,8 @@ ForeverBiSData = {
             },
             { slot = "Neck",
               items = {
+                { id = 286995, name = "Guardian's Emblem", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
                 { id = 6695, name = "Stygian Bone Amulet", source = { kind = "world", text = "Blind Hunter, Razorfen Kraul 27.15% in Classic", zone = "Razorfen Kraul", boss = "Blind Hunter", dropRate = 27.15 } },
-                { id = 286995, name = "Guardian's Emblem", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 12029, name = "Greenstone Talisman of the Sorcerer", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 35 random suffixes, each with its own stats: search for the full name" } },
                 { id = 273049, name = "Archmagister's Faceted Pendant", source = { kind = "world", text = "Shade of the Archmage, City of Dalaran" } },
                 { id = 285331, name = "Mark of the Pack Leader", source = { kind = "world", text = "Humar the Pridelord, the rare black lion of the Barrens Reported, not checked", reported = true } },
@@ -1945,7 +1945,7 @@ ForeverBiSData = {
                 { id = 7436, name = "Twilight Cape of Arcane Wrath", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 41 random suffixes, each with its own stats: search for the full name" } },
                 { id = 274149, name = "Thornweaver Drape", source = { kind = "world", text = "Roogug, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Roogug" } },
                 { id = 277206, name = "Brilliant Cloak", source = { kind = "quest", text = "Strahnbrad Mystery, a quest of Alterac Mountains From a Singed Note dropped in Alterac Mountains" } },
-                { id = 286994, name = "Tattered Kirin Tor Cloak", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 286994, name = "Tattered Kirin Tor Cloak", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
                 { id = 279835, name = "Vine Pruner's Cloak", source = { kind = "quest", text = "Quest: A Green Sample City of Dalaran, Alliance, from level 24", faction = "Alliance", quest = "A Green Sample City of Dalaran" } },
                 { id = 3719, name = "Hillman's Cloak", source = { kind = "profession", text = "Leatherworking", skill = "Leatherworking" } },
               },
@@ -2006,7 +2006,7 @@ ForeverBiSData = {
               items = {
                 { id = 14203, name = "Thistlefur Pants of Arcane Wrath", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 24 random suffixes, each with its own stats: search for the full name" } },
                 { id = 253995, name = "Pearly Leggings", source = { kind = "profession", text = "Tailoring (125) Only its maker can wear it Requires Spinning Wheel. Happy Camper sells its blueprint for 15s, just outside Ironforge", skill = "Tailoring", skillLevel = 125, bindsToMaker = true } },
-                { id = 286988, name = "Violet Sorcerer's Leggings", source = { kind = "world", text = "A drop of the City of Dalaran dungeon Which creature drops it is not known yet" } },
+                { id = 286988, name = "Violet Sorcerer's Leggings", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
                 { id = 270090, name = "Beggar's Leggings", source = { kind = "quest", text = "Four quests for \"Sea Wolf\" MacKinley, Booty Bay The Mosh'Ogg ogres are level 41 to 45 elites: very hard at level 30" } },
                 { id = 253945, name = "Filigreed Pearly Leggings", source = { kind = "profession", text = "Tailoring (100) Only its maker can wear it Pattern drops from Shadow Charger, Shadowfang Keep; Ghamoo-ra, Blackfathom Deeps", skill = "Tailoring", skillLevel = 100, bindsToMaker = true } },
                 { id = 6903, name = "Gaze Dreamer Pants", source = { kind = "dungeon", text = "Twilight Lord Kelris, Blackfathom Deeps 33.5% in Classic", zone = "Blackfathom Deeps", boss = "Twilight Lord Kelris", dropRate = 33.5 } },
@@ -2116,8 +2116,8 @@ ForeverBiSData = {
             },
             { slot = "Neck",
               items = {
+                { id = 286995, name = "Guardian's Emblem", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
                 { id = 6695, name = "Stygian Bone Amulet", source = { kind = "world", text = "Blind Hunter, Razorfen Kraul 27.15% in Classic", zone = "Razorfen Kraul", boss = "Blind Hunter", dropRate = 27.15 } },
-                { id = 286995, name = "Guardian's Emblem", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 12029, name = "Greenstone Talisman of the Sorcerer", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 35 random suffixes, each with its own stats: search for the full name" } },
                 { id = 273049, name = "Archmagister's Faceted Pendant", source = { kind = "world", text = "Shade of the Archmage, City of Dalaran" } },
                 { id = 285331, name = "Mark of the Pack Leader", source = { kind = "world", text = "Humar the Pridelord, the rare black lion of the Barrens Reported, not checked", reported = true } },
@@ -2142,7 +2142,7 @@ ForeverBiSData = {
                 { id = 7436, name = "Twilight Cape of Fiery Wrath", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 41 random suffixes, each with its own stats: search for the full name" } },
                 { id = 274149, name = "Thornweaver Drape", source = { kind = "world", text = "Roogug, Razorfen Kraul", zone = "Razorfen Kraul", boss = "Roogug" } },
                 { id = 277206, name = "Brilliant Cloak", source = { kind = "quest", text = "Strahnbrad Mystery, a quest of Alterac Mountains From a Singed Note dropped in Alterac Mountains" } },
-                { id = 286994, name = "Tattered Kirin Tor Cloak", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 286994, name = "Tattered Kirin Tor Cloak", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
                 { id = 279835, name = "Vine Pruner's Cloak", source = { kind = "quest", text = "Quest: A Green Sample City of Dalaran, Alliance, from level 24", faction = "Alliance", quest = "A Green Sample City of Dalaran" } },
                 { id = 3719, name = "Hillman's Cloak", source = { kind = "profession", text = "Leatherworking", skill = "Leatherworking" } },
               },
@@ -2203,7 +2203,7 @@ ForeverBiSData = {
               items = {
                 { id = 14203, name = "Thistlefur Pants of Fiery Wrath", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 24 random suffixes, each with its own stats: search for the full name" } },
                 { id = 253991, name = "Flame Leggings", source = { kind = "profession", text = "Tailoring (125) Only its maker can wear it Requires Spinning Wheel. Happy Camper sells its blueprint for 15s, just outside Ironforge", skill = "Tailoring", skillLevel = 125, bindsToMaker = true } },
-                { id = 286988, name = "Violet Sorcerer's Leggings", source = { kind = "world", text = "A drop of the City of Dalaran dungeon Which creature drops it is not known yet" } },
+                { id = 286988, name = "Violet Sorcerer's Leggings", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
                 { id = 270090, name = "Beggar's Leggings", source = { kind = "quest", text = "Four quests for \"Sea Wolf\" MacKinley, Booty Bay The Mosh'Ogg ogres are level 41 to 45 elites: very hard at level 30" } },
                 { id = 253941, name = "Filigreed Flame Leggings", source = { kind = "profession", text = "Tailoring (100) Only its maker can wear it Pattern drops in Blackfathom Deeps, The Stockade", skill = "Tailoring", skillLevel = 100, bindsToMaker = true } },
                 { id = 6903, name = "Gaze Dreamer Pants", source = { kind = "dungeon", text = "Twilight Lord Kelris, Blackfathom Deeps 33.5% in Classic", zone = "Blackfathom Deeps", boss = "Twilight Lord Kelris", dropRate = 33.5 } },
@@ -2314,7 +2314,7 @@ ForeverBiSData = {
             { slot = "Neck",
               items = {
                 { id = 274749, name = "Souvenir Sea Shell", source = { kind = "world", text = "Sold by Gezzy Gunkgear in Booty Bay At Honored with Booty Bay" } },
-                { id = 286995, name = "Guardian's Emblem", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 286995, name = "Guardian's Emblem", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
                 { id = 12029, name = "Greenstone Talisman of the Physician", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 35 random suffixes, each with its own stats: search for the full name" } },
                 { id = 7731, name = "Ghostshard Talisman", source = { kind = "world", text = "Azshir the Sleepless, Scarlet Monastery Graveyard 33.93% in Classic", zone = "Scarlet Monastery", boss = "Azshir the Sleepless", dropRate = 33.93 } },
                 { id = 7746, name = "Explorers' League Commendation", source = { kind = "quest", text = "Quest: Mythology of the Titans Alliance, level 38 in Classic, from level 28", faction = "Alliance", quest = "Mythology of the Titans" } },
@@ -2403,7 +2403,7 @@ ForeverBiSData = {
                 { id = 270056, name = "Stromgarde Librarian Leggings", source = { kind = "quest", text = "Quest: Stromgarde Badges Alliance, from level 30, reported, not checked", faction = "Alliance", quest = "Stromgarde Badges", reported = true } },
                 { id = 14203, name = "Thistlefur Pants of the Physician", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 24 random suffixes, each with its own stats: search for the full name" } },
                 { id = 253987, name = "Pristine Leggings", source = { kind = "profession", text = "Tailoring (125) Only its maker can wear it Requires Spinning Wheel. Happy Camper sells its blueprint for 15s, just outside Ironforge", skill = "Tailoring", skillLevel = 125, bindsToMaker = true } },
-                { id = 286988, name = "Violet Sorcerer's Leggings", source = { kind = "world", text = "A drop of the City of Dalaran dungeon Which creature drops it is not known yet" } },
+                { id = 286988, name = "Violet Sorcerer's Leggings", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
               },
               enchants = {
                 { effect = "Stamina +4 and Armor +32", spell = "Thick Armor Kit", source = "Leatherworking 200: Taught by the trainer." },
@@ -2512,7 +2512,7 @@ ForeverBiSData = {
             { slot = "Neck",
               items = {
                 { id = 274749, name = "Souvenir Sea Shell", source = { kind = "world", text = "Sold by Gezzy Gunkgear in Booty Bay At Honored with Booty Bay" } },
-                { id = 286995, name = "Guardian's Emblem", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 286995, name = "Guardian's Emblem", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
                 { id = 7731, name = "Ghostshard Talisman", source = { kind = "world", text = "Azshir the Sleepless, Scarlet Monastery Graveyard 33.93% in Classic", zone = "Scarlet Monastery", boss = "Azshir the Sleepless", dropRate = 33.93 } },
                 { id = 7746, name = "Explorers' League Commendation", source = { kind = "quest", text = "Quest: Mythology of the Titans Alliance, level 38 in Classic, from level 28", faction = "Alliance", quest = "Mythology of the Titans" } },
                 { id = 13087, name = "River Pride Choker", source = { kind = "world", text = "World drop, sold at the auction house" } },
@@ -2601,7 +2601,7 @@ ForeverBiSData = {
                 { id = 270056, name = "Stromgarde Librarian Leggings", source = { kind = "quest", text = "Quest: Stromgarde Badges Alliance, from level 30, reported, not checked", faction = "Alliance", quest = "Stromgarde Badges", reported = true } },
                 { id = 14203, name = "Thistlefur Pants of the Physician", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 24 random suffixes, each with its own stats: search for the full name" } },
                 { id = 253987, name = "Pristine Leggings", source = { kind = "profession", text = "Tailoring (125) Only its maker can wear it Requires Spinning Wheel. Happy Camper sells its blueprint for 15s, just outside Ironforge", skill = "Tailoring", skillLevel = 125, bindsToMaker = true } },
-                { id = 286988, name = "Violet Sorcerer's Leggings", source = { kind = "world", text = "A drop of the City of Dalaran dungeon Which creature drops it is not known yet" } },
+                { id = 286988, name = "Violet Sorcerer's Leggings", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
               },
               enchants = {
                 { effect = "Stamina +4 and Armor +32", spell = "Thick Armor Kit", source = "Leatherworking 200: Taught by the trainer." },
@@ -2772,7 +2772,7 @@ ForeverBiSData = {
             { slot = "Hands",
               items = {
                 { id = 277223, name = "Traveled Gloves", source = { kind = "quest", text = "Quest No Honor Among Thieves, Stranglethorn Vale Both factions, from level 30: one reward out of three" } },
-                { id = 286992, name = "Construct's Grips", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 286992, name = "Construct's Grips", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
                 { id = 5970, name = "Serpent Gloves", source = { kind = "dungeon", text = "Lord Serpentis, Wailing Caverns 19.38% in Classic", zone = "Wailing Caverns", boss = "Lord Serpentis", dropRate = 19.38 } },
                 { id = 3341, name = "Gauntlets of Ogre Strength", source = { kind = "world", text = "Boulderfist ogres, Arathi Highlands About once in eighty kills, or at the auction house" } },
                 { id = 4107, name = "Tiger Hunter Gloves", source = { kind = "quest", text = "Quest: Tiger Mastery level 37 in Classic, from level 28 Four Tiger Mastery quests, Stranglethorn Vale Sin'Dall is level 37: take a group", quest = "Tiger Mastery" } },
@@ -2903,7 +2903,7 @@ ForeverBiSData = {
             { slot = "Back",
               items = {
                 { id = 7436, name = "Twilight Cape of the Prophet", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 41 random suffixes, each with its own stats: search for the full name" } },
-                { id = 286994, name = "Tattered Kirin Tor Cloak", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 286994, name = "Tattered Kirin Tor Cloak", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
                 { id = 4462, name = "Cloak of Rot", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 273825, name = "Red Wool Cloak", source = { kind = "world", text = "Bazil Thredd, The Stockade", zone = "The Stockade", boss = "Bazil Thredd" } },
                 { id = 277206, name = "Brilliant Cloak", source = { kind = "quest", text = "Strahnbrad Mystery, a quest of Alterac Mountains From a Singed Note dropped in Alterac Mountains" } },
@@ -2964,7 +2964,7 @@ ForeverBiSData = {
             },
             { slot = "Legs",
               items = {
-                { id = 286988, name = "Violet Sorcerer's Leggings", source = { kind = "world", text = "A drop of the City of Dalaran dungeon Which creature drops it is not known yet" } },
+                { id = 286988, name = "Violet Sorcerer's Leggings", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
                 { id = 252519, name = "Wisdom's Leather Leggings", source = { kind = "profession", text = "Leatherworking (125) Only its maker can wear it Requires Tanning Rack. Happy Camper sells its blueprint for 15s, just outside Ironforge", skill = "Leatherworking", skillLevel = 125, bindsToMaker = true } },
                 { id = 250526, name = "Acolyte's Silvered Chain Leggings", source = { kind = "profession", text = "Blacksmithing (125) Only its maker can wear it", skill = "Blacksmithing", skillLevel = 125, bindsToMaker = true } },
                 { id = 253987, name = "Pristine Leggings", source = { kind = "profession", text = "Tailoring (125) Only its maker can wear it Requires Spinning Wheel. Happy Camper sells its blueprint for 15s, just outside Ironforge", skill = "Tailoring", skillLevel = 125, bindsToMaker = true } },
@@ -3074,7 +3074,7 @@ ForeverBiSData = {
               items = {
                 { id = 274749, name = "Souvenir Sea Shell", source = { kind = "world", text = "Sold by Gezzy Gunkgear in Booty Bay At Honored with Booty Bay" } },
                 { id = 12029, name = "Greenstone Talisman of the Physician", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 35 random suffixes, each with its own stats: search for the full name" } },
-                { id = 286995, name = "Guardian's Emblem", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 286995, name = "Guardian's Emblem", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
                 { id = 7746, name = "Explorers' League Commendation", source = { kind = "quest", text = "Quest: Mythology of the Titans Alliance, level 38 in Classic, from level 28", faction = "Alliance", quest = "Mythology of the Titans" } },
                 { id = 7731, name = "Ghostshard Talisman", source = { kind = "world", text = "Azshir the Sleepless, Scarlet Monastery Graveyard 33.93% in Classic", zone = "Scarlet Monastery", boss = "Azshir the Sleepless", dropRate = 33.93 } },
                 { id = 13087, name = "River Pride Choker", source = { kind = "world", text = "World drop, sold at the auction house" } },
@@ -3100,7 +3100,7 @@ ForeverBiSData = {
                 { id = 279835, name = "Vine Pruner's Cloak", source = { kind = "quest", text = "Quest: A Green Sample City of Dalaran, Alliance, from level 24", faction = "Alliance", quest = "A Green Sample City of Dalaran" } },
                 { id = 273825, name = "Red Wool Cloak", source = { kind = "world", text = "Bazil Thredd, The Stockade", zone = "The Stockade", boss = "Bazil Thredd" } },
                 { id = 6751, name = "Mourning Shawl", source = { kind = "quest", text = "Quest: Mortality Wanes Alliance, level 30 in Classic, from level 25 Same quest as the Lancer Boots You choose one or the other", faction = "Alliance", quest = "Mortality Wanes" } },
-                { id = 286994, name = "Tattered Kirin Tor Cloak", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 286994, name = "Tattered Kirin Tor Cloak", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
               },
               enchants = {
                 { effect = "Armor +60", spell = "Enchant Cloak - Greater Defense", source = "Enchanting 205: Taught by the trainer." },
@@ -3331,7 +3331,7 @@ ForeverBiSData = {
             { slot = "Hands",
               items = {
                 { id = 277223, name = "Traveled Gloves", source = { kind = "quest", text = "Quest No Honor Among Thieves, Stranglethorn Vale Both factions, from level 30: one reward out of three" } },
-                { id = 286992, name = "Construct's Grips", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 286992, name = "Construct's Grips", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
                 { id = 720, name = "Brawler Gloves", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 7690, name = "Ebon Vise", source = { kind = "world", text = "Fallen Champion, Scarlet Monastery Graveyard 38.9% in Classic", zone = "Scarlet Monastery", boss = "Fallen Champion", dropRate = 38.9 } },
                 { id = 9861, name = "Archer's Gloves of the Knight", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 36 random suffixes, each with its own stats: search for the full name" } },
@@ -3439,8 +3439,8 @@ ForeverBiSData = {
             },
             { slot = "Neck",
               items = {
+                { id = 286995, name = "Guardian's Emblem", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
                 { id = 274749, name = "Souvenir Sea Shell", source = { kind = "world", text = "Sold by Gezzy Gunkgear in Booty Bay At Honored with Booty Bay" } },
-                { id = 286995, name = "Guardian's Emblem", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 7731, name = "Ghostshard Talisman", source = { kind = "world", text = "Azshir the Sleepless, Scarlet Monastery Graveyard 33.93% in Classic", zone = "Scarlet Monastery", boss = "Azshir the Sleepless", dropRate = 33.93 } },
                 { id = 13087, name = "River Pride Choker", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 12029, name = "Greenstone Talisman of the Knight", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 35 random suffixes, each with its own stats: search for the full name" } },
@@ -3623,7 +3623,7 @@ ForeverBiSData = {
             { slot = "Neck",
               items = {
                 { id = 274749, name = "Souvenir Sea Shell", source = { kind = "world", text = "Sold by Gezzy Gunkgear in Booty Bay At Honored with Booty Bay" } },
-                { id = 286995, name = "Guardian's Emblem", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 286995, name = "Guardian's Emblem", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
                 { id = 7731, name = "Ghostshard Talisman", source = { kind = "world", text = "Azshir the Sleepless, Scarlet Monastery Graveyard 33.93% in Classic", zone = "Scarlet Monastery", boss = "Azshir the Sleepless", dropRate = 33.93 } },
                 { id = 13087, name = "River Pride Choker", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 7746, name = "Explorers' League Commendation", source = { kind = "quest", text = "Quest: Mythology of the Titans Alliance, level 38 in Classic, from level 28", faction = "Alliance", quest = "Mythology of the Titans" } },
@@ -3802,8 +3802,8 @@ ForeverBiSData = {
             },
             { slot = "Neck",
               items = {
+                { id = 286995, name = "Guardian's Emblem", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
                 { id = 6695, name = "Stygian Bone Amulet", source = { kind = "world", text = "Blind Hunter, Razorfen Kraul 27.15% in Classic", zone = "Razorfen Kraul", boss = "Blind Hunter", dropRate = 27.15 } },
-                { id = 286995, name = "Guardian's Emblem", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 12029, name = "Greenstone Talisman of the Sorcerer", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 35 random suffixes, each with its own stats: search for the full name" } },
                 { id = 273049, name = "Archmagister's Faceted Pendant", source = { kind = "world", text = "Shade of the Archmage, City of Dalaran" } },
                 { id = 285331, name = "Mark of the Pack Leader", source = { kind = "world", text = "Humar the Pridelord, the rare black lion of the Barrens Reported, not checked", reported = true } },
@@ -3891,7 +3891,7 @@ ForeverBiSData = {
                 { id = 14203, name = "Thistlefur Pants of Shadow Wrath", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 24 random suffixes, each with its own stats: search for the full name" } },
                 { id = 253993, name = "Shadow Leggings", source = { kind = "profession", text = "Tailoring (125) Only its maker can wear it Requires Spinning Wheel. Happy Camper sells its blueprint for 15s, just outside Ironforge", skill = "Tailoring", skillLevel = 125, bindsToMaker = true } },
                 { id = 270090, name = "Beggar's Leggings", source = { kind = "quest", text = "Four quests for \"Sea Wolf\" MacKinley, Booty Bay The Mosh'Ogg ogres are level 41 to 45 elites: very hard at level 30" } },
-                { id = 286988, name = "Violet Sorcerer's Leggings", source = { kind = "world", text = "A drop of the City of Dalaran dungeon Which creature drops it is not known yet" } },
+                { id = 286988, name = "Violet Sorcerer's Leggings", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
                 { id = 6903, name = "Gaze Dreamer Pants", source = { kind = "dungeon", text = "Twilight Lord Kelris, Blackfathom Deeps 33.5% in Classic", zone = "Blackfathom Deeps", boss = "Twilight Lord Kelris", dropRate = 33.5 } },
               },
               enchants = {
@@ -4002,7 +4002,7 @@ ForeverBiSData = {
                 { id = 274749, name = "Souvenir Sea Shell", source = { kind = "world", text = "Sold by Gezzy Gunkgear in Booty Bay At Honored with Booty Bay" } },
                 { id = 7746, name = "Explorers' League Commendation", source = { kind = "quest", text = "Quest: Mythology of the Titans Alliance, level 38 in Classic, from level 28", faction = "Alliance", quest = "Mythology of the Titans" } },
                 { id = 12029, name = "Greenstone Talisman of the Physician", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 35 random suffixes, each with its own stats: search for the full name" } },
-                { id = 286995, name = "Guardian's Emblem", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 286995, name = "Guardian's Emblem", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
                 { id = 7731, name = "Ghostshard Talisman", source = { kind = "world", text = "Azshir the Sleepless, Scarlet Monastery Graveyard 33.93% in Classic", zone = "Scarlet Monastery", boss = "Azshir the Sleepless", dropRate = 33.93 } },
                 { id = 13087, name = "River Pride Choker", source = { kind = "world", text = "World drop, sold at the auction house" } },
               },
@@ -4088,7 +4088,7 @@ ForeverBiSData = {
                 { id = 2277, name = "Necromancer Leggings", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 253937, name = "Filigreed Pristine Leggings", source = { kind = "profession", text = "Tailoring (100) Only its maker can wear it Pattern drops in Blackfathom Deeps, The Deadmines, Wailing Caverns", skill = "Tailoring", skillLevel = 100, bindsToMaker = true } },
                 { id = 14203, name = "Thistlefur Pants of the Physician", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 24 random suffixes, each with its own stats: search for the full name" } },
-                { id = 286988, name = "Violet Sorcerer's Leggings", source = { kind = "world", text = "A drop of the City of Dalaran dungeon Which creature drops it is not known yet" } },
+                { id = 286988, name = "Violet Sorcerer's Leggings", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
                 { id = 270056, name = "Stromgarde Librarian Leggings", source = { kind = "quest", text = "Quest: Stromgarde Badges Alliance, from level 30, reported, not checked", faction = "Alliance", quest = "Stromgarde Badges", reported = true } },
               },
               enchants = {
@@ -4202,7 +4202,7 @@ ForeverBiSData = {
                 { id = 13084, name = "Kaleidoscope Chain", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 5003, name = "Crystal Starfire Medallion", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 285331, name = "Mark of the Pack Leader", source = { kind = "world", text = "Humar the Pridelord, the rare black lion of the Barrens Reported, not checked", reported = true } },
-                { id = 286995, name = "Guardian's Emblem", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 286995, name = "Guardian's Emblem", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
               },
               enchants = {
                 { effect = "Healing Spells +11, Damage Spells +4", spell = "Enchant Necklace - Healing Power", source = "Enchanting 210: Formula sold by Alynsia in Redridge Mountains and Beneris in The Barrens for 120 Merchant’s Favor.", formulaId = 249503 },
@@ -4224,7 +4224,7 @@ ForeverBiSData = {
                 { id = 273825, name = "Red Wool Cloak", source = { kind = "world", text = "Bazil Thredd, The Stockade", zone = "The Stockade", boss = "Bazil Thredd" } },
                 { id = 277206, name = "Brilliant Cloak", source = { kind = "quest", text = "Strahnbrad Mystery, a quest of Alterac Mountains From a Singed Note dropped in Alterac Mountains" } },
                 { id = 9605, name = "Repairman's Cape", source = { kind = "quest", text = "Quest: Data Rescue Alliance, level 30 in Classic, from level 25", faction = "Alliance", quest = "Data Rescue" } },
-                { id = 286994, name = "Tattered Kirin Tor Cloak", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 286994, name = "Tattered Kirin Tor Cloak", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
                 { id = 4462, name = "Cloak of Rot", source = { kind = "world", text = "World drop, sold at the auction house" } },
               },
               enchants = {
@@ -4283,7 +4283,7 @@ ForeverBiSData = {
             { slot = "Legs",
               items = {
                 { id = 253987, name = "Pristine Leggings", source = { kind = "profession", text = "Tailoring (125) Only its maker can wear it Requires Spinning Wheel. Happy Camper sells its blueprint for 15s, just outside Ironforge", skill = "Tailoring", skillLevel = 125, bindsToMaker = true } },
-                { id = 286988, name = "Violet Sorcerer's Leggings", source = { kind = "world", text = "A drop of the City of Dalaran dungeon Which creature drops it is not known yet" } },
+                { id = 286988, name = "Violet Sorcerer's Leggings", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
                 { id = 14203, name = "Thistlefur Pants of Healing", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 24 random suffixes, each with its own stats: search for the full name" } },
                 { id = 253937, name = "Filigreed Pristine Leggings", source = { kind = "profession", text = "Tailoring (100) Only its maker can wear it Pattern drops in Blackfathom Deeps, The Deadmines, Wailing Caverns", skill = "Tailoring", skillLevel = 100, bindsToMaker = true } },
                 { id = 270036, name = "Magistrate's Pantaloons", source = { kind = "quest", text = "Alliance quest The Fury Runs Deep, The Stockade Alliance, from level 22: bring back Kam Deepfury's head", faction = "Alliance" } },
@@ -4393,7 +4393,7 @@ ForeverBiSData = {
             { slot = "Neck",
               items = {
                 { id = 274749, name = "Souvenir Sea Shell", source = { kind = "world", text = "Sold by Gezzy Gunkgear in Booty Bay At Honored with Booty Bay" } },
-                { id = 286995, name = "Guardian's Emblem", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 286995, name = "Guardian's Emblem", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
                 { id = 7731, name = "Ghostshard Talisman", source = { kind = "world", text = "Azshir the Sleepless, Scarlet Monastery Graveyard 33.93% in Classic", zone = "Scarlet Monastery", boss = "Azshir the Sleepless", dropRate = 33.93 } },
                 { id = 7746, name = "Explorers' League Commendation", source = { kind = "quest", text = "Quest: Mythology of the Titans Alliance, level 38 in Classic, from level 28", faction = "Alliance", quest = "Mythology of the Titans" } },
                 { id = 13087, name = "River Pride Choker", source = { kind = "world", text = "World drop, sold at the auction house" } },
@@ -4924,8 +4924,8 @@ ForeverBiSData = {
             { slot = "Off hand",
               items = {
                 { id = 9520, name = "Silent Hunter", source = { kind = "quest", text = "Quest: Call to Arms Horde, level 40 in Classic, from level 30 Call to Arms, a Horde chain at Hammerfall, Arathi Highlands Boulderfist elites of level 38 to 40: take a strong group", faction = "Horde", quest = "Call to Arms" } },
-                { id = 9453, name = "Toxic Revenger", source = { kind = "world", text = "Viscous Fallout, Gnomeregan 17.53% in Classic", zone = "Gnomeregan", boss = "Viscous Fallout", dropRate = 17.53 } },
                 { id = 281314, name = "Subdued Dragon's Fang", source = { kind = "quest", text = "Alliance quest Stopping the Cycle, Wetlands, level 34 Elite, from level 24: take a group", faction = "Alliance" } },
+                { id = 9453, name = "Toxic Revenger", source = { kind = "world", text = "Viscous Fallout, Gnomeregan 17.53% in Classic", zone = "Gnomeregan", boss = "Viscous Fallout", dropRate = 17.53 } },
                 { id = 2912, name = "Claw of the Shadowmancer", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 6681, name = "Thornspike", source = { kind = "world", text = "Aggem Thorncurse, Razorfen Kraul 47.88% in Classic Trash mobs, Razorfen Kraul 53.29% in Classic", zone = "Razorfen Kraul", boss = "Aggem Thorncurse", dropRate = 47.88 } },
                 { id = 4454, name = "Talon of Vultros", source = { kind = "world", text = "World drop, sold at the auction house" } },
@@ -5344,8 +5344,8 @@ ForeverBiSData = {
             },
             { slot = "Neck",
               items = {
+                { id = 286995, name = "Guardian's Emblem", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
                 { id = 6695, name = "Stygian Bone Amulet", source = { kind = "world", text = "Blind Hunter, Razorfen Kraul 27.15% in Classic", zone = "Razorfen Kraul", boss = "Blind Hunter", dropRate = 27.15 } },
-                { id = 286995, name = "Guardian's Emblem", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 12029, name = "Greenstone Talisman of the Sorcerer", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 35 random suffixes, each with its own stats: search for the full name" } },
                 { id = 273049, name = "Archmagister's Faceted Pendant", source = { kind = "world", text = "Shade of the Archmage, City of Dalaran" } },
                 { id = 285331, name = "Mark of the Pack Leader", source = { kind = "world", text = "Humar the Pridelord, the rare black lion of the Barrens Reported, not checked", reported = true } },
@@ -5432,7 +5432,7 @@ ForeverBiSData = {
                 { id = 15358, name = "Headhunter's Woolies of Nature's Wrath", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 36 random suffixes, each with its own stats: search for the full name" } },
                 { id = 270031, name = "Dark Ritual Leggings", source = { kind = "quest", text = "Quest: Blackfathom Villainy Alliance, from level 18, reported, not checked Quest: Blackfathom Villainy Horde, from level 18, reported, not checked", quest = "Blackfathom Villainy", reported = true } },
                 { id = 270090, name = "Beggar's Leggings", source = { kind = "quest", text = "Four quests for \"Sea Wolf\" MacKinley, Booty Bay The Mosh'Ogg ogres are level 41 to 45 elites: very hard at level 30" } },
-                { id = 286988, name = "Violet Sorcerer's Leggings", source = { kind = "world", text = "A drop of the City of Dalaran dungeon Which creature drops it is not known yet" } },
+                { id = 286988, name = "Violet Sorcerer's Leggings", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
                 { id = 6903, name = "Gaze Dreamer Pants", source = { kind = "dungeon", text = "Twilight Lord Kelris, Blackfathom Deeps 33.5% in Classic", zone = "Blackfathom Deeps", boss = "Twilight Lord Kelris", dropRate = 33.5 } },
                 { id = 285338, name = "Kodohide Legguards", source = { kind = "world", text = "Brontus, a rare kodo of the Barrens Reported, not checked", reported = true } },
               },
@@ -5541,7 +5541,7 @@ ForeverBiSData = {
             { slot = "Neck",
               items = {
                 { id = 274749, name = "Souvenir Sea Shell", source = { kind = "world", text = "Sold by Gezzy Gunkgear in Booty Bay At Honored with Booty Bay" } },
-                { id = 286995, name = "Guardian's Emblem", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 286995, name = "Guardian's Emblem", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
                 { id = 7746, name = "Explorers' League Commendation", source = { kind = "quest", text = "Quest: Mythology of the Titans Alliance, level 38 in Classic, from level 28", faction = "Alliance", quest = "Mythology of the Titans" } },
                 { id = 7731, name = "Ghostshard Talisman", source = { kind = "world", text = "Azshir the Sleepless, Scarlet Monastery Graveyard 33.93% in Classic", zone = "Scarlet Monastery", boss = "Azshir the Sleepless", dropRate = 33.93 } },
                 { id = 13087, name = "River Pride Choker", source = { kind = "world", text = "World drop, sold at the auction house" } },
@@ -5957,8 +5957,8 @@ ForeverBiSData = {
             },
             { slot = "Back",
               items = {
+                { id = 286994, name = "Tattered Kirin Tor Cloak", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
                 { id = 277206, name = "Brilliant Cloak", source = { kind = "quest", text = "Strahnbrad Mystery, a quest of Alterac Mountains From a Singed Note dropped in Alterac Mountains" } },
-                { id = 286994, name = "Tattered Kirin Tor Cloak", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 271719, name = "Furs of the Earthen Ring", source = { kind = "quest", text = "Quest: Elder Knowledge Excavation Site: Wetlands, Horde, from level 24", faction = "Horde", quest = "Elder Knowledge Excavation Site: Wetlands" } },
                 { id = 7436, name = "Twilight Cape of the Sorcerer", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 41 random suffixes, each with its own stats: search for the full name" } },
                 { id = 271720, name = "Crocolisk Skin Gaiter", source = { kind = "quest", text = "A quest of the Excavation Site, in the Wetlands Which quest is not known yet" } },
@@ -6023,7 +6023,7 @@ ForeverBiSData = {
                 { id = 252458, name = "Totemic Leather Leggings", source = { kind = "profession", text = "Leatherworking (125) Only its maker can wear it Requires Tanning Rack. Happy Camper sells its blueprint for 15s, just outside Ironforge", skill = "Leatherworking", skillLevel = 125, bindsToMaker = true } },
                 { id = 2277, name = "Necromancer Leggings", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 252518, name = "Stormrider's Leather Kilt", source = { kind = "profession", text = "Leatherworking (125) Only its maker can wear it Requires Tanning Rack. Happy Camper sells its blueprint for 15s, just outside Ironforge", skill = "Leatherworking", skillLevel = 125, bindsToMaker = true } },
-                { id = 286988, name = "Violet Sorcerer's Leggings", source = { kind = "world", text = "A drop of the City of Dalaran dungeon Which creature drops it is not known yet" } },
+                { id = 286988, name = "Violet Sorcerer's Leggings", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
                 { id = 270074, name = "Doomcaller's Pants", source = { kind = "quest", text = "Quest: Solution to Doom from level 30, reported, not checked", quest = "Solution to Doom", reported = true } },
               },
               enchants = {
@@ -6159,7 +6159,7 @@ ForeverBiSData = {
                 { id = 9605, name = "Repairman's Cape", source = { kind = "quest", text = "Quest: Data Rescue Alliance, level 30 in Classic, from level 25", faction = "Alliance", quest = "Data Rescue" } },
                 { id = 277206, name = "Brilliant Cloak", source = { kind = "quest", text = "Strahnbrad Mystery, a quest of Alterac Mountains From a Singed Note dropped in Alterac Mountains" } },
                 { id = 6901, name = "Glowing Thresher Cape", source = { kind = "dungeon", text = "Old Serra'kis, Blackfathom Deeps 39.27% in Classic", zone = "Blackfathom Deeps", boss = "Old Serra'kis", dropRate = 39.27 } },
-                { id = 286994, name = "Tattered Kirin Tor Cloak", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 286994, name = "Tattered Kirin Tor Cloak", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
               },
               enchants = {
                 { effect = "Armor +60", spell = "Enchant Cloak - Greater Defense", source = "Enchanting 205: Taught by the trainer." },
@@ -6217,7 +6217,7 @@ ForeverBiSData = {
             { slot = "Legs",
               items = {
                 { id = 252519, name = "Wisdom's Leather Leggings", source = { kind = "profession", text = "Leatherworking (125) Only its maker can wear it Requires Tanning Rack. Happy Camper sells its blueprint for 15s, just outside Ironforge", skill = "Leatherworking", skillLevel = 125, bindsToMaker = true } },
-                { id = 286988, name = "Violet Sorcerer's Leggings", source = { kind = "world", text = "A drop of the City of Dalaran dungeon Which creature drops it is not known yet" } },
+                { id = 286988, name = "Violet Sorcerer's Leggings", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
                 { id = 253987, name = "Pristine Leggings", source = { kind = "profession", text = "Tailoring (125) Only its maker can wear it Requires Spinning Wheel. Happy Camper sells its blueprint for 15s, just outside Ironforge", skill = "Tailoring", skillLevel = 125, bindsToMaker = true } },
                 { id = 14203, name = "Thistlefur Pants of the Prophet", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 24 random suffixes, each with its own stats: search for the full name" } },
                 { id = 253937, name = "Filigreed Pristine Leggings", source = { kind = "profession", text = "Tailoring (100) Only its maker can wear it Pattern drops in Blackfathom Deeps, The Deadmines, Wailing Caverns", skill = "Tailoring", skillLevel = 100, bindsToMaker = true } },
@@ -6233,8 +6233,8 @@ ForeverBiSData = {
                 { id = 279840, name = "Renewing Footpads", source = { kind = "quest", text = "Quest: Heart of Disruption City of Dalaran, Alliance, from level 24", faction = "Alliance", quest = "Heart of Disruption City of Dalaran" } },
                 { id = 9845, name = "Conjurer's Shoes of the Prophet", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 24 random suffixes, each with its own stats: search for the full name" } },
                 { id = 9454, name = "Acidic Walkers", source = { kind = "world", text = "Viscous Fallout, Gnomeregan 60.81% in Classic", zone = "Gnomeregan", boss = "Viscous Fallout", dropRate = 60.81 } },
+                { id = 286991, name = "Roused Nature Footwraps", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
                 { id = 252444, name = "Wisdom's Leather Boots", source = { kind = "profession", text = "Leatherworking (85) Only its maker can wear it", skill = "Leatherworking", skillLevel = 85, bindsToMaker = true } },
-                { id = 286987, name = "Violet Sorcerer's Sandals", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
               },
               enchants = {
                 { effect = "Minor Speed Increase", spell = "Enchant Boots - Minor Speed", source = "Enchanting 225: Taught by the trainer." },
@@ -6325,8 +6325,8 @@ ForeverBiSData = {
             },
             { slot = "Neck",
               items = {
+                { id = 286995, name = "Guardian's Emblem", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
                 { id = 6695, name = "Stygian Bone Amulet", source = { kind = "world", text = "Blind Hunter, Razorfen Kraul 27.15% in Classic", zone = "Razorfen Kraul", boss = "Blind Hunter", dropRate = 27.15 } },
-                { id = 286995, name = "Guardian's Emblem", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 12029, name = "Greenstone Talisman of the Sorcerer", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 35 random suffixes, each with its own stats: search for the full name" } },
                 { id = 273049, name = "Archmagister's Faceted Pendant", source = { kind = "world", text = "Shade of the Archmage, City of Dalaran" } },
                 { id = 285331, name = "Mark of the Pack Leader", source = { kind = "world", text = "Humar the Pridelord, the rare black lion of the Barrens Reported, not checked", reported = true } },
@@ -6413,7 +6413,7 @@ ForeverBiSData = {
                 { id = 7709, name = "Blighted Leggings", source = { kind = "world", text = "Azshir the Sleepless, Scarlet Monastery Graveyard 30.61% in Classic", zone = "Scarlet Monastery", boss = "Azshir the Sleepless", dropRate = 30.61 } },
                 { id = 14203, name = "Thistlefur Pants of Shadow Wrath", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 24 random suffixes, each with its own stats: search for the full name" } },
                 { id = 270090, name = "Beggar's Leggings", source = { kind = "quest", text = "Four quests for \"Sea Wolf\" MacKinley, Booty Bay The Mosh'Ogg ogres are level 41 to 45 elites: very hard at level 30" } },
-                { id = 286988, name = "Violet Sorcerer's Leggings", source = { kind = "world", text = "A drop of the City of Dalaran dungeon Which creature drops it is not known yet" } },
+                { id = 286988, name = "Violet Sorcerer's Leggings", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
                 { id = 6903, name = "Gaze Dreamer Pants", source = { kind = "dungeon", text = "Twilight Lord Kelris, Blackfathom Deeps 33.5% in Classic", zone = "Blackfathom Deeps", boss = "Twilight Lord Kelris", dropRate = 33.5 } },
                 { id = 253993, name = "Shadow Leggings", source = { kind = "profession", text = "Tailoring (125) Only its maker can wear it Requires Spinning Wheel. Happy Camper sells its blueprint for 15s, just outside Ironforge", skill = "Tailoring", skillLevel = 125, bindsToMaker = true } },
               },
@@ -6523,7 +6523,7 @@ ForeverBiSData = {
             { slot = "Neck",
               items = {
                 { id = 274749, name = "Souvenir Sea Shell", source = { kind = "world", text = "Sold by Gezzy Gunkgear in Booty Bay At Honored with Booty Bay" } },
-                { id = 286995, name = "Guardian's Emblem", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 286995, name = "Guardian's Emblem", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
                 { id = 7746, name = "Explorers' League Commendation", source = { kind = "quest", text = "Quest: Mythology of the Titans Alliance, level 38 in Classic, from level 28", faction = "Alliance", quest = "Mythology of the Titans" } },
                 { id = 7731, name = "Ghostshard Talisman", source = { kind = "world", text = "Azshir the Sleepless, Scarlet Monastery Graveyard 33.93% in Classic", zone = "Scarlet Monastery", boss = "Azshir the Sleepless", dropRate = 33.93 } },
                 { id = 13087, name = "River Pride Choker", source = { kind = "world", text = "World drop, sold at the auction house" } },
@@ -6784,7 +6784,7 @@ ForeverBiSData = {
             { slot = "Hands",
               items = {
                 { id = 4107, name = "Tiger Hunter Gloves", source = { kind = "quest", text = "Quest: Tiger Mastery level 37 in Classic, from level 28 Four Tiger Mastery quests, Stranglethorn Vale Sin'Dall is level 37: take a group", quest = "Tiger Mastery" } },
-                { id = 286992, name = "Construct's Grips", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
+                { id = 286992, name = "Construct's Grips", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
                 { id = 9861, name = "Archer's Gloves of the Tiger", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 36 random suffixes, each with its own stats: search for the full name" } },
                 { id = 3754, name = "Shepherd's Gloves", source = { kind = "quest", text = "Quest: Costly Menace Alliance, level 34 in Classic, from level 30", faction = "Alliance", quest = "Costly Menace" } },
                 { id = 6408, name = "Insignia Gloves", source = { kind = "world", text = "World drop, sold at the auction house" } },
@@ -6958,8 +6958,8 @@ ForeverBiSData = {
             },
             { slot = "Hands",
               items = {
+                { id = 286992, name = "Construct's Grips", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
                 { id = 7690, name = "Ebon Vise", source = { kind = "world", text = "Fallen Champion, Scarlet Monastery Graveyard 38.9% in Classic", zone = "Scarlet Monastery", boss = "Fallen Champion", dropRate = 38.9 } },
-                { id = 286992, name = "Construct's Grips", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 720, name = "Brawler Gloves", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 1978, name = "Wolfclaw Gloves", source = { kind = "world", text = "Trash mobs, Razorfen Kraul 0.05% in Classic World drop, sold at the auction house", zone = "Razorfen Kraul", boss = "Trash mobs", dropRate = 0.05 } },
                 { id = 273810, name = "Ogre Grips", source = { kind = "world", text = "Hamhock, The Stockade", zone = "The Stockade", boss = "Hamhock" } },
@@ -7135,8 +7135,8 @@ ForeverBiSData = {
             { slot = "Hands",
               items = {
                 { id = 273810, name = "Ogre Grips", source = { kind = "world", text = "Hamhock, The Stockade", zone = "The Stockade", boss = "Hamhock" } },
+                { id = 286992, name = "Construct's Grips", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
                 { id = 14764, name = "Enduring Gauntlets", source = { kind = "world", text = "World drop, sold at the auction house" } },
-                { id = 286992, name = "Construct's Grips", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
                 { id = 9868, name = "Renegade Gauntlets of the Bear", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 32 random suffixes, each with its own stats: search for the full name" } },
                 { id = 7690, name = "Ebon Vise", source = { kind = "world", text = "Fallen Champion, Scarlet Monastery Graveyard 38.9% in Classic", zone = "Scarlet Monastery", boss = "Fallen Champion", dropRate = 38.9 } },
                 { id = 6727, name = "Razzeric's Racing Grips", source = { kind = "quest", text = "Quest: Safety First level 41 in Classic, from level 29 A chain of ten quests from Pozzik, Shimmering Flats Take a group for Foreman Cozzle (level 38)", quest = "Safety First" } },
