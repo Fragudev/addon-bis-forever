@@ -21,6 +21,10 @@ Adapters\Inventory.lua
 Adapters\Player.lua
 Adapters\Chat.lua
 Adapters\Zone.lua
+UI\Theme.lua
+UI\Pixel.lua
+UI\Skin.lua
+UI\Dropdown.lua
 UI\MainFrame.lua
 UI\ItemWidgets.lua
 UI\Selectors.lua

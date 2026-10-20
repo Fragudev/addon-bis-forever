@@ -92,10 +92,21 @@ function frameMethods.RegisterEvent(self, event)
     self.events[event] = true
 end
 function frameMethods.Show(self)
+    local wasShown = self.shown
     self.shown = true
+    if not wasShown and self.scripts.OnShow then
+        self.scripts.OnShow(self)
+    end
 end
 function frameMethods.Hide(self)
+    local wasShown = self.shown
     self.shown = false
+    if wasShown and self.scripts.OnHide then
+        self.scripts.OnHide(self)
+    end
+    for _, handler in ipairs(wasShown and self.hooks and self.hooks.OnHide or {}) do
+        handler(self)
+    end
 end
 function frameMethods.IsShown(self)
     return self.shown
@@ -135,6 +146,30 @@ function frameMethods.SetVertexColor(self, red, green, blue)
 end
 function frameMethods.SetTexture(self, texture)
     self.texture = texture
+end
+function frameMethods.SetColorTexture(self, red, green, blue, alpha)
+    self.colorTexture = { red, green, blue, alpha }
+end
+function frameMethods.SetRotation(self, radians)
+    self.rotation = radians
+end
+function frameMethods.SetFontObject(self, font)
+    self.fontObject = font
+end
+function frameMethods.SetTextColor(self, red, green, blue, alpha)
+    self.textColor = { red, green, blue, alpha }
+end
+function frameMethods.SetEnabled(self, enabled)
+    self.enabled = enabled
+end
+function frameMethods.Enable(self)
+    self.enabled = true
+end
+function frameMethods.Disable(self)
+    self.enabled = false
+end
+function frameMethods.IsEnabled(self)
+    return self.enabled ~= false
 end
 function frameMethods.GetFrameLevel()
     return 1
@@ -210,12 +245,12 @@ end
 function Stub.reset()
     Stub.frames = {}
     Stub.fontStrings = {}
-    Stub.menus = {}
     Stub.equipped = {}
     Stub.bagCounts = {}
     Stub.player = { class = "Rogue", token = "ROGUE", level = 30 }
     Stub.chat, Stub.insertedLinks, Stub.group, Stub.shift = {}, {}, nil, false
     Stub.sounds, Stub.now, Stub.instance = {}, 0, nil
+    Stub.fontFailure = false
 
     _G.UIParent = newFrame("Frame", nil)
     _G.Minimap = newFrame("Frame", nil)
@@ -236,6 +271,7 @@ function Stub.reset()
     end
     _G.GameTooltip = tooltip
     _G.SlashCmdList = {}
+    _G.UISpecialFrames = {}
     _G.TooltipDataProcessor, _G.Enum, _G.ItemRefTooltip, _G.ForeverBiSTooltip = nil, nil, nil, nil
     _G.ForeverBiSDB, _G.ForeverBiSCharDB = nil, nil
     _G.SLASH_FOREVERBIS1, _G.SLASH_FOREVERBIS2 = nil, nil
@@ -300,6 +336,27 @@ _G.GetLocale = function()
 end
 
 _G.STANDARD_TEXT_FONT = "Fonts\\FRIZQT__.TTF"
+
+-- Font objects: Stub.fontFailure makes SetFont report that the file could not be loaded.
+_G.CreateFont = function(name)
+    local font = { name = name }
+    function font.SetFont(self, file, size, flags)
+        if Stub.fontFailure and file ~= _G.STANDARD_TEXT_FONT then
+            return false
+        end
+        self.file, self.size, self.flags = file, size, flags
+        return true
+    end
+    function font.SetTextColor() end
+    function font.SetShadowOffset() end
+    function font.SetShadowColor() end
+    return font
+end
+-- Stub.screenHeight is the physical pixel height reported to the pixel helpers.
+Stub.screenHeight = 1080
+_G.GetPhysicalScreenSize = function()
+    return Stub.screenHeight * 16 / 9, Stub.screenHeight
+end
 _G.ITEM_QUALITY_COLORS = setmetatable({}, {
     __index = function()
         return { r = 1, g = 1, b = 1 }
@@ -393,21 +450,6 @@ _G.UnitFactionGroup = function()
 end
 _G.UnitLevel = function()
     return Stub.player.level
-end
-
--- Dropdown helpers record what a menu would show; specs drive them through Stub.menus.
-_G.UIDropDownMenu_SetWidth = function() end
-_G.UIDropDownMenu_SetText = function(dropdown, text)
-    dropdown.menuText = text
-end
-_G.UIDropDownMenu_Initialize = function(dropdown, initializer)
-    dropdown.initializer = initializer
-end
-_G.UIDropDownMenu_CreateInfo = function()
-    return {}
-end
-_G.UIDropDownMenu_AddButton = function(info)
-    table.insert(Stub.menus, info)
 end
 
 Stub.reset()

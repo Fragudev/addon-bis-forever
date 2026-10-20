@@ -41,9 +41,7 @@ local function findListWithItem(predicate)
 end
 
 local function chooseOption(dropdown, label)
-    WowStub.menus = {}
-    dropdown.initializer(dropdown, 1)
-    for _, info in ipairs(WowStub.menus) do
+    for _, info in ipairs(dropdown.getItems()) do
         if info.text == label then
             return info.func()
         end
@@ -61,7 +59,7 @@ end
 
 local function iconButtons(size)
     return WowStub.find("Button", function(button)
-        return button.width == size and button.height == size and button.scripts.OnEnter
+        return button.width == size and button.height == size and button.scripts.OnEnter and not button.skin
     end)
 end
 
@@ -299,7 +297,7 @@ describe("ForeverBiS interactions", function()
             searchBox:SetText("abc")
             WowStub.fire(searchBox, "OnTextChanged")
             local clear = WowStub.find("Button", function(b)
-                return b.text == "x"
+                return b.parent == searchBox
             end)[1]
             assert.is_true(clear:IsShown())
             click(clear)
@@ -328,7 +326,7 @@ describe("ForeverBiS interactions", function()
             WowStub.equipped[slotID] = itemID
             _G.SlashCmdList["FOREVERBIS"]()
             local checks = WowStub.find("Texture", function(t)
-                return t.texture == "Interface\\RaidFrame\\ReadyCheck-Ready"
+                return t.texture == WowStub.ns.Theme.Icon("check")
             end)
             assert.is_true(#checks > 0)
         end)
@@ -512,14 +510,13 @@ describe("ForeverBiS phase selector", function()
 
     it("lists Auto first, then every phase of the route in order", function()
         WowStub.load({ class = "druid", build = "" }, withSecondPhase, playerAt(35))
-        WowStub.menus = {}
-        ForeverBiSPhaseDropDown.initializer(ForeverBiSPhaseDropDown, 1)
+        local menu = ForeverBiSPhaseDropDown.getItems()
         local labels = {}
-        for _, info in ipairs(WowStub.menus) do
+        for _, info in ipairs(menu) do
             labels[#labels + 1] = info.text
         end
         assert.are.same({ "Auto (Level 40)", "Level 30", "Level 40" }, labels)
-        assert.is_true(WowStub.menus[1].checked)
+        assert.is_true(menu[1].checked)
     end)
 
     it("renders the chosen phase and stores it, and Auto clears it", function()
@@ -596,7 +593,7 @@ describe("ForeverBiS phase selector", function()
         --- The progress frame is the live frame with an OnEnter handler and the line's size, shown or not.
         local function progressFrame()
             for _, candidate in ipairs(WowStub.frames) do
-                if candidate.scripts.OnEnter and candidate.width == 78 and candidate.height == 20 then
+                if candidate.scripts.OnEnter and candidate.width == 110 and candidate.height == 26 then
                     return candidate
                 end
             end
@@ -628,7 +625,7 @@ describe("ForeverBiS phase selector", function()
             return ForeverBiSModel.progress(currentList(), { equipped = {} }).total
         end
 
-        it("shows BiS x/y with a gold fill that follows the owned items", function()
+        it("shows BiS x/y with an accent fill that follows the owned items", function()
             WowStub.load({ class = "druid", build = "" })
             local text = assert(progressText())
             assert.are.equal("BiS 0/" .. totalSlots(), text.text)
@@ -642,12 +639,13 @@ describe("ForeverBiS phase selector", function()
             assert.are.equal("BiS 1/" .. totalSlots(), refreshed.text)
             local fill
             for _, region in ipairs(refreshed.parent.regions) do
-                if region.shown and region.height == 4 and region.width ~= 78 then
+                if region.shown and region.height == 6 and region.width ~= 110 then
                     fill = region
                 end
             end
             assert.is_truthy(fill)
-            assert.are.equal(78 / totalSlots(), fill.width)
+            assert.are.equal(110 / totalSlots(), fill.width)
+            assert.is_near(0x3F / 255, fill.colorTexture[1], 0.001)
         end)
 
         it("updates after a bag change and flags upgrades in the bags", function()
@@ -668,7 +666,7 @@ describe("ForeverBiS phase selector", function()
 
         local function gearIcons()
             return WowStub.find("Button", function(button)
-                return button.width == 32 and button.height == 32 and button.scripts.OnClick
+                return button.width == 32 and button.height == 32 and button.scripts.OnClick and not button.skin
             end)
         end
 
@@ -678,7 +676,8 @@ describe("ForeverBiS phase selector", function()
 
         local function isRedBorder(button)
             for _, region in ipairs(button.regions) do
-                if region.vertexColor and region.vertexColor[2] < 0.5 then
+                local color = region.colorTexture
+                if color and color[1] > 0.8 and color[2] < 0.5 then
                     return true
                 end
             end

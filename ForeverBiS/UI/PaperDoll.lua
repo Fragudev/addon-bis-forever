@@ -5,8 +5,8 @@ local _, ns = ...
 local PaperDoll = {}
 ns.PaperDoll = PaperDoll
 
-local Catalog, Filters, Settings, Items, Inventory, ItemWidgets, Player, L =
-    ns.Catalog, ns.Filters, ns.Settings, ns.Items, ns.Inventory, ns.ItemWidgets, ns.Player, ns.L
+local Catalog, Filters, Settings, Items, Inventory, ItemWidgets, Player, Theme, Skin, L =
+    ns.Catalog, ns.Filters, ns.Settings, ns.Items, ns.Inventory, ns.ItemWidgets, ns.Player, ns.Theme, ns.Skin, ns.L
 
 local gearPanel, gearContent, characterModel, equippedOnlyButton
 local showEquippedOnly = false
@@ -51,11 +51,13 @@ local function createCharacterModel()
 end
 
 local function createEquippedOnlyButton()
-    equippedOnlyButton = CreateFrame("Button", nil, gearPanel, "UIPanelButtonTemplate")
-    equippedOnlyButton:SetSize(142, 20)
-    equippedOnlyButton:SetPoint("TOP", gearPanel, "TOP", 0, -30)
+    equippedOnlyButton = CreateFrame("Button", nil, gearPanel)
+    equippedOnlyButton:SetSize(142, Theme.metrics.button)
+    equippedOnlyButton:SetPoint("TOPRIGHT", gearPanel, "TOPRIGHT", -14, -30)
+    Skin.button(equippedOnlyButton, "secondary")
     local function updateText()
         equippedOnlyButton:SetText(showEquippedOnly and L["Equipped Only: On"] or L["Equipped Only: Off"])
+        Skin.setActive(equippedOnlyButton, showEquippedOnly)
     end
     equippedOnlyButton:SetScript("OnClick", function()
         showEquippedOnly = not showEquippedOnly
@@ -76,25 +78,15 @@ end
 
 --- Builds the panel inside the window frame and returns it, so the progress line can sit on it.
 function PaperDoll.create(parent)
-    gearPanel = CreateFrame("Frame", nil, parent, "BackdropTemplate")
-    gearPanel:SetPoint("TOPRIGHT", parent, "TOPRIGHT", -18, -84)
-    gearPanel:SetSize(330, 390)
-    gearPanel:SetBackdrop({
-        bgFile = "Interface\\Tooltips\\UI-Tooltip-Background",
-        edgeFile = "Interface\\DialogFrame\\UI-DialogBox-Border",
-        tile = true,
-        tileSize = 16,
-        edgeSize = 18,
-        insets = { left = 4, right = 4, top = 4, bottom = 4 },
-    })
-    gearPanel:SetBackdropColor(0.18, 0.12, 0.07, 0.92)
-    gearPanel:SetBackdropBorderColor(0.58, 0.39, 0.18, 1)
-    local gearTitle = gearPanel:CreateFontString(nil, "OVERLAY", "GameFontNormal")
-    gearTitle:SetPoint("TOP", gearPanel, "TOP", 0, -12)
-    gearTitle:SetText("|cffffe35b" .. L["BEST IN SLOT"] .. "|r")
+    gearPanel = CreateFrame("Frame", nil, parent)
+    gearPanel:SetPoint("TOPRIGHT", parent, "TOPRIGHT", -20, -98)
+    gearPanel:SetSize(330, 396)
+    Skin.card(gearPanel)
+    local gearTitle = Skin.sectionLabel(Skin.label(gearPanel, 11, "semibold", "muted"), L["BEST IN SLOT"])
+    gearTitle:SetPoint("TOPLEFT", gearPanel, "TOPLEFT", 14, -14)
     createEquippedOnlyButton()
     gearContent = CreateFrame("Frame", nil, gearPanel)
-    gearContent:SetPoint("TOPLEFT", gearPanel, "TOPLEFT", 5, -55)
+    gearContent:SetPoint("TOPLEFT", gearPanel, "TOPLEFT", 5, -64)
     gearContent:SetPoint("BOTTOMRIGHT", gearPanel, "BOTTOMRIGHT", -5, 5)
     createCharacterModel()
     return gearPanel
@@ -115,8 +107,8 @@ end
 
 local function addPlayerLabels()
     local player = Player.identity()
-    local nameLabel = gearContent:CreateFontString(nil, "OVERLAY", "GameFontNormal")
-    nameLabel:SetPoint("TOP", gearContent, "TOP", 0, -242)
+    local nameLabel = Skin.label(gearContent, 15, "semibold", "text")
+    nameLabel:SetPoint("TOP", gearContent, "TOP", 0, -238)
     nameLabel:SetWidth(gearContent:GetWidth() - 24)
     nameLabel:SetJustifyH("CENTER")
     local fullName = player.name
@@ -125,20 +117,17 @@ local function addPlayerLabels()
     end
     nameLabel:SetText(fullName)
 
-    local classLabel = gearContent:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-    classLabel:SetPoint("TOP", gearContent, "TOP", 0, -257)
+    local classLabel = Skin.label(gearContent, 12, "regular", "dim")
+    classLabel:SetPoint("TOP", gearContent, "TOP", 0, -259)
     classLabel:SetText(player.className)
     local classColor = RAID_CLASS_COLORS and RAID_CLASS_COLORS[player.classToken]
     if classColor then
         classLabel:SetTextColor(classColor.r, classColor.g, classColor.b)
-    else
-        classLabel:SetTextColor(1, 1, 1)
     end
 
-    local levelLabel = gearContent:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-    levelLabel:SetPoint("TOP", gearContent, "TOP", 0, -272)
+    local levelLabel = Skin.label(gearContent, 12, "regular", "dim")
+    levelLabel:SetPoint("TOP", gearContent, "TOP", 0, -274)
     levelLabel:SetText(L["Level %s"]:format(tostring(player.level)))
-    levelLabel:SetTextColor(1, 0.89, 0.35)
 end
 
 --- Makes the item visible in the list (clearing filters that hide it, expanding its slot), then scrolls to it.
@@ -171,8 +160,16 @@ local function addSlotButton(view, item, slot, x, y, anchor)
     texture:SetAllPoints(button)
     texture:SetTexture(Items.icon(item[1]))
     texture:SetDesaturated(missing)
-    ItemWidgets.addQualityBorder(button, item[1], missing)
+    local border = ItemWidgets.addQualityBorder(button, item[1], missing)
     ItemWidgets.addOwnershipMark(button, item[1], slot.markSlot)
+    -- The border turns accent while the mouse is over the slot, then goes back to its rarity (or missing) color.
+    local baseColor = missing and "danger" or { Items.qualityColor(item[1]) }
+    button:HookScript("OnEnter", function()
+        border:SetColor("accent")
+    end)
+    button:HookScript("OnLeave", function()
+        border:SetColor(baseColor)
+    end)
     button:SetScript("OnEnter", function(self)
         ItemWidgets.showItemTooltip(self, anchor, item[1])
         GameTooltip:AddLine(L["Best in slot: %s"]:format(slot.label), 1, 0.89, 0.35)
@@ -246,7 +243,7 @@ function PaperDoll.refresh(view)
     local gearDrawn = addGearSlots(view)
     local weaponsDrawn = addWeaponSlots(view)
     if showEquippedOnly and not (gearDrawn or weaponsDrawn) then
-        local empty = gearContent:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
+        local empty = Skin.label(gearContent, 12, "regular", "muted")
         empty:SetPoint("CENTER", gearContent, "CENTER", 0, 0)
         empty:SetWidth(gearContent:GetWidth() - 36)
         empty:SetJustifyH("CENTER")

@@ -4,11 +4,11 @@ local _, ns = ...
 local Progress = {}
 ns.Progress = Progress
 
-local Catalog, Inventory, Sources, L = ns.Catalog, ns.Inventory, ns.Sources, ns.L
+local Catalog, Inventory, Sources, Theme, Skin, L = ns.Catalog, ns.Inventory, ns.Sources, ns.Theme, ns.Skin, ns.L
 
 local TOOLTIP_LINES = 8
 local SOURCE_LENGTH = 36
-local BAR_WIDTH = 78
+local BAR_WIDTH = 110
 
 local progressFrame, progressText, progressFill
 -- The last computed progress and its heading, read by the tooltip.
@@ -101,20 +101,17 @@ end
 --- Builds the line and bar on the gear panel.
 function Progress.create(parent)
     progressFrame = CreateFrame("Frame", nil, parent)
-    progressFrame:SetSize(BAR_WIDTH, 20)
-    progressFrame:SetPoint("TOPLEFT", parent, "TOPLEFT", 14, -30)
+    progressFrame:SetSize(BAR_WIDTH, 26)
+    progressFrame:SetPoint("TOPLEFT", parent, "TOPLEFT", 14, -32)
     progressFrame:EnableMouse(true)
-    progressText = progressFrame:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+    progressText = Skin.label(progressFrame, 12, "regular", "dim")
     progressText:SetPoint("TOPLEFT", progressFrame, "TOPLEFT", 0, 0)
     local track = progressFrame:CreateTexture(nil, "BACKGROUND")
-    track:SetTexture("Interface\\Buttons\\WHITE8X8")
-    track:SetVertexColor(0.05, 0.03, 0.02, 0.9)
-    track:SetSize(BAR_WIDTH, 4)
+    track:SetColorTexture(Theme.Color("control"))
+    track:SetSize(BAR_WIDTH, Theme.metrics.bar)
     track:SetPoint("BOTTOMLEFT", progressFrame, "BOTTOMLEFT", 0, 0)
     progressFill = progressFrame:CreateTexture(nil, "ARTWORK")
-    progressFill:SetTexture("Interface\\Buttons\\WHITE8X8")
-    progressFill:SetVertexColor(1, 0.82, 0.2, 1)
-    progressFill:SetHeight(4)
+    progressFill:SetHeight(Theme.metrics.bar)
     progressFill:SetPoint("BOTTOMLEFT", progressFrame, "BOTTOMLEFT", 0, 0)
     progressFrame:SetScript("OnEnter", showTooltip)
     progressFrame:SetScript("OnLeave", function()
@@ -138,6 +135,7 @@ function Progress.refresh(view)
     currentLabel = routeLabel and phaseLabel and (routeLabel .. " - " .. phaseLabel) or routeLabel or L["BiS"]
     progressText:SetText(L["BiS %d/%d"]:format(current.bis, current.total))
     if current.bis > 0 then
+        progressFill:SetColorTexture(Theme.Color(current.bis >= current.total and "success" or "accent"))
         progressFill:SetWidth(BAR_WIDTH * current.bis / current.total)
         progressFill:Show()
     else

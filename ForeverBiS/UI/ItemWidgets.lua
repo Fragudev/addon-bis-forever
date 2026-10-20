@@ -4,53 +4,38 @@ local _, ns = ...
 local ItemWidgets = {}
 ns.ItemWidgets = ItemWidgets
 
-local Items, Inventory, L = ns.Items, ns.Inventory, ns.L
+local Items, Inventory, Pixel, Skin, Theme, L = ns.Items, ns.Inventory, ns.Pixel, ns.Skin, ns.Theme, ns.L
 
--- Border of an icon whose slot still lacks its BiS item: subtle, but readable on every rarity and the brown frame.
-local MISSING_BORDER = { 0.85, 0.2, 0.2 }
-
---- A 2px border around an icon button in the item's rarity color, or red when its slot is missing the BiS item.
+--- A 1px border around an icon button in the item's rarity color, or the danger color when its slot is missing the
+--- BiS item. Returns the border, so a button can tint it while hovered.
 function ItemWidgets.addQualityBorder(button, itemName, missing)
-    local red, green, blue = Items.qualityColor(itemName)
-    if missing then
-        red, green, blue = MISSING_BORDER[1], MISSING_BORDER[2], MISSING_BORDER[3]
-    end
-    local width, height = button:GetWidth(), button:GetHeight()
-    local borderSize = 2
-    local function addEdge(point, edgeWidth, edgeHeight)
-        local edge = button:CreateTexture(nil, "OVERLAY")
-        edge:SetTexture("Interface\\Buttons\\WHITE8X8")
-        edge:SetVertexColor(red, green, blue, 1)
-        edge:SetPoint(point, button, point)
-        edge:SetSize(edgeWidth, edgeHeight)
-    end
-    addEdge("TOPLEFT", width, borderSize)
-    addEdge("BOTTOMLEFT", width, borderSize)
-    addEdge("TOPLEFT", borderSize, height)
-    addEdge("TOPRIGHT", borderSize, height)
+    local color = missing and "danger" or { Items.qualityColor(itemName) }
+    return Pixel.Border(button, color, "OVERLAY")
 end
 
---- A check when the item is equipped in the slot, otherwise the bag count when carried.
+--- A check badge when the item is equipped in the slot, otherwise the bag count when carried.
 --- Returns "equipped" or "bags" with the count, or nil.
-function ItemWidgets.addOwnershipMark(button, itemName, slotName, fullIconCheck)
+function ItemWidgets.addOwnershipMark(button, itemName, slotName)
     local itemID = Items.id(itemName)
     if Inventory.isEquippedInSlot(itemID, slotName) then
-        local check = button:CreateTexture(nil, "OVERLAY")
-        check:SetTexture("Interface\\RaidFrame\\ReadyCheck-Ready")
-        if fullIconCheck then
-            check:SetAllPoints(button)
-        else
-            check:SetSize(13, 13)
-            check:SetPoint("BOTTOMRIGHT", button, "BOTTOMRIGHT", 1, -1)
-        end
+        local badge = button:CreateTexture(nil, "OVERLAY")
+        badge:SetSize(14, 14)
+        badge:SetPoint("BOTTOMRIGHT", button, "BOTTOMRIGHT", 0, 0)
+        badge:SetColorTexture(Theme.Color("bg", 0.85))
+        local check = button:CreateTexture(nil, "OVERLAY", nil, 1)
+        check:SetSize(12, 12)
+        check:SetPoint("CENTER", badge, "CENTER", 0, 0)
+        Skin.icon(check, "check", "success")
         return "equipped", 0
     end
     local count = Inventory.bagCount(itemID)
     if count > 0 then
-        local bagCount = button:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+        local bagCount = Skin.label(button, 11, "semibold", "warning")
         bagCount:SetPoint("BOTTOMRIGHT", button, "BOTTOMRIGHT", 3, -1)
+        -- A soft shadow keeps the number readable over item art.
+        bagCount:SetShadowOffset(1, -1)
+        bagCount:SetShadowColor(0, 0, 0, 0.8)
         bagCount:SetText(L["x%d"]:format(count))
-        bagCount:SetTextColor(1, 0.82, 0.2)
         return "bags", count
     end
     return nil, 0

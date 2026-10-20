@@ -10,6 +10,7 @@ local translations = {
         ["Auto (%s)"] = "Auto (%s)",
         ["Clear filters"] = "Borrar filtros",
         ["No items match the current search and filters."] = "Ningún objeto coincide con la búsqueda y los filtros.",
+        ["Try a different search, or clear the filters."] = "Prueba otra búsqueda o borra los filtros.",
         ["Search item, boss or zone"] = "Buscar objeto, jefe o zona",
         ["Equipped Only: On"] = "Solo equipado: Sí",
         ["Equipped Only: Off"] = "Solo equipado: No",

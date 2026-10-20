@@ -27,9 +27,9 @@ WoW Forever addon (Interface 16001). Use `/bis` or `/foreverbis` in-game to open
 
 ## Using the addon
 
-Choose a class and build from the dropdowns. Your selection is saved between sessions. On login the addon selects your character's class automatically until you pick a class yourself; builds are never detected, so choose yours from the Build dropdown. When a build has lists for more than one phase, a phase dropdown appears beside the build selector: `Auto` shows the list for your character's level (the lowest phase at or above your level, or the latest phase once you pass them all), and you can pin any other phase instead. The selector stays hidden while a build has a single phase. The filter bar above the list is always visible. Search matches the item name, boss, or zone, and the `x` clears it. The four icon buttons (quest, dungeon or raid, world, profession) filter by source and can be combined; the dungeon picker appears while the dungeon button is active. The faction button shows your faction only (click it for both) and is hidden when the client does not report a faction. The maker button cycles on each click through `Maker: all` (everything), `Maker: only` (just the profession items only their maker can wear), and `Maker: hide` (everything except those); tradeable crafted items count as regular items. A counter shows `shown/total` while a filter hides items, and the empty state offers `Clear filters`. Highlighted buttons are active filters.
+Choose a class and build from the dropdowns. Your selection is saved between sessions. On login the addon selects your character's class automatically until you pick a class yourself; builds are never detected, so choose yours from the Build dropdown. When a build has lists for more than one phase, a phase dropdown appears beside the build selector: `Auto` shows the list for your character's level (the lowest phase at or above your level, or the latest phase once you pass them all), and you can pin any other phase instead. The selector stays hidden while a build has a single phase. The filter bar above the list is always visible. Search matches the item name, boss, or zone, and the close icon in the box clears it. The four icon buttons (quest, dungeon or raid, world, profession) filter by source and can be combined; the dungeon picker appears while the dungeon button is active. The faction button shows your faction only (click it for both) and is hidden when the client does not report a faction. The maker button cycles on each click through `Maker: all` (everything), `Maker: only` (just the profession items only their maker can wear), and `Maker: hide` (everything except those); tradeable crafted items count as regular items. A counter shows `shown/total` while a filter hides items, and the empty state offers `Clear filters`. Active filters show a lighter button with blue text and a blue underline.
 
-Faction-exclusive items show a faction emblem and a red Horde or blue Alliance label. Use the plus/minus button beside a slot heading to collapse or expand its list. Each item row shows its rank, icon with a rarity-colored border, item name in its rarity color, and source. Boss or source names and their locations use separate colors. Drop rates omit the redundant Classic label. A green check marks items equipped in that slot, and a gold `xN` marks copies in your bags.
+Faction-exclusive items show a faction emblem and a red Horde or blue Alliance label. Use the arrow beside a slot heading to collapse or expand its list. Each item row shows its rank, icon with a rarity-colored border, item name in its rarity color, and source. Boss or source names and their locations use separate colors. Drop rates omit the redundant Classic label. A green check badge marks items equipped in that slot, and an amber `xN` marks copies in your bags.
 
 ## Sharing in chat
 
@@ -52,9 +52,9 @@ Any item tooltip in the game (bags, equipped gear, links, vendors, the auction h
 
 Hover over an item icon to see its tooltip. The help icon on the selector row explains the addon features; hover to read it or click to keep it open.
 
-The right-side paper-doll panel has a brown character-panel frame, with item icons arranged around a static render of your character. Each item icon has a border matching its rarity. `Equipped Only` filters the panel to BiS-ranked items already equipped in their matching slots, including the correct first or second ring and trinket slots. The three weapon slots are grouped together in the center below the character. Click a BiS icon to jump to its slot in the list.
+The right-side paper-doll panel is a dark card, with item icons arranged around a static render of your character. Each item icon has a border matching its rarity (red when the slot still lacks its BiS item, blue while hovered). `Equipped Only` filters the panel to BiS-ranked items already equipped in their matching slots, including the correct first or second ring and trinket slots. The three weapon slots are grouped together in the center below the character. Click a BiS icon to jump to its slot in the list.
 
-The progress line beside `Equipped Only` (for example `BiS 3/17` with a thin gold bar) shows how many tracked slots of the selected build and phase already hold their BiS item; a slot counts as BiS when its top-ranked item is equipped, and rings and trinkets need the top two items in either order. Hover it for the build and phase, the BiS and `Listed` (at least one listed item equipped) totals, and up to eight slots with the next item to get and where it comes from; items already in your bags are prefixed with `Equip:`, and `+N more` marks a truncated list. Weapon variants (one-hand, two-hand, shield, held item) share one position each, and enchants are not part of the count. The line hides when the list has no trackable slots.
+The progress line beside `Equipped Only` (for example `BiS 3/17` with a thin blue bar that turns green when the list is complete) shows how many tracked slots of the selected build and phase already hold their BiS item; a slot counts as BiS when its top-ranked item is equipped, and rings and trinkets need the top two items in either order. Hover it for the build and phase, the BiS and `Listed` (at least one listed item equipped) totals, and up to eight slots with the next item to get and where it comes from; items already in your bags are prefixed with `Equip:`, and `+N more` marks a truncated list. Weapon variants (one-hand, two-hand, shield, held item) share one position each, and enchants are not part of the count. The line hides when the list has no trackable slots.
 
 The window opens at its minimum size and can be enlarged vertically from its bottom edge; the minimum size keeps the BiS panel visible. Drag the minimap button around the minimap to reposition it. The minimap icon (a gold "FB" monogram inside the gold ring) is `ForeverBiSMinimapIcon.tga`; regenerate its artwork with `python3 tools/generate_minimap_icon.py`.
 
@@ -71,7 +71,8 @@ ForeverBiS/
   ForeverBiS_Data.lua, ForeverBiS_Model.lua, ForeverBiS_Tooltip.lua
   Core/      Settings, Catalog, Sources, Filters, Lists
   Adapters/  Items, Inventory, Player
-  UI/        MainFrame, ItemWidgets, Selectors, Help, FilterBar, ItemRows, ItemList, PaperDoll, Progress, Minimap
+  UI/        Theme, Pixel, Skin, Dropdown (the look), MainFrame, ItemWidgets, Selectors, Help, FilterBar, ItemRows,
+             ItemList, PaperDoll, Progress, Minimap, DungeonNotice
   App/       Events, Commands
   ForeverBiS.lua  (composition root)
 ```
@@ -81,6 +82,7 @@ ForeverBiS/
 - **Core** is pure logic (class and build catalog, source parsing, filters, saved variables). `Core/Settings.lua` is the only file that reads or writes `ForeverBiSDB`.
 - **UI** panels never call each other. They share state through Core (for example `Filters.state`) and ask for a redraw with `ns.requestRender()`; its options are `scrollTop` and `jumpTo`.
 - **App** owns the client events and the slash commands. A new slash command is one entry in `Commands.handlers`.
+- The look lives in `UI/Theme.lua` (colors, fonts, metrics), `UI/Pixel.lua` (pixel-snapped borders), `UI/Skin.lua` (helpers that paint raw frames) and `UI/Dropdown.lua` (the dropdown list). Panels ask them instead of hard-coding colors; the design is documented in [docs/REDESIGN_PLAN.md](docs/REDESIGN_PLAN.md).
 - `ForeverBiS.lua` only creates the panels and defines `ns.requestRender()`.
 
 `.luacheckrc` enforces the rule: a file that uses an API outside its layer fails `luacheck` as an undefined variable. To add a file, list it in `ForeverBiS.toc` (specs load files from the `.toc`, so the test stubs need no change).
@@ -90,3 +92,7 @@ ForeverBiS/
 The released addon package must include `ForeverBiS_Data.lua` with the current lists. Players only need to install or update the addon normally, then select a class and build in-game. WoW addons cannot make web requests, so ForeverChanges updates must be collected and bundled by the addon maintainer before publishing a new addon version. `UpdateForeverBiS.py` is a maintainer tool and is not part of the player's installation steps.
 
 The updater derives each list's phase from its title (for example "at level 30") and writes schema 2. The updater leaves the previous data file untouched if it cannot download or parse every discovered page.
+
+## Credits
+
+The interface uses the [Fira Sans](https://github.com/mozilla/Fira) typeface (Regular, Medium and SemiBold), licensed under the SIL Open Font License 1.1; the license text ships next to the fonts in `ForeverBiS/Media/Fonts/OFL.txt`. The stroke icons in `ForeverBiS/Media/Icons/` are original artwork.

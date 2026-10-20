@@ -5,8 +5,11 @@ local function noticeButton()
 end
 
 local function noticeText()
-    local fontString = noticeButton().regions[1]
-    return fontString and fontString.text
+    for _, region in ipairs(noticeButton().regions) do
+        if region.text and region.text:find("BiS items", 1, true) then
+            return region.text
+        end
+    end
 end
 
 local function enter(name, kind)

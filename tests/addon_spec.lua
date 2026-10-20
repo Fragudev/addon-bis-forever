@@ -6,18 +6,16 @@ local function firstSlotWithEnchants(listKey)
     end
 end
 
-local function menuLabels()
+local function menuLabels(menu)
     local labels = {}
-    for _, info in ipairs(WowStub.menus) do
+    for _, info in ipairs(menu) do
         table.insert(labels, info.text)
     end
     return labels
 end
 
 local function openMenu(dropdown)
-    WowStub.menus = {}
-    dropdown.initializer(dropdown, 1)
-    return WowStub.menus
+    return dropdown.getItems()
 end
 
 describe("ForeverBiS", function()
@@ -233,7 +231,7 @@ describe("ForeverBiS", function()
             WowStub.load(nil)
             local menu = openMenu(ForeverBiSClassDropDown)
             assert.is_true(#menu >= 9)
-            local labels = menuLabels()
+            local labels = menuLabels(menu)
             for _, expected in ipairs({ "Rogue", "Druid", "Warrior", "Mage" }) do
                 assert.is_truthy(table.concat(labels, ","):find(expected, 1, true), expected)
             end
