@@ -1340,9 +1340,9 @@ ForeverBiSData = {
             },
             { slot = "Relic",
               items = {
-                { id = 263435, name = "Mark of Urs'endris", source = { kind = "world", text = "Urs'endris, the bear spirit of Zephras Isle Reported, not checked", reported = true } },
                 { id = 263411, name = "Idol of Shifting Tides", source = { kind = "quest", text = "Druid quest Aquatic Form, level 16, both factions" } },
                 { id = 249396, name = "Mystic Mushroom", source = { kind = "profession", text = "Enchanting (130) Only its maker can wear it", skill = "Enchanting", skillLevel = 130, bindsToMaker = true } },
+                { id = 263435, name = "Mark of Urs'endris", source = { kind = "unknown", text = "Where it comes from is not known yet Nothing places it yet: tell us if you know" } },
               },
             },
           },
@@ -2314,8 +2314,8 @@ ForeverBiSData = {
             { slot = "Neck",
               items = {
                 { id = 274749, name = "Souvenir Sea Shell", source = { kind = "world", text = "Sold by Gezzy Gunkgear in Booty Bay At Honored with Booty Bay" } },
-                { id = 12029, name = "Greenstone Talisman of the Sorcerer", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 35 random suffixes, each with its own stats: search for the full name" } },
                 { id = 286995, name = "Guardian's Emblem", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
+                { id = 12029, name = "Greenstone Talisman of the Sorcerer", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 35 random suffixes, each with its own stats: search for the full name" } },
                 { id = 7731, name = "Ghostshard Talisman", source = { kind = "world", text = "Azshir the Sleepless, Scarlet Monastery Graveyard 33.93% in Classic", zone = "Scarlet Monastery", boss = "Azshir the Sleepless", dropRate = 33.93 } },
                 { id = 7746, name = "Explorers' League Commendation", source = { kind = "quest", text = "Quest: Mythology of the Titans Alliance, level 38 in Classic, from level 28", faction = "Alliance", quest = "Mythology of the Titans" } },
                 { id = 13087, name = "River Pride Choker", source = { kind = "world", text = "World drop, sold at the auction house" } },
@@ -2331,7 +2331,7 @@ ForeverBiSData = {
                 { id = 6697, name = "Batwing Mantle", source = { kind = "world", text = "Blind Hunter, Razorfen Kraul 32.73% in Classic", zone = "Razorfen Kraul", boss = "Blind Hunter", dropRate = 32.73 } },
                 { id = 14201, name = "Thistlefur Mantle of the Eagle", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 24 random suffixes, each with its own stats: search for the full name" } },
                 { id = 7684, name = "Bloodmage Mantle", source = { kind = "world", text = "Bloodmage Thalnos, Scarlet Monastery Graveyard 47.84% in Classic", zone = "Scarlet Monastery", boss = "Bloodmage Thalnos", dropRate = 47.84 } },
-                { id = 12998, name = "Magician's Mantle", source = { kind = "world", text = "World drop, sold at the auction house" } },
+                { id = 284399, name = "Seared Grove Shoulderpads", source = { kind = "world", text = "Sister Riven, the rare harpy of the Charred Vale Reported, not checked", reported = true } },
               },
             },
             { slot = "Back",
@@ -2380,7 +2380,7 @@ ForeverBiSData = {
                 { id = 14211, name = "Vital Handwraps of the Eagle", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 24 random suffixes, each with its own stats: search for the full name" } },
                 { id = 3759, name = "Insulated Sage Gloves", source = { kind = "quest", text = "Quest: Syndicate Assassins Alliance, level 33 in Classic, from level 26", faction = "Alliance", quest = "Syndicate Assassins" } },
                 { id = 4040, name = "Nightsky Gloves", source = { kind = "world", text = "World drop, sold at the auction house" } },
-                { id = 286989, name = "Violet Sorcerer's Wraps", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
+                { id = 16740, name = "Shredder Operating Gloves", source = { kind = "quest", text = "Quest: The Lost Pages Horde, level 30 in Classic, from level 23", faction = "Horde", quest = "The Lost Pages" } },
               },
               enchants = {
                 { effect = "Stamina +3 and Armor +24", spell = "Heavy Armor Kit", source = "Leatherworking 150: Taught by the trainer." },
@@ -2413,8 +2413,8 @@ ForeverBiSData = {
               items = {
                 { id = 254005, name = "Fiery Slippers", source = { kind = "profession", text = "Tailoring (150) Only its maker can wear it Pattern: not needed, tailoring trainers teach the recipe at 150 Requires Spinning Wheel. Happy Camper sells its blueprint for 15s, just outside Ironforge", skill = "Tailoring", skillLevel = 150, bindsToMaker = true } },
                 { id = 286987, name = "Violet Sorcerer's Sandals", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
-                { id = 9845, name = "Conjurer's Shoes of the Eagle", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 24 random suffixes, each with its own stats: search for the full name" } },
                 { id = 279843, name = "Enchanted Sandals", source = { kind = "quest", text = "Quest: Heart of Disruption City of Dalaran, Horde, from level 24", faction = "Horde", quest = "Heart of Disruption City of Dalaran" } },
+                { id = 9845, name = "Conjurer's Shoes of the Eagle", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 24 random suffixes, each with its own stats: search for the full name" } },
                 { id = 4139, name = "Junglewalker Sandals", source = { kind = "quest", text = "Quest: Report to Doren Alliance, level 37 in Classic, from level 30", faction = "Alliance", quest = "Report to Doren" } },
                 { id = 273024, name = "Glinteye Slippers", source = { kind = "world", text = "Saltspine, Excavation Site: Wetlands" } },
               },
@@ -2843,10 +2843,10 @@ ForeverBiSData = {
               items = {
                 { id = 4983, name = "Rock Pulverizer", source = { kind = "quest", text = "Quest: Murdaloc Alliance, level 42 in Classic, from level 30 Three quests from Ironforge to the Badlands Take a group: Murdaloc is level 42", faction = "Alliance", quest = "Murdaloc" } },
                 { id = 6687, name = "Corpsemaker", source = { kind = "world", text = "Overlord Ramtusk, Razorfen Kraul 33.83% in Classic", zone = "Razorfen Kraul", boss = "Overlord Ramtusk", dropRate = 33.83 } },
+                { id = 286983, name = "Ancient Cleaver", source = { kind = "world", text = "Trash mobs, Excavation Site: Wetlands" } },
                 { id = 270071, name = "Dark Hearted Hammer", source = { kind = "quest", text = "Quest: Colonel Kurzen Alliance, from level 30, reported, not checked", faction = "Alliance", quest = "Colonel Kurzen", reported = true } },
                 { id = 4128, name = "Silver Spade", source = { kind = "quest", text = "Quest: Venture Company Mining level 41 in Classic, from level 30", quest = "Venture Company Mining" } },
                 { id = 279841, name = "Defender of Dalaran", source = { kind = "quest", text = "Quest: Heart of Disruption City of Dalaran, Alliance, from level 24", faction = "Alliance", quest = "Heart of Disruption City of Dalaran" } },
-                { id = 270085, name = "Master Hunter's Spellsword", source = { kind = "world", text = "Big Game Hunter, after Nesingwary's three Mastery chains, Stranglethorn Vale King Bangalash is a level 43 elite: very hard at level 30" } },
               },
               enchants = {
                 { effect = "Weapon Damage +6", spell = "Enchant 2H Weapon - Impact", source = "Enchanting 200: Taught by the trainer." },
@@ -7137,8 +7137,8 @@ ForeverBiSData = {
               items = {
                 { id = 273810, name = "Ogre Grips", source = { kind = "world", text = "Hamhock, The Stockade", zone = "The Stockade", boss = "Hamhock" } },
                 { id = 286992, name = "Construct's Grips", source = { kind = "world", text = "Trash mobs, City of Dalaran" } },
-                { id = 14764, name = "Enduring Gauntlets", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 9868, name = "Renegade Gauntlets of the Bear", source = { kind = "world", text = "World drop, sold at the auction house It drops with one of 32 random suffixes, each with its own stats: search for the full name" } },
+                { id = 14764, name = "Enduring Gauntlets", source = { kind = "world", text = "World drop, sold at the auction house" } },
                 { id = 7690, name = "Ebon Vise", source = { kind = "world", text = "Fallen Champion, Scarlet Monastery Graveyard 38.9% in Classic", zone = "Scarlet Monastery", boss = "Fallen Champion", dropRate = 38.9 } },
                 { id = 6727, name = "Razzeric's Racing Grips", source = { kind = "quest", text = "Quest: Safety First level 41 in Classic, from level 29 A chain of ten quests from Pozzik, Shimmering Flats Take a group for Foreman Cozzle (level 38)", quest = "Safety First" } },
               },
