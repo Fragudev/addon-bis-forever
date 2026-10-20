@@ -1,0 +1,35 @@
+.luacheckrc
+  s_d85718f215c9df::t_fb96a08131af50 30
+ForeverBiS/ForeverBiS.toc
+  s_d85718f215c9df::t_56529105cfad4c 27
+ForeverBiS/UI/Dropdown.lua
+  s_d85718f215c9df::t_484431c54be944 1-195
+ForeverBiS/UI/FilterBar.lua
+  s_d85718f215c9df::t_28f0056d332c31 8,150,156-163,166-174
+ForeverBiS/UI/Selectors.lua
+  s_d85718f215c9df::t_5a4e49365e6b21 1,7-10,33-34,37-38,40,43,45,48-49,51,54,56,59,62-67,69,72,74-78,82-89,91-92,98-99,106
+tests/addon_spec.lua
+  s_d85718f215c9df::t_2983c8df6ea1d2 9,11,18,234
+tests/dropdown_spec.lua
+  s_d85718f215c9df::t_4badeb438f39b3 1-156
+tests/interaction_spec.lua
+  s_d85718f215c9df::t_d243a04e347547 44,513,515,519
+tests/stubs/wow_api.lua
+  s_d85718f215c9df::t_addee8ae6ef60f 95,97-99,102,104-109,274
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "67ef8ee73414b947a2a3c2dba9f8ae38f76d070c",
+  "prompts": {},
+  "sessions": {
+    "s_d85718f215c9df": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "6d223d35-2d39-426c-ae70-89f7e952632b",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Francis Gutiérrez <francisge@ext.inditex.com>"
+    }
+  }
+}

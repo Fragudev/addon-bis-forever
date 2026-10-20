@@ -1,0 +1,25 @@
+.luacheckrc
+  s_d85718f215c9df::t_0435fe0899239e 115
+ForeverBiS/UI/MainFrame.lua
+  s_d85718f215c9df::t_4281e1a703f6fc 1-2,7,9-10,16,30-33,44,61-130,134
+tests/interaction_spec.lua
+  s_d85718f215c9df::t_9fe598f599d4d2 668
+tests/mainframe_spec.lua
+  s_d85718f215c9df::t_aa1adb34d20661 1-70
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "59adbe27fd50b52f73cd6b367a889c41650551fc",
+  "prompts": {},
+  "sessions": {
+    "s_d85718f215c9df": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "6d223d35-2d39-426c-ae70-89f7e952632b",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Francis Gutiérrez <francisge@ext.inditex.com>"
+    }
+  }
+}
