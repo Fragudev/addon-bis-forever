@@ -1,0 +1,19 @@
+.github/workflows/release.yml
+  s_601d293f353ae3::t_0418658c5da0f4 93-96
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "be544f2985421560865ec443a8e301507002f083",
+  "prompts": {},
+  "sessions": {
+    "s_601d293f353ae3": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "013f4290-7a09-4a25-b420-4640106dbb21",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Francis Gutiérrez <francisge@ext.inditex.com>"
+    }
+  }
+}
