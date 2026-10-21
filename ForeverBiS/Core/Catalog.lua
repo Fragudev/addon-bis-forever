@@ -119,6 +119,58 @@ function Catalog.defaultBuild(class)
     return class.builds[1]
 end
 
+--- Splits a build label into its mode and spec: "Holy PvP" -> "pvp", "Holy"; "Subtlety PvP, Dagger" -> "pvp",
+--- "Subtlety, Dagger". A label without PvE or PvP ("Tank", "Restoration") is PvE. A bare "PvE" has no spec (nil).
+function Catalog.splitBuild(label)
+    local mode = "pve"
+    if string.find(" " .. label .. " ", "[%s,][Pp][Vv][Pp][%s,]") then
+        mode = "pvp"
+    end
+    local spec = (" " .. label .. " "):gsub("([%s,])[Pp][Vv][PpEe]([%s,])", "%1%2")
+    spec = spec:gsub("%s+,", ","):gsub("%s+", " "):gsub("^[%s,]+", ""):gsub("[%s,]+$", "")
+    return mode, spec ~= "" and spec or nil
+end
+
+--- The modes a class has builds for, PvE first: a subset of { "pve", "pvp" }.
+function Catalog.modes(class)
+    local found = {}
+    for _, build in ipairs(class.builds) do
+        found[(Catalog.splitBuild(build[2]))] = true
+    end
+    local modes = {}
+    for _, mode in ipairs({ "pve", "pvp" }) do
+        if found[mode] then
+            modes[#modes + 1] = mode
+        end
+    end
+    return modes
+end
+
+--- The builds of a class in one mode, in catalog order, each as { build = build, spec = spec name or nil }.
+function Catalog.buildsForMode(class, mode)
+    local builds = {}
+    for _, build in ipairs(class.builds) do
+        local buildMode, spec = Catalog.splitBuild(build[2])
+        if buildMode == mode then
+            builds[#builds + 1] = { build = build, spec = spec }
+        end
+    end
+    return builds
+end
+
+--- The build to switch to when the mode changes: the same spec in the new mode when there is one, else the
+--- first build of that mode. Returns nil when the class has no build in that mode.
+function Catalog.buildForMode(class, current, mode)
+    local _, currentSpec = Catalog.splitBuild(current[2])
+    local builds = Catalog.buildsForMode(class, mode)
+    for _, entry in ipairs(builds) do
+        if entry.spec == currentSpec then
+            return entry.build
+        end
+    end
+    return builds[1] and builds[1].build
+end
+
 --- The data route for a class and build, e.g. "druid/tank".
 function Catalog.routeKey(class, build)
     return class.key .. build[3]
