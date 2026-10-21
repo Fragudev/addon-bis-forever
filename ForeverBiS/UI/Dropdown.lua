@@ -8,6 +8,8 @@ ns.Dropdown = Dropdown
 local Theme, Skin = ns.Theme, ns.Skin
 
 local ROW_HEIGHT, MAX_ROWS, PADDING = 28, 12, 4
+-- Room the button keeps around its text: 10 px on the left, the chevron and its margins on the right.
+local TEXT_CHROME = 38
 local POPOVER_NAME = "ForeverBiSDropdownList"
 
 -- The one list every dropdown shares, built on first use; only one can be open at a time.
@@ -166,11 +168,43 @@ function Dropdown.setText(button, text)
     button.menuText = text
 end
 
+--- The button width that shows the widest of `textWidths` in full, kept between `minWidth` and `maxWidth`.
+function Dropdown.fitWidth(textWidths, minWidth, maxWidth)
+    local widest = 0
+    for _, width in ipairs(textWidths) do
+        widest = math.max(widest, width)
+    end
+    return math.max(minWidth, math.min(maxWidth or math.huge, math.ceil(widest) + TEXT_CHROME))
+end
+
+local function measure(label, text)
+    label:SetText(text)
+    if label.GetUnboundedStringWidth then
+        return label:GetUnboundedStringWidth()
+    end
+    return label:GetStringWidth()
+end
+
+--- Widens the button so every entry it can show fits without being cut, up to config.maxWidth.
+function Dropdown.fit(button)
+    local label, widths = button.skin.label, {}
+    for index, entry in ipairs(button.getItems()) do
+        widths[index] = measure(label, entry.text)
+    end
+    if button.menuText then
+        widths[#widths + 1] = measure(label, button.menuText)
+    end
+    label:SetText(button.menuText)
+    button:SetWidth(Dropdown.fitWidth(widths, button.minWidth, button.maxWidth))
+end
+
 --- Builds a dropdown button named `name`. config.width is its width and config.items returns the entries when
---- the list opens: an array of { text, checked, func }, where func runs when the entry is chosen.
+--- the list opens: an array of { text, checked, func }, where func runs when the entry is chosen. With
+--- config.maxWidth, Dropdown.fit can widen the button up to that width.
 function Dropdown.create(parent, name, config)
     local button = CreateFrame("Button", name, parent)
     button:SetSize(config.width, Theme.metrics.input)
+    button.minWidth, button.maxWidth = config.width, config.maxWidth
     button.getItems = config.items
     Skin.button(button, "secondary")
     local label = button.skin.label
