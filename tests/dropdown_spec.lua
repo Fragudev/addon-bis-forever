@@ -69,6 +69,32 @@ describe("Dropdown", function()
         end)
     end)
 
+    describe("width", function()
+        it("fits the widest text, never below the minimum or above the maximum", function()
+            assert.are.equal(150, Dropdown.fitWidth({ 40, 60 }, 150, 210))
+            assert.are.equal(139, Dropdown.fitWidth({ 40, 100.4 }, 130, 210))
+            assert.are.equal(210, Dropdown.fitWidth({ 400 }, 130, 210))
+            assert.are.equal(130, Dropdown.fitWidth({}, 130))
+        end)
+
+        it("widens the button to show every entry in full and keeps the chosen text", function()
+            local drop = Dropdown.create(parent, "FitDrop", {
+                width = 130,
+                maxWidth = 210,
+                items = function()
+                    return { { text = "PvE" }, { text = "Retribution PvP" } }
+                end,
+            })
+            drop.skin.label.GetUnboundedStringWidth = function(label)
+                return #label.text * 7
+            end
+            Dropdown.setText(drop, "PvE")
+            Dropdown.fit(drop)
+            assert.are.equal(#"Retribution PvP" * 7 + 38, drop:GetWidth())
+            assert.are.equal("PvE", drop.skin.label.text)
+        end)
+    end)
+
     describe("opening", function()
         it("opens a list with one row per entry and the checked one marked", function()
             local drop = create("TestDrop", makeItems(3, 2))

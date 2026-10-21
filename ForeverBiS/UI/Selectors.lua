@@ -81,14 +81,14 @@ end
 function Selectors.create(parent)
     local classLabel = createLabel(parent, "Class")
     classLabel:SetPoint("TOPLEFT", parent, "TOPLEFT", ROW_LEFT, ROW_TOP - 8)
-    classDrop = Dropdown.create(parent, "ForeverBiSClassDropDown", { width = 150, items = classItems })
+    classDrop = Dropdown.create(parent, "ForeverBiSClassDropDown", { width = 150, maxWidth = 190, items = classItems })
     classDrop:SetPoint("TOPLEFT", parent, "TOPLEFT", ROW_LEFT + 42, ROW_TOP)
     local buildLabel = createLabel(parent, "Build")
     buildLabel:SetPoint("LEFT", classDrop, "RIGHT", 14, 0)
-    buildDrop = Dropdown.create(parent, "ForeverBiSBuildDropDown", { width = 130, items = buildItems })
+    buildDrop = Dropdown.create(parent, "ForeverBiSBuildDropDown", { width = 130, maxWidth = 210, items = buildItems })
     buildDrop:SetPoint("LEFT", buildLabel, "RIGHT", 8, 0)
     -- No label: "Auto (Level 30)" explains itself and keeps the selector row short at the minimum width.
-    phaseDrop = Dropdown.create(parent, "ForeverBiSPhaseDropDown", { width = 120, items = phaseItems })
+    phaseDrop = Dropdown.create(parent, "ForeverBiSPhaseDropDown", { width = 120, maxWidth = 170, items = phaseItems })
     phaseDrop:SetPoint("LEFT", buildDrop, "RIGHT", 8, 0)
 end
 
@@ -97,6 +97,8 @@ function Selectors.refresh()
     local route, class, build = Settings.route()
     Dropdown.setText(classDrop, class.label)
     Dropdown.setText(buildDrop, build[2])
+    Dropdown.fit(classDrop)
+    Dropdown.fit(buildDrop)
 
     local phases = routePhases()
     Settings.dropUnavailablePhase(route)
@@ -104,6 +106,7 @@ function Selectors.refresh()
     local effectiveLabel = labelOf(phases, effective)
     if effectiveLabel then
         Dropdown.setText(phaseDrop, Settings.phase() and effectiveLabel or L["Auto (%s)"]:format(effectiveLabel))
+        Dropdown.fit(phaseDrop)
     end
     if #phases > 1 then
         phaseDrop:Show()
