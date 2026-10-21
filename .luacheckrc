@@ -104,6 +104,7 @@ files["tests/"] = {
     "ForeverBiSDungeonNotice",
     "ForeverBiSClassDropDown",
     "ForeverBiSBuildDropDown",
+    "ForeverBiSModeDropDown",
     "ForeverBiSDungeonFilter",
     "ForeverBiSFilterquest",
     "ForeverBiSFilterdungeon",

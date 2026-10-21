@@ -1,4 +1,4 @@
--- The class, build and phase dropdowns with their section labels.
+-- The class, mode (PvE/PvP), build and phase dropdowns with their section labels.
 local _, ns = ...
 
 local Selectors = {}
@@ -9,7 +9,9 @@ local Catalog, Settings, Player, Dropdown, Skin, L = ns.Catalog, ns.Settings, ns
 -- Top-left of the selector row, below the window header.
 local ROW_LEFT, ROW_TOP = 20, -64
 
-local classDrop, buildDrop, phaseDrop
+local classDrop, modeDrop, buildLabel, buildDrop, phaseDrop
+
+local MODE_LABELS = { pve = "PvE", pvp = "PvP" }
 
 local function labelOf(phases, phaseId)
     for _, phase in ipairs(phases) do
@@ -45,11 +47,38 @@ local function classItems()
     return items
 end
 
-local function buildItems()
+local function currentBuild()
+    local _, class, build = Settings.route()
+    return class, build
+end
+
+--- The spec name a build shows once its mode has its own dropdown; a bare "PvE" build is the damage one.
+local function specText(spec)
+    return spec or L["DPS"]
+end
+
+local function modeItems()
+    local class, build = currentBuild()
+    local currentMode = Catalog.splitBuild(build[2])
     local items = {}
-    for _, build in ipairs(Catalog.findClass(Settings.classKey()).builds) do
-        items[#items + 1] = entry(build[2], build[1] == Settings.buildKey(), function()
-            Settings.chooseBuild(build[1])
+    for _, mode in ipairs(Catalog.modes(class)) do
+        items[#items + 1] = entry(L[MODE_LABELS[mode]], mode == currentMode, function()
+            local target = Catalog.buildForMode(class, build, mode)
+            if target then
+                Settings.chooseBuild(target[1])
+            end
+            selected()
+        end)
+    end
+    return items
+end
+
+local function buildItems()
+    local class, build = currentBuild()
+    local items = {}
+    for _, choice in ipairs(Catalog.buildsForMode(class, (Catalog.splitBuild(build[2])))) do
+        items[#items + 1] = entry(specText(choice.spec), choice.build[1] == build[1], function()
+            Settings.chooseBuild(choice.build[1])
             selected()
         end)
     end
@@ -81,24 +110,47 @@ end
 function Selectors.create(parent)
     local classLabel = createLabel(parent, "Class")
     classLabel:SetPoint("TOPLEFT", parent, "TOPLEFT", ROW_LEFT, ROW_TOP - 8)
-    classDrop = Dropdown.create(parent, "ForeverBiSClassDropDown", { width = 150, maxWidth = 190, items = classItems })
+    classDrop = Dropdown.create(parent, "ForeverBiSClassDropDown", { width = 120, maxWidth = 160, items = classItems })
     classDrop:SetPoint("TOPLEFT", parent, "TOPLEFT", ROW_LEFT + 42, ROW_TOP)
-    local buildLabel = createLabel(parent, "Build")
-    buildLabel:SetPoint("LEFT", classDrop, "RIGHT", 14, 0)
-    buildDrop = Dropdown.create(parent, "ForeverBiSBuildDropDown", { width = 130, maxWidth = 210, items = buildItems })
+    -- No label: "PvE" and "PvP" explain themselves.
+    modeDrop = Dropdown.create(parent, "ForeverBiSModeDropDown", { width = 80, maxWidth = 110, items = modeItems })
+    modeDrop:SetPoint("LEFT", classDrop, "RIGHT", 8, 0)
+    buildLabel = createLabel(parent, "Build")
+    buildLabel:SetPoint("LEFT", modeDrop, "RIGHT", 14, 0)
+    buildDrop = Dropdown.create(parent, "ForeverBiSBuildDropDown", { width = 120, maxWidth = 180, items = buildItems })
     buildDrop:SetPoint("LEFT", buildLabel, "RIGHT", 8, 0)
     -- No label: "Auto (Level 30)" explains itself and keeps the selector row short at the minimum width.
     phaseDrop = Dropdown.create(parent, "ForeverBiSPhaseDropDown", { width = 120, maxWidth = 170, items = phaseItems })
-    phaseDrop:SetPoint("LEFT", buildDrop, "RIGHT", 8, 0)
 end
 
---- Syncs the dropdown texts with the saved selection; the phase dropdown only shows when there is a choice.
+local function showIf(frame, shown)
+    if shown then
+        frame:Show()
+    else
+        frame:Hide()
+    end
+end
+
+--- Syncs the dropdown texts with the saved selection. The mode, build and phase dropdowns only show when they
+--- offer a choice, and the phase one moves left to sit after the last shown dropdown.
 function Selectors.refresh()
     local route, class, build = Settings.route()
+    local mode, spec = Catalog.splitBuild(build[2])
     Dropdown.setText(classDrop, class.label)
-    Dropdown.setText(buildDrop, build[2])
+    Dropdown.setText(modeDrop, L[MODE_LABELS[mode]])
+    Dropdown.setText(buildDrop, specText(spec))
     Dropdown.fit(classDrop)
+    Dropdown.fit(modeDrop)
     Dropdown.fit(buildDrop)
+    local hasModes = #Catalog.modes(class) > 1
+    local hasBuilds = #Catalog.buildsForMode(class, mode) > 1
+    showIf(modeDrop, hasModes)
+    showIf(buildLabel, hasBuilds)
+    showIf(buildDrop, hasBuilds)
+    buildLabel:ClearAllPoints()
+    buildLabel:SetPoint("LEFT", hasModes and modeDrop or classDrop, "RIGHT", 14, 0)
+    phaseDrop:ClearAllPoints()
+    phaseDrop:SetPoint("LEFT", hasBuilds and buildDrop or hasModes and modeDrop or classDrop, "RIGHT", 8, 0)
 
     local phases = routePhases()
     Settings.dropUnavailablePhase(route)
@@ -108,9 +160,5 @@ function Selectors.refresh()
         Dropdown.setText(phaseDrop, Settings.phase() and effectiveLabel or L["Auto (%s)"]:format(effectiveLabel))
         Dropdown.fit(phaseDrop)
     end
-    if #phases > 1 then
-        phaseDrop:Show()
-    else
-        phaseDrop:Hide()
-    end
+    showIf(phaseDrop, #phases > 1)
 end

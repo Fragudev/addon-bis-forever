@@ -45,6 +45,29 @@ describe("ForeverBiS", function()
             assert.are.equal("druid", ForeverBiSCharDB.class)
             assert.are.equal("/tank", ForeverBiSCharDB.build)
         end)
+
+        it("names builds by spec only and switches mode keeping the spec", function()
+            WowStub.load({ class = "druid", build = "feral-pve" })
+            ForeverBiSFrame:Show()
+            assert.are.same({ "PvE", "PvP" }, menuLabels(openMenu(ForeverBiSModeDropDown)))
+            for _, label in ipairs(menuLabels(openMenu(ForeverBiSBuildDropDown))) do
+                assert.is_nil(label:find("Pv[EP]"), label)
+            end
+            for _, info in ipairs(openMenu(ForeverBiSModeDropDown)) do
+                if info.text == "PvP" then
+                    info.func()
+                end
+            end
+            assert.are.equal("/feral-pvp", ForeverBiSCharDB.build)
+            assert.are.equal("Feral", ForeverBiSBuildDropDown.menuText)
+        end)
+
+        it("hides the build dropdown when the mode has a single build", function()
+            WowStub.load({ class = "hunter", build = "pve" })
+            ForeverBiSFrame:Show()
+            assert.is_true(ForeverBiSModeDropDown:IsShown())
+            assert.is_false(ForeverBiSBuildDropDown:IsShown())
+        end)
     end)
 
     describe("class auto-detection", function()

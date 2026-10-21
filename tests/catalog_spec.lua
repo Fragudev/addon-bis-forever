@@ -86,4 +86,49 @@ describe("Catalog", function()
         end
         assert.is_true(seen["Finger"] and seen["Trinket"] and seen["Main Hand"])
     end)
+
+    describe("modes", function()
+        it("splits a label into its mode and spec", function()
+            local Catalog = loadCatalog()
+            local cases = {
+                { "Holy PvP", "pvp", "Holy" },
+                { "Retribution PvE", "pve", "Retribution" },
+                { "Subtlety PvP, Dagger", "pvp", "Subtlety, Dagger" },
+                { "Tank", "pve", "Tank" },
+                { "Restoration", "pve", "Restoration" },
+                { "PvE", "pve", nil },
+                { "PvP", "pvp", nil },
+            }
+            for _, case in ipairs(cases) do
+                local mode, spec = Catalog.splitBuild(case[1])
+                assert.are.equal(case[2], mode, case[1])
+                assert.are.equal(case[3], spec, case[1])
+            end
+        end)
+
+        it("lists the modes a class has, PvE first", function()
+            local Catalog = loadCatalog()
+            assert.are.same({ "pve", "pvp" }, Catalog.modes(Catalog.findClass("paladin")))
+            assert.are.same({ "pve" }, Catalog.modes({ builds = { { "", "Tank", "" } } }))
+        end)
+
+        it("lists the builds of one mode with their spec names", function()
+            local Catalog = loadCatalog()
+            local specs = {}
+            for _, entry in ipairs(Catalog.buildsForMode(Catalog.findClass("paladin"), "pvp")) do
+                specs[#specs + 1] = entry.spec
+            end
+            assert.are.same({ "Retribution", "Holy" }, specs)
+        end)
+
+        it("keeps the spec when the mode changes, or falls back to the first build of that mode", function()
+            local Catalog = loadCatalog()
+            local paladin = Catalog.findClass("paladin")
+            local holyPvE = Catalog.findBuild(paladin, "holy-pve")
+            assert.are.equal("holy-pvp", Catalog.buildForMode(paladin, holyPvE, "pvp")[1])
+            local tank = Catalog.findBuild(paladin, "tank")
+            assert.are.equal("retribution-pvp", Catalog.buildForMode(paladin, tank, "pvp")[1])
+            assert.is_nil(Catalog.buildForMode({ builds = { { "", "Tank", "" } } }, tank, "pvp"))
+        end)
+    end)
 end)
