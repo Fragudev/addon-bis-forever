@@ -1,0 +1,14 @@
+ForeverBiS/ForeverBiS.toc
+  h_7d99c7b8818613 6
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "bf94ea0310e6d0f386d273b73d14f471733363fd",
+  "prompts": {},
+  "humans": {
+    "h_7d99c7b8818613": {
+      "author": "Francis Gutiérrez <francisge@ext.inditex.com>"
+    }
+  }
+}
