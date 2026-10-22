@@ -5515,7 +5515,7 @@ ForeverBiSData = {
             { slot = "Relic",
               items = {
                 { id = 249398, name = "Polished Driftwood Icon", source = { kind = "profession", text = "Enchanting (130) Only its maker can wear it", skill = "Enchanting", skillLevel = 130, bindsToMaker = true } },
-                { id = 263412, name = "Totem of Charged Flames", source = { kind = "quest", text = "Quest: Meddlesome Mages Horde, from level 4, reported, not checked", faction = "Horde", quest = "Meddlesome Mages", reported = true } },
+                { id = 263412, name = "Totem of Charged Flames", source = { kind = "quest", text = "Quest: Call of Fire from level 10, reported, not checked", quest = "Call of Fire", reported = true } },
               },
             },
           },
@@ -5712,7 +5712,7 @@ ForeverBiSData = {
             { slot = "Relic",
               items = {
                 { id = 249398, name = "Polished Driftwood Icon", source = { kind = "profession", text = "Enchanting (130) Only its maker can wear it", skill = "Enchanting", skillLevel = 130, bindsToMaker = true } },
-                { id = 263412, name = "Totem of Charged Flames", source = { kind = "quest", text = "Quest: Meddlesome Mages Horde, from level 4, reported, not checked", faction = "Horde", quest = "Meddlesome Mages", reported = true } },
+                { id = 263412, name = "Totem of Charged Flames", source = { kind = "quest", text = "Quest: Call of Fire from level 10, reported, not checked", quest = "Call of Fire", reported = true } },
               },
             },
           },
@@ -5909,7 +5909,7 @@ ForeverBiSData = {
             { slot = "Relic",
               items = {
                 { id = 249398, name = "Polished Driftwood Icon", source = { kind = "profession", text = "Enchanting (130) Only its maker can wear it", skill = "Enchanting", skillLevel = 130, bindsToMaker = true } },
-                { id = 263412, name = "Totem of Charged Flames", source = { kind = "quest", text = "Quest: Meddlesome Mages Horde, from level 4, reported, not checked", faction = "Horde", quest = "Meddlesome Mages", reported = true } },
+                { id = 263412, name = "Totem of Charged Flames", source = { kind = "quest", text = "Quest: Call of Fire from level 10, reported, not checked", quest = "Call of Fire", reported = true } },
               },
             },
           },
@@ -6107,7 +6107,7 @@ ForeverBiSData = {
             { slot = "Relic",
               items = {
                 { id = 249398, name = "Polished Driftwood Icon", source = { kind = "profession", text = "Enchanting (130) Only its maker can wear it", skill = "Enchanting", skillLevel = 130, bindsToMaker = true } },
-                { id = 263412, name = "Totem of Charged Flames", source = { kind = "quest", text = "Quest: Meddlesome Mages Horde, from level 4, reported, not checked", faction = "Horde", quest = "Meddlesome Mages", reported = true } },
+                { id = 263412, name = "Totem of Charged Flames", source = { kind = "quest", text = "Quest: Call of Fire from level 10, reported, not checked", quest = "Call of Fire", reported = true } },
               },
             },
           },
@@ -6301,7 +6301,7 @@ ForeverBiSData = {
             { slot = "Relic",
               items = {
                 { id = 249398, name = "Polished Driftwood Icon", source = { kind = "profession", text = "Enchanting (130) Only its maker can wear it", skill = "Enchanting", skillLevel = 130, bindsToMaker = true } },
-                { id = 263412, name = "Totem of Charged Flames", source = { kind = "quest", text = "Quest: Meddlesome Mages Horde, from level 4, reported, not checked", faction = "Horde", quest = "Meddlesome Mages", reported = true } },
+                { id = 263412, name = "Totem of Charged Flames", source = { kind = "quest", text = "Quest: Call of Fire from level 10, reported, not checked", quest = "Call of Fire", reported = true } },
               },
             },
           },
