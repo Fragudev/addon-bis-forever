@@ -478,7 +478,8 @@ describe("ForeverBiS interactions", function()
 end)
 
 -- Gives the druid list a second phase with its own title, so the phase selector has something to choose.
-local function withSecondPhase(data)
+local function withSecondPhase(root)
+    local data = root.sources.foreverchanges
     table.insert(data.phases, { id = "lvl40", label = "Level 40", level = 40 })
     local base = data.lists["druid"].phases.lvl30
     local slots = {}
@@ -721,7 +722,7 @@ describe("ForeverBiS phase selector", function()
 
         it("leaves every icon untouched when the list has no trackable slots", function()
             WowStub.load({ class = "druid", build = "" }, function(data)
-                for _, entry in pairs(data.lists) do
+                for _, entry in pairs(data.sources.foreverchanges.lists) do
                     for _, phase in pairs(entry.phases) do
                         phase.slots = {}
                     end
@@ -772,7 +773,7 @@ describe("ForeverBiS phase selector", function()
 
         it("lists every open slot without a +N more line when there are few", function()
             WowStub.load({ class = "druid", build = "" }, function(data)
-                for _, entry in pairs(data.lists) do
+                for _, entry in pairs(data.sources.foreverchanges.lists) do
                     for _, phase in pairs(entry.phases) do
                         local kept = {}
                         for index = 1, 3 do
@@ -789,7 +790,7 @@ describe("ForeverBiS phase selector", function()
 
         it("hides the progress line when the list has no trackable slots", function()
             WowStub.load({ class = "druid", build = "" }, function(data)
-                for _, entry in pairs(data.lists) do
+                for _, entry in pairs(data.sources.foreverchanges.lists) do
                     for _, phase in pairs(entry.phases) do
                         for _, slot in ipairs(phase.slots) do
                             slot.slot = "Tabard"
@@ -804,7 +805,7 @@ describe("ForeverBiS phase selector", function()
 
         it("hides the progress line when the selected list is missing", function()
             WowStub.load({ class = "druid", build = "" }, function(data)
-                data.lists = {}
+                data.sources.foreverchanges.lists = {}
             end)
             ForeverBiSCharDB.class = "druid"
             assert.is_false(progressFrame().shown)

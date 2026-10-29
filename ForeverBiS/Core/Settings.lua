@@ -32,7 +32,20 @@ local function collapsed()
     return data.collapsed
 end
 
---- Creates the saved variables when missing and fills in the tables the addon expects.
+--- Makes the model read the given source and rebuilds the builds the catalog offers for it.
+local function activate(id)
+    if not ForeverBiSModel or not ForeverBiSModel.select(id) then
+        return false
+    end
+    if ns.Catalog then
+        ns.Catalog.refreshBuilds(ForeverBiSBuildLabels)
+    end
+    return true
+end
+
+--- Creates the saved variables when missing and fills in the tables the addon expects. A saved data source that
+--- is available becomes active; one that is not (for example a file the addon no longer ships) falls back to the
+--- default source, but the saved id is kept untouched so the choice returns if the source comes back.
 function Settings.bind()
     ForeverBiSDB = ForeverBiSDB or {}
     ForeverBiSCharDB = ForeverBiSCharDB or {}
@@ -40,6 +53,16 @@ function Settings.bind()
     char().build = char().build or "pve"
     minimap()
     collapsed()
+    local saved = account().source
+    if type(saved) == "string" and activate(saved) then
+        return
+    end
+    if ForeverBiSModel and not activate(ForeverBiSModel.DEFAULT_SOURCE) then
+        local first = ForeverBiSModel.sources()[1]
+        if first then
+            activate(first.id)
+        end
+    end
 end
 
 --- Moves the selection an older version saved account-wide into this character's table. The first character
@@ -105,6 +128,47 @@ function Settings.applyDetectedClass(classToken)
             char().class, char().build = key, ns.Catalog.defaultBuild(class)[1]
         end
     end
+end
+
+--- The data source the player picked (account-wide), or nil until they pick one.
+function Settings.source()
+    local data = account()
+    return type(data) == "table" and data.source or nil
+end
+
+--- True once the player picked a source that is still available.
+function Settings.sourceChosen()
+    local saved = Settings.source()
+    if type(saved) ~= "string" or not ForeverBiSModel then
+        return false
+    end
+    for _, source in ipairs(ForeverBiSModel.sources()) do
+        if source.id == saved then
+            return true
+        end
+    end
+    return false
+end
+
+--- The id of the source the model reads right now (the default one before any choice).
+function Settings.activeSource()
+    return ForeverBiSModel and ForeverBiSModel.activeSource() or nil
+end
+
+--- Saves and activates a data source. Unknown ids are ignored (false). When the character's route has no list in
+--- the new source the build goes back to the class's first build, and a phase the route lacks is dropped.
+function Settings.chooseSource(id)
+    if not ForeverBiSModel or type(id) ~= "string" or not activate(id) then
+        return false
+    end
+    account().source = id
+    local route, class = Settings.route()
+    if not ForeverBiSModel.list(route) then
+        char().build = ns.Catalog.defaultBuild(class)[1]
+        route = Settings.route()
+    end
+    Settings.dropUnavailablePhase(route)
+    return true
 end
 
 function Settings.phase()

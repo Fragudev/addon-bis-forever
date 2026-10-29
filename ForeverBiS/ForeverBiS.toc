@@ -7,7 +7,8 @@
 ## SavedVariables: ForeverBiSDB
 ## SavedVariablesPerCharacter: ForeverBiSCharDB
 ForeverBiS_Locale.lua
-ForeverBiS_Data.lua
+ForeverBiS_Data_ForeverChanges.lua
+ForeverBiS_Data_Wowsims.lua
 ForeverBiS_Model.lua
 Core\Settings.lua
 Core\Catalog.lua
