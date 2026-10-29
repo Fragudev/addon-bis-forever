@@ -1,6 +1,6 @@
 return {
   include = { "ForeverBiS/" },
-  exclude = { "ForeverBiS_Data" },
+  exclude = { "ForeverBiS_Data_" },
   statsfile = "luacov.stats.out",
   reportfile = "luacov.report.out",
 }

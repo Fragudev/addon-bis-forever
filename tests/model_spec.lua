@@ -56,7 +56,7 @@ end
 
 -- Chunks from loadfile run in the real _G, while busted sandboxes the spec's own globals: write through _G.
 local function load(data)
-    _G.ForeverBiSData = data
+    _G.ForeverBiSData = WowStub.wrapSource(data)
     WowStub.loadFiles({ "ForeverBiS_Model.lua" })
 end
 
@@ -194,7 +194,7 @@ describe("ForeverBiSModel", function()
 
         it("rebuilds on demand", function()
             load(fixture())
-            _G.ForeverBiSData.lists.druid.label = "Changed"
+            _G.ForeverBiSData.sources.foreverchanges.lists.druid.label = "Changed"
             ForeverBiSModel.buildLegacy()
             assert.are.equal("Changed", ForeverBiSBuildLabels.druid)
         end)
@@ -448,7 +448,7 @@ describe("ForeverBiSModel", function()
         it("rebuilds the index when the legacy data is rebuilt", function()
             load(fixture())
             assert.are.equal(1, #ForeverBiSModel.bisEntries(11))
-            _G.ForeverBiSData.lists.druid.phases.lvl30.slots[1].items[1].id = 77
+            _G.ForeverBiSData.sources.foreverchanges.lists.druid.phases.lvl30.slots[1].items[1].id = 77
             ForeverBiSModel.buildLegacy()
             assert.are.same({}, ForeverBiSModel.bisEntries(11))
             assert.are.equal(1, #ForeverBiSModel.bisEntries(77))
@@ -650,5 +650,96 @@ describe("ForeverBiSModel", function()
         load(fixture())
         _G.ForeverBiSDB = nil
         assert.is_table(ForeverBiSLists)
+    end)
+
+    describe("sources", function()
+        local TwoSources = dofile("tests/support/sources.lua")
+
+        local function loadSources(data)
+            _G.ForeverBiSData = data or TwoSources.twoSources()
+            WowStub.loadFiles({ "ForeverBiS_Model.lua" })
+        end
+
+        it("exposes the default source id", function()
+            loadSources()
+            assert.are.equal("foreverchanges", ForeverBiSModel.DEFAULT_SOURCE)
+        end)
+
+        it("lists the sources ordered by `order`, then by id", function()
+            local data = TwoSources.twoSources()
+            data.sources.aaa = { label = "Tie", order = 2, phases = {}, lists = {} }
+            data.sources.zzz = { phases = {}, lists = {} }
+            loadSources(data)
+            assert.are.same({
+                { id = "alpha", label = "Alpha", url = "https://alpha.test" },
+                { id = "aaa", label = "Tie" },
+                { id = "beta", label = "Beta", url = "https://beta.test" },
+                { id = "zzz", label = "zzz" },
+            }, ForeverBiSModel.sources())
+        end)
+
+        it("returns no sources without data or with another schema", function()
+            load(nil)
+            assert.are.same({}, ForeverBiSModel.sources())
+            assert.is_nil(ForeverBiSModel.activeSource())
+        end)
+
+        it("starts on the first available source when the default one is absent", function()
+            loadSources()
+            assert.are.equal("alpha", ForeverBiSModel.activeSource())
+            assert.are.equal("Feral PvE", ForeverBiSBuildLabels.druid)
+        end)
+
+        it("starts on the default source when it exists", function()
+            local data = TwoSources.twoSources()
+            data.sources.foreverchanges = data.sources.beta
+            data.sources.beta = nil
+            loadSources(data)
+            assert.are.equal("foreverchanges", ForeverBiSModel.activeSource())
+        end)
+
+        it("tolerates an empty source", function()
+            local data = TwoSources.twoSources()
+            data.sources.empty = { label = "Empty", order = 3, phases = {}, lists = {} }
+            loadSources(data)
+            assert.is_true(ForeverBiSModel.select("empty"))
+            assert.are.same({}, ForeverBiSLists)
+            assert.are.same({}, ForeverBiSModel.phases("rogue"))
+            assert.are.same({}, ForeverBiSModel.bisEntries(11))
+        end)
+
+        describe("select", function()
+            it("makes the source active and rebuilds the legacy globals", function()
+                loadSources()
+                assert.is_table(ForeverBiSLists.druid)
+                assert.is_true(ForeverBiSModel.select("beta"))
+                assert.are.equal("beta", ForeverBiSModel.activeSource())
+                assert.is_nil(ForeverBiSLists.druid)
+                assert.are.equal("Beta Rogue", ForeverBiSBuildLabels.rogue)
+                assert.are.equal(21, ForeverBiSItemIDs["Beta Mask"])
+                assert.is_nil(ForeverBiSItemIDs["Alpha Mask"])
+                assert.are.same({ { id = "raid1", label = "Raid 1" } }, ForeverBiSModel.phases("rogue"))
+            end)
+
+            it("resets the reverse index", function()
+                loadSources()
+                assert.are.equal(1, #ForeverBiSModel.bisEntries(13))
+                ForeverBiSModel.select("beta")
+                assert.are.same({}, ForeverBiSModel.bisEntries(13))
+                assert.are.equal("raid1", ForeverBiSModel.bisEntries(21)[1].phase)
+                ForeverBiSModel.select("alpha")
+                assert.are.same({}, ForeverBiSModel.bisEntries(21))
+            end)
+
+            it("returns false and changes nothing for an unknown source", function()
+                loadSources()
+                local lists = ForeverBiSLists
+                assert.is_false(ForeverBiSModel.select("nope"))
+                assert.is_false(ForeverBiSModel.select(nil))
+                assert.is_false(ForeverBiSModel.select(5))
+                assert.are.equal("alpha", ForeverBiSModel.activeSource())
+                assert.are.equal(lists, ForeverBiSLists)
+            end)
+        end)
     end)
 end)

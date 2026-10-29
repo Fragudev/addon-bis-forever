@@ -17,6 +17,8 @@ end
 function Lists.view(route, phaseId)
     local view = { route = route, phaseId = phaseId, ranked = {}, best = {}, headings = {} }
     view.data = Lists.resolve(route, phaseId)
+    -- The active source has no list for this route (e.g. a class it does not cover): empty, but detectable.
+    view.missing = route ~= nil and view.data == nil
     for _, slot in ipairs(view.data and view.data.slots or {}) do
         local slotKey = ns.Sources.normalizeSlotName(slot[1])
         view.best[slotKey] = slot[2][1]

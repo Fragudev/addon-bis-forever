@@ -128,6 +128,17 @@ local function layoutScroll()
     scroll:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -COLUMN_RIGHT, SCROLL_BOTTOM)
 end
 
+--- The label of the data source being shown, or nil when there is none.
+local function activeSourceLabel()
+    local active = Settings.activeSource()
+    for _, source in ipairs(ForeverBiSModel and ForeverBiSModel.sources() or {}) do
+        if source.id == active then
+            return source.label
+        end
+    end
+    return nil
+end
+
 local function addMessage(text, y)
     local message = Skin.label(content, 13, "regular", "dim")
     message:SetPoint("TOPLEFT", content, "TOPLEFT", 0, y)
@@ -269,7 +280,12 @@ function ItemList.refresh(view, options)
 
     local y = -5
     if not view.data then
-        addMessage(L["This installed version does not include the selected BiS list yet."], y)
+        local source = activeSourceLabel()
+        if view.missing and source then
+            addMessage(L["%s has no list for this class yet."]:format(source), y)
+        else
+            addMessage(L["This installed version does not include the selected BiS list yet."], y)
+        end
         countText:SetText("")
         content:SetHeight(45)
         scroll:SetVerticalScroll(0)
