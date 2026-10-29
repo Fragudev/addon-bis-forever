@@ -35,6 +35,7 @@ UI\ItemRows.lua
 UI\ItemList.lua
 UI\PaperDoll.lua
 UI\Progress.lua
+UI\SourcePicker.lua
 UI\Minimap.lua
 UI\DungeonNotice.lua
 App\Events.lua
