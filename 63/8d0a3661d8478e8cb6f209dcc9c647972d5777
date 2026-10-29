@@ -1,0 +1,27 @@
+CurseForge/README.md
+  s_9b85ac2e3bbca1::t_97fdc5d76922e6 14,16-17,19,21,23,25,27-33,35,37-41,43,45-74,77-93
+ForeverBiS/ForeverBiS.toc
+  s_9b85ac2e3bbca1::t_af1f3044a79f40 4
+README.md
+  s_9b85ac2e3bbca1::t_5c286499cae7a7 6,54-55,66-70,76-77,83-86,170-172,175-180,183-184,215-216,242-245,255-257
+docs/data-schema-v2.md
+  s_9b85ac2e3bbca1::t_aee1ae56d0088f 1,3-5
+docs/data-schema-v3.md
+  s_9b85ac2e3bbca1::t_d2537b214eed00 1-183
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.6",
+  "base_commit_sha": "638d0a3661d8478e8cb6f209dcc9c647972d5777",
+  "prompts": {},
+  "sessions": {
+    "s_9b85ac2e3bbca1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "1d7ac932-aa59-4b65-adfe-50f4ff7a8ee7",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Francis Gutiérrez <francisge@ext.inditex.com>"
+    }
+  }
+}
