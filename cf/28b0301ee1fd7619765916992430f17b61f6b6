@@ -1,0 +1,77 @@
+.luacheckrc
+  s_765e5225b7ca65::t_28084b1daa3ab7 5
+.luacov
+  s_765e5225b7ca65::t_756c1c3950dcfd 3
+.styluaignore
+  s_765e5225b7ca65::t_61fec21b5fcd68 1
+ForeverBiS/Core/Catalog.lua
+  s_765e5225b7ca65::t_b14f44497a12f7 65-70,72-73,75-77
+ForeverBiS/Core/Lists.lua
+  s_765e5225b7ca65::t_e943bae0bcf6b0 20-21
+ForeverBiS/Core/Settings.lua
+  s_765e5225b7ca65::t_037007f4ef644c 35-48,56-65,133-173
+ForeverBiS/ForeverBiS.toc
+  s_9b85ac2e3bbca1::t_162900c4c10a4c 10-11
+ForeverBiS/ForeverBiS_Data_ForeverChanges.lua
+  s_765e5225b7ca65::t_9eaa7c2fedd685 1-7247
+ForeverBiS/ForeverBiS_Data_Wowsims.lua
+  s_765e5225b7ca65::t_3b799f27aa275d 1-2250
+ForeverBiS/ForeverBiS_Model.lua
+  s_765e5225b7ca65::t_9a0abc15da6d66 1,13-18,20-21,26-61,450-467
+tests/addon_spec.lua
+  s_765e5225b7ca65::t_d2ef898fa1e1a2 173
+tests/catalog_spec.lua
+  s_765e5225b7ca65::t_2eece9053533c6 134-172
+tests/commands_spec.lua
+  s_765e5225b7ca65::t_06e77e4e74e064 9-10
+tests/data_spec.lua
+  s_765e5225b7ca65::t_81f38b0400b1c4 1-2,4-16,20-24,27-32,34-38,40,43-84,88-101,103-104,107-111,113-120
+tests/filters_spec.lua
+  s_765e5225b7ca65::t_5e9714128fa66a 5-6
+tests/interaction_spec.lua
+  s_765e5225b7ca65::t_6f830e53497edd 481-482,725,776,793,808
+tests/lists_spec.lua
+  s_765e5225b7ca65::t_d9351a3a385974 3-9,72-108
+tests/model_spec.lua
+  s_765e5225b7ca65::t_953434e30175ef 59,197,451,654-744
+tests/settings_spec.lua
+  s_765e5225b7ca65::t_b0f56c999e1b8d 6-12,250-384
+tests/share_spec.lua
+  s_765e5225b7ca65::t_408636bf92dc0c 5-6
+tests/sources_spec.lua
+  s_765e5225b7ca65::t_5ba01b64d13e60 3-8
+tests/stubs/wow_api.lua
+  s_765e5225b7ca65::t_e8ca39a7206aea 281,295-332,337-339,342-351,366,368
+tests/support/sources.lua
+  s_765e5225b7ca65::t_9db6575938cd92 1-53
+tests/toc_spec.lua
+  s_765e5225b7ca65::t_5c2149236adfe0 24,27-32,43
+tests/tooltip_spec.lua
+  s_765e5225b7ca65::t_913a63531db056 53
+tests/zone_spec.lua
+  s_765e5225b7ca65::t_b68eb4665aa42b 65
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.6",
+  "base_commit_sha": "cf28b0301ee1fd7619765916992430f17b61f6b6",
+  "prompts": {},
+  "sessions": {
+    "s_765e5225b7ca65": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ad0c3eac-f795-4e8b-9956-58a53e1ead08",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Francis Gutiérrez <francisge@ext.inditex.com>"
+    },
+    "s_9b85ac2e3bbca1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "1d7ac932-aa59-4b65-adfe-50f4ff7a8ee7",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Francis Gutiérrez <francisge@ext.inditex.com>"
+    }
+  }
+}
