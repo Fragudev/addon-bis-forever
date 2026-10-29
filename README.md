@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  A free, open-source addon for <b>World of Warcraft: Forever</b>: the ForeverChanges Best in Slot lists in the game, ranked per slot, with where every item comes from and how close you are to your set.
+  A free, open-source addon for <b>World of Warcraft: Forever</b>: the ForeverChanges and wowsims Best in Slot lists in the game, ranked per slot, with where every item comes from and how close you are to your set.
 </p>
 
 <p align="center">
@@ -51,8 +51,8 @@
 
 3. **Restart the game completely** (a `/reload` does not load a new addon), check that `ForeverBiS` is enabled in the
    AddOns list on the character selection screen, and log in.
-4. **Open the window** with `/bis`, `/foreverbis` or the minimap button. Your class is already selected; pick PvE or
-   PvP and your build.
+4. **Open the window** with `/bis`, `/foreverbis` or the minimap button. The first time, choose a data source
+   (ForeverChanges or wowsims); the addon remembers it. Your class is already selected; pick PvE or PvP and your build.
 
 Good to know:
 
@@ -63,21 +63,27 @@ Good to know:
 
 ## What it is
 
-Forever BiS brings the [ForeverChanges](https://foreverchanges.pro) Best in Slot lists into the game. For every
-class, mode (PvE or PvP) and build it shows the ranked items for each slot, the list that matches your character's
-level, where each item drops or comes from, and which ones you already have equipped or in your bags.
+Forever BiS brings the Best in Slot lists of two sources into the game: [ForeverChanges](https://foreverchanges.pro)
+and [wowsims](https://github.com/wowsims/forever). You pick one source and it stays selected. For every class, mode
+(PvE or PvP) and build it shows the ranked items for each slot, the list that matches your character's level, where
+each item drops or comes from, and which ones you already have equipped or in your bags. wowsims covers fewer
+classes and specs than ForeverChanges and has no Shaman lists.
 
 Around the window it adds BiS lines on every item tooltip, an alert when a BiS item drops in your group, a notice when
 you enter a dungeon with items for your build, and commands to share a slot's list in chat.
 
 > [!NOTE]
-> **Beta.** The lists, classes and builds are the ones published on ForeverChanges; the addon only shows them and
-> does not rank items on its own.
+> **Beta.** The lists, classes and builds are the ones published by their source (ForeverChanges or wowsims); the
+> addon only shows them and does not rank items on its own.
 
 ## Features
 
 ### The list
 
+- **Data source.** On the first open the window asks you to choose a source (ForeverChanges or wowsims), and the
+  addon remembers it. The dropdown at the start of the selector row switches it. Tooltips and loot alerts use the
+  chosen source, or ForeverChanges until you choose. wowsims rows show `Source not listed by wowsims`, because
+  wowsims does not say where its items come from. A source with no list for your class shows an empty state.
 - **Class, mode and build.** Pick a class, a mode (`PvE` or `PvP`) and a build. The build dropdown lists the specs of
   the chosen mode by name (`Holy`, `Retribution`), and switching mode keeps the same spec when the other mode has it.
   The mode and build dropdowns hide when there is nothing to choose. Your selection is saved between sessions.
@@ -161,15 +167,20 @@ you enter a dungeon with items for your build, and commands to share a slot's li
 
 ## How the lists stay current
 
-The addon reads its bundled `ForeverBiS_Data.lua` (schema 2: lists per phase with structured item sources, see
-[docs/data-schema-v2.md](docs/data-schema-v2.md)). Players never run anything: they install or update the addon.
+The addon reads its bundled data files, one per source: `ForeverBiS_Data_ForeverChanges.lua` and
+`ForeverBiS_Data_Wowsims.lua` (schema 3, see [docs/data-schema-v3.md](docs/data-schema-v3.md)). Players never run
+anything: they install or update the addon.
 
 1. Every six hours the [Update BiS lists](.github/workflows/update-lists.yml) workflow runs
-   `UpdateForeverBiS.py`, which discovers the class and build pages on ForeverChanges and rewrites the data file.
-2. The updater derives each list's phase from its title (for example "at level 30"). If it cannot download or parse
-   every discovered page, it leaves the previous data file untouched.
-3. When the lists changed, the workflow bumps the version in `ForeverBiS.toc`, tags it and publishes the release to
+   `UpdateForeverBiS.py`, which refreshes each shipped source: it discovers that source's pages and rewrites its data
+   file.
+2. Each source sets its own phases. ForeverChanges derives them from the list title (for example "at level 30"). If a
+   source cannot download or parse its pages, that source keeps its previous file and the other sources are still
+   written. The run fails only when every source fails.
+3. When any data file changed, the workflow bumps the version in `ForeverBiS.toc`, tags it and publishes the release to
    GitHub and CurseForge.
+
+A Kami Labs source is planned. It is not shipped until its site owner gives permission.
 
 ## Building from source
 
@@ -201,7 +212,8 @@ only in `ForeverBiS.toc`; CI fails if the README hardcodes it.
 | [`ForeverBiS/Adapters`](ForeverBiS/Adapters) | The only callers of the item, inventory and unit APIs: Items, Inventory, Player |
 | [`ForeverBiS/UI`](ForeverBiS/UI) | Drawing only: Theme, Pixel, Skin, Dropdown (the look) and the panels |
 | [`ForeverBiS/App`](ForeverBiS/App) | Client events and slash commands |
-| `ForeverBiS/ForeverBiS_Data.lua` | The lists, generated by `UpdateForeverBiS.py` (never edited by hand) |
+| `ForeverBiS/ForeverBiS_Data_<Source>.lua` | The lists of each source, generated by `UpdateForeverBiS.py` (never edited by hand) |
+| [`bis_sources`](bis_sources) | The updater's source modules: one per source, plus the registry and shared helpers |
 | `ForeverBiS/ForeverBiS_Locale.lua` | Translations; English strings are the keys |
 | [`tests`](tests) | busted specs, WoW API stubs and the updater's Python tests |
 | [`tools`](tools) | Packaging, coverage check, icon generator |
@@ -227,8 +239,10 @@ To add a file, list it in `ForeverBiS.toc` (specs load files from the `.toc`, so
 
 Issues and pull requests are welcome on [GitHub](https://github.com/Fragudev/addon-bis-forever/issues).
 
-- **Wrong item or source?** The lists come from ForeverChanges, so a wrong ranking belongs there. A wrong source,
-  icon or tooltip in the addon is a bug here: open an issue with the class, build, phase and item.
+- **Wrong item or source?** The lists come from their source site: a wrong ranking belongs to ForeverChanges
+  ([foreverchanges.pro](https://foreverchanges.pro)) or to wowsims
+  ([wowsims/forever](https://github.com/wowsims/forever)), depending on the source you chose. A wrong source, icon or
+  tooltip in the addon is a bug here: open an issue with the source, class, build, phase and item.
 - **Code** follows the layering rule above; keep `luacheck`, `busted` and the coverage check green.
 - **Pull request titles** use [Conventional Commits](https://www.conventionalcommits.org/) (`feat:`, `fix:`,
   `chore:`); CI checks them.
@@ -237,6 +251,9 @@ Issues and pull requests are welcome on [GitHub](https://github.com/Fragudev/add
 
 Copyright (c) 2026 Fragudev. Forever BiS is licensed under the [MIT License](LICENSE.md). Third-party materials, game
 assets and the Best in Slot list information from ForeverChanges are not claimed by this license.
+
+Credits: the ForeverChanges lists come from [foreverchanges.pro](https://foreverchanges.pro). The wowsims lists come
+from [wowsims/forever](https://github.com/wowsims/forever), licensed under the MIT License.
 
 The interface uses the [Fira Sans](https://github.com/mozilla/Fira) typeface (Regular, Medium and SemiBold), licensed
 under the SIL Open Font License 1.1; the license text ships next to the fonts in `ForeverBiS/Media/Fonts/OFL.txt`. The

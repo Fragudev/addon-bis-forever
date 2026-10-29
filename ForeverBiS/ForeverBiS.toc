@@ -1,7 +1,7 @@
 ## Interface: 16001
 ## AllowLoadGameType: camelot
 ## Title: Forever BiS
-## Notes: Gear lists and item sources from ForeverChanges
+## Notes: Gear lists and item sources from ForeverChanges and wowsims
 ## Author: Fragudev (fragudev@gmail.com)
 ## Version: beta-0.0.81
 ## SavedVariables: ForeverBiSDB
