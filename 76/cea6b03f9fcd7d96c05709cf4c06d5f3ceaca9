@@ -1,0 +1,45 @@
+.github/workflows/update-lists.yml
+  s_765e5225b7ca65::t_33c407d5536481 26-29,35-36,48-49
+UpdateForeverBiS.py
+  s_765e5225b7ca65::t_7dfbda48601f62 2,6,11,13-14,17-25,28-48,53-60,65
+bis_sources/__init__.py
+  s_765e5225b7ca65::t_127da8e1d121d9 1-47
+bis_sources/common.py
+  s_9b85ac2e3bbca1::t_f53658f1483fbe 1-132
+bis_sources/foreverchanges.py
+  s_765e5225b7ca65::t_717472eb6f0270 1-389
+bis_sources/kamilabs.py
+  s_9b85ac2e3bbca1::t_0d7fd55cb10102 1-180
+bis_sources/wowsims.py
+  s_765e5225b7ca65::t_fffa71efd6efe8 1-167
+tests/python/fixtures/kami_page.html
+  s_765e5225b7ca65::t_a4e98ee41007af 1
+tests/python/fixtures/kami_tier60.json
+  s_765e5225b7ca65::t_96e3e448ab4154 1-1296
+tests/python/test_updater.py
+  s_765e5225b7ca65::t_c0a32bde3b9356 1,3-5,7,13-18,200-210,214-225,259-260,267-561
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.6",
+  "base_commit_sha": "76cea6b03f9fcd7d96c05709cf4c06d5f3ceaca9",
+  "prompts": {},
+  "sessions": {
+    "s_765e5225b7ca65": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ad0c3eac-f795-4e8b-9956-58a53e1ead08",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Francis Gutiérrez <francisge@ext.inditex.com>"
+    },
+    "s_9b85ac2e3bbca1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "1d7ac932-aa59-4b65-adfe-50f4ff7a8ee7",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Francis Gutiérrez <francisge@ext.inditex.com>"
+    }
+  }
+}
