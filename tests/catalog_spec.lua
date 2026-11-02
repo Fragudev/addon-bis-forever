@@ -131,4 +131,43 @@ describe("Catalog", function()
             assert.is_nil(Catalog.buildForMode({ builds = { { "", "Tank", "" } } }, tank, "pvp"))
         end)
     end)
+
+    describe("refreshBuilds", function()
+        local function routes(Catalog, key)
+            local result = {}
+            for _, build in ipairs(Catalog.findClass(key).builds) do
+                result[#result + 1] = build[3]
+            end
+            return result
+        end
+
+        it("replaces the builds of the classes the labels mention and keeps the others", function()
+            local Catalog = loadCatalog({ druid = "Feral", ["druid/balance"] = "Balance" })
+            assert.are.same({ "/balance", "" }, routes(Catalog, "druid"))
+            assert.are.same({ "", "/pvp" }, routes(Catalog, "rogue"))
+        end)
+
+        it("restores the built-in builds before applying new labels", function()
+            local Catalog = loadCatalog({ druid = "Feral", ["druid/balance"] = "Balance" })
+            Catalog.refreshBuilds({ rogue = "Rogue" })
+            assert.are.equal(6, #Catalog.findClass("druid").builds)
+            assert.are.equal("feral-pve", Catalog.findClass("druid").builds[1][1])
+            assert.are.same({ "" }, routes(Catalog, "rogue"))
+        end)
+
+        it("is idempotent when called repeatedly with the same labels", function()
+            local labels = { druid = "Feral", ["druid/balance"] = "Balance" }
+            local Catalog = loadCatalog(labels)
+            local first = routes(Catalog, "druid")
+            Catalog.refreshBuilds(labels)
+            Catalog.refreshBuilds(labels)
+            assert.are.same(first, routes(Catalog, "druid"))
+        end)
+
+        it("goes back to the built-in builds when called without labels", function()
+            local Catalog = loadCatalog({ druid = "Feral" })
+            Catalog.refreshBuilds(nil)
+            assert.are.equal(6, #Catalog.findClass("druid").builds)
+        end)
+    end)
 end)

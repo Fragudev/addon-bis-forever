@@ -1,5 +1,8 @@
-ForeverBiSData = {
-  schema = 2,
+ForeverBiSData = ForeverBiSData or { schema = 3, sources = {} }
+ForeverBiSData.sources["foreverchanges"] = {
+  label = "ForeverChanges",
+  order = 1,
+  url = "https://foreverchanges.pro",
   phases = {
     { id = "lvl30", label = "Level 30", level = 30 },
   },

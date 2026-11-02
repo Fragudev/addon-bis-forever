@@ -6,6 +6,10 @@ local translations = {
     -- Partial on purpose: untranslated keys show in English.
     esES = {
         ["Class"] = "Clase",
+        ["Choose a data source"] = "Elige una fuente de datos",
+        ["You can change it later from the first dropdown at the top of the window."] = "Podrás cambiarla después desde el primer desplegable de la parte superior de la ventana.",
+        ["Select a source"] = "Selecciona una fuente",
+        ["%s has no list for this class yet."] = "%s aún no tiene lista para esta clase.",
         ["Build"] = "Build",
         ["PvE"] = "JcE",
         ["PvP"] = "JcJ",

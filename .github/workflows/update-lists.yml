@@ -23,14 +23,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v7
 
-      # The updater exits non-zero and leaves the data file untouched if any page fails.
-      - name: Refresh lists from ForeverChanges
+      # A source that fails keeps its previous data file; the job fails only if every source fails.
+      - name: Refresh lists from every shipped source
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
         run: python3 UpdateForeverBiS.py ForeverBiS
 
       - name: Bump version, commit and tag
         id: publish
         run: |
-          if git diff --quiet -- ForeverBiS/ForeverBiS_Data.lua; then
+          git add --intent-to-add ForeverBiS/ForeverBiS_Data_*.lua
+          if git diff --quiet -- 'ForeverBiS/ForeverBiS_Data_*.lua'; then
             echo "Lists unchanged; nothing to release."
             exit 0
           fi
@@ -42,8 +45,8 @@ jobs:
           tag="beta_${next}"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add ForeverBiS/ForeverBiS_Data.lua "$toc"
-          git commit -m "chore(data): refresh BiS lists from ForeverChanges"
+          git add ForeverBiS/ForeverBiS_Data_*.lua "$toc"
+          git commit -m "chore(data): refresh BiS lists from all sources"
           git tag "$tag"
           git push origin HEAD:main "$tag"
           echo "tag=${tag}" >>"$GITHUB_OUTPUT"

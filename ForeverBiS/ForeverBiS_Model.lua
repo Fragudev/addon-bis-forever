@@ -1,4 +1,4 @@
--- Read model over ForeverBiSData (schema 2). It never touches ForeverBiSDB: saved variables are not
+-- Read model over ForeverBiSData (schema 3: several sources, each with schema 2 phases and lists). It never touches ForeverBiSDB: saved variables are not
 -- reliable while files execute. The UI still consumes the legacy globals built at the bottom of this file.
 local _, ns = ...
 
@@ -10,12 +10,53 @@ local function asTable(value)
     return type(value) == "table" and value or {}
 end
 
-local function rootData()
+Model.DEFAULT_SOURCE = "foreverchanges"
+
+local activeId
+
+-- The sources the data files registered, keyed by id; empty while the data is missing or has another schema.
+local function allSources()
     local data = ForeverBiSData
-    if type(data) == "table" and data.schema == 2 then
-        return data
+    if type(data) == "table" and data.schema == 3 and type(data.sources) == "table" then
+        return data.sources
     end
     return {}
+end
+
+local function rootData()
+    local source = allSources()[activeId]
+    return type(source) == "table" and source or {}
+end
+
+--- Available sources as { { id, label, url }, ... }, ordered by their `order` then id.
+function Model.sources()
+    local result = {}
+    for id, source in pairs(allSources()) do
+        if type(id) == "string" and type(source) == "table" then
+            local order = type(source.order) == "number" and source.order or math.huge
+            result[#result + 1] = {
+                id = id,
+                label = type(source.label) == "string" and source.label or id,
+                url = type(source.url) == "string" and source.url or nil,
+                order = order,
+            }
+        end
+    end
+    table.sort(result, function(a, b)
+        if a.order ~= b.order then
+            return a.order < b.order
+        end
+        return a.id < b.id
+    end)
+    for _, entry in ipairs(result) do
+        entry.order = nil
+    end
+    return result
+end
+
+--- Id of the source the model currently reads (nil only when no data is available at all).
+function Model.activeSource()
+    return activeId
 end
 
 local function routeEntry(route)
@@ -406,4 +447,21 @@ function Model.buildLegacy()
     ForeverBiSLists, ForeverBiSItemIDs, ForeverBiSBuildLabels = lists, itemIDs, labels
 end
 
-Model.buildLegacy()
+--- Makes the source the active one and rebuilds the legacy globals. False (and no change) for an unknown id.
+function Model.select(id)
+    if type(id) ~= "string" or type(allSources()[id]) ~= "table" then
+        return false
+    end
+    activeId = id
+    Model.buildLegacy()
+    return true
+end
+
+if not Model.select(Model.DEFAULT_SOURCE) then
+    local first = Model.sources()[1]
+    if first then
+        Model.select(first.id)
+    else
+        Model.buildLegacy()
+    end
+end

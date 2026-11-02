@@ -62,9 +62,19 @@ local classes = {
 }
 Catalog.classes = classes
 
+-- The built-in builds, kept so refreshBuilds can start from them every time (the data source can change).
+local defaultBuilds = {}
+for _, class in ipairs(classes) do
+    defaultBuilds[class.key] = class.builds
+end
+
 --- Replaces each class's builds with the labelled routes the data provides ({ [route] = label }).
---- A class the data does not mention keeps its built-in builds.
+--- A class the data does not mention keeps its built-in builds. Safe to call repeatedly: it always restores the
+--- built-in builds first, so switching data sources never leaves routes of the previous one behind.
 function Catalog.refreshBuilds(labels)
+    for _, class in ipairs(classes) do
+        class.builds = defaultBuilds[class.key]
+    end
     if not labels then
         return
     end

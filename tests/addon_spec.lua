@@ -170,7 +170,7 @@ describe("ForeverBiS", function()
         it("hides the ENCHANTS block when no slot of the list has enchants", function()
             WowStub.load({ class = "druid", build = "feral-pve" })
             -- The UI reads each phase from ForeverBiSData through the model, so strip the enchants at the source.
-            for _, entry in pairs(ForeverBiSData.lists) do
+            for _, entry in pairs(ForeverBiSData.sources.foreverchanges.lists) do
                 for _, phase in pairs(entry.phases) do
                     for _, slot in ipairs(phase.slots) do
                         slot.enchants = nil

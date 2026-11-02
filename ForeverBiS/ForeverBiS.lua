@@ -5,6 +5,12 @@ local _, ns = ...
 local rendering, queued = false, nil
 
 local function renderOnce(options)
+    -- Until a source is chosen only the picker shows; the panels behind it are not drawn.
+    if ns.SourcePicker.refresh() then
+        ns.MainFrame.refresh()
+        ns.MainFrame.settle()
+        return
+    end
     ns.Selectors.refresh()
     ns.FilterBar.refresh()
     local route = ns.Settings.route()
@@ -52,6 +58,7 @@ ns.Help.create(frame)
 ns.ItemList.create(frame)
 ns.Progress.create(ns.PaperDoll.create(frame))
 ns.FilterBar.create(frame)
+ns.SourcePicker.create(frame) -- last, so it covers every panel
 ns.MinimapButton.create()
 ns.DungeonNotice.create()
 ns.Events.install()
