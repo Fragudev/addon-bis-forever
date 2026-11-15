@@ -36,6 +36,14 @@ jobs:
           ref: ${{ env.TAG }}
           fetch-depth: 0
 
+      # Betas ship from develop, so a tag on another branch stops here before anything is published.
+      - name: Check tag branch
+        run: |
+          if ! git merge-base --is-ancestor HEAD origin/develop; then
+            echo "::error::${TAG} is not on develop. Betas are tagged on develop."
+            exit 1
+          fi
+
       # Fails when the tag and the TOC version disagree (beta_0.0.35 vs beta-0.0.35).
       - name: Build zip
         run: tools/package.sh "${TAG}"
