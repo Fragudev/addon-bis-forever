@@ -20,8 +20,11 @@ jobs:
     outputs:
       tag: ${{ steps.publish.outputs.tag }}
     steps:
+      # The lists are refreshed on develop, where betas are tagged; main only takes reviewed merges.
       - name: Checkout
         uses: actions/checkout@v7
+        with:
+          ref: develop
 
       # A source that fails keeps its previous data file; the job fails only if every source fails.
       - name: Refresh lists from every shipped source
@@ -48,7 +51,7 @@ jobs:
           git add ForeverBiS/ForeverBiS_Data_*.lua "$toc"
           git commit -m "chore(data): refresh BiS lists from all sources"
           git tag "$tag"
-          git push origin HEAD:main "$tag"
+          git push origin HEAD:develop "$tag"
           echo "tag=${tag}" >>"$GITHUB_OUTPUT"
 
   # Tags pushed with GITHUB_TOKEN do not trigger other workflows, so call the release directly.

@@ -89,7 +89,7 @@ Found a bug or have an idea? Open an issue on [GitHub](https://github.com/Fragud
 
 ---
 
-Made by [Fragudev](https://github.com/Fragudev) · MIT License · Interface font: Fira Sans (SIL OFL 1.1)
+Made by [Fragudev](https://github.com/Fragudev) · Proprietary, all rights reserved ([LICENSE](https://github.com/Fragudev/addon-bis-forever/blob/main/LICENSE)) · Interface font: Fira Sans (SIL OFL 1.1)
 ````
 
 ## Images
