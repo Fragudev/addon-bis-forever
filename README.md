@@ -12,7 +12,7 @@
 </p>
 
 <p align="center">
-  <a href="LICENSE.md"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-e6ba66?style=flat-square"></a>
+  <a href="LICENSE"><img alt="License: proprietary" src="https://img.shields.io/badge/license-proprietary-e6ba66?style=flat-square"></a>
   <img alt="World of Warcraft: Forever, Interface 16001" src="https://img.shields.io/badge/WoW_Forever-Interface_16001-94c9ff?style=flat-square">
   <a href="https://github.com/Fragudev/addon-bis-forever/releases"><img alt="Latest release" src="https://img.shields.io/github/v/release/Fragudev/addon-bis-forever?include_prereleases&style=flat-square&label=release"></a>
   <a href="https://github.com/Fragudev/addon-bis-forever/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/Fragudev/addon-bis-forever/actions/workflows/ci.yml/badge.svg"></a>
@@ -168,8 +168,9 @@ The addon reads its bundled `ForeverBiS_Data.lua` (schema 2: lists per phase wit
    `UpdateForeverBiS.py`, which discovers the class and build pages on ForeverChanges and rewrites the data file.
 2. The updater derives each list's phase from its title (for example "at level 30"). If it cannot download or parse
    every discovered page, it leaves the previous data file untouched.
-3. When the lists changed, the workflow bumps the version in `ForeverBiS.toc`, tags it and publishes the release to
-   GitHub and CurseForge.
+3. When the lists changed, the workflow commits to `develop`, bumps the version in `ForeverBiS.toc`, tags it and
+   publishes the beta to GitHub and CurseForge. Betas only ship from `develop`; the release workflow refuses a tag that
+   is not on it.
 
 ## Building from source
 
@@ -189,8 +190,8 @@ tools/package.sh <version>                       # build and verify Forever-<ver
 python3 tools/generate_minimap_icon.py           # regenerate the minimap icon artwork
 ```
 
-[CI](.github/workflows/ci.yml) runs all of these on every pull request and every push to `main`. The version lives
-only in `ForeverBiS.toc`; CI fails if the README hardcodes it.
+[CI](.github/workflows/ci.yml) runs all of these on every pull request and every push to `main` or `develop`. The
+version lives only in `ForeverBiS.toc`; CI fails if the README hardcodes it.
 
 ### Project layout
 
@@ -225,7 +226,9 @@ To add a file, list it in `ForeverBiS.toc` (specs load files from the `.toc`, so
 
 ## Contributing
 
-Issues and pull requests are welcome on [GitHub](https://github.com/Fragudev/addon-bis-forever/issues).
+Bug reports and ideas are welcome as [issues](https://github.com/Fragudev/addon-bis-forever/issues). Pull requests are
+open to maintainers only. Day-to-day work lands on `develop`, directly or through short-lived branches, and `main`
+only takes pull requests from `develop` approved by the owner.
 
 - **Wrong item or source?** The lists come from ForeverChanges, so a wrong ranking belongs there. A wrong source,
   icon or tooltip in the addon is a bug here: open an issue with the class, build, phase and item.
@@ -235,8 +238,8 @@ Issues and pull requests are welcome on [GitHub](https://github.com/Fragudev/add
 
 ## Data and licensing
 
-Copyright (c) 2026 Fragudev. Forever BiS is licensed under the [MIT License](LICENSE.md). Third-party materials, game
-assets and the Best in Slot list information from ForeverChanges are not claimed by this license.
+Copyright (c) 2026 Fragudev. Forever BiS is proprietary, all rights reserved: see [LICENSE](LICENSE). Third-party
+materials, game assets and the Best in Slot list information from ForeverChanges are not claimed by this license.
 
 The interface uses the [Fira Sans](https://github.com/mozilla/Fira) typeface (Regular, Medium and SemiBold), licensed
 under the SIL Open Font License 1.1; the license text ships next to the fonts in `ForeverBiS/Media/Fonts/OFL.txt`. The

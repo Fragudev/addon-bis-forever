@@ -51,7 +51,7 @@ A comprehensive Best in Slot (BiS) gear guide for World of Warcraft: Forever.
 
 ## License
 
-MIT License — See [LICENSE.md](LICENSE.md) for details.
+Proprietary, all rights reserved. See [LICENSE](https://github.com/Fragudev/addon-bis-forever/blob/main/LICENSE).
 
 ## Credits
 
