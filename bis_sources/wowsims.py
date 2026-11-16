@@ -6,6 +6,7 @@ import os
 import re
 
 from .common import http_get, http_json, sorted_phases
+from .foreverchanges import structure_source
 
 REPO = "wowsims/forever"
 TREE_URL = f"https://api.github.com/repos/{REPO}/git/trees/master?recursive=1"
@@ -204,6 +205,52 @@ def parse_siml(text, resolver, name):
     return {"items": entries}
 
 
+PROFESSIONS = {1: "Alchemy", 2: "Blacksmithing", 3: "Enchanting", 4: "Engineering", 8: "Leatherworking", 11: "Tailoring"}
+FACTIONS = {1: "Alliance", 2: "Horde"}
+# db.json source entry type, in the order the addon prefers when an item has several.
+SOURCE_PRIORITY = ("drop", "crafted", "quest", "soldBy", "rep", "pvp")
+
+
+class SourceDescriber:
+    """Turn the `sources` of a db.json item into the addon's source dict (kind, text, zone, boss, ...)."""
+
+    def __init__(self, db):
+        self.zones = {zone["id"]: zone["name"] for zone in db.get("zones") or []}
+        self.npcs = {npc["id"]: npc["name"] for npc in db.get("npcs") or []}
+        self.factions = {faction["id"]: faction["name"] for faction in db.get("factions") or []}
+
+    def text(self, kind, entry):
+        zone = self.zones.get(entry.get("zoneId"))
+        if kind == "drop":
+            boss = self.npcs.get(entry.get("npcId")) or entry.get("otherName")
+            return ", ".join(part for part in (boss, zone) if part) or None
+        if kind == "soldBy":
+            vendor = entry.get("npcName") or self.npcs.get(entry.get("npcId"))
+            return "Sold by " + ", ".join(part for part in (vendor, zone) if part) if vendor or zone else None
+        if kind == "quest":
+            if not entry.get("name"):
+                return None
+            faction = FACTIONS.get(entry.get("faction"))
+            return f"Quest: {entry['name']}" + (f" ({faction})" if faction else "")
+        if kind == "crafted":
+            return PROFESSIONS.get(entry.get("profession"))
+        if kind == "rep":
+            return "Reputation: " + self.factions.get(entry.get("repFactionId"), "faction")
+        return "PvP reward" if kind == "pvp" else None
+
+    def __call__(self, item):
+        candidates = []
+        for entry in item.get("sources") or []:
+            for kind in SOURCE_PRIORITY:
+                text = kind in entry and self.text(kind, entry[kind])
+                if text:
+                    source = structure_source(text)
+                    if kind == "quest":
+                        source["quest"] = entry[kind]["name"]
+                    candidates.append((source["kind"] != "dungeon", SOURCE_PRIORITY.index(kind), len(candidates), source))
+        return min(candidates, key=lambda c: c[:3])[3] if candidates else dict(NO_SOURCE)
+
+
 def slot_label(slot, item):
     if slot == "Main hand":
         return "Two-hand weapon" if item.get("handType") == 4 else "Main hand"
@@ -220,7 +267,7 @@ def enchant_of(effect_id, enchants, entry=None):
     return name.split(" - ", 1)[-1], name, "", None
 
 
-def build_slots(gear, items, enchants):
+def build_slots(gear, items, enchants, describe=None):
     """Turn a .gear.json payload into list slots following the wowsims ItemSlot order."""
     grouped = {}
     for index, entry in enumerate((gear.get("items") or [])[: len(ITEM_SLOTS)]):
@@ -231,7 +278,8 @@ def build_slots(gear, items, enchants):
         bucket = grouped.setdefault(ITEM_SLOTS[index], [ITEM_SLOTS[index], [], []])
         bucket[0] = slot_label(ITEM_SLOTS[index], item)
         name = item.get("name") or f"Item {item_id}"
-        bucket[1].append((f"{name} {entry['suffix']}" if entry.get("suffix") else name, dict(NO_SOURCE), item_id))
+        source = describe(item) if describe else dict(NO_SOURCE)
+        bucket[1].append((f"{name} {entry['suffix']}" if entry.get("suffix") else name, source, item_id))
         enchant = entry.get("enchant") and enchant_of(entry["enchant"], enchants, entry.get("enchantEntry"))
         if enchant and enchant not in bucket[2]:
             bucket[2].append(enchant)
@@ -270,13 +318,14 @@ def fetch(get_text=http_get, get_json=http_json):
         enchants.setdefault(enchant["effectId"], enchant)
 
     resolver = SlugResolver(db)
+    describe = SourceDescriber(db)
     data, labels, phases = {}, {}, {}
     for (route, phase_id), (_, path, label) in sorted(chosen.items()):
         if path.endswith(".siml"):
             gear = parse_siml(get_text(RAW_URL + path), resolver, path)
         else:
             gear = get_json(RAW_URL + path)
-        slots = build_slots(gear, items, enchants)
+        slots = build_slots(gear, items, enchants, describe)
         if not slots:
             raise RuntimeError(f"{path} has no items")
         class_key = route.split("/", 1)[0]

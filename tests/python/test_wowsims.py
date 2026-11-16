@@ -95,6 +95,61 @@ class SimlParsingTest(unittest.TestCase):
         self.assertEqual("", out)
 
 
+class ItemSourceTest(unittest.TestCase):
+    DB = {
+        "zones": [{"id": 1581, "name": "The Deadmines"}, {"id": 1519, "name": "Stormwind City"}, {"id": 40, "name": "Westfall"}],
+        "npcs": [{"id": 644, "name": "Rhahk'Zor"}, {"id": 1297, "name": "Lina Stover"}],
+        "factions": [{"id": 509, "name": "The League of Arathor"}],
+    }
+
+    def source(self, *sources):
+        return wowsims.SourceDescriber(self.DB)({"id": 1, "name": "X", "sources": list(sources)})
+
+    def test_dungeon_drop_has_zone_and_boss(self):
+        source = self.source({"drop": {"difficulty": 1, "npcId": 644, "zoneId": 1581}})
+        self.assertEqual(("dungeon", "Rhahk'Zor, The Deadmines"), (source["kind"], source["text"]))
+        self.assertEqual(("The Deadmines", "Rhahk'Zor"), (source["zone"], source["boss"]))
+
+    def test_trash_drop_uses_the_other_name(self):
+        source = self.source({"drop": {"difficulty": 1, "zoneId": 1581, "otherName": "Trash"}})
+        self.assertEqual(("dungeon", "Trash, The Deadmines"), (source["kind"], source["text"]))
+
+    def test_world_drop_is_world(self):
+        source = self.source({"drop": {"npcId": 644, "zoneId": 40}})
+        self.assertEqual(("world", "Rhahk'Zor, Westfall"), (source["kind"], source["text"]))
+
+    def test_quest_with_faction(self):
+        source = self.source({"quest": {"id": 53, "name": "Sweet Amber", "faction": 1}})
+        self.assertEqual(("quest", "Quest: Sweet Amber (Alliance)"), (source["kind"], source["text"]))
+        self.assertEqual(("Alliance", "Sweet Amber"), (source["faction"], source["quest"]))
+
+    def test_vendor(self):
+        source = self.source({"soldBy": {"npcId": 1297, "npcName": "Lina Stover", "zoneId": 1519}})
+        self.assertEqual(("world", "Sold by Lina Stover, Stormwind City"), (source["kind"], source["text"]))
+
+    def test_crafted_is_a_profession(self):
+        source = self.source({"crafted": {"profession": 2, "spellId": 2675}})
+        self.assertEqual(("profession", "Blacksmithing", "Blacksmithing"), (source["kind"], source["text"], source["skill"]))
+
+    def test_pvp_and_reputation(self):
+        self.assertEqual("PvP reward", self.source({"pvp": {}})["text"])
+        self.assertEqual("Reputation: The League of Arathor", self.source({"rep": {"repFactionId": 509}})["text"])
+
+    def test_dungeon_drop_beats_other_sources(self):
+        source = self.source({"quest": {"name": "Q"}}, {"drop": {"npcId": 644, "zoneId": 1581}})
+        self.assertEqual("dungeon", source["kind"])
+
+    def test_items_without_sources_stay_unknown(self):
+        describe = wowsims.SourceDescriber(self.DB)
+        self.assertEqual(wowsims.NO_SOURCE, describe({"id": 1, "name": "X"}))
+        self.assertEqual(wowsims.NO_SOURCE, describe({"id": 1, "name": "X", "sources": []}))
+
+    def test_build_slots_uses_the_describer(self):
+        items = {1: {"id": 1, "name": "Helm", "sources": [{"quest": {"name": "Q"}}]}}
+        slots = wowsims.build_slots({"items": [{"id": 1}]}, items, {}, wowsims.SourceDescriber(self.DB))
+        self.assertEqual("quest", slots[0][1][0][1]["kind"])
+
+
 class MappingTest(unittest.TestCase):
     def test_siml_presets_map_to_the_committed_routes(self):
         cases = {
