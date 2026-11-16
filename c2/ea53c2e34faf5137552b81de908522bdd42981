@@ -1,0 +1,25 @@
+ForeverBiS/Core/Sources.lua
+  s_765e5225b7ca65::t_47b85b621e2bab 35-49
+bis_sources/foreverchanges.py
+  s_765e5225b7ca65::t_92670465c827ad 257-271
+tests/python/test_updater.py
+  s_765e5225b7ca65::t_8d402b7f8fc859 205-226
+tests/sources_spec.lua
+  s_765e5225b7ca65::t_80df1d147f5210 46-67
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.6",
+  "base_commit_sha": "c2ea53c2e34faf5137552b81de908522bdd42981",
+  "prompts": {},
+  "sessions": {
+    "s_765e5225b7ca65": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ad0c3eac-f795-4e8b-9956-58a53e1ead08",
+        "model": "unknown"
+      },
+      "human_author": "Francis Gutiérrez <fragudev@gmail.com>"
+    }
+  }
+}
