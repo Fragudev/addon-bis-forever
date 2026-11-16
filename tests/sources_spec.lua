@@ -1,6 +1,11 @@
 local function loadSources()
     WowStub.reset()
-    WowStub.loadFiles({ "ForeverBiS_Data.lua", "ForeverBiS_Model.lua", "Core/Sources.lua" })
+    WowStub.loadFiles({
+        "ForeverBiS_Data_ForeverChanges.lua",
+        "ForeverBiS_Data_Wowsims.lua",
+        "ForeverBiS_Model.lua",
+        "Core/Sources.lua",
+    })
     return WowStub.ns.Sources
 end
 
@@ -22,6 +27,42 @@ describe("Sources", function()
 
         it("recognizes dungeons by name", function()
             assert.are.equal("dungeon", Sources.category("Sneed's Shredder, The Deadmines"))
+        end)
+
+        it("recognizes the classic dungeons and the wings of Scarlet Monastery", function()
+            for _, source in ipairs({
+                "Hamhock, The Stockade",
+                "Some Boss, Gnomeregan",
+                "Charlga Razorflank, Razorfen Kraul",
+                "Amnennar the Coldbringer, Razorfen Downs",
+                "Bloodmage Thalnos, Scarlet Monastery Graveyard",
+                "Houndmaster Loksey, Scarlet Monastery Library",
+                "Revelosh, Uldaman",
+            }) do
+                assert.are.equal("dungeon", Sources.category(source), source)
+            end
+        end)
+
+        it("recognizes the level 60 dungeons and the raids", function()
+            for _, source in ipairs({
+                "Gahz'rilla, Zul'Farrak",
+                "Princess Theradras, Maraudon",
+                "Shade of Eranikus, The Temple of Atal'Hakkar",
+                "Emperor Dagran Thaurissan, Blackrock Depths",
+                "General Drakkisath, Blackrock Spire",
+                "Zevrim Thornhoof, Dire Maul",
+                "Baron Rivendare, Stratholme",
+                "Darkmaster Gandling, Scholomance",
+                "Magmadar, Molten Core",
+                "Onyxia, Onyxia's Lair",
+                "Nefarian, Blackwing Lair",
+                "Hakkar, Zul'Gurub",
+                "Ossirian the Unscarred, Ruins of Ahn'Qiraj",
+                "C'Thun, Temple of Ahn'Qiraj",
+                "Kel'Thuzad, Naxxramas",
+            }) do
+                assert.are.equal("dungeon", Sources.category(source), source)
+            end
         end)
 
         it("treats everything else as the open world", function()
@@ -172,5 +213,19 @@ describe("Sources", function()
 
     it("lists the dungeons the filter knows", function()
         assert.are.equal("The Deadmines", Sources.dungeons[1][2])
+        local names = {}
+        for _, dungeon in ipairs(Sources.dungeons) do
+            names[dungeon[2]] = dungeon[1]
+        end
+        for _, name in ipairs({
+            "Gnomeregan",
+            "The Stockade",
+            "Razorfen Kraul",
+            "Razorfen Downs",
+            "Scarlet Monastery",
+            "Uldaman",
+        }) do
+            assert.are.equal(name:lower(), names[name], name)
+        end
     end)
 end)

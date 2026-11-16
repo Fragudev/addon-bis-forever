@@ -1,0 +1,22 @@
+{
+  "items": [
+    {"id": 1, "name": "Lionheart Helm", "phase": 1},
+    {"id": 2, "name": "Beastmaster's Bindings"},
+    {"id": 3, "name": "Arcanite Reaper", "handType": 4},
+    {"id": 4, "name": "Libram of Law"},
+    {"id": 5, "name": "Hawkeye Bow"},
+    {"id": 6, "name": "Raider Gloves", "reqLvl": 50},
+    {"id": 7, "name": "Raider Gloves", "reqLvl": 60},
+    {"id": 8, "name": "Horn of Ve'han"},
+    {"id": 9, "name": "Band of Earthen Might"},
+    {"id": 10, "name": "Don Julio's Band"}
+  ],
+  "enchants": [
+    {"effectId": 2543, "name": "Arcanum of Rapidity"},
+    {"effectId": 1900, "name": "Enchant Weapon - Crusader"},
+    {"effectId": 7656, "name": "Enchant Bracer - Agility"},
+    {"effectId": 7656, "name": "Enchant Bracer - Superior Agility"},
+    {"effectId": 2564, "name": "Enchant Gloves - Superior Agility"},
+    {"effectId": 2564, "name": "Enchant Weapon - Agility"}
+  ]
+}

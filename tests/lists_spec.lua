@@ -1,6 +1,12 @@
 local function loadLists(withoutData)
     WowStub.reset()
-    WowStub.loadFiles({ "ForeverBiS_Data.lua", "ForeverBiS_Model.lua", "Core/Sources.lua", "Core/Lists.lua" })
+    WowStub.loadFiles({
+        "ForeverBiS_Data_ForeverChanges.lua",
+        "ForeverBiS_Data_Wowsims.lua",
+        "ForeverBiS_Model.lua",
+        "Core/Sources.lua",
+        "Core/Lists.lua",
+    })
     if withoutData then
         _G.ForeverBiSData, _G.ForeverBiSLists = nil, nil
     end
@@ -14,9 +20,21 @@ describe("Lists", function()
         assert.are.same(ForeverBiSModel.list("rogue", phaseId), Lists.resolve("rogue", phaseId))
     end)
 
-    it("falls back to the legacy list when no phase is given", function()
+    it("uses the route's default phase when no phase is given", function()
         local Lists = loadLists()
-        assert.are.equal(ForeverBiSLists["rogue"], Lists.resolve("rogue", nil))
+        assert.are.same(ForeverBiSModel.list("rogue"), Lists.resolve("rogue", nil))
+    end)
+
+    it("falls back to the default phase when the given one does not exist", function()
+        local Lists = loadLists()
+        assert.are.same(ForeverBiSModel.list("rogue"), Lists.resolve("rogue", "no-such-phase"))
+    end)
+
+    it("marks a view missing only when the route has no list", function()
+        local Lists = loadLists()
+        assert.is_false(Lists.view("rogue", nil).missing)
+        assert.is_true(Lists.view("not-a-route", nil).missing)
+        assert.is_false(Lists.view(nil, nil).missing)
     end)
 
     it("resolves nothing without a route or for an unknown one", function()
@@ -61,6 +79,43 @@ describe("Lists", function()
             local Lists = loadLists()
             assert.is_nil(Lists.rankOf(items, 99, idOf))
             assert.is_nil(Lists.rankOf({}, 1, idOf))
+        end)
+    end)
+
+    describe("view", function()
+        local TwoSources = dofile("tests/support/sources.lua")
+
+        local function loadTwoSources()
+            WowStub.reset()
+            _G.ForeverBiSData = TwoSources.twoSources()
+            WowStub.loadFiles({ "ForeverBiS_Model.lua", "Core/Sources.lua", "Core/Lists.lua" })
+            return WowStub.ns.Lists
+        end
+
+        it("indexes the slots of a route the active source has", function()
+            local Lists = loadTwoSources()
+            local view = Lists.view("druid", "lvl30")
+            assert.is_false(view.missing)
+            assert.are.equal("Alpha Hood", view.best["Head"][1])
+        end)
+
+        it("returns an empty view flagged as missing when the active source lacks the route", function()
+            local Lists = loadTwoSources()
+            ForeverBiSModel.select("beta")
+            local view
+            assert.has_no.errors(function()
+                view = Lists.view("druid", "lvl30")
+            end)
+            assert.is_true(view.missing)
+            assert.is_nil(view.data)
+            assert.are.same({}, view.ranked)
+            assert.are.same({}, view.best)
+            assert.are.equal("druid", view.route)
+        end)
+
+        it("does not flag a missing view when there is no route at all", function()
+            local Lists = loadTwoSources()
+            assert.is_false(Lists.view(nil).missing)
         end)
     end)
 end)

@@ -50,7 +50,7 @@ end
 local function setup(player, data)
     WowStub.reset()
     WowStub.player = player or { class = "Rogue", token = "ROGUE", level = 30 }
-    _G.ForeverBiSData = data or fixture()
+    _G.ForeverBiSData = WowStub.wrapSource(data or fixture())
     WowStub.loadFiles({ "ForeverBiS_Model.lua" })
 end
 

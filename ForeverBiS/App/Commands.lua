@@ -52,7 +52,7 @@ local function linkMessages(view, slotQuery)
 end
 
 --- /bis link [slot] posts the selected build and phase to the group (party, raid or say).
-local function postLinks(_, rest)
+local function postLinks(_, rest, typed)
     local view = currentView()
     if not view.data then
         print(L["No BiS list is loaded for this build."])
@@ -60,7 +60,7 @@ local function postLinks(_, rest)
     end
     local messages, validSlots = linkMessages(view, rest)
     if not messages then
-        print(L["Unknown slot '%s'. Valid slots: %s"]:format(rest, table.concat(validSlots, ", ")))
+        print(L["Unknown slot '%s'. Valid slots: %s"]:format(typed, table.concat(validSlots, ", ")))
         return true
     end
     for _, message in ipairs(messages) do
@@ -69,8 +69,9 @@ local function postLinks(_, rest)
     return true
 end
 
---- Subcommand handlers by lowercase name. A handler gets the lowercase first argument and everything after the
---- command, and returns true when it handled the input; anything else falls through to toggling the window.
+--- Subcommand handlers by lowercase name. A handler gets the lowercase first argument, everything after the command
+--- in lowercase, and the same text as typed. It returns true when it handled the input; anything else falls through
+--- to toggling the window.
 Commands.handlers = {
     -- /bis tooltip toggles the BiS tooltip block; /bis tooltip all toggles other classes in it.
     tooltip = function(argument)
@@ -93,6 +94,15 @@ Commands.handlers = {
         print(L["Forever BiS dungeon notice: "] .. (on and L["on"] or L["off"]))
         return true
     end,
+    -- /bis minimap hides or shows the minimap button (shown by default).
+    minimap = function()
+        local on = Settings.toggleMinimapHidden()
+        if ns.MinimapButton then
+            ns.MinimapButton.refresh()
+        end
+        print(L["Forever BiS minimap button: "] .. (on and L["on"] or L["off"]))
+        return true
+    end,
     -- /bis alerts toggles the BiS loot alerts (on by default).
     alerts = function()
         local on = Settings.toggleAlerts()
@@ -111,8 +121,9 @@ end
 
 function Commands.dispatch(message)
     local command, argument, rest = Commands.parse(message)
+    local typed = (message or ""):match("^%s*%S+%s*(.-)%s*$") or ""
     local handler = Commands.handlers[command]
-    if not (handler and handler(argument, rest)) then
+    if not (handler and handler(argument, rest, typed)) then
         ns.toggleWindow()
     end
 end

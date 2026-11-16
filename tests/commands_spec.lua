@@ -6,7 +6,8 @@ local function loadCommands(db)
     _G.ForeverBiSDB = db or {}
     local ns = WowStub.loadFiles({
         "ForeverBiS_Locale.lua",
-        "ForeverBiS_Data.lua",
+        "ForeverBiS_Data_ForeverChanges.lua",
+        "ForeverBiS_Data_Wowsims.lua",
         "ForeverBiS_Model.lua",
         "Core/Settings.lua",
         "Core/Catalog.lua",
@@ -65,6 +66,17 @@ describe("Commands", function()
             Commands.dispatch("tooltip")
             assert.is_false(ForeverBiSDB.tooltip)
             assert.are.same({ "Forever BiS tooltips: off" }, printed)
+            assert.are.equal(0, toggles)
+        end)
+
+        it("hides and shows the minimap button with /bis minimap", function()
+            local Commands = loadCommands()
+            Commands.dispatch("minimap")
+            assert.is_true(ForeverBiSDB.minimap.hide)
+            assert.are.same({ "Forever BiS minimap button: off" }, printed)
+            Commands.dispatch("minimap")
+            assert.is_false(ForeverBiSDB.minimap.hide)
+            assert.are.equal("Forever BiS minimap button: on", printed[2])
             assert.are.equal(0, toggles)
         end)
 
@@ -164,6 +176,13 @@ describe("Commands", function()
                 channels[#channels + 1] = WowStub.chat[1].channel
             end
             assert.are.same({ "SAY", "PARTY", "RAID" }, channels)
+        end)
+
+        it("echoes an unknown slot name as the player typed it", function()
+            local Commands = loadCommands()
+            Commands.dispatch("link Tabard")
+            assert.are.equal(0, #WowStub.chat)
+            assert.is_truthy(printed[1]:find("Unknown slot 'Tabard'", 1, true))
         end)
 
         it("prints the valid slots for an unknown slot name and sends nothing", function()

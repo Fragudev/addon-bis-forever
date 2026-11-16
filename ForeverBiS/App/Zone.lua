@@ -8,7 +8,10 @@ local Filters, Settings, Sources, Player, Lists, Zone, L =
     ns.Filters, ns.Settings, ns.Sources, ns.Player, ns.Lists, ns.Zone, ns.L
 
 local NOTICE_SECONDS = 12
+-- The client fires both entry events for one entry; a repeat for the same instance inside this window is ignored.
+local DUPLICATE_SECONDS = 5
 local shownAt = 0
+local shownName
 
 --- Opens the window with the dungeon filter applied (the same state the filter bar edits).
 local function openFiltered(dungeonKey)
@@ -34,10 +37,14 @@ function ZoneWatcher.check()
     if count == 0 then
         return false
     end
+    local name, now = Zone.instanceName(), GetTime()
+    if name == shownName and now - shownAt < DUPLICATE_SECONDS then
+        return false
+    end
     ns.DungeonNotice.show(L["%d BiS items in %s - click to view"]:format(count, dungeon[2]), function()
         openFiltered(dungeon[1])
     end)
-    shownAt = GetTime()
+    shownName, shownAt = name, now
     C_Timer.After(NOTICE_SECONDS, function()
         -- A newer notice keeps its own full time.
         if GetTime() - shownAt >= NOTICE_SECONDS then

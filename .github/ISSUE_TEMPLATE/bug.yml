@@ -1,0 +1,42 @@
+name: Bug report
+description: Something in the addon does not work as it should.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: Search the open and closed issues first. See CONTRIBUTING.md for what helps most.
+  - type: input
+    id: version
+    attributes:
+      label: Addon version
+      description: Shown in the AddOns list and in the name of the zip you installed.
+      placeholder: v1.2.0
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: What you did
+      description: The steps that lead to the problem.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected and what happened
+    validations:
+      required: true
+  - type: textarea
+    id: item
+    attributes:
+      label: Class, build, phase and item
+      description: Which list and which item show the problem.
+    validations:
+      required: true
+  - type: input
+    id: language
+    attributes:
+      label: Client language
+      placeholder: esES
+    validations:
+      required: false

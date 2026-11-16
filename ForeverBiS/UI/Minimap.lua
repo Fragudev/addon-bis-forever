@@ -73,10 +73,12 @@ function MinimapButton.create()
     MinimapButton.refresh()
 end
 
---- Places the button from the saved angle and hides it when the saved settings say so.
+--- Places the button from the saved angle and shows or hides it as the saved settings say.
 function MinimapButton.refresh()
     updatePosition()
     if Settings.minimapHidden() then
         button:Hide()
+    else
+        button:Show()
     end
 end

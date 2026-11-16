@@ -62,22 +62,62 @@ local classes = {
 }
 Catalog.classes = classes
 
---- Replaces each class's builds with the labelled routes the data provides ({ [route] = label }).
---- A class the data does not mention keeps its built-in builds.
-function Catalog.refreshBuilds(labels)
+-- The built-in builds, kept so refreshBuilds can start from them every time (the data source can change).
+local defaultBuilds = {}
+for _, class in ipairs(classes) do
+    defaultBuilds[class.key] = class.builds
+end
+
+--- A build label for a route the data gives none for, from its suffix: "" -> "PvE", "/shadow-pvp" -> "Shadow PvP".
+local function derivedLabel(suffix)
+    local words = {}
+    for word in string.gmatch(suffix, "[^/%-]+") do
+        local lower = string.lower(word)
+        if lower == "pvp" then
+            words[#words + 1] = "PvP"
+        elseif lower == "pve" then
+            words[#words + 1] = "PvE"
+        else
+            words[#words + 1] = string.upper(string.sub(word, 1, 1)) .. string.sub(word, 2)
+        end
+    end
+    return #words > 0 and table.concat(words, " ") or "PvE"
+end
+
+--- Replaces each class's builds with the labelled routes the data provides ({ [route] = label }). A route listed
+--- in `routes` without a usable label is kept under a label derived from its suffix. A class the data does not
+--- mention keeps its built-in builds. Safe to call repeatedly: it always restores the built-in builds first, so
+--- switching data sources never leaves routes of the previous one behind. The default build (empty suffix) comes
+--- first, the rest sorted by label.
+function Catalog.refreshBuilds(labels, routes)
+    for _, class in ipairs(classes) do
+        class.builds = defaultBuilds[class.key]
+    end
     if not labels then
         return
     end
+    local known = {}
+    for route, label in pairs(labels) do
+        known[route] = type(label) == "string" and label or false
+    end
+    for _, route in ipairs(routes or {}) do
+        if not known[route] then
+            known[route] = false
+        end
+    end
     for _, class in ipairs(classes) do
         local refreshedBuilds = {}
-        for route, label in pairs(labels) do
+        for route, label in pairs(known) do
             if route == class.key or string.find(route, "^" .. class.key .. "/") then
                 local suffix = string.sub(route, #class.key + 1)
-                table.insert(refreshedBuilds, { suffix, label, suffix })
+                table.insert(refreshedBuilds, { suffix, label or derivedLabel(suffix), suffix })
             end
         end
         if #refreshedBuilds > 0 then
             table.sort(refreshedBuilds, function(a, b)
+                if (a[3] == "") ~= (b[3] == "") then
+                    return a[3] == ""
+                end
                 return a[2] < b[2]
             end)
             class.builds = refreshedBuilds
@@ -131,11 +171,14 @@ function Catalog.splitBuild(label)
     return mode, spec ~= "" and spec or nil
 end
 
---- The modes a class has builds for, PvE first: a subset of { "pve", "pvp" }.
-function Catalog.modes(class)
+--- The modes a class has builds for, PvE first: a subset of { "pve", "pvp" }. With a `listed(build)` predicate
+--- only the builds it accepts count.
+function Catalog.modes(class, listed)
     local found = {}
     for _, build in ipairs(class.builds) do
-        found[(Catalog.splitBuild(build[2]))] = true
+        if not listed or listed(build) then
+            found[(Catalog.splitBuild(build[2]))] = true
+        end
     end
     local modes = {}
     for _, mode in ipairs({ "pve", "pvp" }) do
@@ -147,11 +190,12 @@ function Catalog.modes(class)
 end
 
 --- The builds of a class in one mode, in catalog order, each as { build = build, spec = spec name or nil }.
-function Catalog.buildsForMode(class, mode)
+--- With a `listed(build)` predicate only the builds it accepts are returned.
+function Catalog.buildsForMode(class, mode, listed)
     local builds = {}
     for _, build in ipairs(class.builds) do
         local buildMode, spec = Catalog.splitBuild(build[2])
-        if buildMode == mode then
+        if buildMode == mode and (not listed or listed(build)) then
             builds[#builds + 1] = { build = build, spec = spec }
         end
     end
@@ -160,15 +204,25 @@ end
 
 --- The build to switch to when the mode changes: the same spec in the new mode when there is one, else the
 --- first build of that mode. Returns nil when the class has no build in that mode.
-function Catalog.buildForMode(class, current, mode)
+function Catalog.buildForMode(class, current, mode, listed)
     local _, currentSpec = Catalog.splitBuild(current[2])
-    local builds = Catalog.buildsForMode(class, mode)
+    local builds = Catalog.buildsForMode(class, mode, listed)
     for _, entry in ipairs(builds) do
         if entry.spec == currentSpec then
             return entry.build
         end
     end
     return builds[1] and builds[1].build
+end
+
+--- The first build of a class accepted by `listed(build)`, or nil when none is.
+function Catalog.firstListedBuild(class, listed)
+    for _, build in ipairs(class.builds) do
+        if listed(build) then
+            return build
+        end
+    end
+    return nil
 end
 
 --- The data route for a class and build, e.g. "druid/tank".
@@ -217,4 +271,4 @@ function Catalog.progressKeys()
     return keys
 end
 
-Catalog.refreshBuilds(ForeverBiSBuildLabels)
+Catalog.refreshBuilds(ForeverBiSBuildLabels, ForeverBiSModel and ForeverBiSModel.routes())

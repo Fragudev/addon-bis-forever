@@ -3,7 +3,13 @@ local function loadSettings(character, account)
     WowStub.reset()
     _G.ForeverBiSCharDB = character
     _G.ForeverBiSDB = account
-    WowStub.loadFiles({ "ForeverBiS_Data.lua", "ForeverBiS_Model.lua", "Core/Settings.lua", "Core/Catalog.lua" })
+    WowStub.loadFiles({
+        "ForeverBiS_Data_ForeverChanges.lua",
+        "ForeverBiS_Data_Wowsims.lua",
+        "ForeverBiS_Model.lua",
+        "Core/Settings.lua",
+        "Core/Catalog.lua",
+    })
     return WowStub.ns.Settings
 end
 
@@ -17,7 +23,7 @@ describe("Settings", function()
             local Settings = loadSettings(nil)
             Settings.bind()
             assert.are.equal("rogue", ForeverBiSCharDB.class)
-            assert.are.equal("pve", ForeverBiSCharDB.build)
+            assert.are.equal("", ForeverBiSCharDB.build) -- the default build has an empty route suffix
             assert.is_table(ForeverBiSDB.minimap)
             assert.is_table(ForeverBiSCharDB.collapsed)
         end)
@@ -117,14 +123,22 @@ describe("Settings", function()
     end)
 
     describe("route", function()
-        it("writes the resolved class and build back and returns the route", function()
+        it("resolves unknown keys to a route without writing them back", function()
             local Settings = loadSettings({ class = "not-a-class", build = "not-a-build" })
             local route, class, build = Settings.route()
             assert.are.equal("rogue", route)
             assert.are.equal("rogue", class.key)
             assert.are.equal("", build[1]) -- the default build has an empty route suffix
-            assert.are.equal("rogue", ForeverBiSCharDB.class)
-            assert.are.equal("", ForeverBiSCharDB.build)
+            assert.are.equal("not-a-class", ForeverBiSCharDB.class)
+            assert.are.equal("not-a-build", ForeverBiSCharDB.build)
+        end)
+
+        it("honours a build and phase saved by an older version, which has no per-source memory", function()
+            local Settings = loadSettings({ class = "druid", build = "/tank", phase = "lvl60" })
+            Settings.bind()
+            assert.are.equal("druid/tank", (Settings.route()))
+            assert.are.equal("lvl60", Settings.phase())
+            assert.is_nil(ForeverBiSCharDB.bySource)
         end)
 
         it("includes the build suffix", function()
@@ -188,6 +202,12 @@ describe("Settings", function()
             assert.is_nil(Settings.phase())
         end)
 
+        it("reads a saved phase the route lacks as automatic without clearing it", function()
+            local Settings = loadSettings({ phase = "no-such-phase" })
+            assert.is_nil(Settings.activePhase("rogue"))
+            assert.are.equal("no-such-phase", Settings.phase())
+        end)
+
         it("shows the phase for the player's level when none is saved", function()
             local Settings = loadSettings({})
             assert.are.equal(ForeverBiSModel.effectivePhase("rogue", nil, 30), Settings.effectivePhase("rogue", 30))
@@ -239,6 +259,162 @@ describe("Settings", function()
             assert.is_true(Settings.toggleTooltipAllClasses())
             assert.is_true(Settings.tooltipAllClasses())
             assert.is_false(Settings.toggleTooltipAllClasses())
+        end)
+    end)
+
+    describe("data sources", function()
+        local TwoSources = dofile("tests/support/sources.lua")
+
+        -- Loads the model and Settings over the two-source fixture (alpha is active at load: no default source).
+        local function loadTwoSources(character, account)
+            WowStub.reset()
+            _G.ForeverBiSData = TwoSources.twoSources()
+            _G.ForeverBiSCharDB = character
+            _G.ForeverBiSDB = account
+            WowStub.loadFiles({ "ForeverBiS_Model.lua", "Core/Settings.lua", "Core/Catalog.lua" })
+            return WowStub.ns.Settings
+        end
+
+        after_each(function()
+            _G.ForeverBiSData = nil
+        end)
+
+        it("has no saved source and reads the active one from the model before any choice", function()
+            local Settings = loadTwoSources({ class = "rogue", build = "" })
+            Settings.bind()
+            assert.is_nil(Settings.source())
+            assert.is_false(Settings.sourceChosen())
+            assert.are.equal("alpha", Settings.activeSource())
+            assert.is_nil(ForeverBiSDB.source)
+        end)
+
+        it("answers without saved variables", function()
+            local Settings = loadTwoSources()
+            assert.is_nil(Settings.source())
+            assert.is_false(Settings.sourceChosen())
+        end)
+
+        describe("chooseSource", function()
+            it("ignores unknown ids", function()
+                local Settings = loadTwoSources({ class = "rogue", build = "" })
+                Settings.bind()
+                assert.is_false(Settings.chooseSource("nope"))
+                assert.is_false(Settings.chooseSource(nil))
+                assert.is_nil(Settings.source())
+                assert.are.equal("alpha", Settings.activeSource())
+            end)
+
+            it("saves the id, activates the source and refreshes the catalog builds", function()
+                local Settings = loadTwoSources({ class = "rogue", build = "" })
+                Settings.bind()
+                assert.is_true(Settings.chooseSource("beta"))
+                assert.are.equal("beta", Settings.source())
+                assert.is_true(Settings.sourceChosen())
+                assert.are.equal("beta", Settings.activeSource())
+                assert.are.equal(
+                    "Beta Rogue",
+                    WowStub.ns.Catalog.findBuild(WowStub.ns.Catalog.findClass("rogue"), "")[2]
+                )
+            end)
+
+            it("persists the choice in the account table", function()
+                local Settings = loadTwoSources({ class = "rogue", build = "" }, {})
+                Settings.chooseSource("beta")
+                assert.are.equal("beta", ForeverBiSDB.source)
+                assert.is_nil(ForeverBiSCharDB.source)
+            end)
+
+            it("keeps the build when the route has a list in the new source", function()
+                local Settings = loadTwoSources({ class = "rogue", build = "/pvp" })
+                Settings.bind()
+                Settings.chooseSource("beta")
+                assert.are.equal("/pvp", Settings.buildKey())
+            end)
+
+            it("resets the build to the class's first one when the route has no list in the new source", function()
+                local Settings = loadTwoSources({ class = "druid", build = "/balance" })
+                Settings.bind()
+                assert.is_true(Settings.chooseSource("beta"))
+                local Catalog = WowStub.ns.Catalog
+                assert.are.equal(Catalog.defaultBuild(Catalog.findClass("druid"))[1], Settings.buildKey())
+                assert.are.equal("druid", Settings.classKey())
+            end)
+
+            it("drops a saved phase the new source does not have", function()
+                local Settings = loadTwoSources({ class = "rogue", build = "", phase = "lvl30" })
+                Settings.bind()
+                Settings.chooseSource("beta")
+                assert.is_nil(Settings.phase())
+            end)
+
+            it("keeps a saved phase the new source still has", function()
+                local Settings = loadTwoSources({ class = "rogue", build = "", phase = "raid1" })
+                Settings.bind()
+                Settings.chooseSource("beta")
+                assert.are.equal("raid1", Settings.phase())
+            end)
+
+            it("remembers build and phase per source so switching A -> B -> A restores them", function()
+                local Settings = loadTwoSources({ class = "rogue", build = "/pvp", phase = "lvl30" })
+                Settings.bind()
+                Settings.chooseSource("beta")
+                assert.is_nil(Settings.phase())
+                Settings.choosePhase("raid1")
+                Settings.chooseSource("alpha")
+                assert.are.equal("/pvp", Settings.buildKey())
+                assert.are.equal("lvl30", Settings.phase())
+                Settings.chooseSource("beta")
+                assert.are.equal("raid1", Settings.phase())
+            end)
+
+            it("keeps a build only another source lists after a round trip", function()
+                local Settings = loadTwoSources({ class = "druid", build = "/balance" })
+                Settings.bind()
+                Settings.chooseSource("beta")
+                Settings.chooseSource("alpha")
+                assert.are.equal("/balance", Settings.buildKey())
+            end)
+
+            it("restores the first source's builds when switching back", function()
+                local Settings = loadTwoSources({ class = "rogue", build = "" })
+                Settings.bind()
+                Settings.chooseSource("beta")
+                assert.are.equal(6, #WowStub.ns.Catalog.findClass("druid").builds)
+                Settings.chooseSource("alpha")
+                local Catalog = WowStub.ns.Catalog
+                assert.are.equal("Rogue PvE", Catalog.findBuild(Catalog.findClass("rogue"), "")[2])
+                assert.are.equal(2, #Catalog.findClass("druid").builds)
+            end)
+        end)
+
+        describe("bind", function()
+            it("activates a saved source that is available", function()
+                local Settings = loadTwoSources({ class = "rogue", build = "" }, { source = "beta" })
+                Settings.bind()
+                assert.are.equal("beta", Settings.activeSource())
+                assert.is_true(Settings.sourceChosen())
+                assert.are.equal("Beta Rogue", ForeverBiSBuildLabels.rogue)
+                assert.are.equal(
+                    "Beta Rogue",
+                    WowStub.ns.Catalog.findBuild(WowStub.ns.Catalog.findClass("rogue"), "")[2]
+                )
+            end)
+
+            it("falls back to the default source for an unavailable one and keeps the saved id", function()
+                local Settings = loadTwoSources({ class = "rogue", build = "" }, { source = "gone" })
+                ForeverBiSModel.select("beta")
+                Settings.bind()
+                assert.are.equal("alpha", Settings.activeSource())
+                assert.are.equal("gone", Settings.source())
+                assert.is_false(Settings.sourceChosen())
+            end)
+
+            it("uses the default source when nothing is saved", function()
+                local Settings = loadTwoSources({ class = "rogue", build = "" })
+                ForeverBiSModel.select("beta")
+                Settings.bind()
+                assert.are.equal("alpha", Settings.activeSource())
+            end)
         end)
     end)
 end)

@@ -4,19 +4,21 @@ local _, ns = ...
 local Lists = {}
 ns.Lists = Lists
 
---- The selected phase's data; a missing model or phase falls back to the legacy list built from the same data.
+--- The selected phase's data; a missing phase falls back to the route's default phase, and nil comes back when
+--- the active source has no list for the route (or there is no model).
 function Lists.resolve(route, phaseId)
-    if not route then
+    if not route or not ForeverBiSModel then
         return nil
     end
-    local data = phaseId and ForeverBiSModel.list(route, phaseId)
-    return data or (ForeverBiSLists or {})[route]
+    return (phaseId and ForeverBiSModel.list(route, phaseId)) or ForeverBiSModel.list(route)
 end
 
 --- What a draw pass needs: the list data plus its slots indexed by slot key (ranked items, best item, heading).
 function Lists.view(route, phaseId)
     local view = { route = route, phaseId = phaseId, ranked = {}, best = {}, headings = {} }
     view.data = Lists.resolve(route, phaseId)
+    -- The active source has no list for this route (e.g. a class it does not cover): empty, but detectable.
+    view.missing = route ~= nil and view.data == nil
     for _, slot in ipairs(view.data and view.data.slots or {}) do
         local slotKey = ns.Sources.normalizeSlotName(slot[1])
         view.best[slotKey] = slot[2][1]

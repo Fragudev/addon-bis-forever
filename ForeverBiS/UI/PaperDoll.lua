@@ -92,22 +92,14 @@ function PaperDoll.create(parent)
     return gearPanel
 end
 
+--- Parks the widgets of the last draw in the pool, ready for the next one.
 local function clearContent()
-    for _, child in ipairs({ gearContent:GetChildren() }) do
-        if child ~= characterModel then
-            child:Hide()
-            child:SetParent(nil)
-        end
-    end
-    for _, region in ipairs({ gearContent:GetRegions() }) do
-        region:Hide()
-        region:SetParent(nil)
-    end
+    ItemWidgets.release(gearContent)
 end
 
 local function addPlayerLabels()
     local player = Player.identity()
-    local nameLabel = Skin.label(gearContent, 15, "semibold", "text")
+    local nameLabel = ItemWidgets.label(gearContent, 15, "semibold", "text")
     nameLabel:SetPoint("TOP", gearContent, "TOP", 0, -238)
     nameLabel:SetWidth(gearContent:GetWidth() - 24)
     nameLabel:SetJustifyH("CENTER")
@@ -117,7 +109,7 @@ local function addPlayerLabels()
     end
     nameLabel:SetText(fullName)
 
-    local classLabel = Skin.label(gearContent, 12, "regular", "dim")
+    local classLabel = ItemWidgets.label(gearContent, 12, "regular", "dim")
     classLabel:SetPoint("TOP", gearContent, "TOP", 0, -259)
     classLabel:SetText(player.className)
     local classColor = RAID_CLASS_COLORS and RAID_CLASS_COLORS[player.classToken]
@@ -125,7 +117,7 @@ local function addPlayerLabels()
         classLabel:SetTextColor(classColor.r, classColor.g, classColor.b)
     end
 
-    local levelLabel = Skin.label(gearContent, 12, "regular", "dim")
+    local levelLabel = ItemWidgets.label(gearContent, 12, "regular", "dim")
     levelLabel:SetPoint("TOP", gearContent, "TOP", 0, -274)
     levelLabel:SetText(L["Level %s"]:format(tostring(player.level)))
 end
@@ -152,24 +144,25 @@ end
 --- One slot icon. slot: listSlot (key in the view), markSlot (where ownership is checked), label (tooltip heading)
 --- and ownerSlot (what the tooltip's ownership line checks).
 local function addSlotButton(view, item, slot, x, y, anchor)
-    local missing = view.missing[slot.listSlot] == true
-    local button = CreateFrame("Button", nil, gearContent)
-    button:SetSize(32, 32)
+    local missing = view.missingSlots[slot.listSlot] == true
+    local button = ItemWidgets.frame(gearContent, "slotButton", "Button", function(created)
+        created:SetSize(32, 32)
+        created.icon = created:CreateTexture(nil, "ARTWORK")
+        created.icon:SetAllPoints(created)
+        -- The border turns accent while the mouse is over the slot, then goes back to its rarity (or missing) color.
+        created:HookScript("OnEnter", function()
+            created.qualityBorder:SetColor("accent")
+        end)
+        created:HookScript("OnLeave", function()
+            created.qualityBorder:SetColor(created.baseColor)
+        end)
+    end)
     button:SetPoint("TOPLEFT", gearContent, "TOPLEFT", x, y)
-    local texture = button:CreateTexture(nil, "ARTWORK")
-    texture:SetAllPoints(button)
-    texture:SetTexture(Items.icon(item[1]))
-    texture:SetDesaturated(missing)
-    local border = ItemWidgets.addQualityBorder(button, item[1], missing)
+    button.icon:SetTexture(Items.icon(item[1]))
+    button.icon:SetDesaturated(missing)
+    ItemWidgets.addQualityBorder(button, item[1], missing)
     ItemWidgets.addOwnershipMark(button, item[1], slot.markSlot)
-    -- The border turns accent while the mouse is over the slot, then goes back to its rarity (or missing) color.
-    local baseColor = missing and "danger" or { Items.qualityColor(item[1]) }
-    button:HookScript("OnEnter", function()
-        border:SetColor("accent")
-    end)
-    button:HookScript("OnLeave", function()
-        border:SetColor(baseColor)
-    end)
+    button.baseColor = missing and "danger" or { Items.qualityColor(item[1]) }
     button:SetScript("OnEnter", function(self)
         ItemWidgets.showItemTooltip(self, anchor, item[1])
         GameTooltip:AddLine(L["Best in slot: %s"]:format(slot.label), 1, 0.89, 0.35)
@@ -234,7 +227,7 @@ end
 
 --- Redraws the player labels and the slot icons for the view (see Lists.view).
 function PaperDoll.refresh(view)
-    view.missing = missingSlots(view.progress)
+    view.missingSlots = missingSlots(view.progress)
     clearContent()
     addPlayerLabels()
     if not view.data then
@@ -243,7 +236,7 @@ function PaperDoll.refresh(view)
     local gearDrawn = addGearSlots(view)
     local weaponsDrawn = addWeaponSlots(view)
     if showEquippedOnly and not (gearDrawn or weaponsDrawn) then
-        local empty = Skin.label(gearContent, 12, "regular", "muted")
+        local empty = ItemWidgets.label(gearContent, 12, "regular", "muted")
         empty:SetPoint("CENTER", gearContent, "CENTER", 0, 0)
         empty:SetWidth(gearContent:GetWidth() - 36)
         empty:SetJustifyH("CENTER")

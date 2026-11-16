@@ -119,6 +119,17 @@ describe("Events", function()
             assert.are.equal(1, renders)
         end)
 
+        it("binds the saved variables once", function()
+            local binds = 0
+            local bind = ns.Settings.bind
+            ns.Settings.bind = function(...)
+                binds = binds + 1
+                return bind(...)
+            end
+            WowStub.fire(frameWithEvent("PLAYER_LOGIN"), "OnEvent")
+            assert.are.equal(1, binds)
+        end)
+
         it("creates the saved variables on a first run", function()
             _G.ForeverBiSDB = nil
             WowStub.fire(frameWithEvent("PLAYER_LOGIN"), "OnEvent")

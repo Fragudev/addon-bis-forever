@@ -5,6 +5,12 @@ local _, ns = ...
 local rendering, queued = false, nil
 
 local function renderOnce(options)
+    -- Until a source is chosen only the picker shows; the panels behind it are not drawn.
+    if ns.SourcePicker.refresh() then
+        ns.MainFrame.refresh()
+        ns.MainFrame.settle()
+        return
+    end
     ns.Selectors.refresh()
     ns.FilterBar.refresh()
     local route = ns.Settings.route()
@@ -17,10 +23,15 @@ local function renderOnce(options)
 end
 
 --- The single way a panel asks for a redraw. Options: scrollTop, jumpTo (a slot key) and redraw (false skips the
---- redraw when only the scroll position changes). Requests made while drawing run once afterwards.
+--- redraw when only the scroll position changes). Requests made while drawing run once afterwards, and requests
+--- made while the window is hidden are dropped: showing the window redraws it.
 function ns.requestRender(options)
     if options and options.jumpTo and options.redraw == false then
         ns.ItemList.jumpTo(options.jumpTo)
+        return
+    end
+    -- A hidden window draws nothing: opening it always asks for a redraw, so nothing is lost.
+    if not ns.MainFrame.isShown() then
         return
     end
     if rendering then
@@ -52,6 +63,7 @@ ns.Help.create(frame)
 ns.ItemList.create(frame)
 ns.Progress.create(ns.PaperDoll.create(frame))
 ns.FilterBar.create(frame)
+ns.SourcePicker.create(frame) -- last, so it covers every panel
 ns.MinimapButton.create()
 ns.DungeonNotice.create()
 ns.Events.install()
