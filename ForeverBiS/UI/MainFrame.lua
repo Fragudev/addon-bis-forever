@@ -7,7 +7,8 @@ ns.MainFrame = MainFrame
 local L, Theme, Pixel, Skin, Dropdown = ns.L, ns.Theme, ns.Pixel, ns.Skin, ns.Dropdown
 
 local MIN_WIDTH, MIN_HEIGHT = 760, 520
-local LOGO = "Interface\\AddOns\\" .. ADDON .. "\\ForeverBiSIcon.tga"
+-- The header shows the same logo as the minimap button.
+local LOGO = "Interface\\AddOns\\" .. ADDON .. "\\ForeverBiSMinimapIcon.tga"
 -- Once the player drags the resize handle the window keeps their size instead of fitting the screen.
 local userSized = false
 -- The window size when the resize handle was pressed, until it is released.

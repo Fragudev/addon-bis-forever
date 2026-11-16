@@ -12,6 +12,21 @@ describe("Main window header", function()
         _G.C_AddOns, _G.GetAddOnMetadata = nil, nil
     end)
 
+    it("shows the same logo as the minimap button", function()
+        WowStub.load({ class = "druid", build = "" })
+        local minimapIcon = "Interface\\AddOns\\ForeverBiS\\ForeverBiSMinimapIcon.tga"
+        local logos = WowStub.find("Texture", function(texture)
+            local path = type(texture.texture) == "string" and texture.texture or ""
+            return path:find("\\ForeverBiSIcon.tga", 1, true) ~= nil
+                or path:find("\\ForeverBiSMinimapIcon.tga", 1, true) ~= nil
+        end)
+        -- The minimap button hangs off Minimap, outside UIParent, so only the header logo is found here.
+        assert.is_true(#logos >= 1)
+        for _, logo in ipairs(logos) do
+            assert.are.equal(minimapIcon, logo.texture)
+        end
+    end)
+
     it("shows the title and the version from the .toc", function()
         _G.C_AddOns = {
             GetAddOnMetadata = function(addon, field)

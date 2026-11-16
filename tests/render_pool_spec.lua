@@ -58,6 +58,25 @@ describe("Render pooling", function()
         assert.are.equal(created, #WowStub.frames)
     end)
 
+    it("keeps the item buttons above the row hover frame, so they get the mouse and show their tooltip", function()
+        for _ = 1, 3 do
+            ns.requestRender()
+        end
+        local rows = WowStub.find("Frame", function(frame)
+            return frame.poolKey == "hoverRow" and frame.shown
+        end)
+        local icons = WowStub.find("Button", function(button)
+            return button.poolKey == "itemIcon" and button.shown
+        end)
+        assert.is_true(#rows > 0 and #icons > 0)
+        for _, icon in ipairs(icons) do
+            assert.is_true(icon:GetFrameLevel() > icon.hoverRow:GetFrameLevel())
+        end
+        local icon = icons[1]
+        WowStub.fire(icon, "OnEnter")
+        assert.are.equal(icon, WowStub.tooltip.owner)
+    end)
+
     it("does not create new widgets when the paper doll is redrawn", function()
         ns.requestRender()
         local buttons = #slotButtons()

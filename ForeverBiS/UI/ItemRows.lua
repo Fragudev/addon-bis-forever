@@ -46,7 +46,7 @@ local function createHoverRow(content, rowTop)
         frame.poolReset = function()
             frame.setHover(false)
         end
-    end)
+    end, 1)
     row:SetPoint("TOPLEFT", content, "TOPLEFT", 0, rowTop)
     row:SetPoint("TOPRIGHT", content, "TOPRIGHT", 0, rowTop)
     return row
