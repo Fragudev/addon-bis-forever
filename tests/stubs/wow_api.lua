@@ -171,8 +171,11 @@ end
 function frameMethods.IsEnabled(self)
     return self.enabled ~= false
 end
-function frameMethods.GetFrameLevel()
-    return 1
+function frameMethods.GetFrameLevel(self)
+    return self.frameLevel or 1
+end
+function frameMethods.SetFrameLevel(self, level)
+    self.frameLevel = level
 end
 function frameMethods.GetEffectiveScale()
     return 1

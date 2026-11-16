@@ -69,13 +69,17 @@ function ItemWidgets.release(container)
 end
 
 --- A pooled frame of frameType. build(frame) runs once when it is created; it may set frame.poolReset, called on
---- release.
-function ItemWidgets.frame(container, key, frameType, build)
-    return take(container, key, function()
-        local frame = CreateFrame(frameType, nil, container)
-        build(frame)
-        return frame
+--- release. Pooled frames are created in any order, so creation order cannot keep a row's buttons above the frame
+--- that washes the row on hover: each draw sets the level explicitly instead. `levelOffset` (default 2) is added to
+--- the container's level; the hover frame passes 1 so the buttons over it keep the mouse and their tooltips.
+function ItemWidgets.frame(container, key, frameType, build, levelOffset)
+    local frame = take(container, key, function()
+        local created = CreateFrame(frameType, nil, container)
+        build(created)
+        return created
     end)
+    frame:SetFrameLevel(container:GetFrameLevel() + (levelOffset or 2))
+    return frame
 end
 
 --- A pooled texture on the given draw layer (and sublevel), clean of what it showed before.
