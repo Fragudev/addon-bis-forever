@@ -67,6 +67,7 @@ describe("ForeverBiS interactions", function()
     describe("collapsing a slot", function()
         it("hides its items when the header button is clicked and shows them on a second click", function()
             WowStub.load({ class = "druid", build = "" })
+            WowStub.ns.MainFrame.open()
             local slot = ForeverBiSLists["druid"].slots[1]
             local topItem = slot[2][1][1]
             assert.is_true(WowStub.hasText(topItem))
@@ -153,6 +154,7 @@ describe("ForeverBiS interactions", function()
                 level = 30,
                 faction = faction,
             })
+            WowStub.ns.MainFrame.open()
         end
 
         it("hides items exclusive to the other faction by default and shows them with Both", function()
@@ -179,6 +181,7 @@ describe("ForeverBiS interactions", function()
 
         it("hides the faction button when the faction is unknown", function()
             WowStub.load(nil)
+            WowStub.ns.MainFrame.open()
             assert.is_false(ForeverBiSFilterFaction:IsShown())
         end)
 
@@ -188,6 +191,7 @@ describe("ForeverBiS interactions", function()
             end)
             assert(key, "no quest item in the data")
             loadList(key)
+            WowStub.ns.MainFrame.open()
             assert.is_true(WowStub.hasText(quest[1]))
 
             click(ForeverBiSFilterprofession)
@@ -201,6 +205,7 @@ describe("ForeverBiS interactions", function()
 
         it("shows the dungeon picker only while the dungeon button is active", function()
             WowStub.load(nil)
+            WowStub.ns.MainFrame.open()
             assert.is_false(ForeverBiSDungeonFilter:IsShown())
             click(ForeverBiSFilterdungeon)
             assert.is_true(ForeverBiSDungeonFilter:IsShown())
@@ -227,6 +232,7 @@ describe("ForeverBiS interactions", function()
             end
             assert(other, "no regular item next to the maker-only one")
             loadList(key)
+            WowStub.ns.MainFrame.open()
             assert.are.equal("Maker: all", ForeverBiSFilterMaker:GetText())
             assert.is_false(ForeverBiSFilterMaker.filterActive)
             assert.is_true(WowStub.hasText(maker[1]))
@@ -265,6 +271,7 @@ describe("ForeverBiS interactions", function()
                 return source:find("^quest:") ~= nil
             end)
             loadList(key)
+            WowStub.ns.MainFrame.open()
             assert.is_true(WowStub.hasText(" items"))
             click(ForeverBiSFilterquest)
             assert.is_true(WowStub.hasText("|r/"))
@@ -275,6 +282,7 @@ describe("ForeverBiS interactions", function()
                 return source:find("^quest:") ~= nil
             end)
             loadList(key)
+            WowStub.ns.MainFrame.open()
             click(ForeverBiSFilterprofession)
             local searchBox = textChangedBox()
             searchBox:SetText("zzzz-no-such-item")
@@ -341,6 +349,7 @@ describe("ForeverBiS interactions", function()
 
         it("shows an empty message for Equipped Only when nothing is equipped, then lists what is", function()
             WowStub.load({ class = "druid", build = "" })
+            WowStub.ns.MainFrame.open()
             local slot, slotID, itemID = topItemWithID()
             local button = WowStub.find("Button", function(b)
                 return b.text == "Equipped Only: Off"
@@ -463,16 +472,22 @@ describe("ForeverBiS interactions", function()
 
         it("re-renders when a tracked item finishes loading, and ignores unknown or failed loads", function()
             WowStub.load({ class = "druid", build = "" })
+            WowStub.ns.MainFrame.open()
             ForeverBiSFrame:Show()
             local itemID = next(ForeverBiSItemIDs) and ForeverBiSItemIDs[sortedKeys(ForeverBiSItemIDs)[1]]
 
-            local before = #WowStub.fontStrings
+            local draws = 0
+            local refresh = WowStub.ns.ItemList.refresh
+            WowStub.ns.ItemList.refresh = function(...)
+                draws = draws + 1
+                return refresh(...)
+            end
             WowStub.fire(watcher(), "OnEvent", "GET_ITEM_INFO_RECEIVED", -1, true)
             WowStub.fire(watcher(), "OnEvent", "GET_ITEM_INFO_RECEIVED", itemID, false)
-            assert.are.equal(before, #WowStub.fontStrings)
+            assert.are.equal(0, draws)
 
             WowStub.fire(watcher(), "OnEvent", "GET_ITEM_INFO_RECEIVED", itemID, true)
-            assert.is_true(#WowStub.fontStrings > before)
+            assert.are.equal(1, draws)
         end)
     end)
 end)
@@ -522,6 +537,7 @@ describe("ForeverBiS phase selector", function()
 
     it("renders the chosen phase and stores it, and Auto clears it", function()
         WowStub.load({ class = "druid", build = "" }, withSecondPhase, playerAt(35))
+        WowStub.ns.MainFrame.open()
         assert.is_true(WowStub.hasText("Level Forty Hood"))
 
         chooseOption(ForeverBiSPhaseDropDown, "Level 30")
@@ -546,13 +562,17 @@ describe("ForeverBiS phase selector", function()
         assert.is_true(WowStub.hasText("Level Forty Hood"))
     end)
 
-    it("drops a saved phase the route does not have, and when the class changes to such a route", function()
+    it("ignores, without deleting, a saved phase the route does not have", function()
         WowStub.load({ class = "druid", build = "", phase = "lvl99" })
-        assert.is_nil(ForeverBiSCharDB.phase)
+        WowStub.ns.MainFrame.open()
+        assert.are.equal("lvl99", ForeverBiSCharDB.phase)
+        assert.is_nil(WowStub.ns.Settings.activePhase(WowStub.ns.Settings.route()))
 
         WowStub.load({ class = "druid", build = "", phase = "lvl40" }, withSecondPhase)
+        WowStub.ns.MainFrame.open()
         chooseOption(ForeverBiSClassDropDown, "Rogue")
-        assert.is_nil(ForeverBiSCharDB.phase)
+        assert.are.equal("lvl40", ForeverBiSCharDB.phase)
+        assert.is_nil(WowStub.ns.Settings.activePhase(WowStub.ns.Settings.route()))
         assert.is_false(ForeverBiSPhaseDropDown:IsShown())
     end)
 
@@ -706,6 +726,7 @@ describe("ForeverBiS phase selector", function()
 
         it("keeps the icon of a satisfied slot in full color and updates on equipment changes", function()
             WowStub.load({ class = "druid", build = "" })
+            WowStub.ns.MainFrame.open()
             local slotID, first = headIds()
             WowStub.equipped[slotID] = first
             ForeverBiSFrame:Show()

@@ -427,12 +427,43 @@ function Model.progress(list, owned)
     return result
 end
 
---- (Re)build ForeverBiSLists, ForeverBiSItemIDs and ForeverBiSBuildLabels from ForeverBiSData.
+--- True when the route has a table for its default phase, i.e. Model.list(route) would return a list.
+local function hasList(route)
+    local phaseId = Model.defaultPhase(route)
+    return phaseId ~= nil and type(asTable(routeEntry(route).phases)[phaseId]) == "table"
+end
+
+--- The routes of the active source that have a list, sorted.
+function Model.routes()
+    local routes = {}
+    for _, route in ipairs(sortedRoutes()) do
+        if hasList(route) then
+            routes[#routes + 1] = route
+        end
+    end
+    return routes
+end
+
+--- A stand-in for a route's legacy list that builds the real one the first time a field is read.
+local function lazyList(route)
+    local built
+    return setmetatable({}, {
+        __index = function(_, key)
+            built = built or Model.list(route) or {}
+            return built[key]
+        end,
+    })
+end
+
+--- (Re)build ForeverBiSLists, ForeverBiSItemIDs and ForeverBiSBuildLabels from ForeverBiSData. The lists are
+--- built lazily, one route at a time, when something reads them: the addon itself resolves lists through Model.list.
 function Model.buildLegacy()
     bisIndex = nil
     local lists, itemIDs, labels = {}, {}, {}
     for _, route in ipairs(sortedRoutes()) do
-        lists[route] = Model.list(route)
+        if hasList(route) then
+            lists[route] = lazyList(route)
+        end
         labels[route] = Model.label(route)
         for _, phase in ipairs(Model.phases(route)) do
             for _, slot in ipairs(asTable(routeEntry(route).phases[phase.id].slots)) do

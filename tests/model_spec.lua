@@ -192,6 +192,33 @@ describe("ForeverBiSModel", function()
             assert.is_nil(ForeverBiSModel.label("mage"))
         end)
 
+        it("builds a list only when it is first read and keeps its routes enumerable", function()
+            load(fixture())
+            local model = _G.ForeverBiSModel
+            local realList, calls = model.list, 0
+            model.list = function(...)
+                calls = calls + 1
+                return realList(...)
+            end
+            ForeverBiSModel.buildLegacy()
+            assert.are.equal(0, calls)
+            local routes = {}
+            for route in pairs(ForeverBiSLists) do
+                routes[#routes + 1] = route
+            end
+            table.sort(routes)
+            assert.are.same({ "druid", "mage" }, routes)
+            assert.are.equal("Feral at 60", ForeverBiSLists.druid.title)
+            assert.are.equal("Feral at 60", ForeverBiSLists.druid.title)
+            assert.are.equal(1, calls)
+            model.list = realList
+        end)
+
+        it("lists the routes of the active source that have a list", function()
+            load(fixture())
+            assert.are.same({ "druid", "mage" }, ForeverBiSModel.routes())
+        end)
+
         it("rebuilds on demand", function()
             load(fixture())
             _G.ForeverBiSData.sources.foreverchanges.lists.druid.label = "Changed"

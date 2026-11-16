@@ -38,8 +38,7 @@ end
 -- Saved variables are only reliable once the client has loaded them, which happens after the files execute
 -- (the global may even be replaced wholesale), so re-bind and auto-detect the class at PLAYER_LOGIN.
 local function onLogin()
-    ns.Settings.bind()
-    ns.Settings.migrate()
+    ns.Settings.migrate() -- binds the saved variables first
     ns.Settings.applyDetectedClass(ns.Player.classToken())
     ns.MinimapButton.refresh()
     ns.requestRender()

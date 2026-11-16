@@ -1,3 +1,12 @@
+local function contains(list, value)
+    for _, item in ipairs(list) do
+        if item == value then
+            return true
+        end
+    end
+    return false
+end
+
 describe("Main window header", function()
     after_each(function()
         _G.C_AddOns, _G.GetAddOnMetadata = nil, nil
@@ -66,5 +75,38 @@ describe("Main window header", function()
         assert.is_true(ForeverBiSDropdownList:IsShown())
         ForeverBiSFrame:Hide()
         assert.is_false(ForeverBiSDropdownList:IsShown())
+    end)
+
+    it("lets Escape close the window through UISpecialFrames", function()
+        WowStub.load(nil)
+        assert.is_true(contains(_G.UISpecialFrames, "ForeverBiSFrame"))
+    end)
+
+    describe("resize handle", function()
+        local function handle()
+            return WowStub.find("Button", function(button)
+                return button.parent == _G.ForeverBiSFrame and button.scripts.OnMouseDown ~= nil
+            end)[1]
+        end
+
+        before_each(function()
+            WowStub.load(nil)
+            _G.UIParent:SetWidth(1600)
+            _G.ForeverBiSFrame:Show()
+        end)
+
+        it("keeps the fitted width when the handle is clicked without resizing", function()
+            _G.ForeverBiSFrame:SetWidth(900)
+            WowStub.fire(handle(), "OnMouseDown")
+            WowStub.fire(handle(), "OnMouseUp")
+            assert.are.equal(760, WowStub.ns.MainFrame.refresh())
+        end)
+
+        it("keeps the size the player dragged to", function()
+            WowStub.fire(handle(), "OnMouseDown")
+            _G.ForeverBiSFrame:SetWidth(1000)
+            WowStub.fire(handle(), "OnMouseUp")
+            assert.are.equal(1000, WowStub.ns.MainFrame.refresh())
+        end)
     end)
 end)

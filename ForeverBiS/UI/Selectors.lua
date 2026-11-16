@@ -10,6 +10,8 @@ local Catalog, Settings, Player, Dropdown, Skin, L = ns.Catalog, ns.Settings, ns
 local ROW_LEFT, ROW_TOP = 20, -64
 
 local sourceDrop, classDrop, modeDrop, buildLabel, buildDrop, phaseDrop
+-- What the last refresh measured the dropdown widths for.
+local lastSignature
 
 local MODE_LABELS = { pve = "PvE", pvp = "PvP" }
 
@@ -84,9 +86,9 @@ local function modeItems()
     local class, build = currentBuild()
     local currentMode = Catalog.splitBuild(build[2])
     local items = {}
-    for _, mode in ipairs(Catalog.modes(class)) do
+    for _, mode in ipairs(Catalog.modes(class, Settings.buildHasList(class))) do
         items[#items + 1] = entry(L[MODE_LABELS[mode]], mode == currentMode, function()
-            local target = Catalog.buildForMode(class, build, mode)
+            local target = Catalog.buildForMode(class, build, mode, Settings.buildHasList(class))
             if target then
                 Settings.chooseBuild(target[1])
             end
@@ -99,7 +101,7 @@ end
 local function buildItems()
     local class, build = currentBuild()
     local items = {}
-    for _, choice in ipairs(Catalog.buildsForMode(class, (Catalog.splitBuild(build[2])))) do
+    for _, choice in ipairs(Catalog.buildsForMode(class, (Catalog.splitBuild(build[2])), Settings.buildHasList(class))) do
         items[#items + 1] = entry(specText(choice.spec), choice.build[1] == build[1], function()
             Settings.chooseBuild(choice.build[1])
             selected()
@@ -111,14 +113,15 @@ end
 local function phaseItems()
     local phases, route = routePhases()
     local autoPhase = ForeverBiSModel and ForeverBiSModel.phaseForLevel(route, Player.level())
+    local current = Settings.activePhase(route)
     local items = {
-        entry(L["Auto (%s)"]:format(tostring(labelOf(phases, autoPhase))), Settings.phase() == nil, function()
+        entry(L["Auto (%s)"]:format(tostring(labelOf(phases, autoPhase))), current == nil, function()
             Settings.choosePhase(nil)
             selected()
         end),
     }
     for _, phase in ipairs(phases) do
-        items[#items + 1] = entry(phase.label or phase.id, phase.id == Settings.phase(), function()
+        items[#items + 1] = entry(phase.label or phase.id, phase.id == current, function()
             Settings.choosePhase(phase.id)
             selected()
         end)
@@ -131,6 +134,7 @@ local function createLabel(parent, text)
 end
 
 function Selectors.create(parent)
+    lastSignature = nil
     -- No label: the source name explains itself. It leads the row because it decides which lists exist.
     sourceDrop =
         Dropdown.create(parent, "ForeverBiSSourceDropDown", { width = 104, maxWidth = 132, items = sourceItems })
@@ -163,16 +167,28 @@ end
 function Selectors.refresh()
     local route, class, build = Settings.route()
     local mode, spec = Catalog.splitBuild(build[2])
+    -- Everything the dropdown entries and texts depend on; the widths are measured again only when it changes.
+    local signature = table.concat({
+        tostring(Settings.activeSource()),
+        route,
+        build[1],
+        tostring(Settings.activePhase(route)),
+        tostring(Player.level()),
+    }, "|")
+    local changed = signature ~= lastSignature
+    lastSignature = signature
     Dropdown.setText(sourceDrop, activeSourceLabel() or "")
-    Dropdown.fit(sourceDrop)
     Dropdown.setText(classDrop, class.label)
     Dropdown.setText(modeDrop, L[MODE_LABELS[mode]])
     Dropdown.setText(buildDrop, specText(spec))
-    Dropdown.fit(classDrop)
-    Dropdown.fit(modeDrop)
-    Dropdown.fit(buildDrop)
-    local hasModes = #Catalog.modes(class) > 1
-    local hasBuilds = #Catalog.buildsForMode(class, mode) > 1
+    if changed then
+        Dropdown.fit(sourceDrop)
+        Dropdown.fit(classDrop)
+        Dropdown.fit(modeDrop)
+        Dropdown.fit(buildDrop)
+    end
+    local hasModes = #Catalog.modes(class, Settings.buildHasList(class)) > 1
+    local hasBuilds = #Catalog.buildsForMode(class, mode, Settings.buildHasList(class)) > 1
     showIf(modeDrop, hasModes)
     showIf(buildLabel, hasBuilds)
     showIf(buildDrop, hasBuilds)
@@ -181,13 +197,17 @@ function Selectors.refresh()
     phaseDrop:ClearAllPoints()
     phaseDrop:SetPoint("LEFT", hasBuilds and buildDrop or hasModes and modeDrop or classDrop, "RIGHT", 8, 0)
 
-    local phases = routePhases()
-    Settings.dropUnavailablePhase(route)
+    local phases = ForeverBiSModel and ForeverBiSModel.phases(route) or {}
     local effective = Settings.effectivePhase(route, Player.level())
     local effectiveLabel = labelOf(phases, effective)
     if effectiveLabel then
-        Dropdown.setText(phaseDrop, Settings.phase() and effectiveLabel or L["Auto (%s)"]:format(effectiveLabel))
-        Dropdown.fit(phaseDrop)
+        Dropdown.setText(
+            phaseDrop,
+            Settings.activePhase(route) and effectiveLabel or L["Auto (%s)"]:format(effectiveLabel)
+        )
+        if changed then
+            Dropdown.fit(phaseDrop)
+        end
     end
     showIf(phaseDrop, #phases > 1)
 end

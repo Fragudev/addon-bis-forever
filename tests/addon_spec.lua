@@ -84,6 +84,7 @@ describe("ForeverBiS", function()
 
         it("selects the player's class and its default build on login", function()
             WowStub.load({ class = "rogue", build = "/pvp" }, nil, druid)
+            WowStub.ns.MainFrame.open()
             login()
             assert.are.equal("druid", ForeverBiSCharDB.class)
             assert.are_not.equal("/pvp", ForeverBiSCharDB.build)
@@ -218,6 +219,7 @@ describe("ForeverBiS", function()
 
         it("runs a request made while drawing once, after the current draw", function()
             WowStub.load(nil)
+            WowStub.ns.MainFrame.open()
             local itemList = WowStub.ns.ItemList
             local refresh, draws, requested = itemList.refresh, 0, false
             itemList.refresh = function(...)
@@ -234,6 +236,7 @@ describe("ForeverBiS", function()
 
         it("keeps accepting requests after a draw fails", function()
             WowStub.load(nil)
+            WowStub.ns.MainFrame.open()
             local paperDoll = WowStub.ns.PaperDoll
             local refresh = paperDoll.refresh
             paperDoll.refresh = function()
@@ -309,6 +312,7 @@ describe("ForeverBiS", function()
 
         it("shows an empty message when nothing matches", function()
             WowStub.load({ class = "druid", build = "feral-pve" })
+            WowStub.ns.MainFrame.open()
             local searchBox
             for _, candidate in ipairs(WowStub.frames) do
                 if candidate.scripts.OnTextChanged then
@@ -334,13 +338,18 @@ describe("ForeverBiS", function()
             WowStub.load({ class = "druid", build = "feral-pve" })
             local watcher = assert(itemWatcher())
 
-            local before = #WowStub.fontStrings
+            local draws = 0
+            local refresh = WowStub.ns.ItemList.refresh
+            WowStub.ns.ItemList.refresh = function(...)
+                draws = draws + 1
+                return refresh(...)
+            end
             WowStub.fire(watcher, "OnEvent", "BAG_UPDATE")
-            assert.are.equal(before, #WowStub.fontStrings, "rendered while hidden")
+            assert.are.equal(0, draws, "rendered while hidden")
 
             ForeverBiSFrame:Show()
             WowStub.fire(watcher, "OnEvent", "BAG_UPDATE")
-            assert.is_true(#WowStub.fontStrings > before, "did not re-render while shown")
+            assert.are.equal(1, draws, "did not re-render while shown")
         end)
     end)
 

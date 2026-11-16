@@ -26,6 +26,27 @@ Sources.dungeons = {
     { "blackfathom deeps", "Blackfathom Deeps" },
     { "ragefire chasm", "Ragefire Chasm" },
     { "ruins of lordaeron", "Ruins of Lordaeron" },
+    { "gnomeregan", "Gnomeregan" },
+    { "the stockade", "The Stockade" },
+    { "razorfen kraul", "Razorfen Kraul" },
+    { "razorfen downs", "Razorfen Downs" },
+    { "scarlet monastery", "Scarlet Monastery" },
+    { "uldaman", "Uldaman" },
+    { "zul'farrak", "Zul'Farrak" },
+    { "maraudon", "Maraudon" },
+    { "the temple of atal'hakkar", "The Temple of Atal'Hakkar" },
+    { "blackrock depths", "Blackrock Depths" },
+    { "blackrock spire", "Blackrock Spire" },
+    { "dire maul", "Dire Maul" },
+    { "stratholme", "Stratholme" },
+    { "scholomance", "Scholomance" },
+    { "molten core", "Molten Core" },
+    { "onyxia's lair", "Onyxia's Lair" },
+    { "blackwing lair", "Blackwing Lair" },
+    { "zul'gurub", "Zul'Gurub" },
+    { "ruins of ahn'qiraj", "Ruins of Ahn'Qiraj" },
+    { "temple of ahn'qiraj", "Temple of Ahn'Qiraj" },
+    { "naxxramas", "Naxxramas" },
 }
 
 --- Icon of each source category, shared by the filter bar and the progress tooltip.
@@ -65,21 +86,15 @@ end
 
 function Sources.icon(sourceText)
     local category = Sources.category(sourceText)
-    if category == "quest" then
-        return "Interface\\GossipFrame\\AvailableQuestIcon"
-    end
-    if category == "dungeon" then
-        return "Interface\\AddOns\\ForeverBiS\\ForeverBiSDungeonIcon.tga"
-    end
-    if category == "world" then
-        return "Interface\\WorldMap\\UI-World-Icon"
-    end
-    local lowerSource = string.lower(sourceText or "")
-    for _, profession in ipairs(professionSourceIcons) do
-        if string.find(lowerSource, profession[1], 1, true) then
-            return profession[2]
+    if category == "profession" then
+        local lowerSource = string.lower(sourceText or "")
+        for _, profession in ipairs(professionSourceIcons) do
+            if string.find(lowerSource, profession[1], 1, true) then
+                return profession[2]
+            end
         end
     end
+    return Sources.categoryIcons[category]
 end
 
 --- "Horde" or "Alliance" when the source names only one faction, otherwise nil.

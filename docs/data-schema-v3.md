@@ -8,7 +8,7 @@ Schema 3 is the current data format. The addon reads several sources, and each s
 | `wowsims` | `ForeverBiS/ForeverBiS_Data_Wowsims.lua` | yes |
 | `kamilabs` | `ForeverBiS/ForeverBiS_Data_KamiLabs.lua` | no: generated only with `--include-unshipped`, pending permission from the site owner |
 
-`UpdateForeverBiS.py` writes these files from the modules in `bis_sources/`. `ForeverBiS_Model.lua` (loaded after the data files, see the `.toc`) reads them and builds the legacy globals the UI uses (`ForeverBiSLists`, `ForeverBiSItemIDs`, `ForeverBiSBuildLabels`) for the active source. The model never reads `ForeverBiSDB`. The old single file `ForeverBiS_Data.lua` no longer exists; [schema 2](data-schema-v2.md) described it.
+`UpdateForeverBiS.py` writes these files from the modules in `bis_sources/`. `ForeverBiS_Model.lua` (loaded after the data files, see the `.toc`) reads them and builds the legacy globals the UI uses (`ForeverBiSLists`, `ForeverBiSItemIDs`, `ForeverBiSBuildLabels`) for the active source. `ForeverBiSLists` holds one lazy entry per route that is filled on first read, so switching sources does not copy every list. The model never reads `ForeverBiSDB`. The old single file `ForeverBiS_Data.lua` no longer exists; [schema 2](data-schema-v2.md) described it.
 
 ## Quick path
 
@@ -59,11 +59,11 @@ Routes also belong to their source. The first segment of a route is the class ke
 | Source | Order | Phases | Coverage | Item sources |
 |--------|-------|--------|----------|--------------|
 | ForeverChanges | 1 | `lvl30` (Level 30) | Ranked lists per class and spec, PvE and PvP | Structured (see [Item shape](#item-shape)) |
-| wowsims | 3 | `lvl60` "Level 60 (pre-raid)", `raid1` "Raid (phase 1)" | Partial: 18 routes, no Shaman | Not published (see below) |
+| wowsims | 3 | `lvl60` "Level 60 (pre-raid)", `raid1` "Raid (phase 1)" | Partial: 18 routes, no Shaman | Structured, from `db.json` (see below) |
 | Kami Labs | 2 | `lvl30` "Level 30", `lvl60` "Level 60 (pre-raid)" | One item per slot | Structured |
 
 - **ForeverChanges.** Ranked lists, as before schema 3. Titles carry the level ("... at level 30"), and the updater derives the phase from the title.
-- **wowsims.** Built from the gear presets in [wowsims/forever](https://github.com/wowsims/forever) (MIT). Each slot has one item. The item source is always `{ kind = "unknown", text = "Source not listed by wowsims" }`, because the presets do not say where an item comes from. `raid1` has no `level`, so it sorts after the numeric phases. Enchants are taken from the presets and may have an empty `source`.
+- **wowsims.** Built from the gear presets in [wowsims/forever](https://github.com/wowsims/forever) (MIT), both `ui/specs/*/gear_sets/*.gear.json` (item ids) and `*.gear.siml` (one `slot item_slug + enchant_slug` line per slot; slugs are resolved against the item and enchant names in `assets/database/db.json`). Each slot has one item. The item source comes from the item's `sources` in `db.json`, preferring a drop, then crafted, quest, vendor, reputation and PvP, and is written as text ("Boss, Zone", "Quest: Name (Alliance)", "Sold by NPC, Zone", the profession name, "Reputation: X", "PvP reward") that goes through the same `structure_source()` as ForeverChanges. Items with no `sources` keep `{ kind = "unknown", text = "Source not listed by wowsims" }`, as in the example below. A preset that maps to no route prints a `::warning::`. `raid1` has no `level`, so it sorts after the numeric phases. Enchants are taken from the presets and may have an empty `source`.
 
   ```lua
   { slot = "Head",
@@ -95,7 +95,7 @@ The `lists` shape is unchanged from schema 2:
 ### Item shape
 
 - `items` order is the rank. `id` is omitted when unknown. `enchants` is omitted when empty.
-- `source.text` is the raw string from the source (lossless). `source.kind` is one of `quest`, `profession`, `dungeon`, `world`, `unknown`. The classification mirrors `Sources.category` in `Core/Sources.lua`. `unknown` is used for "Where it comes from is not known yet" and for wowsims items.
+- `source.text` is the raw string from the source (lossless). `source.kind` is one of `quest`, `profession`, `dungeon`, `world`, `unknown`. The classification mirrors `Sources.category` in `Core/Sources.lua`. `unknown` is used for "Where it comes from is not known yet" and for wowsims items whose `db.json` entry has no source.
 - Optional `source` fields, set only when detected: `faction` ("Horde"/"Alliance", exclusive sources only), `zone`, `boss`, `dropRate` (number, percent), `quest`, `skill`, `skillLevel`, `bindsToMaker`, `reported`.
 
 ## Model API
@@ -142,6 +142,8 @@ owned = {
 }
 ```
 
+ForeverChanges labels the idol, libram and totem slot "Relic"; it normalizes to the `Ranged` key, like the "Ranged" slot of the other sources.
+
 Slot keys are canonical (`ForeverBiSModel.slotKey(name)`, the gear panel's normalization): `Head`, `Neck`, `Shoulder`, `Back`, `Chest`, `Wrist`, `Hands`, `Waist`, `Legs`, `Feet`, `Finger`, `Trinket`, `Main Hand`, `Off Hand`, `Ranged`. `Finger` and `Trinket` carry up to two ids, one per inventory slot. The UI builds `equipped` from the same `equippedSlotIDs` + `GetInventoryItemID`, and `GetItemCount` reads the row marks use, so both agree.
 
 It returns `{ total, bis, listed, slots = { { slot, rank, target, done }, ... } }`:
@@ -167,7 +169,9 @@ Flags:
 - `--include-unshipped` also updates sources with `ship = False`.
 - `--only <id>` (repeatable) updates just the named sources, shipped or not.
 
-Failure guard: each source is fetched, validated and written atomically. A failing source keeps its previous file and prints a `::warning::`. The other sources are still written. The run exits with status 1 only when every attempted source fails.
+Failure guard: each source is fetched, validated and written atomically. A failing source keeps its previous file and prints a `::warning::`. The other sources are still written. The run exits with a non-zero status when any shipped source failed (after writing the ones that succeeded), or when every attempted source fails; a failing unshipped source (for example Kami Labs with `--include-unshipped`) does not change the exit status.
+
+Shrink guard: if a source no longer returns a route its committed `ForeverBiS_Data_<Source>.lua` has, that source fails and keeps its old file, naming the missing routes. Pass `--allow-shrink` when removing routes is intended.
 
 The workflow `.github/workflows/update-lists.yml` stages `ForeverBiS/ForeverBiS_Data_*.lua`, and when any of them changed it bumps the version in `ForeverBiS.toc`, tags and releases.
 
@@ -175,7 +179,7 @@ The workflow `.github/workflows/update-lists.yml` stages `ForeverBiS/ForeverBiS_
 
 - **New phase.** For ForeverChanges, `phase_from_title()` in `bis_sources/foreverchanges.py` derives it from the list title ("... at level 60" gives `lvl60`); no code change is needed once the page title carries the level. Other sources declare their phases in their module (`PHASES` in `wowsims.py`, `TIERS` in `kamilabs.py`). The phase list of a source is its sorted union of phases, by level.
 - **New source kind.** Add the check in `structure_source()` in `bis_sources/foreverchanges.py`, add the kind to `SOURCE_KINDS` in `bis_sources/common.py`, keep `Sources.category` in `Core/Sources.lua` in sync if the UI should filter on it, and add the kind to `VALID_KINDS` in `tests/data_spec.lua`.
-- **New dungeon or raid.** Add a `(lowercase match, display name)` row to `DUNGEON_SOURCES` in `bis_sources/foreverchanges.py`, which also makes it a `dungeon` kind. Add it to `EXTRA_ZONES` to fill only `zone` and `boss`.
+- **New dungeon or raid.** Add a `(lowercase match, display name)` row to `DUNGEON_SOURCES` in `bis_sources/foreverchanges.py`, which also makes it a `dungeon` kind, and the same row to `Sources.dungeons` in `ForeverBiS/Core/Sources.lua` (the addon's dungeon filter and zone notice); keep both lists identical. Add it to `EXTRA_ZONES` to fill only `zone` and `boss`.
 - **New source.**
   1. Add `bis_sources/<name>.py` with a `fetch()` that returns `(data, labels, phases)`, with `data` mapping route to phase to `(title, slots)`, as `common.validate` and `common.emit_lua` expect.
   2. Add a `Source(...)` entry to `SOURCES` in `bis_sources/__init__.py`. Set `ship = False` until it may ship.

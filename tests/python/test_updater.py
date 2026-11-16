@@ -3,6 +3,7 @@
 import contextlib
 import io
 import json
+import re
 import sys
 import tempfile
 import unittest
@@ -137,6 +138,19 @@ class PhaseFromTitleTest(unittest.TestCase):
             updater.phase_from_title("Mage PvE best in slot"),
         )
 
+    def test_only_a_trailing_at_level_n_is_a_level(self):
+        for title in (
+            "Mage PvE best in slot at level",
+            "Mage PvE best in slot at level 30 and more",
+            "At level 30 Mage PvE best in slot",
+            "Mage PvE best in slot level 30",
+            "",
+        ):
+            self.assertEqual("current", updater.phase_from_title(title)["id"], title)
+
+    def test_ignores_trailing_whitespace_and_case(self):
+        self.assertEqual("lvl40", updater.phase_from_title("Mage PvE Best In Slot AT LEVEL 40  ")["id"])
+
     def test_collects_phases_by_level_with_levelless_ones_last(self):
         data = {
             "/bis/a": {"lvl60": ("A at level 60", []), "current": ("A best in slot", [])},
@@ -175,11 +189,48 @@ class StructureSourceTest(unittest.TestCase):
         self.assertEqual("Archmage Arugal", source["boss"])
         self.assertEqual(34.05, source["dropRate"])
 
+    def test_classic_dungeons_in_the_data_are_dungeons(self):
+        for zone in (
+            "Gnomeregan",
+            "The Stockade",
+            "Razorfen Kraul",
+            "Razorfen Downs",
+            "Scarlet Monastery",
+            "Scarlet Monastery Graveyard",
+            "Uldaman",
+        ):
+            source = updater.structure_source(f"Some Boss, {zone}")
+            self.assertEqual("dungeon", source["kind"], zone)
+            self.assertEqual(zone.removesuffix(" Graveyard"), source["zone"], zone)
+
+    def test_level_60_dungeons_and_raids_are_dungeons(self):
+        for zone in (
+            "Zul'Farrak",
+            "Maraudon",
+            "The Temple of Atal'Hakkar",
+            "Blackrock Depths",
+            "Blackrock Spire",
+            "Dire Maul",
+            "Stratholme",
+            "Scholomance",
+            "Molten Core",
+            "Onyxia's Lair",
+            "Blackwing Lair",
+            "Zul'Gurub",
+            "Ruins of Ahn'Qiraj",
+            "Temple of Ahn'Qiraj",
+            "Naxxramas",
+        ):
+            source = updater.structure_source(f"Some Boss, {zone}")
+            self.assertEqual("dungeon", source["kind"], zone)
+            self.assertEqual(zone, source["zone"], zone)
+            self.assertEqual("Some Boss", source["boss"], zone)
+
     def test_a_zone_outside_the_dungeon_list_keeps_the_world_kind(self):
-        source = updater.structure_source("Crowd Pummeler 9-60, Gnomeregan")
+        source = updater.structure_source("Faldrim Anvilmar, Hall of Thanes")
         self.assertEqual("world", source["kind"])
-        self.assertEqual("Gnomeregan", source["zone"])
-        self.assertEqual("Crowd Pummeler 9-60", source["boss"])
+        self.assertEqual("Hall of Thanes", source["zone"])
+        self.assertEqual("Faldrim Anvilmar", source["boss"])
 
     def test_classifies_a_world_drop_and_flags_it_as_reported(self):
         source = updater.structure_source("A world drop, not bound: the auction house is quickest Reported, not checked")
@@ -517,10 +568,11 @@ def broken_fetch():
 
 
 class FailureGuardTest(unittest.TestCase):
-    def run_sources(self, sources, directory):
+    def run_sources(self, sources, directory, allow_shrink=False):
         out = io.StringIO()
         with contextlib.redirect_stdout(out):
-            succeeded = cli.run(Path(directory), sources)
+            succeeded, failed = cli.run(Path(directory), sources, allow_shrink=allow_shrink)
+        self.failed = failed
         return succeeded, out.getvalue()
 
     def test_a_failing_source_keeps_its_file_and_the_others_are_written(self):
@@ -531,6 +583,7 @@ class FailureGuardTest(unittest.TestCase):
                 [fake_source("bad", "Bad", 1, broken_fetch), fake_source("good", "Good", 2, good_fetch)], directory
             )
             self.assertEqual(1, succeeded)
+            self.assertEqual(["Bad"], [source.label for source in self.failed])
             self.assertEqual("previous", old.read_text(encoding="utf-8"))
             self.assertIn("::warning::", output)
             self.assertTrue(Path(directory, "ForeverBiS_Data_Good.lua").read_text(encoding="utf-8").startswith("ForeverBiSData = "))
@@ -552,6 +605,15 @@ class FailureGuardTest(unittest.TestCase):
             for sources, expected in (([fake_source("bad", "Bad", 1, broken_fetch)], 0), ([fake_source("good", "Good", 1, good_fetch)], 1)):
                 self.assertEqual(expected, self.run_sources(sources, directory)[0])
 
+    def test_shipped_failures_are_reported_but_unshipped_ones_are_not(self):
+        unshipped = bis_sources.Source("kami", "Kami", "Kami", 1, "https://example.test", False, broken_fetch)
+        with tempfile.TemporaryDirectory() as directory:
+            self.run_sources([unshipped, fake_source("good", "Good", 2, good_fetch)], directory)
+            self.assertEqual([unshipped], self.failed)
+            self.assertEqual([], cli.shipped_failures(self.failed))
+            self.run_sources([fake_source("bad", "Bad", 3, broken_fetch)], directory)
+            self.assertEqual(["Bad"], [s.label for s in cli.shipped_failures(self.failed)])
+
     def test_emission_is_deterministic(self):
         with tempfile.TemporaryDirectory() as directory:
             source = fake_source("good", "Good", 1, good_fetch)
@@ -559,6 +621,137 @@ class FailureGuardTest(unittest.TestCase):
             first = Path(directory, "ForeverBiS_Data_Good.lua").read_bytes()
             self.run_sources([source], directory)
             self.assertEqual(first, Path(directory, "ForeverBiS_Data_Good.lua").read_bytes())
+
+
+def run_main(argv):
+    out = io.StringIO()
+    code = 0
+    with contextlib.redirect_stdout(out):
+        try:
+            cli.main(argv)
+        except SystemExit as exit_:
+            code = exit_.code if exit_.code not in (None, 0) else 0
+    return code, out.getvalue()
+
+
+class ExitCodeTest(unittest.TestCase):
+    def patched(self, sources):
+        original = cli.select
+        cli.select = lambda *_: sources
+        self.addCleanup(setattr, cli, "select", original)
+
+    def test_exits_non_zero_when_a_shipped_source_failed_but_still_writes_the_others(self):
+        self.patched([fake_source("bad", "Bad", 1, broken_fetch), fake_source("good", "Good", 2, good_fetch)])
+        with tempfile.TemporaryDirectory() as directory:
+            code, output = run_main([directory])
+            self.assertNotEqual(0, code)
+            self.assertTrue(Path(directory, "ForeverBiS_Data_Good.lua").is_file())
+            self.assertIn("Bad", str(code) + output)
+
+    def test_exits_zero_when_every_shipped_source_succeeded(self):
+        self.patched([fake_source("good", "Good", 1, good_fetch)])
+        with tempfile.TemporaryDirectory() as directory:
+            self.assertEqual(0, run_main([directory])[0])
+
+    def test_allow_shrink_flag_is_documented_and_accepted(self):
+        out = io.StringIO()
+        with contextlib.redirect_stdout(out), self.assertRaises(SystemExit):
+            cli.main(["--help"])
+        self.assertIn("--allow-shrink", out.getvalue())
+
+
+def two_routes_fetch():
+    data, labels, phases = good_fetch()
+    data["warrior/fury"] = data["warrior/arms"]
+    return data, labels, phases
+
+
+class ShrinkGuardTest(unittest.TestCase):
+    def write_committed(self, directory):
+        source = fake_source("shrink", "Shrink", 1, two_routes_fetch)
+        data, labels, phases = two_routes_fetch()
+        path = Path(directory, source.filename)
+        path.write_text(common.emit_lua(source.meta, data, labels, phases), encoding="utf-8")
+        return path
+
+    def run_shrunk(self, directory, allow_shrink):
+        out = io.StringIO()
+        shrunk = fake_source("shrink", "Shrink", 1, good_fetch)
+        with contextlib.redirect_stdout(out):
+            succeeded, failed = cli.run(Path(directory), [shrunk], allow_shrink=allow_shrink)
+        return succeeded, failed, out.getvalue()
+
+    def test_reads_the_committed_route_keys(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = self.write_committed(directory)
+            self.assertEqual({"warrior/arms", "warrior/fury"}, cli.committed_routes(path))
+            self.assertEqual(set(), cli.committed_routes(Path(directory, "missing.lua")))
+
+    def test_a_disappearing_route_fails_the_source_and_keeps_the_file(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = self.write_committed(directory)
+            before = path.read_bytes()
+            succeeded, failed, output = self.run_shrunk(directory, allow_shrink=False)
+            self.assertEqual(0, succeeded)
+            self.assertEqual(1, len(failed))
+            self.assertEqual(before, path.read_bytes())
+            self.assertIn("::warning::", output)
+            self.assertIn("warrior/fury", output)
+            self.assertIn("--allow-shrink", output)
+            self.assertFalse(Path(directory, "ForeverBiS_Data_Shrink.lua.tmp").exists())
+
+    def test_allow_shrink_writes_the_smaller_file(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = self.write_committed(directory)
+            succeeded, failed, _ = self.run_shrunk(directory, allow_shrink=True)
+            self.assertEqual((1, []), (succeeded, failed))
+            self.assertEqual({"warrior/arms"}, cli.committed_routes(path))
+
+    def test_growing_or_equal_route_sets_are_written(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = self.write_committed(directory)
+            out = io.StringIO()
+            with contextlib.redirect_stdout(out):
+                succeeded, failed = cli.run(Path(directory), [fake_source("shrink", "Shrink", 1, two_routes_fetch)])
+            self.assertEqual((1, []), (succeeded, failed))
+            self.assertEqual({"warrior/arms", "warrior/fury"}, cli.committed_routes(path))
+
+
+class DiscoverRoutesTest(unittest.TestCase):
+    def test_ignores_the_builder_pages(self):
+        pages = {
+            "/bis": '<a href="/bis/mage">Mage</a>',
+            "/bis/mage": (FIXTURES / "fc_class_page.html").read_text(encoding="utf-8"),
+        }
+        original_download, original_sleep = updater.download, updater.time.sleep
+        updater.download = lambda path: pages[path]
+        updater.time.sleep = lambda _: None
+        self.addCleanup(setattr, updater, "download", original_download)
+        self.addCleanup(setattr, updater.time, "sleep", original_sleep)
+        routes, labels = updater.discover_routes()
+        self.assertEqual(["/bis/mage", "/bis/mage/arcane", "/bis/mage/fire"], routes)
+        self.assertNotIn("mage/make", labels)
+        self.assertEqual("Arcane", labels["mage/arcane"])
+
+
+class DungeonParityTest(unittest.TestCase):
+    def test_python_and_lua_know_the_same_dungeons(self):
+        lua = (Path(__file__).resolve().parents[2] / "ForeverBiS" / "Core" / "Sources.lua").read_text(encoding="utf-8")
+        block = lua.split("Sources.dungeons = {", 1)[1].split("\n}", 1)[0]
+        in_lua = re.findall(r'\{ "([^"]+)", "([^"]+)" \}', block)
+        self.assertEqual(list(updater.DUNGEON_SOURCES), in_lua)
+
+
+class TocTest(unittest.TestCase):
+    def test_every_shipped_source_is_loaded_before_the_model(self):
+        toc = (Path(__file__).resolve().parents[2] / "ForeverBiS" / "ForeverBiS.toc").read_text(encoding="utf-8")
+        files = [line.strip().replace("\\", "/") for line in toc.splitlines() if line.strip() and not line.startswith("#")]
+        self.assertIn("ForeverBiS_Model.lua", files)
+        model = files.index("ForeverBiS_Model.lua")
+        for source in bis_sources.SOURCES:
+            if source.ship:
+                self.assertIn(source.filename, files, source.id)
+                self.assertLess(files.index(source.filename), model, source.id)
 
 
 if __name__ == "__main__":

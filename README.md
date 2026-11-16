@@ -164,6 +164,7 @@ you enter a dungeon with items for your build, and commands to share a slot's li
 | `/bis tooltip all` | Show every class in the tooltip block instead of only yours |
 | `/bis alerts` | Turn loot alerts on or off |
 | `/bis dungeon` | Turn the dungeon notice on or off |
+| `/bis minimap` | Show or hide the minimap button |
 
 ## How the lists stay current
 

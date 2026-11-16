@@ -69,6 +69,17 @@ describe("Commands", function()
             assert.are.equal(0, toggles)
         end)
 
+        it("hides and shows the minimap button with /bis minimap", function()
+            local Commands = loadCommands()
+            Commands.dispatch("minimap")
+            assert.is_true(ForeverBiSDB.minimap.hide)
+            assert.are.same({ "Forever BiS minimap button: off" }, printed)
+            Commands.dispatch("minimap")
+            assert.is_false(ForeverBiSDB.minimap.hide)
+            assert.are.equal("Forever BiS minimap button: on", printed[2])
+            assert.are.equal(0, toggles)
+        end)
+
         it("toggles other classes with /bis tooltip all", function()
             local Commands = loadCommands()
             Commands.dispatch("tooltip all")
@@ -165,6 +176,13 @@ describe("Commands", function()
                 channels[#channels + 1] = WowStub.chat[1].channel
             end
             assert.are.same({ "SAY", "PARTY", "RAID" }, channels)
+        end)
+
+        it("echoes an unknown slot name as the player typed it", function()
+            local Commands = loadCommands()
+            Commands.dispatch("link Tabard")
+            assert.are.equal(0, #WowStub.chat)
+            assert.is_truthy(printed[1]:find("Unknown slot 'Tabard'", 1, true))
         end)
 
         it("prints the valid slots for an unknown slot name and sends nothing", function()

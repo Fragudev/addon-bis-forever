@@ -352,6 +352,13 @@ function Stub.load(db, dataHook, player)
             end,
         },
     })
+    -- The window starts hidden but drawn, as before renders were skipped while hidden: later renders need the
+    -- window open (Stub.ns.MainFrame.open()).
+    if _G.ForeverBiSFrame and Stub.ns.requestRender then
+        _G.ForeverBiSFrame.shown = true
+        Stub.ns.requestRender()
+        _G.ForeverBiSFrame.shown = false
+    end
 end
 
 --- Loads only the listed .toc files (paths as written in the .toc), in .toc order, into a fresh namespace.

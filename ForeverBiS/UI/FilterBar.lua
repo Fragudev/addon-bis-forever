@@ -19,6 +19,7 @@ local sourceChips = {
 }
 
 local searchBox, searchHint, clearSearchButton
+local syncSearchWidgets
 local factionButton, makerButton, dungeonDrop
 local sourceChipButtons, lastChip = {}, nil
 local dungeonOptions = Filters.dungeonOptions()
@@ -26,6 +27,21 @@ local dungeonOptions = Filters.dungeonOptions()
 --- Every filter change redraws from the top of the list.
 local function changed()
     ns.requestRender({ scrollTop = true })
+end
+
+local SEARCH_DELAY = 0.15
+local searchPending = false
+
+--- Typing redraws once per pause, not once per keystroke; the state always holds the latest text.
+local function searchChanged()
+    if searchPending then
+        return
+    end
+    searchPending = true
+    C_Timer.After(SEARCH_DELAY, function()
+        searchPending = false
+        changed()
+    end)
 end
 
 --- An active filter shows the selected wash with accent text and underline.
@@ -72,7 +88,8 @@ local function createSearch(parent)
 
     searchBox:SetScript("OnTextChanged", function(self)
         Filters.setSearch(self:GetText())
-        changed()
+        syncSearchWidgets()
+        searchChanged()
     end)
     searchBox:SetScript("OnEnterPressed", function(self)
         self:ClearFocus()
@@ -173,7 +190,7 @@ function FilterBar.create(parent)
     createDungeonDropdown(parent)
 end
 
-local function refreshSearchWidgets()
+syncSearchWidgets = function()
     -- A reset empties the shared state; the text box follows (typing never leaves it empty while text remains).
     if Filters.state.search == "" and (searchBox:GetText() or "") ~= "" then
         searchBox:SetText("")
@@ -216,5 +233,5 @@ function FilterBar.refresh()
         dungeonDrop:Hide()
     end
     updateDungeonText()
-    refreshSearchWidgets()
+    syncSearchWidgets()
 end

@@ -5,8 +5,8 @@ local _, ns = ...
 local ItemList = {}
 ns.ItemList = ItemList
 
-local Filters, Settings, Player, ItemRows, Theme, Skin, L =
-    ns.Filters, ns.Settings, ns.Player, ns.ItemRows, ns.Theme, ns.Skin, ns.L
+local Filters, Settings, Player, ItemRows, ItemWidgets, Theme, Skin, L =
+    ns.Filters, ns.Settings, ns.Player, ns.ItemRows, ns.ItemWidgets, ns.Theme, ns.Skin, ns.L
 
 local HEADING_X = 24
 -- The list fills the left column: it ends where the gear panel (330 wide, 20 from the edge) begins, 14 apart.
@@ -105,15 +105,9 @@ function ItemList.create(parent)
     countText:SetJustifyH("RIGHT")
 end
 
+--- Parks the widgets of the last draw in the pool, ready for the next one.
 local function clearContent()
-    for _, child in ipairs({ content:GetChildren() }) do
-        child:Hide()
-        child:SetParent(nil)
-    end
-    for _, region in ipairs({ content:GetRegions() }) do
-        region:Hide()
-        region:SetParent(nil)
-    end
+    ItemWidgets.release(content)
 end
 
 local function layoutScroll()
@@ -140,7 +134,7 @@ local function activeSourceLabel()
 end
 
 local function addMessage(text, y)
-    local message = Skin.label(content, 13, "regular", "dim")
+    local message = ItemWidgets.label(content, 13, "regular", "dim")
     message:SetPoint("TOPLEFT", content, "TOPLEFT", 0, y)
     message:SetWidth(content:GetWidth())
     message:SetJustifyH("LEFT")
@@ -149,12 +143,16 @@ end
 
 --- A ghost button with the chevron: right when collapsed, down when expanded.
 local function addCollapseButton(header, collapseKey, collapsed)
-    local collapseButton = CreateFrame("Button", nil, content)
-    collapseButton:SetSize(18, 18)
+    local collapseButton = ItemWidgets.frame(content, "collapseButton", "Button", function(button)
+        button:SetSize(18, 18)
+        Skin.button(button, "ghost")
+        button.chevron = Skin.buttonIcon(button, "chevron", 12)
+        button.poolReset = function(self)
+            self.skin.hover = false
+        end
+    end)
     collapseButton:SetPoint("LEFT", header, "LEFT", -23, 0)
-    Skin.button(collapseButton, "ghost")
-    local chevron = Skin.buttonIcon(collapseButton, "chevron", 12)
-    chevron:SetRotation(collapsed and 0 or -math.pi / 2)
+    collapseButton.chevron:SetRotation(collapsed and 0 or -math.pi / 2)
     collapseButton:SetScript("OnClick", function()
         Settings.toggleCollapsed(collapseKey)
         ns.requestRender()
@@ -163,11 +161,11 @@ end
 
 --- The slot heading with its collapse button and rule. Returns the y below it.
 local function addSlotHeading(y, slotName, collapseKey, collapsed)
-    local header = Skin.sectionLabel(Skin.label(content, 11, "semibold", "muted"), slotName)
+    local header = Skin.sectionLabel(ItemWidgets.label(content, 11, "semibold", "muted"), slotName)
     header:SetPoint("TOPLEFT", content, "TOPLEFT", HEADING_X, y - 6)
     addCollapseButton(header, collapseKey, collapsed)
     y = y - 28
-    local rule = content:CreateTexture(nil, "ARTWORK")
+    local rule = ItemWidgets.texture(content, "ARTWORK")
     rule:SetColorTexture(Theme.Color("border"))
     rule:SetPoint("TOPLEFT", content, "TOPLEFT", 0, y)
     rule:SetPoint("TOPRIGHT", content, "TOPRIGHT", 0, y)
@@ -175,35 +173,40 @@ local function addSlotHeading(y, slotName, collapseKey, collapsed)
     return y - 6
 end
 
---- The "nothing matches" card: icon, title, a hint and the button that clears the filters. Returns the y below it.
-local function addEmptyState(y)
-    local card = CreateFrame("Frame", nil, content)
-    card:SetPoint("TOPLEFT", content, "TOPLEFT", 0, y - 6)
-    card:SetPoint("TOPRIGHT", content, "TOPRIGHT", 0, y - 6)
+--- The card of the empty state, made once: icon, title, hint and the button that clears the filters.
+local function buildEmptyCard(card)
     Skin.card(card)
-    local icon = card:CreateTexture(nil, "ARTWORK")
-    icon:SetSize(28, 28)
-    icon:SetPoint("TOP", card, "TOP", 0, -20)
-    Skin.icon(icon, "search", "muted")
-    local width = content:GetWidth() - 32
-    local title = Skin.label(card, 13, "medium", "text")
-    title:SetPoint("TOP", card, "TOP", 0, -58)
-    title:SetWidth(width)
-    title:SetText(L["No items match the current search and filters."])
-    local hint = Skin.label(card, 12, "regular", "muted")
-    hint:SetPoint("TOP", title, "BOTTOM", 0, -6)
-    hint:SetWidth(width)
-    hint:SetText(L["Try a different search, or clear the filters."])
+    card.icon = card:CreateTexture(nil, "ARTWORK")
+    card.icon:SetSize(28, 28)
+    card.icon:SetPoint("TOP", card, "TOP", 0, -20)
+    Skin.icon(card.icon, "search", "muted")
+    card.title = Skin.label(card, 13, "medium", "text")
+    card.title:SetPoint("TOP", card, "TOP", 0, -58)
+    card.hint = Skin.label(card, 12, "regular", "muted")
+    card.hint:SetPoint("TOP", card.title, "BOTTOM", 0, -6)
     local clearAll = CreateFrame("Button", nil, card)
     clearAll:SetSize(120, Theme.metrics.button)
-    clearAll:SetPoint("TOP", hint, "BOTTOM", 0, -14)
+    clearAll:SetPoint("TOP", card.hint, "BOTTOM", 0, -14)
     Skin.button(clearAll, "secondary")
-    clearAll:SetText(L["Clear filters"])
     clearAll:SetScript("OnClick", function()
         Filters.reset()
         ns.requestRender()
     end)
-    local height = 58 + title:GetStringHeight() + hint:GetStringHeight() + 6 + 14 + Theme.metrics.button + 18
+    card.clearAll = clearAll
+end
+
+--- The "nothing matches" card: icon, title, a hint and the button that clears the filters. Returns the y below it.
+local function addEmptyState(y)
+    local card = ItemWidgets.frame(content, "emptyCard", "Frame", buildEmptyCard)
+    card:SetPoint("TOPLEFT", content, "TOPLEFT", 0, y - 6)
+    card:SetPoint("TOPRIGHT", content, "TOPRIGHT", 0, y - 6)
+    local width = content:GetWidth() - 32
+    card.title:SetWidth(width)
+    card.title:SetText(L["No items match the current search and filters."])
+    card.hint:SetWidth(width)
+    card.hint:SetText(L["Try a different search, or clear the filters."])
+    card.clearAll:SetText(L["Clear filters"])
+    local height = 58 + card.title:GetStringHeight() + card.hint:GetStringHeight() + 6 + 14 + Theme.metrics.button + 18
     card:SetHeight(height)
     return y - 6 - height - 8
 end
