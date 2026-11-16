@@ -66,6 +66,7 @@ Hover any item anywhere in the game (bags, links, vendors, auction house) and se
 | `/bis tooltip all` | Toggle showing every class in tooltips |
 | `/bis alerts` | Toggle loot alerts |
 | `/bis dungeon` | Toggle the dungeon notice |
+| `/bis minimap` | Toggle the minimap button |
 
 ## 📦 Installation
 

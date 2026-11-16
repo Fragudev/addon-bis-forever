@@ -298,6 +298,12 @@ function Settings.minimapHidden()
     return minimap().hide == true
 end
 
+--- Flips the minimap button setting and returns true when the button is now shown.
+function Settings.toggleMinimapHidden()
+    minimap().hide = minimap().hide ~= true
+    return not minimap().hide
+end
+
 function Settings.tooltipEnabled()
     return account().tooltip ~= false
 end

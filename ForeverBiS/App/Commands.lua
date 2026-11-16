@@ -94,6 +94,15 @@ Commands.handlers = {
         print(L["Forever BiS dungeon notice: "] .. (on and L["on"] or L["off"]))
         return true
     end,
+    -- /bis minimap hides or shows the minimap button (shown by default).
+    minimap = function()
+        local on = Settings.toggleMinimapHidden()
+        if ns.MinimapButton then
+            ns.MinimapButton.refresh()
+        end
+        print(L["Forever BiS minimap button: "] .. (on and L["on"] or L["off"]))
+        return true
+    end,
     -- /bis alerts toggles the BiS loot alerts (on by default).
     alerts = function()
         local on = Settings.toggleAlerts()
