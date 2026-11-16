@@ -1,0 +1,25 @@
+.github/workflows/release.yml
+  s_765e5225b7ca65::t_94ea5b7859f3c3 7,11,40-41,43,45-51,54,60,64,66-71,74,83,106-113,123,125
+README.md
+  s_765e5225b7ca65::t_74011af13ec2ac 180-181,186-189
+tests/python/test_package.py
+  s_765e5225b7ca65::t_fe6390f0cdb1a5 1-62
+tools/package.sh
+  s_765e5225b7ca65::t_fbe9d0a736c6e3 24,31-38
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.6",
+  "base_commit_sha": "96468ed66ad843f97ff4185d3288255ca172841c",
+  "prompts": {},
+  "sessions": {
+    "s_765e5225b7ca65": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ad0c3eac-f795-4e8b-9956-58a53e1ead08",
+        "model": "unknown"
+      },
+      "human_author": "Francis Gutiérrez <fragudev@gmail.com>"
+    }
+  }
+}
