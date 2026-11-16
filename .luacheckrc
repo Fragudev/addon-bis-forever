@@ -67,7 +67,7 @@ files["ForeverBiS/Adapters/Player.lua"] = {
   read_globals = with({ "GetRealmName", "UnitClass", "UnitFactionGroup", "UnitFullName", "UnitLevel", "UnitName" }),
 }
 
-files["ForeverBiS/UI/"] = { read_globals = with(widget_api, { "Minimap", "GetCursorPosition", "RAID_CLASS_COLORS", "GetPhysicalScreenSize", "C_AddOns", "GetAddOnMetadata" }) }
+files["ForeverBiS/UI/"] = { read_globals = with(widget_api, { "Minimap", "GetCursorPosition", "RAID_CLASS_COLORS", "GetPhysicalScreenSize", "C_AddOns", "GetAddOnMetadata", "C_Timer" }) }
 
 files["ForeverBiS/App/Events.lua"] = { read_globals = with(widget_api, { "C_Timer" }) }
 files["ForeverBiS/App/Zone.lua"] = { read_globals = with(widget_api, { "C_Timer", "GetTime" }) }

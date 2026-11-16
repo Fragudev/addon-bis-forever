@@ -1,6 +1,5 @@
 -- The search box, source chips, faction and maker buttons and the dungeon dropdown. It only edits the shared
 -- Filters state and asks for a redraw; the item list reads the state.
--- luacheck: read globals C_Timer
 local _, ns = ...
 
 local FilterBar = {}

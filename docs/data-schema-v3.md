@@ -8,7 +8,7 @@ Schema 3 is the current data format. The addon reads several sources, and each s
 | `wowsims` | `ForeverBiS/ForeverBiS_Data_Wowsims.lua` | yes |
 | `kamilabs` | `ForeverBiS/ForeverBiS_Data_KamiLabs.lua` | no: generated only with `--include-unshipped`, pending permission from the site owner |
 
-`UpdateForeverBiS.py` writes these files from the modules in `bis_sources/`. `ForeverBiS_Model.lua` (loaded after the data files, see the `.toc`) reads them and builds the legacy globals the UI uses (`ForeverBiSLists`, `ForeverBiSItemIDs`, `ForeverBiSBuildLabels`) for the active source. The model never reads `ForeverBiSDB`. The old single file `ForeverBiS_Data.lua` no longer exists; [schema 2](data-schema-v2.md) described it.
+`UpdateForeverBiS.py` writes these files from the modules in `bis_sources/`. `ForeverBiS_Model.lua` (loaded after the data files, see the `.toc`) reads them and builds the legacy globals the UI uses (`ForeverBiSLists`, `ForeverBiSItemIDs`, `ForeverBiSBuildLabels`) for the active source. `ForeverBiSLists` holds one lazy entry per route that is filled on first read, so switching sources does not copy every list. The model never reads `ForeverBiSDB`. The old single file `ForeverBiS_Data.lua` no longer exists; [schema 2](data-schema-v2.md) described it.
 
 ## Quick path
 
@@ -59,11 +59,11 @@ Routes also belong to their source. The first segment of a route is the class ke
 | Source | Order | Phases | Coverage | Item sources |
 |--------|-------|--------|----------|--------------|
 | ForeverChanges | 1 | `lvl30` (Level 30) | Ranked lists per class and spec, PvE and PvP | Structured (see [Item shape](#item-shape)) |
-| wowsims | 3 | `lvl60` "Level 60 (pre-raid)", `raid1` "Raid (phase 1)" | Partial: 18 routes, no Shaman | Not published (see below) |
+| wowsims | 3 | `lvl60` "Level 60 (pre-raid)", `raid1` "Raid (phase 1)" | Partial: 18 routes, no Shaman | Structured, from `db.json` (see below) |
 | Kami Labs | 2 | `lvl30` "Level 30", `lvl60` "Level 60 (pre-raid)" | One item per slot | Structured |
 
 - **ForeverChanges.** Ranked lists, as before schema 3. Titles carry the level ("... at level 30"), and the updater derives the phase from the title.
-- **wowsims.** Built from the gear presets in [wowsims/forever](https://github.com/wowsims/forever) (MIT). Each slot has one item. The item source is always `{ kind = "unknown", text = "Source not listed by wowsims" }`, because the presets do not say where an item comes from. `raid1` has no `level`, so it sorts after the numeric phases. Enchants are taken from the presets and may have an empty `source`.
+- **wowsims.** Built from the gear presets in [wowsims/forever](https://github.com/wowsims/forever) (MIT), both `ui/specs/*/gear_sets/*.gear.json` (item ids) and `*.gear.siml` (one `slot item_slug + enchant_slug` line per slot; slugs are resolved against the item and enchant names in `assets/database/db.json`). Each slot has one item. The item source comes from the item's `sources` in `db.json`, preferring a drop, then crafted, quest, vendor, reputation and PvP, and is written as text ("Boss, Zone", "Quest: Name (Alliance)", "Sold by NPC, Zone", the profession name, "Reputation: X", "PvP reward") that goes through the same `structure_source()` as ForeverChanges. Items with no `sources` keep `{ kind = "unknown", text = "Source not listed by wowsims" }`, as in the example below. A preset that maps to no route prints a `::warning::`. `raid1` has no `level`, so it sorts after the numeric phases. Enchants are taken from the presets and may have an empty `source`.
 
   ```lua
   { slot = "Head",
@@ -95,7 +95,7 @@ The `lists` shape is unchanged from schema 2:
 ### Item shape
 
 - `items` order is the rank. `id` is omitted when unknown. `enchants` is omitted when empty.
-- `source.text` is the raw string from the source (lossless). `source.kind` is one of `quest`, `profession`, `dungeon`, `world`, `unknown`. The classification mirrors `Sources.category` in `Core/Sources.lua`. `unknown` is used for "Where it comes from is not known yet" and for wowsims items.
+- `source.text` is the raw string from the source (lossless). `source.kind` is one of `quest`, `profession`, `dungeon`, `world`, `unknown`. The classification mirrors `Sources.category` in `Core/Sources.lua`. `unknown` is used for "Where it comes from is not known yet" and for wowsims items whose `db.json` entry has no source.
 - Optional `source` fields, set only when detected: `faction` ("Horde"/"Alliance", exclusive sources only), `zone`, `boss`, `dropRate` (number, percent), `quest`, `skill`, `skillLevel`, `bindsToMaker`, `reported`.
 
 ## Model API
