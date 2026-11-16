@@ -20,9 +20,21 @@ describe("Lists", function()
         assert.are.same(ForeverBiSModel.list("rogue", phaseId), Lists.resolve("rogue", phaseId))
     end)
 
-    it("falls back to the legacy list when no phase is given", function()
+    it("uses the route's default phase when no phase is given", function()
         local Lists = loadLists()
-        assert.are.equal(ForeverBiSLists["rogue"], Lists.resolve("rogue", nil))
+        assert.are.same(ForeverBiSModel.list("rogue"), Lists.resolve("rogue", nil))
+    end)
+
+    it("falls back to the default phase when the given one does not exist", function()
+        local Lists = loadLists()
+        assert.are.same(ForeverBiSModel.list("rogue"), Lists.resolve("rogue", "no-such-phase"))
+    end)
+
+    it("marks a view missing only when the route has no list", function()
+        local Lists = loadLists()
+        assert.is_false(Lists.view("rogue", nil).missing)
+        assert.is_true(Lists.view("not-a-route", nil).missing)
+        assert.is_false(Lists.view(nil, nil).missing)
     end)
 
     it("resolves nothing without a route or for an unknown one", function()

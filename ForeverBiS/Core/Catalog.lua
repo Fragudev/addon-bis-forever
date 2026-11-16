@@ -68,26 +68,56 @@ for _, class in ipairs(classes) do
     defaultBuilds[class.key] = class.builds
 end
 
---- Replaces each class's builds with the labelled routes the data provides ({ [route] = label }).
---- A class the data does not mention keeps its built-in builds. Safe to call repeatedly: it always restores the
---- built-in builds first, so switching data sources never leaves routes of the previous one behind.
-function Catalog.refreshBuilds(labels)
+--- A build label for a route the data gives none for, from its suffix: "" -> "PvE", "/shadow-pvp" -> "Shadow PvP".
+local function derivedLabel(suffix)
+    local words = {}
+    for word in string.gmatch(suffix, "[^/%-]+") do
+        local lower = string.lower(word)
+        if lower == "pvp" then
+            words[#words + 1] = "PvP"
+        elseif lower == "pve" then
+            words[#words + 1] = "PvE"
+        else
+            words[#words + 1] = string.upper(string.sub(word, 1, 1)) .. string.sub(word, 2)
+        end
+    end
+    return #words > 0 and table.concat(words, " ") or "PvE"
+end
+
+--- Replaces each class's builds with the labelled routes the data provides ({ [route] = label }). A route listed
+--- in `routes` without a usable label is kept under a label derived from its suffix. A class the data does not
+--- mention keeps its built-in builds. Safe to call repeatedly: it always restores the built-in builds first, so
+--- switching data sources never leaves routes of the previous one behind. The default build (empty suffix) comes
+--- first, the rest sorted by label.
+function Catalog.refreshBuilds(labels, routes)
     for _, class in ipairs(classes) do
         class.builds = defaultBuilds[class.key]
     end
     if not labels then
         return
     end
+    local known = {}
+    for route, label in pairs(labels) do
+        known[route] = type(label) == "string" and label or false
+    end
+    for _, route in ipairs(routes or {}) do
+        if not known[route] then
+            known[route] = false
+        end
+    end
     for _, class in ipairs(classes) do
         local refreshedBuilds = {}
-        for route, label in pairs(labels) do
+        for route, label in pairs(known) do
             if route == class.key or string.find(route, "^" .. class.key .. "/") then
                 local suffix = string.sub(route, #class.key + 1)
-                table.insert(refreshedBuilds, { suffix, label, suffix })
+                table.insert(refreshedBuilds, { suffix, label or derivedLabel(suffix), suffix })
             end
         end
         if #refreshedBuilds > 0 then
             table.sort(refreshedBuilds, function(a, b)
+                if (a[3] == "") ~= (b[3] == "") then
+                    return a[3] == ""
+                end
                 return a[2] < b[2]
             end)
             class.builds = refreshedBuilds
@@ -241,4 +271,4 @@ function Catalog.progressKeys()
     return keys
 end
 
-Catalog.refreshBuilds(ForeverBiSBuildLabels)
+Catalog.refreshBuilds(ForeverBiSBuildLabels, ForeverBiSModel and ForeverBiSModel.routes())

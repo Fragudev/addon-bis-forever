@@ -38,9 +38,47 @@ local function activate(id)
         return false
     end
     if ns.Catalog then
-        ns.Catalog.refreshBuilds(ForeverBiSBuildLabels)
+        ns.Catalog.refreshBuilds(ForeverBiSBuildLabels, ForeverBiSModel.routes())
     end
     return true
+end
+
+--- Stores the character's build and phase under a source, so a later switch back to it restores them. The class
+--- is kept with them: a build means nothing for another class.
+local function remember(sourceId, classKey, buildKey, phaseId)
+    if type(sourceId) ~= "string" then
+        return
+    end
+    local data = char()
+    if type(data.bySource) ~= "table" then
+        data.bySource = {}
+    end
+    data.bySource[sourceId] = { class = classKey, build = buildKey, phase = phaseId }
+end
+
+--- The build and phase remembered for a source and class, or nil.
+local function recall(sourceId, classKey)
+    local all = char().bySource
+    local saved = type(all) == "table" and all[sourceId] or nil
+    if type(saved) == "table" and saved.class == classKey and type(saved.build) == "string" then
+        return saved
+    end
+    return nil
+end
+
+--- Remembers the current selection under the active source (after an explicit choice).
+local function rememberCurrent()
+    remember(ForeverBiSModel and ForeverBiSModel.activeSource(), char().class, char().build, char().phase)
+end
+
+--- Bind-time tidy-up: unknown saved class and build keys become known ones. Rendering never does this (see
+--- Settings.route), so a build the active source lacks survives until the player chooses another.
+local function normalizeSelection()
+    if not ns.Catalog then
+        return
+    end
+    local class, build = ns.Catalog.resolve(char().class, char().build)
+    char().class, char().build = class.key, build[1]
 end
 
 --- Creates the saved variables when missing and fills in the tables the addon expects. A saved data source that
@@ -54,15 +92,15 @@ function Settings.bind()
     minimap()
     collapsed()
     local saved = account().source
-    if type(saved) == "string" and activate(saved) then
-        return
-    end
-    if ForeverBiSModel and not activate(ForeverBiSModel.DEFAULT_SOURCE) then
-        local first = ForeverBiSModel.sources()[1]
-        if first then
-            activate(first.id)
+    if not (type(saved) == "string" and activate(saved)) then
+        if ForeverBiSModel and not activate(ForeverBiSModel.DEFAULT_SOURCE) then
+            local first = ForeverBiSModel.sources()[1]
+            if first then
+                activate(first.id)
+            end
         end
     end
+    normalizeSelection()
 end
 
 --- Moves the selection an older version saved account-wide into this character's table. The first character
@@ -91,10 +129,10 @@ function Settings.get(name)
     return nil
 end
 
---- Resolves the saved class and build to known ones, writes them back, and returns the route key with both.
+--- Resolves the saved class and build to known ones and returns the route key with both. Read-only: the saved
+--- values change only through the choose* functions, so a build the active source lacks is not lost.
 function Settings.route()
     local class, build, route = ns.Catalog.resolve(char().class, char().build)
-    char().class, char().build = class.key, build[1]
     return route, class, build
 end
 
@@ -110,10 +148,12 @@ end
 function Settings.chooseClass(class)
     char().class, char().build = class.key, ns.Catalog.defaultBuild(class)[1]
     char().classChosen = true
+    rememberCurrent()
 end
 
 function Settings.chooseBuild(buildKey)
     char().build = buildKey
+    rememberCurrent()
 end
 
 --- Selects the class the player is playing, unless one was chosen by hand. The build is reset only when the
@@ -126,6 +166,7 @@ function Settings.applyDetectedClass(classToken)
     for _, class in ipairs(ns.Catalog.classes) do
         if class.key == key and char().class ~= key then
             char().class, char().build = key, ns.Catalog.defaultBuild(class)[1]
+            rememberCurrent()
         end
     end
 end
@@ -136,13 +177,18 @@ function Settings.source()
     return type(data) == "table" and data.source or nil
 end
 
---- True once the player picked a source that is still available.
+--- True once the player picked a source that is still available, or when only one source exists.
 function Settings.sourceChosen()
-    local saved = Settings.source()
-    if type(saved) ~= "string" or not ForeverBiSModel then
+    if not ForeverBiSModel then
         return false
     end
-    for _, source in ipairs(ForeverBiSModel.sources()) do
+    local available = ForeverBiSModel.sources()
+    -- With a single source there is nothing to pick.
+    if #available == 1 then
+        return true
+    end
+    local saved = Settings.source()
+    for _, source in ipairs(available) do
         if source.id == saved then
             return true
         end
@@ -162,21 +208,34 @@ function Settings.buildHasList(class)
     end
 end
 
---- Saves and activates a data source. Unknown ids are ignored (false). When the character's route has no list in
---- the new source the build goes to the class's first build that has a list there (the first build when none
---- does), and a phase the route lacks is dropped.
+--- Saves and activates a data source. Unknown ids are ignored (false). The build and phase in use are remembered
+--- for the source being left, and the ones remembered for the new source come back (the character's own, when the
+--- source was never used). When the route has no list in the new source the build goes to the class's first build
+--- that has a list there (the first build when none does), and a phase the route lacks is dropped.
 function Settings.chooseSource(id)
-    if not ForeverBiSModel or type(id) ~= "string" or not activate(id) then
+    if not ForeverBiSModel or type(id) ~= "string" then
         return false
     end
+    local left = ForeverBiSModel.activeSource()
+    local _, class, build = Settings.route()
+    if not activate(id) then
+        return false
+    end
+    remember(left, class.key, build[1], char().phase)
     account().source = id
-    local route, class = Settings.route()
+    local saved = recall(id, class.key)
+    if saved then
+        char().build, char().phase = saved.build, saved.phase
+    end
+    local route
+    route, class = Settings.route()
     if not ForeverBiSModel.list(route) then
         local first = ns.Catalog.firstListedBuild(class, Settings.buildHasList(class))
         char().build = (first or ns.Catalog.defaultBuild(class))[1]
         route = Settings.route()
     end
     Settings.dropUnavailablePhase(route)
+    rememberCurrent()
     return true
 end
 
@@ -187,9 +246,15 @@ end
 --- Pass nil for automatic (the phase matching the player's level).
 function Settings.choosePhase(phaseId)
     char().phase = phaseId
+    rememberCurrent()
 end
 
---- A saved phase the route does not have falls back to automatic.
+--- The saved phase when the route has it, otherwise nil (automatic). Read-only, unlike dropUnavailablePhase.
+function Settings.activePhase(route)
+    return ForeverBiSModel and ForeverBiSModel.availablePhase(route, char().phase) or nil
+end
+
+--- A saved phase the route does not have falls back to automatic (saved that way; only a source switch calls it).
 function Settings.dropUnavailablePhase(route)
     if ForeverBiSModel and not ForeverBiSModel.availablePhase(route, char().phase) then
         char().phase = nil

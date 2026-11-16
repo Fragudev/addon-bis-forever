@@ -47,6 +47,12 @@ describe("Source picker", function()
             assert.is_false(WowStub.hasText("BiS 0/"))
         end)
 
+        it("marks the source the model reads right now", function()
+            local items = ForeverBiSSourcePickerDropDown.getItems()
+            assert.is_true(items[1].checked)
+            assert.is_false(items[2].checked)
+        end)
+
         it("saves nothing until a source is picked", function()
             assert.is_falsy(ForeverBiSDB.source)
         end)
@@ -82,6 +88,16 @@ describe("Source picker", function()
             load({ source = "gone" })
             openWindow()
             assert.is_true(ForeverBiSSourcePicker:IsShown())
+        end)
+
+        it("treats the only available source as chosen and shows no picker", function()
+            WowStub.load({ source = false }, function(data)
+                data.sources = { alpha = TwoSources.twoSources().sources.alpha }
+            end)
+            openWindow()
+            assert.is_true(WowStub.ns.Settings.sourceChosen())
+            assert.is_false(ForeverBiSSourcePicker:IsShown())
+            assert.is_true(WowStub.hasText("Alpha Mask"))
         end)
 
         it("skips the picker when the data carries no sources at all", function()
@@ -125,7 +141,7 @@ describe("Source picker", function()
 
         it("lists only the builds the active source has a list for", function()
             druid("alpha")
-            assert.are.same({ "Balance", "Feral" }, labels(ForeverBiSBuildDropDown))
+            assert.are.same({ "Feral", "Balance" }, labels(ForeverBiSBuildDropDown))
         end)
 
         it("is rebuilt when the source changes", function()

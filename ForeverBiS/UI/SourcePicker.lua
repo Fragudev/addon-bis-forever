@@ -12,10 +12,11 @@ local cover, drop
 
 local function sourceItems()
     local items = {}
+    local active = Settings.activeSource()
     for _, source in ipairs(ForeverBiSModel and ForeverBiSModel.sources() or {}) do
         items[#items + 1] = {
             text = source.label,
-            checked = false,
+            checked = source.id == active,
             func = function()
                 if Settings.chooseSource(source.id) then
                     ns.requestRender({ scrollTop = true })

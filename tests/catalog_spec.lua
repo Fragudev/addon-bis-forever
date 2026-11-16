@@ -57,10 +57,10 @@ describe("Catalog", function()
         assert.are.equal("rogue", route)
     end)
 
-    it("replaces a class's builds with the labelled routes the data provides, sorted by label", function()
+    it("replaces a class's builds with the labelled routes the data provides, default first", function()
         local Catalog = loadCatalog({ ["mage"] = "Zeta", ["mage/arcane"] = "Arcane" })
         local builds = Catalog.findClass("mage").builds
-        assert.are.same({ { "/arcane", "Arcane", "/arcane" }, { "", "Zeta", "" } }, builds)
+        assert.are.same({ { "", "Zeta", "" }, { "/arcane", "Arcane", "/arcane" } }, builds)
     end)
 
     it("keeps the built-in builds of a class the data does not mention", function()
@@ -143,7 +143,7 @@ describe("Catalog", function()
 
         it("replaces the builds of the classes the labels mention and keeps the others", function()
             local Catalog = loadCatalog({ druid = "Feral", ["druid/balance"] = "Balance" })
-            assert.are.same({ "/balance", "" }, routes(Catalog, "druid"))
+            assert.are.same({ "", "/balance" }, routes(Catalog, "druid"))
             assert.are.same({ "", "/pvp" }, routes(Catalog, "rogue"))
         end)
 
@@ -153,6 +153,29 @@ describe("Catalog", function()
             assert.are.equal(6, #Catalog.findClass("druid").builds)
             assert.are.equal("feral-pve", Catalog.findClass("druid").builds[1][1])
             assert.are.same({ "" }, routes(Catalog, "rogue"))
+        end)
+
+        it("keeps the default build first and sorts the rest by label", function()
+            local Catalog = loadCatalog({ rogue = "Zeta", ["rogue/pvp"] = "Alpha", ["rogue/x"] = "Beta" })
+            assert.are.same({ "", "/pvp", "/x" }, routes(Catalog, "rogue"))
+        end)
+
+        it("keeps a route without a label under a label derived from its suffix", function()
+            local Catalog = loadCatalog()
+            Catalog.refreshBuilds({ rogue = "Rogue" }, { "rogue", "rogue/shadow-pvp", "rogue/holy" })
+            assert.are.same({ "", "/holy", "/shadow-pvp" }, routes(Catalog, "rogue"))
+            local labelsOf = {}
+            for _, build in ipairs(Catalog.findClass("rogue").builds) do
+                labelsOf[#labelsOf + 1] = build[2]
+            end
+            assert.are.same({ "Rogue", "Holy", "Shadow PvP" }, labelsOf)
+        end)
+
+        it("derives PvE for an unlabeled default route and ignores unlabeled routes of unknown classes", function()
+            local Catalog = loadCatalog()
+            Catalog.refreshBuilds({}, { "rogue", "nobody/x" })
+            assert.are.same({ "" }, routes(Catalog, "rogue"))
+            assert.are.equal("PvE", Catalog.findClass("rogue").builds[1][2])
         end)
 
         it("is idempotent when called repeatedly with the same labels", function()
