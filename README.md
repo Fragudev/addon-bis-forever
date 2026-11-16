@@ -177,10 +177,15 @@ anything: they install or update the addon.
    file.
 2. Each source sets its own phases. ForeverChanges derives them from the list title (for example "at level 30"). If a
    source cannot download or parse its pages, that source keeps its previous file and the other sources are still
-   written. The run fails only when every source fails.
+   written. A source that would lose a route it already has also keeps its previous file. The run, and the workflow,
+   fail when any shipped source fails, after the others are written and released.
 3. When any data file changed, the workflow commits to `develop`, bumps the version in `ForeverBiS.toc`, tags it and
    publishes the beta to GitHub and CurseForge. Betas only ship from `develop`; the release workflow refuses a tag that
    is not on it.
+
+Stable releases ship from `main`. Pushing a `vX.Y.Z` tag on a `main` commit runs the same release workflow: it writes
+`X.Y.Z` into the packaged `ForeverBiS.toc` (the repository keeps the beta version), publishes the zip to GitHub as the
+latest release and uploads it to CurseForge as a release. Betas are published as prereleases.
 
 A Kami Labs source is planned. It is not shipped until its site owner gives permission.
 
