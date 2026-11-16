@@ -1,0 +1,23 @@
+.github/ISSUE_TEMPLATE/bug.yml
+  s_802cae5b9db215::t_3306e4c0ac5cb3 1-42
+CONTRIBUTING.md
+  s_802cae5b9db215::t_d03b2f673adf57 1-42
+README.md
+  s_802cae5b9db215::t_da2934da7b10f4 241-242
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.6",
+  "base_commit_sha": "b8ec6f344bec834952147f395c8b5bae789e1b70",
+  "prompts": {},
+  "sessions": {
+    "s_802cae5b9db215": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4e21a150-25e8-43ee-b92d-411b3f0d7b4c",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Francis Gutiérrez <fragudev@gmail.com>"
+    }
+  }
+}
