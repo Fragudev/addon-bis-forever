@@ -1,0 +1,21 @@
+ForeverBiS/UI/Minimap.lua
+  s_5bb4c8f5cfcab2::t_9ac5357def66b9 76,81-82
+tests/minimap_spec.lua
+  s_5bb4c8f5cfcab2::t_8594a34f6ca171 1-14
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.6",
+  "base_commit_sha": "2a58e72a417dd4edcdbf5f9e52387c8a3f9855d3",
+  "prompts": {},
+  "sessions": {
+    "s_5bb4c8f5cfcab2": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "agent-afaf5838b55a27e74",
+        "model": "unknown"
+      },
+      "human_author": "Francis Gutiérrez <fragudev@gmail.com>"
+    }
+  }
+}
