@@ -10,10 +10,14 @@ local MIN_WIDTH, MIN_HEIGHT = 760, 520
 local LOGO = "Interface\\AddOns\\" .. ADDON .. "\\ForeverBiSIcon.tga"
 -- Once the player drags the resize handle the window keeps their size instead of fitting the screen.
 local userSized = false
+-- The window size when the resize handle was pressed, until it is released.
+local sizeAtPress
 local frame, title
 
 local function createFrame()
     frame = CreateFrame("Frame", "ForeverBiSFrame", UIParent)
+    -- Escape closes the window, like the other game panels.
+    table.insert(UISpecialFrames, "ForeverBiSFrame")
     frame:SetWidth(MIN_WIDTH)
     frame:SetHeight(MIN_HEIGHT)
     frame:SetPoint("CENTER", UIParent, "CENTER", 0, 0)
@@ -46,11 +50,16 @@ local function createResizeHandle()
         gripBar:SetPoint("CENTER", handle, "CENTER", 0, 4 - index * 3)
     end
     handle:SetScript("OnMouseDown", function()
-        userSized = true
+        sizeAtPress = { frame:GetWidth(), frame:GetHeight() }
         frame:StartSizing("BOTTOM")
     end)
     handle:SetScript("OnMouseUp", function()
         frame:StopMovingOrSizing()
+        -- A click without a drag keeps the fitted size; only a real size change counts as the player's choice.
+        if sizeAtPress and (frame:GetWidth() ~= sizeAtPress[1] or frame:GetHeight() ~= sizeAtPress[2]) then
+            userSized = true
+        end
+        sizeAtPress = nil
         ns.requestRender()
     end)
     handle:SetScript("OnHide", function()
