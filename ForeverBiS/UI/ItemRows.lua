@@ -10,7 +10,7 @@ local Items, Inventory, Lists, Sources, ItemWidgets, Chat, Theme, Pixel, Skin, L
 local SOURCE_X = 86
 
 local function addSeparator(content, y)
-    local separator = content:CreateTexture(nil, "ARTWORK")
+    local separator = ItemWidgets.texture(content, "ARTWORK")
     separator:SetColorTexture(Theme.Color("border"))
     separator:SetPoint("TOPLEFT", content, "TOPLEFT", 0, y)
     separator:SetPoint("TOPRIGHT", content, "TOPRIGHT", 0, y)
@@ -19,7 +19,7 @@ end
 
 --- The darker band behind every other row, from rowTop down to the bottom edge.
 local function addStripe(content, rowTop, bottom)
-    local stripe = content:CreateTexture(nil, "BACKGROUND")
+    local stripe = ItemWidgets.texture(content, "BACKGROUND")
     stripe:SetColorTexture(Theme.Color("stripe"))
     stripe:SetPoint("TOPLEFT", content, "TOPLEFT", 0, rowTop)
     stripe:SetPoint("TOPRIGHT", content, "TOPRIGHT", 0, rowTop)
@@ -29,40 +29,53 @@ end
 --- A transparent frame over the row that washes it on hover. It is made before the row's buttons, so they stay on
 --- top; returns it with setHover(on), which those buttons call too, since entering a child leaves the row.
 local function createHoverRow(content, rowTop)
-    local row = CreateFrame("Frame", nil, content)
+    local row = ItemWidgets.frame(content, "hoverRow", "Frame", function(frame)
+        frame:EnableMouse(true)
+        local wash = frame:CreateTexture(nil, "BACKGROUND")
+        wash:SetAllPoints(frame)
+        wash:SetColorTexture(Theme.Color("transparent"))
+        function frame.setHover(on)
+            wash:SetColorTexture(Theme.Color(on and "hover" or "transparent"))
+        end
+        frame:SetScript("OnEnter", function()
+            frame.setHover(true)
+        end)
+        frame:SetScript("OnLeave", function()
+            frame.setHover(false)
+        end)
+        frame.poolReset = function()
+            frame.setHover(false)
+        end
+    end)
     row:SetPoint("TOPLEFT", content, "TOPLEFT", 0, rowTop)
     row:SetPoint("TOPRIGHT", content, "TOPRIGHT", 0, rowTop)
-    row:EnableMouse(true)
-    local wash = row:CreateTexture(nil, "BACKGROUND")
-    wash:SetAllPoints(row)
-    wash:SetColorTexture(Theme.Color("transparent"))
-    function row.setHover(on)
-        wash:SetColorTexture(Theme.Color(on and "hover" or "transparent"))
-    end
-    row:SetScript("OnEnter", function()
-        row.setHover(true)
-    end)
-    row:SetScript("OnLeave", function()
-        row.setHover(false)
-    end)
     return row
 end
 
 local function addIconButton(content, rowTop, itemName, slotKey, itemSource, hoverRow)
-    local iconButton = CreateFrame("Button", nil, content)
-    iconButton:SetSize(38, 38)
+    local iconButton = ItemWidgets.frame(content, "itemIcon", "Button", function(button)
+        button:SetSize(38, 38)
+        button.icon = button:CreateTexture(nil, "ARTWORK")
+        button.icon:SetAllPoints(button)
+        button:HookScript("OnEnter", function()
+            if button.hoverRow then
+                button.hoverRow.setHover(true)
+            end
+        end)
+        button:HookScript("OnLeave", function()
+            if button.hoverRow then
+                button.hoverRow.setHover(false)
+            end
+        end)
+        button.poolReset = function()
+            button.hoverRow = nil
+        end
+    end)
+    iconButton.hoverRow = hoverRow
     iconButton:SetPoint("TOPLEFT", content, "TOPLEFT", 32, rowTop - 2)
-    local iconTexture = iconButton:CreateTexture(nil, "ARTWORK")
-    iconTexture:SetAllPoints(iconButton)
-    iconTexture:SetTexture(Items.icon(itemName))
+    iconButton.icon:SetTexture(Items.icon(itemName))
     ItemWidgets.addQualityBorder(iconButton, itemName)
     ItemWidgets.addOwnershipMark(iconButton, itemName, slotKey)
-    iconButton:HookScript("OnEnter", function()
-        hoverRow.setHover(true)
-    end)
-    iconButton:HookScript("OnLeave", function()
-        hoverRow.setHover(false)
-    end)
     iconButton:SetScript("OnEnter", function(self)
         ItemWidgets.showItemTooltip(self, "ANCHOR_RIGHT", itemName)
         GameTooltip:AddLine(L["Source: %s"]:format(itemSource), 0.85, 0.85, 0.85, true)
@@ -83,17 +96,17 @@ end
 --- A small chip with the faction emblem and name, in the faction's color on a faint ground of the same color.
 local function addFactionBadge(content, rowTop, faction, nameWidth)
     local token = faction == "Horde" and "danger" or "accent"
-    local chip = content:CreateTexture(nil, "BACKGROUND")
+    local chip = ItemWidgets.texture(content, "BACKGROUND")
     chip:SetColorTexture(Theme.Color(token, 0.14))
     chip:SetHeight(18)
     chip:SetPoint("TOPLEFT", content, "TOPLEFT", SOURCE_X + nameWidth + 3, rowTop - 5)
-    local factionIcon = content:CreateTexture(nil, "ARTWORK")
+    local factionIcon = ItemWidgets.texture(content, "ARTWORK")
     factionIcon:SetSize(14, 14)
     factionIcon:SetPoint("LEFT", chip, "LEFT", 3, 0)
     factionIcon:SetTexture(
         faction == "Horde" and "Interface\\TargetingFrame\\UI-PVP-Horde" or "Interface\\TargetingFrame\\UI-PVP-Alliance"
     )
-    local factionLabel = Skin.label(content, 11, "semibold", token)
+    local factionLabel = ItemWidgets.label(content, 11, "semibold", token)
     factionLabel:SetPoint("LEFT", factionIcon, "RIGHT", 3, 0)
     factionLabel:SetText(L[faction])
     chip:SetWidth(3 + 14 + 3 + factionLabel:GetStringWidth() + 6)
@@ -105,14 +118,14 @@ function ItemRows.addItem(content, rowTop, rank, item, slotKey, striped)
     local itemName, itemSource = item[1], item[2]
     local sourceWidth = content:GetWidth() - SOURCE_X - 8
     local hoverRow = createHoverRow(content, rowTop)
-    local rankText = Skin.label(content, 13, "medium", "dim")
+    local rankText = ItemWidgets.label(content, 13, "medium", "dim")
     rankText:SetPoint("TOPLEFT", content, "TOPLEFT", 0, rowTop - 11)
     rankText:SetWidth(28)
     rankText:SetJustifyH("RIGHT")
     rankText:SetText(tostring(rank))
     addIconButton(content, rowTop, itemName, slotKey, itemSource, hoverRow)
 
-    local name = Skin.label(content, 13, "medium", "text")
+    local name = ItemWidgets.label(content, 13, "medium", "text")
     name:SetPoint("TOPLEFT", content, "TOPLEFT", SOURCE_X, rowTop - 5)
     local faction = Sources.exclusiveFaction(itemSource)
     local nameWidth = faction and math.max(80, sourceWidth - 80) or sourceWidth
@@ -125,9 +138,9 @@ function ItemRows.addItem(content, rowTop, rank, item, slotKey, striped)
         addFactionBadge(content, rowTop, faction, nameWidth)
     end
 
-    local source = Skin.label(content, 12, "regular", "dim")
+    local source = ItemWidgets.label(content, 12, "regular", "dim")
     local sourceTop = rowTop - name:GetStringHeight() - 9
-    local sourceIcon = content:CreateTexture(nil, "ARTWORK")
+    local sourceIcon = ItemWidgets.texture(content, "ARTWORK")
     sourceIcon:SetSize(16, 16)
     sourceIcon:SetPoint("TOPLEFT", content, "TOPLEFT", SOURCE_X, sourceTop + 1)
     sourceIcon:SetTexture(Sources.icon(itemSource))
@@ -147,13 +160,14 @@ function ItemRows.addItem(content, rowTop, rank, item, slotKey, striped)
 end
 
 local function addEnchantIcon(content, rowTop, spellName, enchantSource, formulaID)
-    local iconButton = CreateFrame("Button", nil, content)
-    iconButton:SetSize(28, 28)
+    local iconButton = ItemWidgets.frame(content, "enchantIcon", "Button", function(button)
+        button:SetSize(28, 28)
+        local iconTexture = button:CreateTexture(nil, "ARTWORK")
+        iconTexture:SetAllPoints(button)
+        iconTexture:SetTexture("Interface\\Icons\\Trade_Engraving")
+        Pixel.Border(button, "border", "OVERLAY")
+    end)
     iconButton:SetPoint("TOPLEFT", content, "TOPLEFT", 36, rowTop - 2)
-    local iconTexture = iconButton:CreateTexture(nil, "ARTWORK")
-    iconTexture:SetAllPoints(iconButton)
-    iconTexture:SetTexture("Interface\\Icons\\Trade_Engraving")
-    Pixel.Border(iconButton, "border", "OVERLAY")
     iconButton:SetScript("OnEnter", function(self)
         GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
         if formulaID then
@@ -172,7 +186,7 @@ end
 --- Draws the ENCHANTS block of a slot starting at y. Returns the y below it.
 function ItemRows.addEnchants(content, y, enchants)
     local sourceWidth = content:GetWidth() - SOURCE_X - 8
-    local header = Skin.sectionLabel(Skin.label(content, 11, "semibold", "muted"), L["ENCHANTS"])
+    local header = Skin.sectionLabel(ItemWidgets.label(content, 11, "semibold", "muted"), L["ENCHANTS"])
     header:SetPoint("TOPLEFT", content, "TOPLEFT", 32, y - 4)
     y = y - 24
     for _, enchant in ipairs(enchants) do
@@ -180,14 +194,14 @@ function ItemRows.addEnchants(content, y, enchants)
         local rowTop = y
         addEnchantIcon(content, rowTop, spellName, enchantSource, formulaID)
 
-        local effectText = Skin.label(content, 13, "medium", "success")
+        local effectText = ItemWidgets.label(content, 13, "medium", "success")
         effectText:SetPoint("TOPLEFT", content, "TOPLEFT", SOURCE_X, rowTop - 2)
         effectText:SetWidth(sourceWidth)
         effectText:SetJustifyH("LEFT")
         effectText:SetWordWrap(true)
         effectText:SetText(effect)
 
-        local detailText = Skin.label(content, 12, "regular", "dim")
+        local detailText = ItemWidgets.label(content, 12, "regular", "dim")
         detailText:SetPoint("TOPLEFT", content, "TOPLEFT", SOURCE_X, rowTop - effectText:GetStringHeight() - 6)
         detailText:SetWidth(sourceWidth)
         detailText:SetJustifyH("LEFT")
@@ -204,17 +218,17 @@ local EQUIPPED_LINE_HEIGHT = 14
 
 --- One right-aligned "[icon] Name  #3" (or "Not listed") line for something worn in the slot.
 local function addEquippedLine(content, lineY, itemID, rank)
-    local rankText = Skin.label(content, 12, "medium", rank and "warning" or "muted")
+    local rankText = ItemWidgets.label(content, 12, "medium", rank and "warning" or "muted")
     rankText:SetPoint("TOPRIGHT", content, "TOPRIGHT", -4, lineY)
     rankText:SetJustifyH("RIGHT")
     rankText:SetText(rank and L["#%d"]:format(rank) or L["Not listed"])
-    local name = Skin.label(content, 12, "regular", "text")
+    local name = ItemWidgets.label(content, 12, "regular", "text")
     name:SetPoint("RIGHT", rankText, "LEFT", -5, 0)
     name:SetWidth(150)
     name:SetJustifyH("RIGHT")
     name:SetText(Items.nameById(itemID) or L["Item %d"]:format(itemID))
     name:SetTextColor(Items.qualityColorById(itemID))
-    local icon = content:CreateTexture(nil, "ARTWORK")
+    local icon = ItemWidgets.texture(content, "ARTWORK")
     icon:SetSize(EQUIPPED_ICON_SIZE, EQUIPPED_ICON_SIZE)
     icon:SetPoint("RIGHT", name, "LEFT", -3, 0)
     icon:SetTexture(Items.iconById(itemID))

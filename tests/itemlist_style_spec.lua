@@ -18,6 +18,7 @@ end
 describe("Item list look", function()
     it("marks an active source filter with the selected state", function()
         WowStub.load(nil)
+        WowStub.ns.MainFrame.open()
         click(ForeverBiSFilterquest)
         assert.is_true(ForeverBiSFilterquest.skin.active)
         assert.is_true(ForeverBiSFilterquest.skin.underline.shown)
@@ -27,6 +28,7 @@ describe("Item list look", function()
 
     it("shows a hint under the title when nothing matches", function()
         WowStub.load({ class = "druid", build = "" })
+        WowStub.ns.MainFrame.open()
         local searchBox
         for _, candidate in ipairs(WowStub.frames) do
             if candidate.scripts.OnTextChanged then
