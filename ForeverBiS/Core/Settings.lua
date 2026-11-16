@@ -155,8 +155,16 @@ function Settings.activeSource()
     return ForeverBiSModel and ForeverBiSModel.activeSource() or nil
 end
 
+--- A predicate over a class's builds: true when the active source has a list for that build's route.
+function Settings.buildHasList(class)
+    return function(build)
+        return ForeverBiSModel ~= nil and ForeverBiSModel.list(ns.Catalog.routeKey(class, build)) ~= nil
+    end
+end
+
 --- Saves and activates a data source. Unknown ids are ignored (false). When the character's route has no list in
---- the new source the build goes back to the class's first build, and a phase the route lacks is dropped.
+--- the new source the build goes to the class's first build that has a list there (the first build when none
+--- does), and a phase the route lacks is dropped.
 function Settings.chooseSource(id)
     if not ForeverBiSModel or type(id) ~= "string" or not activate(id) then
         return false
@@ -164,7 +172,8 @@ function Settings.chooseSource(id)
     account().source = id
     local route, class = Settings.route()
     if not ForeverBiSModel.list(route) then
-        char().build = ns.Catalog.defaultBuild(class)[1]
+        local first = ns.Catalog.firstListedBuild(class, Settings.buildHasList(class))
+        char().build = (first or ns.Catalog.defaultBuild(class))[1]
         route = Settings.route()
     end
     Settings.dropUnavailablePhase(route)

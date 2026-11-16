@@ -170,4 +170,35 @@ describe("Catalog", function()
             assert.are.equal(6, #Catalog.findClass("druid").builds)
         end)
     end)
+
+    describe("listed predicate", function()
+        local function onlyTank(build)
+            return build[1] == "tank"
+        end
+
+        it("keeps only the accepted builds and the modes they belong to", function()
+            local Catalog = loadCatalog()
+            local druid = Catalog.findClass("druid")
+            local builds = Catalog.buildsForMode(druid, "pve", onlyTank)
+            assert.are.equal(1, #builds)
+            assert.are.equal("tank", builds[1].build[1])
+            assert.are.same({ "pve" }, Catalog.modes(druid, onlyTank))
+            assert.are.same(
+                {},
+                Catalog.modes(druid, function()
+                    return false
+                end)
+            )
+            assert.are.equal("tank", Catalog.buildForMode(druid, druid.builds[1], "pve", onlyTank)[1])
+        end)
+
+        it("finds the first accepted build, or nil", function()
+            local Catalog = loadCatalog()
+            local druid = Catalog.findClass("druid")
+            assert.are.equal("tank", Catalog.firstListedBuild(druid, onlyTank)[1])
+            assert.is_nil(Catalog.firstListedBuild(druid, function()
+                return false
+            end))
+        end)
+    end)
 end)

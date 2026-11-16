@@ -141,11 +141,14 @@ function Catalog.splitBuild(label)
     return mode, spec ~= "" and spec or nil
 end
 
---- The modes a class has builds for, PvE first: a subset of { "pve", "pvp" }.
-function Catalog.modes(class)
+--- The modes a class has builds for, PvE first: a subset of { "pve", "pvp" }. With a `listed(build)` predicate
+--- only the builds it accepts count.
+function Catalog.modes(class, listed)
     local found = {}
     for _, build in ipairs(class.builds) do
-        found[(Catalog.splitBuild(build[2]))] = true
+        if not listed or listed(build) then
+            found[(Catalog.splitBuild(build[2]))] = true
+        end
     end
     local modes = {}
     for _, mode in ipairs({ "pve", "pvp" }) do
@@ -157,11 +160,12 @@ function Catalog.modes(class)
 end
 
 --- The builds of a class in one mode, in catalog order, each as { build = build, spec = spec name or nil }.
-function Catalog.buildsForMode(class, mode)
+--- With a `listed(build)` predicate only the builds it accepts are returned.
+function Catalog.buildsForMode(class, mode, listed)
     local builds = {}
     for _, build in ipairs(class.builds) do
         local buildMode, spec = Catalog.splitBuild(build[2])
-        if buildMode == mode then
+        if buildMode == mode and (not listed or listed(build)) then
             builds[#builds + 1] = { build = build, spec = spec }
         end
     end
@@ -170,15 +174,25 @@ end
 
 --- The build to switch to when the mode changes: the same spec in the new mode when there is one, else the
 --- first build of that mode. Returns nil when the class has no build in that mode.
-function Catalog.buildForMode(class, current, mode)
+function Catalog.buildForMode(class, current, mode, listed)
     local _, currentSpec = Catalog.splitBuild(current[2])
-    local builds = Catalog.buildsForMode(class, mode)
+    local builds = Catalog.buildsForMode(class, mode, listed)
     for _, entry in ipairs(builds) do
         if entry.spec == currentSpec then
             return entry.build
         end
     end
     return builds[1] and builds[1].build
+end
+
+--- The first build of a class accepted by `listed(build)`, or nil when none is.
+function Catalog.firstListedBuild(class, listed)
+    for _, build in ipairs(class.builds) do
+        if listed(build) then
+            return build
+        end
+    end
+    return nil
 end
 
 --- The data route for a class and build, e.g. "druid/tank".

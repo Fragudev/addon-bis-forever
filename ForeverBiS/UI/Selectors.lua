@@ -84,9 +84,9 @@ local function modeItems()
     local class, build = currentBuild()
     local currentMode = Catalog.splitBuild(build[2])
     local items = {}
-    for _, mode in ipairs(Catalog.modes(class)) do
+    for _, mode in ipairs(Catalog.modes(class, Settings.buildHasList(class))) do
         items[#items + 1] = entry(L[MODE_LABELS[mode]], mode == currentMode, function()
-            local target = Catalog.buildForMode(class, build, mode)
+            local target = Catalog.buildForMode(class, build, mode, Settings.buildHasList(class))
             if target then
                 Settings.chooseBuild(target[1])
             end
@@ -99,7 +99,7 @@ end
 local function buildItems()
     local class, build = currentBuild()
     local items = {}
-    for _, choice in ipairs(Catalog.buildsForMode(class, (Catalog.splitBuild(build[2])))) do
+    for _, choice in ipairs(Catalog.buildsForMode(class, (Catalog.splitBuild(build[2])), Settings.buildHasList(class))) do
         items[#items + 1] = entry(specText(choice.spec), choice.build[1] == build[1], function()
             Settings.chooseBuild(choice.build[1])
             selected()
@@ -171,8 +171,8 @@ function Selectors.refresh()
     Dropdown.fit(classDrop)
     Dropdown.fit(modeDrop)
     Dropdown.fit(buildDrop)
-    local hasModes = #Catalog.modes(class) > 1
-    local hasBuilds = #Catalog.buildsForMode(class, mode) > 1
+    local hasModes = #Catalog.modes(class, Settings.buildHasList(class)) > 1
+    local hasBuilds = #Catalog.buildsForMode(class, mode, Settings.buildHasList(class)) > 1
     showIf(modeDrop, hasModes)
     showIf(buildLabel, hasBuilds)
     showIf(buildDrop, hasBuilds)
