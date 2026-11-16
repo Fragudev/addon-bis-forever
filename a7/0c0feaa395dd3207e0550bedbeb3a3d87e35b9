@@ -1,0 +1,25 @@
+ForeverBiS/UI/ItemRows.lua
+  s_765e5225b7ca65::t_3681fcd4e0049b 49
+ForeverBiS/UI/ItemWidgets.lua
+  s_765e5225b7ca65::t_2ce2aae3d9637a 72-79,81-82
+tests/render_pool_spec.lua
+  s_765e5225b7ca65::t_ed935597327cce 61-79
+tests/stubs/wow_api.lua
+  s_765e5225b7ca65::t_9175f54076b218 174-178
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.6",
+  "base_commit_sha": "a70c0feaa395dd3207e0550bedbeb3a3d87e35b9",
+  "prompts": {},
+  "sessions": {
+    "s_765e5225b7ca65": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ad0c3eac-f795-4e8b-9956-58a53e1ead08",
+        "model": "unknown"
+      },
+      "human_author": "Francis Gutiérrez <fragudev@gmail.com>"
+    }
+  }
+}
