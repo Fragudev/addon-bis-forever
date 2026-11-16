@@ -21,11 +21,19 @@ find "$build" \( -name ".DS_Store" -o -name "desktop.ini" -o -name ".git*" \) -e
 toc="$build/$addon/$addon.toc"
 [[ -f "$toc" ]] || fail "missing $addon.toc"
 
-# A release tag such as beta_0.0.35 must match the TOC version (beta-0.0.35).
+# A beta tag such as beta_0.0.35 must match the TOC version (beta-0.0.35).
 if [[ "$version" == beta_* ]]; then
   expected="${version//_/-}"
   actual="$(sed -n 's/^## Version: //p' "$toc" | tr -d '\r')"
   [[ "$actual" == "$expected" ]] || fail "TOC version '$actual' does not match tag '$version' (expected '$expected')"
+fi
+
+# A stable tag such as v1.0.0 writes its version (1.0.0) into the packaged TOC only; the repository keeps the
+# beta version that develop bumps.
+if [[ "$version" == v* ]]; then
+  [[ "$version" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]] || fail "stable tag '$version' must look like vX.Y.Z"
+  sed -i.bak "s/^## Version: .*/## Version: ${version#v}/" "$toc"
+  rm -f "$toc.bak"
 fi
 
 # Every file the client loads must be present in the package.
