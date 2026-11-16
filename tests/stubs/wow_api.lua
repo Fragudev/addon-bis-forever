@@ -278,7 +278,7 @@ function Stub.reset()
 end
 
 -- Saved values that live account-wide; everything else a spec seeds belongs to the character.
-local ACCOUNT_KEYS = { minimap = true, tooltip = true, tooltipAllClasses = true }
+local ACCOUNT_KEYS = { minimap = true, tooltip = true, tooltipAllClasses = true, source = true }
 
 --- Splits a seed table the way the saved variables are split: account-wide keys and per-character keys.
 local function seedSavedVariables(db)
@@ -292,16 +292,63 @@ local function seedSavedVariables(db)
     end
 end
 
---- Loads every file listed in the .toc into a fresh namespace. An optional hook runs right after the data file,
---- to reshape ForeverBiSData before the model derives the legacy globals from it.
+-- The shipped data files, in .toc order; hooks run right after the last one, before the model reads the data.
+Stub.DATA_FILES = { "ForeverBiS_Data_ForeverChanges.lua", "ForeverBiS_Data_Wowsims.lua" }
+Stub.LAST_DATA_FILE = Stub.DATA_FILES[#Stub.DATA_FILES]
+
+--- The data files followed by the given extra .toc paths, ready for loadFiles/Toc.load `only`.
+function Stub.dataFiles(extra)
+    local files = {}
+    for _, path in ipairs(Stub.DATA_FILES) do
+        files[#files + 1] = path
+    end
+    for _, path in ipairs(extra or {}) do
+        files[#files + 1] = path
+    end
+    return files
+end
+
+--- Wraps schema 2 contents ({ phases, lists }) into a schema 3 ForeverBiSData holding one source.
+function Stub.wrapSource(contents, id)
+    id = id or "foreverchanges"
+    if type(contents) ~= "table" or (contents.schema ~= nil and contents.schema ~= 2) then
+        return contents -- not schema 2 contents: passed through untouched
+    end
+    return {
+        schema = 3,
+        sources = {
+            [id] = {
+                label = id,
+                order = 1,
+                url = "https://example.test/" .. id,
+                phases = contents.phases,
+                lists = contents.lists,
+            },
+        },
+    }
+end
+
+--- Loads every file listed in the .toc into a fresh namespace. An optional hook runs right after the data files,
+--- to reshape ForeverBiSData (schema 3, `sources`) before the model derives the legacy globals from it.
 function Stub.load(db, dataHook, player)
     Stub.reset()
     Stub.player = player or Stub.player
     seedSavedVariables(db)
+    -- Specs start as a returning player who already picked a source, so the picker does not hide the window.
+    -- Seeding `source = false` (any saved value) opts out: Settings sees it as given, and `false` is no choice.
+    local picked = db ~= nil and db.source ~= nil
     Stub.ns = Toc.load({
         after = {
-            ["ForeverBiS_Data.lua"] = dataHook and function()
-                dataHook(_G.ForeverBiSData)
+            [Stub.LAST_DATA_FILE] = function()
+                if dataHook then
+                    dataHook(_G.ForeverBiSData)
+                end
+                local data = _G.ForeverBiSData
+                if picked or type(data) ~= "table" or type(data.sources) ~= "table" then
+                    return
+                end
+                _G.ForeverBiSDB = _G.ForeverBiSDB or {}
+                _G.ForeverBiSDB.source = data.sources.foreverchanges and "foreverchanges" or next(data.sources)
             end,
         },
     })
@@ -316,9 +363,9 @@ end
 --- Loads only the data file and the model (the legacy globals), without building the UI.
 function Stub.loadData(hook)
     Stub.ns = Toc.load({
-        only = { "ForeverBiS_Data.lua", "ForeverBiS_Model.lua" },
+        only = Stub.dataFiles({ "ForeverBiS_Model.lua" }),
         after = {
-            ["ForeverBiS_Data.lua"] = hook and function()
+            [Stub.LAST_DATA_FILE] = hook and function()
                 hook(_G.ForeverBiSData)
             end,
         },

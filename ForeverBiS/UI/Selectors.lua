@@ -1,4 +1,4 @@
--- The class, mode (PvE/PvP), build and phase dropdowns with their section labels.
+-- The data source, class, mode (PvE/PvP), build and phase dropdowns with their section labels.
 local _, ns = ...
 
 local Selectors = {}
@@ -9,7 +9,7 @@ local Catalog, Settings, Player, Dropdown, Skin, L = ns.Catalog, ns.Settings, ns
 -- Top-left of the selector row, below the window header.
 local ROW_LEFT, ROW_TOP = 20, -64
 
-local classDrop, modeDrop, buildLabel, buildDrop, phaseDrop
+local sourceDrop, classDrop, modeDrop, buildLabel, buildDrop, phaseDrop
 
 local MODE_LABELS = { pve = "PvE", pvp = "PvP" }
 
@@ -34,6 +34,29 @@ end
 
 local function entry(text, checked, onSelect)
     return { text = text, checked = checked, func = onSelect }
+end
+
+--- The label of the source the model reads right now; the saved id is shown when the data carries no label.
+local function activeSourceLabel()
+    local active = Settings.activeSource()
+    for _, source in ipairs(ForeverBiSModel and ForeverBiSModel.sources() or {}) do
+        if source.id == active then
+            return source.label
+        end
+    end
+    return active
+end
+
+local function sourceItems()
+    local items = {}
+    local active = Settings.activeSource()
+    for _, source in ipairs(ForeverBiSModel and ForeverBiSModel.sources() or {}) do
+        items[#items + 1] = entry(source.label, source.id == active, function()
+            Settings.chooseSource(source.id)
+            selected()
+        end)
+    end
+    return items
 end
 
 local function classItems()
@@ -108,10 +131,14 @@ local function createLabel(parent, text)
 end
 
 function Selectors.create(parent)
+    -- No label: the source name explains itself. It leads the row because it decides which lists exist.
+    sourceDrop =
+        Dropdown.create(parent, "ForeverBiSSourceDropDown", { width = 104, maxWidth = 132, items = sourceItems })
+    sourceDrop:SetPoint("TOPLEFT", parent, "TOPLEFT", ROW_LEFT, ROW_TOP)
     local classLabel = createLabel(parent, "Class")
-    classLabel:SetPoint("TOPLEFT", parent, "TOPLEFT", ROW_LEFT, ROW_TOP - 8)
-    classDrop = Dropdown.create(parent, "ForeverBiSClassDropDown", { width = 120, maxWidth = 160, items = classItems })
-    classDrop:SetPoint("TOPLEFT", parent, "TOPLEFT", ROW_LEFT + 42, ROW_TOP)
+    classLabel:SetPoint("LEFT", sourceDrop, "RIGHT", 12, 0)
+    classDrop = Dropdown.create(parent, "ForeverBiSClassDropDown", { width = 110, maxWidth = 150, items = classItems })
+    classDrop:SetPoint("LEFT", classLabel, "RIGHT", 8, 0)
     -- No label: "PvE" and "PvP" explain themselves.
     modeDrop = Dropdown.create(parent, "ForeverBiSModeDropDown", { width = 80, maxWidth = 110, items = modeItems })
     modeDrop:SetPoint("LEFT", classDrop, "RIGHT", 8, 0)
@@ -136,6 +163,8 @@ end
 function Selectors.refresh()
     local route, class, build = Settings.route()
     local mode, spec = Catalog.splitBuild(build[2])
+    Dropdown.setText(sourceDrop, activeSourceLabel() or "")
+    Dropdown.fit(sourceDrop)
     Dropdown.setText(classDrop, class.label)
     Dropdown.setText(modeDrop, L[MODE_LABELS[mode]])
     Dropdown.setText(buildDrop, specText(spec))

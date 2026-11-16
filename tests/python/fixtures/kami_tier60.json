@@ -1,0 +1,1296 @@
+{
+ "_meta": {
+  "tier": "60-preraid"
+ },
+ "classes": {
+  "mage": {
+   "art": "mage.webp",
+   "en": "Mage"
+  },
+  "warrior": {
+   "art": "warrior.webp",
+   "en": "Warrior"
+  }
+ },
+ "enchants": {
+  "1248599": {
+   "en": "Enchant Bracer - Superior Agility"
+  },
+  "1248640": {
+   "en": "Enchant Gloves - Superior Strength"
+  },
+  "1249019": {
+   "en": "Enchant Necklace - Strength"
+  },
+  "1249057": {
+   "en": "Enchant Necklace - Spell Power"
+  },
+  "1249060": {
+   "en": "Enchant Necklace - Deflection"
+  },
+  "13419": {
+   "en": "Enchant Cloak - Minor Agility"
+  },
+  "20010": {
+   "en": "Enchant Bracer - Superior Strength"
+  },
+  "20015": {
+   "en": "Enchant Cloak - Superior Defense"
+  },
+  "20017": {
+   "en": "Enchant Shield - Greater Stamina"
+  },
+  "20023": {
+   "en": "Enchant Boots - Greater Agility"
+  },
+  "20025": {
+   "en": "Enchant Chest - Greater Stats"
+  },
+  "20028": {
+   "en": "Enchant Chest - Major Intellect"
+  },
+  "20030": {
+   "en": "Enchant 2H Weapon - Superior Impact"
+  },
+  "22749": {
+   "en": "Enchant Weapon - Spell Power"
+  },
+  "23800": {
+   "en": "Enchant Weapon - Agility"
+  },
+  "23802": {
+   "en": "Enchant Bracer - Healing Power"
+  },
+  "25078": {
+   "en": "Enchant Gloves - Fire Power"
+  },
+  "25080": {
+   "en": "Enchant Gloves - Superior Agility"
+  }
+ },
+ "instances": {
+  "blackfathom-deeps": {
+   "en": "Blackfathom Deeps",
+   "kind": "dungeon"
+  },
+  "blackrock-depths": {
+   "en": "Blackrock Depths",
+   "kind": "dungeon"
+  },
+  "blackrock-spire": {
+   "en": "Blackrock Spire",
+   "kind": "dungeon"
+  },
+  "city-of-dalaran": {
+   "en": "City of Dalaran",
+   "kind": "dungeon"
+  },
+  "deadmines": {
+   "en": "Deadmines",
+   "kind": "dungeon"
+  },
+  "dire-maul": {
+   "en": "Dire Maul",
+   "kind": "dungeon"
+  },
+  "excavation-site-wetlands": {
+   "en": "Excavation Site: Wetlands",
+   "kind": "dungeon"
+  },
+  "gnomeregan": {
+   "en": "Gnomeregan",
+   "kind": "dungeon"
+  },
+  "maraudon": {
+   "en": "Maraudon",
+   "kind": "dungeon"
+  },
+  "ragefire-chasm": {
+   "en": "Ragefire Chasm",
+   "kind": "dungeon"
+  },
+  "razorfen-downs": {
+   "en": "Razorfen Downs",
+   "kind": "dungeon"
+  },
+  "razorfen-kraul": {
+   "en": "Razorfen Kraul",
+   "kind": "dungeon"
+  },
+  "ruins-of-lordaeron": {
+   "en": "Ruins of Lordaeron",
+   "kind": "dungeon"
+  },
+  "scarlet-monastery": {
+   "en": "Scarlet Monastery",
+   "kind": "dungeon"
+  },
+  "scholomance": {
+   "en": "Scholomance",
+   "kind": "dungeon"
+  },
+  "shadowfang-keep": {
+   "en": "Shadowfang Keep",
+   "kind": "dungeon"
+  },
+  "stormwind-stockade": {
+   "en": "Stormwind Stockade",
+   "kind": "dungeon"
+  },
+  "stratholme": {
+   "en": "Stratholme",
+   "kind": "dungeon"
+  },
+  "sunken-temple": {
+   "en": "Sunken Temple",
+   "kind": "dungeon"
+  },
+  "the-hall-of-thanes": {
+   "en": "The Hall of Thanes",
+   "kind": "dungeon"
+  },
+  "uldaman": {
+   "en": "Uldaman",
+   "kind": "dungeon"
+  },
+  "wailing-caverns": {
+   "en": "Wailing Caverns",
+   "kind": "dungeon"
+  },
+  "zul-farrak": {
+   "en": "Zul'Farrak",
+   "kind": "dungeon"
+  }
+ },
+ "items": {
+  "11726": {
+   "en": "Savage Gladiator Chain",
+   "slot": "chest",
+   "src": [
+    {
+     "i": "blackrock-depths",
+     "k": "boss",
+     "n": {
+      "en": "Gorosh the Dervish"
+     }
+    }
+   ]
+  },
+  "11748": {
+   "en": "Pyric Caduceus",
+   "slot": "wand",
+   "src": [
+    {
+     "i": "blackrock-depths",
+     "k": "boss",
+     "n": {
+      "en": "Pyromancer Loregrain"
+     },
+     "p": 29,
+     "pl": 5
+    }
+   ]
+  },
+  "12602": {
+   "en": "Draconian Deflector",
+   "slot": "shield",
+   "src": [
+    {
+     "i": "blackrock-spire",
+     "k": "boss",
+     "n": {
+      "en": "General Drakkisath"
+     },
+     "p": 22,
+     "pl": 10
+    }
+   ]
+  },
+  "1264": {
+   "en": "Headbasher",
+   "slot": "two_hand",
+   "src": [
+    {
+     "ch": 1,
+     "i": "stormwind-stockade",
+     "k": "quest",
+     "l": 27,
+     "n": {
+      "en": "The Fury Runs Deep"
+     },
+     "q": 378,
+     "side": "Alliance"
+    }
+   ]
+  },
+  "12640": {
+   "en": "Lionheart Helm",
+   "slot": "head",
+   "src": [
+    {
+     "k": "craft",
+     "pr": "blacksmithing",
+     "s": 300
+    }
+   ]
+  },
+  "12752": {
+   "en": "Cap of the Scarlet Savant",
+   "slot": "head",
+   "src": [
+    {
+     "g": "MythicSim",
+     "k": "guide"
+    }
+   ]
+  },
+  "12930": {
+   "en": "Briarwood Reed",
+   "slot": "trinket",
+   "src": [
+    {
+     "i": "blackrock-spire",
+     "k": "trash"
+    }
+   ]
+  },
+  "13023": {
+   "en": "Eaglehorn Long Bow",
+   "slot": "ranged",
+   "src": [
+    {
+     "i": "blackrock-spire",
+     "k": "boss",
+     "n": {
+      "en": "Gizrul the Slavener"
+     },
+     "p": 0.01,
+     "pl": 10
+    }
+   ]
+  },
+  "13170": {
+   "en": "Skyshroud Leggings",
+   "slot": "legs",
+   "src": [
+    {
+     "i": "blackrock-spire",
+     "k": "boss",
+     "n": {
+      "en": "Highlord Omokk"
+     },
+     "p": 12.5,
+     "pl": 10
+    }
+   ]
+  },
+  "13369": {
+   "en": "Fire Striders",
+   "slot": "feet",
+   "src": [
+    {
+     "i": "stratholme",
+     "k": "boss",
+     "n": {
+      "en": "Balnazzar"
+     },
+     "p": 13.8,
+     "pl": 5
+    }
+   ]
+  },
+  "13373": {
+   "en": "Band of Flesh",
+   "slot": "finger",
+   "src": [
+    {
+     "i": "stratholme",
+     "k": "boss",
+     "n": {
+      "en": "Ramstein the Gorger"
+     },
+     "p": 12.1,
+     "pl": 5
+    }
+   ]
+  },
+  "13397": {
+   "en": "Stoneskin Gargoyle Cape",
+   "slot": "back",
+   "src": [
+    {
+     "i": "stratholme",
+     "k": "boss",
+     "n": {
+      "en": "Stonespine"
+     },
+     "p": 31,
+     "pl": 5
+    }
+   ]
+  },
+  "13965": {
+   "en": "Blackhand's Breadth",
+   "slot": "trinket",
+   "src": [
+    {
+     "ch": 1,
+     "i": "blackrock-spire",
+     "k": "quest",
+     "l": 60,
+     "n": {
+      "en": "For The Horde!"
+     },
+     "q": 4974,
+     "side": "Horde"
+    },
+    {
+     "ch": 1,
+     "i": "blackrock-spire",
+     "k": "quest",
+     "l": 60,
+     "n": {
+      "en": "General Drakkisath's Demise"
+     },
+     "q": 5102,
+     "side": "Alliance"
+    }
+   ]
+  },
+  "13966": {
+   "en": "Mark of Tyranny",
+   "slot": "trinket",
+   "src": [
+    {
+     "ch": 1,
+     "i": "blackrock-spire",
+     "k": "quest",
+     "l": 60,
+     "n": {
+      "en": "For The Horde!"
+     },
+     "q": 4974,
+     "side": "Horde"
+    },
+    {
+     "ch": 1,
+     "i": "blackrock-spire",
+     "k": "quest",
+     "l": 60,
+     "n": {
+      "en": "General Drakkisath's Demise"
+     },
+     "q": 5102,
+     "side": "Alliance"
+    }
+   ]
+  },
+  "14146": {
+   "en": "Gloves of Spell Mastery",
+   "slot": "hands",
+   "src": [
+    {
+     "k": "craft",
+     "pr": "tailoring",
+     "s": 300
+    }
+   ]
+  },
+  "14152": {
+   "en": "Robe of the Archmage",
+   "slot": "chest",
+   "src": [
+    {
+     "k": "craft",
+     "pr": "tailoring",
+     "s": 300
+    }
+   ]
+  },
+  "15063": {
+   "en": "Devilsaur Gauntlets",
+   "slot": "hands",
+   "src": [
+    {
+     "k": "craft",
+     "pr": "leatherworking",
+     "s": 290
+    }
+   ]
+  },
+  "15200": {
+   "en": "Senior Sergeant's Insignia",
+   "slot": "neck",
+   "src": [
+    {
+     "k": "pvp",
+     "r": 8
+    }
+   ]
+  },
+  "16710": {
+   "en": "Shadowcraft Bracers",
+   "slot": "wrist",
+   "src": [
+    {
+     "i": "scholomance",
+     "k": "boss",
+     "n": {
+      "en": "Instructor Malicia"
+     },
+     "p": 4.5,
+     "pl": 5
+    }
+   ]
+  },
+  "16731": {
+   "en": "Helm of Valor",
+   "slot": "head",
+   "src": [
+    {
+     "i": "scholomance",
+     "k": "boss",
+     "n": {
+      "en": "Darkmaster Gandling"
+     },
+     "p": 11.8,
+     "pl": 5
+    }
+   ]
+  },
+  "16732": {
+   "en": "Legplates of Valor",
+   "slot": "legs",
+   "src": [
+    {
+     "i": "stratholme",
+     "k": "boss",
+     "n": {
+      "en": "Baron Rivendare"
+     },
+     "p": 10.9,
+     "pl": 5
+    }
+   ]
+  },
+  "16735": {
+   "en": "Bracers of Valor",
+   "slot": "wrist",
+   "src": [
+    {
+     "i": "blackrock-spire",
+     "k": "boss",
+     "n": {
+      "en": "Quartermaster Zigris"
+     },
+     "p": 2.2,
+     "pl": 10
+    }
+   ]
+  },
+  "17713": {
+   "en": "Blackstone Ring",
+   "slot": "finger",
+   "src": [
+    {
+     "i": "maraudon",
+     "k": "boss",
+     "n": {
+      "en": "Princess Theradras"
+     },
+     "p": 22.4,
+     "pl": 5
+    }
+   ]
+  },
+  "18323": {
+   "en": "Satyr's Bow",
+   "slot": "ranged",
+   "src": [
+    {
+     "i": "dire-maul",
+     "k": "boss",
+     "n": {
+      "en": "Zevrim Thornhoof"
+     },
+     "p": 19.1,
+     "pl": 5
+    }
+   ]
+  },
+  "18381": {
+   "en": "Evil Eye Pendant",
+   "slot": "neck",
+   "src": [
+    {
+     "i": "dire-maul",
+     "k": "boss",
+     "n": {
+      "en": "Immol'thar"
+     },
+     "p": 23.3,
+     "pl": 5
+    }
+   ]
+  },
+  "18405": {
+   "en": "Belt of the Archmage",
+   "slot": "waist",
+   "src": [
+    {
+     "k": "craft",
+     "pr": "tailoring",
+     "s": 300
+    }
+   ]
+  },
+  "18497": {
+   "en": "Sublime Wristguards",
+   "slot": "wrist",
+   "src": [
+    {
+     "i": "dire-maul",
+     "k": "boss",
+     "n": {
+      "en": "Guard Slip'kik"
+     },
+     "p": 5.8,
+     "pl": 5
+    },
+    {
+     "i": "dire-maul",
+     "k": "boss",
+     "n": {
+      "en": "Guard Mol'dar"
+     },
+     "p": 5.5,
+     "pl": 5
+    }
+   ]
+  },
+  "18500": {
+   "en": "Tarnished Elven Ring",
+   "slot": "finger",
+   "src": [
+    {
+     "i": "dire-maul",
+     "k": "trash"
+    }
+   ]
+  },
+  "18503": {
+   "en": "Kromcrush's Chestplate",
+   "slot": "chest",
+   "src": [
+    {
+     "i": "dire-maul",
+     "k": "boss",
+     "n": {
+      "en": "Captain Kromcrush"
+     },
+     "p": 23.1,
+     "pl": 5
+    }
+   ]
+  },
+  "18522": {
+   "en": "Band of the Ogre King",
+   "slot": "finger",
+   "src": [
+    {
+     "i": "dire-maul",
+     "k": "boss",
+     "n": {
+      "en": "King Gordok"
+     },
+     "p": 23.8,
+     "pl": 5
+    }
+   ]
+  },
+  "19050": {
+   "en": "Mantle of the Timbermaw",
+   "slot": "shoulder",
+   "src": [
+    {
+     "k": "craft",
+     "pr": "tailoring",
+     "s": 300
+    }
+   ]
+  },
+  "20041": {
+   "en": "Highlander's Plate Girdle",
+   "slot": "waist",
+   "src": [
+    {
+     "fac": "A",
+     "k": "vendor",
+     "n": {
+      "en": "Samuel Hawke"
+     },
+     "pvp": 1,
+     "z": {
+      "en": "Arathi Highlands"
+     }
+    }
+   ]
+  },
+  "20048": {
+   "en": "Highlander's Plate Greaves",
+   "slot": "feet",
+   "src": [
+    {
+     "fac": "A",
+     "k": "vendor",
+     "n": {
+      "en": "Samuel Hawke"
+     },
+     "pvp": 1,
+     "z": {
+      "en": "Arathi Highlands"
+     }
+    }
+   ]
+  },
+  "20057": {
+   "en": "Highlander's Plate Spaulders",
+   "slot": "shoulder",
+   "src": [
+    {
+     "fac": "A",
+     "k": "vendor",
+     "n": {
+      "en": "Samuel Hawke"
+     },
+     "pvp": 1,
+     "z": {
+      "en": "Arathi Highlands"
+     }
+    }
+   ]
+  },
+  "20090": {
+   "en": "Highlander's Chain Girdle",
+   "slot": "waist",
+   "src": [
+    {
+     "f": {
+      "en": "The League of Arathor"
+     },
+     "fac": "A",
+     "k": "rep",
+     "r": "honored"
+    }
+   ]
+  },
+  "22150": {
+   "en": "Beads of Ogre Might",
+   "slot": "neck",
+   "src": [
+    {
+     "ch": 1,
+     "i": "dire-maul",
+     "k": "quest",
+     "l": 60,
+     "n": {
+      "en": "Falrin's Vendetta"
+     },
+     "q": 8949,
+     "side": "Both"
+    }
+   ]
+  },
+  "22253": {
+   "en": "Tome of the Lost",
+   "slot": "held_off_hand",
+   "src": [
+    {
+     "i": "blackrock-spire",
+     "k": "boss",
+     "n": {
+      "en": "General Drakkisath"
+     },
+     "p": 21,
+     "pl": 10
+    }
+   ]
+  },
+  "22267": {
+   "en": "Spellweaver's Turban",
+   "slot": "head",
+   "src": [
+    {
+     "i": "blackrock-spire",
+     "k": "boss",
+     "n": {
+      "en": "General Drakkisath"
+     },
+     "p": 20.8,
+     "pl": 10
+    }
+   ]
+  },
+  "22268": {
+   "en": "Draconic Infused Emblem",
+   "slot": "trinket",
+   "src": [
+    {
+     "i": "blackrock-spire",
+     "k": "boss",
+     "n": {
+      "en": "General Drakkisath"
+     },
+     "p": 7.5,
+     "pl": 10
+    }
+   ]
+  },
+  "22383": {
+   "en": "Sageblade",
+   "slot": "main_hand",
+   "src": [
+    {
+     "k": "craft",
+     "pr": "blacksmithing",
+     "s": 300
+    }
+   ]
+  },
+  "22384": {
+   "en": "Persuader",
+   "slot": "one_hand",
+   "src": [
+    {
+     "k": "craft",
+     "pr": "blacksmithing",
+     "s": 300
+    }
+   ]
+  },
+  "22385": {
+   "en": "Titanic Leggings",
+   "slot": "legs",
+   "src": [
+    {
+     "k": "craft",
+     "pr": "blacksmithing",
+     "s": 300
+    }
+   ]
+  },
+  "22403": {
+   "en": "Nacreous Shell Necklace",
+   "slot": "neck",
+   "src": [
+    {
+     "i": "stratholme",
+     "k": "boss",
+     "n": {
+      "en": "Cannon Master Willey"
+     },
+     "p": 22.7,
+     "pl": 5
+    }
+   ]
+  },
+  "2300": {
+   "en": "Embossed Leather Vest",
+   "slot": "chest",
+   "src": [
+    {
+     "k": "craft",
+     "pr": "leatherworking",
+     "s": 40
+    }
+   ]
+  },
+  "250552": {
+   "en": "Sentinel's Gloves",
+   "slot": "hands",
+   "src": [
+    {
+     "k": "craft",
+     "pr": "blacksmithing",
+     "s": 250
+    }
+   ]
+  },
+  "272403": {
+   "en": "Valiant's Waistguard",
+   "slot": "waist",
+   "src": [
+    {
+     "c": 100,
+     "cur": {
+      "en": "Tarnished Undermine Real"
+     },
+     "k": "vendor",
+     "n": {
+      "en": "Pix Xizzix"
+     },
+     "z": {
+      "en": "Stranglethorn Vale"
+     }
+    }
+   ]
+  },
+  "272406": {
+   "en": "Channeler's Ring",
+   "slot": "finger",
+   "src": [
+    {
+     "c": 75,
+     "cur": {
+      "en": "Tarnished Undermine Real"
+     },
+     "k": "vendor",
+     "n": {
+      "en": "Pix Xizzix"
+     },
+     "z": {
+      "en": "Stranglethorn Vale"
+     }
+    }
+   ]
+  },
+  "272407": {
+   "en": "Blessed Band of Light",
+   "slot": "finger",
+   "src": [
+    {
+     "c": 75,
+     "cur": {
+      "en": "Tarnished Undermine Real"
+     },
+     "k": "vendor",
+     "n": {
+      "en": "Pix Xizzix"
+     },
+     "z": {
+      "en": "Stranglethorn Vale"
+     }
+    }
+   ]
+  },
+  "272411": {
+   "en": "Arcanoweave Cloak",
+   "slot": "back",
+   "src": [
+    {
+     "c": 75,
+     "cur": {
+      "en": "Tarnished Undermine Real"
+     },
+     "k": "vendor",
+     "n": {
+      "en": "Pix Xizzix"
+     },
+     "z": {
+      "en": "Stranglethorn Vale"
+     }
+    }
+   ]
+  },
+  "272414": {
+   "en": "Howler's Furs",
+   "slot": "back",
+   "src": [
+    {
+     "c": 75,
+     "cur": {
+      "en": "Tarnished Undermine Real"
+     },
+     "k": "vendor",
+     "n": {
+      "en": "Pix Xizzix"
+     },
+     "z": {
+      "en": "Stranglethorn Vale"
+     }
+    }
+   ]
+  },
+  "272437": {
+   "en": "Adaptive Combat Assistant",
+   "slot": "trinket",
+   "src": [
+    {
+     "c": 125,
+     "cur": {
+      "en": "Tarnished Undermine Real"
+     },
+     "k": "vendor",
+     "n": {
+      "en": "Pix Xizzix"
+     },
+     "z": {
+      "en": "Stranglethorn Vale"
+     }
+    }
+   ]
+  },
+  "272440": {
+   "en": "Defender's Grip Stabilizer",
+   "slot": "trinket",
+   "src": [
+    {
+     "c": 125,
+     "cur": {
+      "en": "Tarnished Undermine Real"
+     },
+     "k": "vendor",
+     "n": {
+      "en": "Pix Xizzix"
+     },
+     "z": {
+      "en": "Stranglethorn Vale"
+     }
+    }
+   ]
+  },
+  "2801": {
+   "en": "Blade of Hanna",
+   "slot": "two_hand",
+   "src": [
+    {
+     "i": "stratholme",
+     "k": "boss",
+     "n": {
+      "en": "Ezra Grimm"
+     },
+     "p": 0.02,
+     "pl": 5
+    }
+   ]
+  },
+  "2820": {
+   "en": "Nifty Stopwatch",
+   "slot": "trinket",
+   "src": [
+    {
+     "k": "quest",
+     "n": {
+      "en": "This Is Going to Be Hard"
+     },
+     "q": 778,
+     "side": "Both"
+    },
+    {
+     "k": "vendor",
+     "n": {
+      "en": "Lotwil Veriatus"
+     },
+     "z": {
+      "en": "Badlands"
+     }
+    },
+    {
+     "k": "vendor",
+     "n": {
+      "en": "Rix Xizzix"
+     },
+     "z": {
+      "en": "Stranglethorn Vale"
+     }
+    }
+   ]
+  },
+  "720": {
+   "en": "Brawler Gloves",
+   "slot": "hands",
+   "src": [
+    {
+     "i": "stormwind-stockade",
+     "k": "boss",
+     "n": {
+      "en": "Hamhock"
+     },
+     "p": 0.04,
+     "pl": 5
+    }
+   ]
+  },
+  "776": {
+   "en": "Vendetta",
+   "slot": "one_hand",
+   "src": [
+    {
+     "i": "razorfen-kraul",
+     "k": "trash"
+    }
+   ]
+  },
+  "833": {
+   "en": "Lifestone",
+   "slot": "trinket",
+   "src": [
+    {
+     "k": "world"
+    }
+   ]
+  },
+  "897": {
+   "en": "Madwolf Bracers",
+   "slot": "wrist",
+   "src": [
+    {
+     "k": "npc",
+     "n": {
+      "en": "Nightbane Vile Fang"
+     },
+     "z": {
+      "en": "Duskwood"
+     }
+    }
+   ]
+  }
+ },
+ "professions": {
+  "blacksmithing": {
+   "en": "Blacksmithing"
+  },
+  "enchanting": {
+   "en": "Enchanting"
+  },
+  "engineering": {
+   "en": "Engineering"
+  },
+  "leatherworking": {
+   "en": "Leatherworking"
+  },
+  "tailoring": {
+   "en": "Tailoring"
+  }
+ },
+ "specs": [
+  {
+   "bis": {
+    "back": {
+     "ench": 13419,
+     "item": 272414
+    },
+    "chest": {
+     "ench": 20025,
+     "item": 11726
+    },
+    "feet": {
+     "ench": 20023,
+     "item": 20048
+    },
+    "finger1": {
+     "ench": 0,
+     "item": 18500
+    },
+    "finger2": {
+     "ench": 0,
+     "item": 17713
+    },
+    "hands": {
+     "ench": 1248640,
+     "item": 15063
+    },
+    "head": {
+     "ench": 0,
+     "item": 12640
+    },
+    "legs": {
+     "ench": 0,
+     "item": 22385
+    },
+    "mainhand": {
+     "ench": 20030,
+     "item": 2801
+    },
+    "neck": {
+     "ench": 1249019,
+     "item": 22150
+    },
+    "offhand": {
+     "ench": 0,
+     "item": 0
+    },
+    "ranged": {
+     "ench": 0,
+     "item": 18323
+    },
+    "shoulder": {
+     "ench": 0,
+     "item": 20057
+    },
+    "trinket1": {
+     "ench": 0,
+     "item": 272437
+    },
+    "trinket2": {
+     "ench": 0,
+     "item": 13965
+    },
+    "waist": {
+     "ench": 0,
+     "item": 20041
+    },
+    "wrist": {
+     "ench": 20010,
+     "item": 16710
+    }
+   },
+   "slugEn": "warrior-arms",
+   "spec": {
+    "en": "Arms"
+   }
+  },
+  {
+   "bis": {
+    "back": {
+     "ench": 20015,
+     "item": 13397
+    },
+    "chest": {
+     "ench": 20025,
+     "item": 18503
+    },
+    "feet": {
+     "ench": 20023,
+     "item": 20048
+    },
+    "finger1": {
+     "ench": 0,
+     "item": 13373
+    },
+    "finger2": {
+     "ench": 0,
+     "item": 18522
+    },
+    "hands": {
+     "ench": 25080,
+     "item": 250552
+    },
+    "head": {
+     "ench": 0,
+     "item": 16731
+    },
+    "legs": {
+     "ench": 0,
+     "item": 16732
+    },
+    "mainhand": {
+     "ench": 23800,
+     "item": 22384
+    },
+    "neck": {
+     "ench": 1249060,
+     "item": 18381
+    },
+    "offhand": {
+     "ench": 20017,
+     "item": 12602
+    },
+    "ranged": {
+     "ench": 0,
+     "item": 13023
+    },
+    "shoulder": {
+     "ench": 0,
+     "item": 20057
+    },
+    "trinket1": {
+     "ench": 0,
+     "item": 272440
+    },
+    "trinket2": {
+     "ench": 0,
+     "item": 13966
+    },
+    "waist": {
+     "ench": 0,
+     "item": 272403
+    },
+    "wrist": {
+     "ench": 1248599,
+     "item": 16735
+    }
+   },
+   "slugEn": "warrior-protection",
+   "spec": {
+    "en": "Protection"
+   }
+  },
+  {
+   "bis": {
+    "back": {
+     "ench": 0,
+     "item": 272411
+    },
+    "chest": {
+     "ench": 20028,
+     "item": 14152
+    },
+    "feet": {
+     "ench": 0,
+     "item": 13369
+    },
+    "finger1": {
+     "ench": 0,
+     "item": 272407
+    },
+    "finger2": {
+     "ench": 0,
+     "item": 272406
+    },
+    "hands": {
+     "ench": 25078,
+     "item": 14146
+    },
+    "head": {
+     "ench": 0,
+     "item": 22267
+    },
+    "legs": {
+     "ench": 0,
+     "item": 13170
+    },
+    "mainhand": {
+     "ench": 22749,
+     "item": 22383
+    },
+    "neck": {
+     "ench": 1249057,
+     "item": 22403
+    },
+    "offhand": {
+     "ench": 0,
+     "item": 22253
+    },
+    "ranged": {
+     "ench": 0,
+     "item": 11748
+    },
+    "shoulder": {
+     "ench": 0,
+     "item": 19050
+    },
+    "trinket1": {
+     "ench": 0,
+     "item": 22268
+    },
+    "trinket2": {
+     "ench": 0,
+     "item": 12930
+    },
+    "waist": {
+     "ench": 0,
+     "item": 18405
+    },
+    "wrist": {
+     "ench": 23802,
+     "item": 18497
+    }
+   },
+   "slugEn": "mage-fire",
+   "spec": {
+    "en": "Fire"
+   }
+  }
+ ]
+}

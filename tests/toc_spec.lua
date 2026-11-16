@@ -21,10 +21,15 @@ describe("TOC loader", function()
     end)
 
     describe("files", function()
-        it("lists the locale first, then the data, and only files that exist", function()
+        it("lists the locale first, then the data files, then the model, and only files that exist", function()
             local files = Toc.files()
             assert.are.equal("ForeverBiS_Locale.lua", files[1])
-            assert.are.equal("ForeverBiS_Data.lua", files[2])
+            assert.are.equal("ForeverBiS_Data_ForeverChanges.lua", files[2])
+            assert.are.equal("ForeverBiS_Data_Wowsims.lua", files[3])
+            assert.are.equal("ForeverBiS_Model.lua", files[4])
+            for _, path in ipairs(files) do
+                assert.is_nil(path:find("KamiLabs", 1, true), "KamiLabs data must not ship yet")
+            end
             for _, path in ipairs(files) do
                 local handle = io.open("ForeverBiS/" .. path, "rb")
                 assert.is_truthy(handle, path .. " is listed in the .toc but missing")
@@ -35,7 +40,7 @@ describe("TOC loader", function()
 
     describe("load", function()
         it("passes the addon name and one shared namespace to every chunk", function()
-            local ns = Toc.load({ only = { "ForeverBiS_Data.lua", "ForeverBiS_Model.lua" } })
+            local ns = Toc.load({ only = WowStub.dataFiles({ "ForeverBiS_Model.lua" }) })
             assert.is_table(ns)
             assert.is_table(ForeverBiSModel)
             assert.is_table(ForeverBiSLists)

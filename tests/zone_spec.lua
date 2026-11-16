@@ -62,7 +62,7 @@ describe("Zone notice", function()
 
     it("shows nothing in a known dungeon when the selected build lists nothing from it", function()
         WowStub.load({ class = "rogue", build = "" }, function(data)
-            for _, entry in pairs(data.lists) do
+            for _, entry in pairs(data.sources.foreverchanges.lists) do
                 for _, phase in pairs(entry.phases) do
                     phase.slots = {}
                 end
