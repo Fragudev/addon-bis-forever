@@ -1,0 +1,21 @@
+.luacheckrc
+  s_765e5225b7ca65::t_d88faa42be0572 70
+docs/data-schema-v3.md
+  s_765e5225b7ca65::t_bf7810092c5c61 11,62,66,98
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.6",
+  "base_commit_sha": "25145836853dbeee6384f0fd573784967113f632",
+  "prompts": {},
+  "sessions": {
+    "s_765e5225b7ca65": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ad0c3eac-f795-4e8b-9956-58a53e1ead08",
+        "model": "unknown"
+      },
+      "human_author": "Francis Gutiérrez <fragudev@gmail.com>"
+    }
+  }
+}
