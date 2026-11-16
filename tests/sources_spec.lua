@@ -29,6 +29,20 @@ describe("Sources", function()
             assert.are.equal("dungeon", Sources.category("Sneed's Shredder, The Deadmines"))
         end)
 
+        it("recognizes the classic dungeons and the wings of Scarlet Monastery", function()
+            for _, source in ipairs({
+                "Hamhock, The Stockade",
+                "Some Boss, Gnomeregan",
+                "Charlga Razorflank, Razorfen Kraul",
+                "Amnennar the Coldbringer, Razorfen Downs",
+                "Bloodmage Thalnos, Scarlet Monastery Graveyard",
+                "Houndmaster Loksey, Scarlet Monastery Library",
+                "Revelosh, Uldaman",
+            }) do
+                assert.are.equal("dungeon", Sources.category(source), source)
+            end
+        end)
+
         it("treats everything else as the open world", function()
             assert.are.equal("world", Sources.category("World drop; Auction House"))
             assert.are.equal("world", Sources.category(nil))
@@ -177,5 +191,19 @@ describe("Sources", function()
 
     it("lists the dungeons the filter knows", function()
         assert.are.equal("The Deadmines", Sources.dungeons[1][2])
+        local names = {}
+        for _, dungeon in ipairs(Sources.dungeons) do
+            names[dungeon[2]] = dungeon[1]
+        end
+        for _, name in ipairs({
+            "Gnomeregan",
+            "The Stockade",
+            "Razorfen Kraul",
+            "Razorfen Downs",
+            "Scarlet Monastery",
+            "Uldaman",
+        }) do
+            assert.are.equal(name:lower(), names[name], name)
+        end
     end)
 end)

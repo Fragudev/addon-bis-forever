@@ -208,6 +208,8 @@ def discover_routes():
         time.sleep(0.35)
         for href, label in links(page):
             route = route_from_href(href)
+            if route and route.rsplit("/", 1)[-1] == "make":
+                continue  # the interactive builder pages are not lists
             if route and (route == class_route or route.startswith(class_route + "/")):
                 routes.add(route)
                 if label:
@@ -246,15 +248,16 @@ DUNGEON_SOURCES = (
     ("blackfathom deeps", "Blackfathom Deeps"),
     ("ragefire chasm", "Ragefire Chasm"),
     ("ruins of lordaeron", "Ruins of Lordaeron"),
-)
-
-# Extra zone names that only fill `zone` and `boss`; they never change `kind`, so behaviour stays identical.
-EXTRA_ZONES = (
     ("gnomeregan", "Gnomeregan"),
     ("the stockade", "The Stockade"),
     ("razorfen kraul", "Razorfen Kraul"),
     ("razorfen downs", "Razorfen Downs"),
     ("scarlet monastery", "Scarlet Monastery"),
+    ("uldaman", "Uldaman"),
+)
+
+# Extra zone names that only fill `zone` and `boss`; they never change `kind`.
+EXTRA_ZONES = (
     ("hall of thanes", "Hall of Thanes"),
 )
 

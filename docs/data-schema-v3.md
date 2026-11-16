@@ -142,6 +142,8 @@ owned = {
 }
 ```
 
+ForeverChanges labels the idol, libram and totem slot "Relic"; it normalizes to the `Ranged` key, like the "Ranged" slot of the other sources.
+
 Slot keys are canonical (`ForeverBiSModel.slotKey(name)`, the gear panel's normalization): `Head`, `Neck`, `Shoulder`, `Back`, `Chest`, `Wrist`, `Hands`, `Waist`, `Legs`, `Feet`, `Finger`, `Trinket`, `Main Hand`, `Off Hand`, `Ranged`. `Finger` and `Trinket` carry up to two ids, one per inventory slot. The UI builds `equipped` from the same `equippedSlotIDs` + `GetInventoryItemID`, and `GetItemCount` reads the row marks use, so both agree.
 
 It returns `{ total, bis, listed, slots = { { slot, rank, target, done }, ... } }`:
@@ -167,7 +169,9 @@ Flags:
 - `--include-unshipped` also updates sources with `ship = False`.
 - `--only <id>` (repeatable) updates just the named sources, shipped or not.
 
-Failure guard: each source is fetched, validated and written atomically. A failing source keeps its previous file and prints a `::warning::`. The other sources are still written. The run exits with status 1 only when every attempted source fails.
+Failure guard: each source is fetched, validated and written atomically. A failing source keeps its previous file and prints a `::warning::`. The other sources are still written. The run exits with a non-zero status when any shipped source failed (after writing the ones that succeeded), or when every attempted source fails; a failing unshipped source (for example Kami Labs with `--include-unshipped`) does not change the exit status.
+
+Shrink guard: if a source no longer returns a route its committed `ForeverBiS_Data_<Source>.lua` has, that source fails and keeps its old file, naming the missing routes. Pass `--allow-shrink` when removing routes is intended.
 
 The workflow `.github/workflows/update-lists.yml` stages `ForeverBiS/ForeverBiS_Data_*.lua`, and when any of them changed it bumps the version in `ForeverBiS.toc`, tags and releases.
 
@@ -175,7 +179,7 @@ The workflow `.github/workflows/update-lists.yml` stages `ForeverBiS/ForeverBiS_
 
 - **New phase.** For ForeverChanges, `phase_from_title()` in `bis_sources/foreverchanges.py` derives it from the list title ("... at level 60" gives `lvl60`); no code change is needed once the page title carries the level. Other sources declare their phases in their module (`PHASES` in `wowsims.py`, `TIERS` in `kamilabs.py`). The phase list of a source is its sorted union of phases, by level.
 - **New source kind.** Add the check in `structure_source()` in `bis_sources/foreverchanges.py`, add the kind to `SOURCE_KINDS` in `bis_sources/common.py`, keep `Sources.category` in `Core/Sources.lua` in sync if the UI should filter on it, and add the kind to `VALID_KINDS` in `tests/data_spec.lua`.
-- **New dungeon or raid.** Add a `(lowercase match, display name)` row to `DUNGEON_SOURCES` in `bis_sources/foreverchanges.py`, which also makes it a `dungeon` kind. Add it to `EXTRA_ZONES` to fill only `zone` and `boss`.
+- **New dungeon or raid.** Add a `(lowercase match, display name)` row to `DUNGEON_SOURCES` in `bis_sources/foreverchanges.py`, which also makes it a `dungeon` kind, and the same row to `Sources.dungeons` in `ForeverBiS/Core/Sources.lua` (the addon's dungeon filter and zone notice); keep both lists identical. Add it to `EXTRA_ZONES` to fill only `zone` and `boss`.
 - **New source.**
   1. Add `bis_sources/<name>.py` with a `fetch()` that returns `(data, labels, phases)`, with `data` mapping route to phase to `(title, slots)`, as `common.validate` and `common.emit_lua` expect.
   2. Add a `Source(...)` entry to `SOURCES` in `bis_sources/__init__.py`. Set `ship = False` until it may ship.

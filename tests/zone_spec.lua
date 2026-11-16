@@ -56,8 +56,29 @@ describe("Zone notice", function()
     end)
 
     it("shows nothing in a dungeon the filter does not know", function()
-        enter("The Stockade")
+        enter("Stratholme")
         assert.is_false(noticeButton():IsShown())
+    end)
+
+    it("knows the classic dungeons the lists draw from", function()
+        for _, name in ipairs({
+            "Gnomeregan",
+            "The Stockade",
+            "Razorfen Kraul",
+            "Razorfen Downs",
+            "Scarlet Monastery",
+            "Uldaman",
+        }) do
+            assert.is_table(WowStub.ns.Sources.matchDungeon(name), name)
+        end
+    end)
+
+    it("shows the notice in The Stockade, where the rogue lists have items", function()
+        local count = listedCount("the stockade")
+        assert.is_true(count > 0, "fixture needs a listed Stockade item")
+        enter("The Stockade")
+        assert.is_true(noticeButton():IsShown())
+        assert.are.equal(count .. " BiS items in The Stockade - click to view", noticeText())
     end)
 
     it("shows nothing in a known dungeon when the selected build lists nothing from it", function()
