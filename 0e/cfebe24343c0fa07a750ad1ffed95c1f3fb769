@@ -1,0 +1,33 @@
+ForeverBiS/UI/Progress.lua
+  s_765e5225b7ca65::t_d455c8ebc863f2 36-45,49
+tests/commands_spec.lua
+  s_765e5225b7ca65::t_d5a548e6055888 170-176
+tests/progress_spec.lua
+  s_765e5225b7ca65::t_f33d3fe6ebc3cd 1-68
+ForeverBiS/App/Commands.lua
+  s_5bb4c8f5cfcab2::t_160287953a25e5 55,63,72-74,115,117
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.6",
+  "base_commit_sha": "0ecfebe24343c0fa07a750ad1ffed95c1f3fb769",
+  "prompts": {},
+  "sessions": {
+    "s_5bb4c8f5cfcab2": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "agent-afaf5838b55a27e74",
+        "model": "unknown"
+      },
+      "human_author": "Francis Gutiérrez <fragudev@gmail.com>"
+    },
+    "s_765e5225b7ca65": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ad0c3eac-f795-4e8b-9956-58a53e1ead08",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Francis Gutiérrez <fragudev@gmail.com>"
+    }
+  }
+}
