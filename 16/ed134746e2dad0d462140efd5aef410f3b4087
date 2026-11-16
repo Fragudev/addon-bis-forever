@@ -1,0 +1,51 @@
+ForeverBiS/App/Events.lua
+  s_765e5225b7ca65::t_e2a043fa67fa14 41
+ForeverBiS/ForeverBiS.lua
+  s_765e5225b7ca65::t_1fa7361df02902 26-27,33-36
+ForeverBiS/UI/FilterBar.lua
+  s_765e5225b7ca65::t_914d2b13ab833f 3,23,33-47,92-93,194,237
+ForeverBiS/UI/ItemList.lua
+  s_765e5225b7ca65::t_4992e7a6560de6 8-9,108,110,137,146-153,155,164,168,176-177,179-186,189,195-209
+ForeverBiS/UI/ItemRows.lua
+  s_765e5225b7ca65::t_542ee29e30f472 13,22,32-49,56-74,76,99,103,109,121,128,141,143,163-169,189,197,204,221,225,231
+ForeverBiS/UI/ItemWidgets.lua
+  s_765e5225b7ca65::t_1cb90a609676fb 9-110,112,115-146,152-155,158-159,164-165
+ForeverBiS/UI/PaperDoll.lua
+  s_765e5225b7ca65::t_5eeb95d15553a3 95,97,102,112,120,147-159,161-163,165,230,239
+tests/addon_spec.lua
+  s_765e5225b7ca65::t_ae51734f085e81 87,222,239,315,341-346,348,352
+tests/interaction_spec.lua
+  s_765e5225b7ca65::t_8322bc0325cef1 70,157,184,194,208,235,274,285,352,475,479-484,487,490,540,567,571,727
+tests/itemlist_style_spec.lua
+  s_765e5225b7ca65::t_98111d27907148 21,31
+tests/render_pool_spec.lua
+  s_765e5225b7ca65::t_b87b39c3109172 1-165
+tests/stubs/wow_api.lua
+  s_765e5225b7ca65::t_5e8f59e453be21 355-361
+tests/events_spec.lua
+  s_355cf94e229788::t_bfd8f345a9cb9c 122-132
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.6",
+  "base_commit_sha": "16ed134746e2dad0d462140efd5aef410f3b4087",
+  "prompts": {},
+  "sessions": {
+    "s_355cf94e229788": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "agent-a93cba0c20fa40381",
+        "model": "unknown"
+      },
+      "human_author": "Francis Gutiérrez <fragudev@gmail.com>"
+    },
+    "s_765e5225b7ca65": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ad0c3eac-f795-4e8b-9956-58a53e1ead08",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Francis Gutiérrez <fragudev@gmail.com>"
+    }
+  }
+}
