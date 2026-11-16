@@ -33,10 +33,20 @@ local function pendingSlots()
     return pending
 end
 
+--- Cuts text to at most maxBytes bytes without splitting a UTF-8 character: a continuation byte (10xxxxxx) right
+--- after the cut means the cut would land inside a character, so it moves back to that character's start.
+local function cutUtf8(text, maxBytes)
+    local cut = maxBytes
+    while cut > 0 and text:byte(cut + 1) and text:byte(cut + 1) >= 0x80 and text:byte(cut + 1) < 0xC0 do
+        cut = cut - 1
+    end
+    return text:sub(1, cut)
+end
+
 local function pendingLine(slot)
     local source = slot.target.source or ""
     if #source > SOURCE_LENGTH then
-        source = source:sub(1, SOURCE_LENGTH - 3) .. "..."
+        source = cutUtf8(source, SOURCE_LENGTH - 3) .. "..."
     end
     local line = slot.slot .. ": " .. (slot.target.inBags and L["Equip: "] or "") .. slot.target.name
     if source ~= "" then

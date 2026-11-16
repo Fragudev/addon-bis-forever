@@ -167,6 +167,13 @@ describe("Commands", function()
             assert.are.same({ "SAY", "PARTY", "RAID" }, channels)
         end)
 
+        it("echoes an unknown slot name as the player typed it", function()
+            local Commands = loadCommands()
+            Commands.dispatch("link Tabard")
+            assert.are.equal(0, #WowStub.chat)
+            assert.is_truthy(printed[1]:find("Unknown slot 'Tabard'", 1, true))
+        end)
+
         it("prints the valid slots for an unknown slot name and sends nothing", function()
             local Commands = loadCommands()
             Commands.dispatch("link tabard")
