@@ -202,6 +202,28 @@ class StructureSourceTest(unittest.TestCase):
             source = updater.structure_source(f"Some Boss, {zone}")
             self.assertEqual("dungeon", source["kind"], zone)
             self.assertEqual(zone.removesuffix(" Graveyard"), source["zone"], zone)
+
+    def test_level_60_dungeons_and_raids_are_dungeons(self):
+        for zone in (
+            "Zul'Farrak",
+            "Maraudon",
+            "The Temple of Atal'Hakkar",
+            "Blackrock Depths",
+            "Blackrock Spire",
+            "Dire Maul",
+            "Stratholme",
+            "Scholomance",
+            "Molten Core",
+            "Onyxia's Lair",
+            "Blackwing Lair",
+            "Zul'Gurub",
+            "Ruins of Ahn'Qiraj",
+            "Temple of Ahn'Qiraj",
+            "Naxxramas",
+        ):
+            source = updater.structure_source(f"Some Boss, {zone}")
+            self.assertEqual("dungeon", source["kind"], zone)
+            self.assertEqual(zone, source["zone"], zone)
             self.assertEqual("Some Boss", source["boss"], zone)
 
     def test_a_zone_outside_the_dungeon_list_keeps_the_world_kind(self):

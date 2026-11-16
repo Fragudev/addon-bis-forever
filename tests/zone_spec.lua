@@ -56,7 +56,7 @@ describe("Zone notice", function()
     end)
 
     it("shows nothing in a dungeon the filter does not know", function()
-        enter("Stratholme")
+        enter("The Black Morass")
         assert.is_false(noticeButton():IsShown())
     end)
 

@@ -254,6 +254,21 @@ DUNGEON_SOURCES = (
     ("razorfen downs", "Razorfen Downs"),
     ("scarlet monastery", "Scarlet Monastery"),
     ("uldaman", "Uldaman"),
+    ("zul'farrak", "Zul'Farrak"),
+    ("maraudon", "Maraudon"),
+    ("the temple of atal'hakkar", "The Temple of Atal'Hakkar"),
+    ("blackrock depths", "Blackrock Depths"),
+    ("blackrock spire", "Blackrock Spire"),
+    ("dire maul", "Dire Maul"),
+    ("stratholme", "Stratholme"),
+    ("scholomance", "Scholomance"),
+    ("molten core", "Molten Core"),
+    ("onyxia's lair", "Onyxia's Lair"),
+    ("blackwing lair", "Blackwing Lair"),
+    ("zul'gurub", "Zul'Gurub"),
+    ("ruins of ahn'qiraj", "Ruins of Ahn'Qiraj"),
+    ("temple of ahn'qiraj", "Temple of Ahn'Qiraj"),
+    ("naxxramas", "Naxxramas"),
 )
 
 # Extra zone names that only fill `zone` and `boss`; they never change `kind`.

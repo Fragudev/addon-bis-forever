@@ -43,6 +43,28 @@ describe("Sources", function()
             end
         end)
 
+        it("recognizes the level 60 dungeons and the raids", function()
+            for _, source in ipairs({
+                "Gahz'rilla, Zul'Farrak",
+                "Princess Theradras, Maraudon",
+                "Shade of Eranikus, The Temple of Atal'Hakkar",
+                "Emperor Dagran Thaurissan, Blackrock Depths",
+                "General Drakkisath, Blackrock Spire",
+                "Zevrim Thornhoof, Dire Maul",
+                "Baron Rivendare, Stratholme",
+                "Darkmaster Gandling, Scholomance",
+                "Magmadar, Molten Core",
+                "Onyxia, Onyxia's Lair",
+                "Nefarian, Blackwing Lair",
+                "Hakkar, Zul'Gurub",
+                "Ossirian the Unscarred, Ruins of Ahn'Qiraj",
+                "C'Thun, Temple of Ahn'Qiraj",
+                "Kel'Thuzad, Naxxramas",
+            }) do
+                assert.are.equal("dungeon", Sources.category(source), source)
+            end
+        end)
+
         it("treats everything else as the open world", function()
             assert.are.equal("world", Sources.category("World drop; Auction House"))
             assert.are.equal("world", Sources.category(nil))
