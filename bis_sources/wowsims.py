@@ -11,7 +11,7 @@ REPO = "wowsims/forever"
 TREE_URL = f"https://api.github.com/repos/{REPO}/git/trees/master?recursive=1"
 RAW_URL = f"https://raw.githubusercontent.com/{REPO}/master/"
 DB_PATH = "assets/database/db.json"
-PRESET_RE = re.compile(r"^ui/specs/([a-z]+)/([a-z0-9_]+)/gear_sets/([A-Za-z0-9_]+)\.gear\.json$")
+PRESET_RE = re.compile(r"^ui/specs/([a-z]+)/([a-z0-9_]+)/gear_sets/([A-Za-z0-9_]+)\.gear\.(?:json|siml)$")
 NO_SOURCE = {"kind": "unknown", "text": "Source not listed by wowsims"}
 
 PRE_RAID = {"id": "lvl60", "label": "Level 60 (pre-raid)", "level": 60}
@@ -43,8 +43,17 @@ ROUTES = {
         "bssub": ("rogue/subtlety", "Subtlety"),
         "slowmh": None,
     },
-    ("hunter", "dps"): {"": ("hunter/ranged", "Ranged"), "melee": ("hunter/melee", "Melee")},
-    ("mage", "dps"): {"arcane": ("mage/arcane", "Arcane")},
+    ("hunter", "dps"): {
+        "": ("hunter/ranged", "Ranged"),
+        "turret": ("hunter/ranged", "Ranged"),
+        "melee": ("hunter/melee", "Melee"),
+        "melee_cheap": None,
+        "turret_cheap": None,
+        "weave": None,
+        "weave_cheap": None,
+    },
+    # preraid.gear.json is the gear every mage build in presets.ts shares; Arcane is the addon's mage route.
+    ("mage", "dps"): {"": ("mage/arcane", "Arcane"), "arcane": ("mage/arcane", "Arcane")},
     ("priest", "healer"): {"": ("priest/holy", "Holy")},
     ("warlock", "dps"): {"": ("warlock/dps", "Damage")},
     ("druid", "balance"): {"": ("druid/balance", "Balance")},
@@ -92,6 +101,109 @@ def map_preset(path):
     return (*target, phase, (variant not in variants, rank, name))
 
 
+def is_deliberate_skip(path):
+    """True when the ROUTES table lists the preset's variant with a None target (an alternative gear set)."""
+    match = PRESET_RE.match(path)
+    variants = match and ROUTES.get(match.group(1, 2))
+    return bool(variants) and variants.get(parse_preset(match.group(3))[2], 0) is None
+
+
+# .gear.siml slot keys -> index into ITEM_SLOTS (the wowsims ItemSlot order).
+SLOT_KEYS = {
+    "head": 0, "neck": 1, "shoulder": 2, "shoulders": 2, "back": 3, "chest": 4, "wrist": 5, "hands": 6,
+    "waist": 7, "legs": 8, "feet": 9, "finger1": 10, "finger2": 11, "trinket1": 12, "trinket2": 13,
+    "main_hand": 14, "off_hand": 15, "ranged": 16,
+}  # fmt: skip
+# Upstream slugs that are not the normalised db name.
+ITEM_ALIASES = {"horn_of_veho": "horn_of_vehan"}
+
+
+def slugify(name):
+    return re.sub(r"[^a-z0-9]+", "_", name.lower().replace("'", "").replace("’", "")).strip("_")
+
+
+class SlugResolver:
+    """Resolve .gear.siml item and enchant slugs against db.json, which has no slug field: slugs are names."""
+
+    def __init__(self, db):
+        self.items = {}
+        for item in db["items"]:
+            self.items.setdefault(slugify(item["name"]), []).append(item)
+        self.effects = {}
+        layers = ([], [], [])
+        for enchant in db["enchants"]:
+            self.effects.setdefault(enchant["effectId"], []).append(enchant)
+            name = enchant["name"]
+            for layer, text in zip(layers, (name, re.sub(r"^Enchant ", "", name), name.split(" - ", 1)[-1])):
+                layer.append((slugify(text), enchant))
+        self.layers = []
+        for pairs in layers:
+            layer = {}
+            for slug, enchant in pairs:
+                layer.setdefault(slug, {}).setdefault(enchant["effectId"], enchant)
+            self.layers.append(layer)
+        self.ambiguous = set()
+
+    def item(self, slug):
+        """Return the db item for a slug, or None. Same-name items resolve to the highest required level."""
+        slug = ITEM_ALIASES.get(slug, slug)
+        found = self.items.get(slug) or self.items.get(re.sub(r"_ilvl\d+$", "", slug))
+        if not found:
+            return None
+        self.ambiguous = {slug} if len({item["id"] for item in found}) > 1 else set()
+        return min(found, key=lambda item: (-(item.get("reqLvl") or 0), item["id"]))
+
+    def enchant(self, slug):
+        for layer in self.layers:
+            if slug in layer:
+                return layer[slug][min(layer[slug])]
+        match = re.fullmatch(r"(.+)_(\d{3,})", slug)
+        entries = match and self.effects.get(int(match.group(2)))
+        if not entries:
+            return None
+        return next((e for e in entries if slugify(e["name"]).endswith(match.group(1))), entries[0])
+
+
+def parse_siml(text, resolver, name):
+    """Turn a .gear.siml preset (one `slot item_slug [item suffix] [+ enchant_slug]` per line) into a gear payload."""
+    entries = [{} for _ in ITEM_SLOTS]
+
+    def warn(message):
+        print(f"::warning::wowsims: {name}: {message}")
+
+    for line in text.splitlines():
+        line = line.strip()
+        if not line or line.startswith("#"):
+            continue
+        key, _, rest = line.partition(" ")
+        if key == "siml":
+            continue
+        if key not in SLOT_KEYS:
+            warn(f"unknown slot {key}")
+            continue
+        item_part, _, enchant_part = rest.partition("+")
+        slug, _, suffix = item_part.strip().partition(" ")
+        item = resolver.item(slug)
+        if not item:
+            warn(f"unknown item slug {slug}")
+            continue
+        if resolver.ambiguous:
+            warn(f"ambiguous item slug {slug}, using item {item['id']}")
+        entry = {"id": item["id"]}
+        if suffix.strip():
+            entry["suffix"] = " ".join(w if w == "of" else w.capitalize() for w in suffix.strip().split("_"))
+        enchant_slug = enchant_part.strip()
+        if enchant_slug:
+            enchant = resolver.enchant(enchant_slug)
+            if enchant:
+                entry["enchant"] = enchant["effectId"]
+                entry["enchantEntry"] = enchant
+            else:
+                warn(f"unknown enchant slug {enchant_slug}")
+        entries[SLOT_KEYS[key]] = entry
+    return {"items": entries}
+
+
 def slot_label(slot, item):
     if slot == "Main hand":
         return "Two-hand weapon" if item.get("handType") == 4 else "Main hand"
@@ -100,8 +212,8 @@ def slot_label(slot, item):
     return slot
 
 
-def enchant_of(effect_id, enchants):
-    entry = enchants.get(effect_id)
+def enchant_of(effect_id, enchants, entry=None):
+    entry = entry or enchants.get(effect_id)
     if not entry:
         return None
     name = entry["name"]
@@ -118,8 +230,9 @@ def build_slots(gear, items, enchants):
         item = items.get(item_id, {})
         bucket = grouped.setdefault(ITEM_SLOTS[index], [ITEM_SLOTS[index], [], []])
         bucket[0] = slot_label(ITEM_SLOTS[index], item)
-        bucket[1].append((item.get("name") or f"Item {item_id}", dict(NO_SOURCE), item_id))
-        enchant = entry.get("enchant") and enchant_of(entry["enchant"], enchants)
+        name = item.get("name") or f"Item {item_id}"
+        bucket[1].append((f"{name} {entry['suffix']}" if entry.get("suffix") else name, dict(NO_SOURCE), item_id))
+        enchant = entry.get("enchant") and enchant_of(entry["enchant"], enchants, entry.get("enchantEntry"))
         if enchant and enchant not in bucket[2]:
             bucket[2].append(enchant)
     return [tuple(bucket) for bucket in grouped.values()]
@@ -134,11 +247,14 @@ def fetch(get_text=http_get, get_json=http_json):
     chosen = {}
     for entry in tree["tree"]:
         path = entry["path"]
-        if not (path.startswith("ui/specs/") and path.endswith(".gear.json")):
+        if not (path.startswith("ui/specs/") and "/gear_sets/" in path and ".gear." in path):
             continue
         mapped = map_preset(path)
         if not mapped:
-            print(f"wowsims: skipping unmapped preset {path}")
+            if is_deliberate_skip(path):
+                print(f"wowsims: skipping alternative preset {path}")
+            else:
+                print(f"::warning::wowsims: unmapped preset {path}")
             continue
         route, label, phase, rank = mapped
         key = (route, phase)
@@ -153,9 +269,14 @@ def fetch(get_text=http_get, get_json=http_json):
     for enchant in db["enchants"]:
         enchants.setdefault(enchant["effectId"], enchant)
 
+    resolver = SlugResolver(db)
     data, labels, phases = {}, {}, {}
     for (route, phase_id), (_, path, label) in sorted(chosen.items()):
-        slots = build_slots(get_json(RAW_URL + path), items, enchants)
+        if path.endswith(".siml"):
+            gear = parse_siml(get_text(RAW_URL + path), resolver, path)
+        else:
+            gear = get_json(RAW_URL + path)
+        slots = build_slots(gear, items, enchants)
         if not slots:
             raise RuntimeError(f"{path} has no items")
         class_key = route.split("/", 1)[0]
