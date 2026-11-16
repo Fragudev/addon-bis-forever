@@ -1,0 +1,35 @@
+bis_sources/wowsims.py
+  s_765e5225b7ca65::t_0cf825adb37c61 14,46-56,104-206,215-216,233-235,250,254-257,272,275-279
+tests/python/fixtures/wowsims_db.json
+  s_765e5225b7ca65::t_de40ac8a9c4163 1-22
+tests/python/fixtures/wowsims_preset.gear.json
+  s_765e5225b7ca65::t_224503e41d3704 1-6
+tests/python/fixtures/wowsims_preset.gear.siml
+  s_765e5225b7ca65::t_7cfb9667864740 1-9
+tests/python/test_wowsims.py
+  s_5bb4c8f5cfcab2::t_e266141f5204fb 1-173
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.6",
+  "base_commit_sha": "e17e0de3c61645a1a59c0ed7d70d6f585d8bf3d2",
+  "prompts": {},
+  "sessions": {
+    "s_5bb4c8f5cfcab2": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "agent-afaf5838b55a27e74",
+        "model": "unknown"
+      },
+      "human_author": "Francis Gutiérrez <fragudev@gmail.com>"
+    },
+    "s_765e5225b7ca65": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ad0c3eac-f795-4e8b-9956-58a53e1ead08",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Francis Gutiérrez <fragudev@gmail.com>"
+    }
+  }
+}
