@@ -1,0 +1,21 @@
+ForeverBiS/ForeverBiS_Locale.lua
+  s_5bb4c8f5cfcab2::t_5474a0bd5ea71e 30-82,85-86,99-100
+tests/locale_spec.lua
+  s_5bb4c8f5cfcab2::t_fec0256ebde8cd 24,48-101
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.6",
+  "base_commit_sha": "ef2dc966f78df289d97ade472ec2ae8e637d0445",
+  "prompts": {},
+  "sessions": {
+    "s_5bb4c8f5cfcab2": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "agent-afaf5838b55a27e74",
+        "model": "unknown"
+      },
+      "human_author": "Francis Gutiérrez <fragudev@gmail.com>"
+    }
+  }
+}
