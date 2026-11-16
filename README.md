@@ -238,17 +238,8 @@ To add a file, list it in `ForeverBiS.toc` (specs load files from the `.toc`, so
 
 ## Contributing
 
-Bug reports and ideas are welcome as [issues](https://github.com/Fragudev/addon-bis-forever/issues). Pull requests are
-open to maintainers only. Day-to-day work lands on `develop`, directly or through short-lived branches, and `main`
-only takes pull requests from `develop` approved by the owner.
-
-- **Wrong item or source?** The lists come from their source site: a wrong ranking belongs to ForeverChanges
-  ([foreverchanges.pro](https://foreverchanges.pro)) or to wowsims
-  ([wowsims/forever](https://github.com/wowsims/forever)), depending on the source you chose. A wrong source, icon or
-  tooltip in the addon is a bug here: open an issue with the source, class, build, phase and item.
-- **Code** follows the layering rule above; keep `luacheck`, `busted` and the coverage check green.
-- **Pull request titles** use [Conventional Commits](https://www.conventionalcommits.org/) (`feat:`, `fix:`,
-  `chore:`); CI checks them.
+Bug reports and ideas are welcome from everyone as issues; pull requests are open to maintainers only. See
+[CONTRIBUTING.md](CONTRIBUTING.md) for what to include in a report and how maintainers work.
 
 ## Data and licensing
 
