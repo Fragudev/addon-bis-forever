@@ -1,0 +1,21 @@
+ForeverBiS/Core/Settings.lua
+  s_c39abb567c22bd::t_a3d0e2525d9509 123-124,126
+tests/settings_spec.lua
+  s_c39abb567c22bd::t_c33f7270a0dca2 193-202
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.6",
+  "base_commit_sha": "7843921e97b4f6049730bd1474c64e5c39119a4f",
+  "prompts": {},
+  "sessions": {
+    "s_c39abb567c22bd": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ffa6e9de-a2ae-47e1-9992-09e2c55f0ae5",
+        "model": "unknown"
+      },
+      "human_author": "Francis Gutiérrez <fragudev@gmail.com>"
+    }
+  }
+}
