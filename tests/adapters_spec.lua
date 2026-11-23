@@ -278,6 +278,58 @@ describe("Adapters", function()
             )
         end)
 
+        describe("specRoute", function()
+            local saved
+            before_each(function()
+                saved = _G.GetTalentTabInfo
+            end)
+            after_each(function()
+                _G.GetTalentTabInfo = saved
+            end)
+
+            local function talents(points)
+                _G.GetTalentTabInfo = function(tab, inspect)
+                    local spent = (inspect and points.inspect or points)[tab]
+                    return tab, "Tree " .. tab, "", "icon" .. tab, spent or 0
+                end
+            end
+
+            it("picks the route of the talent tree with the most points", function()
+                local ns = load()
+                talents({ 0, 21, 5 })
+                assert.are.equal("rogue/combat", ns.Player.specRoute("ROGUE"))
+                talents({ 31, 0, 20 })
+                assert.are.equal("druid/balance", ns.Player.specRoute("DRUID"))
+                talents({ 0, 0, 11 })
+                assert.are.equal("warrior/tank", ns.Player.specRoute("WARRIOR"))
+            end)
+
+            it("maps every hunter and warlock tree to their single route", function()
+                local ns = load()
+                talents({ 0, 0, 30 })
+                assert.are.equal("hunter/ranged", ns.Player.specRoute("HUNTER"))
+                assert.are.equal("warlock/dps", ns.Player.specRoute("WARLOCK"))
+            end)
+
+            it("reads the inspected unit's talents when asked", function()
+                local ns = load()
+                talents({ 30, 0, 0, inspect = { 0, 0, 30 } })
+                assert.are.equal("mage/frost", ns.Player.specRoute("MAGE", true))
+                assert.are.equal("mage/arcane", ns.Player.specRoute("MAGE"))
+            end)
+
+            it("returns nil without points, an unknown class or the talent API", function()
+                local ns = load()
+                talents({ 0, 0, 0 })
+                assert.is_nil(ns.Player.specRoute("MAGE"))
+                talents({ 5, 0, 0 })
+                assert.is_nil(ns.Player.specRoute("DEATHKNIGHT"))
+                assert.is_nil(ns.Player.specRoute(nil))
+                _G.GetTalentTabInfo = nil
+                assert.is_nil(ns.Player.specRoute("MAGE"))
+            end)
+        end)
+
         it("falls back when the client gives no name or realm", function()
             local ns = load()
             local fullName, name, realm = _G.UnitFullName, _G.UnitName, _G.GetRealmName

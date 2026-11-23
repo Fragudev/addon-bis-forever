@@ -64,7 +64,7 @@ files["ForeverBiS/Adapters/Chat.lua"] = {
 }
 files["ForeverBiS/Adapters/Zone.lua"] = { read_globals = with({ "GetInstanceInfo" }) }
 files["ForeverBiS/Adapters/Player.lua"] = {
-  read_globals = with({ "GetRealmName", "UnitClass", "UnitFactionGroup", "UnitFullName", "UnitLevel", "UnitName" }),
+  read_globals = with({ "GetRealmName", "GetTalentTabInfo", "UnitClass", "UnitFactionGroup", "UnitFullName", "UnitLevel", "UnitName" }),
 }
 
 files["ForeverBiS/UI/"] = { read_globals = with(widget_api, { "Minimap", "GetCursorPosition", "RAID_CLASS_COLORS", "GetPhysicalScreenSize", "C_AddOns", "GetAddOnMetadata", "C_Timer" }) }
