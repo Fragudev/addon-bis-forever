@@ -120,9 +120,10 @@ function Settings.chooseBuild(buildKey)
     char().routeChosen = true
 end
 
---- Whether the class or spec was picked by hand (the older classChosen flag does not count: it predates specs).
+--- Whether the class or spec was picked by hand. The classChosen flag of older versions counts too, so a class a
+--- player picked before the remake survives the upgrade instead of being replaced by talent detection.
 function Settings.routeChosen()
-    return char().routeChosen == true
+    return char().routeChosen == true or char().classChosen == true
 end
 
 --- Selects the class the player is playing and the spec its talents point to (`route`, such as "rogue/combat"),
