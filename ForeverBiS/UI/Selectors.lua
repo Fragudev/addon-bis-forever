@@ -14,7 +14,7 @@ local ROW_LEFT, ROW_TOP = 20, -64
 local classDrop, specDrop, bracketDrop, inspectLabel
 -- What the last refresh measured the dropdown widths for.
 local lastSignature
--- The inspected player while the window shows them: { name, classKey, buildKey, level, phase, worn }.
+-- The inspected player while the window shows them: { unit, name, classKey, buildKey, level, phase, worn }.
 local inspected
 
 local function labelOf(phases, phaseId)
@@ -58,15 +58,22 @@ function Selectors.current()
 end
 
 --- Shows an inspected player until the window closes: their class, the spec of their talents (`route`, or their
---- class's first spec), the bracket for their level and their gear (`worn`, an Inventory.wornBy snapshot).
+--- class's first spec), the bracket for their level and their gear (`worn`, an Inventory.wornBy snapshot). `unit`
+--- lets the gear be read again when the inspect data arrives.
 function Selectors.inspect(target)
     local class, build = Catalog.fromRoute(target.route)
     if not class then
         class = Catalog.findClass(string.lower(target.classToken or ""))
         build = Catalog.defaultBuild(class)
     end
-    inspected =
-        { name = target.name, classKey = class.key, buildKey = build[1], level = target.level, worn = target.worn }
+    inspected = {
+        unit = target.unit,
+        name = target.name,
+        classKey = class.key,
+        buildKey = build[1],
+        level = target.level,
+        worn = target.worn,
+    }
 end
 
 --- The inspected player, or nil while the window shows the player's own selection.

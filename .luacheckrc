@@ -81,6 +81,10 @@ files["ForeverBiS/UI/BisStar.lua"] = {
     "hooksecurefunc",
   }),
 }
+-- The inspect button reads the inspected unit directly: the Player adapter only knows the player.
+files["ForeverBiS/UI/Inspect.lua"] = {
+  read_globals = with(widget_api, { "InspectFrame", "UnitClass", "UnitLevel", "UnitName" }),
+}
 
 files["ForeverBiS/App/Events.lua"] = { read_globals = with(widget_api, { "C_Timer" }) }
 files["ForeverBiS/App/Zone.lua"] = { read_globals = with(widget_api, { "C_Timer", "GetTime" }) }
@@ -121,6 +125,7 @@ files["tests/"] = {
     "ForeverBiSClassDropDown",
     "ForeverBiSSpecDropDown",
     "ForeverBiSBracketDropDown",
+    "ForeverBiSInspectButton",
     "ForeverBiSDropdownList",
   },
 }

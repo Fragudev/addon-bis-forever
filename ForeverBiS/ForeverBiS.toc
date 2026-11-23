@@ -29,6 +29,7 @@ UI\ItemWidgets.lua
 UI\Selectors.lua
 UI\Help.lua
 UI\BisGrid.lua
+UI\Inspect.lua
 UI\Minimap.lua
 UI\DungeonNotice.lua
 UI\BisStar.lua

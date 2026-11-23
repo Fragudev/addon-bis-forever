@@ -10,6 +10,7 @@ local translations = {
         ["Auto (%s)"] = "Auto (%s)",
         ["Top %d"] = "Top %d",
         ["Inspecting %s"] = "Inspeccionando a %s",
+        ["BiS"] = "BiS",
         ["Click to open or close"] = "Clic para abrir o cerrar",
         ["Drag to move the button"] = "Arrastra para mover el botón",
         ["%d BiS items in %s - click to view"] = "%d objetos BiS en %s: haz clic para verlos",
