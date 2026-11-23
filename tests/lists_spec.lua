@@ -15,7 +15,7 @@ end
 describe("Lists", function()
     it("resolves the selected phase's data for a route", function()
         local Lists = loadLists()
-        local phaseId = ForeverBiSModel.effectivePhase("rogue/assassination", nil, 30)
+        local phaseId = ForeverBiSModel.bracketForLevel("rogue/assassination", 30)
         assert.are.same(
             ForeverBiSModel.list("rogue/assassination", phaseId),
             Lists.resolve("rogue/assassination", phaseId)
@@ -50,7 +50,7 @@ describe("Lists", function()
 
     it("indexes the slots of a view by slot key", function()
         local Lists = loadLists()
-        local phaseId = ForeverBiSModel.effectivePhase("rogue/assassination", nil, 30)
+        local phaseId = ForeverBiSModel.bracketForLevel("rogue/assassination", 30)
         local view = Lists.view("rogue/assassination", phaseId)
         local slot = view.data.slots[1]
         local key = WowStub.ns.Sources.normalizeSlotName(slot[1])

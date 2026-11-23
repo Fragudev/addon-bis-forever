@@ -15,7 +15,6 @@ local translations = {
         ["Drag to move the button"] = "Arrastra para mover el botón",
         ["%d BiS items in %s - click to view"] = "%d objetos BiS en %s: haz clic para verlos",
         ["%s BiS: "] = "%s BiS: ",
-        ["+%d more"] = "+%d más",
         ["BiS #%d %s - %s (%s)"] = "BiS nº %d %s - %s (%s)",
         ["BiS Forever"] = "BiS Forever",
         ["Forever BiS"] = "Forever BiS",

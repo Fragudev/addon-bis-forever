@@ -162,10 +162,6 @@ function Settings.buildHasList(class)
     end
 end
 
-function Settings.phase()
-    return char().phase
-end
-
 --- Pass nil for automatic (the phase matching the player's level).
 function Settings.choosePhase(phaseId)
     char().phase = phaseId
@@ -174,14 +170,6 @@ end
 --- The saved phase when the route has it, otherwise nil (automatic). Read-only: an unavailable saved phase is kept.
 function Settings.activePhase(route)
     return ForeverBiSModel and ForeverBiSModel.availablePhase(route, char().phase) or nil
-end
-
---- The phase shown for a route: the saved choice when available, otherwise the one matching the level.
-function Settings.effectivePhase(route, playerLevel)
-    if not ForeverBiSModel then
-        return nil
-    end
-    return ForeverBiSModel.effectivePhase(route, char().phase, playerLevel)
 end
 
 --- The bracket the BiS window shows for a route: the saved choice when the route has it, otherwise the highest

@@ -19,7 +19,7 @@ end
 
 local function listedCount(dungeonKey)
     local route = WowStub.ns.Settings.route()
-    local view = WowStub.ns.Lists.view(route, WowStub.ns.Settings.effectivePhase(route, 30))
+    local view = WowStub.ns.Lists.view(route, WowStub.ns.Settings.bracket(route, 30))
     return WowStub.ns.Sources.countForDungeon(view.data.slots, dungeonKey)
 end
 
