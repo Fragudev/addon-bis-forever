@@ -50,7 +50,7 @@ ForeverBiSData.sources["leveling"] = {
 
 Because each file only adds its own key to `sources`, the files can load in any order. A file with another schema is ignored by the model.
 
-Phases belong to their source. The phase dropdown only shows the phases of the active source, and two sources may use the same phase id for different data.
+Phases belong to their source. The bracket dropdown of the BiS window only shows the phases of the active source, and two sources may use the same phase id for different data.
 
 Routes also belong to their source. The first segment of a route is the class key (`druid`, `warrior`, ...), and a source only has routes for the classes and specs it covers.
 
@@ -94,7 +94,7 @@ The `lists` shape is unchanged from schema 2:
 ### Item shape
 
 - `items` order is the rank. `id` is omitted when unknown. `enchants` is omitted when empty.
-- `source.text` is the raw string from the source (lossless). `source.kind` is one of `quest`, `profession`, `dungeon`, `world`, `unknown`. The classification mirrors `Sources.category` in `Core/Sources.lua`. `unknown` is used for items whose `db.json` entry has no source.
+- `source.text` is the raw string from the source (lossless). `source.kind` is one of `quest`, `profession`, `dungeon`, `world`, `unknown`. `unknown` is used for items whose `db.json` entry has no source.
 - Optional `source` fields, set only when detected: `faction` ("Horde"/"Alliance", exclusive sources only), `zone`, `boss`, `dropRate` (number, percent), `quest`, `skill`, `skillLevel`, `bindsToMaker`, `reported`.
 
 ## Model API
@@ -108,13 +108,13 @@ Source functions:
 
 Every other function operates on the active source:
 
-- `phases(route)`, `defaultPhase(route)` (latest available), `label(route)`, `list(route[, phaseId])` (legacy `{title, slots}` shape), `phaseForLevel(route, level)`, `availablePhase(route, phaseId)`, `effectivePhase(route, savedPhase, level)`, and `buildLegacy()`.
-- `Lists.view` returns `missing = true` when the active source has no list for the route. The UI shows "<Source> has no list for this class yet."
+- `phases(route)`, `defaultPhase(route)` (latest available), `label(route)`, `list(route[, phaseId])` (legacy `{title, slots}` shape), `gridSlots(route[, phaseId[, limit]])` (the BiS window's rows: `{ slot, key, items = { { id, name, source } } }`, at most 6 items per slot by default), `bracketForLevel(route, level)`, `availablePhase(route, phaseId)`, `slotKey(name)`, `routes()` and `buildLegacy()`.
+- `Lists.view` returns `missing = true` when the active source has no list for the route.
 - `Catalog.refreshBuilds(labels)` restores the built-in builds first, so it can be called again after the data changes.
 
-`ForeverBiSModel.bisEntries(itemId, itemName)` answers "where is this item BiS?" from a reverse index built lazily on first use (and reset by `buildLegacy` and `select`). It returns `{ route, class, phase, phaseLabel, slot, rank, label }` entries in route, phase and slot order, where `class` is the first route segment and `rank` the 1-based position in the slot. The id is matched first; the exact name only matches data rows that have no `id`. An item repeated in one slot list yields one entry, and unknown items, nil arguments or missing data yield an empty list. The tooltip decorator (`ForeverBiS_Tooltip.lua`) consumes it, and it reads the active source.
+`ForeverBiSModel.bisEntries(itemId, itemName)` answers "where is this item BiS?" from a reverse index built lazily on first use (and reset by `buildLegacy` and `select`). It returns `{ route, class, phase, phaseLabel, slot, rank, label }` entries in route, phase and slot order, where `class` is the first route segment and `rank` the 1-based position in the slot. The id is matched first; the exact name only matches data rows that have no `id`. An item repeated in one slot list yields one entry, and unknown items, nil arguments or missing data yield an empty list. The tooltip (`ForeverBiS_Tooltip.lua`), the BiS stars (`UI/BisStar.lua`) and the loot alerts consume it, and it reads the active source.
 
-`phaseForLevel` returns the phase the player should see by default: among the phases the route has data for, the numeric-`level` phase with the smallest level that is >= the player's level (a level-25 character gets `lvl30`). Above every numeric phase, or with a nil/invalid level, it returns the final phase; phases without a numeric `level` (e.g. `raid1`) count as endgame and sort after all numeric ones. Unknown routes return nil. `availablePhase` returns a saved phase id only if the route has it (else nil, meaning automatic), and `effectivePhase` combines both.
+`bracketForLevel` returns the bracket the window and the tooltip use by default (the BiS stars apply the same rule): among the phases the route has data for, the numeric-`level` phase with the highest level that is <= the player's level (a level-25 character gets `lvl20`). Below every numeric phase, or with a nil/invalid level, it returns the lowest one; a route without numeric phases returns its default phase, and an unknown route nil. `availablePhase` returns a saved phase id only if the route has it (else nil, meaning automatic). `Settings.bracket(route, level)` combines both: the bracket the player picked when the route has it, otherwise `bracketForLevel`; the loot alerts, `/bis link` and the dungeon notice read it.
 
 ## Settings API
 
@@ -129,30 +129,9 @@ writes it any more, and `Core/Settings.lua` is the only file that reads it.
 - The `bySource` table older versions saved per character (the build and phase remembered per source) is no longer
   read or written.
 
-## Progress
+## Slot keys
 
-`ForeverBiSModel.progress(list, owned)` measures how close the player is to a legacy-shape list without calling the game. `owned` is injected:
-
-```lua
-owned = {
-  equipped = { ["Head"] = { 252504 }, ["Finger"] = { 111, 222 }, ["Main Hand"] = { 333 } }, -- canonical slot key -> equipped item ids
-  bags = function(itemId) return 1 end,       -- optional: copies in bags (0 or nil when none)
-  itemId = function(itemName) return 252504 end, -- optional: name -> id; defaults to ForeverBiSItemIDs
-}
-```
-
-A slot labelled "Relic" (idol, libram or totem) normalizes to the `Ranged` key, like a "Ranged" slot.
-
-Slot keys are canonical (`ForeverBiSModel.slotKey(name)`, the gear panel's normalization): `Head`, `Neck`, `Shoulder`, `Back`, `Chest`, `Wrist`, `Hands`, `Waist`, `Legs`, `Feet`, `Finger`, `Trinket`, `Main Hand`, `Off Hand`, `Ranged`. `Finger` and `Trinket` carry up to two ids, one per inventory slot. The UI builds `equipped` from the same `equippedSlotIDs` + `GetInventoryItemID`, and `GetItemCount` reads the row marks use, so both agree.
-
-It returns `{ total, bis, listed, slots = { { slot, rank, target, done }, ... } }`:
-
-- `total` counts tracked positions that have at least one listed item; `bis` counts the `done` ones; `listed` counts those with at least one listed item equipped. `rank` is the best equipped rank (nil when none is listed).
-- A slot is BiS (`done`) when nothing listed would be an upgrade: for single slots the rank 1 item is equipped; for rings and trinkets the top two listed items are equipped, in any order (a list with one item needs just that one).
-- `target` is the next item to get: `{ name, rank, source, inBags }`. Candidates are listed items ranked above the weakest equipped item (an empty inventory slot counts as weakest) that are not already equipped. A candidate held in bags wins and sets `inBags = true` ("equip this"); otherwise the best-ranked candidate is used.
-- Items match by id only; an item whose id is unknown never counts as owned, so a rank 1 item without an id keeps its slot from ever being BiS.
-- Weapons: list slots that normalize to the same key (`Main hand` and `Two-hand weapon`; `Off hand: shield` and `Off hand: held item`; `Relic` and `Ranged`) are mutually exclusive variants of one position, matching the three paper-doll weapon positions, and count once. Each variant is evaluated on its own ranks and the one holding the best equipped item wins (the first listed when tied). A two-hander therefore leaves `Off Hand` open.
-- Enchants are ignored. A missing, empty or malformed list returns `total = 0`.
+`ForeverBiSModel.slotKey(name)` normalizes a list slot name to a canonical key: `Head`, `Neck`, `Shoulder`, `Back`, `Chest`, `Wrist`, `Hands`, `Waist`, `Legs`, `Feet`, `Finger`, `Trinket`, `Main Hand`, `Off Hand`, `Ranged`. `Two-hand weapon` normalizes to `Main Hand`, both off-hand variants to `Off Hand`, and `Relic` (idol, libram or totem) to `Ranged`, like a `Ranged` slot. The BiS window uses these keys to match equipped and inspected items to their row. Unknown names come back unchanged.
 
 ## Updater
 
@@ -179,8 +158,8 @@ The workflow `.github/workflows/update-lists.yml` stages `ForeverBiS/ForeverBiS_
 ## Extending
 
 - **New phase.** Each source declares its phases in its module (`PHASES` in `leveling.py`, `TIERS` in `kamilabs.py`). The phase list of a source is its sorted union of phases, by level.
-- **New source kind.** Add the check in `structure_source()` in `bis_sources/sources_text.py`, add the kind to `SOURCE_KINDS` in `bis_sources/common.py`, keep `Sources.category` in `Core/Sources.lua` in sync if the UI should filter on it, and add the kind to `VALID_KINDS` in `tests/data_spec.lua`.
-- **New dungeon or raid.** Add a `(lowercase match, display name)` row to `DUNGEON_SOURCES` in `bis_sources/sources_text.py`, which also makes it a `dungeon` kind, and the same row to `Sources.dungeons` in `ForeverBiS/Core/Sources.lua` (the addon's dungeon filter and zone notice); keep both lists identical. Add it to `EXTRA_ZONES` to fill only `zone` and `boss`.
+- **New source kind.** Add the check in `structure_source()` in `bis_sources/sources_text.py`, add the kind to `SOURCE_KINDS` in `bis_sources/common.py`, and add the kind to `VALID_KINDS` in `tests/data_spec.lua`.
+- **New dungeon or raid.** Add a `(lowercase match, display name)` row to `DUNGEON_SOURCES` in `bis_sources/sources_text.py`, which also makes it a `dungeon` kind, and the same row to `Sources.dungeons` in `ForeverBiS/Core/Sources.lua` (the addon's dungeon notice); keep both lists identical. Add it to `EXTRA_ZONES` to fill only `zone` and `boss`.
 - **New source.**
   1. Add `bis_sources/<name>.py` with a `fetch()` that returns `(data, labels, phases)`, with `data` mapping route to phase to `(title, slots)`, as `common.validate` and `common.emit_lua` expect.
   2. Add a `Source(...)` entry to `SOURCES` in `bis_sources/__init__.py`. Set `ship = False` until it may ship.

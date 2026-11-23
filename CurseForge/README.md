@@ -7,7 +7,7 @@ ForeverBiS
 World of Warcraft Addon
 
 ## Description (Short - 160 chars max)
-Complete Best in Slot (BiS) gear guide for WoW Forever. Browse gear by class, specialization, and slot.
+Leveling Best in Slot lists for every class and spec in WoW Forever: a gear grid, BiS tooltips and stars on bag items.
 
 ## Full Description
 
@@ -16,7 +16,7 @@ Source: [DESCRIPTION.md](DESCRIPTION.md)
 ````markdown
 # Forever BiS — Best in Slot Helper for WoW Forever
 
-**Know exactly what to farm next.** Forever BiS brings leveling Best in Slot lists into the game, generated from the wowsims item database: ranked gear for every class, spec and level bracket (20, 30, 40, 50 and 60), where each item drops, and how close you are to completing your set.
+**Know exactly what to farm next.** Forever BiS brings leveling Best in Slot lists into the game for every class and spec, from level 20 to 60: in a gear grid, on every item tooltip and as a star on the items in your bags.
 
 Open it with `/bis`, `/foreverbis` or the minimap button.
 
@@ -24,35 +24,30 @@ Open it with `/bis`, `/foreverbis` or the minimap button.
 
 ## ✨ Highlights
 
-- **Every class and spec** — Pick your class, then your spec. Your class is selected automatically on login.
-- **Phase-aware lists** — `Auto` shows the list for your current level. You can also pin any other phase to plan ahead.
-- **Ranked items per slot** — Rank, icon, rarity, and exact source: boss, zone, drop rate, quest, profession or world drop.
-- **Know what you already have** — A green check marks equipped BiS items. An amber `xN` shows copies sitting in your bags.
-- **BiS progress** — `BiS 3/17` tells you how many slots are done. Hover it to see the next item for each slot and where to get it.
-- **Paper doll overview** — Your gear around a character render. Missing BiS slots are highlighted in red. Click any icon to jump to that slot.
-
-## 🔍 Powerful filters
-
-- Search by item name, boss or zone.
-- Filter by source: quests, dungeons and raids, world drops, professions. Combine them freely.
-- Pick a single dungeon from the dungeon filter.
-- Show only your faction's items, or both.
-- Show, hide or isolate crafted items that only their maker can wear.
+- **Every class and spec** — 26 PvE specs, with lists for levels 20, 30, 40, 50 and 60 (pre-raid).
+- **Ready on first open** — Your class, the spec your talents point to and the bracket for your level are already selected. Pick any other class, spec or bracket to plan ahead.
+- **Top 1 to Top 6 per slot** — One row per gear slot with its six best items. Equipped items get a green border.
+- **Where it drops** — Hover an item for its source: boss and dungeon, quest, vendor, profession or reputation, with the drop chance when it is known.
+- **Inspect other players** — Click **BiS** on the inspect window to see their spec's list, with the items they wear in a blue border.
 
 ## 🏷️ BiS info in every tooltip
 
-Hover any item anywhere in the game (bags, links, vendors, auction house) and see where it ranks for your class:
+Hover any item (bags, links, vendors, auction house) to see:
 
-> **Forever BiS**
-> BiS #2 Head - Feral (Level 30)
+- its rank for **your spec** in your level's bracket, with its source and drop chance;
+- **your other specs** that want it;
+- **other classes** that want it, one row per class with its icon.
 
-- `/bis tooltip` turns it on or off.
-- `/bis tooltip all` shows every class, not only yours.
+Compact mode keeps the class rows short; hold **Shift** to see them all. Each part toggles with `/bis tooltip spec`, `specs`, `classes` or `compact`.
+
+## ⭐ BiS stars
+
+Items in your bags, the loot window and quest rewards get a gold star when they are Top 1 for your spec and bracket, and a silver star for Top 2 to Top 6. Toggle with `/bis stars`.
 
 ## 👥 Made for group play
 
-- **Loot alerts** — When you or a group member loots a BiS item for your build, you get a highlighted chat message and a sound. Toggle with `/bis alerts`.
-- **Dungeon notice** — Entering an instance shows how many of your BiS items drop there (`5 BiS items in The Deadmines`). Click it to open the filtered list. Toggle with `/bis dungeon`.
+- **Loot alerts** — When you or a group member loots a BiS item for your spec, you get a highlighted chat message and a sound. Toggle with `/bis alerts`.
+- **Dungeon notice** — Entering an instance shows how many of your BiS items drop there (`5 BiS items in The Deadmines`). Click it to open the window. Toggle with `/bis dungeon`.
 - **Share in chat** — `/bis link head` posts the ranked items for a slot. `/bis link` posts the top item of every slot. Shift-click an icon to link it.
 
 ## ⌨️ Commands
@@ -62,7 +57,8 @@ Hover any item anywhere in the game (bags, links, vendors, auction house) and se
 | `/bis` or `/foreverbis` | Open or close the window |
 | `/bis link [slot]` | Post BiS items to party, raid or say |
 | `/bis tooltip` | Toggle BiS info in item tooltips |
-| `/bis tooltip all` | Toggle showing every class in tooltips |
+| `/bis tooltip spec\|specs\|classes\|compact` | Toggle one part of the tooltip, or compact mode |
+| `/bis stars` | Toggle the BiS stars |
 | `/bis alerts` | Toggle loot alerts |
 | `/bis dungeon` | Toggle the dungeon notice |
 | `/bis minimap` | Toggle the minimap button |
@@ -81,7 +77,7 @@ Then enable `ForeverBiS` in the AddOns list on the character selection screen.
 
 ## 🔄 About the lists
 
-WoW addons cannot access the internet, so the BiS lists are bundled with each release. They are generated from the item database and stat weights of [wowsims](https://github.com/wowsims/forever) (MIT License) and regenerated regularly. **Keep the addon updated to get the latest lists.**
+WoW addons cannot access the internet, so the BiS lists are bundled with each release. They are generated from the item database and stat weights of [wowsims](https://github.com/wowsims/forever) (MIT License) and regenerated regularly; they rank items by their stats and are PvE only. Drop chances come from EG Link. Data from Efficient Games (https://efficient.games), licensed under CC BY 4.0. **Keep the addon updated to get the latest lists.**
 
 ## 💬 Feedback
 

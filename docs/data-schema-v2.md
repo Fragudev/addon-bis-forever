@@ -1,3 +1,5 @@
+> **Historical.** This document describes a retired format, and ForeverChanges is no longer a source of Forever BiS.
+
 # Data schema v2 (superseded)
 
 This schema is superseded by [data-schema-v3.md](data-schema-v3.md). Schema 2 was a single generated file,
