@@ -1,0 +1,89 @@
+CONTRIBUTING.md
+  s_c39abb567c22bd::t_5e9dbf0dd637d6 16-18
+CurseForge/README.md
+  s_c39abb567c22bd::t_f6a65ebc6c23ed 19,27,47,84
+ForeverBiS/Core/Settings.lua
+  s_c39abb567c22bd::t_8dc2d74cd9216d 57-58,143,164
+ForeverBiS/ForeverBiS.toc
+  s_c39abb567c22bd::t_7fb88f7cc5beee 4
+ForeverBiS/ForeverBiS_Model.lua
+  s_c39abb567c22bd::t_174bccc8ce5a8b 13
+ForeverBiS/UI/Selectors.lua
+  s_c39abb567c22bd::t_8f56ff5057befb 1,7-8,13,117-118
+LICENSE
+  s_c39abb567c22bd::t_b754371840883e 21-23
+README.md
+  s_c39abb567c22bd::t_8fc66babd75ed3 6,54-55,66-70,76-77,83-88,130,170-171,174-178,202,219-220,250,252-253,259
+bis_sources/__init__.py
+  s_c39abb567c22bd::t_45dddbd83465c2 8
+bis_sources/leveling.py
+  s_c39abb567c22bd::t_c4e42852c4931c 14
+bis_sources/sources_text.py
+  s_c39abb567c22bd::t_54c76c30f22741 1-5,11-13,18,142-187
+docs/data-schema-v3.md
+  s_c39abb567c22bd::t_105c96833bbd6a 3-4,11,16,25-28,33-34,45,47,61,65,68,78,90,97,106,114-115,117-118,120-123,137,156-157,173-175
+tests/addon_spec.lua
+  s_c39abb567c22bd::t_4407e18466ff4d 1-8,15-29,51,55,61,71,87-90,95-101,186-187,195-196,203,205,219-220,223-225,306,310,314,324-325,345,369
+tests/alerts_spec.lua
+  s_c39abb567c22bd::t_e0431a1732fc6e 74
+tests/commands_spec.lua
+  s_c39abb567c22bd::t_40e5f73df82ecc 9
+tests/data_spec.lua
+  s_c39abb567c22bd::t_fb2ff8029f8229 147
+tests/filters_spec.lua
+  s_c39abb567c22bd::t_437500ab407480 5
+tests/interaction_spec.lua
+  s_c39abb567c22bd::t_4cdaa56de9a9ae 1-13,39,44,82,110,123,149,164,196,220,316,344,356,364,420,425,432,438,446,453,463,471,487,510,530,535,541,552,567,573,579,584,593,600,663,686,731,741,758-759,769,787,796,809-810,826-827,841-842
+tests/lists_spec.lua
+  s_c39abb567c22bd::t_9483a1ad94058d 4,18-22,27,32-35,40,53-54,60,65
+tests/locale_spec.lua
+  s_c39abb567c22bd::t_b03c3c0dfcc72c 43-45
+tests/model_spec.lua
+  s_c39abb567c22bd::t_bf4fd0abf6ef1c 224,478,692,722,725
+tests/python/test_sources_text.py
+  s_c39abb567c22bd::t_66a0dfd43c2e7c 1,3,10-99,110,147-157
+tests/python/test_updater.py
+  s_c39abb567c22bd::t_61bbf0b6490c98 15,19-38,43,49-50,58-59,84,87-88,202,205-206
+tests/settings_spec.lua
+  s_c39abb567c22bd::t_d80001ecbdfcb4 7,25-26,129,131,155,170,276,285,305
+tests/share_spec.lua
+  s_c39abb567c22bd::t_a42379aaffd69c 5
+tests/sources_spec.lua
+  s_c39abb567c22bd::t_58deac333272da 4
+tests/stubs/wow_api.lua
+  s_c39abb567c22bd::t_3e8348b14df821 299,316,342-343
+tests/support/lists.lua
+  s_c39abb567c22bd::t_a9257b9522da4a 1-4,6,8-9,12-13,16-53,56-61,63-83,85
+tests/toc_spec.lua
+  s_c39abb567c22bd::t_b412c69ad5660b 28
+tests/zone_notice_spec.lua
+  s_c39abb567c22bd::t_c02126b02c22ca 24-25
+tests/zone_spec.lua
+  s_c39abb567c22bd::t_b10e2113dcfe07 32-33,86-87
+tests/retired_sources_spec.lua
+  s_7a32078d36dd59::t_49c843ceb5e566 1-2,4,8-14,16-22,24-32,35-38,40,42-50,53-58,61-62
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.6",
+  "base_commit_sha": "cc9d93669f5eb6fba9ea82977daa46de0be37d1c",
+  "prompts": {},
+  "sessions": {
+    "s_7a32078d36dd59": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "agent-a0a79146eea5a0fee",
+        "model": "unknown"
+      },
+      "human_author": "Francis Gutiérrez <fragudev@gmail.com>"
+    },
+    "s_c39abb567c22bd": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ffa6e9de-a2ae-47e1-9992-09e2c55f0ae5",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Francis Gutiérrez <fragudev@gmail.com>"
+    }
+  }
+}
