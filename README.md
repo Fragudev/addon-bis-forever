@@ -82,6 +82,8 @@ you enter a dungeon with items for your build, and commands to share a slot's li
 
 - **Generated lists.** One list per spec and level bracket, with the top six items per slot (two distinct rings and
   two distinct trinkets). Items the wowsims database gives no source for show `Source not listed by wowsims`.
+- **Drop chances.** Where players of [EG Link](https://github.com/JIVESCORP/eg-link-output-wowf) have looted an item
+  from the NPC its source names (at least 10 observed kills), the source shows its drop chance.
 - **Class, mode and build.** Pick a class and a build. The build dropdown lists the specs by name (`Holy`,
   `Retribution`). A mode dropdown (`PvE` or `PvP`) appears only for a class that has lists in both modes; the shipped
   lists are PvE only, so it stays hidden. The build dropdown hides when there is nothing to choose. Your selection is
@@ -172,7 +174,8 @@ The addon reads its bundled data file, `ForeverBiS_Data_Leveling.lua` (schema 3,
 
 1. Every six hours the [Update BiS lists](.github/workflows/update-lists.yml) workflow runs
    `UpdateForeverBiS.py`, which regenerates the leveling lists from the current wowsims item database and stat weights
-   and rewrites the data file.
+   and rewrites the data file. Drop chances come from the EG Link loot data of every live client build; if it cannot
+   be downloaded, the lists are still written, without drop chances, and the run logs a warning.
 2. The phases are the level brackets 20, 30, 40, 50 and 60 (pre-raid). If the wowsims data cannot be downloaded or
    parsed, the previous file is kept. A run that would lose a route the file already has also keeps the previous
    file. The workflow fails when the shipped source fails.
@@ -247,10 +250,17 @@ Bug reports and ideas are welcome from everyone as issues; pull requests are ope
 ## Data and licensing
 
 Copyright (c) 2026 Fragudev. Forever BiS is proprietary, all rights reserved: see [LICENSE](LICENSE). Third-party
-materials, game assets and the wowsims data the lists are generated from are not claimed by this license.
+materials, game assets, the wowsims data the lists are generated from and the EG Link drop chances are not claimed by
+this license.
 
 Credits: the items, stats, required levels, item sources and stat weights the lists are generated from come from
 [wowsims/forever](https://github.com/wowsims/forever), licensed under the MIT License.
+
+Drop chances come from the EG Link loot data in
+[JIVESCORP/eg-link-output-wowf](https://github.com/JIVESCORP/eg-link-output-wowf), pooled across client builds and
+rounded by the updater ([license](https://creativecommons.org/licenses/by/4.0/)):
+
+Data from Efficient Games (https://efficient.games), licensed under CC BY 4.0.
 
 The interface uses the [Fira Sans](https://github.com/mozilla/Fira) typeface (Regular, Medium and SemiBold), licensed
 under the SIL Open Font License 1.1; the license text ships next to the fonts in `ForeverBiS/Media/Fonts/OFL.txt`. The

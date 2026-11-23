@@ -150,7 +150,9 @@ SOURCE_PRIORITY = ("drop", "crafted", "quest", "soldBy", "rep", "pvp")
 class SourceDescriber:
     """Turn the `sources` of a db.json item into the addon's source dict (kind, text, zone, boss, ...)."""
 
-    def __init__(self, db):
+    def __init__(self, db, drop_rate=None):
+        # drop_rate(item, npc id or None) -> percent or None, attached to a source that is a drop (see eglink).
+        self.drop_rate = drop_rate
         self.zones = {zone["id"]: zone["name"] for zone in db.get("zones") or []}
         self.npcs = {npc["id"]: npc["name"] for npc in db.get("npcs") or []}
         self.factions = {faction["id"]: faction["name"] for faction in db.get("factions") or []}
@@ -183,5 +185,15 @@ class SourceDescriber:
                     source = structure_source(text)
                     if kind == "quest":
                         source["quest"] = entry[kind]["name"]
-                    candidates.append((source["kind"] != "dungeon", SOURCE_PRIORITY.index(kind), len(candidates), source))
-        return min(candidates, key=lambda c: c[:3])[3] if candidates else dict(NO_SOURCE)
+                    rank = (source["kind"] != "dungeon", SOURCE_PRIORITY.index(kind), len(candidates))
+                    candidates.append((*rank, source, kind, entry[kind]))
+        if not candidates:
+            return dict(NO_SOURCE)
+        *_, source, kind, entry = min(candidates, key=lambda c: c[:3])
+        # A drop that names no NPC only gets a rate inside a dungeon, where any NPC that drops it is that dungeon's:
+        # one mob's rate says nothing about a world drop.
+        if kind == "drop" and self.drop_rate and (entry.get("npcId") or source["kind"] == "dungeon"):
+            rate = self.drop_rate(item, entry.get("npcId"))
+            if rate is not None:
+                source["dropRate"] = rate
+        return source

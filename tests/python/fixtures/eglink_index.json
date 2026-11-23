@@ -1,0 +1,17 @@
+{
+  "license": "CC BY 4.0",
+  "attribution": "Data from Efficient Games (https://efficient.games), licensed under CC BY 4.0.",
+  "products": {
+    "wowf": {
+      "1.0.1": {
+        "encounters": { "lastCollectedOn": "2026-11-01", "records": 1, "sources": 1 },
+        "loot": { "lastCollectedOn": "2026-11-01", "records": 7, "sources": 2 }
+      },
+      "1.0.2": { "loot": { "lastCollectedOn": "2026-11-02", "records": 1, "sources": 1 } },
+      "1.0.3": { "npcs": { "lastCollectedOn": "2026-11-03", "records": 1, "sources": 1 } }
+    },
+    "wow_classic_beta": {
+      "9.9.9": { "loot": { "lastCollectedOn": "2026-10-01", "records": 1, "sources": 1 } }
+    }
+  }
+}

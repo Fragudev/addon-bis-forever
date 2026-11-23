@@ -67,6 +67,13 @@ Routes also belong to their source. The first segment of a route is the class ke
   ```lua
   { id = 10250, name = "Master's Hat", source = { kind = "unknown", text = "Source not listed by wowsims" } },
   ```
+- **Drop chances.** `bis_sources/eglink.py` reads the `loot` and `encounters` datasets of every live client build (product `wowf`, never the `wow_classic_beta` beta) from [JIVESCORP/eg-link-output-wowf](https://github.com/JIVESCORP/eg-link-output-wowf) (CC BY 4.0; Data from Efficient Games (https://efficient.games), licensed under CC BY 4.0.) and sets `dropRate` on a drop source:
+  - Kills only: corpse keys `npc:<id>`, with or without `|quest` and `|group`. Skinning and pick pocket (`|spell:<id>`), objects, containers and fishing are left out.
+  - Keys are pooled across builds as Σ `chance` × `windows` / Σ `windows`; a key of the NPC that does not list the item counts as kills without a drop.
+  - A dungeon boss (an NPC in an encounter's `bosses`) leaves its `|group` corpse keys out, because another member often loots the rolled item first, and adds its `rolls` instead (`drops` / (`kills` + `unconfirmed`)), only for roll keys whose loot threshold the item's quality reaches.
+  - A rate needs at least 10 pooled observations (loot windows plus rolled kills), the minimum EG Link itself uses before trusting a corpse share; an item that never dropped gets none. The percent has one decimal (two under 0.1%) and is capped at 100.
+  - The rate is the one of the NPC the wowsims drop names, never another NPC's. A dungeon drop that names no NPC (trash, "Multiple NPCs") takes the NPC with the most observations among those that dropped it; a world drop that names no NPC gets none.
+  - If EG Link cannot be read, or its license is no longer CC BY 4.0, the lists are written without drop rates and the run logs a `::warning::`.
 - **Kami Labs.** Level 30 and Level 60 (pre-raid) lists, one item per slot, with structured sources. Its file is only generated with `--include-unshipped` and is not shipped.
 
 ## Lists
@@ -155,6 +162,7 @@ It returns `{ total, bis, listed, slots = { { slot, rank, target, done }, ... } 
 - `bis_sources/common.py` holds the shared HTTP helpers, the validation and the schema 3 Lua emitter.
 - `bis_sources/leveling.py` and `bis_sources/kamilabs.py` are the source modules. Each `fetch()` returns `(data, labels, phases)`.
 - `bis_sources/sources_text.py` describes item sources from the wowsims item database (`SourceDescriber`) and structures the text (`structure_source()`).
+- `bis_sources/eglink.py` pools the EG Link loot data into drop chances (`load()`, `DropRates`).
 
 Flags:
 

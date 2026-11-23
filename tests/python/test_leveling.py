@@ -1,12 +1,14 @@
 """Tests for the generated leveling lists: EP weight parsing, usability, scoring, brackets and output (no network)."""
 
+import contextlib
+import io
 import sys
 import unittest
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
-from bis_sources import leveling  # noqa: E402
+from bis_sources import eglink, leveling  # noqa: E402
 from bis_sources.common import validate  # noqa: E402
 
 PRESETS_TS = """
@@ -191,6 +193,78 @@ class RoutesTest(unittest.TestCase):
     def test_routes_cover_every_class(self):
         classes = {route.class_key for route in leveling.ROUTES}
         self.assertEqual(classes, {"warrior", "paladin", "hunter", "rogue", "priest", "shaman", "mage", "warlock", "druid"})
+
+
+class DropRateTest(unittest.TestCase):
+    SPEC = leveling.Spec("warrior/arms", "Arms", "warrior", "twohand", {"Strength": 1})
+
+    def head_source(self, items, rates):
+        _, slots = leveling.generate(db(items), [self.SPEC], rates=rates)["warrior/arms"]["lvl20"]
+        return next(s for s in slots if s[0] == "Head")[1][0][1]
+
+    def test_a_drop_gets_the_rate_of_the_npc_wowsims_names(self):
+        calls = []
+
+        def rates(entry, npc_id):
+            calls.append((entry["id"], npc_id))
+            return 12.5
+
+        source = self.head_source([item(1, 1, {"Strength": 1}, sources=DROP)], rates)
+        self.assertEqual(12.5, source["dropRate"])
+        self.assertEqual({(1, 10)}, set(calls))
+
+    def test_an_unnamed_dungeon_drop_asks_for_any_npc(self):
+        trash = [{"drop": {"zoneId": 1, "otherName": "Trash"}}]
+        source = self.head_source([item(1, 1, {"Strength": 1}, sources=trash)], lambda entry, npc: npc is None and 3.5)
+        self.assertEqual(3.5, source["dropRate"])
+
+    def test_a_world_drop_without_a_named_npc_gets_no_rate(self):
+        world = [{"drop": {"otherName": "World Drop"}}]
+        source = self.head_source([item(1, 1, {"Strength": 1}, sources=world)], lambda *_: 1.1)
+        self.assertEqual("world", source["kind"])
+        self.assertNotIn("dropRate", source)
+
+    def test_an_unknown_rate_adds_nothing(self):
+        source = self.head_source([item(1, 1, {"Strength": 1}, sources=DROP)], lambda *_: None)
+        self.assertNotIn("dropRate", source)
+
+    def test_only_drops_get_a_rate(self):
+        quest = [{"quest": {"id": 5, "name": "A Quest"}}]
+        source = self.head_source([item(1, 1, {"Strength": 1}, sources=quest)], lambda *_: 50.0)
+        self.assertEqual("quest", source["kind"])
+        self.assertNotIn("dropRate", source)
+
+
+class FetchTest(unittest.TestCase):
+    SPEC = leveling.Spec("warrior/arms", "Arms", "warrior", "twohand", {"Strength": 1})
+
+    def test_lists_are_still_written_when_eg_link_is_unreachable(self):
+        def get_json(url):
+            if url.startswith(leveling.RAW_URL):
+                return db([item(1, 1, {"Strength": 1}, sources=DROP)])
+            raise OSError("unreachable")
+
+        output = io.StringIO()
+        with contextlib.redirect_stdout(output):
+            data, _, _ = leveling.fetch(get_json=get_json, routes=(self.SPEC,))
+        head = next(s for s in data["warrior/arms"]["lvl20"][1] if s[0] == "Head")
+        self.assertNotIn("dropRate", head[1][0][1])
+        self.assertIn("::warning::", output.getvalue())
+        self.assertIn("EG Link", output.getvalue())
+
+    def test_rates_from_eg_link_reach_the_lists(self):
+        index = {"license": "CC BY 4.0", "products": {"wowf": {"1": {"loot": {}}}}}
+        loot = {"sources": {"npc:10": {"windows": 20, "items": {"1": {"chance": 0.25}}}}, "rolls": {}}
+
+        def get_json(url):
+            if url.startswith(leveling.RAW_URL):
+                return db([item(1, 1, {"Strength": 1}, sources=DROP)])
+            return {eglink.INDEX_URL: index, f"{eglink.DATA_URL}wowf/1/loot.json": loot}[url]
+
+        with contextlib.redirect_stdout(io.StringIO()):
+            data, _, _ = leveling.fetch(get_json=get_json, routes=(self.SPEC,))
+        head = next(s for s in data["warrior/arms"]["lvl20"][1] if s[0] == "Head")
+        self.assertEqual(25.0, head[1][0][1]["dropRate"])
 
 
 if __name__ == "__main__":

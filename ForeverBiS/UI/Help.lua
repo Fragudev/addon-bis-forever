@@ -43,6 +43,13 @@ local SECTIONS = {
             { "Click this help icon to keep the help open or close it.", "warning" },
         },
     },
+    {
+        "CREDITS",
+        {
+            "Lists generated from the item database and stat weights of wowsims (https://github.com/wowsims/forever), MIT License.",
+            "Drop chances from EG Link. Data from Efficient Games (https://efficient.games), licensed under CC BY 4.0.",
+        },
+    },
 }
 
 local WIDTH, PADDING = 460, 18

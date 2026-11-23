@@ -10,6 +10,7 @@ import re
 from dataclasses import dataclass
 from typing import Union
 
+from . import eglink
 from .common import http_get, http_json
 from .sources_text import NO_SOURCE, RAW_URL, SourceDescriber
 
@@ -284,9 +285,12 @@ def ranked(candidates, weights, dps_stat, bonus=None):
     return scored[:TOP]
 
 
-def generate(db, specs, phases=PHASES):
-    """Return route -> {phase id: (title, slots)} in the shape common.emit_lua expects."""
-    describe = SourceDescriber(db)
+def generate(db, specs, phases=PHASES, rates=None):
+    """Return route -> {phase id: (title, slots)} in the shape common.emit_lua expects.
+
+    `rates(item, npc id)` gives the drop % (eglink.DropRates) attached to drop sources, when known.
+    """
+    describe = SourceDescriber(db, rates)
     zones = {zone["id"]: zone["name"] for zone in db.get("zones") or []}
     pool = [item for item in db["items"] if eligible(item)]
     data = {}
@@ -337,9 +341,18 @@ def resolve_weights(specs, get_text=http_get):
     return resolved
 
 
-def fetch(get_text=http_get, get_json=http_json):
+def load_rates(get_json=http_json):
+    """EG Link drop chances, or None (with a warning) when they cannot be read: they are an optional enrichment."""
+    try:
+        return eglink.load(get_json)
+    except Exception as exc:  # noqa: BLE001 - any failure only drops the rates, never the lists
+        print(f"::warning::EG Link drop chances unavailable, lists written without drop rates ({exc})")
+        return None
+
+
+def fetch(get_text=http_get, get_json=http_json, routes=ROUTES):
     db = get_json(RAW_URL + DB_PATH)
-    specs = resolve_weights(ROUTES, get_text)
-    data = generate(db, specs)
+    specs = resolve_weights(routes, get_text)
+    data = generate(db, specs, rates=load_rates(get_json))
     print(f"leveling: {len(data)} lists generated from {len(db['items'])} wowsims items")
     return data, {spec.route: spec.label for spec in specs}, list(PHASES)

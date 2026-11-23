@@ -21,6 +21,11 @@ Third-party materials bundled with the Software, such as fonts, remain subject
 to their own licenses. The Best in Slot lists are generated from the item
 database and stat weights of wowsims (https://github.com/wowsims/forever),
 licensed under the MIT License; that data is not claimed by this license.
+Drop chances come from the EG Link loot data
+(https://github.com/JIVESCORP/eg-link-output-wowf), pooled across client
+builds and rounded; that data is not claimed by this license. License:
+https://creativecommons.org/licenses/by/4.0/
+Data from Efficient Games (https://efficient.games), licensed under CC BY 4.0.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
