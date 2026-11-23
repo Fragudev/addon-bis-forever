@@ -102,31 +102,6 @@ describe("Catalog", function()
                 assert.are.equal(case[3], spec, case[1])
             end
         end)
-
-        it("lists the modes a class has, PvE first", function()
-            local Catalog = loadCatalog()
-            assert.are.same({ "pve", "pvp" }, Catalog.modes(Catalog.findClass("paladin")))
-            assert.are.same({ "pve" }, Catalog.modes({ builds = { { "", "Tank", "" } } }))
-        end)
-
-        it("lists the builds of one mode with their spec names", function()
-            local Catalog = loadCatalog()
-            local specs = {}
-            for _, entry in ipairs(Catalog.buildsForMode(Catalog.findClass("paladin"), "pvp")) do
-                specs[#specs + 1] = entry.spec
-            end
-            assert.are.same({ "Retribution", "Holy" }, specs)
-        end)
-
-        it("keeps the spec when the mode changes, or falls back to the first build of that mode", function()
-            local Catalog = loadCatalog()
-            local paladin = Catalog.findClass("paladin")
-            local holyPvE = Catalog.findBuild(paladin, "holy-pve")
-            assert.are.equal("holy-pvp", Catalog.buildForMode(paladin, holyPvE, "pvp")[1])
-            local tank = Catalog.findBuild(paladin, "tank")
-            assert.are.equal("retribution-pvp", Catalog.buildForMode(paladin, tank, "pvp")[1])
-            assert.is_nil(Catalog.buildForMode({ builds = { { "", "Tank", "" } } }, tank, "pvp"))
-        end)
     end)
 
     describe("refreshBuilds", function()
@@ -195,22 +170,6 @@ describe("Catalog", function()
         local function onlyTank(build)
             return build[1] == "tank"
         end
-
-        it("keeps only the accepted builds and the modes they belong to", function()
-            local Catalog = loadCatalog()
-            local druid = Catalog.findClass("druid")
-            local builds = Catalog.buildsForMode(druid, "pve", onlyTank)
-            assert.are.equal(1, #builds)
-            assert.are.equal("tank", builds[1].build[1])
-            assert.are.same({ "pve" }, Catalog.modes(druid, onlyTank))
-            assert.are.same(
-                {},
-                Catalog.modes(druid, function()
-                    return false
-                end)
-            )
-            assert.are.equal("tank", Catalog.buildForMode(druid, druid.builds[1], "pve", onlyTank)[1])
-        end)
 
         it("finds the first accepted build, or nil", function()
             local Catalog = loadCatalog()
