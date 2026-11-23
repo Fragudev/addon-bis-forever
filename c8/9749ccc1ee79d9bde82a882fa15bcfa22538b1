@@ -1,0 +1,37 @@
+.luacheckrc
+  s_c39abb567c22bd::t_27ab8d8b940786 72-84
+ForeverBiS/App/Commands.lua
+  s_c39abb567c22bd::t_03ccdc0f1bd089 106-114
+ForeverBiS/Core/Settings.lua
+  s_c39abb567c22bd::t_c5894150161a53 251-262
+ForeverBiS/ForeverBiS.lua
+  s_c39abb567c22bd::t_b88f6ac54a3bf2 65
+ForeverBiS/ForeverBiS.toc
+  s_c39abb567c22bd::t_fe9664af8c0494 39
+ForeverBiS/ForeverBiS_Locale.lua
+  s_c39abb567c22bd::t_525cf40c6b0092 51
+ForeverBiS/UI/BisStar.lua
+  s_c39abb567c22bd::t_d331059dcebd6f 1-435
+tests/bisstar_spec.lua
+  s_c39abb567c22bd::t_e16ac1663e912b 1-614
+tests/commands_spec.lua
+  s_c39abb567c22bd::t_43bec4329e83d3 82-116
+tests/stubs/wow_api.lua
+  s_c39abb567c22bd::t_bb1b76f2c144b7 284
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.6",
+  "base_commit_sha": "c89749ccc1ee79d9bde82a882fa15bcfa22538b1",
+  "prompts": {},
+  "sessions": {
+    "s_c39abb567c22bd": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ffa6e9de-a2ae-47e1-9992-09e2c55f0ae5",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Francis Gutiérrez <fragudev@gmail.com>"
+    }
+  }
+}
