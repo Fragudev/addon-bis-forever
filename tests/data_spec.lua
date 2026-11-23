@@ -40,10 +40,10 @@ describe("ForeverBiS_Data", function()
         end)
     end
 
-    it("ships at least the ForeverChanges file, and no unlisted data files", function()
+    it("ships the generated Leveling file first, and no unlisted data files", function()
         local files = dataFiles()
         assert.is_true(#files > 0)
-        assert.are.equal("ForeverBiS_Data_ForeverChanges.lua", files[1].path)
+        assert.are.equal("ForeverBiS_Data_Leveling.lua", files[1].path)
         local handle = io.popen('ls ForeverBiS | grep "^ForeverBiS_Data_"')
         local onDisk = {}
         for name in handle:lines() do

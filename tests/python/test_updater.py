@@ -536,17 +536,20 @@ class RegistryTest(unittest.TestCase):
         rows = [(s.id, s.file_name, s.label, s.order, s.ship) for s in bis_sources.SOURCES]
         self.assertEqual(
             [
+                ("leveling", "Leveling", "ForeverBiS", 0, True),
                 ("foreverchanges", "ForeverChanges", "ForeverChanges", 1, True),
                 ("kamilabs", "KamiLabs", "Kami Labs", 2, False),
                 ("wowsims", "Wowsims", "wowsims", 3, True),
             ],
             rows,
         )
-        self.assertEqual("ForeverBiS_Data_KamiLabs.lua", bis_sources.SOURCES[1].filename)
+        self.assertEqual("ForeverBiS_Data_KamiLabs.lua", bis_sources.SOURCES[2].filename)
 
     def test_unshipped_sources_need_the_flag(self):
-        self.assertEqual(["foreverchanges", "wowsims"], [s.id for s in bis_sources.select()])
-        self.assertEqual(["foreverchanges", "kamilabs", "wowsims"], [s.id for s in bis_sources.select(include_unshipped=True)])
+        self.assertEqual(["leveling", "foreverchanges", "wowsims"], [s.id for s in bis_sources.select()])
+        self.assertEqual(
+            ["leveling", "foreverchanges", "kamilabs", "wowsims"], [s.id for s in bis_sources.select(include_unshipped=True)]
+        )
 
     def test_only_narrows_the_selection_and_rejects_unknown_ids(self):
         self.assertEqual(["kamilabs"], [s.id for s in bis_sources.select(only=["kamilabs"])])

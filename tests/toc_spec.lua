@@ -24,9 +24,10 @@ describe("TOC loader", function()
         it("lists the locale first, then the data files, then the model, and only files that exist", function()
             local files = Toc.files()
             assert.are.equal("ForeverBiS_Locale.lua", files[1])
-            assert.are.equal("ForeverBiS_Data_ForeverChanges.lua", files[2])
-            assert.are.equal("ForeverBiS_Data_Wowsims.lua", files[3])
-            assert.are.equal("ForeverBiS_Model.lua", files[4])
+            assert.are.equal("ForeverBiS_Data_Leveling.lua", files[2])
+            assert.are.equal("ForeverBiS_Data_ForeverChanges.lua", files[3])
+            assert.are.equal("ForeverBiS_Data_Wowsims.lua", files[4])
+            assert.are.equal("ForeverBiS_Model.lua", files[5])
             for _, path in ipairs(files) do
                 assert.is_nil(path:find("KamiLabs", 1, true), "KamiLabs data must not ship yet")
             end
