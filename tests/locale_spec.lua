@@ -11,12 +11,12 @@ describe("Locale", function()
 
     it("returns the English key on an English client", function()
         local L = loadLocale("enUS")
-        assert.are.equal("Clear filters", L["Clear filters"])
+        assert.are.equal("Spec", L["Spec"])
     end)
 
     it("returns the translation when the locale has one", function()
         local L = loadLocale("esES")
-        assert.are.equal("Borrar filtros", L["Clear filters"])
+        assert.are.equal("Espec.", L["Spec"])
     end)
 
     it("falls back to English for a key the locale does not translate", function()
@@ -31,20 +31,21 @@ describe("Locale", function()
 
     it("keeps format placeholders usable", function()
         local L = loadLocale("esES")
-        assert.are.equal("En bolsas: 3", L["In bags: %d"]:format(3))
-        assert.are.equal("In bags: 3", loadLocale("enUS")["In bags: %d"]:format(3))
+        assert.are.equal("Top 3", L["Top %d"]:format(3))
+        assert.are.equal("Auto (Nivel 30)", L["Auto (%s)"]:format("Nivel 30"))
     end)
 
-    it("shows translated UI text but leaves item names from the data alone", function()
+    it("shows translated UI text but leaves slot names from the data alone", function()
         WowStub.load({ class = "rogue", build = "pve" })
-        assert.is_true(WowStub.hasText("Search item, boss or zone"))
+        WowStub.ns.openWindow()
+        assert.is_true(WowStub.hasText("SPEC"))
         WowStub.locale = "esES"
         WowStub.load({ class = "rogue", build = "pve" })
+        WowStub.ns.openWindow()
         local route = WowStub.ns.Settings.route()
-        local shown = ForeverBiSModel.list(route, WowStub.ns.Settings.effectivePhase(route, WowStub.ns.Player.level()))
-        local firstItem = shown.slots[1][2][1][1]
-        assert.is_true(WowStub.hasText(firstItem))
-        assert.is_true(WowStub.hasText("Buscar objeto, jefe o zona"))
+        local firstSlot = ForeverBiSModel.gridSlots(route, "lvl30")[1].slot
+        assert.is_true(WowStub.hasText(firstSlot))
+        assert.is_true(WowStub.hasText("ESPEC."))
     end)
 end)
 
@@ -69,7 +70,7 @@ describe("Locale coverage", function()
     end
 
     it("finds the literal keys in the addon sources", function()
-        assert.is_true(#sourceKeys() > 50)
+        assert.is_true(#sourceKeys() > 15)
     end)
 
     it("has every literal in enUS, which is the English key itself", function()

@@ -143,32 +143,29 @@ function Model.phaseForLevel(route, level)
     return numeric[#numeric] and numeric[#numeric].id or nil
 end
 
---- The bracket a character of the given level is in: the numeric phase with the highest level that is <= the player's
---- level, or the lowest numeric phase below every bracket. An invalid level or a route without numeric phases falls
---- back to phaseForLevel. Nil for an unknown route.
+--- Phase the UI shows: the saved choice when the route has it, otherwise the one for the player's level.
+function Model.effectivePhase(route, savedPhase, level)
+    return Model.availablePhase(route, savedPhase) or Model.phaseForLevel(route, level)
+end
+
+--- Bracket the BiS window shows by default: the numeric phase with the highest level at or below the player's level.
+--- Below every bracket (or with a missing/invalid level) the lowest one wins. A route without numeric phases falls
+--- back to its default phase; nil for an unknown route.
 function Model.bracketForLevel(route, level)
-    if type(level) ~= "number" or level ~= level or level < 1 then
-        return Model.phaseForLevel(route, level)
-    end
     local best, lowest
     for _, phase in ipairs(Model.phases(route)) do
         local phaseLevel = numericLevel(phase)
         if phaseLevel then
-            if phaseLevel <= level and (not best or phaseLevel > best.level) then
-                best = { id = phase.id, level = phaseLevel }
-            end
             if not lowest or phaseLevel < lowest.level then
                 lowest = { id = phase.id, level = phaseLevel }
             end
+            if type(level) == "number" and phaseLevel <= level and (not best or phaseLevel > best.level) then
+                best = { id = phase.id, level = phaseLevel }
+            end
         end
     end
-    local found = best or lowest
-    return found and found.id or Model.phaseForLevel(route, level)
-end
-
---- Phase the UI shows: the saved choice when the route has it, otherwise the one for the player's level.
-function Model.effectivePhase(route, savedPhase, level)
-    return Model.availablePhase(route, savedPhase) or Model.phaseForLevel(route, level)
+    local chosen = best or lowest
+    return chosen and chosen.id or Model.defaultPhase(route)
 end
 
 function Model.label(route)
@@ -217,6 +214,35 @@ function Model.list(route, phaseId)
         slots[#slots + 1] = legacySlot(slot)
     end
     return { title = phase.title, slots = slots }
+end
+
+--- The rows of the BiS window for a route and phase: { { slot, key, items = { { id, name, source }, ... } }, ... } in
+--- list order, with at most `limit` items per slot (6 by default). `key` is the canonical slot key (see slotKey) and
+--- `source` the source text. Empty for a route or phase without data.
+function Model.gridSlots(route, phaseId, limit)
+    limit = limit or 6
+    phaseId = phaseId or Model.defaultPhase(route)
+    local phase = phaseId and asTable(routeEntry(route).phases)[phaseId]
+    local rows = {}
+    for _, slot in ipairs(asTable(asTable(phase).slots)) do
+        if type(slot) == "table" and type(slot.slot) == "string" then
+            local items = {}
+            for _, item in ipairs(asTable(slot.items)) do
+                if #items >= limit then
+                    break
+                end
+                if type(item) == "table" and type(item.name) == "string" then
+                    items[#items + 1] = {
+                        id = type(item.id) == "number" and item.id or nil,
+                        name = item.name,
+                        source = sourceText(item.source),
+                    }
+                end
+            end
+            rows[#rows + 1] = { slot = slot.slot, key = Model.slotKey(slot.slot), items = items }
+        end
+    end
+    return rows
 end
 
 local function sortedRoutes()
@@ -331,125 +357,6 @@ local slotAliases = {
 --- Canonical slot key of a list slot name ("Two-hand weapon" is "Main Hand"); unknown names come back unchanged.
 function Model.slotKey(name)
     return slotAliases[string.lower(name or "")] or name
-end
-
--- Equipment positions that count towards progress, with how many inventory slots each one has.
-local slotCapacity = {
-    ["Head"] = 1,
-    ["Neck"] = 1,
-    ["Shoulder"] = 1,
-    ["Back"] = 1,
-    ["Chest"] = 1,
-    ["Wrist"] = 1,
-    ["Hands"] = 1,
-    ["Waist"] = 1,
-    ["Legs"] = 1,
-    ["Feet"] = 1,
-    ["Finger"] = 2,
-    ["Trinket"] = 2,
-    ["Main Hand"] = 1,
-    ["Off Hand"] = 1,
-    ["Ranged"] = 1,
-}
-
-local function itemIdOf(owned, name)
-    local resolver = owned.itemId
-    local id
-    if type(resolver) == "function" then
-        id = resolver(name)
-    elseif type(ForeverBiSItemIDs) == "table" then
-        id = ForeverBiSItemIDs[name]
-    end
-    return type(id) == "number" and id or nil
-end
-
-local function inBags(owned, id)
-    local count = type(owned.bags) == "function" and owned.bags(id)
-    return type(count) == "number" and count > 0
-end
-
---- Progress of one list slot (one variant) for a position that has `capacity` inventory slots.
---- The weakest equipped rank (nil entries count as infinitely bad) decides which listed items would be upgrades.
-local function evaluateVariant(slot, capacity, owned, equippedIds)
-    local items, rankById = {}, {}
-    for _, item in ipairs(asTable(slot[2])) do
-        if type(item) == "table" and type(item[1]) == "string" then
-            local id = itemIdOf(owned, item[1])
-            local rank = #items + 1
-            items[rank] = { name = item[1], source = type(item[2]) == "string" and item[2] or "", id = id, rank = rank }
-            if id and not rankById[id] then
-                rankById[id] = rank
-            end
-        end
-    end
-    local equippedRanks, equipped = {}, {}
-    for _, id in ipairs(equippedIds) do
-        if type(id) == "number" and not equipped[id] and #equippedRanks < capacity then
-            equipped[id] = true
-            equippedRanks[#equippedRanks + 1] = rankById[id] or math.huge
-        end
-    end
-    local best, weakest = math.huge, #equippedRanks < capacity and math.huge or 0
-    for _, rank in ipairs(equippedRanks) do
-        best = math.min(best, rank)
-        weakest = math.max(weakest, rank)
-    end
-    local target
-    for _, item in ipairs(items) do
-        local isCandidate = item.rank < weakest and not (item.id and equipped[item.id])
-        if isCandidate then
-            local held = item.id and inBags(owned, item.id)
-            if held then
-                target = { name = item.name, rank = item.rank, source = item.source, inBags = true }
-                break
-            end
-            target = target or { name = item.name, rank = item.rank, source = item.source }
-        end
-    end
-    return { rank = best < math.huge and best or nil, target = target, done = target == nil, score = best }
-end
-
---- How close the player is to a list. `list` is the legacy shape; `owned` describes the player without any game call:
----   owned.equipped  table: canonical slot key ("Head", "Finger", "Main Hand", see slotKey) -> array of equipped item ids
----   owned.bags      function(itemId) -> number of copies in bags (optional)
----   owned.itemId    function(itemName) -> item id or nil (optional; defaults to ForeverBiSItemIDs)
---- Positions are the paper-doll ones: every list slot whose name maps to the same key (Main hand, Two-hand weapon,
---- Off hand: shield...) is a variant of one position, counted once, and the variant the player is closest to wins.
---- Returns { total, bis, listed, slots = { { slot, rank, target, done }, ... } }.
-function Model.progress(list, owned)
-    owned = asTable(owned)
-    local equippedBySlot = asTable(owned.equipped)
-    local order, variants = {}, {}
-    for _, slot in ipairs(asTable(asTable(list).slots)) do
-        local key = type(slot) == "table" and type(slot[1]) == "string" and Model.slotKey(slot[1])
-        if key and slotCapacity[key] and type(slot[2]) == "table" and #slot[2] > 0 then
-            if not variants[key] then
-                variants[key] = {}
-                order[#order + 1] = key
-            end
-            variants[key][#variants[key] + 1] = slot
-        end
-    end
-    local result = { total = 0, bis = 0, listed = 0, slots = {} }
-    for _, key in ipairs(order) do
-        local equippedIds = asTable(equippedBySlot[key])
-        local chosen
-        for _, slot in ipairs(variants[key]) do
-            local outcome = evaluateVariant(slot, slotCapacity[key], owned, equippedIds)
-            if not chosen or outcome.score < chosen.score then
-                chosen = outcome
-            end
-        end
-        result.total = result.total + 1
-        if chosen.done then
-            result.bis = result.bis + 1
-        end
-        if chosen.rank then
-            result.listed = result.listed + 1
-        end
-        result.slots[#result.slots + 1] = { slot = key, rank = chosen.rank, target = chosen.target, done = chosen.done }
-    end
-    return result
 end
 
 --- True when the route has a table for its default phase, i.e. Model.list(route) would return a list.

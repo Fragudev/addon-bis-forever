@@ -1,4 +1,5 @@
--- The class, mode (PvE/PvP), build and phase dropdowns with their section labels.
+-- The class, spec and bracket dropdowns, and what the window shows: the player's saved selection, or for a while
+-- the class and spec of an inspected player.
 local _, ns = ...
 
 local Selectors = {}
@@ -10,11 +11,11 @@ local Catalog, Settings, Player, Dropdown, Skin, Theme, L =
 -- Top-left of the selector row, below the window header.
 local ROW_LEFT, ROW_TOP = 20, -64
 
-local classDrop, modeDrop, buildLabel, buildDrop, phaseDrop
+local classDrop, specDrop, bracketDrop, inspectLabel
 -- What the last refresh measured the dropdown widths for.
 local lastSignature
-
-local MODE_LABELS = { pve = "PvE", pvp = "PvP" }
+-- The inspected player while the window shows them: { name, classKey, buildKey, level, phase, worn }.
+local inspected
 
 local function labelOf(phases, phaseId)
     for _, phase in ipairs(phases) do
@@ -25,50 +26,82 @@ local function labelOf(phases, phaseId)
     return phaseId
 end
 
-local function routePhases()
-    local route = Settings.route()
-    return ForeverBiSModel and ForeverBiSModel.phases(route) or {}, route
+--- What the window shows: { route, class, build, phase, autoPhase, savedPhase, worn, inspected }. `worn` is the
+--- inspected player's gear snapshot (nil for the player), `savedPhase` the bracket picked by hand (nil = automatic).
+function Selectors.current()
+    if inspected then
+        local class, build, route = Catalog.resolve(inspected.classKey, inspected.buildKey)
+        local autoPhase = ForeverBiSModel and ForeverBiSModel.bracketForLevel(route, inspected.level)
+        local savedPhase = ForeverBiSModel and ForeverBiSModel.availablePhase(route, inspected.phase)
+        return {
+            route = route,
+            class = class,
+            build = build,
+            phase = savedPhase or autoPhase,
+            autoPhase = autoPhase,
+            savedPhase = savedPhase,
+            worn = inspected.worn,
+            inspected = inspected,
+        }
+    end
+    local route, class, build = Settings.route()
+    local autoPhase = ForeverBiSModel and ForeverBiSModel.bracketForLevel(route, Player.level())
+    local savedPhase = Settings.activePhase(route)
+    return {
+        route = route,
+        class = class,
+        build = build,
+        phase = savedPhase or autoPhase,
+        autoPhase = autoPhase,
+        savedPhase = savedPhase,
+    }
 end
 
---- Every selection change redraws from the top of the list.
+--- Shows an inspected player until the window closes: their class, the spec of their talents (`route`, or their
+--- class's first spec), the bracket for their level and their gear (`worn`, an Inventory.wornBy snapshot).
+function Selectors.inspect(target)
+    local class, build = Catalog.fromRoute(target.route)
+    if not class then
+        class = Catalog.findClass(string.lower(target.classToken or ""))
+        build = Catalog.defaultBuild(class)
+    end
+    inspected =
+        { name = target.name, classKey = class.key, buildKey = build[1], level = target.level, worn = target.worn }
+end
+
+--- The inspected player, or nil while the window shows the player's own selection.
+function Selectors.inspected()
+    return inspected
+end
+
+--- Back to the player's own selection.
+function Selectors.clearInspect()
+    inspected = nil
+end
+
+--- Every selection change redraws the window.
 local function selected()
-    ns.requestRender({ scrollTop = true })
+    ns.requestRender()
 end
 
 local function entry(text, checked, onSelect)
     return { text = text, checked = checked, func = onSelect }
 end
 
+local function listed(class)
+    return Settings.buildHasList(class)
+end
+
 local function classItems()
+    local current = Selectors.current().class
     local items = {}
     for _, class in ipairs(Catalog.classes) do
-        items[#items + 1] = entry(class.label, class.key == Settings.classKey(), function()
-            Settings.chooseClass(class)
-            selected()
-        end)
-    end
-    return items
-end
-
-local function currentBuild()
-    local _, class, build = Settings.route()
-    return class, build
-end
-
---- The spec name a build shows once its mode has its own dropdown; a bare "PvE" build is the damage one.
-local function specText(spec)
-    return spec or L["DPS"]
-end
-
-local function modeItems()
-    local class, build = currentBuild()
-    local currentMode = Catalog.splitBuild(build[2])
-    local items = {}
-    for _, mode in ipairs(Catalog.modes(class, Settings.buildHasList(class))) do
-        items[#items + 1] = entry(L[MODE_LABELS[mode]], mode == currentMode, function()
-            local target = Catalog.buildForMode(class, build, mode, Settings.buildHasList(class))
-            if target then
-                Settings.chooseBuild(target[1])
+        items[#items + 1] = entry(class.label, class.key == current.key, function()
+            if inspected then
+                inspected.classKey = class.key
+                inspected.buildKey = (Catalog.firstListedBuild(class, listed(class)) or Catalog.defaultBuild(class))[1]
+            else
+                Settings.chooseClass(class)
             end
             selected()
         end)
@@ -76,32 +109,54 @@ local function modeItems()
     return items
 end
 
-local function buildItems()
-    local class, build = currentBuild()
+--- The spec name of a build: its label without the PvE/PvP mode.
+local function specText(build)
+    local _, spec = Catalog.splitBuild(build[2])
+    return spec or build[2]
+end
+
+local function specItems()
+    local current = Selectors.current()
     local items = {}
-    for _, choice in ipairs(Catalog.buildsForMode(class, (Catalog.splitBuild(build[2])), Settings.buildHasList(class))) do
-        items[#items + 1] = entry(specText(choice.spec), choice.build[1] == build[1], function()
-            Settings.chooseBuild(choice.build[1])
-            selected()
-        end)
+    for _, build in ipairs(current.class.builds) do
+        if listed(current.class)(build) then
+            items[#items + 1] = entry(specText(build), build[1] == current.build[1], function()
+                if inspected then
+                    inspected.buildKey = build[1]
+                else
+                    Settings.chooseBuild(build[1])
+                end
+                selected()
+            end)
+        end
     end
     return items
 end
 
-local function phaseItems()
-    local phases, route = routePhases()
-    local autoPhase = ForeverBiSModel and ForeverBiSModel.phaseForLevel(route, Player.level())
-    local current = Settings.activePhase(route)
+local function choosePhase(phaseId)
+    if inspected then
+        inspected.phase = phaseId
+    else
+        Settings.choosePhase(phaseId)
+    end
+    selected()
+end
+
+local function bracketItems()
+    local current = Selectors.current()
+    local phases = ForeverBiSModel and ForeverBiSModel.phases(current.route) or {}
     local items = {
-        entry(L["Auto (%s)"]:format(tostring(labelOf(phases, autoPhase))), current == nil, function()
-            Settings.choosePhase(nil)
-            selected()
-        end),
+        entry(
+            L["Auto (%s)"]:format(tostring(labelOf(phases, current.autoPhase))),
+            current.savedPhase == nil,
+            function()
+                choosePhase(nil)
+            end
+        ),
     }
     for _, phase in ipairs(phases) do
-        items[#items + 1] = entry(phase.label or phase.id, phase.id == current, function()
-            Settings.choosePhase(phase.id)
-            selected()
+        items[#items + 1] = entry(phase.label or phase.id, phase.id == current.savedPhase, function()
+            choosePhase(phase.id)
         end)
     end
     return items
@@ -112,74 +167,48 @@ local function createLabel(parent, text)
 end
 
 function Selectors.create(parent)
-    lastSignature = nil
+    lastSignature, inspected = nil, nil
     local classLabel = createLabel(parent, "Class")
     -- Centered on the row of dropdowns, which hangs from ROW_TOP.
     classLabel:SetPoint("LEFT", parent, "TOPLEFT", ROW_LEFT, ROW_TOP - Theme.metrics.input / 2)
-    classDrop = Dropdown.create(parent, "ForeverBiSClassDropDown", { width = 110, maxWidth = 150, items = classItems })
+    classDrop = Dropdown.create(parent, "ForeverBiSClassDropDown", { width = 100, maxWidth = 130, items = classItems })
     classDrop:SetPoint("LEFT", classLabel, "RIGHT", 8, 0)
-    -- No label: "PvE" and "PvP" explain themselves.
-    modeDrop = Dropdown.create(parent, "ForeverBiSModeDropDown", { width = 80, maxWidth = 110, items = modeItems })
-    modeDrop:SetPoint("LEFT", classDrop, "RIGHT", 8, 0)
-    buildLabel = createLabel(parent, "Build")
-    buildLabel:SetPoint("LEFT", modeDrop, "RIGHT", 14, 0)
-    buildDrop = Dropdown.create(parent, "ForeverBiSBuildDropDown", { width = 120, maxWidth = 180, items = buildItems })
-    buildDrop:SetPoint("LEFT", buildLabel, "RIGHT", 8, 0)
-    -- No label: "Auto (Level 30)" explains itself and keeps the selector row short at the minimum width.
-    phaseDrop = Dropdown.create(parent, "ForeverBiSPhaseDropDown", { width = 120, maxWidth = 170, items = phaseItems })
+    local specLabel = createLabel(parent, "Spec")
+    specLabel:SetPoint("LEFT", classDrop, "RIGHT", 14, 0)
+    specDrop = Dropdown.create(parent, "ForeverBiSSpecDropDown", { width = 110, maxWidth = 150, items = specItems })
+    specDrop:SetPoint("LEFT", specLabel, "RIGHT", 8, 0)
+    -- No label: "Auto (Level 30)" explains itself.
+    bracketDrop =
+        Dropdown.create(parent, "ForeverBiSBracketDropDown", { width = 120, maxWidth = 180, items = bracketItems })
+    bracketDrop:SetPoint("LEFT", specDrop, "RIGHT", 8, 0)
+    inspectLabel = Skin.label(parent, 12, "medium", "accent")
+    inspectLabel:SetPoint("TOPLEFT", classLabel, "BOTTOMLEFT", 0, -16)
+    inspectLabel:SetJustifyH("LEFT")
 end
 
-local function showIf(frame, shown)
-    if shown then
-        frame:Show()
-    else
-        frame:Hide()
-    end
-end
-
---- Syncs the dropdown texts with the saved selection. The mode, build and phase dropdowns only show when they
---- offer a choice, and the phase one moves left to sit after the last shown dropdown.
+--- Syncs the dropdown texts with what the window shows.
 function Selectors.refresh()
-    local route, class, build = Settings.route()
-    local mode, spec = Catalog.splitBuild(build[2])
+    local current = Selectors.current()
+    local phases = ForeverBiSModel and ForeverBiSModel.phases(current.route) or {}
     -- Everything the dropdown entries and texts depend on; the widths are measured again only when it changes.
     local signature = table.concat({
-        route,
-        build[1],
-        tostring(Settings.activePhase(route)),
-        tostring(Player.level()),
+        current.route,
+        tostring(current.savedPhase),
+        tostring(current.autoPhase),
+        inspected and inspected.name or "",
     }, "|")
     local changed = signature ~= lastSignature
     lastSignature = signature
-    Dropdown.setText(classDrop, class.label)
-    Dropdown.setText(modeDrop, L[MODE_LABELS[mode]])
-    Dropdown.setText(buildDrop, specText(spec))
+    Dropdown.setText(classDrop, current.class.label)
+    Dropdown.setText(specDrop, specText(current.build))
+    local phaseLabel = labelOf(phases, current.phase)
+    if phaseLabel then
+        Dropdown.setText(bracketDrop, current.savedPhase and phaseLabel or L["Auto (%s)"]:format(phaseLabel))
+    end
     if changed then
         Dropdown.fit(classDrop)
-        Dropdown.fit(modeDrop)
-        Dropdown.fit(buildDrop)
+        Dropdown.fit(specDrop)
+        Dropdown.fit(bracketDrop)
     end
-    local hasModes = #Catalog.modes(class, Settings.buildHasList(class)) > 1
-    local hasBuilds = #Catalog.buildsForMode(class, mode, Settings.buildHasList(class)) > 1
-    showIf(modeDrop, hasModes)
-    showIf(buildLabel, hasBuilds)
-    showIf(buildDrop, hasBuilds)
-    buildLabel:ClearAllPoints()
-    buildLabel:SetPoint("LEFT", hasModes and modeDrop or classDrop, "RIGHT", 14, 0)
-    phaseDrop:ClearAllPoints()
-    phaseDrop:SetPoint("LEFT", hasBuilds and buildDrop or hasModes and modeDrop or classDrop, "RIGHT", 8, 0)
-
-    local phases = ForeverBiSModel and ForeverBiSModel.phases(route) or {}
-    local effective = Settings.effectivePhase(route, Player.level())
-    local effectiveLabel = labelOf(phases, effective)
-    if effectiveLabel then
-        Dropdown.setText(
-            phaseDrop,
-            Settings.activePhase(route) and effectiveLabel or L["Auto (%s)"]:format(effectiveLabel)
-        )
-        if changed then
-            Dropdown.fit(phaseDrop)
-        end
-    end
-    showIf(phaseDrop, #phases > 1)
+    inspectLabel:SetText(inspected and L["Inspecting %s"]:format(inspected.name or "?") or "")
 end

@@ -47,6 +47,15 @@ describe("Alerts", function()
         assert.are.equal(1, #WowStub.sounds)
     end)
 
+    it("follows the bracket the window shows: the highest one at or below the player's level", function()
+        WowStub.player.level = 35
+        local item = ForeverBiSModel.list(WowStub.ns.Settings.route(), "lvl30").slots[1][2][1]
+        local id = ForeverBiSItemIDs[item[1]]
+        WowStub.fire(lootWatcher(), "OnEvent", "CHAT_MSG_LOOT", message("You receive loot: ", id, item[1]))
+        assert.are.equal(1, #printed)
+        assert.is_truthy(printed[1]:find("(Level 30)", 1, true))
+    end)
+
     it("alerts when another group member receives it", function()
         local id, name = bisItem()
         WowStub.fire(lootWatcher(), "OnEvent", "CHAT_MSG_LOOT", message("Bob receives loot: ", id, name))

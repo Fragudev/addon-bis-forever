@@ -114,7 +114,7 @@ describe("Main window header", function()
             _G.ForeverBiSFrame:SetWidth(900)
             WowStub.fire(handle(), "OnMouseDown")
             WowStub.fire(handle(), "OnMouseUp")
-            assert.are.equal(760, WowStub.ns.MainFrame.refresh())
+            assert.are.equal(540, WowStub.ns.MainFrame.refresh())
         end)
 
         it("keeps the size the player dragged to", function()

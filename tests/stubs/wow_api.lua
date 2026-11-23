@@ -253,6 +253,8 @@ function Stub.reset()
     Stub.equipped = {}
     Stub.bagCounts = {}
     Stub.player = { class = "Rogue", token = "ROGUE", level = 30 }
+    -- Other units by unit id: { class, token, level, name, equipped = { [slotID] = itemID } }.
+    Stub.units = {}
     Stub.chat, Stub.insertedLinks, Stub.group, Stub.shift = {}, {}, nil, false
     Stub.sounds, Stub.now, Stub.instance = {}, 0, nil
     Stub.fontFailure = false
@@ -432,7 +434,10 @@ _G.GetItemInfoInstant = function() end
 _G.GetItemInfo = function() end
 _G.GetItemIcon = function() end
 
-_G.GetInventoryItemID = function(_, slotID)
+_G.GetInventoryItemID = function(unit, slotID)
+    if unit ~= "player" then
+        return ((Stub.units[unit] or {}).equipped or {})[slotID]
+    end
     return Stub.equipped[slotID]
 end
 _G.GetItemCount = function(itemID)
@@ -489,8 +494,12 @@ end
 _G.GetCursorPosition = function()
     return 0, 0
 end
-_G.UnitName = function()
-    return "Tester"
+local function otherUnit(unit)
+    return unit ~= nil and unit ~= "player" and Stub.units[unit] or nil
+end
+_G.UnitName = function(unit)
+    local other = otherUnit(unit)
+    return other and other.name or "Tester"
 end
 _G.UnitFullName = function()
     return "Tester", "Realm"
@@ -499,15 +508,16 @@ _G.GetRealmName = function()
     return "Realm"
 end
 -- Configure per test through Stub.player = { class = "Druid", token = "DRUID", level = 12 }.
-_G.UnitClass = function()
-    return Stub.player.class, Stub.player.token
+_G.UnitClass = function(unit)
+    local who = otherUnit(unit) or Stub.player
+    return who.class, who.token
 end
 -- Nil by default so specs see no faction filtering; set Stub.player.faction = "Horde" to opt in.
 _G.UnitFactionGroup = function()
     return Stub.player.faction
 end
-_G.UnitLevel = function()
-    return Stub.player.level
+_G.UnitLevel = function(unit)
+    return (otherUnit(unit) or Stub.player).level
 end
 
 Stub.reset()

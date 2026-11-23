@@ -1,4 +1,5 @@
--- Client events: item data and gear changes redraw the window (debounced); login binds the saved variables.
+-- Client events: item data and gear changes redraw the window (debounced); login binds the saved variables and
+-- detects the spec.
 local _, ns = ...
 
 local Events = {}
@@ -35,11 +36,18 @@ local function onItemEvent(_, event, itemID, success)
     end
 end
 
+--- Selects the player's class and the spec of the talent tree with the most points, while no class or spec was
+--- picked by hand.
+function Events.detectSelection()
+    local classToken = ns.Player.classToken()
+    ns.Settings.applyDetectedRoute(classToken, ns.Player.specRoute(classToken))
+end
+
 -- Saved variables are only reliable once the client has loaded them, which happens after the files execute
--- (the global may even be replaced wholesale), so re-bind and auto-detect the class at PLAYER_LOGIN.
+-- (the global may even be replaced wholesale), so re-bind and auto-detect the spec at PLAYER_LOGIN.
 local function onLogin()
     ns.Settings.migrate() -- binds the saved variables first
-    ns.Settings.applyDetectedClass(ns.Player.classToken())
+    Events.detectSelection()
     ns.MinimapButton.refresh()
     ns.requestRender()
 end
@@ -48,7 +56,6 @@ function Events.install()
     local itemData = CreateFrame("Frame")
     itemData:RegisterEvent("GET_ITEM_INFO_RECEIVED")
     itemData:RegisterEvent("PLAYER_EQUIPMENT_CHANGED")
-    itemData:RegisterEvent("BAG_UPDATE")
     itemData:SetScript("OnEvent", onItemEvent)
 
     local login = CreateFrame("Frame")

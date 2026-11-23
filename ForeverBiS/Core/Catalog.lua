@@ -237,38 +237,19 @@ function Catalog.resolve(classKey, buildKey)
     return class, build, Catalog.routeKey(class, build)
 end
 
--- Paper doll slots: { display name, list slot, column, row, rank among that list slot's items }.
-Catalog.paperDollSlots = {
-    { "Head", "Head", 1, 1 },
-    { "Neck", "Neck", 1, 2 },
-    { "Shoulder", "Shoulder", 1, 3 },
-    { "Back", "Back", 1, 4 },
-    { "Chest", "Chest", 1, 5 },
-    { "Wrist", "Wrist", 1, 8 },
-    { "Hands", "Hands", 2, 1 },
-    { "Waist", "Waist", 2, 2 },
-    { "Legs", "Legs", 2, 3 },
-    { "Feet", "Feet", 2, 4 },
-    { "Finger 1", "Finger", 2, 5, 1 },
-    { "Finger 2", "Finger", 2, 6, 2 },
-    { "Trinket 1", "Trinket", 2, 7, 1 },
-    { "Trinket 2", "Trinket", 2, 8, 2 },
-}
-Catalog.weaponSlots = { "Main Hand", "Off Hand", "Ranged" }
-
---- Every distinct list slot a progress count covers: the paper doll slots, then the weapons.
-function Catalog.progressKeys()
-    local keys, seen = {}, {}
-    for _, slotInfo in ipairs(Catalog.paperDollSlots) do
-        if not seen[slotInfo[2]] then
-            seen[slotInfo[2]] = true
-            keys[#keys + 1] = slotInfo[2]
+--- The class and build a data route ("rogue/combat") belongs to, or nil when no class offers that route.
+function Catalog.fromRoute(route)
+    if type(route) ~= "string" then
+        return nil
+    end
+    for _, class in ipairs(classes) do
+        for _, build in ipairs(class.builds) do
+            if Catalog.routeKey(class, build) == route then
+                return class, build
+            end
         end
     end
-    for _, slotName in ipairs(Catalog.weaponSlots) do
-        keys[#keys + 1] = slotName
-    end
-    return keys
+    return nil
 end
 
 Catalog.refreshBuilds(ForeverBiSBuildLabels, ForeverBiSModel and ForeverBiSModel.routes())

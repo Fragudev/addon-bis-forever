@@ -5,8 +5,8 @@ local _, ns = ...
 local Settings = {}
 ns.Settings = Settings
 
--- Account-wide (ForeverBiSDB): minimap and tooltip options. Per character (ForeverBiSCharDB): class, build, phase,
--- classChosen and collapsed sections.
+-- Account-wide (ForeverBiSDB): minimap and tooltip options. Per character (ForeverBiSCharDB): class, build, phase
+-- and routeChosen (a class or spec picked by hand, which stops talent detection).
 local function account()
     return ForeverBiSDB
 end
@@ -16,20 +16,12 @@ local function char()
 end
 
 -- Selection keys that used to live in the account-wide table.
-local MOVED_KEYS = { "class", "build", "phase", "classChosen", "collapsed" }
+local MOVED_KEYS = { "class", "build", "phase", "classChosen" }
 
 local function minimap()
     local data = account()
     data.minimap = data.minimap or {}
     return data.minimap
-end
-
-local function collapsed()
-    local data = char()
-    if type(data.collapsed) ~= "table" then
-        data.collapsed = {}
-    end
-    return data.collapsed
 end
 
 --- Makes the model read the given source and rebuilds the builds the catalog offers for it.
@@ -62,7 +54,6 @@ function Settings.bind()
     char().class = char().class or "rogue"
     char().build = char().build or "pve"
     minimap()
-    collapsed()
     local saved = account().source
     if not (type(saved) == "string" and activate(saved)) then
         if ForeverBiSModel and not activate(ForeverBiSModel.DEFAULT_SOURCE) then
@@ -116,28 +107,47 @@ function Settings.buildKey()
     return char().build
 end
 
---- A manual class pick also turns off login auto-detection for good.
+--- A manual class pick also turns off talent detection for good.
 function Settings.chooseClass(class)
     char().class, char().build = class.key, ns.Catalog.defaultBuild(class)[1]
     char().classChosen = true
+    char().routeChosen = true
 end
 
+--- A manual spec pick also turns off talent detection for good.
 function Settings.chooseBuild(buildKey)
     char().build = buildKey
+    char().routeChosen = true
 end
 
---- Selects the class the player is playing, unless one was chosen by hand. The build is reset only when the
---- class actually changes, so a build picked by hand survives.
-function Settings.applyDetectedClass(classToken)
-    if char().classChosen == true or type(classToken) ~= "string" then
-        return
+--- Whether the class or spec was picked by hand (the older classChosen flag does not count: it predates specs).
+function Settings.routeChosen()
+    return char().routeChosen == true
+end
+
+--- Selects the class the player is playing and the spec its talents point to (`route`, such as "rogue/combat"),
+--- unless a class or spec was picked by hand. Without a usable route the class's first spec is used, unless that
+--- class is already selected (its saved spec stays). Returns whether it changed the selection.
+function Settings.applyDetectedRoute(classToken, route)
+    if Settings.routeChosen() or type(classToken) ~= "string" then
+        return false
     end
     local key = string.lower(classToken)
-    for _, class in ipairs(ns.Catalog.classes) do
-        if class.key == key and char().class ~= key then
-            char().class, char().build = key, ns.Catalog.defaultBuild(class)[1]
+    local class, build = ns.Catalog.fromRoute(route)
+    if not class or class.key ~= key then
+        class = nil
+        for _, known in ipairs(ns.Catalog.classes) do
+            if known.key == key then
+                class = known
+            end
         end
+        if not class or char().class == class.key then
+            return false
+        end
+        build = ns.Catalog.defaultBuild(class)
     end
+    char().class, char().build = class.key, build[1]
+    return true
 end
 
 --- The id of the source the model reads right now: the saved one when it ships, otherwise the default.
@@ -174,21 +184,13 @@ function Settings.effectivePhase(route, playerLevel)
     return ForeverBiSModel.effectivePhase(route, char().phase, playerLevel)
 end
 
-function Settings.isCollapsed(sectionKey)
-    return collapsed()[sectionKey] == true
-end
-
-function Settings.toggleCollapsed(sectionKey)
-    local sections = collapsed()
-    if sections[sectionKey] then
-        sections[sectionKey] = nil
-    else
-        sections[sectionKey] = true
+--- The bracket the BiS window shows for a route: the saved choice when the route has it, otherwise the highest
+--- bracket at or below the player's level.
+function Settings.bracket(route, playerLevel)
+    if not ForeverBiSModel then
+        return nil
     end
-end
-
-function Settings.expand(sectionKey)
-    collapsed()[sectionKey] = nil
+    return Settings.activePhase(route) or ForeverBiSModel.bracketForLevel(route, playerLevel)
 end
 
 function Settings.minimapAngle()

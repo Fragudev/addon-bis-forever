@@ -27,9 +27,24 @@ local equippedSlotIDs = {
     ["ranged"] = { 18 },
 }
 
---- Whether the item is worn in any of the slots the name covers ("Finger" covers both rings).
-function Inventory.isEquippedInSlot(itemID, slotName)
-    if not itemID or not GetInventoryItemID then
+-- Every inventory slot that holds gear (shirt and tabard included), for a snapshot of what a unit wears.
+local LAST_GEAR_SLOT = 19
+
+--- What `unit` wears right now as { [inventory slot id] = item id }, read once (an inspected unit can change).
+function Inventory.wornBy(unit)
+    local worn = {}
+    if GetInventoryItemID then
+        for inventorySlotID = 1, LAST_GEAR_SLOT do
+            worn[inventorySlotID] = GetInventoryItemID(unit, inventorySlotID)
+        end
+    end
+    return worn
+end
+
+--- Whether the item is worn in any of the slots the name covers ("Finger" covers both rings): by the player, or by
+--- whoever `worn` (a wornBy snapshot) describes.
+function Inventory.isEquippedInSlot(itemID, slotName, worn)
+    if not itemID or not (worn or GetInventoryItemID) then
         return false
     end
     local slotIDs = equippedSlotIDs[string.lower(slotName or "")]
@@ -37,7 +52,8 @@ function Inventory.isEquippedInSlot(itemID, slotName)
         return false
     end
     for _, inventorySlotID in ipairs(slotIDs) do
-        if GetInventoryItemID("player", inventorySlotID) == itemID then
+        local wornID = worn and worn[inventorySlotID] or not worn and GetInventoryItemID("player", inventorySlotID)
+        if wornID == itemID then
             return true
         end
     end
@@ -62,13 +78,4 @@ function Inventory.bagCount(itemID)
         return 0
     end
     return GetItemCount(itemID, false) or 0
-end
-
---- What the player has for the given slot keys, read with the same slot ids and counts the row marks use.
-function Inventory.buildOwned(slotKeys)
-    local equipped = {}
-    for _, key in ipairs(slotKeys) do
-        equipped[key] = Inventory.equippedIds(key)
-    end
-    return { equipped = equipped, bags = Inventory.bagCount, itemId = ns.Items.id }
 end

@@ -6,7 +6,9 @@ ns.MainFrame = MainFrame
 
 local L, Theme, Pixel, Skin, Dropdown = ns.L, ns.Theme, ns.Pixel, ns.Skin, ns.Dropdown
 
-local MIN_WIDTH, MIN_HEIGHT = 760, 520
+-- Wide enough for the selector row and the six-icon grid; tall enough for every slot of a list without scrolling
+-- on most screens (the grid scrolls when the screen is shorter).
+local MIN_WIDTH, MIN_HEIGHT, FIT_HEIGHT = 540, 420, 900
 -- The header shows the same logo as the minimap button.
 local LOGO = "Interface\\AddOns\\" .. ADDON .. "\\ForeverBiSMinimapIcon.tga"
 -- Once the player drags the resize handle the window keeps their size instead of fitting the screen.
@@ -181,6 +183,6 @@ end
 --- Fits the height to the screen unless the player resized it.
 function MainFrame.settle()
     if not userSized then
-        frame:SetHeight(math.min(MIN_HEIGHT, UIParent:GetHeight() - 50))
+        frame:SetHeight(math.min(FIT_HEIGHT, UIParent:GetHeight() - 50))
     end
 end

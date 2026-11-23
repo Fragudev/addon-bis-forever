@@ -74,17 +74,14 @@ describe("Catalog", function()
         assert.are.equal("Retribution PvE", Catalog.findClass("paladin").builds[1][2])
     end)
 
-    it("lists every distinct progress slot once, paper doll first and weapons last", function()
-        local Catalog = loadCatalog()
-        local keys = Catalog.progressKeys()
-        assert.are.equal("Head", keys[1])
-        assert.are.equal("Ranged", keys[#keys])
-        local seen = {}
-        for _, key in ipairs(keys) do
-            assert.is_nil(seen[key], key .. " is listed twice")
-            seen[key] = true
-        end
-        assert.is_true(seen["Finger"] and seen["Trinket"] and seen["Main Hand"])
+    it("finds the class and build of a data route, or nil for a route it does not offer", function()
+        local Catalog = loadCatalog({ ["rogue/combat"] = "Combat", ["rogue/subtlety"] = "Subtlety" })
+        local class, build = Catalog.fromRoute("rogue/subtlety")
+        assert.are.equal("rogue", class.key)
+        assert.are.equal("/subtlety", build[1])
+        assert.is_nil(Catalog.fromRoute("rogue/unknown"))
+        assert.is_nil(Catalog.fromRoute("nobody/combat"))
+        assert.is_nil(Catalog.fromRoute(nil))
     end)
 
     describe("modes", function()

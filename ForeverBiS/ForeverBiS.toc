@@ -12,7 +12,6 @@ ForeverBiS_Model.lua
 Core\Settings.lua
 Core\Catalog.lua
 Core\Sources.lua
-Core\Filters.lua
 Core\Lists.lua
 Core\Share.lua
 Core\Loot.lua
@@ -29,11 +28,7 @@ UI\MainFrame.lua
 UI\ItemWidgets.lua
 UI\Selectors.lua
 UI\Help.lua
-UI\FilterBar.lua
-UI\ItemRows.lua
-UI\ItemList.lua
-UI\PaperDoll.lua
-UI\Progress.lua
+UI\BisGrid.lua
 UI\Minimap.lua
 UI\DungeonNotice.lua
 UI\BisStar.lua

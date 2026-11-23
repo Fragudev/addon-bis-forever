@@ -1,42 +1,13 @@
--- The list the window shows for the saved selection: the route at the phase for the player's level.
-local function shownList()
-    local route = WowStub.ns.Settings.route()
-    return ForeverBiSModel.list(route, WowStub.ns.Settings.effectivePhase(route, WowStub.ns.Player.level()))
-end
+-- The addon as the client loads it: saved selection, login detection, slash command, render requests and the
+-- minimap button. The BiS window itself is covered by bisgrid_spec.
 
-local function firstSlotWithEnchants()
-    for _, slot in ipairs(shownList().slots) do
-        if slot[3] and #slot[3] > 0 then
-            return slot
+local function login()
+    for _, candidate in ipairs(WowStub.frames) do
+        if candidate.events.PLAYER_LOGIN then
+            return WowStub.fire(candidate, "OnEvent", "PLAYER_LOGIN")
         end
     end
-end
-
--- The generated leveling lists carry no enchants: this hook gives the first slot of every druid/feral phase one.
-local function feralEnchants(data)
-    for _, phase in pairs(data.sources.leveling.lists["druid/feral"].phases) do
-        phase.slots[1].enchants = {
-            { effect = "Agility +7", spell = "Enchant Gloves - Agility", source = "Enchanting 210" },
-        }
-    end
-end
-
--- The generated leveling lists are PvE only: this hook adds a PvP copy of druid/feral, so the mode dropdown shows.
-local function feralPvp(data)
-    local lists = data.sources.leveling.lists
-    lists["druid/feral-pvp"] = { label = "Feral PvP", phases = lists["druid/feral"].phases }
-end
-
-local function menuLabels(menu)
-    local labels = {}
-    for _, info in ipairs(menu) do
-        table.insert(labels, info.text)
-    end
-    return labels
-end
-
-local function openMenu(dropdown)
-    return dropdown.getItems()
+    error("no PLAYER_LOGIN watcher")
 end
 
 describe("ForeverBiS", function()
@@ -67,71 +38,38 @@ describe("ForeverBiS", function()
             assert.are.equal("/tank", ForeverBiSCharDB.build)
         end)
 
-        it("names builds by spec only and switches mode keeping the spec", function()
-            WowStub.load({ class = "druid", build = "/feral" }, feralPvp)
-            ForeverBiSFrame:Show()
-            assert.are.same({ "PvE", "PvP" }, menuLabels(openMenu(ForeverBiSModeDropDown)))
-            for _, label in ipairs(menuLabels(openMenu(ForeverBiSBuildDropDown))) do
-                assert.is_nil(label:find("Pv[EP]"), label)
+        it("no longer builds the paper doll, progress bar, filter bar or item list", function()
+            WowStub.load(nil)
+            for _, removed in ipairs({ "PaperDoll", "Progress", "FilterBar", "ItemList", "ItemRows", "Filters" }) do
+                assert.is_nil(WowStub.ns[removed], removed)
             end
-            for _, info in ipairs(openMenu(ForeverBiSModeDropDown)) do
-                if info.text == "PvP" then
-                    info.func()
-                end
-            end
-            assert.are.equal("/feral-pvp", ForeverBiSCharDB.build)
-            assert.are.equal("Feral", ForeverBiSBuildDropDown.menuText)
-        end)
-
-        it("hides the build dropdown when the mode has a single build", function()
-            WowStub.load({ class = "warlock", build = "" }, function(data)
-                local lists = data.sources.leveling.lists
-                lists["warlock/dps-pvp"] = { label = "Damage PvP", phases = lists["warlock/dps"].phases }
-            end)
-            ForeverBiSFrame:Show()
-            assert.is_true(ForeverBiSModeDropDown:IsShown())
-            assert.is_false(ForeverBiSBuildDropDown:IsShown())
-        end)
-
-        it("hides the mode dropdown while every list is PvE, as in the shipped leveling lists", function()
-            WowStub.load({ class = "hunter", build = "" })
-            ForeverBiSFrame:Show()
-            assert.is_false(ForeverBiSModeDropDown:IsShown())
-            assert.is_true(ForeverBiSBuildDropDown:IsShown())
+            assert.is_nil(_G.ForeverBiSModeDropDown)
+            assert.is_nil(_G.ForeverBiSScroll)
         end)
     end)
 
-    describe("class auto-detection", function()
-        local function login()
-            for _, candidate in ipairs(WowStub.frames) do
-                if candidate.events.PLAYER_LOGIN then
-                    return WowStub.fire(candidate, "OnEvent", "PLAYER_LOGIN")
-                end
-            end
-            error("no PLAYER_LOGIN watcher")
-        end
-
+    describe("spec auto-detection on login", function()
         local druid = { class = "Druid", token = "DRUID", level = 20 }
 
-        it("selects the player's class and its default build on login", function()
-            WowStub.load({ class = "rogue", build = "/pvp" }, nil, druid)
+        it("selects the player's class and its first spec without talent points", function()
+            WowStub.load({ class = "rogue", build = "/combat" }, nil, druid)
             WowStub.ns.MainFrame.open()
             login()
             assert.are.equal("druid", ForeverBiSCharDB.class)
-            assert.are_not.equal("/pvp", ForeverBiSCharDB.build)
-            assert.is_nil(ForeverBiSCharDB.classChosen)
+            assert.are.equal("/balance", ForeverBiSCharDB.build)
+            assert.is_nil(ForeverBiSCharDB.routeChosen)
             assert.are.equal("Druid", ForeverBiSClassDropDown.menuText)
         end)
 
-        it("keeps the build when the detected class is already selected", function()
+        it("keeps the spec when the detected class is already selected and no talent says otherwise", function()
             WowStub.load({ class = "druid", build = "/tank" }, nil, druid)
             login()
             assert.are.equal("druid", ForeverBiSCharDB.class)
             assert.are.equal("/tank", ForeverBiSCharDB.build)
         end)
 
-        it("never overrides a class the user chose", function()
-            WowStub.load({ class = "rogue", build = "", classChosen = true }, nil, druid)
+        it("never overrides a class or spec the user chose", function()
+            WowStub.load({ class = "rogue", build = "/combat", routeChosen = true }, nil, druid)
             login()
             assert.are.equal("rogue", ForeverBiSCharDB.class)
         end)
@@ -148,11 +86,11 @@ describe("ForeverBiS", function()
 
         it("uses the saved variables the client loaded after the files ran", function()
             WowStub.load(nil, nil, druid)
-            _G.ForeverBiSDB =
-                { class = "hunter", build = "", classChosen = true, collapsed = { ["hunter:Head"] = true } }
+            _G.ForeverBiSDB = { class = "hunter", build = "", phase = "lvl40" }
+            _G.ForeverBiSCharDB = { routeChosen = true }
             login()
             assert.are.equal("hunter", ForeverBiSCharDB.class)
-            assert.is_true(ForeverBiSCharDB.collapsed["hunter:Head"])
+            assert.are.equal("lvl40", ForeverBiSCharDB.phase)
             assert.is_table(ForeverBiSDB.minimap)
         end)
 
@@ -181,86 +119,43 @@ describe("ForeverBiS", function()
         end)
     end)
 
-    describe("rendering the list", function()
-        it("shows the slot headers and the ranked items of the selected list", function()
-            WowStub.load({ class = "druid", build = "/feral" })
-            local list = shownList()
-            for _, slot in ipairs(list.slots) do
-                assert.is_true(WowStub.hasText(string.upper(slot[1])), "missing header " .. slot[1])
-                assert.is_true(WowStub.hasText(slot[2][1][1]), "missing top item of " .. slot[1])
-            end
-        end)
-
-        it("shows an ENCHANTS block with the effect under a slot that has enchants", function()
-            WowStub.load({ class = "druid", build = "/feral" }, feralEnchants)
-            local slot = assert(firstSlotWithEnchants(), "druid data has no enchants")
-            assert.is_true(WowStub.hasText("ENCHANTS"))
-            assert.is_true(WowStub.hasText(slot[3][1][1]), "missing enchant effect " .. slot[3][1][1])
-            assert.is_true(WowStub.hasText(slot[3][1][2]), "missing enchant spell " .. slot[3][1][2])
-        end)
-
-        it("hides the ENCHANTS block when no slot of the list has enchants", function()
-            WowStub.load({ class = "druid", build = "/feral" }, feralEnchants)
-            -- The UI reads each phase from ForeverBiSData through the model, so strip the enchants at the source.
-            for _, entry in pairs(ForeverBiSData.sources.leveling.lists) do
-                for _, phase in pairs(entry.phases) do
-                    for _, slot in ipairs(phase.slots) do
-                        slot.enchants = nil
-                    end
-                end
-            end
-            ForeverBiSFrame:Show()
-            _G.SlashCmdList["FOREVERBIS"]() -- hide
-            _G.SlashCmdList["FOREVERBIS"]() -- show and re-render
-            assert.is_false(WowStub.hasText("ENCHANTS"))
-        end)
-
-        it("drops the items and enchants of a collapsed slot but keeps its header", function()
-            WowStub.load({ class = "druid", build = "/feral" }, feralEnchants)
-            local slot = assert(firstSlotWithEnchants())
-            WowStub.load({
-                class = "druid",
-                build = "/feral",
-                collapsed = { ["druid/feral:" .. slot[1]] = true },
-            }, feralEnchants)
-            assert.is_true(WowStub.hasText(string.upper(slot[1])))
-            assert.is_false(WowStub.hasText(slot[2][1][1]))
-            assert.is_false(WowStub.hasText(slot[3][1][1]))
-        end)
-    end)
-
-    describe("without bundled data", function()
-        it("shows the empty state instead of a placeholder list", function()
-            WowStub.load(nil, function()
-                _G.ForeverBiSData = nil
-            end)
-            WowStub.fire(ForeverBiSMinimapButton, "OnClick")
-            assert.is_true(WowStub.hasText("does not include the selected BiS list yet"))
-            assert.is_false(WowStub.hasText("ROGUE"))
-        end)
-    end)
-
     describe("render requests", function()
-        it("only scrolls when a jump needs no redraw", function()
+        local function wrapGrid(replacement)
+            local grid = WowStub.ns.BisGrid
+            local refresh = grid.refresh
+            grid.refresh = function(...)
+                return replacement(refresh, ...)
+            end
+            return function()
+                grid.refresh = refresh
+            end
+        end
+
+        it("does no work while the window is hidden and draws on the next show", function()
             WowStub.load(nil)
-            local frames = #WowStub.frames
-            WowStub.ns.requestRender({ jumpTo = "head", redraw = false })
-            assert.are.equal(frames, #WowStub.frames)
+            local draws = 0
+            wrapGrid(function(refresh, ...)
+                draws = draws + 1
+                return refresh(...)
+            end)
+            WowStub.ns.requestRender()
+            assert.are.equal(0, draws)
+            WowStub.ns.MainFrame.open()
+            assert.are.equal(1, draws)
         end)
 
         it("runs a request made while drawing once, after the current draw", function()
             WowStub.load(nil)
             WowStub.ns.MainFrame.open()
-            local itemList = WowStub.ns.ItemList
-            local refresh, draws, requested = itemList.refresh, 0, false
-            itemList.refresh = function(...)
+            local draws, requested = 0, false
+            wrapGrid(function(refresh, ...)
                 draws = draws + 1
                 if not requested then
                     requested = true
                     WowStub.ns.requestRender()
                 end
                 return refresh(...)
-            end
+            end)
             WowStub.ns.requestRender()
             assert.are.equal(2, draws)
         end)
@@ -268,119 +163,16 @@ describe("ForeverBiS", function()
         it("keeps accepting requests after a draw fails", function()
             WowStub.load(nil)
             WowStub.ns.MainFrame.open()
-            local paperDoll = WowStub.ns.PaperDoll
-            local refresh = paperDoll.refresh
-            paperDoll.refresh = function()
+            local restore = wrapGrid(function()
                 error("boom", 0)
-            end
+            end)
             assert.has_error(function()
                 WowStub.ns.requestRender()
             end, "boom")
-            paperDoll.refresh = refresh
+            restore()
             assert.has_no.errors(function()
                 WowStub.ns.requestRender()
             end)
-        end)
-    end)
-
-    describe("selectors", function()
-        it("lists every class in the class dropdown", function()
-            WowStub.load(nil)
-            local menu = openMenu(ForeverBiSClassDropDown)
-            assert.is_true(#menu >= 9)
-            local labels = menuLabels(menu)
-            for _, expected in ipairs({ "Rogue", "Druid", "Warrior", "Mage" }) do
-                assert.is_truthy(table.concat(labels, ","):find(expected, 1, true), expected)
-            end
-        end)
-
-        it("switches class and resets to its default build", function()
-            WowStub.load({ class = "rogue", build = "pvp" })
-            local menu = openMenu(ForeverBiSClassDropDown)
-            for _, info in ipairs(menu) do
-                if info.text == "Druid" then
-                    info.func()
-                end
-            end
-            assert.are.equal("druid", ForeverBiSCharDB.class)
-            assert.is_true(WowStub.hasText(string.upper(shownList().slots[1][1])))
-        end)
-
-        it("switches build within the selected class", function()
-            WowStub.load({ class = "druid", build = "/feral" })
-            local menu = openMenu(ForeverBiSBuildDropDown)
-            assert.is_true(#menu > 1)
-            for _, info in ipairs(menu) do
-                if info.text == "Guardian" then
-                    info.func()
-                end
-            end
-            assert.are.equal("/tank", ForeverBiSCharDB.build)
-        end)
-    end)
-
-    describe("search", function()
-        it("filters the items by name", function()
-            WowStub.load({ class = "druid", build = "/feral" })
-            local slot = shownList().slots[1]
-            local wanted = slot[2][1][1]
-            local other = slot[2][#slot[2]][1]
-            assert.are_not.equal(wanted, other)
-
-            ForeverBiSFrame:Show()
-            local searchBox
-            for _, candidate in ipairs(WowStub.frames) do
-                if candidate.scripts.OnTextChanged then
-                    searchBox = candidate
-                end
-            end
-            searchBox:SetText(string.lower(wanted))
-            WowStub.fire(searchBox, "OnTextChanged")
-
-            assert.is_true(WowStub.hasText(wanted))
-            assert.is_false(WowStub.hasText(other))
-        end)
-
-        it("shows an empty message when nothing matches", function()
-            WowStub.load({ class = "druid", build = "/feral" })
-            WowStub.ns.MainFrame.open()
-            local searchBox
-            for _, candidate in ipairs(WowStub.frames) do
-                if candidate.scripts.OnTextChanged then
-                    searchBox = candidate
-                end
-            end
-            searchBox:SetText("zzzz-no-such-item")
-            WowStub.fire(searchBox, "OnTextChanged")
-            assert.is_true(WowStub.hasText("No items match"))
-        end)
-    end)
-
-    describe("item events", function()
-        local function itemWatcher()
-            for _, candidate in ipairs(WowStub.frames) do
-                if candidate.events.BAG_UPDATE then
-                    return candidate
-                end
-            end
-        end
-
-        it("re-renders on bag changes only while the window is open", function()
-            WowStub.load({ class = "druid", build = "/feral" })
-            local watcher = assert(itemWatcher())
-
-            local draws = 0
-            local refresh = WowStub.ns.ItemList.refresh
-            WowStub.ns.ItemList.refresh = function(...)
-                draws = draws + 1
-                return refresh(...)
-            end
-            WowStub.fire(watcher, "OnEvent", "BAG_UPDATE")
-            assert.are.equal(0, draws, "rendered while hidden")
-
-            ForeverBiSFrame:Show()
-            WowStub.fire(watcher, "OnEvent", "BAG_UPDATE")
-            assert.are.equal(1, draws, "did not re-render while shown")
         end)
     end)
 
@@ -389,6 +181,8 @@ describe("ForeverBiS", function()
             WowStub.load(nil)
             WowStub.fire(ForeverBiSMinimapButton, "OnClick")
             assert.is_true(ForeverBiSFrame:IsShown())
+            WowStub.fire(ForeverBiSMinimapButton, "OnClick")
+            assert.is_false(ForeverBiSFrame:IsShown())
         end)
 
         it("ignores the click that ends a drag", function()

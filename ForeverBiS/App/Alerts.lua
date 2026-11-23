@@ -17,7 +17,7 @@ local function alertFor(message)
         return nil
     end
     local route = Settings.route()
-    local phaseId = Settings.effectivePhase(route, Player.level())
+    local phaseId = Settings.bracket(route, Player.level())
     local entry = Loot.bestEntry(ForeverBiSModel.bisEntries(itemId), route, phaseId)
     if not entry or not Loot.isNewDrop(seen, itemId, GetTime()) then
         return nil

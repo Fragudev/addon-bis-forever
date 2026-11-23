@@ -126,15 +126,17 @@ describe("Adapters", function()
             assert.are.equal(0, ns.Inventory.bagCount(nil))
         end)
 
-        it("reads what is worn per slot key, including both rings", function()
+        it("snapshots what another unit wears and checks a slot against that snapshot", function()
             local ns = load()
-            WowStub.equipped[1], WowStub.equipped[11], WowStub.equipped[12] = 10, 20, 21
-            local owned = ns.Inventory.buildOwned({ "Head", "Finger", "Neck" })
-            assert.are.same({ 10 }, owned.equipped["Head"])
-            assert.are.same({ 20, 21 }, owned.equipped["Finger"])
-            assert.are.same({}, owned.equipped["Neck"])
-            assert.are.equal(ns.Inventory.bagCount, owned.bags)
-            assert.are.equal(ns.Items.id, owned.itemId)
+            WowStub.units.target = { equipped = { [1] = 10, [12] = 21 } }
+            WowStub.equipped[1] = 99
+            local worn = ns.Inventory.wornBy("target")
+            WowStub.units.target.equipped[1] = 11
+            assert.are.equal(10, worn[1])
+            assert.is_true(ns.Inventory.isEquippedInSlot(10, "Head", worn))
+            assert.is_true(ns.Inventory.isEquippedInSlot(21, "Finger", worn))
+            assert.is_false(ns.Inventory.isEquippedInSlot(99, "Head", worn))
+            assert.is_true(ns.Inventory.isEquippedInSlot(99, "Head"))
         end)
     end)
 

@@ -9,7 +9,7 @@ local Settings, Player, Lists, Items, Share, Chat, L =
 
 local function currentView()
     local route = Settings.route()
-    return Lists.view(route, Settings.effectivePhase(route, Player.level()))
+    return Lists.view(route, Settings.bracket(route, Player.level()))
 end
 
 local function rankedParts(slot)
