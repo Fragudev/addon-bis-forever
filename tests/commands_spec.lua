@@ -114,13 +114,40 @@ describe("Commands", function()
             assert.are.equal(0, toggles)
         end)
 
-        it("toggles other classes with /bis tooltip all", function()
+        it("keeps /bis tooltip all as the toggle for other classes, now on by default", function()
             local Commands = loadCommands()
             Commands.dispatch("tooltip all")
-            assert.is_true(ForeverBiSDB.tooltipAllClasses)
-            assert.are.same({ "Forever BiS tooltips: all classes" }, printed)
+            assert.is_false(ForeverBiSDB.tooltipClasses)
+            assert.are.same({ "Forever BiS tooltips: your class only" }, printed)
             Commands.dispatch("tooltip all")
-            assert.are.equal("Forever BiS tooltips: your class only", printed[2])
+            assert.is_true(ForeverBiSDB.tooltipClasses)
+            assert.are.equal("Forever BiS tooltips: all classes", printed[2])
+            assert.is_nil(ForeverBiSDB.tooltip)
+            assert.are.equal(0, toggles)
+        end)
+
+        it("toggles each tooltip block and compact mode by name", function()
+            local Commands = loadCommands()
+            Commands.dispatch("tooltip spec")
+            Commands.dispatch("Tooltip SPECS")
+            Commands.dispatch("tooltip classes")
+            Commands.dispatch("tooltip compact")
+            Commands.dispatch("tooltip compact")
+            assert.are.same({
+                "Forever BiS tooltip, your spec: off",
+                "Forever BiS tooltip, your other specs: off",
+                "Forever BiS tooltip, other classes: off",
+                "Forever BiS tooltip, compact mode: off",
+                "Forever BiS tooltip, compact mode: on",
+            }, printed)
+            assert.are.same({ false, false, false, true }, {
+                ForeverBiSDB.tooltipSpec,
+                ForeverBiSDB.tooltipSpecs,
+                ForeverBiSDB.tooltipClasses,
+                ForeverBiSDB.tooltipCompact,
+            })
+            assert.is_nil(ForeverBiSDB.tooltip)
+            assert.are.equal(0, toggles)
         end)
 
         it("toggles the window for empty and unknown input", function()

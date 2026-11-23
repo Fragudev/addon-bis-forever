@@ -73,16 +73,29 @@ end
 --- in lowercase, and the same text as typed. It returns true when it handled the input; anything else falls through
 --- to toggling the window.
 Commands.handlers = {
-    -- /bis tooltip toggles the BiS tooltip block; /bis tooltip all toggles other classes in it.
+    -- /bis tooltip toggles the whole BiS tooltip block. /bis tooltip spec|specs|classes toggles one part of it (your
+    -- spec, your class's other specs, other classes) and /bis tooltip compact toggles compact mode (hold Shift for the
+    -- full rows). /bis tooltip all is kept as the old name of /bis tooltip classes.
     tooltip = function(argument)
         if argument == "all" then
-            local on = Settings.toggleTooltipAllClasses()
+            local on = Settings.toggleTooltipOption("classes")
             print(L["Forever BiS tooltips: "] .. (on and L["all classes"] or L["your class only"]))
             return true
         end
         if argument == "" then
             local on = Settings.toggleTooltip()
             print(L["Forever BiS tooltips: "] .. (on and L["on"] or L["off"]))
+            return true
+        end
+        local names = {
+            spec = L["your spec"],
+            specs = L["your other specs"],
+            classes = L["other classes"],
+            compact = L["compact mode"],
+        }
+        if names[argument] then
+            local on = Settings.toggleTooltipOption(argument)
+            print(L["Forever BiS tooltip, %s: "]:format(names[argument]) .. (on and L["on"] or L["off"]))
             return true
         end
         return false

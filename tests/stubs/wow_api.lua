@@ -202,7 +202,9 @@ end
 
 --- Loads the tooltip decorator (after the model, like the .toc) with whatever tooltip API globals are currently set.
 function Stub.loadTooltip()
-    Stub.ns = Toc.load({ only = { "ForeverBiS_Locale.lua", "Core/Settings.lua", "ForeverBiS_Tooltip.lua" } })
+    Stub.ns = Toc.load({
+        only = { "ForeverBiS_Locale.lua", "Core/Settings.lua", "Adapters/Player.lua", "ForeverBiS_Tooltip.lua" },
+    })
 end
 
 --- A frame is live while its parent chain still reaches UIParent (cleared content is detached).
@@ -281,7 +283,17 @@ function Stub.reset()
 end
 
 -- Saved values that live account-wide; everything else a spec seeds belongs to the character.
-local ACCOUNT_KEYS = { minimap = true, tooltip = true, tooltipAllClasses = true, source = true, bisStars = true }
+local ACCOUNT_KEYS = {
+    minimap = true,
+    tooltip = true,
+    tooltipAllClasses = true,
+    tooltipSpec = true,
+    tooltipSpecs = true,
+    tooltipClasses = true,
+    tooltipCompact = true,
+    source = true,
+    bisStars = true,
+}
 
 --- Splits a seed table the way the saved variables are split: account-wide keys and per-character keys.
 local function seedSavedVariables(db)

@@ -247,12 +247,40 @@ describe("Settings", function()
             assert.is_true(Settings.toggleTooltip())
         end)
 
-        it("shows other classes only after toggling them on", function()
+        it("turns every tooltip block and compact mode on by default and toggles each one alone", function()
             local Settings = loadSettings({}, {})
-            assert.is_false(Settings.tooltipAllClasses())
-            assert.is_true(Settings.toggleTooltipAllClasses())
-            assert.is_true(Settings.tooltipAllClasses())
-            assert.is_false(Settings.toggleTooltipAllClasses())
+            for _, name in ipairs({ "spec", "specs", "classes", "compact" }) do
+                assert.is_true(Settings.tooltipOption(name))
+            end
+            assert.is_false(Settings.toggleTooltipOption("specs"))
+            assert.is_false(Settings.tooltipOption("specs"))
+            assert.is_false(ForeverBiSDB.tooltipSpecs)
+            assert.is_true(Settings.tooltipOption("spec"))
+            assert.is_true(Settings.tooltipOption("classes"))
+            assert.is_true(Settings.toggleTooltipOption("specs"))
+            assert.is_true(Settings.tooltipOption("specs"))
+        end)
+
+        it("stores each option under its own account-wide key", function()
+            local Settings = loadSettings({}, {})
+            Settings.toggleTooltipOption("spec")
+            Settings.toggleTooltipOption("classes")
+            Settings.toggleTooltipOption("compact")
+            assert.are.same({ false, false, false }, {
+                ForeverBiSDB.tooltipSpec,
+                ForeverBiSDB.tooltipClasses,
+                ForeverBiSDB.tooltipCompact,
+            })
+            assert.is_nil(ForeverBiSCharDB.tooltipSpec)
+        end)
+
+        it("rejects unknown options and reads options before the saved variables exist", function()
+            local Settings = loadSettings(nil, nil)
+            assert.is_true(Settings.tooltipOption("classes"))
+            assert.is_nil(Settings.tooltipOption("bogus"))
+            Settings.bind()
+            assert.is_nil(Settings.toggleTooltipOption("bogus"))
+            assert.is_nil(ForeverBiSDB.bogus)
         end)
     end)
 

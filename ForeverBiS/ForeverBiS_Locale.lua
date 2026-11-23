@@ -69,6 +69,18 @@ local translations = {
         ["on"] = "activo",
         ["x%d"] = "x%d",
         ["your class only"] = "solo tu clase",
+        -- Item tooltip blocks and their /bis tooltip toggles.
+        ["BiS #%d for %s (%s)"] = "BiS nº %d para %s (%s)",
+        ["BiS for %s at %s"] = "BiS para %s en %s",
+        ["Not BiS for %s"] = "No es BiS para %s",
+        ["Also for: %s"] = "También para: %s",
+        ["Your class: %s"] = "Tu clase: %s",
+        ["+%d more - hold Shift"] = "+%d más (mantén Mayús)",
+        ["Forever BiS tooltip, %s: "] = "Tooltip de Forever BiS, %s: ",
+        ["your spec"] = "tu especialización",
+        ["your other specs"] = "tus otras especializaciones",
+        ["other classes"] = "otras clases",
+        ["compact mode"] = "modo compacto",
         -- Dynamic keys: looked up through a variable, so they are not literals in the sources.
         ["Quest"] = "Misión",
         ["Dungeon"] = "Mazmorra",

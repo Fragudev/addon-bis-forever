@@ -227,6 +227,44 @@ describe("ForeverBiSModel", function()
         end)
     end)
 
+    describe("bracketForLevel", function()
+        local function routeWith(phases)
+            local data = { schema = 2, phases = {}, lists = { druid = { phases = {} } } }
+            for _, phase in ipairs(phases) do
+                table.insert(data.phases, phase)
+                data.lists.druid.phases[phase.id] = { title = phase.id, slots = {} }
+            end
+            load(data)
+        end
+
+        local brackets = {
+            { id = "lvl20", label = "Level 20", level = 20 },
+            { id = "lvl40", label = "Level 40", level = 40 },
+            { id = "lvl60", label = "Level 60", level = 60 },
+        }
+
+        it("picks the highest numeric phase at or below the level", function()
+            routeWith(brackets)
+            assert.are.equal("lvl20", ForeverBiSModel.bracketForLevel("druid", 20))
+            assert.are.equal("lvl20", ForeverBiSModel.bracketForLevel("druid", 39))
+            assert.are.equal("lvl40", ForeverBiSModel.bracketForLevel("druid", 40))
+            assert.are.equal("lvl60", ForeverBiSModel.bracketForLevel("druid", 60))
+        end)
+
+        it("uses the lowest numeric phase below every bracket", function()
+            routeWith(brackets)
+            assert.are.equal("lvl20", ForeverBiSModel.bracketForLevel("druid", 12))
+        end)
+
+        it("falls back to phaseForLevel for an invalid level or no numeric phase", function()
+            routeWith(brackets)
+            assert.are.equal("lvl60", ForeverBiSModel.bracketForLevel("druid", nil))
+            routeWith({ { id = "current", label = "Current" } })
+            assert.are.equal("current", ForeverBiSModel.bracketForLevel("druid", 30))
+            assert.is_nil(ForeverBiSModel.bracketForLevel("nobody", 30))
+        end)
+    end)
+
     describe("phaseForLevel", function()
         local function routeWith(phases)
             local data = { schema = 2, phases = {}, lists = { druid = { phases = {} } } }
@@ -366,8 +404,16 @@ describe("ForeverBiSModel", function()
                     slot = "Head",
                     rank = 1,
                     label = "Feral PvE",
+                    source = { kind = "profession", text = "Leatherworking (100)" },
                 },
             }, ForeverBiSModel.bisEntries(11))
+        end)
+
+        it("leaves the source out for rows without a source table", function()
+            local data = fixture()
+            data.lists.druid.phases.lvl30.slots[1].items[1].source = "Leatherworking"
+            load(data)
+            assert.is_nil(ForeverBiSModel.bisEntries(11)[1].source)
         end)
 
         it("derives the class key from the first route segment", function()

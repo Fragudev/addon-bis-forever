@@ -239,14 +239,32 @@ function Settings.toggleDungeonNotice()
     return account().dungeonNotice
 end
 
-function Settings.tooltipAllClasses()
-    return account().tooltipAllClasses == true
+-- Tooltip blocks and compact mode, all on by default, by option name -> account-wide key. The old
+-- tooltipAllClasses key is no longer read: "/bis tooltip all" now toggles the "classes" block.
+local TOOLTIP_OPTIONS = {
+    spec = "tooltipSpec",
+    specs = "tooltipSpecs",
+    classes = "tooltipClasses",
+    compact = "tooltipCompact",
+}
+
+--- True unless the option was turned off; nil for an unknown option. Safe before the saved variables exist.
+function Settings.tooltipOption(name)
+    local key = TOOLTIP_OPTIONS[name]
+    if not key then
+        return nil
+    end
+    return Settings.get(key) ~= false
 end
 
---- Returns the new state.
-function Settings.toggleTooltipAllClasses()
-    account().tooltipAllClasses = account().tooltipAllClasses ~= true
-    return account().tooltipAllClasses
+--- Flips an option and returns its new state, or nil for an unknown option.
+function Settings.toggleTooltipOption(name)
+    local key = TOOLTIP_OPTIONS[name]
+    if not key then
+        return nil
+    end
+    account()[key] = account()[key] == false
+    return account()[key]
 end
 
 -- BiS stars on item buttons (account-wide, on by default). Readable before the saved variables exist.

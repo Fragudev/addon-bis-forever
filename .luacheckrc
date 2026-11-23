@@ -94,14 +94,17 @@ files["ForeverBiS/App/Commands.lua"] = {
 files["ForeverBiS/ForeverBiS_Tooltip.lua"] = {
   read_globals = with({
     "C_Item",
+    "CLASS_ICON_TCOORDS",
+    "CreateFrame",
     "Enum",
     "ForeverBiSFrame",
     "GameTooltip",
     "GetItemInfo",
+    "IsShiftKeyDown",
     "ItemRefTooltip",
+    "LOCALIZED_CLASS_NAMES_MALE",
+    "RAID_CLASS_COLORS",
     "TooltipDataProcessor",
-    "UnitClass",
-    "UnitLevel",
   }),
   globals = { "ForeverBiSTooltip" },
 }

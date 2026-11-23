@@ -143,6 +143,29 @@ function Model.phaseForLevel(route, level)
     return numeric[#numeric] and numeric[#numeric].id or nil
 end
 
+--- The bracket a character of the given level is in: the numeric phase with the highest level that is <= the player's
+--- level, or the lowest numeric phase below every bracket. An invalid level or a route without numeric phases falls
+--- back to phaseForLevel. Nil for an unknown route.
+function Model.bracketForLevel(route, level)
+    if type(level) ~= "number" or level ~= level or level < 1 then
+        return Model.phaseForLevel(route, level)
+    end
+    local best, lowest
+    for _, phase in ipairs(Model.phases(route)) do
+        local phaseLevel = numericLevel(phase)
+        if phaseLevel then
+            if phaseLevel <= level and (not best or phaseLevel > best.level) then
+                best = { id = phase.id, level = phaseLevel }
+            end
+            if not lowest or phaseLevel < lowest.level then
+                lowest = { id = phase.id, level = phaseLevel }
+            end
+        end
+    end
+    local found = best or lowest
+    return found and found.id or Model.phaseForLevel(route, level)
+end
+
 --- Phase the UI shows: the saved choice when the route has it, otherwise the one for the player's level.
 function Model.effectivePhase(route, savedPhase, level)
     return Model.availablePhase(route, savedPhase) or Model.phaseForLevel(route, level)
@@ -243,6 +266,7 @@ local function buildBisIndex()
                                     slot = slotName,
                                     rank = rank,
                                     label = label,
+                                    source = type(item.source) == "table" and item.source or nil,
                                 })
                             end
                         end
@@ -254,7 +278,8 @@ local function buildBisIndex()
     return index
 end
 
---- Every place an item is BiS, as { route, class, phase, phaseLabel, slot, rank, label } in route, phase and slot order.
+--- Every place an item is BiS, as { route, class, phase, phaseLabel, slot, rank, label, source } in route, phase and
+--- slot order. The source is the data row's source table (read-only, shared), or nil when the row has none.
 --- The id is matched first; the exact name only matches data rows that have no id. Unknown items give an empty list.
 function Model.bisEntries(itemId, itemName)
     bisIndex = bisIndex or buildBisIndex()
