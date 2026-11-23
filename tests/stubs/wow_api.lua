@@ -202,7 +202,9 @@ end
 
 --- Loads the tooltip decorator (after the model, like the .toc) with whatever tooltip API globals are currently set.
 function Stub.loadTooltip()
-    Stub.ns = Toc.load({ only = { "ForeverBiS_Locale.lua", "Core/Settings.lua", "ForeverBiS_Tooltip.lua" } })
+    Stub.ns = Toc.load({
+        only = { "ForeverBiS_Locale.lua", "Core/Settings.lua", "Adapters/Player.lua", "ForeverBiS_Tooltip.lua" },
+    })
 end
 
 --- A frame is live while its parent chain still reaches UIParent (cleared content is detached).
@@ -251,6 +253,8 @@ function Stub.reset()
     Stub.equipped = {}
     Stub.bagCounts = {}
     Stub.player = { class = "Rogue", token = "ROGUE", level = 30 }
+    -- Other units by unit id: { class, token, level, name, equipped = { [slotID] = itemID } }.
+    Stub.units = {}
     Stub.chat, Stub.insertedLinks, Stub.group, Stub.shift = {}, {}, nil, false
     Stub.sounds, Stub.now, Stub.instance = {}, 0, nil
     Stub.fontFailure = false
@@ -281,7 +285,17 @@ function Stub.reset()
 end
 
 -- Saved values that live account-wide; everything else a spec seeds belongs to the character.
-local ACCOUNT_KEYS = { minimap = true, tooltip = true, tooltipAllClasses = true, source = true }
+local ACCOUNT_KEYS = {
+    minimap = true,
+    tooltip = true,
+    tooltipAllClasses = true,
+    tooltipSpec = true,
+    tooltipSpecs = true,
+    tooltipClasses = true,
+    tooltipCompact = true,
+    source = true,
+    bisStars = true,
+}
 
 --- Splits a seed table the way the saved variables are split: account-wide keys and per-character keys.
 local function seedSavedVariables(db)
@@ -296,7 +310,7 @@ local function seedSavedVariables(db)
 end
 
 -- The shipped data files, in .toc order; hooks run right after the last one, before the model reads the data.
-Stub.DATA_FILES = { "ForeverBiS_Data_ForeverChanges.lua", "ForeverBiS_Data_Wowsims.lua" }
+Stub.DATA_FILES = { "ForeverBiS_Data_Leveling.lua" }
 Stub.LAST_DATA_FILE = Stub.DATA_FILES[#Stub.DATA_FILES]
 
 --- The data files followed by the given extra .toc paths, ready for loadFiles/Toc.load `only`.
@@ -313,7 +327,7 @@ end
 
 --- Wraps schema 2 contents ({ phases, lists }) into a schema 3 ForeverBiSData holding one source.
 function Stub.wrapSource(contents, id)
-    id = id or "foreverchanges"
+    id = id or "leveling"
     if type(contents) ~= "table" or (contents.schema ~= nil and contents.schema ~= 2) then
         return contents -- not schema 2 contents: passed through untouched
     end
@@ -337,21 +351,10 @@ function Stub.load(db, dataHook, player)
     Stub.reset()
     Stub.player = player or Stub.player
     seedSavedVariables(db)
-    -- Specs start as a returning player who already picked a source, so the picker does not hide the window.
-    -- Seeding `source = false` (any saved value) opts out: Settings sees it as given, and `false` is no choice.
-    local picked = db ~= nil and db.source ~= nil
     Stub.ns = Toc.load({
         after = {
-            [Stub.LAST_DATA_FILE] = function()
-                if dataHook then
-                    dataHook(_G.ForeverBiSData)
-                end
-                local data = _G.ForeverBiSData
-                if picked or type(data) ~= "table" or type(data.sources) ~= "table" then
-                    return
-                end
-                _G.ForeverBiSDB = _G.ForeverBiSDB or {}
-                _G.ForeverBiSDB.source = data.sources.foreverchanges and "foreverchanges" or next(data.sources)
+            [Stub.LAST_DATA_FILE] = dataHook and function()
+                dataHook(_G.ForeverBiSData)
             end,
         },
     })
@@ -431,7 +434,10 @@ _G.GetItemInfoInstant = function() end
 _G.GetItemInfo = function() end
 _G.GetItemIcon = function() end
 
-_G.GetInventoryItemID = function(_, slotID)
+_G.GetInventoryItemID = function(unit, slotID)
+    if unit ~= "player" then
+        return ((Stub.units[unit] or {}).equipped or {})[slotID]
+    end
     return Stub.equipped[slotID]
 end
 _G.GetItemCount = function(itemID)
@@ -488,8 +494,12 @@ end
 _G.GetCursorPosition = function()
     return 0, 0
 end
-_G.UnitName = function()
-    return "Tester"
+local function otherUnit(unit)
+    return unit ~= nil and unit ~= "player" and Stub.units[unit] or nil
+end
+_G.UnitName = function(unit)
+    local other = otherUnit(unit)
+    return other and other.name or "Tester"
 end
 _G.UnitFullName = function()
     return "Tester", "Realm"
@@ -498,15 +508,16 @@ _G.GetRealmName = function()
     return "Realm"
 end
 -- Configure per test through Stub.player = { class = "Druid", token = "DRUID", level = 12 }.
-_G.UnitClass = function()
-    return Stub.player.class, Stub.player.token
+_G.UnitClass = function(unit)
+    local who = otherUnit(unit) or Stub.player
+    return who.class, who.token
 end
 -- Nil by default so specs see no faction filtering; set Stub.player.faction = "Horde" to opt in.
 _G.UnitFactionGroup = function()
     return Stub.player.faction
 end
-_G.UnitLevel = function()
-    return Stub.player.level
+_G.UnitLevel = function(unit)
+    return (otherUnit(unit) or Stub.player).level
 end
 
 Stub.reset()

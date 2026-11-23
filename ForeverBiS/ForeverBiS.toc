@@ -1,19 +1,17 @@
 ## Interface: 16001
 ## AllowLoadGameType: camelot
 ## Title: Forever BiS
-## Notes: Gear lists and item sources from ForeverChanges and wowsims
+## Notes: Leveling BiS lists and item sources generated from wowsims data
 ## Author: Fragudev (fragudev@gmail.com)
 ## Version: beta-0.0.83
 ## SavedVariables: ForeverBiSDB
 ## SavedVariablesPerCharacter: ForeverBiSCharDB
 ForeverBiS_Locale.lua
-ForeverBiS_Data_ForeverChanges.lua
-ForeverBiS_Data_Wowsims.lua
+ForeverBiS_Data_Leveling.lua
 ForeverBiS_Model.lua
 Core\Settings.lua
 Core\Catalog.lua
 Core\Sources.lua
-Core\Filters.lua
 Core\Lists.lua
 Core\Share.lua
 Core\Loot.lua
@@ -30,14 +28,11 @@ UI\MainFrame.lua
 UI\ItemWidgets.lua
 UI\Selectors.lua
 UI\Help.lua
-UI\FilterBar.lua
-UI\ItemRows.lua
-UI\ItemList.lua
-UI\PaperDoll.lua
-UI\Progress.lua
-UI\SourcePicker.lua
+UI\BisGrid.lua
+UI\Inspect.lua
 UI\Minimap.lua
 UI\DungeonNotice.lua
+UI\BisStar.lua
 App\Events.lua
 App\Alerts.lua
 App\Zone.lua

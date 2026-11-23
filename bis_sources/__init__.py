@@ -5,7 +5,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Callable
 
-from . import foreverchanges, kamilabs, wowsims
+from . import kamilabs, leveling
 
 
 @dataclass(frozen=True)
@@ -28,10 +28,9 @@ class Source:
 
 
 SOURCES = (
-    Source("foreverchanges", "ForeverChanges", "ForeverChanges", 1, "https://foreverchanges.pro", True, foreverchanges.fetch),
+    Source("leveling", "Leveling", "ForeverBiS", 0, "https://github.com/wowsims/forever", True, leveling.fetch),
     # Not shipped until the site owner gives permission.
     Source("kamilabs", "KamiLabs", "Kami Labs", 2, "https://kami-labs.fr/en/bis-list-wow-forever/", False, kamilabs.fetch),
-    Source("wowsims", "Wowsims", "wowsims", 3, "https://github.com/wowsims/forever", True, wowsims.fetch),
 )
 
 

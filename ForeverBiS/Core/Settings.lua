@@ -5,8 +5,8 @@ local _, ns = ...
 local Settings = {}
 ns.Settings = Settings
 
--- Account-wide (ForeverBiSDB): minimap and tooltip options. Per character (ForeverBiSCharDB): class, build, phase,
--- classChosen and collapsed sections.
+-- Account-wide (ForeverBiSDB): minimap and tooltip options. Per character (ForeverBiSCharDB): class, build, phase
+-- and routeChosen (a class or spec picked by hand, which stops talent detection).
 local function account()
     return ForeverBiSDB
 end
@@ -16,20 +16,12 @@ local function char()
 end
 
 -- Selection keys that used to live in the account-wide table.
-local MOVED_KEYS = { "class", "build", "phase", "classChosen", "collapsed" }
+local MOVED_KEYS = { "class", "build", "phase", "classChosen" }
 
 local function minimap()
     local data = account()
     data.minimap = data.minimap or {}
     return data.minimap
-end
-
-local function collapsed()
-    local data = char()
-    if type(data.collapsed) ~= "table" then
-        data.collapsed = {}
-    end
-    return data.collapsed
 end
 
 --- Makes the model read the given source and rebuilds the builds the catalog offers for it.
@@ -43,34 +35,6 @@ local function activate(id)
     return true
 end
 
---- Stores the character's build and phase under a source, so a later switch back to it restores them. The class
---- is kept with them: a build means nothing for another class.
-local function remember(sourceId, classKey, buildKey, phaseId)
-    if type(sourceId) ~= "string" then
-        return
-    end
-    local data = char()
-    if type(data.bySource) ~= "table" then
-        data.bySource = {}
-    end
-    data.bySource[sourceId] = { class = classKey, build = buildKey, phase = phaseId }
-end
-
---- The build and phase remembered for a source and class, or nil.
-local function recall(sourceId, classKey)
-    local all = char().bySource
-    local saved = type(all) == "table" and all[sourceId] or nil
-    if type(saved) == "table" and saved.class == classKey and type(saved.build) == "string" then
-        return saved
-    end
-    return nil
-end
-
---- Remembers the current selection under the active source (after an explicit choice).
-local function rememberCurrent()
-    remember(ForeverBiSModel and ForeverBiSModel.activeSource(), char().class, char().build, char().phase)
-end
-
 --- Bind-time tidy-up: unknown saved class and build keys become known ones. Rendering never does this (see
 --- Settings.route), so a build the active source lacks survives until the player chooses another.
 local function normalizeSelection()
@@ -82,15 +46,14 @@ local function normalizeSelection()
 end
 
 --- Creates the saved variables when missing and fills in the tables the addon expects. A saved data source that
---- is available becomes active; one that is not (for example a file the addon no longer ships) falls back to the
---- default source, but the saved id is kept untouched so the choice returns if the source comes back.
+--- is available becomes active; one that is not (ForeverChanges and the wowsims presets, which the addon no longer
+--- ships) falls back to the default source. The saved id is kept untouched, so no saved value is rewritten.
 function Settings.bind()
     ForeverBiSDB = ForeverBiSDB or {}
     ForeverBiSCharDB = ForeverBiSCharDB or {}
     char().class = char().class or "rogue"
     char().build = char().build or "pve"
     minimap()
-    collapsed()
     local saved = account().source
     if not (type(saved) == "string" and activate(saved)) then
         if ForeverBiSModel and not activate(ForeverBiSModel.DEFAULT_SOURCE) then
@@ -144,59 +107,51 @@ function Settings.buildKey()
     return char().build
 end
 
---- A manual class pick also turns off login auto-detection for good.
+--- A manual class pick also turns off talent detection for good.
 function Settings.chooseClass(class)
     char().class, char().build = class.key, ns.Catalog.defaultBuild(class)[1]
     char().classChosen = true
-    rememberCurrent()
+    char().routeChosen = true
 end
 
+--- A manual spec pick also turns off talent detection for good.
 function Settings.chooseBuild(buildKey)
     char().build = buildKey
-    rememberCurrent()
+    char().routeChosen = true
 end
 
---- Selects the class the player is playing, unless one was chosen by hand. The build is reset only when the
---- class actually changes, so a build picked by hand survives.
-function Settings.applyDetectedClass(classToken)
-    if char().classChosen == true or type(classToken) ~= "string" then
-        return
-    end
-    local key = string.lower(classToken)
-    for _, class in ipairs(ns.Catalog.classes) do
-        if class.key == key and char().class ~= key then
-            char().class, char().build = key, ns.Catalog.defaultBuild(class)[1]
-            rememberCurrent()
-        end
-    end
+--- Whether the class or spec was picked by hand. The classChosen flag of older versions counts too, so a class a
+--- player picked before the remake survives the upgrade instead of being replaced by talent detection.
+function Settings.routeChosen()
+    return char().routeChosen == true or char().classChosen == true
 end
 
---- The data source the player picked (account-wide), or nil until they pick one.
-function Settings.source()
-    local data = account()
-    return type(data) == "table" and data.source or nil
-end
-
---- True once the player picked a source that is still available, or when only one source exists.
-function Settings.sourceChosen()
-    if not ForeverBiSModel then
+--- Selects the class the player is playing and the spec its talents point to (`route`, such as "rogue/combat"),
+--- unless a class or spec was picked by hand. Without a usable route the class's first spec is used, unless that
+--- class is already selected (its saved spec stays). Returns whether it changed the selection.
+function Settings.applyDetectedRoute(classToken, route)
+    if Settings.routeChosen() or type(classToken) ~= "string" then
         return false
     end
-    local available = ForeverBiSModel.sources()
-    -- With a single source there is nothing to pick.
-    if #available == 1 then
-        return true
-    end
-    local saved = Settings.source()
-    for _, source in ipairs(available) do
-        if source.id == saved then
-            return true
+    local key = string.lower(classToken)
+    local class, build = ns.Catalog.fromRoute(route)
+    if not class or class.key ~= key then
+        class = nil
+        for _, known in ipairs(ns.Catalog.classes) do
+            if known.key == key then
+                class = known
+            end
         end
+        if not class or char().class == class.key then
+            return false
+        end
+        build = ns.Catalog.defaultBuild(class)
     end
-    return false
+    char().class, char().build = class.key, build[1]
+    return true
 end
 
---- The id of the source the model reads right now (the default one before any choice).
+--- The id of the source the model reads right now: the saved one when it ships, otherwise the default.
 function Settings.activeSource()
     return ForeverBiSModel and ForeverBiSModel.activeSource() or nil
 end
@@ -208,82 +163,23 @@ function Settings.buildHasList(class)
     end
 end
 
---- Saves and activates a data source. Unknown ids are ignored (false). The build and phase in use are remembered
---- for the source being left, and the ones remembered for the new source come back (the character's own, when the
---- source was never used). When the route has no list in the new source the build goes to the class's first build
---- that has a list there (the first build when none does), and a phase the route lacks is dropped.
-function Settings.chooseSource(id)
-    if not ForeverBiSModel or type(id) ~= "string" then
-        return false
-    end
-    local left = ForeverBiSModel.activeSource()
-    local _, class, build = Settings.route()
-    if not activate(id) then
-        return false
-    end
-    remember(left, class.key, build[1], char().phase)
-    account().source = id
-    local saved = recall(id, class.key)
-    if saved then
-        char().build, char().phase = saved.build, saved.phase
-    end
-    local route
-    route, class = Settings.route()
-    if not ForeverBiSModel.list(route) then
-        local first = ns.Catalog.firstListedBuild(class, Settings.buildHasList(class))
-        char().build = (first or ns.Catalog.defaultBuild(class))[1]
-        route = Settings.route()
-    end
-    Settings.dropUnavailablePhase(route)
-    rememberCurrent()
-    return true
-end
-
-function Settings.phase()
-    return char().phase
-end
-
 --- Pass nil for automatic (the phase matching the player's level).
 function Settings.choosePhase(phaseId)
     char().phase = phaseId
-    rememberCurrent()
 end
 
---- The saved phase when the route has it, otherwise nil (automatic). Read-only, unlike dropUnavailablePhase.
+--- The saved phase when the route has it, otherwise nil (automatic). Read-only: an unavailable saved phase is kept.
 function Settings.activePhase(route)
     return ForeverBiSModel and ForeverBiSModel.availablePhase(route, char().phase) or nil
 end
 
---- A saved phase the route does not have falls back to automatic (saved that way; only a source switch calls it).
-function Settings.dropUnavailablePhase(route)
-    if ForeverBiSModel and not ForeverBiSModel.availablePhase(route, char().phase) then
-        char().phase = nil
-    end
-end
-
---- The phase shown for a route: the saved choice when available, otherwise the one matching the level.
-function Settings.effectivePhase(route, playerLevel)
+--- The bracket the BiS window shows for a route: the saved choice when the route has it, otherwise the highest
+--- bracket at or below the player's level.
+function Settings.bracket(route, playerLevel)
     if not ForeverBiSModel then
         return nil
     end
-    return ForeverBiSModel.effectivePhase(route, char().phase, playerLevel)
-end
-
-function Settings.isCollapsed(sectionKey)
-    return collapsed()[sectionKey] == true
-end
-
-function Settings.toggleCollapsed(sectionKey)
-    local sections = collapsed()
-    if sections[sectionKey] then
-        sections[sectionKey] = nil
-    else
-        sections[sectionKey] = true
-    end
-end
-
-function Settings.expand(sectionKey)
-    collapsed()[sectionKey] = nil
+    return Settings.activePhase(route) or ForeverBiSModel.bracketForLevel(route, playerLevel)
 end
 
 function Settings.minimapAngle()
@@ -334,12 +230,42 @@ function Settings.toggleDungeonNotice()
     return account().dungeonNotice
 end
 
-function Settings.tooltipAllClasses()
-    return account().tooltipAllClasses == true
+-- Tooltip blocks and compact mode, all on by default, by option name -> account-wide key. The old
+-- tooltipAllClasses key is no longer read: "/bis tooltip all" now toggles the "classes" block.
+local TOOLTIP_OPTIONS = {
+    spec = "tooltipSpec",
+    specs = "tooltipSpecs",
+    classes = "tooltipClasses",
+    compact = "tooltipCompact",
+}
+
+--- True unless the option was turned off; nil for an unknown option. Safe before the saved variables exist.
+function Settings.tooltipOption(name)
+    local key = TOOLTIP_OPTIONS[name]
+    if not key then
+        return nil
+    end
+    return Settings.get(key) ~= false
+end
+
+--- Flips an option and returns its new state, or nil for an unknown option.
+function Settings.toggleTooltipOption(name)
+    local key = TOOLTIP_OPTIONS[name]
+    if not key then
+        return nil
+    end
+    account()[key] = account()[key] == false
+    return account()[key]
+end
+
+-- BiS stars on item buttons (account-wide, on by default). Readable before the saved variables exist.
+function Settings.bisStarsEnabled()
+    local data = account()
+    return type(data) ~= "table" or data.bisStars ~= false
 end
 
 --- Returns the new state.
-function Settings.toggleTooltipAllClasses()
-    account().tooltipAllClasses = account().tooltipAllClasses ~= true
-    return account().tooltipAllClasses
+function Settings.toggleBisStars()
+    account().bisStars = account().bisStars == false
+    return account().bisStars
 end

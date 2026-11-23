@@ -1,0 +1,26 @@
+{
+  "format": 3,
+  "meta": { "dataset": "loot", "product": "wowf", "clientBuild": "1.0.1", "license": "CC BY 4.0" },
+  "sources": {
+    "npc:1": { "windows": 4, "items": { "100": { "chance": 0.5, "drops": 2, "quantity": 2 } }, "sources": 1 },
+    "npc:1|spell:921": { "windows": 50, "items": { "100": { "chance": 1.0, "drops": 50, "quantity": 50 } }, "sources": 1 },
+    "npc:3|group": { "windows": 30, "items": { "100": { "chance": 0.1, "drops": 3, "quantity": 3 } }, "sources": 1 },
+    "npc:5": { "windows": 3, "items": { "100": { "chance": 1.0, "drops": 3, "quantity": 3 } }, "sources": 1 },
+    "npc:7": { "windows": 6, "items": { "101": { "chance": 0.5, "drops": 3, "quantity": 3 } }, "sources": 1 },
+    "npc:7|group": { "windows": 20, "items": {}, "sources": 2 },
+    "object:55|spell:3365": { "windows": 40, "items": { "100": { "chance": 1.0, "drops": 40, "quantity": 40 } }, "sources": 1 }
+  },
+  "kills": {
+    "npc:1": { "deaths": 4, "empty": 0, "unknown": 0, "sources": 1 }
+  },
+  "rolls": {
+    "encounter:900|threshold:2": {
+      "kills": 5, "unconfirmed": 1, "names": { "enUS": "Boss" },
+      "items": { "101": { "chance": 0.3333, "drops": 2, "quantity": 2 } }, "sources": 1
+    },
+    "encounter:900|threshold:3": {
+      "kills": 4, "unconfirmed": 4, "names": { "enUS": "Boss" },
+      "items": { "102": { "chance": 0.5, "drops": 4, "quantity": 4 } }, "sources": 1
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "meta": { "dataset": "encounters", "product": "wowf", "clientBuild": "1.0.1", "license": "CC BY 4.0" },
+  "encounters": {
+    "900": { "bosses": [7], "kills": 10, "name": "Boss", "pulls": 10, "sources": 1 }
+  }
+}

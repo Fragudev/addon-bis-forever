@@ -21,7 +21,8 @@ describe("Zone notice on entry", function()
 
     before_each(function()
         shown = 0
-        WowStub.load({ class = "rogue", build = "" })
+        -- The rogue leveling lists have their Deadmines and Stockade drops at level 20.
+        WowStub.load({ class = "rogue", build = "", phase = "lvl20" })
         countNotices()
     end)
 

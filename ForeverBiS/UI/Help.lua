@@ -9,31 +9,18 @@ local Theme, Skin, L = ns.Theme, ns.Skin, ns.L
 -- Sections of { heading, lines }; a line is plain text or { text, color token } for a colored one.
 local SECTIONS = {
     {
-        "CLASS & BUILD",
-        { "Choose a class and specialization/build to load its BiS list." },
-    },
-    {
-        "SEARCH & FILTERS",
+        "CLASS, SPEC & BRACKET",
         {
-            "Search by item, boss or zone. The icon buttons filter by source and can be combined; the dungeon list appears with the dungeon button.",
-            "The faction button hides items exclusive to the other faction. The maker button cycles between all items, only items their maker alone can wear, and hiding those items.",
-            "Faction-exclusive items show a faction emblem and colored faction name.",
+            "Choose a class, a spec and a level bracket to see their BiS list. On first open the window picks your class and the spec your talents point to; a class or spec you pick yourself is remembered.",
+            "Auto follows your level: the highest bracket at or below it.",
         },
     },
     {
-        "ITEM LIST",
+        "BIS LIST",
         {
-            "Numbers show rank. Item names use their rarity color; source colors distinguish the source from its location.",
-            "Hover an item icon for its in-game tooltip. Yellow exclamation = quest; finder eye = dungeon/raid; map = world; profession icon = profession.",
-            "Green check = equipped in that slot; gold xN = copies in your bags.",
-            "Click + or - beside a slot heading to collapse or expand its list.",
-        },
-    },
-    {
-        "BEST IN SLOT",
-        {
-            "Click a gear icon to jump to its slot in the list; hover for item and source details.",
-            "Equipped Only filters this panel to BiS items already worn. A BiS ring or trinket counts in either of its two equipment slots.",
+            "Each row is a gear slot with its six best items, ranked Top 1 to Top 6 from left to right.",
+            "Green border = equipped. Hover an icon for its tooltip, with the item's source; shift-click it to link it in chat.",
+            "Inspect a player and click BiS on the inspect window to see their spec's list; their equipped items get a blue border.",
         },
     },
     {
@@ -41,6 +28,13 @@ local SECTIONS = {
         {
             "Drag the title area to move the window; drag its bottom handle to resize vertically. Click the minimap icon to toggle the addon and drag it to reposition.",
             { "Click this help icon to keep the help open or close it.", "warning" },
+        },
+    },
+    {
+        "CREDITS",
+        {
+            "Lists generated from the item database and stat weights of wowsims (https://github.com/wowsims/forever), MIT License.",
+            "Drop chances from EG Link. Data from Efficient Games (https://efficient.games), licensed under CC BY 4.0.",
         },
     },
 }

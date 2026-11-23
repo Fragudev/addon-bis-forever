@@ -221,13 +221,13 @@ describe("ForeverBiSModel", function()
 
         it("rebuilds on demand", function()
             load(fixture())
-            _G.ForeverBiSData.sources.foreverchanges.lists.druid.label = "Changed"
+            _G.ForeverBiSData.sources.leveling.lists.druid.label = "Changed"
             ForeverBiSModel.buildLegacy()
             assert.are.equal("Changed", ForeverBiSBuildLabels.druid)
         end)
     end)
 
-    describe("phaseForLevel", function()
+    describe("bracketForLevel", function()
         local function routeWith(phases)
             local data = { schema = 2, phases = {}, lists = { druid = { phases = {} } } }
             for _, phase in ipairs(phases) do
@@ -237,71 +237,31 @@ describe("ForeverBiSModel", function()
             load(data)
         end
 
-        local threeLevels = {
-            { id = "lvl30", label = "Level 30", level = 30 },
+        local brackets = {
+            { id = "lvl20", label = "Level 20", level = 20 },
             { id = "lvl40", label = "Level 40", level = 40 },
-            { id = "lvl50", label = "Level 50", level = 50 },
+            { id = "lvl60", label = "Level 60", level = 60 },
         }
 
-        it("picks the smallest numeric phase at or above the level", function()
-            routeWith(threeLevels)
-            assert.are.equal("lvl30", ForeverBiSModel.phaseForLevel("druid", 1))
-            assert.are.equal("lvl30", ForeverBiSModel.phaseForLevel("druid", 30))
-            assert.are.equal("lvl40", ForeverBiSModel.phaseForLevel("druid", 31))
-            assert.are.equal("lvl40", ForeverBiSModel.phaseForLevel("druid", 40))
-            assert.are.equal("lvl50", ForeverBiSModel.phaseForLevel("druid", 41))
+        it("picks the highest numeric phase at or below the level", function()
+            routeWith(brackets)
+            assert.are.equal("lvl20", ForeverBiSModel.bracketForLevel("druid", 20))
+            assert.are.equal("lvl20", ForeverBiSModel.bracketForLevel("druid", 39))
+            assert.are.equal("lvl40", ForeverBiSModel.bracketForLevel("druid", 40))
+            assert.are.equal("lvl60", ForeverBiSModel.bracketForLevel("druid", 60))
         end)
 
-        it("returns the last phase above every numeric phase", function()
-            routeWith(threeLevels)
-            assert.are.equal("lvl50", ForeverBiSModel.phaseForLevel("druid", 60))
+        it("uses the lowest numeric phase below every bracket", function()
+            routeWith(brackets)
+            assert.are.equal("lvl20", ForeverBiSModel.bracketForLevel("druid", 12))
         end)
 
-        it("returns the last phase for a nil or invalid level", function()
-            routeWith(threeLevels)
-            assert.are.equal("lvl50", ForeverBiSModel.phaseForLevel("druid", nil))
-            assert.are.equal("lvl50", ForeverBiSModel.phaseForLevel("druid", "30"))
-            assert.are.equal("lvl50", ForeverBiSModel.phaseForLevel("druid", 0))
-            assert.are.equal("lvl50", ForeverBiSModel.phaseForLevel("druid", 0 / 0))
-        end)
-
-        it("treats phases without a level as endgame and sorts them last", function()
-            routeWith({
-                { id = "current", label = "Current" },
-                { id = "lvl30", label = "Level 30", level = 30 },
-                { id = "lvl50", label = "Level 50", level = 50 },
-            })
-            assert.are.equal("lvl30", ForeverBiSModel.phaseForLevel("druid", 12))
-            assert.are.equal("lvl50", ForeverBiSModel.phaseForLevel("druid", 50))
-            assert.are.equal("current", ForeverBiSModel.phaseForLevel("druid", 51))
-            assert.are.equal("current", ForeverBiSModel.phaseForLevel("druid", nil))
-        end)
-
-        it("orders numeric phases by level whatever their declaration order", function()
-            routeWith({
-                { id = "lvl50", label = "Level 50", level = 50 },
-                { id = "lvl30", label = "Level 30", level = 30 },
-            })
-            assert.are.equal("lvl30", ForeverBiSModel.phaseForLevel("druid", 20))
-        end)
-
-        it("returns the only phase of a single-phase route", function()
-            routeWith({ { id = "lvl30", label = "Level 30", level = 30 } })
-            assert.are.equal("lvl30", ForeverBiSModel.phaseForLevel("druid", 10))
-            assert.are.equal("lvl30", ForeverBiSModel.phaseForLevel("druid", 70))
-            assert.are.equal("lvl30", ForeverBiSModel.phaseForLevel("druid", nil))
-        end)
-
-        it("only considers phases the route has data for", function()
-            local data = fixture()
-            data.lists.druid.phases.lvl30 = nil -- the global list still declares lvl30
-            load(data)
-            assert.are.equal("lvl60", ForeverBiSModel.phaseForLevel("druid", 10))
-        end)
-
-        it("returns nil for an unknown route", function()
-            load(fixture())
-            assert.is_nil(ForeverBiSModel.phaseForLevel("nope", 30))
+        it("uses the lowest bracket for an invalid level and the default phase without numeric phases", function()
+            routeWith(brackets)
+            assert.are.equal("lvl20", ForeverBiSModel.bracketForLevel("druid", nil))
+            routeWith({ { id = "current", label = "Current" } })
+            assert.are.equal("current", ForeverBiSModel.bracketForLevel("druid", 30))
+            assert.is_nil(ForeverBiSModel.bracketForLevel("nobody", 30))
         end)
     end)
 
@@ -313,14 +273,6 @@ describe("ForeverBiSModel", function()
             assert.is_nil(ForeverBiSModel.availablePhase("druid", nil))
             assert.is_nil(ForeverBiSModel.availablePhase("druid", 30))
             assert.is_nil(ForeverBiSModel.availablePhase("nope", "lvl30"))
-        end)
-
-        it("falls back to the level-based phase when the saved one is unavailable", function()
-            load(fixture())
-            assert.are.equal("lvl60", ForeverBiSModel.effectivePhase("druid", "lvl60", 10))
-            assert.are.equal("lvl30", ForeverBiSModel.effectivePhase("druid", "gone", 10))
-            assert.are.equal("lvl60", ForeverBiSModel.effectivePhase("druid", nil, 45))
-            assert.is_nil(ForeverBiSModel.effectivePhase("nope", "lvl30", 10))
         end)
     end)
 
@@ -366,8 +318,16 @@ describe("ForeverBiSModel", function()
                     slot = "Head",
                     rank = 1,
                     label = "Feral PvE",
+                    source = { kind = "profession", text = "Leatherworking (100)" },
                 },
             }, ForeverBiSModel.bisEntries(11))
+        end)
+
+        it("leaves the source out for rows without a source table", function()
+            local data = fixture()
+            data.lists.druid.phases.lvl30.slots[1].items[1].source = "Leatherworking"
+            load(data)
+            assert.is_nil(ForeverBiSModel.bisEntries(11)[1].source)
         end)
 
         it("derives the class key from the first route segment", function()
@@ -475,193 +435,99 @@ describe("ForeverBiSModel", function()
         it("rebuilds the index when the legacy data is rebuilt", function()
             load(fixture())
             assert.are.equal(1, #ForeverBiSModel.bisEntries(11))
-            _G.ForeverBiSData.sources.foreverchanges.lists.druid.phases.lvl30.slots[1].items[1].id = 77
+            _G.ForeverBiSData.sources.leveling.lists.druid.phases.lvl30.slots[1].items[1].id = 77
             ForeverBiSModel.buildLegacy()
             assert.are.same({}, ForeverBiSModel.bisEntries(11))
             assert.are.equal(1, #ForeverBiSModel.bisEntries(77))
         end)
     end)
 
-    describe("progress", function()
-        local IDS =
-            { Hood = 1, Cap = 2, Helm = 3, RingA = 11, RingB = 12, RingC = 13, Axe = 21, Maul = 22, Shield = 23 }
-
-        local function items(...)
-            local rows = {}
-            for _, name in ipairs({ ... }) do
-                table.insert(rows, { name, "Source of " .. name })
-            end
-            return rows
-        end
-
-        local function list(slots)
-            return { title = "Test", slots = slots }
-        end
-
-        local function owned(equipped, bags)
-            return {
-                equipped = equipped or {},
-                bags = function(id)
-                    return (bags or {})[id] or 0
-                end,
-                itemId = function(name)
-                    return IDS[name]
-                end,
+    describe("bracketForLevel", function()
+        local function brackets()
+            local data = fixture()
+            data.phases = {
+                { id = "lvl20", label = "Level 20", level = 20 },
+                { id = "lvl30", label = "Level 30", level = 30 },
+                { id = "lvl60", label = "Level 60", level = 60 },
             }
+            data.lists.druid.phases.lvl20 = { title = "Feral at 20", slots = {} }
+            return data
         end
 
-        local headList = list({ { "Head", items("Hood", "Cap", "Helm") } })
+        it("picks the highest bracket at or below the level", function()
+            load(brackets())
+            assert.are.equal("lvl20", ForeverBiSModel.bracketForLevel("druid", 20))
+            assert.are.equal("lvl20", ForeverBiSModel.bracketForLevel("druid", 29))
+            assert.are.equal("lvl30", ForeverBiSModel.bracketForLevel("druid", 30))
+            assert.are.equal("lvl30", ForeverBiSModel.bracketForLevel("druid", 59))
+            assert.are.equal("lvl60", ForeverBiSModel.bracketForLevel("druid", 60))
+        end)
 
-        before_each(function()
+        it("uses the lowest bracket below every bracket or without a level", function()
+            load(brackets())
+            assert.are.equal("lvl20", ForeverBiSModel.bracketForLevel("druid", 1))
+            assert.are.equal("lvl20", ForeverBiSModel.bracketForLevel("druid", nil))
+            assert.are.equal("lvl20", ForeverBiSModel.bracketForLevel("druid", "x"))
+        end)
+
+        it("falls back to the default phase without numeric brackets, and nil for an unknown route", function()
             load(fixture())
+            assert.are.equal("current", ForeverBiSModel.bracketForLevel("mage", 30))
+            assert.is_nil(ForeverBiSModel.bracketForLevel("nobody", 30))
+        end)
+    end)
+
+    describe("gridSlots", function()
+        it("gives each slot of a phase its key and ranked items with id, name and source", function()
+            load(fixture())
+            assert.are.same({
+                {
+                    slot = "Head",
+                    key = "Head",
+                    items = {
+                        { id = 11, name = "Hood", source = "Leatherworking (100)" },
+                        { name = "Cap", source = "Where it comes from" },
+                    },
+                },
+                { slot = "Neck", key = "Neck", items = { { id = 12, name = "Amulet", source = "Quest: A" } } },
+            }, ForeverBiSModel.gridSlots("druid", "lvl30"))
         end)
 
-        it("reports nothing owned: no BiS, nothing listed, the top item as target", function()
-            local result = ForeverBiSModel.progress(headList, owned())
-            assert.are.equal(1, result.total)
-            assert.are.equal(0, result.bis)
-            assert.are.equal(0, result.listed)
-            local slot = result.slots[1]
-            assert.are.equal("Head", slot.slot)
-            assert.is_nil(slot.rank)
-            assert.is_false(slot.done)
-            assert.are.equal("Hood", slot.target.name)
-            assert.are.equal(1, slot.target.rank)
-            assert.are.equal("Source of Hood", slot.target.source)
-            assert.is_falsy(slot.target.inBags)
-        end)
-
-        it("counts a rank 1 item as BiS with no target", function()
-            local result = ForeverBiSModel.progress(headList, owned({ Head = { 1 } }))
-            assert.are.equal(1, result.bis)
-            assert.are.equal(1, result.listed)
-            assert.are.equal(1, result.slots[1].rank)
-            assert.is_true(result.slots[1].done)
-            assert.is_nil(result.slots[1].target)
-        end)
-
-        it("counts a lower rank as listed but not BiS and targets the best missing item", function()
-            local result = ForeverBiSModel.progress(headList, owned({ Head = { 3 } }))
-            assert.are.equal(0, result.bis)
-            assert.are.equal(1, result.listed)
-            assert.are.equal(3, result.slots[1].rank)
-            assert.are.equal("Hood", result.slots[1].target.name)
-        end)
-
-        it("targets an upgrade that sits in the bags and flags it", function()
-            local result = ForeverBiSModel.progress(headList, owned({ Head = { 3 } }, { [2] = 1 }))
-            local target = result.slots[1].target
-            assert.are.equal("Cap", target.name)
-            assert.are.equal(2, target.rank)
-            assert.is_true(target.inBags)
-        end)
-
-        it("ignores bag copies that are not an upgrade", function()
-            local result = ForeverBiSModel.progress(headList, owned({ Head = { 2 } }, { [3] = 1 }))
-            assert.are.equal("Hood", result.slots[1].target.name)
-            assert.is_falsy(result.slots[1].target.inBags)
-        end)
-
-        it("needs the top two items in either order for rings and trinkets", function()
-            local rings = list({ { "Finger", items("RingA", "RingB", "RingC") } })
-            local one = ForeverBiSModel.progress(rings, owned({ Finger = { 11 } }))
-            assert.are.equal(0, one.bis)
-            assert.are.equal(1, one.listed)
-            assert.are.equal("RingB", one.slots[1].target.name)
-
-            local split = ForeverBiSModel.progress(rings, owned({ Finger = { 11, 13 } }))
-            assert.are.equal(0, split.bis)
-            assert.are.equal("RingB", split.slots[1].target.name)
-
-            local forward = ForeverBiSModel.progress(rings, owned({ Finger = { 11, 12 } }))
-            local backward = ForeverBiSModel.progress(rings, owned({ Finger = { 12, 11 } }))
-            assert.are.equal(1, forward.bis)
-            assert.are.equal(1, backward.bis)
-            assert.is_nil(backward.slots[1].target)
-        end)
-
-        it("counts a slot listing a single ring as done once it is worn", function()
-            local result =
-                ForeverBiSModel.progress(list({ { "Trinket", items("RingA") } }), owned({ Trinket = { 11 } }))
-            assert.are.equal(1, result.bis)
-        end)
-
-        it("counts a weapon position once and picks the variant the player is closest to", function()
-            local weapons = list({
-                { "Main hand", items("Axe") },
-                { "Two-hand weapon", items("Maul") },
-                { "Off hand: shield", items("Shield") },
-                { "Off hand: held item", items("Cap") },
-            })
-            local none = ForeverBiSModel.progress(weapons, owned())
-            assert.are.equal(2, none.total)
-            assert.are.equal("Main Hand", none.slots[1].slot)
-            assert.are.equal("Axe", none.slots[1].target.name)
-            assert.are.equal("Off Hand", none.slots[2].slot)
-
-            local twoHander = ForeverBiSModel.progress(weapons, owned({ ["Main Hand"] = { 22 } }))
-            assert.are.equal(1, twoHander.bis)
-            assert.are.equal(1, twoHander.listed)
-            assert.is_true(twoHander.slots[1].done)
-
-            local both = ForeverBiSModel.progress(weapons, owned({ ["Main Hand"] = { 21 }, ["Off Hand"] = { 23 } }))
-            assert.are.equal(2, both.bis)
-        end)
-
-        it("folds Relic into the Ranged position", function()
-            local result = ForeverBiSModel.progress(list({ { "Relic", items("Axe") } }), owned())
-            assert.are.equal("Ranged", result.slots[1].slot)
-        end)
-
-        it("never counts an item without a known id as owned", function()
-            local unknown = list({ { "Head", items("Mystery Hat", "Hood") } })
-            local result = ForeverBiSModel.progress(unknown, owned({ Head = { 1 } }))
-            assert.are.equal(0, result.bis)
-            assert.are.equal(2, result.slots[1].rank)
-            assert.are.equal("Mystery Hat", result.slots[1].target.name)
-            -- Even a bag count cannot make an id-less item count as held.
-            local bagged = ForeverBiSModel.progress(unknown, owned({}, { [0] = 5 }))
-            assert.is_falsy(bagged.slots[1].target.inBags)
-        end)
-
-        it("falls back to ForeverBiSItemIDs when no resolver is injected", function()
-            _G.ForeverBiSItemIDs = { Hood = 1 }
-            local result = ForeverBiSModel.progress(headList, { equipped = { Head = { 1 } } })
-            assert.are.equal(1, result.bis)
-        end)
-
-        it("totals every tracked slot and skips untracked or empty ones", function()
-            local result = ForeverBiSModel.progress(
-                list({
-                    { "Head", items("Hood") },
-                    { "Neck", items("Cap") },
-                    { "Tabard", items("Helm") },
-                    { "Chest", {} },
-                }),
-                owned({ Head = { 1 } })
-            )
-            assert.are.equal(2, result.total)
-            assert.are.equal(1, result.bis)
-            assert.are.equal(1, result.listed)
-            assert.are.equal(2, #result.slots)
-        end)
-
-        it("returns total 0 for missing, empty or malformed lists", function()
-            for _, bad in ipairs({ {}, { slots = {} }, { slots = "x" }, { slots = { 1, "a", { 5 }, { "Head" } } } }) do
-                assert.are.equal(0, ForeverBiSModel.progress(bad, owned()).total)
+        it("keeps at most the limit of items per slot, 6 by default", function()
+            local data = fixture()
+            local items = {}
+            for index = 1, 8 do
+                items[index] = { id = 100 + index, name = "Item " .. index, source = { text = "" } }
             end
-            assert.are.equal(0, ForeverBiSModel.progress(nil, nil).total)
-            assert.are.equal(0, ForeverBiSModel.progress("nope", owned()).total)
+            data.lists.druid.phases.lvl30.slots[1].items = items
+            load(data)
+            assert.are.equal(6, #ForeverBiSModel.gridSlots("druid", "lvl30")[1].items)
+            assert.are.equal(2, #ForeverBiSModel.gridSlots("druid", "lvl30", 2)[1].items)
         end)
 
-        it("tolerates malformed items and owned data", function()
-            local messy = list({ { "Head", { 5, { 7 }, { "Hood" } } } })
-            local result = ForeverBiSModel.progress(messy, { equipped = { Head = { "x", 11 } }, bags = "no" })
-            assert.are.equal(1, result.total)
-            assert.are.equal(1, result.bis)
+        it("canonicalizes weapon slot keys and uses the default phase without one", function()
+            local data = fixture()
+            data.lists.druid.phases.lvl60.slots[1].slot = "Two-hand weapon"
+            load(data)
+            local rows = ForeverBiSModel.gridSlots("druid")
+            assert.are.equal("Two-hand weapon", rows[1].slot)
+            assert.are.equal("Main Hand", rows[1].key)
         end)
 
-        it("normalizes slot names the way the gear panel does", function()
+        it("is empty for an unknown route or phase and skips malformed rows", function()
+            local data = fixture()
+            data.lists.druid.phases.lvl30.slots[3] = { slot = 5 }
+            data.lists.druid.phases.lvl30.slots[1].items[3] = { id = 7 }
+            load(data)
+            assert.are.same({}, ForeverBiSModel.gridSlots("nobody", "lvl30"))
+            assert.are.same({}, ForeverBiSModel.gridSlots("druid", "lvl99"))
+            local rows = ForeverBiSModel.gridSlots("druid", "lvl30")
+            assert.are.equal(2, #rows)
+            assert.are.equal(2, #rows[1].items)
+        end)
+
+        it("normalizes slot names to the equipment position they fill", function()
+            load(fixture())
             assert.are.equal("Main Hand", ForeverBiSModel.slotKey("Two-hand weapon"))
             assert.are.equal("Off Hand", ForeverBiSModel.slotKey("Off hand: shield"))
             assert.are.equal("Tabard", ForeverBiSModel.slotKey("Tabard"))
@@ -689,7 +555,7 @@ describe("ForeverBiSModel", function()
 
         it("exposes the default source id", function()
             loadSources()
-            assert.are.equal("foreverchanges", ForeverBiSModel.DEFAULT_SOURCE)
+            assert.are.equal("leveling", ForeverBiSModel.DEFAULT_SOURCE)
         end)
 
         it("lists the sources ordered by `order`, then by id", function()
@@ -719,10 +585,10 @@ describe("ForeverBiSModel", function()
 
         it("starts on the default source when it exists", function()
             local data = TwoSources.twoSources()
-            data.sources.foreverchanges = data.sources.beta
+            data.sources.leveling = data.sources.beta
             data.sources.beta = nil
             loadSources(data)
-            assert.are.equal("foreverchanges", ForeverBiSModel.activeSource())
+            assert.are.equal("leveling", ForeverBiSModel.activeSource())
         end)
 
         it("tolerates an empty source", function()

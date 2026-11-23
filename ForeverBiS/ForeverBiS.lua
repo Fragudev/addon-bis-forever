@@ -2,49 +2,32 @@
 -- callers of the client API), UI panels draw and never call each other, and App owns events and commands.
 local _, ns = ...
 
-local rendering, queued = false, nil
+local rendering, queued = false, false
 
-local function renderOnce(options)
-    -- Until a source is chosen only the picker shows; the panels behind it are not drawn.
-    if ns.SourcePicker.refresh() then
-        ns.MainFrame.refresh()
-        ns.MainFrame.settle()
-        return
-    end
+local function renderOnce()
     ns.Selectors.refresh()
-    ns.FilterBar.refresh()
-    local route = ns.Settings.route()
-    local view = ns.Lists.view(route, ns.Settings.effectivePhase(route, ns.Player.level()))
-    view.width = ns.MainFrame.refresh()
-    ns.Progress.refresh(view)
-    ns.ItemList.refresh(view, options)
-    ns.PaperDoll.refresh(view)
+    ns.MainFrame.refresh()
+    ns.BisGrid.refresh()
     ns.MainFrame.settle()
 end
 
---- The single way a panel asks for a redraw. Options: scrollTop, jumpTo (a slot key) and redraw (false skips the
---- redraw when only the scroll position changes). Requests made while drawing run once afterwards, and requests
---- made while the window is hidden are dropped: showing the window redraws it.
-function ns.requestRender(options)
-    if options and options.jumpTo and options.redraw == false then
-        ns.ItemList.jumpTo(options.jumpTo)
-        return
-    end
+--- The single way a panel asks for a redraw. Requests made while drawing run once afterwards, and requests made
+--- while the window is hidden are dropped: showing the window redraws it.
+function ns.requestRender()
     -- A hidden window draws nothing: opening it always asks for a redraw, so nothing is lost.
     if not ns.MainFrame.isShown() then
         return
     end
     if rendering then
-        queued = options or {}
+        queued = true
         return
     end
     rendering = true
     local ok, err = pcall(function()
-        renderOnce(options)
+        renderOnce()
         while queued do
-            local nextOptions = queued
-            queued = nil
-            renderOnce(nextOptions)
+            queued = false
+            renderOnce()
         end
     end)
     rendering = false
@@ -53,21 +36,34 @@ function ns.requestRender(options)
     end
 end
 
-ns.toggleWindow = ns.MainFrame.toggle
-ns.openWindow = ns.MainFrame.open
+--- Opening the window detects the spec first, so the first open shows the player's own list.
+function ns.toggleWindow()
+    if not ns.MainFrame.isShown() then
+        ns.Events.detectSelection()
+    end
+    ns.MainFrame.toggle()
+end
+
+function ns.openWindow()
+    if not ns.MainFrame.isShown() then
+        ns.Events.detectSelection()
+    end
+    ns.MainFrame.open()
+end
 
 ns.Settings.bind()
 local frame = ns.MainFrame.create()
 ns.Selectors.create(frame)
 ns.Help.create(frame)
-ns.ItemList.create(frame)
-ns.Progress.create(ns.PaperDoll.create(frame))
-ns.FilterBar.create(frame)
-ns.SourcePicker.create(frame) -- last, so it covers every panel
+ns.BisGrid.create(frame)
+-- Closing the window ends an inspection: the next open shows the player's own list again.
+frame:HookScript("OnHide", ns.Selectors.clearInspect)
 ns.MinimapButton.create()
 ns.DungeonNotice.create()
 ns.Events.install()
 ns.ZoneWatcher.install()
 ns.Alerts.install()
+ns.BisStar.install()
 ns.Commands.install()
+ns.Inspect.install()
 ns.requestRender()
