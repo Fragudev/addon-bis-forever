@@ -19,7 +19,7 @@ end
 
 local function listedCount(dungeonKey)
     local route = WowStub.ns.Settings.route()
-    local view = WowStub.ns.Lists.view(route, WowStub.ns.Settings.effectivePhase(route, 30))
+    local view = WowStub.ns.Lists.view(route, WowStub.ns.Settings.bracket(route, 30))
     return WowStub.ns.Sources.countForDungeon(view.data.slots, dungeonKey)
 end
 
@@ -29,7 +29,8 @@ describe("Zone notice", function()
         _G.print = function(...)
             table.insert(printed, table.concat({ ... }, " "))
         end
-        WowStub.load({ class = "rogue", build = "" })
+        -- The rogue leveling lists have their Deadmines and Stockade drops at level 20.
+        WowStub.load({ class = "rogue", build = "", phase = "lvl20" })
     end)
 
     after_each(function()
@@ -82,8 +83,8 @@ describe("Zone notice", function()
     end)
 
     it("shows nothing in a known dungeon when the selected build lists nothing from it", function()
-        WowStub.load({ class = "rogue", build = "" }, function(data)
-            for _, entry in pairs(data.sources.foreverchanges.lists) do
+        WowStub.load({ class = "rogue", build = "", phase = "lvl20" }, function(data)
+            for _, entry in pairs(data.sources.leveling.lists) do
                 for _, phase in pairs(entry.phases) do
                     phase.slots = {}
                 end
@@ -93,22 +94,13 @@ describe("Zone notice", function()
         assert.is_false(noticeButton():IsShown())
     end)
 
-    it("opens the window with the dungeon filter applied when clicked", function()
+    it("opens the BiS window when clicked", function()
         enter("The Deadmines")
         assert.is_false(ForeverBiSFrame:IsShown())
         WowStub.fire(noticeButton(), "OnClick")
         assert.is_false(noticeButton():IsShown())
         assert.is_true(ForeverBiSFrame:IsShown())
-        assert.is_true(WowStub.ns.Filters.state.sources.dungeon)
-        assert.are.equal("the deadmines", WowStub.ns.Filters.state.dungeon)
-        assert.is_true(WowStub.hasText("Deadmines"))
-    end)
-
-    it("resets earlier filters when it applies the dungeon one", function()
-        WowStub.ns.Filters.setSearch("zzz")
-        enter("The Deadmines")
-        WowStub.fire(noticeButton(), "OnClick")
-        assert.are.equal("", WowStub.ns.Filters.state.search)
+        assert.is_true(WowStub.hasText("Top 1"))
     end)
 
     it("fires on entering the world and on zone changes", function()

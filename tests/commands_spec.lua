@@ -6,8 +6,7 @@ local function loadCommands(db)
     _G.ForeverBiSDB = db or {}
     local ns = WowStub.loadFiles({
         "ForeverBiS_Locale.lua",
-        "ForeverBiS_Data_ForeverChanges.lua",
-        "ForeverBiS_Data_Wowsims.lua",
+        "ForeverBiS_Data_Leveling.lua",
         "ForeverBiS_Model.lua",
         "Core/Settings.lua",
         "Core/Catalog.lua",
@@ -80,13 +79,75 @@ describe("Commands", function()
             assert.are.equal(0, toggles)
         end)
 
-        it("toggles other classes with /bis tooltip all", function()
+        it("toggles the BiS stars with /bis stars and refreshes them", function()
+            local Commands = loadCommands()
+            local refreshes = 0
+            WowStub.ns.BisStar = {
+                refresh = function()
+                    refreshes = refreshes + 1
+                end,
+            }
+            Commands.dispatch("stars")
+            assert.is_false(ForeverBiSDB.bisStars)
+            assert.are.same({ "Forever BiS stars: off" }, printed)
+            Commands.dispatch("Stars")
+            assert.is_true(ForeverBiSDB.bisStars)
+            assert.are.equal("Forever BiS stars: on", printed[2])
+            assert.are.equal(2, refreshes)
+            assert.are.equal(0, toggles)
+        end)
+
+        it("toggles the BiS stars without the overlay loaded", function()
+            local Commands = loadCommands()
+            Commands.dispatch("stars")
+            assert.are.same({ "Forever BiS stars: off" }, printed)
+        end)
+
+        it("keeps /bis dungeon and /bis alerts as they were", function()
+            local Commands = loadCommands()
+            Commands.dispatch("dungeon")
+            Commands.dispatch("alerts")
+            assert.is_false(ForeverBiSDB.dungeonNotice)
+            assert.is_false(ForeverBiSDB.alerts)
+            assert.is_nil(ForeverBiSDB.bisStars)
+            assert.are.same({ "Forever BiS dungeon notice: off", "Forever BiS alerts: off" }, printed)
+            assert.are.equal(0, toggles)
+        end)
+
+        it("keeps /bis tooltip all as the toggle for other classes, now on by default", function()
             local Commands = loadCommands()
             Commands.dispatch("tooltip all")
-            assert.is_true(ForeverBiSDB.tooltipAllClasses)
-            assert.are.same({ "Forever BiS tooltips: all classes" }, printed)
+            assert.is_false(ForeverBiSDB.tooltipClasses)
+            assert.are.same({ "Forever BiS tooltips: your class only" }, printed)
             Commands.dispatch("tooltip all")
-            assert.are.equal("Forever BiS tooltips: your class only", printed[2])
+            assert.is_true(ForeverBiSDB.tooltipClasses)
+            assert.are.equal("Forever BiS tooltips: all classes", printed[2])
+            assert.is_nil(ForeverBiSDB.tooltip)
+            assert.are.equal(0, toggles)
+        end)
+
+        it("toggles each tooltip block and compact mode by name", function()
+            local Commands = loadCommands()
+            Commands.dispatch("tooltip spec")
+            Commands.dispatch("Tooltip SPECS")
+            Commands.dispatch("tooltip classes")
+            Commands.dispatch("tooltip compact")
+            Commands.dispatch("tooltip compact")
+            assert.are.same({
+                "Forever BiS tooltip, your spec: off",
+                "Forever BiS tooltip, your other specs: off",
+                "Forever BiS tooltip, other classes: off",
+                "Forever BiS tooltip, compact mode: off",
+                "Forever BiS tooltip, compact mode: on",
+            }, printed)
+            assert.are.same({ false, false, false, true }, {
+                ForeverBiSDB.tooltipSpec,
+                ForeverBiSDB.tooltipSpecs,
+                ForeverBiSDB.tooltipClasses,
+                ForeverBiSDB.tooltipCompact,
+            })
+            assert.is_nil(ForeverBiSDB.tooltip)
+            assert.are.equal(0, toggles)
         end)
 
         it("toggles the window for empty and unknown input", function()

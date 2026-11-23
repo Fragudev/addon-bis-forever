@@ -1,0 +1,9 @@
+{
+  "format": 3,
+  "meta": { "dataset": "loot", "product": "wowf", "clientBuild": "1.0.2", "license": "CC BY 4.0" },
+  "sources": {
+    "npc:1|quest|group": { "windows": 8, "items": { "100": { "chance": 0.25, "drops": 2, "quantity": 2 } }, "sources": 1 }
+  },
+  "kills": {},
+  "rolls": {}
+}

@@ -14,17 +14,6 @@ local function helpPopover()
     end)[1]
 end
 
---- True when some edge of the frame's border is the accent color.
-local function hasAccentEdge(frame)
-    for _, region in ipairs(frame.regions) do
-        local color = region.colorTexture
-        if color and math.abs(color[1] - 0x3F / 255) < 0.001 and color[3] == 1 then
-            return true
-        end
-    end
-    return false
-end
-
 describe("Help popover", function()
     before_each(function()
         WowStub.load({ class = "druid", build = "" })
@@ -32,7 +21,9 @@ describe("Help popover", function()
 
     it("lists the sections and starts hidden", function()
         assert.is_false(helpPopover():IsShown())
-        assert.is_true(WowStub.hasText("CLASS & BUILD"))
+        assert.is_true(WowStub.hasText("CLASS, SPEC & BRACKET"))
+        assert.is_true(WowStub.hasText("BIS LIST"))
+        assert.is_false(WowStub.hasText("SEARCH & FILTERS"))
         assert.is_true(WowStub.hasText("BiS Forever Help"))
     end)
 
@@ -58,33 +49,6 @@ describe("Help popover", function()
         WowStub.fire(helpButton(), "OnEnter")
         WowStub.fire(helpButton(), "OnLeave")
         assert.is_false(helpPopover():IsShown())
-    end)
-end)
-
-describe("Gear panel look", function()
-    before_each(function()
-        WowStub.load({ class = "druid", build = "" })
-    end)
-
-    it("shows Equipped Only as a toggle with the selected state", function()
-        local toggle = WowStub.find("Button", function(button)
-            return button.text == "Equipped Only: Off"
-        end)[1]
-        assert.is_false(toggle.skin.active)
-        click(toggle)
-        assert.are.equal("Equipped Only: On", toggle.text)
-        assert.is_true(toggle.skin.active)
-    end)
-
-    it("turns a slot border accent while hovered and restores it after", function()
-        local icon = WowStub.find("Button", function(button)
-            return button.width == 32 and button.height == 32 and button.scripts.OnClick and not button.skin
-        end)[1]
-        assert.is_false(hasAccentEdge(icon))
-        WowStub.fireHooks(icon, "OnEnter")
-        assert.is_true(hasAccentEdge(icon))
-        WowStub.fireHooks(icon, "OnLeave")
-        assert.is_false(hasAccentEdge(icon))
     end)
 end)
 

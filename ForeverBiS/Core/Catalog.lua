@@ -171,50 +171,6 @@ function Catalog.splitBuild(label)
     return mode, spec ~= "" and spec or nil
 end
 
---- The modes a class has builds for, PvE first: a subset of { "pve", "pvp" }. With a `listed(build)` predicate
---- only the builds it accepts count.
-function Catalog.modes(class, listed)
-    local found = {}
-    for _, build in ipairs(class.builds) do
-        if not listed or listed(build) then
-            found[(Catalog.splitBuild(build[2]))] = true
-        end
-    end
-    local modes = {}
-    for _, mode in ipairs({ "pve", "pvp" }) do
-        if found[mode] then
-            modes[#modes + 1] = mode
-        end
-    end
-    return modes
-end
-
---- The builds of a class in one mode, in catalog order, each as { build = build, spec = spec name or nil }.
---- With a `listed(build)` predicate only the builds it accepts are returned.
-function Catalog.buildsForMode(class, mode, listed)
-    local builds = {}
-    for _, build in ipairs(class.builds) do
-        local buildMode, spec = Catalog.splitBuild(build[2])
-        if buildMode == mode and (not listed or listed(build)) then
-            builds[#builds + 1] = { build = build, spec = spec }
-        end
-    end
-    return builds
-end
-
---- The build to switch to when the mode changes: the same spec in the new mode when there is one, else the
---- first build of that mode. Returns nil when the class has no build in that mode.
-function Catalog.buildForMode(class, current, mode, listed)
-    local _, currentSpec = Catalog.splitBuild(current[2])
-    local builds = Catalog.buildsForMode(class, mode, listed)
-    for _, entry in ipairs(builds) do
-        if entry.spec == currentSpec then
-            return entry.build
-        end
-    end
-    return builds[1] and builds[1].build
-end
-
 --- The first build of a class accepted by `listed(build)`, or nil when none is.
 function Catalog.firstListedBuild(class, listed)
     for _, build in ipairs(class.builds) do
@@ -237,38 +193,19 @@ function Catalog.resolve(classKey, buildKey)
     return class, build, Catalog.routeKey(class, build)
 end
 
--- Paper doll slots: { display name, list slot, column, row, rank among that list slot's items }.
-Catalog.paperDollSlots = {
-    { "Head", "Head", 1, 1 },
-    { "Neck", "Neck", 1, 2 },
-    { "Shoulder", "Shoulder", 1, 3 },
-    { "Back", "Back", 1, 4 },
-    { "Chest", "Chest", 1, 5 },
-    { "Wrist", "Wrist", 1, 8 },
-    { "Hands", "Hands", 2, 1 },
-    { "Waist", "Waist", 2, 2 },
-    { "Legs", "Legs", 2, 3 },
-    { "Feet", "Feet", 2, 4 },
-    { "Finger 1", "Finger", 2, 5, 1 },
-    { "Finger 2", "Finger", 2, 6, 2 },
-    { "Trinket 1", "Trinket", 2, 7, 1 },
-    { "Trinket 2", "Trinket", 2, 8, 2 },
-}
-Catalog.weaponSlots = { "Main Hand", "Off Hand", "Ranged" }
-
---- Every distinct list slot a progress count covers: the paper doll slots, then the weapons.
-function Catalog.progressKeys()
-    local keys, seen = {}, {}
-    for _, slotInfo in ipairs(Catalog.paperDollSlots) do
-        if not seen[slotInfo[2]] then
-            seen[slotInfo[2]] = true
-            keys[#keys + 1] = slotInfo[2]
+--- The class and build a data route ("rogue/combat") belongs to, or nil when no class offers that route.
+function Catalog.fromRoute(route)
+    if type(route) ~= "string" then
+        return nil
+    end
+    for _, class in ipairs(classes) do
+        for _, build in ipairs(class.builds) do
+            if Catalog.routeKey(class, build) == route then
+                return class, build
+            end
         end
     end
-    for _, slotName in ipairs(Catalog.weaponSlots) do
-        keys[#keys + 1] = slotName
-    end
-    return keys
+    return nil
 end
 
 Catalog.refreshBuilds(ForeverBiSBuildLabels, ForeverBiSModel and ForeverBiSModel.routes())

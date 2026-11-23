@@ -1,3 +1,5 @@
+> **Note:** the window this plan restyles (paper doll, filter bar, item list) was replaced by the BiS grid in the remake; the theme layer (`Theme`, `Pixel`, `Skin`, `Dropdown`) is still in use.
+
 # UI redesign plan
 
 **Status:** implemented on branch `feat/ui-redesign` (sections 3 and 4, except as noted below); pending the in-game check listed in section 6.

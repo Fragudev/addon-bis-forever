@@ -64,10 +64,27 @@ files["ForeverBiS/Adapters/Chat.lua"] = {
 }
 files["ForeverBiS/Adapters/Zone.lua"] = { read_globals = with({ "GetInstanceInfo" }) }
 files["ForeverBiS/Adapters/Player.lua"] = {
-  read_globals = with({ "GetRealmName", "UnitClass", "UnitFactionGroup", "UnitFullName", "UnitLevel", "UnitName" }),
+  read_globals = with({ "GetRealmName", "GetTalentTabInfo", "UnitClass", "UnitFactionGroup", "UnitFullName", "UnitLevel", "UnitName" }),
 }
 
 files["ForeverBiS/UI/"] = { read_globals = with(widget_api, { "Minimap", "GetCursorPosition", "RAID_CLASS_COLORS", "GetPhysicalScreenSize", "C_AddOns", "GetAddOnMetadata", "C_Timer" }) }
+
+-- The BiS star overlay hooks the client's bag, loot and quest frames directly, like the tooltip decorator.
+files["ForeverBiS/UI/BisStar.lua"] = {
+  read_globals = with(widget_api, {
+    "C_Container",
+    "GetContainerItemID",
+    "GetContainerItemLink",
+    "GetLootSlotLink",
+    "GetQuestItemLink",
+    "GetQuestLogItemLink",
+    "hooksecurefunc",
+  }),
+}
+-- The inspect button reads the inspected unit directly: the Player adapter only knows the player.
+files["ForeverBiS/UI/Inspect.lua"] = {
+  read_globals = with(widget_api, { "InspectFrame", "UnitClass", "UnitLevel", "UnitName" }),
+}
 
 files["ForeverBiS/App/Events.lua"] = { read_globals = with(widget_api, { "C_Timer" }) }
 files["ForeverBiS/App/Zone.lua"] = { read_globals = with(widget_api, { "C_Timer", "GetTime" }) }
@@ -81,14 +98,17 @@ files["ForeverBiS/App/Commands.lua"] = {
 files["ForeverBiS/ForeverBiS_Tooltip.lua"] = {
   read_globals = with({
     "C_Item",
+    "CLASS_ICON_TCOORDS",
+    "CreateFrame",
     "Enum",
     "ForeverBiSFrame",
     "GameTooltip",
     "GetItemInfo",
+    "IsShiftKeyDown",
     "ItemRefTooltip",
+    "LOCALIZED_CLASS_NAMES_MALE",
+    "RAID_CLASS_COLORS",
     "TooltipDataProcessor",
-    "UnitClass",
-    "UnitLevel",
   }),
   globals = { "ForeverBiSTooltip" },
 }
@@ -102,20 +122,10 @@ files["tests/"] = {
     "SlashCmdList",
     "ForeverBiSFrame",
     "ForeverBiSDungeonNotice",
-    "ForeverBiSSourcePicker",
-    "ForeverBiSSourcePickerDropDown",
-    "ForeverBiSSourceDropDown",
     "ForeverBiSClassDropDown",
-    "ForeverBiSBuildDropDown",
-    "ForeverBiSModeDropDown",
-    "ForeverBiSDungeonFilter",
-    "ForeverBiSFilterquest",
-    "ForeverBiSFilterdungeon",
-    "ForeverBiSFilterworld",
-    "ForeverBiSFilterprofession",
-    "ForeverBiSFilterFaction",
-    "ForeverBiSFilterMaker",
-    "ForeverBiSPhaseDropDown",
+    "ForeverBiSSpecDropDown",
+    "ForeverBiSBracketDropDown",
+    "ForeverBiSInspectButton",
     "ForeverBiSDropdownList",
   },
 }
