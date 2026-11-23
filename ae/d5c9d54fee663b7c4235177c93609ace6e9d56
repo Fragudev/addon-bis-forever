@@ -1,0 +1,35 @@
+ForeverBiS/ForeverBiS.toc
+  s_c39abb567c22bd::t_e2401280f7d11f 10
+ForeverBiS/ForeverBiS_Data_Leveling.lua
+  s_c39abb567c22bd::t_96840581a1f6df 1-18913
+bis_sources/__init__.py
+  s_c39abb567c22bd::t_5d16c01f4c307c 8,31
+docs/data-schema-v3.md
+  s_c39abb567c22bd::t_66b449e3f442ce 7,62,67
+tests/data_spec.lua
+  s_c39abb567c22bd::t_fd1d6e83469e68 43,46
+tests/python/test_leveling.py
+  s_c39abb567c22bd::t_1aed3af76fd6f1 1-197
+tests/python/test_updater.py
+  s_c39abb567c22bd::t_7ce7badbcd2e90 539,546,549-552
+tests/toc_spec.lua
+  s_c39abb567c22bd::t_76219abcea5375 27-30
+bis_sources/leveling.py
+  s_c39abb567c22bd::t_f2e9fdd8e2963c 1-345
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.6",
+  "base_commit_sha": "aed5c9d54fee663b7c4235177c93609ace6e9d56",
+  "prompts": {},
+  "sessions": {
+    "s_c39abb567c22bd": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ffa6e9de-a2ae-47e1-9992-09e2c55f0ae5",
+        "model": "unknown"
+      },
+      "human_author": "Francis Gutiérrez <fragudev@gmail.com>"
+    }
+  }
+}
