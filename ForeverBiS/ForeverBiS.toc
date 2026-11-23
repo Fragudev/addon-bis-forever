@@ -36,6 +36,7 @@ UI\PaperDoll.lua
 UI\Progress.lua
 UI\Minimap.lua
 UI\DungeonNotice.lua
+UI\BisStar.lua
 App\Events.lua
 App\Alerts.lua
 App\Zone.lua

@@ -48,6 +48,7 @@ local translations = {
         ["Forever BiS dungeon notice: "] = "Aviso de mazmorra de Forever BiS: ",
         ["Forever BiS minimap button: "] = "Botón del minimapa de Forever BiS: ",
         ["Forever BiS tooltips: "] = "Tooltips de Forever BiS: ",
+        ["Forever BiS stars: "] = "Estrellas de Forever BiS: ",
         ["Item %d"] = "Objeto %d",
         ["Level %s"] = "Nivel %s",
         ["Maker-only items"] = "Objetos solo para su creador",

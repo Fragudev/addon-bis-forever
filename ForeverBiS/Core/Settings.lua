@@ -248,3 +248,15 @@ function Settings.toggleTooltipAllClasses()
     account().tooltipAllClasses = account().tooltipAllClasses ~= true
     return account().tooltipAllClasses
 end
+
+-- BiS stars on item buttons (account-wide, on by default). Readable before the saved variables exist.
+function Settings.bisStarsEnabled()
+    local data = account()
+    return type(data) ~= "table" or data.bisStars ~= false
+end
+
+--- Returns the new state.
+function Settings.toggleBisStars()
+    account().bisStars = account().bisStars == false
+    return account().bisStars
+end

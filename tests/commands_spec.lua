@@ -79,6 +79,41 @@ describe("Commands", function()
             assert.are.equal(0, toggles)
         end)
 
+        it("toggles the BiS stars with /bis stars and refreshes them", function()
+            local Commands = loadCommands()
+            local refreshes = 0
+            WowStub.ns.BisStar = {
+                refresh = function()
+                    refreshes = refreshes + 1
+                end,
+            }
+            Commands.dispatch("stars")
+            assert.is_false(ForeverBiSDB.bisStars)
+            assert.are.same({ "Forever BiS stars: off" }, printed)
+            Commands.dispatch("Stars")
+            assert.is_true(ForeverBiSDB.bisStars)
+            assert.are.equal("Forever BiS stars: on", printed[2])
+            assert.are.equal(2, refreshes)
+            assert.are.equal(0, toggles)
+        end)
+
+        it("toggles the BiS stars without the overlay loaded", function()
+            local Commands = loadCommands()
+            Commands.dispatch("stars")
+            assert.are.same({ "Forever BiS stars: off" }, printed)
+        end)
+
+        it("keeps /bis dungeon and /bis alerts as they were", function()
+            local Commands = loadCommands()
+            Commands.dispatch("dungeon")
+            Commands.dispatch("alerts")
+            assert.is_false(ForeverBiSDB.dungeonNotice)
+            assert.is_false(ForeverBiSDB.alerts)
+            assert.is_nil(ForeverBiSDB.bisStars)
+            assert.are.same({ "Forever BiS dungeon notice: off", "Forever BiS alerts: off" }, printed)
+            assert.are.equal(0, toggles)
+        end)
+
         it("toggles other classes with /bis tooltip all", function()
             local Commands = loadCommands()
             Commands.dispatch("tooltip all")

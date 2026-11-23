@@ -281,7 +281,7 @@ function Stub.reset()
 end
 
 -- Saved values that live account-wide; everything else a spec seeds belongs to the character.
-local ACCOUNT_KEYS = { minimap = true, tooltip = true, tooltipAllClasses = true, source = true }
+local ACCOUNT_KEYS = { minimap = true, tooltip = true, tooltipAllClasses = true, source = true, bisStars = true }
 
 --- Splits a seed table the way the saved variables are split: account-wide keys and per-character keys.
 local function seedSavedVariables(db)

@@ -103,6 +103,15 @@ Commands.handlers = {
         print(L["Forever BiS minimap button: "] .. (on and L["on"] or L["off"]))
         return true
     end,
+    -- /bis stars toggles the BiS stars on bag, loot and quest reward buttons (on by default).
+    stars = function()
+        local on = Settings.toggleBisStars()
+        if ns.BisStar then
+            ns.BisStar.refresh()
+        end
+        print(L["Forever BiS stars: "] .. (on and L["on"] or L["off"]))
+        return true
+    end,
     -- /bis alerts toggles the BiS loot alerts (on by default).
     alerts = function()
         local on = Settings.toggleAlerts()

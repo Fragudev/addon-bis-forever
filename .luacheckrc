@@ -69,6 +69,19 @@ files["ForeverBiS/Adapters/Player.lua"] = {
 
 files["ForeverBiS/UI/"] = { read_globals = with(widget_api, { "Minimap", "GetCursorPosition", "RAID_CLASS_COLORS", "GetPhysicalScreenSize", "C_AddOns", "GetAddOnMetadata", "C_Timer" }) }
 
+-- The BiS star overlay hooks the client's bag, loot and quest frames directly, like the tooltip decorator.
+files["ForeverBiS/UI/BisStar.lua"] = {
+  read_globals = with(widget_api, {
+    "C_Container",
+    "GetContainerItemID",
+    "GetContainerItemLink",
+    "GetLootSlotLink",
+    "GetQuestItemLink",
+    "GetQuestLogItemLink",
+    "hooksecurefunc",
+  }),
+}
+
 files["ForeverBiS/App/Events.lua"] = { read_globals = with(widget_api, { "C_Timer" }) }
 files["ForeverBiS/App/Zone.lua"] = { read_globals = with(widget_api, { "C_Timer", "GetTime" }) }
 files["ForeverBiS/App/Alerts.lua"] = { read_globals = with(widget_api, { "GetTime" }) }
