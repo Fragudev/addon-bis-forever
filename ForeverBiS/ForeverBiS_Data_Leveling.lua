@@ -1702,8 +1702,8 @@ ForeverBiSData.sources["leveling"] = {
             },
             { slot = "Hands",
               items = {
-                { id = 252530, name = "Mender's Leather Gloves", source = { kind = "profession", text = "Leatherworking", skill = "Leatherworking" } },
                 { id = 254021, name = "Gilded Handwraps", source = { kind = "profession", text = "Tailoring", skill = "Tailoring" } },
+                { id = 252530, name = "Mender's Leather Gloves", source = { kind = "profession", text = "Leatherworking", skill = "Leatherworking" } },
                 { id = 10019, name = "Dreamweave Gloves", source = { kind = "profession", text = "Tailoring", skill = "Tailoring" } },
                 { id = 275021, name = "Prisoner Handwraps", source = { kind = "quest", text = "Quest: Dunston Checks Out (Alliance)", faction = "Alliance", quest = "Dunston Checks Out" } },
                 { id = 10011, name = "Stormcloth Gloves", source = { kind = "profession", text = "Tailoring", skill = "Tailoring" } },
@@ -6377,8 +6377,8 @@ ForeverBiSData.sources["leveling"] = {
             { slot = "Feet",
               items = {
                 { id = 273907, name = "Manaflare Boots", source = { kind = "profession", text = "Tailoring", skill = "Tailoring" } },
-                { id = 226931, name = "Sorcerer's Sandals", source = { kind = "world", text = "Sold by Mokvar, Orgrimmar" } },
                 { id = 18307, name = "Riptide Shoes", source = { kind = "dungeon", text = "Hydrospawn, Dire Maul", zone = "Dire Maul", boss = "Hydrospawn" } },
+                { id = 226931, name = "Sorcerer's Sandals", source = { kind = "world", text = "Sold by Mokvar, Orgrimmar" } },
                 { id = 11822, name = "Omnicast Boots", source = { kind = "dungeon", text = "Golem Lord Argelmach, Blackrock Depths", zone = "Blackrock Depths", boss = "Golem Lord Argelmach" } },
                 { id = 18102, name = "Dragonrider Boots", source = { kind = "dungeon", text = "Warchief Rend Blackhand, Blackrock Spire", zone = "Blackrock Spire", boss = "Warchief Rend Blackhand" } },
                 { id = 22231, name = "Kayser's Boots of Precision", source = { kind = "dungeon", text = "War Master Voone, Blackrock Spire", zone = "Blackrock Spire", boss = "War Master Voone" } },
@@ -15547,8 +15547,8 @@ ForeverBiSData.sources["leveling"] = {
             },
             { slot = "Hands",
               items = {
-                { id = 252530, name = "Mender's Leather Gloves", source = { kind = "profession", text = "Leatherworking", skill = "Leatherworking" } },
                 { id = 254021, name = "Gilded Handwraps", source = { kind = "profession", text = "Tailoring", skill = "Tailoring" } },
+                { id = 252530, name = "Mender's Leather Gloves", source = { kind = "profession", text = "Leatherworking", skill = "Leatherworking" } },
                 { id = 250569, name = "Prefect's Gauntlet", source = { kind = "profession", text = "Blacksmithing", skill = "Blacksmithing" } },
                 { id = 10019, name = "Dreamweave Gloves", source = { kind = "profession", text = "Tailoring", skill = "Tailoring" } },
                 { id = 10011, name = "Stormcloth Gloves", source = { kind = "profession", text = "Tailoring", skill = "Tailoring" } },

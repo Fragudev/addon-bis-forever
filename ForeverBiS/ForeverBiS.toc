@@ -3,7 +3,7 @@
 ## Title: Forever BiS
 ## Notes: Leveling BiS lists and item sources generated from wowsims data
 ## Author: Fragudev (fragudev@gmail.com)
-## Version: beta-0.0.83
+## Version: beta-0.0.84
 ## SavedVariables: ForeverBiSDB
 ## SavedVariablesPerCharacter: ForeverBiSCharDB
 ForeverBiS_Locale.lua
