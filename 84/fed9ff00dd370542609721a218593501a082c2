@@ -1,0 +1,39 @@
+.luacheckrc
+  s_c39abb567c22bd::t_0d4abcffbc4e04 72-76,113
+ForeverBiS/ForeverBiS.lua
+  s_c39abb567c22bd::t_0a4f940a41cfa8 67
+ForeverBiS/ForeverBiS.toc
+  s_c39abb567c22bd::t_dfe2216f5cf8a7 32
+ForeverBiS/ForeverBiS_Locale.lua
+  s_c39abb567c22bd::t_3cf88cadbe4561 13
+ForeverBiS/UI/Selectors.lua
+  s_c39abb567c22bd::t_2b4a8f3ed40ce4 17,61-62,69-76
+tests/inspect_spec.lua
+  s_c39abb567c22bd::t_547ab9e481fe2e 1-142
+ForeverBiS/UI/Inspect.lua
+  s_c3a437500b8b16::t_0df9bf0001a0e7 1-95
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.6",
+  "base_commit_sha": "84fed9ff00dd370542609721a218593501a082c2",
+  "prompts": {},
+  "sessions": {
+    "s_c39abb567c22bd": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ffa6e9de-a2ae-47e1-9992-09e2c55f0ae5",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Francis Gutiérrez <fragudev@gmail.com>"
+    },
+    "s_c3a437500b8b16": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "agent-a9375b2c9348034fd",
+        "model": "unknown"
+      },
+      "human_author": "Francis Gutiérrez <fragudev@gmail.com>"
+    }
+  }
+}
