@@ -1,9 +1,30 @@
-local function firstSlotWithEnchants(listKey)
-    for _, slot in ipairs(ForeverBiSLists[listKey].slots) do
+-- The list the window shows for the saved selection: the route at the phase for the player's level.
+local function shownList()
+    local route = WowStub.ns.Settings.route()
+    return ForeverBiSModel.list(route, WowStub.ns.Settings.effectivePhase(route, WowStub.ns.Player.level()))
+end
+
+local function firstSlotWithEnchants()
+    for _, slot in ipairs(shownList().slots) do
         if slot[3] and #slot[3] > 0 then
             return slot
         end
     end
+end
+
+-- The generated leveling lists carry no enchants: this hook gives the first slot of every druid/feral phase one.
+local function feralEnchants(data)
+    for _, phase in pairs(data.sources.leveling.lists["druid/feral"].phases) do
+        phase.slots[1].enchants = {
+            { effect = "Agility +7", spell = "Enchant Gloves - Agility", source = "Enchanting 210" },
+        }
+    end
+end
+
+-- The generated leveling lists are PvE only: this hook adds a PvP copy of druid/feral, so the mode dropdown shows.
+local function feralPvp(data)
+    local lists = data.sources.leveling.lists
+    lists["druid/feral-pvp"] = { label = "Feral PvP", phases = lists["druid/feral"].phases }
 end
 
 local function menuLabels(menu)
@@ -27,17 +48,17 @@ describe("ForeverBiS", function()
             assert.is_function(_G.SlashCmdList["FOREVERBIS"])
         end)
 
-        it("starts hidden and defaults to the rogue PvE list", function()
+        it("starts hidden and defaults to the rogue's first leveling list", function()
             WowStub.load(nil)
             assert.is_false(ForeverBiSFrame:IsShown())
             assert.are.equal("rogue", ForeverBiSCharDB.class)
-            assert.are.equal("", ForeverBiSCharDB.build) -- the default build has an empty route suffix
+            assert.are.equal("/assassination", ForeverBiSCharDB.build) -- the first rogue build by label
         end)
 
         it("falls back to a valid class and build when the saved ones are unknown", function()
             WowStub.load({ class = "not-a-class", build = "not-a-build" })
             assert.are.equal("rogue", ForeverBiSCharDB.class)
-            assert.are.equal("", ForeverBiSCharDB.build)
+            assert.are.equal("/assassination", ForeverBiSCharDB.build)
         end)
 
         it("keeps a valid saved class and build", function()
@@ -47,7 +68,7 @@ describe("ForeverBiS", function()
         end)
 
         it("names builds by spec only and switches mode keeping the spec", function()
-            WowStub.load({ class = "druid", build = "feral-pve" })
+            WowStub.load({ class = "druid", build = "/feral" }, feralPvp)
             ForeverBiSFrame:Show()
             assert.are.same({ "PvE", "PvP" }, menuLabels(openMenu(ForeverBiSModeDropDown)))
             for _, label in ipairs(menuLabels(openMenu(ForeverBiSBuildDropDown))) do
@@ -63,10 +84,20 @@ describe("ForeverBiS", function()
         end)
 
         it("hides the build dropdown when the mode has a single build", function()
-            WowStub.load({ class = "hunter", build = "pve" })
+            WowStub.load({ class = "warlock", build = "" }, function(data)
+                local lists = data.sources.leveling.lists
+                lists["warlock/dps-pvp"] = { label = "Damage PvP", phases = lists["warlock/dps"].phases }
+            end)
             ForeverBiSFrame:Show()
             assert.is_true(ForeverBiSModeDropDown:IsShown())
             assert.is_false(ForeverBiSBuildDropDown:IsShown())
+        end)
+
+        it("hides the mode dropdown while every list is PvE, as in the shipped leveling lists", function()
+            WowStub.load({ class = "hunter", build = "" })
+            ForeverBiSFrame:Show()
+            assert.is_false(ForeverBiSModeDropDown:IsShown())
+            assert.is_true(ForeverBiSBuildDropDown:IsShown())
         end)
     end)
 
@@ -152,8 +183,8 @@ describe("ForeverBiS", function()
 
     describe("rendering the list", function()
         it("shows the slot headers and the ranked items of the selected list", function()
-            WowStub.load({ class = "druid", build = "feral-pve" })
-            local list = ForeverBiSLists["druid"]
+            WowStub.load({ class = "druid", build = "/feral" })
+            local list = shownList()
             for _, slot in ipairs(list.slots) do
                 assert.is_true(WowStub.hasText(string.upper(slot[1])), "missing header " .. slot[1])
                 assert.is_true(WowStub.hasText(slot[2][1][1]), "missing top item of " .. slot[1])
@@ -161,17 +192,17 @@ describe("ForeverBiS", function()
         end)
 
         it("shows an ENCHANTS block with the effect under a slot that has enchants", function()
-            WowStub.load({ class = "druid", build = "feral-pve" })
-            local slot = assert(firstSlotWithEnchants("druid"), "druid data has no enchants")
+            WowStub.load({ class = "druid", build = "/feral" }, feralEnchants)
+            local slot = assert(firstSlotWithEnchants(), "druid data has no enchants")
             assert.is_true(WowStub.hasText("ENCHANTS"))
             assert.is_true(WowStub.hasText(slot[3][1][1]), "missing enchant effect " .. slot[3][1][1])
             assert.is_true(WowStub.hasText(slot[3][1][2]), "missing enchant spell " .. slot[3][1][2])
         end)
 
         it("hides the ENCHANTS block when no slot of the list has enchants", function()
-            WowStub.load({ class = "druid", build = "feral-pve" })
+            WowStub.load({ class = "druid", build = "/feral" }, feralEnchants)
             -- The UI reads each phase from ForeverBiSData through the model, so strip the enchants at the source.
-            for _, entry in pairs(ForeverBiSData.sources.foreverchanges.lists) do
+            for _, entry in pairs(ForeverBiSData.sources.leveling.lists) do
                 for _, phase in pairs(entry.phases) do
                     for _, slot in ipairs(phase.slots) do
                         slot.enchants = nil
@@ -185,13 +216,13 @@ describe("ForeverBiS", function()
         end)
 
         it("drops the items and enchants of a collapsed slot but keeps its header", function()
-            WowStub.load({ class = "druid", build = "feral-pve" })
-            local slot = assert(firstSlotWithEnchants("druid"))
+            WowStub.load({ class = "druid", build = "/feral" }, feralEnchants)
+            local slot = assert(firstSlotWithEnchants())
             WowStub.load({
                 class = "druid",
-                build = "feral-pve",
-                collapsed = { ["druid:" .. slot[1]] = true },
-            })
+                build = "/feral",
+                collapsed = { ["druid/feral:" .. slot[1]] = true },
+            }, feralEnchants)
             assert.is_true(WowStub.hasText(string.upper(slot[1])))
             assert.is_false(WowStub.hasText(slot[2][1][1]))
             assert.is_false(WowStub.hasText(slot[3][1][1]))
@@ -272,15 +303,15 @@ describe("ForeverBiS", function()
                 end
             end
             assert.are.equal("druid", ForeverBiSCharDB.class)
-            assert.is_true(WowStub.hasText(string.upper(ForeverBiSLists["druid"].slots[1][1])))
+            assert.is_true(WowStub.hasText(string.upper(shownList().slots[1][1])))
         end)
 
         it("switches build within the selected class", function()
-            WowStub.load({ class = "druid", build = "feral-pve" })
+            WowStub.load({ class = "druid", build = "/feral" })
             local menu = openMenu(ForeverBiSBuildDropDown)
             assert.is_true(#menu > 1)
             for _, info in ipairs(menu) do
-                if info.text == "Tank" then
+                if info.text == "Guardian" then
                     info.func()
                 end
             end
@@ -290,8 +321,8 @@ describe("ForeverBiS", function()
 
     describe("search", function()
         it("filters the items by name", function()
-            WowStub.load({ class = "druid", build = "feral-pve" })
-            local slot = ForeverBiSLists["druid"].slots[1]
+            WowStub.load({ class = "druid", build = "/feral" })
+            local slot = shownList().slots[1]
             local wanted = slot[2][1][1]
             local other = slot[2][#slot[2]][1]
             assert.are_not.equal(wanted, other)
@@ -311,7 +342,7 @@ describe("ForeverBiS", function()
         end)
 
         it("shows an empty message when nothing matches", function()
-            WowStub.load({ class = "druid", build = "feral-pve" })
+            WowStub.load({ class = "druid", build = "/feral" })
             WowStub.ns.MainFrame.open()
             local searchBox
             for _, candidate in ipairs(WowStub.frames) do
@@ -335,7 +366,7 @@ describe("ForeverBiS", function()
         end
 
         it("re-renders on bag changes only while the window is open", function()
-            WowStub.load({ class = "druid", build = "feral-pve" })
+            WowStub.load({ class = "druid", build = "/feral" })
             local watcher = assert(itemWatcher())
 
             local draws = 0

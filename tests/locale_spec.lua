@@ -40,7 +40,9 @@ describe("Locale", function()
         assert.is_true(WowStub.hasText("Search item, boss or zone"))
         WowStub.locale = "esES"
         WowStub.load({ class = "rogue", build = "pve" })
-        local firstItem = ForeverBiSLists["rogue"].slots[1][2][1][1]
+        local route = WowStub.ns.Settings.route()
+        local shown = ForeverBiSModel.list(route, WowStub.ns.Settings.effectivePhase(route, WowStub.ns.Player.level()))
+        local firstItem = shown.slots[1][2][1][1]
         assert.is_true(WowStub.hasText(firstItem))
         assert.is_true(WowStub.hasText("Buscar objeto, jefe o zona"))
     end)

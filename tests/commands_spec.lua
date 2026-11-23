@@ -6,8 +6,7 @@ local function loadCommands(db)
     _G.ForeverBiSDB = db or {}
     local ns = WowStub.loadFiles({
         "ForeverBiS_Locale.lua",
-        "ForeverBiS_Data_ForeverChanges.lua",
-        "ForeverBiS_Data_Wowsims.lua",
+        "ForeverBiS_Data_Leveling.lua",
         "ForeverBiS_Model.lua",
         "Core/Settings.lua",
         "Core/Catalog.lua",

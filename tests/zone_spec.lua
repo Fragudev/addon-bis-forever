@@ -29,7 +29,8 @@ describe("Zone notice", function()
         _G.print = function(...)
             table.insert(printed, table.concat({ ... }, " "))
         end
-        WowStub.load({ class = "rogue", build = "" })
+        -- The rogue leveling lists have their Deadmines and Stockade drops at level 20.
+        WowStub.load({ class = "rogue", build = "", phase = "lvl20" })
     end)
 
     after_each(function()
@@ -82,8 +83,8 @@ describe("Zone notice", function()
     end)
 
     it("shows nothing in a known dungeon when the selected build lists nothing from it", function()
-        WowStub.load({ class = "rogue", build = "" }, function(data)
-            for _, entry in pairs(data.sources.foreverchanges.lists) do
+        WowStub.load({ class = "rogue", build = "", phase = "lvl20" }, function(data)
+            for _, entry in pairs(data.sources.leveling.lists) do
                 for _, phase in pairs(entry.phases) do
                     phase.slots = {}
                 end

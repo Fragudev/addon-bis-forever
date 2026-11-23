@@ -1,8 +1,7 @@
 local function loadLists(withoutData)
     WowStub.reset()
     WowStub.loadFiles({
-        "ForeverBiS_Data_ForeverChanges.lua",
-        "ForeverBiS_Data_Wowsims.lua",
+        "ForeverBiS_Data_Leveling.lua",
         "ForeverBiS_Model.lua",
         "Core/Sources.lua",
         "Core/Lists.lua",
@@ -16,23 +15,29 @@ end
 describe("Lists", function()
     it("resolves the selected phase's data for a route", function()
         local Lists = loadLists()
-        local phaseId = ForeverBiSModel.effectivePhase("rogue", nil, 30)
-        assert.are.same(ForeverBiSModel.list("rogue", phaseId), Lists.resolve("rogue", phaseId))
+        local phaseId = ForeverBiSModel.effectivePhase("rogue/assassination", nil, 30)
+        assert.are.same(
+            ForeverBiSModel.list("rogue/assassination", phaseId),
+            Lists.resolve("rogue/assassination", phaseId)
+        )
     end)
 
     it("uses the route's default phase when no phase is given", function()
         local Lists = loadLists()
-        assert.are.same(ForeverBiSModel.list("rogue"), Lists.resolve("rogue", nil))
+        assert.are.same(ForeverBiSModel.list("rogue/assassination"), Lists.resolve("rogue/assassination", nil))
     end)
 
     it("falls back to the default phase when the given one does not exist", function()
         local Lists = loadLists()
-        assert.are.same(ForeverBiSModel.list("rogue"), Lists.resolve("rogue", "no-such-phase"))
+        assert.are.same(
+            ForeverBiSModel.list("rogue/assassination"),
+            Lists.resolve("rogue/assassination", "no-such-phase")
+        )
     end)
 
     it("marks a view missing only when the route has no list", function()
         local Lists = loadLists()
-        assert.is_false(Lists.view("rogue", nil).missing)
+        assert.is_false(Lists.view("rogue/assassination", nil).missing)
         assert.is_true(Lists.view("not-a-route", nil).missing)
         assert.is_false(Lists.view(nil, nil).missing)
     end)
@@ -45,19 +50,19 @@ describe("Lists", function()
 
     it("indexes the slots of a view by slot key", function()
         local Lists = loadLists()
-        local phaseId = ForeverBiSModel.effectivePhase("rogue", nil, 30)
-        local view = Lists.view("rogue", phaseId)
+        local phaseId = ForeverBiSModel.effectivePhase("rogue/assassination", nil, 30)
+        local view = Lists.view("rogue/assassination", phaseId)
         local slot = view.data.slots[1]
         local key = WowStub.ns.Sources.normalizeSlotName(slot[1])
         assert.are.equal(slot[2], view.ranked[key])
         assert.are.equal(slot[2][1], view.best[key])
         assert.are.equal(slot[1], view.headings[key])
-        assert.are.equal("rogue", view.route)
+        assert.are.equal("rogue/assassination", view.route)
     end)
 
     it("builds an empty view without data", function()
         local Lists = loadLists(true)
-        local view = Lists.view("rogue", nil)
+        local view = Lists.view("rogue/assassination", nil)
         assert.is_nil(view.data)
         assert.are.same({}, view.ranked)
     end)

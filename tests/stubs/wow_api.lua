@@ -296,7 +296,7 @@ local function seedSavedVariables(db)
 end
 
 -- The shipped data files, in .toc order; hooks run right after the last one, before the model reads the data.
-Stub.DATA_FILES = { "ForeverBiS_Data_ForeverChanges.lua", "ForeverBiS_Data_Wowsims.lua" }
+Stub.DATA_FILES = { "ForeverBiS_Data_Leveling.lua" }
 Stub.LAST_DATA_FILE = Stub.DATA_FILES[#Stub.DATA_FILES]
 
 --- The data files followed by the given extra .toc paths, ready for loadFiles/Toc.load `only`.
@@ -313,7 +313,7 @@ end
 
 --- Wraps schema 2 contents ({ phases, lists }) into a schema 3 ForeverBiSData holding one source.
 function Stub.wrapSource(contents, id)
-    id = id or "foreverchanges"
+    id = id or "leveling"
     if type(contents) ~= "table" or (contents.schema ~= nil and contents.schema ~= 2) then
         return contents -- not schema 2 contents: passed through untouched
     end
@@ -337,21 +337,10 @@ function Stub.load(db, dataHook, player)
     Stub.reset()
     Stub.player = player or Stub.player
     seedSavedVariables(db)
-    -- Specs start as a returning player who already picked a source, so the picker does not hide the window.
-    -- Seeding `source = false` (any saved value) opts out: Settings sees it as given, and `false` is no choice.
-    local picked = db ~= nil and db.source ~= nil
     Stub.ns = Toc.load({
         after = {
-            [Stub.LAST_DATA_FILE] = function()
-                if dataHook then
-                    dataHook(_G.ForeverBiSData)
-                end
-                local data = _G.ForeverBiSData
-                if picked or type(data) ~= "table" or type(data.sources) ~= "table" then
-                    return
-                end
-                _G.ForeverBiSDB = _G.ForeverBiSDB or {}
-                _G.ForeverBiSDB.source = data.sources.foreverchanges and "foreverchanges" or next(data.sources)
+            [Stub.LAST_DATA_FILE] = dataHook and function()
+                dataHook(_G.ForeverBiSData)
             end,
         },
     })

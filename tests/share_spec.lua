@@ -2,8 +2,7 @@ local function loadShare()
     WowStub.reset()
     WowStub.loadFiles({
         "ForeverBiS_Locale.lua",
-        "ForeverBiS_Data_ForeverChanges.lua",
-        "ForeverBiS_Data_Wowsims.lua",
+        "ForeverBiS_Data_Leveling.lua",
         "ForeverBiS_Model.lua",
         "Core/Sources.lua",
         "Core/Share.lua",

@@ -144,8 +144,8 @@ describe("ForeverBiS_Data", function()
         end)
     end)
 
+    -- The generated leveling lists carry no enchants; any list that does must keep this shape.
     it("stores enchants as {effect, spell, source[, formulaId]}", function()
-        local total = 0
         eachPhase(function(route, _, phase)
             for _, slot in ipairs(phase.slots) do
                 if slot.enchants ~= nil then
@@ -153,7 +153,6 @@ describe("ForeverBiS_Data", function()
                 end
                 for _, enchant in ipairs(slot.enchants or {}) do
                     local where = route .. "/" .. slot.slot
-                    total = total + 1
                     assert.is_string(enchant.effect, where)
                     assert.is_true(enchant.effect ~= "", where .. " has an empty effect")
                     assert.is_string(enchant.spell, where)
@@ -162,6 +161,5 @@ describe("ForeverBiS_Data", function()
                 end
             end
         end)
-        assert.is_true(total > 0, "no enchants found in any list")
     end)
 end)

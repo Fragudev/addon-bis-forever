@@ -221,7 +221,7 @@ describe("ForeverBiSModel", function()
 
         it("rebuilds on demand", function()
             load(fixture())
-            _G.ForeverBiSData.sources.foreverchanges.lists.druid.label = "Changed"
+            _G.ForeverBiSData.sources.leveling.lists.druid.label = "Changed"
             ForeverBiSModel.buildLegacy()
             assert.are.equal("Changed", ForeverBiSBuildLabels.druid)
         end)
@@ -475,7 +475,7 @@ describe("ForeverBiSModel", function()
         it("rebuilds the index when the legacy data is rebuilt", function()
             load(fixture())
             assert.are.equal(1, #ForeverBiSModel.bisEntries(11))
-            _G.ForeverBiSData.sources.foreverchanges.lists.druid.phases.lvl30.slots[1].items[1].id = 77
+            _G.ForeverBiSData.sources.leveling.lists.druid.phases.lvl30.slots[1].items[1].id = 77
             ForeverBiSModel.buildLegacy()
             assert.are.same({}, ForeverBiSModel.bisEntries(11))
             assert.are.equal(1, #ForeverBiSModel.bisEntries(77))
@@ -689,7 +689,7 @@ describe("ForeverBiSModel", function()
 
         it("exposes the default source id", function()
             loadSources()
-            assert.are.equal("foreverchanges", ForeverBiSModel.DEFAULT_SOURCE)
+            assert.are.equal("leveling", ForeverBiSModel.DEFAULT_SOURCE)
         end)
 
         it("lists the sources ordered by `order`, then by id", function()
@@ -719,10 +719,10 @@ describe("ForeverBiSModel", function()
 
         it("starts on the default source when it exists", function()
             local data = TwoSources.twoSources()
-            data.sources.foreverchanges = data.sources.beta
+            data.sources.leveling = data.sources.beta
             data.sources.beta = nil
             loadSources(data)
-            assert.are.equal("foreverchanges", ForeverBiSModel.activeSource())
+            assert.are.equal("leveling", ForeverBiSModel.activeSource())
         end)
 
         it("tolerates an empty source", function()

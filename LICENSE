@@ -18,8 +18,9 @@ Without the prior written permission of the copyright holder, you may not:
 This permission terminates automatically if you breach any of these terms.
 
 Third-party materials bundled with the Software, such as fonts, remain subject
-to their own licenses. The Best in Slot list information comes from
-ForeverChanges and is not claimed by this license.
+to their own licenses. The Best in Slot lists are generated from the item
+database and stat weights of wowsims (https://github.com/wowsims/forever),
+licensed under the MIT License; that data is not claimed by this license.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,

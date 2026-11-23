@@ -16,7 +16,7 @@ Source: [DESCRIPTION.md](DESCRIPTION.md)
 ````markdown
 # Forever BiS — Best in Slot Helper for WoW Forever
 
-**Know exactly what to farm next.** Forever BiS brings the ForeverChanges and wowsims Best in Slot lists into the game: ranked gear for every class, spec and phase, where each item drops, and how close you are to completing your set.
+**Know exactly what to farm next.** Forever BiS brings leveling Best in Slot lists into the game, generated from the wowsims item database: ranked gear for every class, spec and level bracket (20, 30, 40, 50 and 60), where each item drops, and how close you are to completing your set.
 
 Open it with `/bis`, `/foreverbis` or the minimap button.
 
@@ -24,8 +24,7 @@ Open it with `/bis`, `/foreverbis` or the minimap button.
 
 ## ✨ Highlights
 
-- **Every class, PvE and PvP** — Pick your class, then PvE or PvP, then your spec. Your class is selected automatically on login.
-- **Choose your source** — Pick the ForeverChanges or wowsims lists once; the addon remembers your choice. The dropdown in the selector row switches it.
+- **Every class and spec** — Pick your class, then your spec. Your class is selected automatically on login.
 - **Phase-aware lists** — `Auto` shows the list for your current level. You can also pin any other phase to plan ahead.
 - **Ranked items per slot** — Rank, icon, rarity, and exact source: boss, zone, drop rate, quest, profession or world drop.
 - **Know what you already have** — A green check marks equipped BiS items. An amber `xN` shows copies sitting in your bags.
@@ -45,7 +44,7 @@ Open it with `/bis`, `/foreverbis` or the minimap button.
 Hover any item anywhere in the game (bags, links, vendors, auction house) and see where it ranks for your class:
 
 > **Forever BiS**
-> BiS #2 Head - Feral PvE (Level 30)
+> BiS #2 Head - Feral (Level 30)
 
 - `/bis tooltip` turns it on or off.
 - `/bis tooltip all` shows every class, not only yours.
@@ -82,7 +81,7 @@ Then enable `ForeverBiS` in the AddOns list on the character selection screen.
 
 ## 🔄 About the lists
 
-WoW addons cannot access the internet, so the BiS lists are bundled with each release. They are refreshed from [ForeverChanges](https://foreverchanges.pro) and [wowsims](https://github.com/wowsims/forever) regularly. **Keep the addon updated to get the latest lists.**
+WoW addons cannot access the internet, so the BiS lists are bundled with each release. They are generated from the item database and stat weights of [wowsims](https://github.com/wowsims/forever) (MIT License) and regenerated regularly. **Keep the addon updated to get the latest lists.**
 
 ## 💬 Feedback
 

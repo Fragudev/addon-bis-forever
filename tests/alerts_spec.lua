@@ -71,7 +71,7 @@ describe("Alerts", function()
     end)
 
     it("does not alert for an item that is BiS only for another class", function()
-        local mageRoute = "mage"
+        local mageRoute = "mage/arcane"
         local item = ForeverBiSModel.list(mageRoute, ForeverBiSModel.effectivePhase(mageRoute, nil, 30)).slots[1][2][1]
         local id = ForeverBiSItemIDs[item[1]]
         if #ForeverBiSModel.bisEntries(id, item[1]) == 1 then

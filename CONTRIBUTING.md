@@ -13,8 +13,9 @@ report** and include:
 - the class, build, phase and item involved;
 - the game client language, when the problem is about a text.
 
-The lists come from ForeverChanges, so a wrong ranking belongs there. A wrong source, icon or tooltip in the addon is
-a bug here.
+The lists are generated here from the wowsims item database and stat weights, so a ranking that looks wrong is a bug
+here too: say which item you expected and why. A wrong item stat or source in the wowsims data itself belongs to
+[wowsims/forever](https://github.com/wowsims/forever).
 
 ## Suggesting an idea
 

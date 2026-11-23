@@ -11,7 +11,7 @@ from dataclasses import dataclass
 from typing import Union
 
 from .common import http_get, http_json
-from .wowsims import NO_SOURCE, RAW_URL, SourceDescriber
+from .sources_text import NO_SOURCE, RAW_URL, SourceDescriber
 
 DB_PATH = "assets/database/db.json"
 TOP = 6

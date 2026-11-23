@@ -1,3 +1,16 @@
+-- The window interactions run over the fixture lists of tests/support/lists.lua, not the shipped data.
+local FixtureLists = dofile("tests/support/lists.lua")
+
+--- Loads the addon over the fixture lists; `hook` reshapes them afterwards (a WowStub.load data hook).
+local function loadAddon(db, hook, player)
+    WowStub.load(db, function(data)
+        FixtureLists.install(data)
+        if hook then
+            hook(data)
+        end
+    end, player)
+end
+
 local SLOT_IDS = {
     head = 1,
     neck = 2,
@@ -23,12 +36,12 @@ end
 local function loadList(listKey)
     local class = listKey:match("^[^/]+")
     local build = listKey:match("/.*") or ""
-    WowStub.load({ class = class, build = build })
+    loadAddon({ class = class, build = build })
 end
 
 --- The first list holding an item whose source satisfies the predicate.
 local function findListWithItem(predicate)
-    WowStub.loadData()
+    WowStub.loadData(FixtureLists.install)
     for _, key in ipairs(sortedKeys(ForeverBiSLists)) do
         for _, slot in ipairs(ForeverBiSLists[key].slots) do
             for _, item in ipairs(slot[2]) do
@@ -66,7 +79,7 @@ end
 describe("ForeverBiS interactions", function()
     describe("collapsing a slot", function()
         it("hides its items when the header button is clicked and shows them on a second click", function()
-            WowStub.load({ class = "druid", build = "" })
+            loadAddon({ class = "druid", build = "" })
             WowStub.ns.MainFrame.open()
             local slot = ForeverBiSLists["druid"].slots[1]
             local topItem = slot[2][1][1]
@@ -94,7 +107,7 @@ describe("ForeverBiS interactions", function()
 
     describe("tooltips", function()
         it("shows the item link and its source on an item icon", function()
-            WowStub.load({ class = "druid", build = "" })
+            loadAddon({ class = "druid", build = "" })
             local slot = ForeverBiSLists["druid"].slots[1]
             WowStub.fire(iconButtons(38)[1], "OnEnter")
             assert.are.equal("Source: " .. slot[2][1][2], WowStub.tooltip.lines[1])
@@ -107,7 +120,7 @@ describe("ForeverBiS interactions", function()
         end)
 
         it("shows the formula link and source on an enchant icon, or the spell name without a formula", function()
-            WowStub.load({ class = "druid", build = "" })
+            loadAddon({ class = "druid", build = "" })
             local expected = {}
             for _, slot in ipairs(ForeverBiSLists["druid"].slots) do
                 for _, enchant in ipairs(slot[3] or {}) do
@@ -133,7 +146,7 @@ describe("ForeverBiS interactions", function()
         end)
 
         it("hides the tooltip when the pointer leaves", function()
-            WowStub.load({ class = "druid", build = "" })
+            loadAddon({ class = "druid", build = "" })
             local button = iconButtons(28)[1]
             WowStub.fire(button, "OnEnter")
             GameTooltip:Show()
@@ -148,7 +161,7 @@ describe("ForeverBiS interactions", function()
         end
 
         local function loadWithFaction(key, faction)
-            WowStub.load({ class = key:match("^[^/]+"), build = key:match("/.*") or "" }, nil, {
+            loadAddon({ class = key:match("^[^/]+"), build = key:match("/.*") or "" }, nil, {
                 class = "Rogue",
                 token = "ROGUE",
                 level = 30,
@@ -180,7 +193,7 @@ describe("ForeverBiS interactions", function()
         end)
 
         it("hides the faction button when the faction is unknown", function()
-            WowStub.load(nil)
+            loadAddon(nil)
             WowStub.ns.MainFrame.open()
             assert.is_false(ForeverBiSFilterFaction:IsShown())
         end)
@@ -204,7 +217,7 @@ describe("ForeverBiS interactions", function()
         end)
 
         it("shows the dungeon picker only while the dungeon button is active", function()
-            WowStub.load(nil)
+            loadAddon(nil)
             WowStub.ns.MainFrame.open()
             assert.is_false(ForeverBiSDungeonFilter:IsShown())
             click(ForeverBiSFilterdungeon)
@@ -300,7 +313,7 @@ describe("ForeverBiS interactions", function()
         end)
 
         it("clears only the search with the x button", function()
-            WowStub.load(nil)
+            loadAddon(nil)
             local searchBox = textChangedBox()
             searchBox:SetText("abc")
             WowStub.fire(searchBox, "OnTextChanged")
@@ -328,7 +341,7 @@ describe("ForeverBiS interactions", function()
         end
 
         it("marks a BiS item equipped in its slot", function()
-            WowStub.load({ class = "druid", build = "" })
+            loadAddon({ class = "druid", build = "" })
             local slot, slotID, itemID = topItemWithID()
             assert(slot, "no top item with a known id")
             WowStub.equipped[slotID] = itemID
@@ -340,7 +353,7 @@ describe("ForeverBiS interactions", function()
         end)
 
         it("shows how many copies of a BiS item are in the bags", function()
-            WowStub.load({ class = "druid", build = "" })
+            loadAddon({ class = "druid", build = "" })
             local _, _, itemID = topItemWithID()
             WowStub.bagCounts[itemID] = 3
             _G.SlashCmdList["FOREVERBIS"]()
@@ -348,7 +361,7 @@ describe("ForeverBiS interactions", function()
         end)
 
         it("shows an empty message for Equipped Only when nothing is equipped, then lists what is", function()
-            WowStub.load({ class = "druid", build = "" })
+            loadAddon({ class = "druid", build = "" })
             WowStub.ns.MainFrame.open()
             local slot, slotID, itemID = topItemWithID()
             local button = WowStub.find("Button", function(b)
@@ -404,25 +417,25 @@ describe("ForeverBiS interactions", function()
         end
 
         it("shows nothing for a slot with nothing worn", function()
-            WowStub.load({ class = "druid", build = "" })
+            loadAddon({ class = "druid", build = "" })
             assert.are.equal(0, count("Not listed"))
         end)
 
         it("shows the rank of a worn item that the slot lists", function()
-            WowStub.load({ class = "druid", build = "" })
+            loadAddon({ class = "druid", build = "" })
             equip(SLOT_IDS.head, listedIds("Head")[2])
             assert.are.equal(1, count("#2"))
             assert.are.equal(0, count("Not listed"))
         end)
 
         it("shows Not listed for a worn item the slot does not list", function()
-            WowStub.load({ class = "druid", build = "" })
+            loadAddon({ class = "druid", build = "" })
             equip(SLOT_IDS.head, 987654)
             assert.are.equal(1, count("Not listed"))
         end)
 
         it("shows both rings under the finger heading", function()
-            WowStub.load({ class = "druid", build = "" })
+            loadAddon({ class = "druid", build = "" })
             WowStub.equipped[12] = 987654
             equip(11, listedIds("Finger")[1])
             assert.are.equal(1, count("#1"))
@@ -430,14 +443,14 @@ describe("ForeverBiS interactions", function()
         end)
 
         it("resolves every weapon variant heading to the main hand slot", function()
-            WowStub.load({ class = "druid", build = "" })
+            loadAddon({ class = "druid", build = "" })
             equip(16, 987654)
             -- "Two-hand weapon" and "Main hand" both map to the main hand, so both headings show it.
             assert.are.equal(2, count("Not listed"))
         end)
 
         it("updates when the equipment changes", function()
-            WowStub.load({ class = "druid", build = "" })
+            loadAddon({ class = "druid", build = "" })
             equip(SLOT_IDS.head, 987654)
             assert.are.equal(1, count("Not listed"))
             equip(SLOT_IDS.head, nil)
@@ -447,7 +460,7 @@ describe("ForeverBiS interactions", function()
 
     describe("shift-click on a list row", function()
         it("puts the item link in the chat edit box", function()
-            WowStub.load({ class = "druid", build = "" })
+            loadAddon({ class = "druid", build = "" })
             WowStub.shift = true
             WowStub.fire(iconButtons(38)[1], "OnClick")
             assert.are.equal(1, #WowStub.insertedLinks)
@@ -455,7 +468,7 @@ describe("ForeverBiS interactions", function()
         end)
 
         it("does nothing without shift", function()
-            WowStub.load({ class = "druid", build = "" })
+            loadAddon({ class = "druid", build = "" })
             WowStub.fire(iconButtons(38)[1], "OnClick")
             assert.are.equal(0, #WowStub.insertedLinks)
         end)
@@ -471,7 +484,7 @@ describe("ForeverBiS interactions", function()
         end
 
         it("re-renders when a tracked item finishes loading, and ignores unknown or failed loads", function()
-            WowStub.load({ class = "druid", build = "" })
+            loadAddon({ class = "druid", build = "" })
             WowStub.ns.MainFrame.open()
             ForeverBiSFrame:Show()
             local itemID = next(ForeverBiSItemIDs) and ForeverBiSItemIDs[sortedKeys(ForeverBiSItemIDs)[1]]
@@ -494,7 +507,7 @@ end)
 
 -- Gives the druid list a second phase with its own title, so the phase selector has something to choose.
 local function withSecondPhase(root)
-    local data = root.sources.foreverchanges
+    local data = root.sources.leveling
     table.insert(data.phases, { id = "lvl40", label = "Level 40", level = 40 })
     local base = data.lists["druid"].phases.lvl30
     local slots = {}
@@ -514,18 +527,18 @@ describe("ForeverBiS phase selector", function()
     end
 
     it("is hidden while the route has a single phase", function()
-        WowStub.load({ class = "druid", build = "" })
+        loadAddon({ class = "druid", build = "" })
         assert.is_false(ForeverBiSPhaseDropDown:IsShown())
     end)
 
     it("is shown when the route has several phases, and reports the automatic phase", function()
-        WowStub.load({ class = "druid", build = "" }, withSecondPhase, playerAt(35))
+        loadAddon({ class = "druid", build = "" }, withSecondPhase, playerAt(35))
         assert.is_true(ForeverBiSPhaseDropDown:IsShown())
         assert.are.equal("Auto (Level 40)", ForeverBiSPhaseDropDown.menuText)
     end)
 
     it("lists Auto first, then every phase of the route in order", function()
-        WowStub.load({ class = "druid", build = "" }, withSecondPhase, playerAt(35))
+        loadAddon({ class = "druid", build = "" }, withSecondPhase, playerAt(35))
         local menu = ForeverBiSPhaseDropDown.getItems()
         local labels = {}
         for _, info in ipairs(menu) do
@@ -536,7 +549,7 @@ describe("ForeverBiS phase selector", function()
     end)
 
     it("renders the chosen phase and stores it, and Auto clears it", function()
-        WowStub.load({ class = "druid", build = "" }, withSecondPhase, playerAt(35))
+        loadAddon({ class = "druid", build = "" }, withSecondPhase, playerAt(35))
         WowStub.ns.MainFrame.open()
         assert.is_true(WowStub.hasText("Level Forty Hood"))
 
@@ -551,24 +564,24 @@ describe("ForeverBiS phase selector", function()
     end)
 
     it("makes Auto follow the player level", function()
-        WowStub.load({ class = "druid", build = "" }, withSecondPhase, playerAt(20))
+        loadAddon({ class = "druid", build = "" }, withSecondPhase, playerAt(20))
         assert.are.equal("Auto (Level 30)", ForeverBiSPhaseDropDown.menuText)
         assert.is_false(WowStub.hasText("Level Forty Hood"))
     end)
 
     it("honours a saved phase and shows its label", function()
-        WowStub.load({ class = "druid", build = "", phase = "lvl40" }, withSecondPhase, playerAt(20))
+        loadAddon({ class = "druid", build = "", phase = "lvl40" }, withSecondPhase, playerAt(20))
         assert.are.equal("Level 40", ForeverBiSPhaseDropDown.menuText)
         assert.is_true(WowStub.hasText("Level Forty Hood"))
     end)
 
     it("ignores, without deleting, a saved phase the route does not have", function()
-        WowStub.load({ class = "druid", build = "", phase = "lvl99" })
+        loadAddon({ class = "druid", build = "", phase = "lvl99" })
         WowStub.ns.MainFrame.open()
         assert.are.equal("lvl99", ForeverBiSCharDB.phase)
         assert.is_nil(WowStub.ns.Settings.activePhase(WowStub.ns.Settings.route()))
 
-        WowStub.load({ class = "druid", build = "", phase = "lvl40" }, withSecondPhase)
+        loadAddon({ class = "druid", build = "", phase = "lvl40" }, withSecondPhase)
         WowStub.ns.MainFrame.open()
         chooseOption(ForeverBiSClassDropDown, "Rogue")
         assert.are.equal("lvl40", ForeverBiSCharDB.phase)
@@ -577,14 +590,14 @@ describe("ForeverBiS phase selector", function()
     end)
 
     it("marks the class as chosen when picked by hand", function()
-        WowStub.load({ class = "druid", build = "" })
+        loadAddon({ class = "druid", build = "" })
         assert.is_nil(ForeverBiSCharDB.classChosen)
         chooseOption(ForeverBiSClassDropDown, "Mage")
         assert.is_true(ForeverBiSCharDB.classChosen)
     end)
 
     it("keeps collapsed state keyed by route so it survives a phase change", function()
-        WowStub.load({ class = "druid", build = "" }, withSecondPhase, playerAt(35))
+        loadAddon({ class = "druid", build = "" }, withSecondPhase, playerAt(35))
         local head = ForeverBiSLists["druid"].slots[1][1]
         WowStub.fire(
             WowStub.find("Button", function(b)
@@ -647,7 +660,7 @@ describe("ForeverBiS phase selector", function()
         end
 
         it("shows BiS x/y with an accent fill that follows the owned items", function()
-            WowStub.load({ class = "druid", build = "" })
+            loadAddon({ class = "druid", build = "" })
             local text = assert(progressText())
             assert.are.equal("BiS 0/" .. totalSlots(), text.text)
             assert.is_true(text.parent.shown)
@@ -670,7 +683,7 @@ describe("ForeverBiS phase selector", function()
         end)
 
         it("updates after a bag change and flags upgrades in the bags", function()
-            WowStub.load({ class = "druid", build = "" })
+            loadAddon({ class = "druid", build = "" })
             local _, _, second = headIds()
             WowStub.bagCounts[second] = 1
             ForeverBiSFrame:Show()
@@ -715,7 +728,7 @@ describe("ForeverBiS phase selector", function()
         end
 
         it("desaturates and reddens the paper doll icons of slots missing their BiS", function()
-            WowStub.load({ class = "druid", build = "" })
+            loadAddon({ class = "druid", build = "" })
             local icons = gearIcons()
             assert.is_true(#icons > 0)
             for _, button in ipairs(icons) do
@@ -725,7 +738,7 @@ describe("ForeverBiS phase selector", function()
         end)
 
         it("keeps the icon of a satisfied slot in full color and updates on equipment changes", function()
-            WowStub.load({ class = "druid", build = "" })
+            loadAddon({ class = "druid", build = "" })
             WowStub.ns.MainFrame.open()
             local slotID, first = headIds()
             WowStub.equipped[slotID] = first
@@ -742,8 +755,8 @@ describe("ForeverBiS phase selector", function()
         end)
 
         it("leaves every icon untouched when the list has no trackable slots", function()
-            WowStub.load({ class = "druid", build = "" }, function(data)
-                for _, entry in pairs(data.sources.foreverchanges.lists) do
+            loadAddon({ class = "druid", build = "" }, function(data)
+                for _, entry in pairs(data.sources.leveling.lists) do
                     for _, phase in pairs(entry.phases) do
                         phase.slots = {}
                     end
@@ -753,7 +766,7 @@ describe("ForeverBiS phase selector", function()
         end)
 
         it("breaks the missing slots down by source category, adding up to the missing count", function()
-            WowStub.load({ class = "druid", build = "" })
+            loadAddon({ class = "druid", build = "" })
             local remaining
             for _, line in ipairs(hover().lines) do
                 if line:find("^Remaining: ") then
@@ -771,7 +784,7 @@ describe("ForeverBiS phase selector", function()
         end)
 
         it("follows the class selection", function()
-            WowStub.load({ class = "druid", build = "" })
+            loadAddon({ class = "druid", build = "" })
             local rogue = ForeverBiSModel.progress(ForeverBiSModel.list("rogue"), { equipped = {} }).total
             ForeverBiSCharDB.class, ForeverBiSCharDB.build = "rogue", ""
             ForeverBiSFrame:Show()
@@ -780,7 +793,7 @@ describe("ForeverBiS phase selector", function()
         end)
 
         it("caps the tooltip at 8 slot lines plus a +N more line", function()
-            WowStub.load({ class = "druid", build = "" })
+            loadAddon({ class = "druid", build = "" })
             local total = totalSlots()
             assert(total > 8, "fixture needs more than 8 open slots")
             local tooltip = hover()
@@ -793,8 +806,8 @@ describe("ForeverBiS phase selector", function()
         end)
 
         it("lists every open slot without a +N more line when there are few", function()
-            WowStub.load({ class = "druid", build = "" }, function(data)
-                for _, entry in pairs(data.sources.foreverchanges.lists) do
+            loadAddon({ class = "druid", build = "" }, function(data)
+                for _, entry in pairs(data.sources.leveling.lists) do
                     for _, phase in pairs(entry.phases) do
                         local kept = {}
                         for index = 1, 3 do
@@ -810,8 +823,8 @@ describe("ForeverBiS phase selector", function()
         end)
 
         it("hides the progress line when the list has no trackable slots", function()
-            WowStub.load({ class = "druid", build = "" }, function(data)
-                for _, entry in pairs(data.sources.foreverchanges.lists) do
+            loadAddon({ class = "druid", build = "" }, function(data)
+                for _, entry in pairs(data.sources.leveling.lists) do
                     for _, phase in pairs(entry.phases) do
                         for _, slot in ipairs(phase.slots) do
                             slot.slot = "Tabard"
@@ -825,8 +838,8 @@ describe("ForeverBiS phase selector", function()
         end)
 
         it("hides the progress line when the selected list is missing", function()
-            WowStub.load({ class = "druid", build = "" }, function(data)
-                data.sources.foreverchanges.lists = {}
+            loadAddon({ class = "druid", build = "" }, function(data)
+                data.sources.leveling.lists = {}
             end)
             ForeverBiSCharDB.class = "druid"
             assert.is_false(progressFrame().shown)

@@ -1,8 +1,7 @@
 local function loadSources()
     WowStub.reset()
     WowStub.loadFiles({
-        "ForeverBiS_Data_ForeverChanges.lua",
-        "ForeverBiS_Data_Wowsims.lua",
+        "ForeverBiS_Data_Leveling.lua",
         "ForeverBiS_Model.lua",
         "Core/Sources.lua",
     })

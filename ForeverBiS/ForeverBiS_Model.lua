@@ -10,7 +10,7 @@ local function asTable(value)
     return type(value) == "table" and value or {}
 end
 
-Model.DEFAULT_SOURCE = "foreverchanges"
+Model.DEFAULT_SOURCE = "leveling"
 
 local activeId
 
