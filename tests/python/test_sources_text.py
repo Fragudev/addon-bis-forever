@@ -134,6 +134,15 @@ class ItemSourceTest(unittest.TestCase):
     def test_crafted_is_a_profession(self):
         source = self.source({"crafted": {"profession": 2, "spellId": 2675}})
         self.assertEqual(("profession", "Blacksmithing", "Blacksmithing"), (source["kind"], source["text"], source["skill"]))
+        self.assertNotIn("craftedBy", source)
+
+    def test_a_drop_that_can_also_be_crafted_names_the_profession(self):
+        source = self.source({"drop": {"npcId": 644, "zoneId": 40}}, {"crafted": {"profession": 11, "spellId": 1}})
+        self.assertEqual(("world", "Rhahk'Zor, Westfall", "Tailoring"), (source["kind"], source["text"], source["craftedBy"]))
+
+    def test_a_drop_without_a_known_profession_has_no_crafted_by(self):
+        source = self.source({"drop": {"npcId": 644, "zoneId": 40}}, {"crafted": {"profession": 99}})
+        self.assertNotIn("craftedBy", source)
 
     def test_pvp_and_reputation(self):
         self.assertEqual("PvP reward", self.source({"pvp": {}})["text"])

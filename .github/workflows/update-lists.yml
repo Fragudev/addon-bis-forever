@@ -21,22 +21,25 @@ jobs:
     outputs:
       tag: ${{ steps.publish.outputs.tag }}
     steps:
-      # The lists are refreshed on develop, where betas are tagged; main only takes reviewed merges.
+      # The lists are refreshed on develop (main only takes reviewed pull requests, and its ruleset cannot exempt
+      # this workflow) and every change ships as a stable release (vX.Y.Z), so the CurseForge app offers it to every
+      # player, not only those who opted into betas.
       - name: Checkout
         uses: actions/checkout@v7
         with:
           ref: develop
+          fetch-depth: 0
 
       # A source that fails keeps its previous data file and the others are still written. The step's
       # failure is deferred so what succeeded is committed and released, then the job is failed below.
       - name: Refresh lists from every shipped source
         id: refresh
         continue-on-error: true
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
         run: python3 UpdateForeverBiS.py ForeverBiS
 
-      - name: Bump version, commit and tag
+      # The stable version lives only in the tag: tools/package.sh writes it into the packaged TOC, and the
+      # repository TOC keeps the beta version that develop bumps.
+      - name: Commit and tag a stable release
         id: publish
         run: |
           git add --intent-to-add ForeverBiS/ForeverBiS_Data_*.lua
@@ -44,23 +47,21 @@ jobs:
             echo "Lists unchanged; nothing to release."
             exit 0
           fi
-          toc=ForeverBiS/ForeverBiS.toc
-          current="$(sed -n 's/^## Version: beta-//p' "$toc" | tr -d '\r')"
-          if ! [[ "$current" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
-            echo "::error::Cannot read an X.Y.Z version from '## Version: beta-...' in $toc (got '${current}'); aborting."
+          current="$(git tag -l 'v*' --sort=-v:refname | grep -E '^v[0-9]+\.[0-9]+\.[0-9]+$' | head -n 1)"
+          if [[ -z "$current" ]]; then
+            echo "::error::No stable tag (vX.Y.Z) found to bump; aborting."
             exit 1
           fi
-          IFS=. read -r major minor patch <<<"$current"
-          next="${major}.${minor}.$((patch + 1))"
-          sed -i "s/^## Version: beta-.*/## Version: beta-${next}/" "$toc"
-          tag="beta_${next}"
+          IFS=. read -r major minor patch <<<"${current#v}"
+          tag="v${major}.${minor}.$((patch + 1))"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add ForeverBiS/ForeverBiS_Data_*.lua "$toc"
-          git commit -m "chore(data): refresh BiS lists from all sources"
+          git add ForeverBiS/ForeverBiS_Data_*.lua
+          git commit -m "chore(data): refresh BiS lists"
           git pull --rebase origin develop
           git tag "$tag"
           git push --atomic origin HEAD:develop "$tag"
+          echo "Released ${tag} (previous ${current})."
           echo "tag=${tag}" >>"$GITHUB_OUTPUT"
 
       # Make a partial failure visible: the job ends red even though the good sources were released.

@@ -83,19 +83,32 @@ local function percent(rate)
     return text
 end
 
-local function sourceLine(entries)
+local function craftedLine(profession)
+    return ns.L["Crafted by: %s"]:format(ns.L[profession])
+end
+
+--- The item's source: "Crafted by: <profession>" for a profession item, otherwise "Source: ..." followed by the
+--- profession when the item can also be crafted. Empty when no list knows where the item comes from.
+local function sourceLines(entries)
     for _, entry in ipairs(entries) do
         local source = entry.source
         if type(source) == "table" and type(source.text) == "string" and source.kind ~= "unknown" then
+            if source.kind == "profession" and type(source.skill) == "string" then
+                return { craftedLine(source.skill) }
+            end
             local text = source.text
             local rate = source.dropRate
             if type(rate) == "number" and rate == rate and rate > 0 then
                 text = text .. " (" .. percent(rate) .. "%)"
             end
-            return ns.L["Source: %s"]:format(text)
+            local lines = { ns.L["Source: %s"]:format(text) }
+            if type(source.craftedBy) == "string" then
+                lines[2] = craftedLine(source.craftedBy)
+            end
+            return lines
         end
     end
-    return nil
+    return {}
 end
 
 --- Block (a): the player's spec in its bracket, otherwise the brackets that list it, otherwise "not BiS".
@@ -236,8 +249,7 @@ local function blockLines(itemId, itemName)
                 allEntries[#allEntries + 1] = entry
             end
         end
-        local source = sourceLine(allEntries)
-        if source then
+        for _, source in ipairs(sourceLines(allEntries)) do
             lines[#lines + 1] = { source, GREY }
         end
     end

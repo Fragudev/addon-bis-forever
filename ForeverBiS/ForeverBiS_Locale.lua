@@ -35,6 +35,7 @@ local translations = {
         ["BiS for %s at %s"] = "BiS para %s en %s",
         ["Not BiS for %s"] = "No es BiS para %s",
         ["Source: %s"] = "Origen: %s",
+        ["Crafted by: %s"] = "Fabricado con: %s",
         ["Also for: %s"] = "También para: %s",
         ["Your class: %s"] = "Tu clase: %s",
         ["+%d more - hold Shift"] = "+%d más (mantén Mayús)",
@@ -46,6 +47,13 @@ local translations = {
         -- Dynamic keys: looked up through a variable, so they are not literals in the sources.
         ["Horde"] = "Horda",
         ["Alliance"] = "Alianza",
+        -- Crafting professions (source.skill and source.craftedBy in the data).
+        ["Alchemy"] = "Alquimia",
+        ["Blacksmithing"] = "Herrería",
+        ["Enchanting"] = "Encantamiento",
+        ["Engineering"] = "Ingeniería",
+        ["Leatherworking"] = "Peletería",
+        ["Tailoring"] = "Sastrería",
     },
 }
 -- Regional Spanish shares the neutral Spanish table.

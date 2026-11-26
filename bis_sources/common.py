@@ -14,7 +14,7 @@ USER_AGENT = (
 
 CLASS_KEYS = ("warrior", "hunter", "mage", "rogue", "priest", "warlock", "paladin", "druid", "shaman")
 SOURCE_KINDS = ("quest", "profession", "dungeon", "world", "unknown")
-SOURCE_FIELDS = ("faction", "zone", "boss", "dropRate", "quest", "skill", "skillLevel", "bindsToMaker", "reported")
+SOURCE_FIELDS = ("faction", "zone", "boss", "dropRate", "quest", "skill", "skillLevel", "bindsToMaker", "reported", "craftedBy")
 
 
 def http_get(url, accept="*/*", headers=None):
