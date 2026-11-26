@@ -14,7 +14,7 @@
 <p align="center">
   <a href="LICENSE"><img alt="License: proprietary" src="https://img.shields.io/badge/license-proprietary-e6ba66?style=flat-square"></a>
   <img alt="World of Warcraft: Forever, Interface 16001" src="https://img.shields.io/badge/WoW_Forever-Interface_16001-94c9ff?style=flat-square">
-  <a href="https://github.com/Fragudev/addon-bis-forever/releases"><img alt="Latest release" src="https://img.shields.io/github/v/release/Fragudev/addon-bis-forever?include_prereleases&style=flat-square&label=release"></a>
+  <a href="https://github.com/Fragudev/addon-bis-forever/releases"><img alt="Latest release" src="https://img.shields.io/github/v/release/Fragudev/addon-bis-forever?style=flat-square&label=release"></a>
   <a href="https://github.com/Fragudev/addon-bis-forever/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/Fragudev/addon-bis-forever/actions/workflows/ci.yml/badge.svg"></a>
 </p>
 
@@ -56,8 +56,8 @@
 
 Good to know:
 
-- **Updating:** the CurseForge app updates it for you. For a manual install, delete the old `ForeverBiS` folder and
-  unzip the new release the same way.
+- **Updating:** the CurseForge app updates it for you; every refresh of the lists ships as a new release. For a manual
+  install, delete the old `ForeverBiS` folder and unzip the new release the same way.
 - The lists ship inside the addon (WoW addons cannot make web requests), so new lists arrive as addon updates.
 - The interface reads in English and Spanish (Spain), following the game client's language.
 
@@ -74,8 +74,8 @@ drops in your group, a notice when you enter a dungeon with items for your spec,
 in chat.
 
 > [!NOTE]
-> **Beta.** The lists are computed from item stats and stat weights, not copied from a guide, so they rank items by
-> their stats alone. The lists are PvE only.
+> The lists are computed from item stats and stat weights, not copied from a guide, so they rank items by their stats
+> alone. The lists are PvE only.
 
 ## Features
 
@@ -108,7 +108,7 @@ Every item tooltip (bags, equipped gear, links, vendors, the auction house and c
 `Forever BiS` block with up to three parts:
 
 - **Your spec:** the item's rank for your talent spec in the bracket of your level, or the brackets that list it, plus
-  its source with the drop chance; `Not BiS for <spec>` otherwise.
+  its source with the drop chance (`Crafted by: <profession>` for a crafted item); `Not BiS for <spec>` otherwise.
 - **Your other specs:** the other specs of your class that list the item.
 - **Other classes:** one row per other class, with its class icon, naming the specs and ranks.
 
@@ -164,8 +164,9 @@ The addon reads its bundled data file, `ForeverBiS_Data_Leveling.lua` (schema 3,
    file. The workflow fails when the shipped source fails.
 3. When any data file changed, the workflow commits it to `main`, tags the next stable version (the latest `vX.Y.Z`
    with its patch bumped) and publishes it to GitHub and CurseForge as a release, so the CurseForge app offers the
-   update to every player. It then merges `main` into `develop`; if that merge conflicts, the run warns and it is done
-   by hand.
+   update to every player. It then merges `main` into `develop`: conflicts in the data files take the version just
+   released, and any other conflict only warns and is merged by hand. The `main` ruleset requires reviewed pull
+   requests, so GitHub Actions must be on its bypass list for this push to land.
 
 Stable releases ship from `main`. A `vX.Y.Z` tag on a `main` commit, pushed by hand or by the workflow, runs the release
 workflow: it writes `X.Y.Z` into the packaged `ForeverBiS.toc` (the repository keeps the beta version), publishes the
