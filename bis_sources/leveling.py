@@ -168,7 +168,7 @@ ROUTES = (
         "caster",
         {**CASTER, "ShadowDamage": 1, "FireDamage": 0.3, "CritRating": 0.6, "Stamina": 0.2, "Intellect": 0.3},
     ),
-    Spec("druid/balance", "Balance", "druid", "caster", ("druid/balance/presets.ts", "PreBiSEpWeights")),
+    Spec("druid/balance", "Balance", "druid", "caster", ("druid/balance/presets.ts", "DefaultEpWeights")),
     Spec("druid/feral", "Feral", "druid", "twohand", ("druid/feral_ep.ts", "CatEp")),
     Spec("druid/tank", "Guardian", "druid", "twohand", ("druid/feral_ep.ts", "BearEp")),
     Spec("druid/restoration", "Restoration", "druid", "caster", {**HEALER, "Spirit": 0.5, "MP5": 1.5, "CritRating": 0.5}),
