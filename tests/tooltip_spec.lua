@@ -287,6 +287,33 @@ describe("ForeverBiS tooltips", function()
             assert.are.equal("Source: Boss, Zone", show(2).lines[4].text)
         end)
 
+        it("names the profession that crafts a profession item", function()
+            local data = fixture()
+            data.lists["rogue/combat"].phases.lvl20.slots[1].items[2].source =
+                { kind = "profession", text = "Tailoring", skill = "Tailoring" }
+            setup(nil, data)
+            local tooltip = show(2)
+            assert.are.same(
+                { " ", "Forever BiS", "BiS #2 for Combat (Level 20)", "Crafted by: Tailoring" },
+                texts(tooltip)
+            )
+            assert.are.same({ 0.6, 0.6, 0.6 }, color(tooltip.lines[4]))
+        end)
+
+        it("adds the crafting profession under the drop of an item that can also be crafted", function()
+            local data = fixture()
+            data.lists["rogue/combat"].phases.lvl20.slots[1].items[2].source =
+                { kind = "world", text = "Lord Sinslayer, Darkshore", craftedBy = "Tailoring" }
+            setup(nil, data)
+            assert.are.same({
+                " ",
+                "Forever BiS",
+                "BiS #2 for Combat (Level 20)",
+                "Source: Lord Sinslayer, Darkshore",
+                "Crafted by: Tailoring",
+            }, texts(show(2)))
+        end)
+
         it("leaves out sources the data does not know", function()
             local data = fixture()
             data.lists["rogue/combat"].phases.lvl20.slots[1].items[2].source =

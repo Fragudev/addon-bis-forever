@@ -196,4 +196,9 @@ class SourceDescriber:
             rate = self.drop_rate(item, entry.get("npcId"))
             if rate is not None:
                 source["dropRate"] = rate
+        # An item shown with another source that a profession can also make names that profession too.
+        if kind != "crafted":
+            profession = next((c[3].get("skill") for c in candidates if c[4] == "crafted"), None)
+            if profession:
+                source["craftedBy"] = profession
         return source

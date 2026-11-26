@@ -84,6 +84,7 @@ in chat.
 - **Generated per spec and bracket.** One list per spec and level bracket (20, 30, 40, 50 and 60 pre-raid), with the
   top six items per slot (two distinct rings and two distinct trinkets).
 - **Where it comes from.** Each item keeps its source: the boss and dungeon, quest, vendor, profession or reputation.
+  A crafted item names the profession that makes it (`Crafted by: Tailoring`), also when it drops somewhere too.
   Items the wowsims database gives no source for show `Source not listed by wowsims`.
 - **Drop chances.** Where EG Link players have looted an item from the NPC its source names (at least 10 observed
   kills), the source shows its drop chance.

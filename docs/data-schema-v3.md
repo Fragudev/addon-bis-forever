@@ -95,7 +95,7 @@ The `lists` shape is unchanged from schema 2:
 
 - `items` order is the rank. `id` is omitted when unknown. `enchants` is omitted when empty.
 - `source.text` is the raw string from the source (lossless). `source.kind` is one of `quest`, `profession`, `dungeon`, `world`, `unknown`. `unknown` is used for items whose `db.json` entry has no source.
-- Optional `source` fields, set only when detected: `faction` ("Horde"/"Alliance", exclusive sources only), `zone`, `boss`, `dropRate` (number, percent), `quest`, `skill`, `skillLevel`, `bindsToMaker`, `reported`.
+- Optional `source` fields, set only when detected: `faction` ("Horde"/"Alliance", exclusive sources only), `zone`, `boss`, `dropRate` (number, percent), `quest`, `skill`, `skillLevel`, `bindsToMaker`, `reported`, `craftedBy` (the profession that can also make an item whose `kind` is not `profession`, for example a world drop; the tooltip shows it as "Crafted by").
 
 ## Model API
 
