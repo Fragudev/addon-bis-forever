@@ -1,0 +1,33 @@
+ForeverBiS/ForeverBiS_Locale.lua
+  s_3bc13192c3037b::t_7e1841678888f9 38,50-56
+ForeverBiS/ForeverBiS_Tooltip.lua
+  s_3bc13192c3037b::t_ba102b450085b0 86-92,96-98,104-108,111,252
+README.md
+  s_3bc13192c3037b::t_b17c6ee7a7ca46 87
+bis_sources/common.py
+  s_3bc13192c3037b::t_51db2a8e514a19 17
+bis_sources/sources_text.py
+  s_3bc13192c3037b::t_0fdc6dce102ec2 199-203
+docs/data-schema-v3.md
+  s_3bc13192c3037b::t_41486593668400 98
+tests/tooltip_spec.lua
+  s_3bc13192c3037b::t_eaf95ad66aced9 290-316
+tests/python/test_sources_text.py
+  s_3bc13192c3037b::t_7acb58bf008465 137-145
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.6",
+  "base_commit_sha": "c5c0f1f0503346f312414937200818d89a18a3e9",
+  "prompts": {},
+  "sessions": {
+    "s_3bc13192c3037b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "e20b5c4d-5cd1-408a-89b8-b71ab552c8ca",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Francis Gutiérrez <fragudev@gmail.com>"
+    }
+  }
+}
