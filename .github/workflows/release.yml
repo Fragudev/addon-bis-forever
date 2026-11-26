@@ -37,18 +37,26 @@ jobs:
           ref: ${{ env.TAG }}
           fetch-depth: 0
 
-      # Betas (beta_X.Y.Z) ship from develop and stable releases (vX.Y.Z) from main, so a tag on another branch
-      # stops here before anything is published. The step also picks the release type used below.
+      # Betas (beta_X.Y.Z) ship from develop. Stable releases (vX.Y.Z) ship from main or from develop, where the
+      # Update BiS lists workflow tags every list refresh. A tag on another branch stops here before anything is
+      # published. The step also picks the release type used below.
       - name: Check tag branch
         id: kind
         run: |
           case "${TAG}" in
-            beta_*) branch=develop; type=beta ;;
-            v*) branch=main; type=release ;;
+            beta_*) branches="develop"; type=beta ;;
+            v*) branches="main develop"; type=release ;;
             *) echo "::error::${TAG} is neither a beta (beta_X.Y.Z) nor a stable (vX.Y.Z) tag."; exit 1 ;;
           esac
-          if ! git merge-base --is-ancestor HEAD "origin/${branch}"; then
-            echo "::error::${TAG} is not on ${branch}. ${type^} tags are made on ${branch}."
+          on_branch=""
+          for branch in $branches; do
+            if git merge-base --is-ancestor HEAD "origin/${branch}"; then
+              on_branch="$branch"
+              break
+            fi
+          done
+          if [[ -z "$on_branch" ]]; then
+            echo "::error::${TAG} is not on ${branches// / or }. ${type^} tags are made there."
             exit 1
           fi
           echo "type=${type}" >>"$GITHUB_OUTPUT"

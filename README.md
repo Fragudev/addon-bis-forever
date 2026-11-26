@@ -162,16 +162,15 @@ The addon reads its bundled data file, `ForeverBiS_Data_Leveling.lua` (schema 3,
 2. The brackets are levels 20, 30, 40, 50 and 60 (pre-raid). If the wowsims data cannot be downloaded or
    parsed, the previous file is kept. A run that would lose a route the file already has also keeps the previous
    file. The workflow fails when the shipped source fails.
-3. When any data file changed, the workflow commits it to `main`, tags the next stable version (the latest `vX.Y.Z`
-   with its patch bumped) and publishes it to GitHub and CurseForge as a release, so the CurseForge app offers the
-   update to every player. It then merges `main` into `develop`: conflicts in the data files take the version just
-   released, and any other conflict only warns and is merged by hand. The `main` ruleset requires reviewed pull
-   requests, so GitHub Actions must be on its bypass list for this push to land.
+3. When any data file changed, the workflow commits it to `develop`, tags the next stable version (the latest
+   `vX.Y.Z` with its patch bumped) and publishes it to GitHub and CurseForge as a release, so the CurseForge app offers
+   the update to every player. `main` only takes reviewed pull requests, so the refreshed lists reach it with the next
+   merge of `develop`.
 
-Stable releases ship from `main`. A `vX.Y.Z` tag on a `main` commit, pushed by hand or by the workflow, runs the release
-workflow: it writes `X.Y.Z` into the packaged `ForeverBiS.toc` (the repository keeps the beta version), publishes the
-zip to GitHub as the latest release and uploads it to CurseForge as a release. Betas (`beta_X.Y.Z`) are tagged by hand
-on `develop` and published as prereleases.
+Stable releases (`vX.Y.Z`) ship from `main` or `develop`, betas (`beta_X.Y.Z`) from `develop`; the release workflow
+refuses a tag on any other branch. A `vX.Y.Z` tag writes `X.Y.Z` into the packaged `ForeverBiS.toc` (the repository
+keeps the beta version), publishes the zip to GitHub as the latest release and uploads it to CurseForge as a release.
+Betas are tagged by hand and published as prereleases.
 
 A Kami Labs source is planned. It is not shipped until its site owner gives permission.
 

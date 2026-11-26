@@ -21,12 +21,13 @@ jobs:
     outputs:
       tag: ${{ steps.publish.outputs.tag }}
     steps:
-      # The lists are refreshed on main and every change ships as a stable release (vX.Y.Z), so the CurseForge
-      # app offers it to every player, not only those who opted into betas. develop is synced afterwards.
+      # The lists are refreshed on develop (main only takes reviewed pull requests, and its ruleset cannot exempt
+      # this workflow) and every change ships as a stable release (vX.Y.Z), so the CurseForge app offers it to every
+      # player, not only those who opted into betas.
       - name: Checkout
         uses: actions/checkout@v7
         with:
-          ref: main
+          ref: develop
           fetch-depth: 0
 
       # A source that fails keeps its previous data file and the others are still written. The step's
@@ -57,35 +58,11 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add ForeverBiS/ForeverBiS_Data_*.lua
           git commit -m "chore(data): refresh BiS lists"
-          git pull --rebase origin main
+          git pull --rebase origin develop
           git tag "$tag"
-          git push --atomic origin HEAD:main "$tag"
+          git push --atomic origin HEAD:develop "$tag"
           echo "Released ${tag} (previous ${current})."
           echo "tag=${tag}" >>"$GITHUB_OUTPUT"
-
-      # Keeps develop from falling behind the lists main shipped. The data files are regenerated whole, so a conflict
-      # in them takes main's (just released) version. Any other conflict only warns: the release is already out, and
-      # the merge can be done by hand.
-      - name: Sync develop with main
-        if: steps.publish.outputs.tag != ''
-        continue-on-error: true
-        run: |
-          git fetch origin main develop
-          git checkout -B develop origin/develop
-          if ! git merge --no-edit origin/main; then
-            conflicts="$(git diff --name-only --diff-filter=U)"
-            if [[ -n "$conflicts" ]] && ! grep -qv '^ForeverBiS/ForeverBiS_Data_[^/]*\.lua$' <<<"$conflicts"; then
-              mapfile -t files <<<"$conflicts"
-              git checkout --theirs -- "${files[@]}"
-              git add -- "${files[@]}"
-              git commit --no-edit
-            else
-              git merge --abort
-              echo "::warning::Could not merge main into develop (conflicts: ${conflicts//$'\n'/, }); merge it by hand."
-              exit 1
-            fi
-          fi
-          git push origin develop
 
       # Make a partial failure visible: the job ends red even though the good sources were released.
       - name: Fail when a shipped source failed

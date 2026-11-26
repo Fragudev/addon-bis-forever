@@ -153,7 +153,7 @@ Failure guard: each source is fetched, validated and written atomically. A faili
 
 Shrink guard: if a source no longer returns a route its committed `ForeverBiS_Data_<Source>.lua` has, that source fails and keeps its old file, naming the missing routes. Pass `--allow-shrink` when removing routes is intended.
 
-The workflow `.github/workflows/update-lists.yml` stages `ForeverBiS/ForeverBiS_Data_*.lua`, and when any of them changed it commits them to `main`, tags the next stable version (`vX.Y.Z`, patch bumped) and releases it, then merges `main` into `develop`.
+The workflow `.github/workflows/update-lists.yml` stages `ForeverBiS/ForeverBiS_Data_*.lua`, and when any of them changed it commits them to `develop`, tags the next stable version (`vX.Y.Z`, patch bumped) and releases it.
 
 ## Extending
 
