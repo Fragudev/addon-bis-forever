@@ -1,0 +1,23 @@
+.github/workflows/update-lists.yml
+  s_3bc13192c3037b::t_21db4f39f0aaea 24-25,29-30,39-41,49-51,54-55,58-60,62-63,66-81
+README.md
+  s_3bc13192c3037b::t_67d787a6b7d4dd 164-172
+docs/data-schema-v3.md
+  s_3bc13192c3037b::t_50f0c239a96f8f 156
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.6",
+  "base_commit_sha": "72539e07d2a07cd92e8de671cb532e8715c11690",
+  "prompts": {},
+  "sessions": {
+    "s_3bc13192c3037b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "e20b5c4d-5cd1-408a-89b8-b71ab552c8ca",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Francis Gutiérrez <fragudev@gmail.com>"
+    }
+  }
+}
